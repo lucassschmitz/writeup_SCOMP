@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+ 
+% \title{{\Large Centralized annuities marketplace}}
+%\author{Lucas Condeza\thanks{Yale University %\texttt{lucas.schmitz@yale.edu}}} 
+%\date{}
+%\maketitle
+
+\section{Policy discussion of external offers}
+This report provides an analysis of the public discussion, legislative process, and policy implications surrounding the prohibition of 'external offers' (ofertas externas)\footnote{Specifically the law eliminates the article 61 of the previous law. } for life annuities within Chile's pension system. This change, enacted through Ley N° 21.735 and set to take effect on September 1, 2025, fundamentally alters the process by which future pensioners select an annuity provider\footnote{Specifically the project of the law removed the part of article 61 that allowed for the request of an external offer (see page 59 \href{https://www.camara.cl/verDoc.aspx?prmID=26258&prmTIPO=INFORMEPLEY}{here})}. 
+
+In what follows we present the arguments made by the different parties. It is important to note that most arguments are not very solid. 
+
+
+
+\subsection{Proponents of the ban}
+
+\textcite{fne_estudio_2021} recommend removing the extenral offers since buyers only ask for external offers from some insurers hence they do not generate symmetric comparisons, moreover they explicitly suggest that firms will be forward looking and will refrain from making their best offer in the first stage, whereas if one were to remove the external offers they would make their best offer in the first stage. 
+
+When the project of the law was sent by the President to the parliament, the message attached said that the external offers affected negatively the rates, but did not elaborate further.  \footnote{See \href{https://www.camara.cl/verDoc.aspx?prmID=30946&prmTIPO=OFICIOPLEY}{here}, where he says "Se elimina la opción de aceptar ofertas externas realizadas fuera de este sistema regulado, pues esta situación va en desmedro de obtener las mejores ofertas de tasas." There is no more discussion of its effect beyond the previous statement.}
+
+In the discussion in the parliament, the Superintedent of Pensions argued that the fact that most of the annuities bought are offered through an external offer signals that the insurers do not make their best offers in the first stage (\cite[p.~36]{comision_trabajo_y_seguridad_social_informe_2025})
+
+\subsection{In favor of external offers. }
+
+\begin{itemize}
+    \item When the discussion about banning the external offers was starting the vice-president of the Association of Insurers (AACH) declared: 
+
+    "We believe that it is a mistake to promote the elimination of the external offer because it is an opportunity for the pensioner to continue contributing and looking for the best opportunities to get the offer that may be most useful to them" (\textcite{diario_financiero_aseguradores_2017})
+
+    \item Later on, the president of the AACH delcaared that eliminating the external offer creates "unnecessary distortions" (\cite{diario_financiero_aseguradores_2018}) but is not clear what he meant.
+
+    \item Later on, as it appeared more likely some regulation on the external offers, the AACH declared, with respect to the external offers: "simply eliminating it and not perfecting it would precisely be to the detriment of obtaining the best pension offers." (\cite{la_tercera_reforma_2024})  moreover they argued:  "the so-called external offer today is an offer that must meet many requirements with respect to the offers delivered by the system, among them: that it must be higher than the one stated in the certificate, and it is registered in the system". In the Association's opinion, "this means that the external offer is not made 'outside the system'. Since 2006 and in accordance with NCG No. 192, insurance companies must register their external offers in the Scomp system, including, in addition to the associated offer code, the same information established for the initial anonymous offer. Considering that the pension can only be higher, it is not surprising that a majority of pensioners end up opting for an external offer (...) In the past 10 years, the great majority of pensioners have accepted the pension offered in an external offer".
+
+    At the same time they proposed to replace the external offers but something they called an incremental offer: 
+    
+    "Our proposal is that, in order for the anonymous offer process to incentivize insurers to make their best effort (...) only those companies that have presented the best anonymous offers within a range to be defined may participate in a second process, which we propose to call the 'incremental offer'." 
+    
+    The incremental offer system allows "those companies that are within the aforementioned range to present their incremental offer even when the pensioner does not request it, in such a way as to guarantee that they always have the information for the best option in pension amount, all of this always within the Scomp system, which has shown its strength for a long time'."  
+
+    \item Later on, in the dicussion in the House of Represeentatives the president of AACH (Alejandro Alzerreca) argued that since most people chose one of the external offers, eliminating them would negatively affect consumers (\cite[p.~157]{comision_trabajo_y_seguridad_social_informe_2024})
+
+\end{itemize}
+ 
+\subsection{Summary}
+
+Essentially the regulator (CMF and SPS) argued that eliminating this secondary negotiation stage would force insurance companies to submit their best and final offer in the initial, centralized SCOMP certificate, thereby creating a simpler, fairer, and more competitive market for all pensioners.
+
+Both sides interpreted the high share of annuties bought throught the external offers as evidence supporting their point, industry associations as proof of the success of the external offers and government agencies as proof of the negative effect of the external offer on the initial stage. 
+
+
+\section{Information disclosure between stages.}
+
+There is some information that insurers get before making external offers. This sections tries to pin down exactly what do insurers learn. 
+
+\begin{itemize}
+    \item In the dicussion in the House of Representatives the president of AACH (Alejandro Alzerreca) said: "the preference for the external offer is the majority within the system. This is explained by the fact that it must be for a higher amount than what is already available, and because companies can conduct a more thorough review of applicants' records through pension advisors."(\cite[p.~157]{comision_trabajo_y_seguridad_social_informe_2024})
+
+    \item The insurer learns about the Health System of the buyer\footnote{Presumably this refers to FONASA or Isapre and the name of the Isapre, see (\cite[p.~769-72]{superintendencia_de_pensiones_compendio_nodate})}and also the RUT of the buyer \footnote{see 
+    (\cite[p.~606-7]{superintendencia_de_pensiones_compendio_nodate})}
+
+    \textcolor{red}{IT WAS NOT CLEAR WHAT EXACTLY DO FIRMS LEANR BETWEEN BOTH STAGES}
+\end{itemize}
+
+\printbibliography
+
+
+
+\end{document}

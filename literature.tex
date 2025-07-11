@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+ 
+% \title{{\Large Centralized annuities marketplace}}
+%\author{Lucas Condeza\thanks{Yale University %\texttt{lucas.schmitz@yale.edu}}} 
+%\date{}
+%\maketitle
+
+\section{Bargaining/aftermarkets}
+
+This literature review is for the research question of banning the aftermarket. 
+
+There is a literature on how bargaining creates different outcomes for different groups, some papers in this literature are:  
+
+\begin{itemize}
+    \item \textcite{ayres_race_1995} \textbf{[empirical]} audit study that shows that women and blacks get worse quotes at car dealerships. If bargaining were removed [no model]. In our case the bargaining stage could also have distributive impacts
+
+    \item \textcite{morton_consumer_2003} \textbf{[empirical]} the internet reduces the premium paid by blacks when buying cars. Essentially the design of the market can have an impact on the way sellers discriminate. 
+
+    \item \textcite{busse_repairing_2017} \textbf{{empirical with a model}}  when women mention a previous quote in the bargaining then the bargaining gap disappears. Interesting, because in our case they have this previous quote from the SCOMP, hence this papers implies that maybe there are wouldn't be any differences across groups in terms of the bargaining outcome.
+
+    Their model is nice where there are two different groups of customers given by their reservation price (which rationalizes differences in search costs) and the seller, based on individual characteristics, assigns a probability that the buyer is for each group. The problem is that the reservation price is not endogenous whereas in our case is created by the initial offers made by the firms.
+
+
+\end{itemize}
+
+There is a theoretical literature where a selling party posts a price and there is the possibility for buyers to bargain or to search. Some of this papers are: 
+\begin{itemize}
+    \item \textcite{sobel_multistage_1983} consider a bilateral monopoly where the seller makes an initial offer and if not accepted they bargain. Very similar to our setting, but we have competition in the seller side. There is incomplete info about the buyer's WTP
+
+    \item \textcite{board_outside_2014} the model in section 2. Search seems somewhat similar to our setting. The problem is that there is a continuum of sellers, meaning that the present offer does not have future implications, whereas in my model the number of sellers is discrete.
+\end{itemize}
+
+Finally the two papers that are closest to our setting are: 
+\begin{itemize}
+    \item \textcite{larsen_efficiency_2021} In their setting a single seller tries to sell to multiple buyers wheras in our setting there are multiple sellers but a single buyer. -> I think this is not a problem since we could just invert the roles.
+
+What seems a bigger hurdle is that there is no price posting. -> this is not a problem, since he prices offered in the auction act as posted prices.
+
+    \item \textcite{allen_search_2019} In their model consumers a home bank makes a loan offer to the buyer, the buyer accepts/rejects and in case of rejection can pay a fixed cost to organize an english auction. The heterogeneity of consumers is in terms of search costs. In their model search costs affects welfare through three channels \footnote{The presence of search costs lowers the welfare of consumers for three reasons. First, it imposes a direct burden on consumers searching for multiple quotes. Second, it can prevent nonsearching consumers from matching with the most efficient lender in their choice set, creating a misallocation of buyers and sellers. Finally, it opens the door to price discrimination by allowing the initial lender to make relatively high offers to consumers with poor outside options or high expected search costs.}
+\end{itemize}
+
+
+
+\section{Adverse selection and competition}
+
+\section{Papers with the same data}
+
+There are two papers that use the same data: 
+\begin{enumerate}
+    \item \textcite{illanes_retirement_2019} 
+    estimate a dicrete choice consumption-saving model putting a lot of effort modeling time-preferences, mortality risk, bequest motive and outside wealth and an perfectly competitive insurer industry. 
+    
+    \item \textcite{boehm_intermediation_2024} studies how the choice of financial product is affected by intermediaries (brokers) who provide information but also create an agency problem. There are two main differences with our case: 1) they study the decision of financial product whereas we focus on the decision of which offer to accept given the choice of financial product and 2) they do not provide a model of supply whereas we model the insurer competition. 
+\end{enumerate}
+Both of this paper put a lot of emphasis on the life-cycle problem, the bequest motive and provide microfoundation for the discrete choice between annuities and PW, but none of them makes use of the fact that we observe the full choice set of the consumer. 
+
+
+
+
+\printbibliography
+ 
+\end{document}

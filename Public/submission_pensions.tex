@@ -1,0 +1,275 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=1.252in,bmargin=1.252in,lmargin=1.2in,rmargin=1.2in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [rectangle, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+\tikzstyle{mechanism} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+ 
+
+\newpage
+ \title{{\Large Centralized annuities marketplace}}
+\author{Lucas Condeza\thanks{Yale University \texttt{lucas.schmitz@yale.edu}}} 
+\date{}
+\maketitle
+
+
+
+\section{Part 0: Institutional context}
+
+This description of the institutional context heavily relies on the description by \textcite{boehm_intermediation_2024}, whenever a figure has no explicit source it comes from that description. 
+
+
+Chile operates a fully funded, defined-contribution pension system. Throughout their working lives, individuals are required to contribute 10\% of their wages to a personal retirement account. These accounts are managed by private Pension Fund Administrators (PFAs), who invest the funds in a mix of equities, bonds, and mutual funds. Upon reaching retirement age — 65 for men, 60 for women, or earlier in cases of sufficient accumulated wealth or disability — individuals must convert their savings into a stream of retirement income by selecting a pension product. Retirees are generally not allowed to make lump-sum withdrawals.
+
+
+Retirees opting for a Phased Withdrawal (PW) maintain their savings accounts under PFA management and make systematic withdrawals based on an actuarial formula set by the government. The withdrawal amount is updated annually, reflecting factors such as life expectancy based on a national mortality table, expected returns on investment, and the presence of any dependents (spouses or children under 24 years old). Under this arrangement, retirees retain ownership of their remaining savings, which can be passed on as an inheritance if they die prematurely. However, they bear the risk of outliving their savings, as pension payments decline over time until the account is depleted\footnote{If the pension falls below a threshold the government tops it up, which creates a distortion between the PW and the annuity because in the later case there is no government subsidy. The government also insures 75\% of the worker’s annuity over the minimum guaranteed pension (with a cap of 45UF or about US\$1200 monthly) in case the insurance company becomes insolvent, and to prevent this from happening sets stringent reserve, equity and asset-liability matching requirements. So far it has never had to pay this insurance(\cite{james_pensiones_2005})}. Retirees under PW are also exposed to fluctuations in interest rates, leading to potential volatility in the value of their pension savings.
+
+As an alternative to the Phased Withdrawal, the retiree can purchase an annuity from an insurance company. This choice entails the individual giving up ownership of their savings in exchange for longevity insurance: the insurance company contracts an obligation to pay a fixed, inflation-adjusted amount for the remaining duration of the retiree’s lives. The retiree therefore transfers their longevity risk to the insurance company but gives up the possibility of bequeathing part of their pension savings.
+
+Retirees have the ability to tailor their annuity contracts, particularly by selecting guarantee and deferral options. A guarantee period ensures that the annuity will continue to make payments for a minimum period, offering some protection against early death while still allowing for a potential bequest. Retirees can also allocate a portion of their savings to purchase a deferred annuity, using the remaining balance to increase initial payouts. It is possible to combine guarantee and deferral features within a single contract.
+
+To assist with decision-making, retirees can request and receive multiple quotes through a centralized exchange platform (SCOMP), ultimately choosing among options listed in a document known as the Offers Certificate. The typical retiree requests quotes for around 10 different product types and receives more than 100 quotes overall.
+The range of available pension products involves inherent trade-offs among securing higher initial payments, insuring against longevity risk, and preserving wealth for heirs. Thus, selecting the optimal pension product depends critically on how product features interact with an individual's expected lifespan, desire to leave an inheritance, risk tolerance, and degree of impatience. Reaching a well-informed decision requires not only an understanding of financial concepts and contract terms but also a careful reflection on personal preferences, anticipated longevity, and the retiree’s broader financial circumstances. Given the complexity of these considerations and the documented gaps in financial literacy regarding pensions, this decision-making process can be both challenging and cognitively demanding for retirees.
+
+\subsection*{SCOMP: Pension Quote and Inquiry System }
+By regulation, the process that leads to the purchase of an annuity takes place in SCOMP.  Established in 2004, SCOMP was designed to enhance retirees' access to information about their available options and to simplify the process of obtaining and comparing offers from various insurance companies and PFAs (CMF, 2019). Individuals who have accumulated savings above a minimum threshold can request quotes for annuities with different combinations of guarantee and deferral periods. These quote requests are circulated to all insurance companies active in the market, accompanied only by basic information: the retiree’s age, gender, marital status, the age of any legal beneficiaries, and the total amount of savings. Each insurer then decides whether to respond with a quote for each requested pension product.
+
+
+All offers — including Phased Withdrawal offers from PFAs and annuity offers from insurance companies — are compiled into a  document called the Offers Certificate, which is mailed to the retiree. All quotes must be stated in "UF," an inflation-indexed unit of account, ensuring that annuity values are presented in real terms. Retirees also receive information about the risk rating assigned to each insurance company, an important consideration since retirees are only partially protected in the event of insurer insolvency. The median retiree  requests quotes for about 10 different product types and receives over 100 pension product offers in return.
+
+
+Once they receive the Offers Certificate, retirees can either accept one of the offers, postpone their decision, or attempt to negotiate directly with insurance companies to improve an existing offer. To negotiate, retirees must physically visit the branch of the insurance company. It is important to note that firms are prohibited from offering worse terms during this stage. On average, negotiated offers improve the initial terms modestly, with increases of around 2\% in generosity compared to the original SCOMP offers (\cite{illanes_retirement_2019}).
+
+\section{ Part 1: Research Ideas} 
+
+
+\subsection{Problem/environment definition }
+
+\textbf{Household(Demand) side:  describe the decisions households make and}
+ 
+ \begin{itemize}
+     \item \textbf{Objective function:  what households aim to maximize.  }
+
+    \item \textbf{Constraints:  detail constraints such as budget constraints, time limitations, informational constraints, or regulatory restrictions. }
+
+    \item \textbf{Decision variables: state what choices households make}
+
+ \end{itemize}
+
+
+
+Individuals who are going to retire  face three stages in their decision process. First their decide between a PW or using their savings to buy an annuity. If they decide to buy an annuity they face the decision of  which type of annuity to buy. Individuals can customize their annuity by choosing  guarantee and deferral periods. A guarantee period is a minimum of months during which the annuity will pay, which means that in the case of an early death the remaining payments can be received by the individual's dependents. A deferred annuity allows to front-load payments. In the third stage individuals decide which offer to accept or whether to request additional offers. The decision among offers is taken solely based on the monthly payment offered by the company and the credit risk of the insurance company \footnote{Two other variables that could affect the decision are 1) the intermediaries and 2) insurer specific preferences, for example marketing or having a closer customer service office. For the moment we abstract from this variables.}
+
+The constraints are given by the amount of money saved. Moreover individuals face a cost of acquiring information, hence in some cases they pay an intermediary (broker) to help them navigate the process. 
+
+
+\textbf{Firm(Supply) Side: how firms make decisions in this market context.}
+ \begin{itemize}
+     \item \textbf{Objective function: Specify what firms aim to achieve. }
+
+     \item \textbf{Constraints:   specify production technologies, input costs, and regulatory or market constraints faced by firms.}
+
+     \item \textbf{Production function and costs: Explicitly define production functions (e.g., Cobb-Douglas) and cost structures if applicable.}
+ \end{itemize}
+
+ Firm ($f$) receives an offer request from individual $i$ that contains the value of the annuity ($V_i$), and beneficiary variables, which include: age ($a_i$), gender ($g_i$) and whether they have dependents ($d_i$). Define beneficary variables as $x_i = (a_i, g_i, d_i, V_i)$.  Firms have to decide whether to make an offer and in the case of making an offer the monthly payment to offer which has to satisfy: 
+ 
+ \begin{align*}
+     V_i \geq \mathbb{E}_{T}\left[\sum_{t=1}^T\frac{p}{(1+r)^t}| x_i\right]
+ \end{align*}
+ where $T$ is the period in which the beneficiary dies, $r$ is the interest rate at which the insurance company discounts the payments. Note that the expected value depends on individual level variables, for example the expected life expectancy depends on the value of the annuity reflecting that richer people have a higher life expectancy.
+
+Note that the value of the annuity can be greater than the expected payment and the difference will reflect profits that the firm thinks can make by selling the annuity.  
+
+ 
+\textbf{Equilibrium Definition Clearly state how the market reaches equilibrium.}
+\begin{itemize}
+    \item \textbf{Describe how demand and supply interact to determine market equilibrium (e.g., prices adjust to clear markets).}
+
+    \item \textbf{Specify conditions for equilibrium (e.g., market-clearing condition: demand equals supply)}
+\end{itemize}
+
+
+There is a set of $F$ firms which bid in an auction for each consumer. Firms are defined by a firm specific interest rate ($r_f$) and a prediction formula ($\mathbb{E}_{T}\left[\sum_{t=1}^T\frac{1}{(1+r)^t}| x_i\right]$). The interest rate reflect financing heterogeneity, in this case firms use the payments from the beneficiaries to invest the funds in other assets, hence it could reflect differences in investment strategies across firms. The prediction formula reflects that, given an individual, firms use different mortality tables. Moreover firms might have mortality tables that are particularly accurate for predicting mortality of certain groups. 
+
+
+
+Profits can arise either by differents in the interest rate  (financing advantages) or in the mortality tables used (informational advantages). Note that if there are no informational advantages, in our model the firm with the highest interest rate would have an advantage when offering to every consumer hence would end up being a monopoly \footnote{Even in the absence of informational advantage if the interest rate is time specific, firms might have competitive advantages for annuities of certain durations. From now we abstract from this possibility.}
+
+The SCOMP system can be thouhgt of as an auction where firms make bids $b_i$ and then winner is given by $f(b)$, where potentially the consumer can select lower bids because he values the credit rating of the firm. Two important points are that the ex-ante value of the consumer for the firm would be $\pi_i(p) =V_i- \mathbb{E}_{T} \left[ \sum_{t=1}^T\frac{p}{(1+r)^t}| x_i\right]$ and the auction is of interdependent values. 
+
+Modeling and solving for the auction equilibrium is beyond the scope of this proposal. 
+
+
+
+
+\textbf{Social Planner Problem
+ Clearly explain the social planner’s objective and their tools to address market
+ failures.}
+
+\begin{itemize}
+    \item \textbf{Objective: Define clearly whether the planner aims for efficiency, equity, or a combination of goals. Example: Maximizing total social welfare or reducing inequality.}
+
+    \item \textbf{Policy instruments: Clearly identify available policy tools, such as taxes, subsidies, direct regulations, or quota systems.}
+
+    \item \textbf{Market design problem: Clearly articulate the problem faced by the planner in designing market interventions}
+
+    The social planner cares about consumer welfare. The social planner can change the design of the platform and regulate the insurers.   
+
+    In what follows we will present three possible policies the regulator could pursue. 
+
+    First, the regulator could make it mandatory to buy annuities. 
+    A classical problem in insurance markets is that adverse selection might generate unraveling (\cite{rothschild_equilibrium_1976}). Moreover a long-standing puzzle in finance is the low share of the population who buys annuities (\cite{modigliani_life_1986}), since under a broad range of assumptions models predict full annuitization. One common government intervention when there is adverse selection is to make it mandatory to buy insurance.  
+
+    A second set of policies the regulator can pursue involve changing the design of the market. For example, there has been policy discussion around removign the possibility of bargaining after receiving the offers. Other policy could be to cap the comissions to a maximum of 2\% of the savings. 
+
+    A third policy that the regulator could implement is providing a broader guarantee for the annuities. Currently the guarantee consists of 75\% of the annuity up to a threshold of about \$1200. Although few people have a pension over  \$1200, potentially one could increase the guarantee to be 100\% of the annuity. 
+    
+    
+\end{itemize}
+ 
+ 
+ \textbf{Frictions Clearly outline specific market frictions and their economic implications.}
+
+\begin{itemize}
+    \item \textbf{Explicitly state the friction (e.g., information asymmetry, externalities, transaction costs).}
+
+    \item \textbf{Clearly explain why these frictions prevent socially optimal outcomes}
+\end{itemize}
+
+In the annuities market there are multiple frictions: 
+
+First, before the 2004 reform there were search costs because individuals had to request offers from different insurers without having a centralized way of doing so. With the introduction of SCOMP the frictions were reduced. But it appears that the stage that comes after receiving the offers, where indidividuals can bargain with with insurers to get better offers still poses a significant cost. Note that offers improve around 2\% on the initial offers. A back of the envelope calculation is that retirees worked for 30 years (360 months), meaning that this 2\% could be around 7 months of salary. If some retirees are not bargaining for better offers this could reflect lack of information or implausible big bargaining costs. 
+
+
+Second, since annuities and the system are complex, individuals might have imperfect information about them. For which they have to hire intermediaries which creates an information assymmetry. related to this point, intermediaries and individuals do not have aligned incentives, because intermediaries get paid by commission when selling annuities from the company they work for; whereas individuals would like to maximize the flow payments of the annuities. 
+
+Third, even thought the annuity is supposed to cover over life risk, the annuity in itself might be risky since insurers can default on them.   
+
+\subsection{ Policy or Intervention Proposal}
+
+\textbf{Clearly define a realistic policy designed to mitigate the identified frictions. Provide a specific example of how the policy works practically}
+
+Here we will provide further rationale behind two policies already stated in  section 1.1. 
+
+\textbf{Eliminating bargaining} the regulator could remove the possibility of negotiating with insurers after getting the offers. Since insurers anticipate the possibility of bargaining they might make lower offers to the consumers, in equilibrium is not obvious what the effect of the bargaining is. Moreover there could be heterogeneous effects on consumers since some of them might not know that there is a bargaining possibility. 
+
+\textbf{Broadening the guarantee} from the perspective of the consumer the risk of the insurer defaulting on the annuities is mostly exogenous, but the regulator conducts stress tests and has better information about the financial stability of the insurer. Moreover, individuals might have problems understanding the default probabilities.  Hence, it seems natural that the party that should pay the cost of a possible default is the regulator and not the consumers. A way of shifting the risk from the individual to the regulator is to provide a government guarantee. This would also increase competition since insurers would not be differentiated along the risk dimension. Moreover, up to now there has been no default, which seems to indicate that the current regulation ensures that the probability of insurer default is small. Whereas the upsdie of this guarantee would be significant, currently 25\% of the affiliates reject offers of 3.4\% higher than the one accepted. If this rejection is due to credit differences, and the policy does not affect the bids,  then it would increase pensions at least for this group. 
+
+
+
+
+ 
+
+\subsection{ Empirical Strategy and Credible Evidence}
+
+\textbf{Clearly describe empirical patterns (“smoking gun”) you expect if your theory is correct. Identify credible empirical methods, such as natural experiments, regression discontinuity designs, or instrumental variable approaches}
+
+Previously we proposed three policies, here we discuss what evidence would provide indication that the problems this policies aim to address are indeed important in this setting: 
+
+Making insurance mandatory is aimed to adress an adverse selection problem. Hence, we would have to provide evidence that there is actually adverse selection, for which we could use the tests developed by \textcite{chiappori_testing_2000,einav_estimating_2010}. Essentially this tests are aimed at evaluating whether there is selection in the purchase of insurance, in this case it would mean that people with unobservables - in this case variables other than savings, gender and age- indicating a long life are the ones buying the annuities. Intuitively, in the data we would have to observe that -controling for observables- people who buy insurance end up living longer. 
+
+The second policy we proposed is eliminating the bargaining stage in the market. We stilll do not have a clear picture of what pattern we would expect in the data. But some initial patterns to analyze are 1. who is bargaining and 2. once we have an idea of who is bargaining whether firms send lower offers to people with high bargaining probability anticipating that they will later have to bargain with them. 
+
+The third policy we proposed relies on consumers actually being concerned about defaulting by the insurers. We could estimate a demand model to rationalize the decisions made by the consumers and evaluate what is the willingness to pay for higher credit ratings. Once we have the willingness to pay for higher credit ratings we could evaluate the welfare gains for consumers of providing a government guarantee for the savings. Moreover, although in this context seems obvious that consumers might care about the risk of insurers defaulting and the annuity puzzle has generated a large literature in finance (\cite{benartzi_annuitization_2011}) we are not aware of having considered insurer risk as a reason for low annuitization levels. Our setting is particularly well suited to study the topic, becuse, we observe the choice set of consumers, which is not common since other countries do not have a centralized annuities market.
+
+
+\subsection{ Estimation Strategy and Auxiliary Data}
+
+\textbf{Clearly outline your econometric approach and identify the administrative data
+ required. Describe additional data sources (e.g., census data, labor surveys) and ideal surveys you would conduct to enhance your empirical analysis.}
+
+The data sources we would like to use are: 
+\begin{itemize}
+    \item Centralized offer exchange database SCOMP, available from the regulating agencies, which contains all retirees from August 2004 until July
+ 2020. This database includes basic demographic information about retirees age, gender, and legal dependents– total savings, geographic location at the
+ city/precinct level. The data also record every offer received by each potential retiree, information about intermediation, pension product accepted, and com
+mission paid. Finally, one can also observe the date of death in case the beneficiary is no longer alive. 
+
+    \item Publicly available reports on insurance
+    companies’ risk ratings, information about the number of intermediaries, and  their registered locations.
+
+    \item It is not clear to what extent the regulator has data from before SCOMP.   \textcite{james_pensiones_2005, halcartegaray_efectos_2011, morales_chilean_2017} use data pre 2004 but from reading their papers I could not understand whether individual level data of the offers received and the annuities bought is available.
+\end{itemize}
+ 
+
+
+ \section{ Part 2: Data Acquisition Practice}
+
+The data needed is not public and can not be requested through FOIA requests because it is administrative data. 
+
+I emailed  a professor (Eduard Boehm at LSE) who has worked previously with the data, and he has not replied yet. 
+
+I also filled out lobby requests to meet with people within the government agencies (SPS and CMF) who could help me to get the data. The lobby requests were rejected and I was told that in October there is going to be an opening to apply for data for academic purposes, process in which I plan to apply. From what I could see this there is a yearly opening in October and \href{https://cmfchile.cl/portal/prensa/615/w3-article-86338.html}{this} website specifies the requirements to get access to the data. 
+
+For proofs of the email and the lobby meetings requested see the documents within the \textit{Request\_evidence} folder.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \end{document}

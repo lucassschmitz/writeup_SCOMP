@@ -1,0 +1,589 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+ 
+% \title{{\Large Centralized annuities marketplace}}
+%\author{Lucas Condeza\thanks{Yale University %\texttt{lucas.schmitz@yale.edu}}} 
+%\date{}
+%\maketitle
+
+
+
+\section*{Varian (1980) --- Extension with Initial Offers}
+
+Let $N$ sellers. $c=0$ makes initial offers $b_i$.
+
+The consumer values the good at $v$.
+
+In stage 2:
+\[
+\bar{v} = v - (v - \min(b_i)) = \min(b_i)
+\]
+where $v - \min(b_i)$ is the outside option. 
+
+Sellers set second stage prices $p_i$, which are latent prices revealed only if the consumer asks them for an external offer.
+
+With probability $\Pr = 1- \lambda$: the consumer knows $p_i\ \forall i$, which can be thought of as having no search costs.
+
+There is no equilibrium in pure strategies. The Bertrand logic applies.
+
+
+ Firms set prices according to $F(p)$, being
+\begin{enumerate}
+    \item smooth
+    \item upper bound $\bar{v} $ (monopoly price)
+\end{enumerate}
+
+For any $p$ in the support, $p \cdot Q(p) = \bar{v} \cdot Q(\bar{v})$ applies, where
+\[
+Q(p) = \frac{\lambda}{N} + (1 - \lambda) \left(1 - F(p)\right)^{N-1}
+\]
+
+where the first term is the revenue from uninformed (who choose randomly) and the second term is revenue from informed. 
+
+
+Since $F(\bar{v}) = 1$, then
+\[
+F(p) = 1 - \left( \frac{ \lambda}{N (1- \lambda)} \cdot \left( \frac{\bar{v}}{p} - 1 \right) \right)^{\frac{1}{N-1}}
+\]
+
+Then the expected profits are: 
+
+\[
+\pi =  \bar{v} \cdot Q(\bar{v})=  \bar{v} \cdot \frac{\lambda}{N}
+\]
+
+Note that 1) nobody buys in the first stage and 2) since profits are increasing on first stage prices then when doing backwards induction we get that $b_i \geq v, \forall i$. 
+
+Essentially the problem is that all the buyers in the second stage can observe the first stage bids and make better bids because otherwise the price $p_i$ is greater than the valuation increase $\bar{v}$. 
+
+
+
+\textbf{Comments}
+\begin{itemize}
+    \item The problem of this model is that everyone buys in the second stage. We need the possibility that $\max(c_i) > \bar{V}$ so that some people take the outside option.
+
+    \item Search costs are not explicitly modeled, buyers have either 0 or $\infty$ search costs. 
+\end{itemize}
+
+
+
+
+
+ 
+
+ \section*{Varian (1980) --- extension with assymetric costs. }
+
+
+ 
+Let $N$ sellers with marginal cost $c_i$ and $c_i < c_{i+1}$  makes initial offers $b_i$. 
+
+The consumer values the good at $v$.
+
+In stage 2:
+\[
+\bar{v} = v - (v - \min(b_i)) = \min(b_i)
+\]
+where $v - \min(b_i)$ is the outside option. Assume $\bar{v}>c_N$
+
+Sellers set second stage prices $p_i$, which are latent prices revealed only if the consumer asks them for an external offer.
+
+With probability $\Pr = 1- \lambda$: the consumer knows $p_i\ \forall i$, which can be thought of as having no search costs.
+
+Assume there is an equilibrium where all firms play mixed strategies. 
+
+ Firms set prices according to $F_i(p)$, being
+\begin{enumerate}
+    \item smooth
+    \item upper bound $\bar{v} $ (monopoly price)
+\end{enumerate}
+then 
+\[
+Q_i(p) = \frac{\lambda}{N} +  (1 - \lambda) \prod_{j\neq i} \left(1 - F_j(p)\right)
+\]
+where the first term is the revenue from uninformed (who choose randomly) and the second term is revenue from informed. 
+
+For any $p$ in the support, $(p - c_i) \cdot Q_i(p) = (\bar{v}-c_i) \cdot Q_i(\bar{v})$ applies. 
+
+
+Moreover since $F_i(\bar{v}) = 1, \forall i$ we have: 
+\begin{align*}
+    (p - c_i) \cdot Q_i(p) = (\bar{v}-c_i) \cdot Q_i(\bar{v}) \\
+     (p - c_i) \cdot \left[\frac{\lambda}{N} +  (1 - \lambda) \prod_{j\neq i} \left(1 - F_j(p)\right)\right] = (\bar{v}-c_i) \cdot \frac{\lambda}{N} \\
+     (p- c_i) \cdot \left[ (1 - \lambda) \prod_{j\neq i} \left(1 - F_j(p)\right)\right] = \frac{\lambda}{N}(\bar{v}-p) \\
+      \prod_{j\neq i} \left(1 - F_j(p)\right) = \frac{\lambda}{(1 - \lambda)N}\frac{\bar{v}-p}{p- c_i} 
+\end{align*}
+Take the previous equation for firms $m$ and $n$ and divide them, then: 
+\begin{align*}
+    \frac{1 - F_m(p)}{1 - F_n(p)}  = \frac{p-c_m}{p- c_n}
+\end{align*}
+
+Note that if 
+
+
+\vspace{3cm}
+
+
+There is no equilibrium in pure strategies. The Bertrand logic applies.
+
+
+
+
+Since $F(\bar{v}) = 1$, then
+\[
+F(p) = 1 - \left( \frac{ \lambda}{N (1- \lambda)} \cdot \left( \frac{\bar{v}}{p} - 1 \right) \right)^{\frac{1}{N-1}}
+\]
+
+Then the expected profits are: 
+
+\[
+\pi =  \bar{v} \cdot Q(\bar{v})=  \bar{v} \cdot \frac{\lambda}{N}
+\]
+
+Note that 1) nobody buys in the first stage and 2) since profits are increasing on first stage prices then when doing backwards induction we get that $b_i \geq v, \forall i$. 
+
+Essentially the problem is that all the buyers in the second stage can observe the first stage bids and make better bids because otherwise the price $p_i$ is greater than the valuation increase $\bar{v}$. 
+
+
+\vspace{3cm}
+
+First let's solve Varian with assymetric costs for a duopoly with $c_1 < c_2$.
+
+\textbf{Claim 1: $F_i(p)$ has support $[c_2, \bar{v}]$ and is smooth}
+
+Since $F_i(\bar{v}) =1$ we have: 
+
+\begin{align*}
+    (p - c_i) \cdot Q_i(p) = (\bar{v}-c_i) \cdot Q_i(\bar{v}) \\
+     (p - c_i) \cdot \left[\frac{\lambda}{2} +  (1 - \lambda) (1 - F_j(p))\right] = (\bar{v}-c_i) \cdot \frac{\lambda}{2} \\
+     (p- c_i)  \left[ (1 - \lambda)  (1 - F_j(p))\right] = \frac{\lambda}{2}(\bar{v}-p) \\
+     1 - F_j(p) = \frac{\lambda}{(1 - \lambda)2}\frac{\bar{v}-p}{p- c_i} 
+\end{align*}
+
+\vspace{2cm}
+
+\textbf{Claim: $\bar{p}_1 =\bar{p}_2 =\bar{v}$ } 
+
+Assume $\bar{p}_1 < \bar{p}_2$
+
+\textcolor{red}{I THINK THAT SOLVING THE MODEL FOR ASSYMETRIC COSTS IS EQUIVALENT TO SOLVING THE MODEL FOR FIRM SPECIFIC $v_i$, meaning that putting the heterogeneity in the firm cost or in the the buyer preferences is isomorphic. }
+
+
+\newpage 
+
+\section{Search with bargaining}
+
+Ignore Diamond's paradox, there's a distribution of prices $F(p)$. 
+
+A buyer has searching cost $s$ and valuation $v$. 
+
+Assume sequential search without recall. 
+
+Define
+$$M(R) = \int_0^R (v-p)dF(p) = F(R)\cdot v - \int_0^R pdF(p)$$ 
+the reservation price satisfies: 
+\begin{align*}
+        v-R &= (M(R)-s)\frac{1}{1-(1-F(R))} \\
+   &= \left(F(R)\cdot v - \int_0^R pdF(p)-s\right)\frac{1}{1-(1-F(R))} = v - \left[\frac{\int_0^R pdF(p)+s}{F(R)}\right]\\
+\end{align*}
+Then we have that $R^*$ solves: 
+\begin{align}
+        R^* = \frac{\int_0^{R^*} pdF(p)+s}{F(R^*)}
+\end{align}
+
+Now let's assume the buyer has a previous quote $\theta$ then there are two possibilities 1) if $ R^*< \theta $ the consumer searches until finding a price lower than $R^*$ and 2) if $R^*\geq \theta$ the consumer does not search.
+
+
+\subsection{Endogeneize price distribution through differentiation}
+
+The previous model is subject to Diamond's paradox, to escape the paradox\footnote{In our model firms do not set prices, prices are the outcome of bargaining. But if we had bargaining without heterogenity then we would escape tha paradox in the sense that prices would not be monopolistic, but we would not have price dispersion. }, asssume that the buyer values the product of the firms in $v_i$ and the firm sets price $p_i$ where the joint distribution of valuationss and prices is given by $F(p,v)$ then: 
+
+Assume sequential search without recall. 
+
+Now the buyer no longer has a reservation price, but a reservation utility, he buys whenever $v-p\geq R$. 
+Define
+$$M(R) = \int_0^{p+v=R} (v-p)dF(p,v)$$ 
+
+moreover define $\pi(R) = \int_{R-p}^\infty \int_p F(p,v)dpdv$ the probability the search is the last one. 
+
+The reservation utility satisfies: 
+\begin{align*}
+        R &= (M(R)-s)\frac{1}{1-(1-\pi(R))} \\
+        &= \left( \int_0^R (v-p)dF(p,v)-s\right)\frac{1}{\pi(R))} 
+\end{align*}
+Then we have that $R^*$ solves: 
+\begin{align}\label{eq:reservation_utility}
+        R^* = \left( \int_0^{R^*} (v-p)dF(p,v)-s\right)\frac{1}{\pi(R^*))} 
+\end{align}
+
+
+Note that $R^*$ is the expected utility of searching. 
+
+Now additionally assume the buyer arrives to the market with an outside option which gives him utility $\theta$. Then there are two possibilities: 1) if $ R^*\geq \theta $ the consumer searches until finding a good with utility greater than  $R^*$ and 2) if $R^*<\theta$ the consumer does not search.
+
+Now assume that when requesting a quote the buyer bargains with the seller, specifically they maximize: 
+\begin{align*}
+    \max_p (p-c)^\alpha ((v_i-p) - R^*)^{1-\alpha}
+\end{align*}
+note that the buyer's outside option is $R^*$ because if he is already searching it means that upon disagreement he will continue searching and will not go back to his outside option. 
+
+If $v_i - c- R^*> 0$, there are gains of trade and the bargained price satisfies: 
+\begin{align}\label{eq:bargained_prices}
+    p_i=\alpha (v_i - R^*)+ (1-\alpha)c 
+\end{align}
+
+
+Note that in this model the outside option only determines the search/not search margin, but does not affect the negotiation with the seller. 
+
+Then we have that: 
+$v_i - p_i = v_i - \alpha (v_i - R^*)- (1-\alpha)c  = (1-\alpha)(v_i -c) +\alpha R^*$
+
+Given an exogenous cdf of valuations $G_v()$ we have: 
+
+\begin{align*}
+    Pr(v_i-p_i\leq r) = Pr\left(v_i \leq \frac{r-\alpha R^*}{1-\alpha}+c\right)= G_v\left( \frac{r-\alpha R^*}{1-\alpha}+c\right) \equiv G(r; R^*)
+\end{align*}
+
+
+Then we have that $R^*$ solves: 
+\begin{align}\label{eq:reservation_utility2}
+        R^* = \left( \int_0^{R^*} r \, \, dG(r; R^*) -s\right)\frac{1}{\pi(R^*))} 
+\end{align}
+
+we assume that the above equation has a solution.
+
+
+\subsection{Example}
+
+Assume $v_i - c - R^*>0$ and take $v_i \sim U[R^*+c, u]$ with $R^*+c< u$ then we have that 
+
+\begin{align}
+    g_v(r) = 
+    \begin{cases}
+        \frac{1}{u-R^*-c}, r\in [R^*+c, u]\\ 
+        0, \sim 
+    \end{cases}
+\end{align}
+then
+\begin{align}
+    G_v(r) =  
+        \frac{r-R^*+c}{u-R^*-c}, r\in [R^*+c, u]
+\end{align}
+
+Then $v_i - p_i = (1-\alpha)(v_i -c) +\alpha R^* \in [R^*, (1-\alpha)(u-c)+ \alpha R^*  \equiv \bar{u}] $
+Then for any $v_i - p_i  \in [R^*, \bar{u}] $ we have that: 
+\begin{align}
+    \Pr(v_i - p_i\leq r) = G_v\left(\frac{r-\alpha R^*}{1-\alpha} +c\right) = \frac{r-R^*+c(2-\alpha)}{(1-\alpha)(\bar{u}-R^*-c)}
+\end{align}
+
+
+
+\subsection{Endogeneize the outside option}
+
+Up until now there is only one buyer without any stochastic characteristic, but we want to introduce consumer heterogeneity to match the search heterogeneity observed in the data. Let's assume that consumers differ in their search cost $s$, moreover this cost is public. Then the reservation utility (equation \ref{eq:reservation_utility2}) is consumer specific $R^*(s)$. We assume that all the consumers have the same preferences over firms ($v_i$). 
+
+For now, to obtain a simple solution for the firm profits, assume that $R^*(s) \leq v_i-c, \forall i$, this assumption implies that in equilibrium the buyer searches only once. If this was not the case the buyer when meeting a seller with $R^*(s) > v_i-c$ would not reach an agreement. Given our assumption the firm profits are: 
+$\frac{1}{N} (p_i-c) =\frac{\alpha}{N} ( v_i - R^*(s)- c)$
+
+The previous assumption also implies that there is a threshold $\bar{s}$ and all the consumers with a search cost lower than it ($s\leq\bar{s}$) search and the remaining buyers choose their outside option. 
+
+\textbf{Proof:}
+
+If we define: $H(R)\equiv  \int_0^{R} r \, \, dG(r; R) -s - R = 0 $ from equation \ref{eq:reservation_utility2} we have that $H({R^*}) =0$
+Then $H_R = \frac{d}{dR} \int_0^R r dG(r;R) -1= R g(R;R)+\int_0^R r \frac{\partial }{\partial R \partial r}G(r;R) dr-1$ and $H_s = -1$, by the implicit function theorem we have:
+\begin{align*}
+    \frac{dR^*}{ds}= - \frac{H_s}{H_R} = \frac{1}{H_R} = \frac{1}{ R g(R;R)+\int_0^R r \frac{\partial }{\partial R \partial r}G(r;R) dr-1}
+\end{align*}
+
+FINISH THIS PROOF. 
+
+\vspace{2cm}
+
+
+Now we solve for the bids made in the first stage, which endogeneizes $\theta$. Denote by $b_i$ the prices offered in the first stage, then we have that the profits of firm $i$ are: 
+
+\begin{align*}
+\begin{cases}
+           \int_{A_i} (b_i-c) dF(s) + \int_{A_i^c} \frac{\alpha}{N} ( v_i - R^*(s)- c) dF(s), & v_i - b_i \leq v_j - b_j, \forall j \\
+           \int_{A_i^c} \frac{\alpha}{N} ( v_i - R^*(s)- c) dF(s) , &  v_i - b_i > v_j - b_j, \forall j
+\end{cases}
+\end{align*}
+
+where $A_i = \{s: R^*(s) \leq v_i-b_i\}$ and $A_i^c = \{s: R^*(s) > v_i-b_i\}$. Define the profits from the searchers as $\Lambda_i = \int_{A_i^c} \frac{\alpha}{N} ( v_i - R^*(s)- c) dF(s)$
+
+\vspace{2cm}
+
+If you increase $b_i$ there are two effects 
+Note that since the $b_i$ does not affect the profits derived from the searchers
+
+
+
+
+\vspace{3cm}
+
+\textcolor{red}{IN THIS MODEL WHO ENDS UP SELLING THE GOOD? DO CONSUMERS SEARCH MULTIPLE TIMES? OR DO THEY END UP SEARCHING ONLY ONCE?}
+
+
+
+
+
+
+Now we solve for the bids made in the first stage, which endogeneizes $\theta$. We assume that all the consumers have the same preferences over firms $v_i$ does not change, but they have different search costs, which generates different reservation utilities $R^*(s)$, denote by $b_i$ the prices offered in the first stage, then we have that the profits of firm $i$ are: 
+
+
+
+\textbf{Comments} 
+\begin{itemize}
+    \item In our case the number of firms that one can sample is finite, maybe we could include this by setting a limit to the number of firms to search, but then since there is no recall the reservation utility would change each time the buyer searches\footnote{For example with $N$ firms the $N$th sampling would have a reservation utility of $\theta$.}, it seems like this approach would complicate considerably the model. 
+
+    \item This model has several nice features: 
+    \begin{enumerate}
+        \item The outside option $\theta$ only affects the extensive margin of search, not the intensive margin. 
+        \item Incorporates in a parsimonious manner several features we wanted to incorporate in the model: 1) bargaining, 2) heterogenous valuations (firm specific $v_i$), 3) Nicely incorporates heterogeneity in valuations  
+    \end{enumerate}
+\end{itemize}
+
+
+
+\section{Basic search with bargaining}\label{sec:basic1}
+
+\begin{itemize}
+    \item We think consumers are not homogeneous because they receive different offers and hence firms perceive them as heterogeneous. Also, only some of them search.
+    \item What would happen if consumers are homogeneous?
+\end{itemize}
+
+Assume $N$ firms with marginal cost $0$.
+
+There is a firm-specific list price $p_i$, and a mass of consumers values the good at $v$.
+
+Consumers can pay $s$ to bargain with a firm at random, using the list price as an outside option.
+
+
+Denote by
+\[
+\underline{p} = \min\{p_j\}
+\]
+the lowest list price.
+
+
+When bargaining:
+\begin{itemize}
+    \item If $p_i = \underline{p}$, then one cannot improve the outcome\footnote{If more than one firm set the lowest list price $p_i = p_j = \underline{p}$ the buyer could always threaten to buy from the other firm. We assume that is not the case, which is equivalent to assuming that the buyer has no commitment power to commit to switch sellers.  }
+    \item If $p_i > P$, then
+    \[
+    \max_{p} p^\alpha [(v - p) - (v - \underline{p} )] = \max_{p} p^\alpha (\underline{p}  - p) \implies p(\underline{p} ) = \alpha \underline{p} 
+    \]
+    Firm $i$ outside option is not selling and the consumer is to buy from the other firm at price $\underline{p} $.
+\end{itemize}
+
+Then the consumer gains $\underline{p} - \alpha \underline{p}  = (1-\alpha) \underline{p} $
+
+
+Then, if there are $N$ firms, the expected gains of searching are:
+\[
+\underbrace{\frac{1}{N} \cdot 0}_{\text{bargains with lowest price firm}} + \underbrace{\frac{N - 1}{N} \cdot \underline{p}}_{\text{firm did not offer lowest price }} = \frac{N - 1}{N}(1 - \alpha)\underline{p}
+\]
+
+Then, the consumer searches iff: $\frac{N - 1}{N}(1 - \alpha)\underline{p}> s \implies \underline{p}> s \frac{N}{N-1(1-\alpha)}\equiv f(s)$. For  simplicity assume that in the case of indifference does not search. 
+
+Then firm $i$ profits are: 
+
+\begin{align}
+    \pi_i(p_i, p_{-i}) = 
+    \begin{cases}
+        p_i &, p_i < \underline{p} \land p_i \leq f(s) \\
+        0 &, p_i > \underline{p} \land \underline{p} \leq f(s) \\
+        \frac{p_i}{N} &, p_i \leq \underline{p} \land p_i > f(s)\\
+        \frac{(1-\alpha)\underline{p}}{N} &, p_i > \underline{p} \land \underline{p} > f(s) \\
+        \frac{p_i}{|\{j: p_j =\underline{p}\}|} &, p_i = \underline{p} \land p_i < f(s)\\      
+    \end{cases}
+\end{align}
+
+the first case is where the  firm offers the lowest price and the price is low enough to discourage search in which case the firm sells, in the second case other firm offers the lowest price and this price discourages search, in the third 
+case $i$ offers the lowest price but there is search and in the fourth case other firm offers the lowest price and there is search. 
+
+Note that when the buyer searches it is "useful" to be the firm that set the lowest posted price because it provides bargaining power since implies that the outside option of the buyer is the same firm.  
+
+There are two symmetric equilibria in pure strategies. Denote by $p^*$ the price everyone is playing in this equilibria. 
+\begin{enumerate}
+    \item If $p^* >f(s)$ then there is search and the profits are $p^*/N$ if a firm deviates to a price higher than $f(s)$ nothing changes since there is still search. But the firm can deviate to $p^*=f(s)$ in which case captures the whole market and makes a profit $f(s)$ hence this equilibrium is sustainable iff $p^*> N \cdot f(s)$. This result is similar to Diamonds' paradox, any strictly positive (not matter how small) search cost allows firms to escape the Bertrand paradox. 
+    
+    \item There is a second equilibrium without search in which $p^*\leq f(s)$ note that any deviation to a price higher than $f(s)$ is unprofitable since consumers do not search. The only equilibrium here is a Bertrand equilibrium, if the minimum price where to be positive there is an incentive to undercut. 
+\end{enumerate}
+
+\textbf{Commentary}
+
+In this model of posted prices the possibility of searching, even in the presence of an initial stage with posted prices,  allows to escape the Bertrand paradox. 
+
+Hence removing the aftermarket has a positive effect on consumer welfare. 
+
+
+\newpage
+
+\textbf{Mixed strategy equilibria }
+
+
+Assume $F(p)$ with support on $[a,b]$\footnote{The support has to be convex, if it has values in between that are not in the support one of this points will generate higher profits. E.g. if it were $[a,b] \cup [c,d]$ with $c>b$ then $(c+b)/2$ generates higher profits than $b$ because there can be no mass at $b$.}, without atoms or masses in a point.
+
+\begin{itemize}
+    \item Claim: $F(s) \notin [a,b]$
+ 
+
+\textbf{Proof:} If $p_i = f(s)$ then profits are:
+
+\[
+\underbrace{[1 - F(f(s))]^{N-1} \cdot p_i}_{\text{everyone sets higher price}} + 
+\underbrace{(1 - \left[1 - F(f(s))\right]^{N-1}) \cdot 0}_{\text{someone sets lower price}}
+\]
+
+
+If $p_i = f(s) + \varepsilon$ then profits are lower than
+
+\[
+[1 - F(f(s))]^{N-1} \cdot \frac{(1 - \alpha)}{N} \cdot \max(f(s)+\varepsilon,\; f(s))
+\]
+which is lower than with  $p_i = f(s)$ (case 1). Then either $[a,b < f(s)]$ or $[f(s)< a,b]$ (case 2). 
+
+\item Claim: In case 1, it is a Bertrand game hence there is no equilibria with positive prices. 
+\end{itemize}
+
+\textbf{Proof:} first note that there are no masses at any point bigger than $a$ because if $\Pr(p_i = x) > 0$ then $\pi(x) < \pi(x-\epsilon)$. Then, there is no mass at $b$ which implies that $\pi(b) = 0$ because $F(b) =1 $ and the $\Pr(p_j \geq p_i| p_i = b) =  0 $. hence all points generate zero profits then $b =0 $ if $b> 0$ we would have $\pi(b/2) > 0$. 
+
+
+\section{Basic search with bargaining (2.0)}
+
+
+Assume $N$ firms with marginal cost $0$.
+
+There is a firm-specific list price $p_i$, and a mass of consumers values the good at $v$.
+
+Consumers can pay $s$ to bargain with a firm at random, using the list price as an outside option.
+
+
+
+Denote by $\underline{p} = \min\{p_j\}$  the lowest list price and $\ell = |\{i: p_i = \underline{p}\}|$ the number of firms offering the lowest price. 
+
+
+When bargaining with firm $i$:
+\begin{itemize}
+    \item If $p_i = \underline{p}  \land \ell =1 $, then one cannot improve the outcome\footnote{The outside option of the buyer is to accept the list price of the same firm.}
+    
+    \item If $p_i >  \underline{p} \ \lor \ell > 1  $, then
+    \[
+    \max_{p} p^\alpha [(v - p) - (v - \underline{p} )] = \max_{p} p^\alpha (\underline{p}  - p) \implies p(\underline{p} ) = \alpha \underline{p} 
+    \]
+    Firm $i$ outside option is not selling and the consumer is to buy from the other firm at price $\underline{p} $\footnote{Note that if $\ell > 1$  the consumer can always threaten to buy from one of the other firms that posted a low price.}. In this case the consumer's gains of bargaining are:  $\underline{p} - \alpha \underline{p}  = (1-\alpha) \underline{p} $
+\end{itemize}
+
+Then the expected gains of searching when $\ell =1$ are:
+\[
+\underbrace{\frac{1}{N} \cdot 0}_{\text{bargains with lowest price firm}} + \underbrace{\frac{N - 1}{N} \cdot \underline{p}}_{\text{firm did not offer lowest price }} = \frac{N - 1}{N}(1 - \alpha)\underline{p}
+\]
+and if $\ell> 1$ they are:  $ (1 - \alpha)\underline{p} $
+
+Then if $\ell>1$ the buyer searches if $ (1 - \alpha)\underline{p}>s \implies \underline{p}>  \frac{s}{(1-\alpha)}\equiv f(s,2)$
+
+Then if $\ell = 1$ the buyer searches if $ \frac{N - 1}{N}(1 - \alpha)\underline{p}>s \implies \underline{p}>  \frac{s\cdot N}{(N-1)(1-\alpha)}\equiv f(s,1)$
+
+For simplicity we are assuming that in case of being indifferent does not search. 
+
+Denote by $\underline{p}_i = \min(p_{-i})$. Then firm's $i$ profits are: 
+
+\begin{align}
+    \pi_i(p_i, \underline{p}_i ) = 
+    \begin{cases}
+        p_i &, p_i < \underline{p}_i \land p_i \leq f(s) \\
+        \frac{p_i}{\ell} &, p_i = \underline{p}_i \land \underline{p}_i \leq f(s) \\
+        0 &, p_i > \underline{p}_i \land \underline{p}_i  \leq f(s)\\
+        \frac{\underline{p}_i }{N} &, p_i < \underline{p}_i \land p_i > f(s) \\
+        \frac{(1-\alpha) \cdot \underline{p}_i }{N} &, p_i \geq \underline{p}_i \land \underline{p}_i > f(s)\\      
+    \end{cases}
+\end{align}
+
+In the first three cases there is no search, in the first one since $i$ offers the lowest price he is the seller, in the second one there is a tie in terms of lowest price hence they split the market and in the third case other firm offers the lowest price. 
+
+In the two last cases there is search, the difference is whether when disagreeing the buyer buys from the same firm (case 4) or goes to another one (case 5). 
+
+
+\section{Basic search with bargaining(3.0)}
+
+In our previous model (see section \ref{sec:basic1}) we showed that in an environment where firms post a price and then buyers decide whether to buy or to bargain, the mere possibility of bargaining allows firms to escape the Bertrand paradox and the aftermarket has negative effects on consumer welfare. 
+
+In this section we propose a second model where the aftermarket has a positive effect on consumer welfare. 
+
+To highlight the mechanisms by which the aftermarket increases consumer welfare, consider one buyer and one seller\footnote{Is the case in which products are differentiated and the buyer only wants to buy a particular product}. The buyer has a valuation $v$ for the product and there is zero marginal cost. Without the aftermarket the price is $v$. 
+
+With an aftermarket initially the seller posts a price $p$, then the buyer can pay a bargaining cost $s$ and bargain, in which case he gets 
+
+\textcolor{red}{MY INTUITION IS THAT IF THERE IS DIFFERENTIATION AND MARKUPS ARE VERY BIG, THEN, BARGAINING ALLOWS TO PASS POWER TO THE BUYER. }
+
+
+\end{document}

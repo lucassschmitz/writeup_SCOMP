@@ -1,0 +1,225 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=1.252in,bmargin=1.252in,lmargin=1.2in,rmargin=1.2in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [rectangle, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+\tikzstyle{mechanism} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+ 
+
+\newpage
+ \title{{\Large Repeated purchases through Framerwork Agreements}}
+\author{Lucas Schmitz\thanks{Yale University \texttt{lucas.schmitz@yale.edu}}} 
+\date{}
+\maketitle
+
+
+\section{ Part 0: Institutional Context} 
+
+Chile’s public procurement is centralized under \textit{Chile Compra}, which operates an online platform, \textit{Mercado Público}.\footnote{This description draws heavily on \textcite{castro_estudio_2020}.}  All state-related entities—hospitals, ministries, public universities, and other government agencies—must use this platform to purchase goods and services.  Henceforth, I refer to these entities simply as \textit{agencies}.
+
+The platform channels roughly USD 10 billion in annual purchases through four procurement mechanisms: public tenders, framework agreements (FAs), direct deals, and private tenders.  These mechanisms account for  55\%, 25\%, 20\%, and less than 1\% of total expenditure, respectively.
+
+Framework Agreements (FAs) cover standardized goods that public bodies purchase repeatedly—for instance, fuel for the government vehicle fleet. Each FA is administered by the central procurement agency, \textit{Chile Compra}, which  selects a limited set of suppliers through  auction; we label this supplier selection the \emph{first stage}. After the auction, \textit{Chile Compra} opens an online marketplace where affiliated entities—such as hospitals and public universities—can place orders from the approved catalogue whenever needs arise. Transactions on this platform constitute the \emph{second stage}.
+
+An FA remains in force for three to five years, and its marketplace typically becomes operational about six months after the first‐stage auction. Products are organized hierarchically. In the vehicle FA, for example, units are first classified as heavy, medium, or light, and light vehicles are further divided into SUV, pick-up, sedan, and hatchback sub-categories.
+
+With rare exceptions, an agency requiring a product covered by an FA must source it through the corresponding marketplace. Suppliers, in turn, pledge not to sell the same items to public buyers at prices below their winning bids, making it incentive compatible for agencies to transact through the FA.
+ 
+
+In the Chilean context, there are two different mechanisms used during the auction stage. The first mechanism involves pre-selecting a fixed number of suppliers who are permitted to offer their products in the marketplace, often based on the lowest prices. For example, the two lowest-priced suppliers may be selected. The second mechanism sets a maximum permissible overprice relative to the lowest bid, typically with a threshold of 10\%. Under this mechanism, any bid lower than 1.1 times the lowest price qualifies for entry into the marketplace.
+
+ 
+Also a particular feature of FAs is that firms can make discounts in the marketplace, but they can not raise their prices over the prices they bid in the auction. Thus, the first stage bid acts as a price ceiling in the second stage.  Hence if there is an exogenous shock that raises costs, firms will raise prices up to their price ceiling. If the shock is big enough to make the price ceiling a binding constraint for all firms, the firm with the lowest firs stage bid will end up offering the lowest price and selling the price at a loss. In practice this creates a winner's curse (\cite{gur_framework_2017}). 
+
+
+Given the heterogeneity of products being procured, we will focus on the purchase of motorized vehicles. There have been four FAs that include the purchase of vehicles \footnote{The codes of the FAs, in chronological order, are: 
+\href{ https://www.chilecompra.cl/2014/09/licitacion-de-cinco-convenios-marco-buscan-amplia-participacion-de-empresarios-de-diferentes-rubros/}{ID 2239-20-LP13}, \href{https://www.chilecompra.cl/2017/05/nueva-licitacion-de-convenio-marco-para-la-adquisicion-y-arriendo-a-largo-plazo-de-vehiculos-motorizados-incorpora-opciones-para-hacer-mas-eficiente-la-adquisicion-y-uso-de-los-vehiculos/
+}{2239-4-LR17}   , 2239-5-LR21 and 2239-8-LR23.}. This agreements were signed in  2013, 2017, 2021 and 2023. The first two agreements also included  additonal services like the maintenance of vehicles and their leasing. The last two only include the purchases of vehicles.
+
+
+\section{ Part 1: Research Ideas} 
+
+
+\subsection{Problem/environment definition }
+
+\textbf{Demand Side: describe the decisions demand agents  make and why these decisions matter economically.}
+ 
+ \begin{itemize}
+     \item \textbf{Objective function: Specify clearly what households aim to maximize. Example: Households maximize utility by choosing consumption, labor supply, or educational investments.}
+
+    \item \textbf{Constraints: detail constraints such as budget constraints, time limitations, informational constraints, or regulatory restrictions.}
+
+    \item \textbf{Decision variables: what choices households make }
+
+    Buyers are local government agencies. The needs of each agency induce preferences, for example a hospital that treats cancer needs medical devices, and a university might need a pickup for some daily operation.
+
+    Buyers are restricted to use the online marketplace to acquire the vehicles they need for their operations. They decide which vehicle specifically to buy. In modeling terms, we assume that the constraints and induced preferences of the agencies generate an agency level demand. 
+
+    
+ 
+ \end{itemize}
+
+
+\textbf{Firm Problem (Supply Side)
+ Clearly describe how firms make decisions in this market context.}
+ \begin{itemize}
+     \item \textbf{Objective function: Specify what firms aim to achieve. Example: Firms maximize profits by choosing the quantity to produce, prices to set, or investment levels.}
+
+     \item \textbf{Constraints: specify production technologies, input costs, and regulatory or market constraints faced by firms.}
+ \end{itemize}
+Firms are profit maximizer. Firms have a set of products, and they make two pricing decisions. In the auction stage they choose the bidding price and in the marketplace they choose selling prices constrained by the fact that the marketplace prices can not be greater than the bids of the auction. 
+
+\textbf{Equilibrium Definition Clearly state how the market reaches equilibrium.}
+\begin{itemize}
+    \item \textbf{Describe how demand and supply interact to determine market equilibrium (e.g., prices adjust to clear markets).}
+
+    \item \textbf{Specify conditions for equilibrium (e.g., market-clearing condition: demand equals supply)}
+\end{itemize}
+
+Equilibrium in the auction stage requires prices to satisfy optimality condition, where there is a tradeoff between being selected and selling in the marketplace with a low-price ceiling. Decreasing the bid (offering lower prices) increases the probability of being selected, but decreases the expected profits in the marketplace since it decreases the price ceiling. 
+
+Equilibrium in the marketplace is given by a Nash-Bertrand equilibrium subject to the price-ceilings determined in the auction stage. 
+
+
+
+\textbf{Social Planner Problem:   planner’s objective and their tools to address market failures.}
+
+\begin{itemize}
+    \item \textbf{Objective: Define clearly whether the planner aims for efficiency, equity, or a combination of goals. Example: Maximizing total social welfare or reducing inequality.}
+
+    \item \textbf{Policy instruments: Clearly identify available policy tools, such as taxes, subsidies, direct regulations, or quota systems.}
+
+    \item \textbf{Market design problem: Clearly articulate the problem faced by the planner in designing market interventions}
+\end{itemize}
+ 
+The social planner faces a market design problem where he has to choose the rules to select the firms that will compete in the marketplace.  We think there are two margins that are interesting to study. 
+First,  one question is what are the effects of changing the number of firms selected to compete in the marketplace. One intuition is that by increasing the number of firms one increases competition in the marketplace therefore decreassing profits hence making the auction less competitive. This intuition is not necessarily true because of the price ceilings. Modeling this effects seems like an interesting area of research. Moreover, a second margin in which one could adjust the selection rules is by considering the product characteristics in the selection phase. Presumably agencies value variety in the marketplace, if so, taking product variety into account in the selection of the firms might prove fruitful. 
+
+    
+
+ \textbf{Frictions Clearly outline specific market frictions and their economic implications.}
+
+\begin{itemize}
+    \item \textbf{Explicitly state the friction (e.g., information asymmetry, externalities, transaction costs).}
+
+    \item \textbf{Clearly explain why these frictions prevent socially optimal outcomes}
+\end{itemize}
+
+Although, probably there are agency problems, at least intiially, we plan to abstract from them. We do not think there is any other important friction. 
+
+\subsection{ Policy or Intervention Proposa}
+
+\textbf{Clearly define a realistic policy designed to mitigate the identified frictions. Provide a specific example of how the policy works practically (e.g., a subsidy
+ to encourage renewable energy adoption)}
+
+ 
+Our policy interventions are the ones previously explained: changing the number of firms to select for the marketplace and/or including product characteristics in the auction stage. 
+
+\subsection{ Empirical Strategy and Credible Evidence}
+
+\textbf{Clearly describe empirical patterns (“smoking gun”) you expect if your theory is correct. Identify credible empirical methods, such as natural experiments, regression discontinuity designs, or instrumental variable approaches}
+
+There is evidence of agencies buying different products of different prices. Which proves there is demand heterogeneity among the agencies. We would like to estimate their demand and then estimate the auction stage and recover 1) preferences and 2) firm  costs to be able to simulate counterfactual selection rules.  
+
+\subsection{ Estimation Strategy and Auxiliary Data}
+
+\textbf{Outline your econometric approach and identify the administrative data required. Describe additional data sources (e.g., census data, labor surveys) and ideal surveys you would conduct to enhance your empirical analysis.}
+
+Our work requires three types of data: 
+
+\begin{itemize}
+  \item \textbf{Purchase Data:}  All vehicle transactions through FAs (2017-2024) including buyer (agency type, location), seller, product (type, model) and prices. This data is publicly available. 
+  \item \textbf{Auction Data:}  Bids from 3 vehicle FAs (2017, 2021, 2023), including bidder identity, bids, date of bid, product (model, category, region) and list prices. With the exception of list prices this data is publicly available, we are in conversations with \textit{Chile Compra} to get the list prices. 
+  \item \textbf{Web-scraped data:} product characteristics (work in progress)
+\end{itemize}
+
+
+\section{ Part 2: Data Acquisition Practice}
+
+The list prices are  not public, it might be able to get them through a FOIA request, but I contacted a professor (Andres Gonzalez) who has an agreement with the procurement agency and he made me part of his team to get the data. Currently I am in conversations with the people in charge at the agency to get the data, see the two pictures for proofs of the email conversations. 
+
+\newpage 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/FA_mail1.png}
+    %\caption{Enter Caption}
+    \label{fig:enter-label}
+\end{figure}
+
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/FA_mail2.png}
+    %\caption{Enter Caption}
+    \label{fig:enter-label}
+\end{figure}
+ 
+\end{document}

@@ -1,0 +1,316 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+ 
+% \title{{\Large Centralized annuities marketplace}}
+%\author{Lucas Condeza\thanks{Yale University %\texttt{lucas.schmitz@yale.edu}}} 
+%\date{}
+%\maketitle
+
+
+\subsection{Data}
+
+We should know 
+\begin{itemize}
+    \item What share of people request outside offers 
+    
+    \item When requesting outside offers how many do they request? get that distribution $\rightarrow$ is it important to include the possibility of multiple offers in the model? 
+
+    \item After requesting the outside offer, what share of people accept an outside offer and how many the inside offer? 
+    
+    \item From whom do they require outside offers? from the highest initial offer or from others? 
+
+    \item If it is bargaining then most people when searching would not go to the best first stage offer because they would not get a good offer (see assumption 3). 
+\end{itemize}
+
+ 
+
+\subsection*{Model}
+There is one buyer who has a unit of savings that she wants to annuitize, there are  $N$ sellers (indexed by $j$). 
+
+The sellers are differentiated, denote by $c_j$ the cost of providing the annuity\footnote{Cost heterogeneity arises due to different financing costs or  different beliefs about the life expectancy of the buyer. If it is the latter one could argue that competitors' offers reveal information about the life expectancy, but given the long history of millions of prior offers we assume is not the case.}, which is publicly known.
+
+The seller valuation of $j$'s annuity at price $p_j$ is: 
+
+\begin{align*}
+   u_j(p_j) =  \delta_j - p_j
+\end{align*}
+where $\delta_j$ rationalizes differences in terms of customer service or credit rating %and $\varepsilon_j$ is an idiosyncratic taste. 
+
+In the first stage the sellers make an offer $p_j$\footnote{Note that in our case prices are consumer specific, but this extends to markets where sellers posts a price.}. The buyer then can either accept the offer or reject the offer.   If the buyer rejects the offer she can bargain with one of the sellers, to bargain she has to pay a fixed cost of $F$ distributed with a CDF G(). Denote by $p_{bj}$ the second stage bargained price if the buyer bargains with seller $j$ and $p_b$ the equilibrium second stage bargained price. 
+
+For simplicity we consider that the bargaining weights are $\frac{1}{2}$, this simplifies the expressions and can easily be changed afterwards. 
+
+
+\subsubsection*{A1: the bargaining is always with the firm that provides highest utility in the first stage}
+
+Then in the second stage the buyer and seller set a price $p_{bj}$ given by: 
+
+\begin{align}\label{eq:1}
+p_{bj}= \underset{p}{\arg \max} [(p-c_j) - (p_j - c_j) ]  [(\delta_j - p) - (\delta_j - p_j)]  = [p - p_j]  [p_j - p]  
+\end{align}
+
+Note that in \ref{eq:1} we have two problems, the gains of trade for both can not be positive. To have positive gains of trade we need to have a positive probability that the outside option of the buyer is not the firm with which he is bargaining. 
+
+
+
+\subsubsection*{A2: the bargaining is always with the firm that provides the lowest price in the first stage}
+
+WLOG $1$ offered the lowest price and $j$'s offer generates the highest utility. Then if $j =1$ there is no GOT hence we are in the case of Assumption 1. If $j \neq 1$ we have: 
+
+
+\begin{align}\label{eq:2}
+p_b = \underset{p}{\arg \max} [(p-c_1) - 0 ]  [(\delta_1 - p) - (\delta_j - p_j)] 
+\end{align}
+Hence $p_b = \frac{\delta_1 - \delta_j + p_j + c_1}{2}$ 
+
+The problems here are 1. why would the buyer go to bargain with the lowest price firm. 
+
+
+\subsubsection*{A3: the buyer bargains with the firm with whom maximizes utility}\label{sec:A3}
+
+Order firms in terms of $\delta_j - c_j$ such that $\delta_1 - c_1>\delta_2 - c_2>...>\delta_N - c_N$. We call $\delta_j-c_j$ the potential surplus, since is the consumer surplus the seller can generate by pricing at marginal cost.  
+
+WLOG firm $j$ provided the highest utility in the firs stage. If the buyer bargains with $k\neq j$, the price solves: 
+
+
+\begin{align}\label{eq:3}
+p_{bk} = \underset{p}{\arg \max} [(p-c_k) ]  [(\delta_k - p) - (\delta_j - p_j)]  
+\end{align}
+
+Then: 
+\begin{align*}
+p_{bk} = \frac{\delta_k - \delta_j + p_j + c_k}{2}
+\end{align*}
+which implies: 
+\begin{align*}
+u_{bk} = \delta_k - p_{bk} 
+= \frac{1}{2}(\delta_k + \delta_j - p_j - c_k) \\[1em]
+\pi_k = \frac{1}{2}(\delta_k - \delta_j + p_j - c_k)
+\end{align*}
+
+
+
+If the firm were to bargain with firm $j$, firm $j$  would know that the buyer's outside option is to buy the initial offering made by $j$, hence they would not make a better offer. Essentially the bargained price solves: 
+
+\begin{align}\label{eq:4}
+p_{bj} = \underset{p}{\arg \max} [(p-c_j) - (p_j-c_j) ]  [(\delta_j - p) - (\delta_j - p_j)]  = \underset{p}{\arg \max} [p - p_j]  [p_j - p]  
+\end{align}
+
+Hence the Nash product can not be positive. Meaning that when bargaining in the second stage the buyer will never choose to bargain with the firm that provided the highest benefit in the first stage. 
+
+Denote by $k^*$ the seller with whom the buyer chooses to bargain. Then $k^* = \{k: \delta_k-c_k > \delta_l - c_l, \forall l\neq j, k \}$. Hence the buyer bargains with the seller that has the highest potential surplus ignoring the buyer that made the best offer in the first stage. 
+
+Hence the buyer bargains iff: 
+
+\begin{align*}
+u_{bk^*} - (\delta_j - p_j) - F \geq 0 \implies
+\frac{1}{2}(\delta_{k^*} + \delta_j - p_j - c_{k^*}) 
+ - (\delta_j - p_j) - F \geq 0 \implies \frac{1}{2}(\delta_{k^*} - \delta_j +p_j - c_{k^*})  \geq F
+\end{align*}
+
+Then the probability of bargaining is  $G\left(\frac{1}{2}(\delta_{k^*} - \delta_j + p_j - c_{k^*}) \right)$
+
+\textbf{Lemma 1:} in the first stage the best offer (highest $\delta_j - p_j$) is offered by firm 1 or firm 2. 
+
+Proof: If it is offered by firm $j>2$, since $j$ makes a profit we need $ p_j -c_j >0 $ and firm 2 does not make a profit (because in the bargaining stage the buyer will bargain with firm 1). Firm 2 could deviate and offer $p_2(\epsilon) = \delta_2 - (\delta_j - p_j)  - \epsilon$ which would be chosen by the buyer for any $\epsilon>0$ and we have that the profits, when the buyer accepts the offer, would be $\delta_2 - (\delta_j - p_j)  - \epsilon -c_2 $. Since $\delta_2 - c_2>(\delta_j - p_j) $, there is a $\epsilon$ such that the deviation is profitable. 
+
+
+\vspace{1cm}
+
+Then we have two equilibria, 1 makes the best first stage offer and when bargaining the buyer bargains with 2 and the opposite case.
+Take the case where $p_j = c_j, \forall j>2$. 
+
+
+Assume that 1 makes the first stage offer then we have that the profits are: 
+\begin{align}
+    \pi_1(p_1) =\left[ 1-G\left(\frac{1}{2}(\delta_{2} - \delta_1 + p_1 - c_{2}) \right)\right](p_1 -c_1)
+\end{align}
+where 
+\begin{align}
+\frac{\partial \pi_1}{\partial p_1}
+&= -(p_1 - c_1)\,\frac{1}{2}\,
+   g\!\Bigl(\tfrac{\delta_2 - \delta_1 + p_1 - c_2}{2}\Bigr)
+   + \Bigl[1 - G\!\Bigl(\tfrac{\delta_2 - \delta_1 + p_1 - c_2}{2}\Bigr)\Bigr]
+   = 0.
+\end{align}
+
+with the restriction that $p_1 \leq \delta_1 - \delta_3+c_3$
+
+And firm 2 profits are: 
+\begin{align}
+    \pi_2(p_1) = G\left(\frac{1}{2}(\delta_{2} - \delta_1 + p_1 - c_{2})\right) \frac{1}{2}(\delta_2 - \delta_1 + p_1 - c_2)
+\end{align}
+
+Define $\bar{p}_2(p_1)$ the price that solves: 
+
+Note that firm 2 could deviate and make the best offer in the first stage, for this not to happen we require $\delta_2 - \bar{p}_2(p_1)<\delta_1 -p_1$ where $ \bar{p}_2(p_1)$ is the price at which 2 is indifferent between winning the first stage or being the seller that bargains and is given by: 
+\begin{align}
+    \pi_2(p_1) =  \left[ 1-G\left(\frac{1}{2}(\delta_{1} - \delta_2 + \bar{p}_2(p_1) - c_{1}) \right)\right](\bar{p}_2(p_1) -c_2)
+\end{align}
+ 
+
+
+
+
+\vspace{3cm}
+If the 
+% LaTeX code for the FOC when \(G(x)=x\) (Uniform(0,1) CDF) and \(g(x)=1\):
+\begin{align}
+\frac{\partial \pi_1}{\partial p_1}
+&= -(p_1 - c_1)\,\frac{1}{2}\cdot 1
+  + \Bigl[1 - \tfrac{\delta_2 - \delta_1 + p_1 - c_2}{2}\Bigr]
+  = 0
+\end{align}
+
+\begin{align}
+p_1 &= \frac{c_1 + c_2 + \delta_1 - \delta_2 + 2}{2}.
+\end{align}
+
+
+
+
+\vspace{3cm}
+
+
+\textbf{Analysis}
+Assumption 3 achieves a parsimonious model where some people search. The issues with this 
+
+
+
+\vspace{3cm}
+\subsection*{Assumption 4: the bargaining is at random}
+
+Just as previously in \ref{sec:A3} we order firms such that $\delta_n - c_n>\delta_{n+1} - c_{n+1}$.
+
+
+Consider the case where $j$ provided the highest utility in the firs stage. As before, when bargainig with $ k \neq j$ we have: the price solves: 
+
+
+
+Then: 
+\begin{align*}
+p_{bk} = \frac{\delta_k - \delta_j + p_j + c_k}{2} ,\quad u_{bk} = \frac{1}{2}(\delta_k + \delta_j - p_j - c_k), \quad \pi_{bk} = \frac{1}{2}(\delta_k - \delta_j + p_j - c_k)
+\end{align*}
+
+whereas when bargaining with firm $j$ the buyer chooses the first stage offer. 
+
+We assume that the consumer chooses a buyer with whom to bargain at random. 
+
+Hence the buyer's expected utility when bargaining is: 
+$$ \frac{1}{N}\sum_{k} u_{bk} = \frac{1}{2}(\delta_j - p_j + \bar{\delta} - \bar{c})$$
+
+where $\bar{x}$ denotes the average across firms for variable $x$. 
+Then the buyer bargains iff $\frac{1}{2}(\delta_j - p_j + \bar{\delta} - \bar{c}) - (\delta_j - p_j) - F \geq 0 \implies 
+\frac{1}{2}(\bar{\delta} - \bar{c} - (\delta_j - p_j)) \geq F$ which happens with probability $G(\frac{1}{2}(\bar{\delta} - \bar{c} - (\delta_j - p_j)))$.
+
+Now, solving for the first stage equilibrium prices. 
+
+The best offer gets a profit of: 
+
+\begin{align*}
+    \left[1-G \left(\frac{1}{2}(\bar{\delta} - \bar{c} - (\delta_j - p_j))\right)\right] (p_j - c_j)+ G \left(\frac{1}{2}(\bar{\delta} - \bar{c} - (\delta_j - p_j))\right) \frac{1}{N}( p_j -c_j ) \\  \left[1-\frac{N-1}{N}G \left(\frac{1}{2}(\bar{\delta} - \bar{c} - (\delta_j - p_j))\right)\right] (p_j - c_j)
+\end{align*}
+
+\vspace{2cm}
+
+
+
+
+
+
+\subsection*{Assumption 5: the bargaining is at random}
+
+If we take the model given by assumption 3, one of the problems is that consumers buy only from the two firms with the highest $\delta_j - c_j$. But in the data we probably will observe more heterogeneity, hence we need to add a random shock. $u_j = \delta_j - p_j + \epsilon_j$, note that the taste shock is not known by the firm, otherwise we return to the previous model. The issue is that if we add this taste shocks we generate selection into the bargaining, hence we will make the strong assumption that this errors are not known when making the initial offers but are revealed when bargaining. Moreover the buyer pays a fixed cost and then is randomly assigned to bargain with one of the sellers, which eliminates selection. 
+
+Define $\hat{\delta}_j = \delta_j + \epsilon_j$, then in the bargaining stage with seller $j$ we have:  
+
+\begin{align*}
+    p_{bk} = \frac{\hat\delta_k - \hat\delta_j + p_j + c_k}{2} ,\quad u_{bk} = \frac{1}{2}(\delta_k + \delta_j - p_j - c_k), \quad \pi_{bk} = \frac{1}{2}(\delta_k - \delta_j + p_j - c_k)
+\end{align*}
+
+\subsection{Options}
+\begin{itemize}
+    \item Is the fixed cost paid before or during the bargaining
+\end{itemize}
+
+
+\section{Connection to previous literature}
+
+\section{Allen et al. }
+\begin{itemize}
+    \item \textbf{How is it that they model the search? Specifically if a consumer decides to search, do they meet the next seller at random? }
+
+
+    
+\end{itemize}
+
+
+\end{document}

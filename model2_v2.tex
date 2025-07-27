@@ -1,0 +1,310 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+ 
+
+
+\section{Basic sequential search model}
+
+There is an homogeneous good and a  buyer values it at $v$, the buyer has a per-search cost $s$. There's a distribution of prices $F(p)$. The buyer initially is presented with a price drawn from $F(p)$ he can decide to buy or to pay a search cost and be presented with a new price. 
+
+The optimal strategy is to set a reservation price $R$ such that if the price is lower the buyer buys the good and if the presented price is higher then it continues searching. 
+
+
+Following Stahl(1989), if the buyer is presented with price $z$ and upon searching he finds price $p$, his gains will be: 
+
+$$
+CS(p; z) = \int_p^z x dx  = z-p
+$$
+
+Then the ex-ante (expected) benefit of searching is
+\[
+ECS(z) = \int_b^z CS(p; z)\, dF(p)
+= \int_b^z (z - p)\, dF(p)
+\]
+where $b$ is the lower bound of the price distribution. 
+
+Then the reservation price $R$ satisfies:
+$$ECS(R) = s$$
+meaning that the expected gain of searching (LHS) equals the cost of an additional search, which can be rewritten as 
+\begin{align}\label{eq:sequential1}
+     \int_b^R (R - p)\, dF(p) = s 
+\end{align}\footnote{this condition can also be written as $R \cdot F(R) - \int_b^R p\, dF(p)
+= s
+ \implies R \cdot F(R) - \int_b^R p\, dF(p)  \frac{F(R)}{F(R)}
+= s  \implies R \cdot F(R) - \mathbb{E}(p|p\leq R) F(R) = s \implies R = \mathbb{E}(p|p\leq R) +  \frac{s}{F(R)} \implies v-R = v- \mathbb{E}(p|p\leq R) -  \frac{s}{F(R)}  $ where the LHS is the utility of buying at price $R$ and the RHS is the valuation minus the expected price to pay if the reservation price is R minus the expected number of searches to find a price lower than R. }
+
+
+\section{Searching with bargaining and an outside option}
+
+
+Following the basic model of sequential search, consider the case where 1) the valuation is firm specific ($v_i$) and 2) the buyer when finding a firm bargains with the firm over the price ($p_i$) and 3) the buyer has an outside option that gives him utility $\theta$\footnote{This features will allows us to answer to Rothschild's critique, the previous model was subject to Diamond's paradox whereas we will show that this model is not. Moreover, including firm specific valuations  is crucial to create price dispersion, if we only introduce bargaining without valuation heterogeneity we avoid Diamon's paradox but we still would have a signle price. }. Finally we assume the buyer has to pay the search cost even to get the first quote\footnote{Most search models assume that the first quote is \textit{free}}. 
+
+Consider that $(p,v)$ is jointly distributed according to $F(p,v)$, and define $G(x)$ the utility distribution implied by $F(p,v)$, then: 
+
+\begin{align*}
+    G(x) = \int_{v= x+p}^\infty \int_{-\infty}^{+\infty} v-p \quad dF(v,p) 
+\end{align*}
+
+The optimal strategy in this environment will no longer be a reservation price, but a reservation utility R. We follow the same logic as before to find the optimal R. If the buyer found a firm that gives utility $z$ and the next draw is a firm with utility $u$ then the gain of search is: 
+\[
+CS(u; z) = u - z
+\]
+
+then the expected gain of searching is: 
+Then
+\[
+ECS(z) = \int_z^{+\infty} CS(u; z)\, dG(u)
+= \int_z^{+\infty} (u - z)\, dG(u) = s
+\]
+Then, the reservation utility satisfies: 
+
+\begin{align}\label{eq:res_utility}
+    \int_R^{+\infty} (u - R)\, dG(u) = s    
+\end{align}
+
+Which is equivalent to: 
+\begin{align}\label{eq:res_utility2}
+    %\int_R^{+\infty} (u - R)\, dG(u) &= s \\
+    %\frac{\int_R^{+\infty}   dG(u)}{\int_R^{+\infty}  dG(u)}\int_R^{+\infty} u \,   dG(u) - \int_R^{+\infty} R \, dG(u) &= s \\
+    %[1-G(R)]E[u|u\geq R] - \int_R^{+\infty} R \, dG(u) &= s \\
+    %[1-G(R)]E[u|u\geq R] - R [1-G(R)] &= s \\
+    %E[u|u\geq R] - R &= \frac{s}{1-G(R)} \\
+    R &=E[u|u\geq R]- \frac{s}{1-G(R)} 
+\end{align}
+
+Equation \ref{eq:res_utility2} defines a reservation utility as a function of the search cost, $R(s)$, which states that a buyer who is offered a utility of R is indifferent between accepting or continue his search using reservation utility R in which case in expected value when finding an acceptable option will get a utility $E[u|u\geq R]$ but will have to pay an expected search cost of $\frac{s}{1-G(R)}$. 
+
+
+Note that $R$ is the expected utility of searching. 
+
+Given our assumption that the buyer has to pay the search cost even to learn about the first quote the optimal strategy is to search if  
+$ R\geq \theta $ and to take the outside option if $R<\theta$\footnote{Once the consumer decides to search will not go back to take the outside option.}. 
+
+Now, we endogeneize the joint distribution of prices and valuations. Given our assumption that when finding a firm the buyer bargains with the firm, we have that the price maximizes: 
+\begin{align*}
+    \max_p (p-c)^\alpha ((v_i-p) - R)^{1-\alpha}
+\end{align*}
+
+Note that the disagreement payoff for the buyer is $R$ since if he already searched once, upon disagreement he will continue searching and will not use the outside option. Other way of phrasing it, in this model the outside option only determines the search/not search margin, but does not affect the negotiation with the seller. 
+
+
+If $v_i - c- R> 0$, there are gains of trade\footnote{We need 1. the seller needs to cover marginal costs ($p_i\geq c$) and 2. the buyer requires to prefer the deal to taking the outside option ($v_i-p_i\geq R$). 
+
+The seller condition implies: $\alpha (v_i - R^*)+ (1-\alpha)c - c\geq 0 \implies \alpha (v_i - R^*)-\alpha c \geq 0  \implies v_i \geq  R+  c$ 
+
+The buyer condition implies: 
+$v_i-p_i\geq R \implies v_i- [\alpha (v_i - R)+ (1-\alpha)c ]\geq R \implies (1- \alpha) v_i-  (1-\alpha)c \geq (1-\alpha) R \implies  v_i \geq  R+c$
+Hence, for a successful bargaining we only need to check one condition. 
+} and the bargained price satisfies: 
+
+
+\begin{align}\label{eq:bargained_prices}
+    p_i=\alpha (v_i - R)+ (1-\alpha)c 
+\end{align}
+
+
+Then we have that: 
+$v_i - p_i = v_i - \alpha (v_i - R)- (1-\alpha)c  = (1-\alpha)(v_i -c) +\alpha R$
+
+Given an exogenous cdf of valuations $G_v()$ we have: 
+
+\begin{align}\label{eq:ut_dist}
+    Pr(v_i-p_i\leq u) = Pr\left(v_i \leq \frac{u-\alpha R}{1-\alpha}+c\right)= G_v\left( \frac{u-\alpha R}{1-\alpha}+c\right) \equiv G(u; R)
+\end{align}
+
+Then replacing in equation \ref{eq:res_utility}, we have that $R$ solves: 
+\begin{align}\label{eq:res_utility3}
+    \int_R^{+\infty} (u - R)\, dG(u; R) = s    
+\end{align}
+
+We assume that the above equation has a solution. [HAS TO BE PROVED]
+
+
+\subsection{Example}
+
+Let's solve our model with $c = 0$, $v_i \sim U[0,1]$.
+
+First, given a reservation utility ($ R$) we obtain the distribution of $v_i - p_i$. 
+Given that $v_i \in [0,1]$ we have that $v_i - p_i = (1-\alpha) v_i + \alpha R\in [\alpha R,(1-\alpha)+ \alpha R]$. Moreover 
+
+\begin{align}
+    Pr(v_i-p_i\leq u) = Pr\left(v_i \leq \frac{u-\alpha R}{1-\alpha}+c\right)= \frac{u-\alpha R}{1-\alpha}\equiv G(r; R)
+\end{align}
+Then $v_i - p_i \sim U[\alpha R, (1-\alpha) + \alpha R^*]$ and note that $G(R^*; R^*) = R^*$
+
+Secondly, given the previously obtained distribution of $v_i -p_i$ we obtain the reservation utility using eq. \ref{eq:res_utility3}. 
+
+
+\begin{align*}
+        R &= \frac{1}{1-G(R; R)} \int_R^\infty u \, \, dG(u; R) -\frac{s}{G(R; R)} \\
+         R &= \frac{1}{1-R} \int_{R}^{ (1-\alpha) + \alpha R} u \frac{1}{1-\alpha}\, \, du -\frac{s}{R}
+\end{align*}
+
+Note that $$ \int_{R}^{ (1-\alpha) + \alpha R} u \, \, du =\frac{1}{2} [ (1-\alpha) + \alpha R +R]\cdot [ (1-\alpha) + \alpha R - R] =  \frac{1}{2}[ (1-\alpha) + \alpha R +R] (1-\alpha)(1-  R)$$
+
+then 
+\begin{align*}
+        R = \frac{1}{1-R} \frac{1}{2} [ (1-\alpha) + \alpha R +R](1-  R) -\frac{s}{R} \\
+        %R = \frac{1}{2}  [ (1-\alpha) + \alpha R +R]-\frac{s}{R} \\ 
+        %2R + 2\frac{s}{R} - (1-\alpha) - (1+\alpha) R = 0   \\ 
+        %(1-\alpha)R+  \frac{2s}{R} - (1-\alpha)  = 0   \\ 
+        %(1-\alpha)(R)^2 - (1-\alpha) R + 2s = 0  \\ 
+        R = \frac{1}{2} \left( 1 \pm \sqrt{1 - \frac{8s}{1 - \alpha}} \right)
+\end{align*}
+
+Then the consumer will search iff $\frac{1}{2} \left( 1 \pm \sqrt{1 - \frac{8s}{1 - \alpha}} \right) \geq \theta$ [ACTUALLY: BUYER CHOOSES HIS R HENCE WILL CHOOSE THE HIGHEST, WHICH IMPLIES THAT THE MINUS IS NOT NECESSARY. STILL HAVE TO THINK WHAT DOES IT MEAN THAT HE CHOOSES AMOONG 2 R WHICH SATISFY HIS OPTIMALITY CONDITION]
+
+\subsection{Model the first stage}
+
+\textcolor{red}{THIS SECTION IS STILL PRELIMINARY}
+
+Previously, we took the outside option as given. Here, to follow our institutional setting, we aim to endogeneize it. 
+
+Consider  \( F_s(\cdot) \) the exogenously given distribution of search costs, and the outside option is \( \theta \).  
+
+In the first stage firms set their initial prices $b_i$, then $\theta = max_i(v_i - b_i)$
+
+%From equation \ref{eq:res_utility3} we can obtain $R(s)$, the buyer will search if $R(s) \geq \theta$. Then, the probability of searching is\footnote{\textcolor{red}{we have to show tha R() is invertible or what are the conditions under which it will be invertible. Note tha a given s can generate multiple R(s) (see our example with v being unifromly distributed in the unit interval), but this does not mean that R is not invertible. E.g. if R(s) = $\pm s$ then R is not unique but it is invertible }}: 
+%\begin{align}\label{eq:search_prob}
+%    \Pr(s \leq R^{-1}(\theta)) = F_s(R^{-1}(\theta))
+%\end{align}
+
+
+Assume $v_i = v + \varepsilon_i $, with $\varepsilon_i$ distributed type 1 extreme value. Define $d^b$ an indicator for whether the buyer decides to search and $d^i$ for whether decides to buy from firm $i$ in the first stage. Then, given $s$ 
+\[
+\Pr(d^B|s) = \frac{\exp(R(s))}{\exp(R(s)) + \sum_j \exp(v - b_j)}
+\]
+
+
+\[
+\Pr(d^i|s) = \frac{\exp(v - b_i)}{\exp(R(s)) + \sum_j \exp(v - b_j)}
+\]
+where  $R(s)$ can be obtained from  equation \ref{eq:res_utility3}.
+
+
+For a given $s$ we have that the firm $i$'s profits are: 
+\begin{align}\label{eq:profits}
+    \Pr(d^B_i|s,b_i) \cdot     \Pi^{\text{ss}}_i(s) + \Pr(d^i|s, b_i) \cdot (b_i - c)    
+\end{align}
+
+where $\Pi^{ss}_i(s)$ are $i$'s profit if the buyer decides to search.
+Some comments: 
+\begin{itemize}
+    \item The first stage prices do not affect $\Pi^{\text{second stage}}_i(s)$, because $\theta$ does not affect the bargaining. Initial prices do affect the probability of searching but not the reservation utility conditional on searching.  
+    \item We do NOT need variation in search costs to rationalize only some people searching, it can be rationalized by the taste shocks ($\varepsilon_i$). This does not mean variation in search costs could also be useful. 
+\end{itemize}
+
+Now we solve for $\Pi^{\text{ss}}_i(s)$. 
+
+Define the set of rival firms with which the buyer, when bargaining, would disagree\footnote{Since Gumbel support is \( -\infty, +\infty \), when \( \varepsilon_i \) is low enough there are no gains of trade.}: 
+\[
+D_i := \{j \neq i : v + \varepsilon_j - c - R(s) < 0\}
+\]
+then, the probability of disagreement if bargaining with a firm different than $i$ is: 
+$$
+\beta_i = \frac{|D_{-i}|}{N - 1} 
+$$
+
+
+
+Then if $i$ would reach an agreement with the buyer we have: 
+\begin{align*}
+\Pi^{\text{ss}}_i &= \frac{P_i - c}{N} 
++ \frac{N - 1}{N} \cdot \beta \frac{P_i - c}{N} 
++ \left( \frac{N - 1}{N} \beta \right)^2 \cdot \frac{P_i - c}{N} + ... 
+%&= \frac{P_i - c}{N} \cdot \left( \frac{1}{1 - \frac{N-1}{N} \beta} \right) \\
+%&= \frac{P_i - c}{N} \cdot \frac{N}{N - (N-1)\beta} \\
+%&= \frac{P_i - c}{N - (N-1)\beta}   
+%&=  \alpha \cdot \frac{(v_i - R - c)}{N - (N-1)\beta} \\
+ = \alpha \cdot \frac{(v + \varepsilon_i - R - c)}{N - (N-1)\beta}
+\end{align*}
+where we replaced the price by the bargained price using equation \ref{eq:bargained_prices}. 
+
+If the seller would not reach an agreement with the buyer then we have $\Pi^{\text{ss}}_i=0$. 
+
+\[
+\Pr(d^B) \cdot \mathbb{E} \left[ \Pi^s_i(\varepsilon_i) \mid d^B \right]
++ \Pr(d^i) \cdot (b_i - c)
+\]
+
+\textbf{Comments} 
+\begin{itemize}
+
+    \item This model has several nice features: 
+    \begin{enumerate}
+        \item The outside option $\theta$ only affects the extensive margin of search, not the intensive margin. 
+        \item Incorporates in a parsimonious manner several features we wanted to incorporate in the model: 1) bargaining, 2) heterogenous valuations (firm specific $v_i$), 3) initial offers by the firms and 4) search  
+    \end{enumerate}
+\end{itemize}
+
+
+\end{document}

@@ -278,7 +278,7 @@ A buyer has searching cost $s$ and valuation $v$.
 
 Assume sequential search without recall. 
 
-Define
+Define the expected utility conditional on stopping the search given that the reservation price is R: 
 $$M(R) = \int_0^R (v-p)dF(p) = F(R)\cdot v - \int_0^R pdF(p)$$ 
 the reservation price satisfies: 
 \begin{align*}
@@ -286,11 +286,38 @@ the reservation price satisfies:
    &= \left(F(R)\cdot v - \int_0^R pdF(p)-s\right)\frac{1}{1-(1-F(R))} = v - \left[\frac{\int_0^R pdF(p)+s}{F(R)}\right]\\
 \end{align*}
 Then we have that $R^*$ solves: 
-\begin{align}
+\begin{align}\label{eq:sequential1}
         R^* = \frac{\int_0^{R^*} pdF(p)+s}{F(R^*)}
 \end{align}
 
+Check that \ref{eq:sequential1} is correct: 
+\footnote{$$  R^*F(R^*) =  \int_0^{R^*} pdF(p)+s \implies s= R^*F(R^*) - \int_0^{R^*} pdF(p) \implies s= \int_0^{R^*} (R^*- p)  pdF(p) $$ which is thes same as in slide 22 \href{https://www.its.caltech.edu/~mshum/ec105/matt12.pdf}{here}}
+
 Now let's assume the buyer has a previous quote $\theta$ then there are two possibilities 1) if $ R^*< \theta $ the consumer searches until finding a price lower than $R^*$ and 2) if $R^*\geq \theta$ the consumer does not search.
+
+
+
+
+%The utility of accepting a price equal to the reservation price \(R\) must equal the expected gain from one additional search.  Hence
+%\begin{align*}
+%v - R &=F(R)\Bigl[\int_{0}^{R}(v - p)\,dF(p) - s\Bigr] +F(R)\bigl[1 - F(R)\bigr]\Bigl[\int_{0}^{R}(v - p)\,dF(p) - s\Bigr]\\ &\quad+\bigl[1 - F(R)\bigr]^{2}F(R)\Bigl[\int_{0}^{R}(v - p)\,dF(p) - s\Bigr] +\cdots.
+%\end{align*}
+
+%Define
+%\[
+%M(R)=\int_{0}^{R}(v - p)\,dF(p) - s.
+%\]
+
+%The optimality condition becomes
+%\begin{align*}
+%v - R &=F(R)\,M(R)\bigl[1 + (1-F(R)) + (1-F(R))^{2} + \cdots\bigr]\\
+%&=F(R)\,M(R)\,\frac{1}{1 - (1-F(R))} =M(R).
+%\end{align*}
+
+%Therefore,
+%\[
+%v - R = M(R).
+%\]
 
 
 \subsection{Endogeneize price distribution through differentiation}
@@ -299,7 +326,7 @@ The previous model is subject to Diamond's paradox, to escape the paradox\footno
 
 Assume sequential search without recall. 
 
-Now the buyer no longer has a reservation price, but a reservation utility, he buys whenever $v-p\geq R$. 
+Now the buyer no longer has a reservation price, but a reservation utility, he buys whenever $v-p\geq R$. Then, the expected utility conditional on stopping the search is given by 
 Define
 $$M(R) = \int_0^{p+v=R} (v-p)dF(p,v)$$ 
 

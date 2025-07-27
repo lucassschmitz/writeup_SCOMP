@@ -223,6 +223,20 @@ Figure \ref{fig:ie3_4} shows the CDF and hazard rate of searches grouped by savi
 \end{tabular}
 \end{figure}
 
+
+Figure \ref{fig:ie3_4b} shows the average number of searches for individuals grouped by their gender. Men do on average \input{Tables/IE3_coefficient11.tex} more searches, which does not seem to be economically significant, although it is statistically significant.
+
+
+\begin{figure}[H]
+\caption{}
+\label{fig:ie3_4b}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE3_search_by_gender.png}
+\end{tabular}
+\end{figure}
+
+
 \subsection{Dispersion in offers within group}
 
 The insurers in the SCOMP platform observe the age, gender and savings \textcolor{red}{and same zip code?} of the individual. We want to see whether individuals with similar characteristics receive similar offers. 
@@ -287,6 +301,27 @@ The table below shows the improvement with respect to the initial offer made by 
 
 \input{Tables/IE3_offer_improvement.tex}
 
+Figure \ref{fig:aux} shows the summary statistics of the distribution of the different measures of improvement desaggregated by gender. On average men get a higher absolute improvement, but since they also have higher initial offers (due to their higher savings) women get a higher improvement in percentage terms.
+\begin{figure}[H]
+\caption{}
+\label{fig:aux}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.7]{Tables/IE3_offer_improvement_bygender.png}
+\end{tabular}
+\end{figure}
+
+
+
+Figure \ref{fig:aux2} shows the summary statistics of the distribution of the different measures of improvement desaggregated by income quintile. Higher quintiles get bigger improvements (col1) but in terms of the percentual improvement there does not seem to be a clear pattern (col2). Finally almost all groups get an increase which in PV corresoponds to around 5 months of work, with the exception of the first quintile, were buyers get only 2 months of work on average. 
+\begin{figure}[H]
+\caption{}
+\label{fig:aux2}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.7]{Tables/IE3_offer_improvement_byincomequintile.png}
+\end{tabular}
+\end{figure}
 
 
 \subsubsection{Improvement when asking for external offers wrt to highest offer}
@@ -372,6 +407,110 @@ When bargaining for an external offer one can always disclose personal health in
 \end{itemize}
 
 
+\subsection{Supply side}
 
+\subsubsection{Market share of insurers}
+Figures \ref{fig:ie3_9}, \ref{fig:ie3_10} and \ref{fig:ie3_11} show the market share of the insurers among different groups of the population. 
+For example in figure \ref{fig:ie3_9} we see that the market share of insurer 827... is higher among older buyers whereas insurer 201... has just the opposite pattern. 
+In figure \ref{fig:ie3_10} we see that insurer 997... sells mostly to rich consumers whereas insurer 585... sells mostly to poor consumers. 
+
+
+\begin{figure}[H]
+\caption{}
+\label{fig:ie3_9}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE3_supply_age_quintile.png}
+\end{tabular}
+\end{figure}
+
+\begin{figure}[H]
+\caption{}
+\label{fig:ie3_10}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE3_supply_income_quintile.png}
+\end{tabular}
+\end{figure}
+
+
+\begin{figure}[H] 
+\caption{}
+\label{fig:ie3_11}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.24]{figures/IE3_supply_age.png} &
+\includegraphics[scale=0.24]{figures/IE3_supply_agebin.png}
+\end{tabular}
+\end{figure}
+
+
+\subsubsection{Probability of offer}
+Figures \ref{fig:ie3_12}, \ref{fig:ie3_13} and \ref{fig:ie3_14} show the probability an insurer sends an offer to each of the different segments of buyers. 
+
+
+
+
+For example in figure \ref{fig:ie3_12} we see that the insurer 1479... almost always makes an offer, whereas insurer 997... targets the income quintiles 2,3 and 4, and the probability of making an offer to quintile 1 is essentially zero. 
+
+There does not appear to be so much targeting by age, see figure \ref{fig:ie3_13} and \ref{fig:ie3_14} where the lines are more horizontal than in the case of income. But what is striking is that there is high heterogeneity in the probability of making an offer at all, in our sample firm 345... makes an offer in around 20\% of the cases, whereas firm 1479... makes an offer in almost all the cases.
+One possibility is that the previous pattern is caused by firms not being present all the years in our data, but when they are active they always make an offer. To check this we replicate figure \ref{fig:ie3_14} but by year for the years 2012-2015. We see that this pattern holds for the individual years. 
+
+
+\textcolor{red}{THE BIG QUESTION IS WHY DO SOME FIRMS MAKE OFFERS ONLY TO SOME SEGMENTS OF THE POPULATION? AND EXACTLY TO WHAT SEGMENTS? IT COULD BE DEMAND DRIVEN (SOME SEGMENTS PREFER INSURER A, HENCE INSURER B DOES NOT EVEN TRY TO SELL THEM) OR SUPPLY DRIVEN. BUT THERE SEEMS TO BE SOMETHING INTERESTING HERE.}
+
+
+\begin{figure}[H]
+\caption{}
+\label{fig:ie3_12}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE3_supply_offerprob_income_q.png}
+\end{tabular}
+\end{figure}
+
+
+\begin{figure}[H]
+\caption{}
+\label{fig:ie3_13}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE3_supply_offerprob_age.png}
+\end{tabular}
+\end{figure}
+
+
+\begin{figure}[H] 
+\caption{}
+\label{fig:ie3_14}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE3_supply_offerprob_age_q.png}
+\end{tabular}
+\end{figure}
+
+
+
+
+\begin{figure}[H] 
+\caption{}
+\label{fig:ie3_15}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE3_supply_offerprob_age_q_2012.png} &
+\includegraphics[scale=0.27]{figures/IE3_supply_offerprob_age_q_2013.png}
+\end{tabular}
+\end{figure}
+
+
+\begin{figure}[H] 
+\caption{}
+\label{fig:ie3_16}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE3_supply_offerprob_age_q_2014.png} &
+\includegraphics[scale=0.27]{figures/IE3_supply_offerprob_age_q_2015.png}
+\end{tabular}
+\end{figure}
 
 \end{document}

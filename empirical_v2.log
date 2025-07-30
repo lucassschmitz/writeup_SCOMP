@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  29 JUL 2025 09:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  30 JUL 2025 12:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -567,11 +567,11 @@ File: figures/IE1_credit_history.png Graphic file (type png)
 <use figures/IE1_credit_history.png>
 Package pdftex.def Info: figures/IE1_credit_history.png  used on input line 159.
 (pdftex.def)             Requested size: 287.5481pt x 172.36624pt.
-<figures/IE3_dist_external_offers.png, id=107, 1063.975pt x 638.385pt>
+<figures/IE3_dist_external_offers.png, id=107, 1079.03125pt x 647.41875pt>
 File: figures/IE3_dist_external_offers.png Graphic file (type png)
 <use figures/IE3_dist_external_offers.png>
 Package pdftex.def Info: figures/IE3_dist_external_offers.png  used on input line 178.
-(pdftex.def)             Requested size: 287.27708pt x 172.36624pt.
+(pdftex.def)             Requested size: 291.34233pt x 174.80539pt.
  [4 <./figures/IE0_plot5.png (PNG copy)> <./figures/IE1_credit_history.png (PNG copy)>]
 <figures/IE3_dist_external_offers_byyear.png, id=113, 972.63374pt x 648.4225pt>
 File: figures/IE3_dist_external_offers_byyear.png Graphic file (type png)
@@ -660,11 +660,11 @@ File: figures/IE3_offer_change_max_internal.png Graphic file (type png)
 Package pdftex.def Info: figures/IE3_offer_change_max_internal.png  used on input line 351.
 (pdftex.def)             Requested size: 287.27708pt x 172.36624pt.
  [11 <./Tables/IE3_offer_improvement_byincomequintile.png>] (Tables/IE3_number_initial_offers.tex) (Tables/IE3_share_acc_highest.tex)
-<figures/IE3_foregone_hist.png, id=195, 1063.975pt x 638.385pt>
+<figures/IE3_foregone_hist.png, id=195, 1079.03125pt x 647.41875pt>
 File: figures/IE3_foregone_hist.png Graphic file (type png)
 <use figures/IE3_foregone_hist.png>
 Package pdftex.def Info: figures/IE3_foregone_hist.png  used on input line 375.
-(pdftex.def)             Requested size: 287.27708pt x 172.36624pt.
+(pdftex.def)             Requested size: 291.34233pt x 174.80539pt.
  [12 <./figures/IE3_offer_change_max_internal.png (PNG copy)>] (Tables/IE3_foregone.tex) (Tables/IE3_clogit.tex) [13 <./figures/IE3_foregone_hist.png (PNG copy)>] (Tables/IE3_dead_has_external.tex) (Tables/IE3_dead_has_external2.tex) (Tables/IE3_dead_external_logi.tex) [14] (Tables/IE3_ttest_improvement_pct.tex) (Tables/IE3_dead_on_improvements.tex)
 <figures/IE3_supply_age_quintile.png, id=232, 1063.975pt x 638.385pt>
 File: figures/IE3_supply_age_quintile.png Graphic file (type png)
@@ -758,7 +758,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  90i,14n,131p,1093b,521s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on empirical_v2.pdf (18 pages, 2740873 bytes).
+Output written on empirical_v2.pdf (18 pages, 2744897 bytes).
 PDF statistics:
  352 PDF objects out of 1000 (max. 8388607)
  86 named destinations out of 1000 (max. 500000)

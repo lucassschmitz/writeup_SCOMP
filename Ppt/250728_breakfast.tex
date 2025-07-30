@@ -85,7 +85,7 @@
 
 \begin{itemize}
     \item I do not like the term aftermarket 
-    \item difficul to model insurance 
+    \item Difficult to model insurance: ignore it?  
 \end{itemize}
 
     
@@ -124,7 +124,7 @@
 
     \item \textbf{What are aftermarkets?} Sellers bid prices then buyers either buy at bidded price or search a seller and bargain. 
     
-    \item \textbf{Relevance}: car dealership, housing market (e.g. Zillow) and annuities market in Chile
+    \item \textbf{Relevance}: car dealership, housing market (e.g. Zillow), firms hiring workers, and annuities market in Chile
 
     \item \textbf{Benchmarks}: only bargaining, sellers set prices, aftermarket. 
     
@@ -152,9 +152,11 @@
         \end{adjustbox}
         %\caption{A continuum of market structures based on seller bargaining power and quoting prices.}
         \label{fig:market_continuum_scaled}
-        \note{In relevance mention that in Chile there was discussion about the aftermarket and they removed it. }
+         
     \end{figure}
+\note{In relevance mention that in Chile there was discussion about the aftermarket and they removed it. 
 
+}
     %\item How to model assymetric competition in selection markets? 
 \end{itemize}
 \end{frame}
@@ -176,6 +178,10 @@
     %\caption{Side-by-side figures.} % A single caption for both
     \label{fig:my-figures}
 \end{figure}
+
+\begin{itemize}
+    \item   80\% of the purchases are through the aftermarket
+\end{itemize}
 \end{frame}
 
 
@@ -185,7 +191,7 @@
 \begin{itemize}
     \item Aftermarkets: \textcite{larsen_efficiency_2021, allen_search_2019}
 
-    \item Competition in selection markets: \textcite{mahoney_imperfect_2017, cuesta_price_2018}
+    \item Competition in selection markets: \textcite{mahoney_imperfect_2017, cuesta_price_2018, cosconati_competing_2025}
 
     \item Selection in multiple dimensions: \textcite{finkelstein_adverse_2004} and Finkelstein and McGarry (2006).  
 \end{itemize}
@@ -196,7 +202,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 % explicitly not link the annuities market with pensions because generates confusion 
-\begin{frame}{Annuities in Chile: SCOMP} 
+\begin{frame}{Annuities in Chile: SCOMP}  \label{slide:setting}
     
     \begin{itemize}%[<+->]
    
@@ -228,69 +234,88 @@
     
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \begin{frame}{Data} \label{slide:data}
+\begin{itemize}
+    \item SCOMP data at the individual level  
+    \begin{itemize}
+        \item Offers received, rejected and accepted 
+        \item Total savings 
+        \item Demographics: age and gender
+    \end{itemize}
+     \item Retirement insurance companies: risk ratings, \#  of intermediaries and their  locations.
+\end{itemize}
+\textbf{}
+
+\textbf{}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%
 
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Frame Title}
-    
+\begin{frame}{Answer the question}
+    \begin{itemize}
+        \item Equilibrium model of search and bargaining 
+        \begin{itemize}
+            \ite
+            \item Differentiated products   \hyperlink{slide:fig1}{\beamerbutton{Evidence}}
+            \item Imperfect-assymmetric competition\hyperlink{slide:fig3}{\beamerbutton{Evidence}}
+            \item 
+        \end{itemize}
+        \item 
+    \end{itemize}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%
 
- \begin{frame}{Data}
-\begin{itemize}
-    \item SCOMP data at the individual level  
-    \begin{itemize}
-        \item Offers received and accepted 
-        \item Total savings 
-        \item Demographics: age and gender
-    \end{itemize}
-     \item Retirement insurance companies: risk ratings, \#  of intermediaries and their  locations.
-\end{itemize}
 
+\begin{frame}{Answer the question}\label{slide:fig1}    
 
+Firm specialization in groups
+\begin{figure}[H]
+%\caption{}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{../figures/IE3_supply_income_quintile.png}
+\end{tabular}
+\end{figure}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Answer the question}\label{slide:fig2}    
+\textcolor{red}{drop some firms, to cluttered}
 
-\begin{frame}{Question 1: external offers}
+\begin{figure}[H]
+\caption{}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.24]{../figures/IE3_supply_offerprob_income_q.png}
+\end{tabular}
+\end{figure}
 
-\begin{itemize}
-   
-    \item 80\% of the signings are external offers. 
-    \item What is the impact of allowing external offers? 
-
-    \begin{itemize}
-        \item Distributional consequences: pooling to separating equilibria - based on information disclosed in between
-
-        % without the external offers they are pooled into one market based on first stage observables, whereas with the aftermarket they are separated based 
-
-        \item Bargaining increases welfare vis a vis a price setting monopolists. What happens when there is competition? 
-\end{itemize}   
-\end{itemize}
+Firms specialize on buyer types
 \end{frame}
 
-\begin{frame}{Model}
+\begin{frame}{Answer the question}\label{slide:fig3}    
 
-\begin{itemize}
-    \item Individual $i$, of type $k$,  valuation for offer of insurer $j$: 
+Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly wages.
 
-    $$ u_{ijt} = \beta X_{jt}+ \alpha_{k(i)} r_{ij} + \xi_j +\xi_{jt} + \varepsilon_{ijt}  $$
-
-    where $r_{ij}$ is the interest rate, $X_{jt}$  are insurer characteristics (credit-rating, number of customer service offices), $\xi_j$ are persistent unobserved insurer characteristics, $\xi_{jt}$ mean-zero demand shocks.  
-
-    The types are defined as combinations of age, gender and amount saved.
-
-    \item Estimation by ML: 
-    \begin{enumerate}
-        \item Estimate  ($\delta_{jt}, \alpha_k$) to maximize the likelihood 
-        \item Use $\mathbb{E}[\delta_{jt}|x_{jt},x_{-jt}]= 0$ to estimate ($\beta, \xi_j, \xi_{jt}$)
-    \end{enumerate}
-\end{itemize}
+\begin{figure}[H]
+%\caption{}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{../figures/IE3_foregone_hist.png}
+\end{tabular}
+\end{figure}
 \end{frame}
+ 
+
+
+
 
 
 \end{document}

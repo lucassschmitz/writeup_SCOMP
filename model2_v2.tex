@@ -70,7 +70,13 @@
 \addbibresource{references.bib}
 \begin{document}
  
-
+Desiderata for the model or things the model has to be able to rationalize: 
+\begin{itemize}
+    \item Consumers do not always choose the highest offer, which means it is a differentiated goods market 
+    \item Firms post or set prices and then there is bargaining 
+    \item Some consumers bargain/search and others do not. 
+    \item 
+\end{itemize}
 
 \section{Basic sequential search model}
 
@@ -238,6 +244,8 @@ In the first stage firms set their initial prices $b_i$, then $\theta = max_i(v_
 %    \Pr(s \leq R^{-1}(\theta)) = F_s(R^{-1}(\theta))
 %\end{align}
 
+\todo[inline]{we are allowing only for idiosyncratic preferences, not systematic preferences over insurers}
+
 
 Assume $v_i = v + \varepsilon_i $, with $\varepsilon_i$ distributed type 1 extreme value. Define $d^b$ an indicator for whether the buyer decides to search and $d^i$ for whether decides to buy from firm $i$ in the first stage. Then, given $s$ 
 \[
@@ -296,6 +304,9 @@ If the seller would not reach an agreement with the buyer then we have $\Pi^{\te
 + \Pr(d^i) \cdot (b_i - c)
 \]
 
+\textcolor{red}{I still have to solve the model, }
+
+
 \textbf{Comments} 
 \begin{itemize}
 
@@ -306,6 +317,22 @@ If the seller would not reach an agreement with the buyer then we have $\Pi^{\te
     \end{enumerate}
 \end{itemize}
 
+
+
+\textbf{Comments2} 
+\begin{itemize}
+
+    \item Although one could think that the auction is an Interdependent Private Values (IPV) auction because knowing the other valuations reveals informatio about the life expectancy, here we are just modeling the sale of a good, hence in our case is a common value auction. 
+    
+    \item In the first stage the seller does not know the idiosincratic taste errors, but we are assuming this error is revealed once they start bargaining.  
+    
+    
+    This model has several nice features: 
+    \begin{enumerate}
+        \item The outside option $\theta$ only affects the extensive margin of search, not the intensive margin. 
+        \item Incorporates in a parsimonious manner several features we wanted to incorporate in the model: 1) bargaining, 2) heterogenous valuations (firm specific $v_i$), 3) initial offers by the firms and 4) search  
+    \end{enumerate}
+\end{itemize}
 
 
 

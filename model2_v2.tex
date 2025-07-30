@@ -70,7 +70,13 @@
 \addbibresource{references.bib}
 \begin{document}
  
-
+Desiderata for the model or things the model has to be able to rationalize: 
+\begin{itemize}
+    \item Consumers do not always choose the highest offer, which means it is a differentiated goods market 
+    \item Firms post or set prices and then there is bargaining 
+    \item Some consumers bargain/search and others do not. 
+    \item 
+\end{itemize}
 
 \section{Basic sequential search model}
 
@@ -238,6 +244,8 @@ In the first stage firms set their initial prices $b_i$, then $\theta = max_i(v_
 %    \Pr(s \leq R^{-1}(\theta)) = F_s(R^{-1}(\theta))
 %\end{align}
 
+\todo[inline]{we are allowing only for idiosyncratic preferences, not systematic preferences over insurers}
+
 
 Assume $v_i = v + \varepsilon_i $, with $\varepsilon_i$ distributed type 1 extreme value. Define $d^b$ an indicator for whether the buyer decides to search and $d^i$ for whether decides to buy from firm $i$ in the first stage. Then, given $s$ 
 \[
@@ -296,6 +304,9 @@ If the seller would not reach an agreement with the buyer then we have $\Pi^{\te
 + \Pr(d^i) \cdot (b_i - c)
 \]
 
+\textcolor{red}{I still have to solve the model, }
+
+
 \textbf{Comments} 
 \begin{itemize}
 
@@ -305,6 +316,139 @@ If the seller would not reach an agreement with the buyer then we have $\Pi^{\te
         \item Incorporates in a parsimonious manner several features we wanted to incorporate in the model: 1) bargaining, 2) heterogenous valuations (firm specific $v_i$), 3) initial offers by the firms and 4) search  
     \end{enumerate}
 \end{itemize}
+
+
+
+\textbf{Comments2} 
+\begin{itemize}
+
+    \item Although one could think that the auction is an Interdependent Private Values (IPV) auction because knowing the other valuations reveals informatio about the life expectancy, here we are just modeling the sale of a good, hence in our case is a common value auction. 
+    
+    \item In the first stage the seller does not know the idiosincratic taste errors, but we are assuming this error is revealed once they start bargaining.  
+    
+    
+    This model has several nice features: 
+    \begin{enumerate}
+        \item The outside option $\theta$ only affects the extensive margin of search, not the intensive margin. 
+        \item Incorporates in a parsimonious manner several features we wanted to incorporate in the model: 1) bargaining, 2) heterogenous valuations (firm specific $v_i$), 3) initial offers by the firms and 4) search  
+    \end{enumerate}
+\end{itemize}
+
+
+
+
+\section{Negative aftermarket effect}\label{sec:basic1}
+ 
+
+Assume $N$ firms with marginal cost $0$.
+
+There is a firm-specific list price $p_i$, and a mass of consumers values the good at $v$.
+
+Consumers can pay $s$ to bargain with a firm at random, using the list price as an outside option.
+
+
+Denote by
+\[
+\underline{p} = \min\{p_j\}
+\]
+the lowest list price.
+
+
+When bargaining:
+\begin{itemize}
+    \item If $p_i = \underline{p}$, then one cannot improve the outcome\footnote{If more than one firm set the lowest list price $p_i = p_j = \underline{p}$ the buyer could always threaten to buy from the other firm. We assume that is not the case, which is equivalent to assuming that the buyer has no commitment power to commit to switch sellers.  }
+    \item If $p_i > P$, then
+    \[
+    \max_{p} p^\alpha [(v - p) - (v - \underline{p} )] = \max_{p} p^\alpha (\underline{p}  - p) \implies p(\underline{p} ) = \alpha \underline{p} 
+    \]
+    Firm $i$ outside option is not selling and the consumer is to buy from the other firm at price $\underline{p} $.
+\end{itemize}
+
+Then the consumer gains $\underline{p} - \alpha \underline{p}  = (1-\alpha) \underline{p} $
+
+
+Then, if there are $N$ firms, the expected gains of searching are:
+\[
+\underbrace{\frac{1}{N} \cdot 0}_{\text{bargains with lowest price firm}} + \underbrace{\frac{N - 1}{N} \cdot \underline{p}}_{\text{firm did not offer lowest price }} = \frac{N - 1}{N}(1 - \alpha)\underline{p}
+\]
+
+Then, the consumer searches iff: $\frac{N - 1}{N}(1 - \alpha)\underline{p}> s \implies \underline{p}> s \frac{N}{N-1(1-\alpha)}\equiv f(s)$. For  simplicity assume that in the case of indifference does not search. 
+
+Then firm $i$ profits are: 
+
+\begin{align}
+    \pi_i(p_i, p_{-i}) = 
+    \begin{cases}
+        p_i &, p_i < \underline{p} \land p_i \leq f(s) \\
+        0 &, p_i > \underline{p} \land \underline{p} \leq f(s) \\
+        \frac{p_i}{N} &, p_i \leq \underline{p} \land p_i > f(s)\\
+        \frac{(1-\alpha)\underline{p}}{N} &, p_i > \underline{p} \land \underline{p} > f(s) \\
+        \frac{p_i}{|\{j: p_j =\underline{p}\}|} &, p_i = \underline{p} \land p_i < f(s)\\      
+    \end{cases}
+\end{align}
+
+the first case is where the  firm offers the lowest price and the price is low enough to discourage search in which case the firm sells, in the second case other firm offers the lowest price and this price discourages search, in the third 
+case $i$ offers the lowest price but there is search and in the fourth case other firm offers the lowest price and there is search. 
+
+Note that when the buyer searches it is "useful" to be the firm that set the lowest posted price because it provides bargaining power since implies that the outside option of the buyer is the same firm.  
+
+There are two symmetric equilibria in pure strategies. Denote by $p^*$ the price everyone is playing in this equilibria. 
+\begin{enumerate}
+    \item If $p^* >f(s)$ then there is search and the profits are $p^*/N$ if a firm deviates to a price higher than $f(s)$ nothing changes since there is still search. But the firm can deviate to $p^*=f(s)$ in which case captures the whole market and makes a profit $f(s)$ hence this equilibrium is sustainable iff $p^*> N \cdot f(s)$. This result is similar to Diamonds' paradox, any strictly positive (not matter how small) search cost allows firms to escape the Bertrand paradox. 
+    
+    \item There is a second equilibrium without search in which $p^*\leq f(s)$ note that any deviation to a price higher than $f(s)$ is unprofitable since consumers do not search. The only equilibrium here is a Bertrand equilibrium, if the minimum price where to be positive there is an incentive to undercut. 
+\end{enumerate}
+
+\textbf{Commentary}
+
+In this model of posted prices the possibility of searching, even in the presence of an initial stage with posted prices,  allows to escape the Bertrand paradox. 
+
+Hence removing the aftermarket has a positive effect on consumer welfare. 
+
+
+\textbf{Mixed strategy equilibria }
+
+
+Assume $F(p)$ with support on $[a,b]$\footnote{The support has to be convex, if it has values in between that are not in the support one of this points will generate higher profits. E.g. if it were $[a,b] \cup [c,d]$ with $c>b$ then $(c+b)/2$ generates higher profits than $b$ because there can be no mass at $b$.}, without atoms or masses in a point.
+
+\begin{itemize}
+    \item Claim: $F(s) \notin [a,b]$
+ 
+
+\textbf{Proof:} If $p_i = f(s)$ then profits are:
+
+\[
+\underbrace{[1 - F(f(s))]^{N-1} \cdot p_i}_{\text{everyone sets higher price}} + 
+\underbrace{(1 - \left[1 - F(f(s))\right]^{N-1}) \cdot 0}_{\text{someone sets lower price}}
+\]
+
+
+If $p_i = f(s) + \varepsilon$ then profits are lower than
+
+\[
+[1 - F(f(s))]^{N-1} \cdot \frac{(1 - \alpha)}{N} \cdot \max(f(s)+\varepsilon,\; f(s))
+\]
+which is lower than with  $p_i = f(s)$ (case 1). Then either $[a,b < f(s)]$ or $[f(s)< a,b]$ (case 2). 
+
+\item Claim: In case 1, it is a Bertrand game hence there is no equilibria with positive prices. 
+\end{itemize}
+
+\textbf{Proof:} first note that there are no masses at any point bigger than $a$ because if $\Pr(p_i = x) > 0$ then $\pi(x) < \pi(x-\epsilon)$. Then, there is no mass at $b$ which implies that $\pi(b) = 0$ because $F(b) =1 $ and the $\Pr(p_j \geq p_i| p_i = b) =  0 $. hence all points generate zero profits then $b =0 $ if $b> 0$ we would have $\pi(b/2) > 0$. 
+
+
+\section{Basic search with bargaining(3.0)}
+
+In our previous model (see section \ref{sec:basic1}) we showed that in an environment where firms post a price and then buyers decide whether to buy or to bargain, the mere possibility of bargaining allows firms to escape the Bertrand paradox and the aftermarket has negative effects on consumer welfare. 
+
+In this section we propose a second model where the aftermarket has a positive effect on consumer welfare. 
+
+To highlight the mechanisms by which the aftermarket increases consumer welfare, consider one buyer and one seller\footnote{Is the case in which products are differentiated and the buyer only wants to buy a particular product}. The buyer has a valuation $v$ for the product and there is zero marginal cost. Without the aftermarket the price is $v$. 
+
+With an aftermarket initially the seller posts a price $p$, then the buyer can pay a bargaining cost $s$ and bargain, in which case he gets 
+
+\textcolor{red}{MY INTUITION IS THAT IF THERE IS DIFFERENTIATION AND MARKUPS ARE VERY BIG, THEN, BARGAINING ALLOWS TO PASS POWER TO THE BUYER. }
+
+
 
 
 \end{document}

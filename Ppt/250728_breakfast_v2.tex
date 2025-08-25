@@ -1,6 +1,8 @@
 %\documentclass[notes,10pt,aspectratio=169]{beamer}
 
-\documentclass[notes, 10pt,aspectratio=169]{beamer}
+%\documentclass[notes, 10pt,aspectratio=169]{beamer}
+\documentclass[10pt,aspectratio=169]{beamer}
+
 
 % Add this line to your preamble
 \setbeameroption{show notes on second screen=right}
@@ -60,7 +62,7 @@
 ]{biblatex}
 \addbibresource{references.bib}
 
-\title{Centralized Annuities System}
+\title{Aftermarkets: Evidence from a Centralized Annuities System}
 %\subtitle{A Mini Literature Overview}
 
 \author{%
@@ -81,113 +83,96 @@
   \titlepage
 \end{frame}
 
-\begin{frame}{Feedback}
 
-\begin{itemize}
-    \item I do not like the term aftermarket 
-    \item Difficult to model insurance: ignore it?  
-\end{itemize}
-
-    
-\end{frame}
-
+ 
 \begin{frame}{Research question}
     
 \begin{itemize}
     
-    %Your first slide should have one sentence on it, with a question mark at the end: your research question. Your presentation should start with 5 minutes of discussion about why this is an interesting economics question
-    \item What is the impact of aftermarkets (search + bargaining)? 
+    \item What is the impact of Aftermarkets? \textcolor{red}{[Is the question interesting? ]}
 
     \begin{itemize}
 
-    \item Sellers bid, buyers buy or search and bargain 
+    \item \textbf{What are \textit{Aftermarkets}?} Sellers bid prices then buyers either buy at bidded price or bargain to improve the offer of sellers. The bargaining is costly. \textcolor{red}{[Is aftermarket the correct term? ]}
     
-    \item Examples: car dealership, housing market (e.g. Zillow) 
+    \item \textbf{Relevance}: car dealership, housing market (e.g. Zillow), and annuities market in Chile
 
-    \item Benchmarks: only bargaining, sellers set prices, aftermarket. 
-    
-    \end{itemize}
-
-    \item How to model assymetric competition in selection markets? 
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Research question (version 2)}
-    
-\begin{itemize}
-    
-    %Your first slide should have one sentence on it, with a question mark at the end: your research question. Your presentation should start with 5 minutes of discussion about why this is an interesting economics question
-    \item What is the impact of aftermarkets? 
-
-    \begin{itemize}
-
-    \item \textbf{What are aftermarkets?} Sellers bid prices then buyers either buy at bidded price or search a seller and bargain. 
-    
-    \item \textbf{Relevance}: car dealership, housing market (e.g. Zillow), firms hiring workers, and annuities market in Chile
-
-    \item \textbf{Benchmarks}: only bargaining, sellers set prices, aftermarket. 
+    \item \textbf{Benchmarks}: centralized market and bargaining + search. 
     
     \end{itemize}
     \begin{figure}
         \begin{adjustbox}{width=\textwidth, center} % This scales everything inside to fit
             \begin{tikzpicture}[node distance=1cm]
-                % Your original TikZ code is here. No changes needed inside.
                 \draw[<->, thick] (0,0) -- (12.5,0);
                 \node (left) at (2,0) [circle, fill=black, inner sep=1.5pt] {};
                 \node (mid) at (7,0) [circle, fill=black, inner sep=1.5pt] {};
                 \node (right) at (12,0) [circle, fill=black, inner sep=1.5pt] {};
                 \node[anchor=east, align=right] at (0, -1.5) {\textbf{Cost of Add. Quote:}};
-                \node[anchor=east, align=right] at (0, -2.5) {\textbf{Seller's Bargaining Wt:}};
+                \node[anchor=east, align=right] at (0, -2.5) {\textbf{Seller Barg. Power}};
                 \node[below=1.5cm of left] {$0$};
                 \node[below=1.5cm of mid, align=center] {$0$ and then $s$};
                 \node[below=1.5cm of right] {$s$};
                 \node[below=2.5cm of left] {$1$};
-                \node[below=2.5cm of mid] {$\alpha$};
+                \node[below=2.5cm of mid] {1 then $\alpha$};
                 \node[below=2.5cm of right] {$\alpha$};
-                \node[below=0.3cm of left, align=center] {Seller Sets Prices};
-                \node[below=0.3cm of mid, align=center] {Aftermarket};
-                \node[below=0.3cm of right, align=center] {Bargaining+search};
+                \node[below=0.3cm of left, align=center] {Centralized market\\ e.g. Amazon};
+                \node[below=0.3cm of mid, align=center] {Negotiated-price market};
+                \node[below=0.3cm of right, align=center] {Search + bargaining };
             \end{tikzpicture}
         \end{adjustbox}
         %\caption{A continuum of market structures based on seller bargaining power and quoting prices.}
         \label{fig:market_continuum_scaled}
          
     \end{figure}
-\note{In relevance mention that in Chile there was discussion about the aftermarket and they removed it. 
+\note{
+Mention that I will not have a feedback slide but will write in red items that I would like to receive feedback on. 
 
+In \textbf{what are aftermarkets} mention that 'search' refers to just the process of costly bargaining. Id DOES NOT necessarily mean that the consumer is learning about a product 
+
+In \textbf{relevance} mention:
+\begin{itemize}
+    \item Chile there was discussion about the aftermarket and they removed it. 
+    \item Aftermarkets are spetially common in platforms. 
+\end{itemize}
+In \textbf{benchmarks} mention:
+\begin{itemize}
+    \item One could think about eliminating the first part, do not post prices and only allow for search and bargaining, essentially eliminating the centralized nature of the market or also just allowing firms to post prices.  
+    \item In terms of consumer welfare the effects are ambiguous, when comparing the 1st and 3rd case obviously depends on $(s,\alpha)$ and when using the centralized and bargaining stages together then the equilibrium effects are not obvious. 
+\end{itemize}
 }
-    %\item How to model assymetric competition in selection markets? 
+   
 \end{itemize}
 \end{frame}
-
-
-
-
  
 %%%%%%%%%
 
-
 \begin{frame}
-\frametitle{Different use of the aftermarket} 
+\frametitle{Different use of the aftermarket}\label{slide:single_fig}
 \begin{figure}
     \centering
     \includegraphics[width=0.49\textwidth]{../figures/IE3_dist_external_offers.png}
-    \hfill % Pushes the images apart to fill the horizontal space
+    \hfill 
     \includegraphics[width=0.49\textwidth]{../figures/IE3_offer_improvement_histogram.png}
-    %\caption{Side-by-side figures.} % A single caption for both
-    \label{fig:my-figures}
 \end{figure}
 
 \begin{itemize}
-    \item   80\% of the purchases are through the aftermarket
+    \item   80\% of the purchases are through the aftermarket 
+    \item Poorer households search less \hyperlink{slide:fig4}{\beamerbutton{Evidence}} 
+    
+    \textcolor{red}{[What are the determinants of search? Search direction?] }
 \end{itemize}
+
+\note{That only some people use the aftermarket suggest: 
+\begin{itemize}
+    \item There are search costs 
+    \item Firms could be discriminating based on the search likelihood. 
+\end{itemize}
+}
 \end{frame}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Literature}
-
 \begin{itemize}
     \item Aftermarkets: \textcite{larsen_efficiency_2021, allen_search_2019}
 
@@ -197,16 +182,10 @@
 \end{itemize}
 \end{frame}
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%
-% explicitly not link the annuities market with pensions because generates confusion 
+ 
 \begin{frame}{Annuities in Chile: SCOMP}  \label{slide:setting}
-    
-    \begin{itemize}%[<+->]
-   
-\end{itemize} 
+       
     \begin{itemize}%[<+->]
     \item SCOMP steps: 
     \begin{enumerate}
@@ -231,7 +210,7 @@
     \end{itemize}
 
      $S$: stock of savings, $F$: per period annuity payment, $x_i$: individual mortality factors
-    
+    \note{explicitly not link the annuities market with pensions because generates confusion}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -246,56 +225,35 @@
     \end{itemize}
      \item Retirement insurance companies: risk ratings, \#  of intermediaries and their  locations.
 \end{itemize}
-\textbf{}
-
-\textbf{}
+\note{Important to mention that the advantage of our data is that 1) elicits prices from almost all companies and 2) records all the elicited prices. }
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Answer the question}
+\begin{frame}{Answer the question}\label{slide:answer1}
     \begin{itemize}
         \item Equilibrium model of search and bargaining 
         \begin{itemize}
-            \ite
+            \item First stage: sellers bid and consumers buy or search 
+            \item Second stage: If buyer searches is matched with a seller and they bargain
+        \end{itemize}
+        \item Desiderata:
+        \begin{itemize}
+           \item Imperfect-assymmetric competition\hyperlink{slide:fig2}{\beamerbutton{Evidence}}
             \item Differentiated products   \hyperlink{slide:fig3}{\beamerbutton{Evidence}}
-            \item Imperfect-assymmetric competition\hyperlink{slide:fig3}{\beamerbutton{Evidence}}
             \item 
         \end{itemize}
-        \item 
     \end{itemize}
 
     \note{Diff products: if not the case then everyone would choose the highest offer
     
     Imperfect-assymmetric competition: the differences in market share can be due to preferences, but not so the differences in probability of even offering}
 \end{frame}
+
+
 %%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Answer the question}\label{slide:fig3}    
 
-Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly wages.
-
-\begin{figure}[H]
-%\caption{}
-\centering{}%
-\begin{tabular}{cc}
-\includegraphics[scale=0.27]{../figures/IE3_foregone_hist.png}
-\end{tabular}
-\end{figure}
-\end{frame}
-
- %%%%%%%
-
-
-
-
-
-\begin{frame}{Answer the question}\label{slide:fig1}    
+\begin{frame}{Firm specialization}\label{slide:fig1}    
 
 Firm specialization in groups
 \begin{figure}[H]
@@ -305,11 +263,14 @@ Firm specialization in groups
 \includegraphics[scale=0.27]{../figures/IE3_supply_income_quintile.png}
 \end{tabular}
 \end{figure}
+
+\hyperlink{slide:answer1}{\beamerbutton{Go back}}
+
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Answer the question}\label{slide:fig2}    
-\textcolor{red}{drop some firms, to cluttered}
+\begin{frame}{Firm specialization(2)}\label{slide:fig2}    
 
 \begin{figure}[H]
 \caption{}
@@ -320,12 +281,40 @@ Firm specialization in groups
 \end{figure}
 
 Firms specialize on buyer types
+\hyperlink{slide:answer1}{\beamerbutton{Go back}}
+
 \end{frame}
 
- 
+%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Heterogeneity in preferences}\label{slide:fig3}    
 
+Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly wages.
 
+\begin{figure}[H]
+%\caption{}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.25]{../figures/IE3_foregone_hist.png}
+\end{tabular}
+\end{figure}
+\hyperlink{slide:answer1}{\beamerbutton{Go back}}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Search(2)}\label{slide:fig4}    
+
+\begin{figure}[H]
+%\caption{}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{../figures/IE3_search_by_income_quintile.png}
+\end{tabular}
+\end{figure}
+\hyperlink{slide:single_fig}{\beamerbutton{Go back}}
+\end{frame}
 
 
 \end{document}

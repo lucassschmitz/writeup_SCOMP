@@ -1,0 +1,20 @@
+    \begin{figure}
+        %\begin{adjustbox}{width=\textwidth, center} % This scales everything inside to fit
+            \begin{tikzpicture}[node distance=1cm]
+                \draw[<->, thick] (0,0) -- (7.5,0);
+                \node (left) at (2,0) [circle, fill=black, inner sep=1.5pt] {};
+                \node (mid) at (7,0) [circle, fill=black, inner sep=1.5pt] {};
+                \node[anchor=east, align=right] at (0, -1.5) {\textbf{Cost of Add. Quote:}};
+                \node[anchor=east, align=right] at (0, -2.5) {\textbf{Seller Barg. Power}};
+                \node[below=1.5cm of left] {$0$};
+                \node[below=1.5cm of mid, align=center] {$0$ and then $s$};
+                \node[below=2.5cm of left] {$1$};
+                \node[below=2.5cm of mid] {1 then $\alpha$};
+                \node[below=0.3cm of left, align=center] {Centralized market\\ e.g. Amazon};
+                \node[below=0.3cm of mid, align=center] {Aftermarket \\ e.g. Zillow};
+            \end{tikzpicture}
+        %\end{adjustbox}
+        
+        \label{fig:market_continuum_scaled}
+         
+    \end{figure}

@@ -1,0 +1,165 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+\usepackage{titlesec}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+      \titleformat{\section}
+  {\normalfont\large\bfseries} % The format for the whole title line
+  {\thesection}               % The section number
+  {1em}                       % The space between the number and title
+  {}                          % Code before the title text (optional)
+    
+
+
+\addbibresource{references.bib}
+\begin{document}
+
+This document analyzes the current annuity pricing approach and highlights two changes that can increase profitability:
+
+\begin{enumerate}
+    \item Incorporate customer price sensitivity  into the pricing formula.
+    \item Systematically account competitors' offers. 
+\end{enumerate}
+
+Section \ref{sec:1} presents the current pricing formula. Section \ref{sec:2} presents a model formalizing of optimal pricing and section \ref{sec:3} sketches a possible implementation. 
+
+
+\section{How offers are made}\label{sec:1} 
+
+Let $S_i$ denote the retiree’s savings for case $i$; $F$ the monthly annuity payment  offered; $\bar{r}_j$ a firm-wide target IRR; and $\hat{p}_j(t\mid x_i)$ the probability that an individual with characteristics $x_i$ (age, gender, beneficiaries, etc.) survives at least $t$ additional months according to firm $j$ mortality tables. We refer to the individuals with certain $x_i$ as a segment. Let $K_j$ summarize fixed costs per policy (e.g. underwriting costs). 
+
+In practice, the operational pricing equation is:
+
+\begin{align}\label{eq:1}
+    S_i \;-\; K_j \;-\; \sum_{t\ge 1}\frac{\hat{p}_j(t\mid x_i)\,F}{(1+\bar{r}_j)^t} \;=\; 0.
+\end{align}
+
+Equation (\ref{eq:1}) pins down $F$ so that, at the target IRR, the present value of promised payments plus fixed costs equals available savings. It does not, however, consider  two factors that affect profits: (i) how the win probability changes with $F$ for this specific customer segment, and (ii) how likely rivals are to submit more or less aggressive offers for that segment. 
+
+
+\section{Possible improvements}\label{sec:2} 
+
+There are two components not included in the current pricing formula which could improve the pricing. 
+
+
+The first component is \textbf{price elasticity}. Some segments respond strongly to a small improvement in $F$ (high elasticity); others respond little (low elasticity). Intuitively one could decrease the offers for the less elastic segments. 
+
+For example older customers might be less informed—or rely on less-informed intermediaries— in which case they will tend to be less elastic. Or individuals with higher savings could be more sophisticated \footnote{For example, they are more likely to request external offers.}, which could make them more price elastic. Intuitively one could decrease the offers for the less elastic segments, without lossing much market share, therefore increasing profits. 
+
+The second component is \textbf{ competitor's offers}.  Although competitors’ offers are unknown at the moment of pricing, historical data maps customer features $x_i$ to the distribution of competitors' offers. Intuitively a pricing formula which conditions on this competitive effects  helps avoid systematic over-generosity when rivals are typically soft and helps target aggression only where it pays when rivals are typically sharp.
+
+
+\vspace{.5cm}
+
+\textbf{Formalization}
+
+Define the segment “market share” as $s(F\mid x_i, F_c)$, where $F_c$ is the vector of competitor's offers, and  the segment margin as\footnote{In a strict sense $\bar{r}_j$ already incorporates markups, hence the payments should be discounted by $r_j\leq \bar{r}_j$.}
+
+$$
+M(F\mid x_i) \equiv S_i - K_j - \sum_{t\ge 1}\frac{\hat{p}_j(t\mid x_i)\,F}{(1+\bar{r}_j)^t}.
+$$
+
+Which generates a per customer expected profit of: 
+
+\begin{align}\label{eq:2}
+    \text{EP}(F\mid x_i)= s(F\mid x_i, F_c)\times M(F\mid x_i)
+\end{align}
+
+Maximizing (\ref{eq:2}) with respect to $F$ yields the condition
+
+\begin{align}\label{eq:3}
+    F = \frac{S_i - K_j}{\sum_{t\ge 1}\hat{p}_j(t\mid x_i)/(1+\bar{r}_j)^t}  
+     -\frac{s'(F\mid x_i, F_c)}{s(F\mid x_i, F_c)}
+\end{align}
+
+The current pricing structure does not consider the second term which adjusts the offer made. Note that this second term is positive and is bigger(smaller) for more (in)elastic groups and for segments where the firm has lower(higher) market share. 
+
+
+
+
+\section{Potential Implementation}\label{sec:3} 
+
+
+The following steps outline a potential use of data already available to improve on the pricing formula. 
+
+\begin{itemize}
+    \item Step 1 — Build a win-probability model by segment
+
+    Estimate $s(F\mid x_i, F_c)$ using tools from the demand estimation literature (\cite{berry_automobile_1995}).  This delivers an empirical measure of how responsive each segment’s win probability is to small changes in $F$.
+
+    \item Step 2 — Forecast the competitor's offers ($F_c(x_i)$)
+
+    For each segment we would forecast the competitor's offers which is a crucial input to generate an estimate of the buyer elasticity, which depends on the competitors offers. 
+
+    \item Step 3 — Implement an expected-profit calculator
+
+    For each incoming case, compute $M(F\mid x)$ from your existing mortality/discounting engine (already accounting for $K_j$), combine it with $s(F\mid x_i, F_c)$, and choose the $F$ that maximizes $\text{EP}(F\mid x)$ from equation (\ref{eq:3}).
+\end{itemize}
+
+One could do some sort of A/B testing on a small sample to assess this augmented pricing formula. 
+
+ 
+
+ 
+ \end{document}

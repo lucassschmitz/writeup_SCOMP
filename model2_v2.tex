@@ -287,13 +287,14 @@ $$
 Then if $i$ would reach an agreement with the buyer we have: 
 \begin{align*}
 \Pi^{\text{ss}}_i &= \frac{P_i - c}{N} 
-+ \frac{N - 1}{N} \cdot \beta \frac{P_i - c}{N} 
-+ \left( \frac{N - 1}{N} \beta \right)^2 \cdot \frac{P_i - c}{N} + ... 
++ \frac{N - 1}{N} \cdot \beta_i \frac{P_i - c}{N} 
++ \left( \frac{N - 1}{N} \beta_i \right)^2 \cdot \frac{P_i - c}{N} + ... 
 %&= \frac{P_i - c}{N} \cdot \left( \frac{1}{1 - \frac{N-1}{N} \beta} \right) \\
 %&= \frac{P_i - c}{N} \cdot \frac{N}{N - (N-1)\beta} \\
 %&= \frac{P_i - c}{N - (N-1)\beta}   
 %&=  \alpha \cdot \frac{(v_i - R - c)}{N - (N-1)\beta} \\
- = \alpha \cdot \frac{(v + \varepsilon_i - R - c)}{N - (N-1)\beta}
+% = \alpha \cdot \frac{(v + \varepsilon_i - R - c)}{N - (N-1)\beta_i}
+ = \alpha \cdot \frac{(v + \varepsilon_i - R - c)}{N - |D_{-i}|}
 \end{align*}
 where we replaced the price by the bargained price using equation \ref{eq:bargained_prices}. 
 
@@ -449,6 +450,35 @@ With an aftermarket initially the seller posts a price $p$, then the buyer can p
 \textcolor{red}{MY INTUITION IS THAT IF THERE IS DIFFERENTIATION AND MARKUPS ARE VERY BIG, THEN, BARGAINING ALLOWS TO PASS POWER TO THE BUYER. }
 
 
+\vspace{3cm}
 
+\subsection*{Without aftermarket}
+ 
+consider the  case of $N$ firms with marginal cost $c = 0$  and a consumer with valuations for their goods $v_1 < ... < v_N$ an equilibrium are the following prices: 
+     
+\begin{align*}
+    P_N &= x + V_N - V_{N-1}\\
+    P_{-N} &= x  
+\end{align*}
+where $x \geq 0$. 
 
+ 
+ 
+
+\subsection*{With aftermarket}
+\begin{itemize}
+    \item $s=0$
+\end{itemize}
+If $P_N = V_N - V_{N-1} + x$, and $P_{-N} = x$ then buyer surplus if buying in the first stage is:  $V_N - P_N = V_{N-1} - x$.
+
+Then, the consumer searches until finding firm N-1 and chooses
+\begin{align*}
+    \underset{p}{\arg \max} \quad  p^\alpha(V_{N-1} - p - ( V_{N-1} - x) ) ^{1-\alpha}= p^\alpha(x-p) ^{1-\alpha}
+\end{align*}
+ 
+\[ p = \alpha x \]
+Surplus is $V_{N-1} - \alpha x$. Since $V_{N-1} - \alpha x \geq V_{N-1} - x$, the buyer will always bargain.
+
+\vspace{1cm}
+Hence, N will lower its price because it is selling 0.
 \end{document}

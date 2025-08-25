@@ -1,0 +1,146 @@
+%\documentclass[notes,10pt,aspectratio=169]{beamer}
+
+%\documentclass[notes, 10pt,aspectratio=169]{beamer}
+\documentclass[10pt,aspectratio=169]{beamer}
+
+
+% Add this line to your preamble
+%\setbeameroption{show notes on second screen=right}
+
+%\usetheme{Singapore} %Boadilla, Madrid, default, etc. 
+\usetheme[progressbar=frametitle]{metropolis}
+\usecolortheme{rose} %beaver, dolphin, crane, 
+
+
+%\setbeamersize{text margin left=4mm, text margin right=4mm}
+
+
+\usecolortheme{default}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{booktabs} % Required for \toprule, \midrule, \bottomrule
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{block} = [rectangle, draw, text width=4cm, align=center, rounded corners, minimum height=1cm]
+\tikzstyle{decision} = [rectangle, draw, text width=5cm, align=center, fill=blue!10, rounded corners, minimum height=1cm]
+\tikzstyle{terminal} = [rectangle, draw, text width=4.5cm, align=center, fill=yellow!30, rounded corners, minimum height=1cm]
+\tikzstyle{end} = [rectangle, draw, text width=5cm, align=center, fill=green!30, rounded corners, minimum height=1cm]
+\tikzstyle{arrow} = [->, thick]
+
+
+
+\usepackage{adjustbox}
+%2. change the bullets 
+\setbeamertemplate{itemize item}[triangle] %circle, square,... 
+
+
+% 1. Define custom colors and set colors 
+%\definecolor{myblue}{HTML}{003366}
+\definecolor{accent}{RGB}{78,205,196}
+
+%\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=black,bg=white}
+%\setbeamercolor{normal text}{fg=mygray}
+\setbeamercolor{block title}{fg=black,bg=blue}
+%\setbeamercolor{block body}{fg=black,bg=white}
+
+\setbeamercolor{item}{fg= orange!80} % Change bullet color
+\setbeamercolor{button}{bg=orange, fg=white}
+
+
+
+
+
+% 3. BibLaTeX settings
+\usepackage[
+  backend=biber,
+  style=apa,
+  citestyle=authoryear
+]{biblatex}
+\addbibresource{references.bib}
+
+\title{Meetin with SPoints to discuss with Steve}
+%\subtitle{A Mini Literature Overview}
+
+\author{%
+ Lucas Condeza
+\inst{1} \and
+   %\and
+%  Coauthor Three\inst{3}
+}
+\institute{
+  \inst{1} Yale University \\
+}
+
+\date{\today}
+
+\begin{document}
+
+%\begin{frame}
+%  \titlepage
+%\end{frame}
+
+
+
+\begin{frame}{Last meeting}
+Last meeting we talked about:
+\begin{itemize}
+    \item Institutional setting: centralized annuities market with two stages 1. initial offers and 2. external offers: bargaining (?)  
+    \begin{itemize}
+        \item Actually NO bargaining [conversations with intermediaries]
+    \end{itemize}
+    \item Possible information disclosure between first and second stage 
+    \begin{itemize}
+        \item Not the case [conversations with intermediaries]
+    \end{itemize}
+    \item Research question: what is the impact of the second stage [policy concern, was replaced by an auction]
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{This meeting (1)}
+
+Some topics to discuss: 
+\begin{itemize}
+    \item Research question: is it interesting? 
+
+    \begin{itemize}
+        \item Previous motivation: many platforms combine posted prices with bargaining (e.g. Zillow and Autotrader)
+        \item Now? Focus more on supply side? 
+        \item Still to explore heterogeneity in requesting external offers. '[Varian mdoel of shoppers vs non-shoppers?]
+    \end{itemize}
+
+    \item How to model competition? 
+
+    
+    Profits of firm $j$: 
+    \begin{align*}
+    \pi_{ji}(F) = S_i-  \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{F}{(1+r_j)^t}|x_i \right]
+    \end{align*}
+ 
+
+     $S$: stock of savings, $F$: per period annuity payment, $x_i$: individual mortality factors 
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{This meeting (2)}
+Some topics to discuss: 
+\begin{itemize}
+    \item  
+    \item 
+    \item Advice on how to prepare meetings? [slides like this? ]
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+\end{document}

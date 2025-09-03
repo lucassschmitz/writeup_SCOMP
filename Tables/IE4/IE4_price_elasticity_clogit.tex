@@ -1,0 +1,28 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Conditional Logit: Price Elasticity by External Offer Status}
+\begin{tabular}{l*{6}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+            &\multicolumn{1}{c}{Has External}&\multicolumn{1}{c}{No External}&\multicolumn{1}{c}{Has External (FE)}&\multicolumn{1}{c}{No External (FE)}&\multicolumn{1}{c}{m5}&\multicolumn{1}{c}{m6}\\
+\hline
+accepted    &                     &                     &                     &                     &                     &                     \\
+val\_uf\_pension1&       7.227\sym{***}&       7.924\sym{***}&       7.996\sym{***}&       7.689\sym{***}&                     &                     \\
+            &     (0.077)         &     (0.192)         &     (0.082)         &     (0.210)         &                     &                     \\
+[1em]
+Nrisk       &       0.555\sym{***}&       0.284\sym{***}&       0.148\sym{***}&       0.254\sym{***}&       0.126\sym{***}&       0.283\sym{***}\\
+            &     (0.010)         &     (0.012)         &     (0.033)         &     (0.046)         &     (0.037)         &     (0.049)         \\
+[1em]
+val\_uf\_pension\_z&                     &                     &                     &                     &       2.586\sym{***}&       2.077\sym{***}\\
+            &                     &                     &                     &                     &     (0.022)         &     (0.039)         \\
+\hline
+\(N\)       &      207700         &       45580         &      207700         &       45580         &      207700         &       45568         \\
+Log likelihood&   -26295.01         &    -7517.02         &   -24596.21         &    -7095.09         &   -18225.26         &    -6097.02         \\
+Chi-squared &    20103.57         &     3677.36         &    23501.18         &     4521.20         &    36243.08         &     6509.03         \\
+\hline\hline
+\multicolumn{7}{l}{\footnotesize Standard errors in parentheses.}\\
+\multicolumn{7}{l}{\footnotesize Models 1-2: Without firm fixed effects.}\\
+\multicolumn{7}{l}{\footnotesize Models 3-4: With firm fixed effects.}\\
+\multicolumn{7}{l}{\footnotesize *** p<0.01, ** p<0.05, * p<0.10}\\
+\end{tabular}
+\end{table}

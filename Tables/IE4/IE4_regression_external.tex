@@ -1,0 +1,34 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Effect of Intermediaries on External Offers}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
+\hline
+has\_intermediary&       0.480\sym{***}&       0.518\sym{***}&                     &                     \\
+            &     (0.018)         &     (0.018)         &                     &                     \\
+[1em]
+val\_uf\_saldo\_sols&                     &       0.000\sym{***}&                     &       0.000\sym{***}\\
+            &                     &     (0.000)         &                     &     (0.000)         \\
+[1em]
+year        &                     &      -0.005         &                     &      -0.006\sym{*}  \\
+            &                     &     (0.003)         &                     &     (0.003)         \\
+[1em]
+1.intermediary\_id&                     &                     &       0.000         &       0.000         \\
+            &                     &                     &         (.)         &         (.)         \\
+[1em]
+2.intermediary\_id&                     &                     &      -0.315\sym{***}&      -0.367\sym{***}\\
+            &                     &                     &     (0.019)         &     (0.018)         \\
+[1em]
+3.intermediary\_id&                     &                     &       0.478\sym{***}&       0.434\sym{***}\\
+            &                     &                     &     (0.031)         &     (0.030)         \\
+[1em]
+\_cons      &       1.086\sym{***}&      10.763         &       1.401\sym{***}&      12.666\sym{*}  \\
+            &     (0.013)         &     (7.009)         &     (0.014)         &     (6.920)         \\
+\hline
+Obs.        &      21,956         &      21,956         &      21,956         &      21,956         \\
+R-squared   &       0.030         &       0.093         &       0.043         &       0.104         \\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize Robust standard errors. Models 2 and 4 include savings amount and year controls.}\\
+\end{tabular}
+\end{table}

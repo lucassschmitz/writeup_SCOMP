@@ -1,0 +1,309 @@
+ 
+
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+%\usepackage[backend=biber,style=apa,url=false,isbn=false, extra = false]{biblatex}
+
+%\addbibresource{references.bib}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+
+
+\setlength{\textfloatsep}{5pt}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.5in,bmargin=.7in,lmargin=.7in,rmargin=.7in,nomarginpar}
+\makeatletter
+
+\begin{document}
+
+\title{Initial empirical results from SCOMP data}
+
+\maketitle
+
+In this document I will present what we are learnign from out empirical work. This is the continuation of the file which presents the initial datawork. 
+
+\section{IE 4}
+
+The following table shows the coefficients of a conditional logit to test whether customers that ask for an external offer are more price elastic. Odd (even) columns run the specification on the sample with(without) external offers, which we think of as shoppers (non-shoppers). Once we control by the company fixed effects the shopers are more elastic. 
+
+\input{Tables/IE4/IE4_price_elasticity_clogit.tex}
+ 
+\newpage 
+
+
+
+
+
+
+
+
+Figure \ref{fig:ie0_0} shows the increase of requests over time. The increase is smooth with the exception of the year 2009 to 2010 that almost doubles. Probably there was a regulatory change. 
+On average consumers make 10.5 requests for different financial products.
+ 
+
+\begin{figure}[H]
+\caption{}
+ \label{fig:ie4_1}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_int_ext_offers_by_cia.png} 
+\end{tabular}
+\end{figure}
+
+\begin{figure}[H]
+\caption{}
+ \label{fig:ie4_2and3}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_total_internal_offers_bycompany.png} & \includegraphics[scale=0.27]{figures/IE4/IE4_variation_share_external.png}
+\end{tabular}
+\end{figure} 
+
+\newpage
+
+\subsection{Negative correlation credit rating and offers}
+
+Offers with better credit ratings make worse offers, this could reflect cost issues or a less elastic demand. 
+
+\begin{figure}[H]
+\caption{}
+ \label{fig:ie4_4}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_scatter_rating_offer.png} 
+\end{tabular}
+\end{figure}
+
+\begin{figure}[H]
+\caption{}
+ \label{fig:ie4_5and6}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_binscatter_rating_offer.png} & \includegraphics[scale=0.27]{figures/IE4/IE4_box_rating_offer.png}
+\end{tabular}
+\end{figure}
+
+
+
+\input{Tables/IE4/IE4_rating_correlation.tex}
+
+
+\newpage
+
+\subsection{Intermediaries and external offers}
+
+
+
+\begin{figure}[H]
+\caption{}
+ \label{fig:ie4_6and7}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_intermediary_search_box.png} 
+\end{tabular}
+\end{figure}
+
+\input{Tables/ie4/IE4_ttest_full.tex}
+
+
+\newpage
+
+\subsection{Intermediaries and external offers(2)}
+
+\input{Tables/IE4/IE4_search_by_intermediary.tex}
+
+\input{Tables/IE4/IE4_search_by_intermediary_type.tex}
+
+ 
+
+ 
+
+ 
+\begin{figure}[H]
+\caption{}
+ \label{fig:ie4_7and8}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_external_offers_by_intermediary.png} & \includegraphics[scale=0.27]{figures/IE4/IE4_external_distribution_by_intermediary.png} 
+\end{tabular}
+\end{figure} 
+ 
+\begin{figure}[H]
+\caption{}
+ \label{fig:ie4_9and10}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_external_acceptance_by_intermediary.png} 
+\end{tabular}
+\end{figure} 
+ 
+ \input{Tables/ie4/ie4_regression_external.tex}
+  \input{Tables/ie4/IE4_logit_choose_external.tex}
+
+  \begin{figure}[H]
+\caption{}
+ \label{fig:ie4_11}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_external_by_income_intermediary.png} 
+\end{tabular}
+\end{figure} 
+
+\newpage
+
+\subsection{Choose highest offer and Intermediaries}
+ \input{Tables/ie4/IE4_chose_highest_stats.tex}
+
+\input{Tables/ie4/IE4_highest_by_income.tex}
+
+  \begin{figure}[H]
+\caption{}
+ \label{fig:ie4_12}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_highest_by_income.png} 
+\end{tabular}
+\end{figure} 
+
+ \input{Tables/ie4/IE4_highest_by_intermediary.tex}
+
+
+
+   \begin{figure}[H]
+\caption{}
+ \label{fig:ie4_11}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_highest_by_intermediary_type.png} 
+& \includegraphics[scale=0.27]{figures/IE4/IE4_highest_by_intermediary_type(2).png} 
+\end{tabular}
+\end{figure} 
+ 
+
+\input{Tables/IE4/IE4_highest_by_external.tex}
+
+
+  \begin{figure}[H]
+\caption{}
+ \label{fig:ie4_11}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_highest_income_intermediary.png} & \includegraphics[scale=0.27]{figures/IE4/IE4_highest_income_external.png} 
+\end{tabular}
+\end{figure} 
+
+
+%\input{Tables/ie4/IE4_regression_chose_highest.tex}
+
+
+
+
+  \begin{figure}[H]
+\caption{}
+ \label{fig:ie4_11}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_foregone_distribution.png} 
+\end{tabular}
+\end{figure} 
+
+
+\input{Tables/IE4/IE4_foregone_regression.tex}
+
+%\input{Tables/IE4/IE4_choice_by_intermediary.tex}
+%\input{Tables/IE4/IE4_.tex}
+
+
+\newpage
+
+\subsection{TBD}
+\input{Tables/ie4/IE4_rank_of_accepted_external.tex}
+
+  \begin{figure}[H]
+\caption{}
+ \label{fig:ie4_11}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_rank_of_accepted_external.png} 
+\end{tabular}
+\end{figure} 
+
+\input{Tables/ie4/IE4_rank_comparison_external_internal.tex}
+
+
+\input{Tables/ie4/IE4_share_best_offers.tex}
+
+
+
+
+  \begin{figure}[H]
+\caption{}
+ \label{fig:ie4_11}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.17]{figures/IE4/IE4_rank_by_type_income.png} 
+\end{tabular}
+\end{figure} 
+
+
+\newpage
+
+
+  \begin{figure}[H]
+\caption{}
+ \label{fig:ie4_11}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{figures/IE4/IE4_mortality_curves_by_age.png} 
+\end{tabular}
+\end{figure} 
+
+
+   \begin{figure}[H]
+\caption{}
+ \label{fig:ie4_11}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.17]{figures/IE4/IE4_mortality_rates_unsmoothed.png} 
+& \includegraphics[scale=0.17]{figures/IE4/IE4_mortality_rates_smoothed.png} 
+\end{tabular}
+\end{figure} 
+ 
+
+
+ 
+  \begin{figure}[H]
+\caption{}
+ \label{fig:ie4_11}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.2]{figures/IE4/IE4_survival_curves_by_age_top_firms.png} 
+\end{tabular}
+\end{figure} 
+
+
+\end{document}

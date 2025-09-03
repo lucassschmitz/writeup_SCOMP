@@ -1,0 +1,33 @@
+\begin{table}[htbp]\centering
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\caption{Probability of Choosing External Offer (Conditional on Having External)}
+\begin{tabular}{l*{3}{c}}
+\hline\hline
+            &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         \\
+\hline
+chose\_external&                     &                     &                     \\
+has\_intermediary&       1.245\sym{***}&       1.214\sym{***}&                     \\
+            &     (0.090)         &     (0.091)         &                     \\
+[1em]
+val\_uf\_saldo\_sols&                     &      -0.000\sym{***}&                     \\
+            &                     &     (0.000)         &                     \\
+[1em]
+year        &                     &      -0.040\sym{**} &                     \\
+            &                     &     (0.018)         &                     \\
+[1em]
+1.intermediary\_id&                     &                     &       0.000         \\
+            &                     &                     &         (.)         \\
+[1em]
+2.intermediary\_id&                     &                     &      -1.562\sym{***}\\
+            &                     &                     &     (0.118)         \\
+[1em]
+3.intermediary\_id&                     &                     &      -0.742\sym{***}\\
+            &                     &                     &     (0.149)         \\
+[1em]
+\_cons      &       2.759\sym{***}&      82.725\sym{**} &       4.321\sym{***}\\
+            &     (0.050)         &    (36.145)         &     (0.107)         \\
+\hline
+Obs.        &      17,289         &      17,289         &      17,289         \\
+\hline\hline
+\end{tabular}
+\end{table}

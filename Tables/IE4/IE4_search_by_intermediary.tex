@@ -1,13 +1,30 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 \caption{Search Behavior by Intermediary Status}
-\begin{tabular}{l*{2}{cccc}}
+\begin{tabular}{l*{1}{cccc}}
 \hline\hline
-            &        mean&          sd&         min&       count&        mean&          sd&         min&       count\\
+            &        mean&          sd&         min&       count\\
 \hline
+0           &            &            &            &            \\
+n\_external  &        1.09&        1.33&           0&       10908\\
+n\_internal  &       14.09&        7.26&           0&       10908\\
+n\_total\_offers&       15.17&        7.75&           1&       10908\\
+chose\_external&        0.61&        0.49&           0&       10908\\
 \hline
-\(N\)       &       21956&            &            &            &       21956&            &            &            \\
+1           &            &            &            &            \\
+n\_external  &        1.57&        1.41&           0&       11048\\
+n\_internal  &       14.96&        8.81&           0&       11048\\
+n\_total\_offers&       16.52&        9.33&           1&       11048\\
+chose\_external&        0.91&        0.29&           0&       11048\\
+\hline
+Total       &            &            &            &            \\
+n\_external  &        1.33&        1.39&           0&       21956\\
+n\_internal  &       14.52&        8.09&           0&       21956\\
+n\_total\_offers&       15.85&        8.61&           1&       21956\\
+chose\_external&        0.76&        0.43&           0&       21956\\
+\hline
+\(N\)       &       21956&            &            &            \\
 \hline\hline
-\multicolumn{9}{l}{\footnotesize number of searches}\\
+\multicolumn{5}{l}{\footnotesize number of searches}\\
 \end{tabular}
 \end{table}

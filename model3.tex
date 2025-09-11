@@ -69,19 +69,17 @@
 
 \addbibresource{references.bib}
 \begin{document}
-  
+Section \ref{sec:suboptimality} and \ref{sec:suboptimality2} present the pricing formula of insurers operating in the annuities market and show -under different assumptions- that the pricing formula is not optimal. 
 
-In this document I will think about what are the next steps for the
-SCOMP project. 
-
+Section \ref{sec:identification} discusses the identification of the different parameters that enter the pricing formula.
 
 \begin{itemize}
     \item Individuals are indexed by $i$ and firms by $j$ 
-    \item Firms, when making offers, have the same information about the buyers.\\
+    \item Firms, when making offers, have the same information\footnote{This information is provided by the centralized system, firms can not acquire additional information.} about the buyers.\\
     $x_{i}=\{a_i,g_i,family \  composition,S_{i}\}$ where $S_{i}$ are savings, $g_i$ is gender, and $a_i$ is age. 
-    \item Given $x_{i}$, there is a probability that the individual lives at least $t$ additional periods, which we denote by $p(t|x_{i})$. 
-    \item Each firm has their own mortality tables. They are conditional probabilities of being alive in $t$ periods given the type $x_{i}.$ We denote this conditional probability as $\hat{p}_{j}(t|x_{i})$.
-    Note that the unit of time in our case is the month. Firms also have different financing costs, given by $r_{j}$. 
+    \item Given $x_{i}$, there is a probability that the individual lives at least $t$ additional periods, which we denote by $p(t|x_{i})$ 
+    \item $p(t|x_{i})$  is not observed by firms, they aim to estimate it by constructing their own  mortality tables\footnote{Less sophisticated (smaller) firms rely on the tables of the regulator. }. They are conditional probabilities of being alive in $t$ periods given the type $x_{i}.$ We denote this conditional probability as $\hat{p}_{j}(t|x_{i})$.
+     Firms also have different financing costs, given by $r_{j}$. 
 
     \item Expected firm profits when selling an annuity that pays a flow F to individual $i$ is: 
 
@@ -92,36 +90,39 @@ SCOMP project.
 
 where we defined $c_{ij}=\mathbb{E}\left[\sum_{t}\frac{1}{(1+r_{j})^{t}}\right]$the
 cost of an unitary annuity. $F$ is the flow payment offered by the firm. I will refer to $F$ as the price, because
-$S_{i}/F$ is the price paid by the consumer for an unitary annuity.
+$S_{i}/F$ is the price paid by the consumer for an unitary annuity\footnote{A unitary annuity pays $1$ every period.}.
 But $c_{ij}$ is unknown by the firm, since it is constructed using the
 actual survival probabilities. We define $\hat{c}_{ij}=\sum_{t}\hat{p_{j}}(t|x_{i})\frac{1}{(1+r_{j})^{t}}=\hat{\mathbb{E}_{j}}\left[\sum_{t}\frac{1}{(1+r_{j})^{t}}\right]$
 as the unitary cost given the firm's information.
 
 
+\section{Optimal pricing vs. used pricing}\label{sec:suboptimality}
 
-\section{Optimal pricing vs. used pricing}
-
-In this section we present the optimal pricing under different assumptions about the correlation in cost structures among firms and compare the optimal pricing under each assumption with the pricing formula used in the industry. 
+In this section we present the optimal pricing under different assumptions and compare the optimal pricing under each assumption with the pricing formula used in the industry. 
 
 
 \subsection{Assumption 1: Independent private costs and known $F_{-j}$ }\label{sec:independent_private}
 
-We assume that firms know in advance the bids made by the competitors. Hence, the competitor's bids have no informational value. 
+Our initial assumption is that costs are independent ($\mathbb{E}[c_{ij}|\hat{c}_{ij}, \hat{c}_{ij'}] = \mathbb{E}[c_{ij}|\hat{c}_{ij}]$) and that the firm knows the offers made by the other firms\footnote{One case that would satisfy our assumption is the case where the firms know $p(t|x_i)$ and the pricing formula of the competitors.}. 
 
 
 
-The profits the firm should be maximizing are: 
+The per customer profits are:  
 \begin{equation}\label{eq:profit3}
 \hat{\pi}_{ij}(F)= S_{i}-F\hat{c}_{ij}
 \end{equation}
 
 \begin{itemize}
 
-\item A firm that maximizes profits should solve 
+\item A profit maximizer chooses:  
 \begin{align}\label{eq:optimal_pricing}
-F&=\arg\max_{F}s_{j}(F;F_{-j})\hat{\pi}_{ij}(F;F_{-j})\notag\\
-&\implies s_{j}'(F)\left(S_{i}-F\hat{c}_{ij}\right)=s_{j}(F)\hat{c}_{ij}\implies F=\frac{S_{i}}{\hat{c}_{ij}}-\frac{s_{j}(F)}{s_{j}'(F)}
+F_j&=\arg\max_{F}s_{ij}(F;F_{-j})\hat{\pi}_{ij}(F;F_{-j})
+%&\implies s_{j}'(F)\left(S_{i}-F\hat{c}_{ij}\right)=s_{j}(F)\hat{c}_{ij}
+\implies F_j=\frac{S_{i}}{\hat{c}_{ij}}-\frac{s_{ij}(F)}{s_{ij}'(F)}
 \end{align}
+where $s_{ji}$ is the market share among consumers type $i$. 
+
+
 
 \item But from conversations with practitioners, what firms actually do
 is to define a firm-wide Internal Rate of Return (IRR), let's call
@@ -136,58 +137,49 @@ S_{i}-\sum_{t}\hat{p}_{j}(t|x_{i}) \frac{\bar{F}}{(1+\bar{r}_{j})^{t}}=0
 where we defined $\bar{c}_{ij}=\hat{\mathbb{E}}_{j}\left[\sum_{t}\frac{1}{(1+\bar{r}_{j})^{t}}\right]$.
 
  
-Note that $\bar{r}_{j}\geq r_{j}$ because the firm includes the markups in the implicit interest rate. The suboptimality of this formula comes from not considering the price elasticity of the segment into the pricing decision. 
+Note that $\bar{r}_{j}\geq r_{j}$ because the firm includes the markups in the implicit interest rate.  
 
-Note that equation \ref{eq:optimal_pricing} requires knowing consumer
-demand given the pricing of all the other firms. In what follows we
-will set conditions under which the actual pricing is optimal and
-propose a way of measuring the profit loss due to not using the optimal
-pricing strategy. 
 \item Replacing the actual price (equation \ref{eq:actual_pricing}) in the optimal pricing condition (equation \ref{eq:optimal_pricing}) we have
 that the price is optimal iff: 
 \begin{equation}\label{eq:comparison}
-\frac{S_{i}}{\bar{c}_{ij}} =\frac{S_{i}}{\hat{c}_{ij}}-\frac{s_{j}\left(\frac{S_{i}}{\bar{c}_{ij}}\right)}{s_{j}'\left(\frac{S_{i}}{\bar{c}_{ij}}\right)}
-\implies\frac{S_{i}}{\hat{c}_{ij}}-\frac{S_{i}}{\bar{c}_{ij}}=\frac{s_{j}\left(\frac{S_{i}}{\bar{c}_{ij}}\right)}{s_{j}'\left(\frac{S_{i}}{\bar{c}_{ij}}\right)}
+%\frac{S_{i}}{\bar{c}_{ij}} =\frac{S_{i}}{\hat{c}_{ij}}-\frac{s_{j}\left(\frac{S_{i}}{\bar{c}_{ij}}\right)}{s_{j}'\left(\frac{S_{i}}{\bar{c}_{ij}}\right)} \implies
+\frac{S_{i}}{\hat{c}_{ij}}-\frac{S_{i}}{\bar{c}_{ij}}=\frac{s_{j}\left(\frac{S_{i}}{\bar{c}_{ij}}\right)}{s_{j}'\left(\frac{S_{i}}{\bar{c}_{ij}}\right)}
 \end{equation}
 \item From equation \ref{eq:comparison} we see that if there is perfect competition (demand perfectly elastic) and the firm sets the IRR equal to the financing cost,  then the actual pricing scheme
 is optimal. 
 \end{itemize}
 
+The suboptimality of the pricing of equation (\ref{eq:actual_pricing}) comes from not considering the price elasticity of type $i$ individuals into the pricing decision. 
+The way firms are making a profit is by introducing the markup in the IRR, which does not allow them to choose the optimal markup based on the consumer type $i$ price elasticity. 
 
- The pricing formula used by the firm, as shown in equation \ref{eq:actual_pricing}, is suboptimal because it treats pricing as a simple cost-plus-markup problem, fundamentally ignoring consumer demand. The firm's method of setting a price based on a target Internal Rate of Return (\(\overline{r}_j\)) fails to account for how its market share, \(s_j(F)\), will change in response to the price it sets. The optimal pricing strategy, shown in equation \ref{eq:optimal_pricing}, explicitly includes the term \(s_j(F)/s_j'(F)\), which captures the price elasticity of demand. 
-
-
-
-\subsection{Assumption 2: Independent private costs but unknown $F_{-j}$ costs}\label{sec:interdependent}
+ 
 
 
-In this section we present a model assuming that the bids made by the other firms are not known, but knowing them does not change the expected unitary cost. 
-This assumption deserves an explanation. Since offers are constructed using the mortality tables and the IRR, observing the rival's offers reveals information about this objects. But the mortality tables are constructed on a yearly basis and the IRR changes on a monthly or even weekly basis \footnote{From conversation with Renato Aburto, CFO of Consorcio, the second biggest insurer.}, hence we assume that in equilibrium the rival's offers only provide additional information about the IRR and not about the mortality tables used by other firms. 
 
-The profits of the firm, given a vector of offers $(F, F_{-j})$, of being chosen by consumer $i$ are: 
-\begin{equation}
-\hat{\pi}_{ij}(F;F_{-j})=S_{i}-F\hat{c}_{ij}
-\end{equation}
+\subsection{Assumption 2: Independent private costs with unknown $F_{-j}$ }\label{sec:interdependent}
 
-Define $G(F_{-j})$, the cdf of the other firms offers. Then, the firm maximizes: 
+Our second assumption is  that the bids made by the other firms are not known, but knowing them does not change the expected unitary cost($\mathbb{E}[c_{ij}|\hat{c}_{ij}, \hat{c}_{ij'}] = \mathbb{E}[c_{ij}|\hat{c}_{ij}]$). 
+This assumption deserves an explanation. Since offers are constructed using the mortality tables and the IRR, observing the rival's offers reveals information about this objects. But the mortality tables are constructed on a yearly basis and the IRR changes on a monthly or even weekly basis \footnote{From conversation with Renato Aburto, CFO of Consorcio, the second biggest insurer.}, hence we assume that in equilibrium the rival's offers only provide additional information about the IRR and not about the mortality tables used by other firms\footnote{We do not assume that the mortality tables of the competitors are know, just that the bids do not provide additional information. Given that less sophisticated firms do not even invest in producing their own mortality tables, it is plausible that they also are not investing in estimating the mortality tables the other firms' are using, which is more challenging since it involves separately identifying the IRR and the mortality tables. }. 
+
+Define $G(F_{-j})$, the cdf of the other firms offers. Then, the firm when setting prices for customers of type $i$ maximizes: 
 \begin{align*}
-    \int_{F_{-j}} s_j(F; F_{-j})\hat{\pi}_{ij}(F;F_{-j}) dG(F_{-j})
+    \int_{F_{-j}} s_{ij}(F; F_{-j})\hat{\pi}_{ij}(F;F_{-j}) dG(F_{-j})
 \end{align*}
 
 
 then the price FOC is: 
 \begin{align*}
-    \int_{F_{-j}} \left[s_j'(F; F_{-j}) \left(S_{i}-F\hat{c}_{ij}\right)- s_j(F; F_{-j}) \hat{c}_{ij}  \right]dG(F_{-j})=0
+    \int_{F_{-j}} \left[s_{ij}'(F; F_{-j}) \left(S_{i}-F\hat{c}_{ij}\right)- s_{ji}(F; F_{-j}) \hat{c}_{ij}  \right]dG(F_{-j})=0
 \end{align*} 
 
 
 Using, the actual prices from equation (\ref{eq:actual_pricing}), the firm is acting optimally iff: 
 \begin{align}\label{eq:comparison2}
-    \int_{F_{-j}} \left[s_j'(\bar{F}; F_{-j}) \left(S_{i}-\frac{S_{i}}{\bar{c}_{ij}}\hat{c}_{ij}\right)- s_j(\bar{F}; F_{-j}) \hat{c}_{ij}  \right]dG(F_{-j})=0
+    \int_{F_{-j}} \left[s_{ij}'(\bar{F}; F_{-j}) \left(S_{i}-\frac{S_{i}}{\bar{c}_{ij}}\hat{c}_{ij}\right)- s_{ij}(\bar{F}; F_{-j}) \hat{c}_{ij}  \right]dG(F_{-j})=0
 \end{align}   
  
  
-Under the assumption of independent private  costs with unknown $F_{-j}$, the firm's simple pricing rule is suboptimal for two distinct reasons. First, the critique from the previous section still holds: even if the firm knew the competitors' offers, its formula would be incorrect because it completely ignores the price elasticity of demand. Second, the strategy is flawed because it does not incorporate the information about the way competitors are pricing (i.e. $G(F_{-j})$). 
+Under the assumption of independent private  costs with unknown $F_{-j}$, the firm's simple pricing rule is suboptimal for two distinct reasons. First, the critique from the previous section still holds: even if the firm knew the competitors' offers, its formula would be incorrect because it  ignores the price elasticity of demand. Second, the pricing is flawed because it does not incorporate the information about the way competitors are pricing (i.e. $G(F_{-j})$). 
 
 
 
@@ -195,89 +187,90 @@ Under the assumption of independent private  costs with unknown $F_{-j}$, the fi
  
 
 
-\section{Selection}
-
-In sections \ref{sec:independent_private} and \ref{sec:interdependent} we assumed that there is no selection. Previous literature (\cite{illanes_retirement_2019}) showed that there is selection in terms of the product bought (annuity vs  PW), which is expected if buyers have private information about their health, but there are no strong reasons to expect selection across firms. In this section we present a general definition of selection, and then some particular forms of selection which could be present in the market. 
-
-\begin{itemize}
-\item Previously we assumed that $p(t|x_{i})$ does not depend on prices and is not firm specific, which are the assumptions followed by the firms when pricing their products. 
-But we could relax the previous assumption to allow 
- for firm specific survival probabilities and also for this probabilities to be a function of the whole vector of prices, hence survival probabilities would be:   $p_j(t|x_{i}, (F_j, F_{-j}))$ 
+\section{Selection}\label{sec:suboptimality2}
 
 
-We present three different selection definitions, which we label as selection level 1, 2 and 3
 
-\textbf{Def: selection level 1} 
-There is selection level 1 when exists $j,j'$ and a vector $t,x_{i},F$ such that  $p_j(t|x_{i}, F) \neq p_{j'}(t|x_{i}, F)$
+Previously we assumed that $p(t|x_{i})$ does not depend on prices and is not firm specific, which are the assumptions followed by the firms when pricing their products\footnote{To construct their mortality tables, firms use the sample of annuity buyers. [Conversation with Ulises Rubio, former Director of Actuarial department at Metlife, biggest insuer.] }. Generally, there could be selection across firms, which could depend on prices, in which case survival probabilities would have to be written as: $p_j(t|x_{i}, (F_j, F_{-j}))$. 
 
-\textbf{Def: selection level 2} 
-There is selection level 2 when
-for all $(j,j')$ and $(t,x_{i},F)$ we have: 
-$p_j(t|x_{i}, F) = p_{j'}(t|x_{i}, F)$. In this case we ignore the subscript and write: $p(t|x_{i}, F)$ 
+Conditioning survival probabilities on $(j, F)$  allows for selection across firms and into the annuities market. \textcite{illanes_retirement_2019}, using data of the same centralized annuities market, find selection into the market\footnote{Across firm selection implies that the survival probabilities depend on prices. Take the case where all the annuities prices go to zero, then all consumers choose annuities and the survival probabilities among annuity holders equal the ones in the population. Since with the current prices the annuities holders do not have the same survival probabilities as the population, then the survival probabilities depend on prices.}, which is expected if buyers have private information about their health. But is not obvious what would generate selection across firms. 
+
+In what follows we define what we mean by selection across firms and into the market and propose a stylized model that generates only the latter. 
+
+We denote by $j=0$ the outside option of not buying an annuity. 
+
+\textbf{Def: selection across firms} 
+  $\exists \ j,j'\neq 0$ and a vector $(t,x_{i},F)$ such that  $p_j(t|x_{i}, F) \neq p_{j'}(t|x_{i}, F)$
+
+\textbf{Def: selection into the market} 
+for all $(j,j'\neq 0 )$ and $(t,x_{i},F)$ we have: 
+$p_j(t|x_{i}, F) = p_{j'}(t|x_{i}, F)$ but there exists a vector $(j, t,x_{i},F)$ such that $p_j(t|x_{i}, F) = p_{0}(t|x_{i}, .)$
+
 
 \textbf{Def: no selection} 
-There is no selection  when  survival probabilities can be written as:   $p(t|x_{i})$
-
-We also refer to selection level 1 as across firm selection and selection level 2 as across products selection. The results in \textcite{illanes_retirement_2019} imply that there is at least selection at level 2.\footnote{Take the case where all the annuities prices go to zero, then all consumers choose annuities and the survival probabilities among annuity holders equal the ones in the population. Since with the current prices the annuities holders do not have the same survival probabilities as the population, then the survival probabilities depend on prices.}
-
+There is no selection  when $\forall (t,x_{i}) $ there exists a 
+survival probability $p(t|x_{i})$ such that :   $p_j(t|x_{i}, (F_j, F_{-j})) = p(t|x_{i}), \forall F,j $
 
 
 
-We will assume that there is not selection at level 1 but that there is selection at level 2. In what follos we present a simple model to illustrate restrictions to buyers' preferences which would justify our assumption. 
+\smallskip
+
+The three definitions of selection presented are not exhaustive. In what follows we present what the different types of selection would look like in a simple nested logit model. 
+
+\medskip
 
 
 
-\end{itemize}
+
 
 
 \subsection*{Nested Logit Model for Pension Choice}
 
-Here we specify a nested logit model for an individual's choice between a Phased Withdrawal (PW) and an Annuity($A$). In this framework, the choice of an Annuity provider represents the inner nest, while the  decision between the Annuity and PW constitutes the outer nest.
+Here we specify a nested logit model for an individual's choice between an Annuity($A$) and the outside option ($0$). The choice of an Annuity provider represents the inner nest, while the  decision between the Annuity and $j=0$ constitutes the outer nest.
 
-\textbf{The Inner Nest}
+%\textbf{The Inner Nest}
 
-Denote by $V_{ij} = f(h_i, F_j)$ the mean utility of a buyer of type $i$ when buying from insurer $j$, where $h_i$ denotes private information about his health, and $U_{ij}$ the realized utility. Then, the conditional probability of individual $i$ choosing firm $j$, given the selection of the Annuity nest, is modeled as:
+Denote by $V_{ij} = f(h_i, F_j)$ the mean utility of a buyer of type $i$ when buying from insurer $j$, where $h_i$ is private health information. The probability of choosing $j$ given selection of $A$ is: 
 \begin{equation}\label{eq:inner_prob}
     P(j|A) = \frac{e^{V_{ij} / \lambda}}{\sum_{k=1}^{J} e^{V_{ik} / \lambda}} = \frac{1}{\sum_{k=1}^{J} e^{(f(h_i, F_k)-f(h_i, F_j)) / \lambda}}
 \end{equation}
 
-where $J$ is the total number of annuity firms and $\lambda\in[0,1]$ is the log-sum parameter, which measures the correlation of unobserved utility among the firms within the Annuity nest. 
+where $\lambda\in[0,1]$ measures the correlation of unobserved utility among insurers. 
 
+%\textbf{The Outer Nest}
 
-\textbf{The Outer Nest}
+Assume that the utility of the outside option is: $V_{i, 0 } + \epsilon_{i, 0}$ and define the inclusive value of the annuities: 
 
-Assume that the utility of the PW option is: $V_{i, \text{PW}} + \epsilon_{i, \text{PW}}$
-
-Moreover, the inclusive value of the annuity option is: 
-\begin{equation}
-    I_{i, \text{Annuity}} = \ln\left(\sum_{k=1}^{J} e^{V_{ik} / \lambda}\right)
+%Moreover, the inclusive value of the annuity option is: 
+\begin{equation}\label{eq:inclusive}
+    I_{i, \text{A}} = \ln\left(\sum_{k=1}^{J} e^{V_{ik} / \lambda}\right)
 \end{equation}
 
-The utility for the Annuity nest is then:
-\begin{equation}
-    U_{i, A} = V_{i, A} + \lambda I_{i, A} + \epsilon_{i, A}
-\end{equation}
-where $V_{i, \text{Annuity}}$ depends on attributes common to all annuities.
+%The utility for the Annuity nest is then:
+%\begin{equation}
+%    U_{i, A} = V_{i, A} + \lambda I_{i, A} + \epsilon_{i, A}
+%\end{equation}
+where $V_{i, \text{A}}$ depends on attributes common to all annuities.
 
 
 The probability that individual $i$ chooses the Annuity nest is given by:
 
 \begin{equation}
-    P(A) = \frac{e^{V_{i,A} + \lambda I_{i, A}}}{e^{V_{i, \text{PW}}} + e^{V_{i, A} + \lambda I_{i, A}}}
+    P(A) = \frac{e^{V_{i,A} + \lambda I_{i, A}}}{e^{V_{i, 0}} + e^{V_{i, A} + \lambda I_{i, A}}}
 \end{equation}
 
 
 The unconditional probability of choosing firm $j$ is calculated as the product of the probability of choosing the Annuity nest and the conditional probability of choosing firm $j$ within that nest.
 \begin{equation}
     P_{ij} = P(A) \times P(j|A) =
-    P_{ij} = \left( \frac{e^{V_{i, A} + \lambda I_{i, A}}}{e^{V_{i, \text{PW}}} + e^{V_{i, A} + \lambda I_{i, A}}} \right) \times \left( \frac{e^{V_{ij} / \lambda}}{\sum_{k=1}^{J} e^{V_{ik} / \lambda}} \right)
+     \left( \frac{e^{V_{i, A} + \lambda I_{i, A}}}{e^{V_{i, 0}} + e^{V_{i, A} + \lambda I_{i, A}}} \right) \times \left( \frac{e^{V_{ij} / \lambda}}{\sum_{k=1}^{J} e^{V_{ik} / \lambda}} \right)
 \end{equation}
 
 \textbf{Commentary}
 
 
 \begin{itemize}
-    \item In equation (\ref{eq:inner_prob}) a simple condition to have choice probabilities independent of $h_i$ is to assume a utility function that is additively separable in health and price (e.g. $f(h_i, F_j) = m_1(h_i) + m_2(F_j)$). In this case we have that the utility difference between firms is: 
+    \item In equation (\ref{eq:inner_prob}) a simple condition to avoid having selection across firms ($h_i$ independent of choice probability) is to assume a utility function that is additively separable in health and price (e.g. $f(h_i, F_j) = m_1(h_i) + m_2(F_j)$). In this case we have that the utility difference between firms is: 
     \begin{align*}
     f(h_i, F_k) - f(h_i, F_j) = ( m_1(h_i) + m_2(F_k)) - ( m_1(h_i) + m_2(F_j)) = m_2(F_k) - m_2(F_j)
     \end{align*}
@@ -288,14 +281,13 @@ The unconditional probability of choosing firm $j$ is calculated as the product 
     P(j|A, h_i) = \frac{1}{\sum_{k=1}^{J} e^{(f(h_i, F_k)-f(h_i, F_j)) / \lambda}} =  \frac{1}{\sum_{k=1}^{J} e^{(m_2(F_k) - m_2(F_j)) / \lambda}} = P(j|A)
     \end{equation}
 
+    \item The additively separable assumption above, will generally generate selection into the market since the inclusive value of the annuities (equation \ref{eq:inclusive} will depend on health status). 
 
-    \item Moreover we have that if $P(j|A)$ is independent of $h_i$, then we have selection at level 2. $p_j(t|x_i, F)$, is the same for all firms $j$.
-
-    \item To have no selection we need $p_j(t|x_i, F)$ to be the same for all firms and moreover to be independent of F. It is possible to prove that sufficient conditions are  $P(j|A)$ independent of health status and the choice of annuities vs. PW has to be also independent of health status. As previously mentioned, \textcite{illanes_retirement_2019} prove that this later condition is not satisfied in this market. 
+    \item With adverse selection, since the marginal buyer might be switching from the outside option, its cost will be lower than the average buyer's. Since   mortality tables are estimated on the population of annuity buyers, the costs will be overestimated.  
 \end{itemize}
 
 
-\section{Identification}
+\section{Identification}\label{sec:identification}
 
 
 In this section we discuss how to identify $\hat{p}_{j}(t|x_{i})$  and  $\bar{r_{j}}$ from our data. 
@@ -303,34 +295,30 @@ In this section we discuss how to identify $\hat{p}_{j}(t|x_{i})$  and  $\bar{r_
 
 \textbf{Data}
 
-Our data consists on offers made by the firms, for each individual $i$ we have their chcaracteristiscs ($x_i$) and the vector of offers they received. Hence our data is:  $(i, x_i, (\bar{F}_1, ..., \bar{F}_J))_{i=1}^I$ 
+Our data consists on offers made by the firms. For each individual $i$ we have their characteristics ($x_i$) and the vector of offers they received. Hence our data is:  $(i, x_i, (\bar{F}_1, ..., \bar{F}_J))_{i=1}^I$ 
 
-\textbf{Goal}
-
-From our data we want to estimate 
-$((\hat{p}_{j}(t|x_{i}))_{x_i,t},  \bar{r_{j}})_{j=1}^J$ from our data.
+ 
 
 \textbf{Identification}
 
+With our data we want to estimate 
+$((\hat{p}_{j}(t|x_{i}))_{x_i,t},  \bar{r_{j}})_{j=1}^J$ 
 
-$\hat{p}_{j}(t|x_{i})$, which is a non-parametric object of $|J|\cdot |x_{i}|\cdot T$ dimensions. We will provide some structure to reduce the number of parameters to estimate.  
-
-We can partition $x_{i}$ into age and the other variables $x_{i}=\{\bar{x}_i, a_i\}$. Moreover define $q_{j}(\bar{x}_i, a_i) \equiv \hat{p}_{j}(1|x_i) $, the one-period survival probability, then: 
+Define the partition of   $x_{i}$ into age and the other variables $x_{i}=\{\bar{x}_i, a_i\}$. Moreover define $q_{j}(\bar{x}_i, a_i) \equiv \hat{p}_{j}(1|x_i) $, the one-period survival probability, then: 
 
 \begin{align}\label{eq:mort_form}
-    \hat{p}_{j}(t|x_i) &= q(\bar{x}_i, a_i)\cdot q(\bar{x}_i, a_i+1) \cdot q(\bar{x}_i, a_i+2) \cdot ... \cdot q(\bar{x}_i, t-1) \notag \\
+    \hat{p}_{j}(t|x_i)
+    %&= q(\bar{x}_i, a_i)\cdot q(\bar{x}_i, a_i+1) \cdot q(\bar{x}_i, a_i+2) \cdot ... \cdot q(\bar{x}_i, t-1) \notag \\
     &= \prod_{a= a_i}^{t-1}q(\bar{x}_i, a)
 \end{align}
 
-Hence we only need to estimate $q(\bar{x}_i, a)$
-which reduces the number of parameters from: $|J|\cdot |x_{i}|\cdot T$  to $|J|\cdot |x_{i}|$ 
-
-Define $z_j \equiv (1+\bar{r}_j)^{-1}$. Since we do not study variation across $\bar{x}$ but only across age groups, we denote by $C_j(a)$ the unitary cost of a unitary annuity sold to an indivdual of age $a$ when the annuity starts paying the next period. 
-
-Hence: 
+Define $z_j \equiv (1+\bar{r}_j)^{-1}$. In what follows we focus only on one group of $\bar{x}_i$, hence is not included as argument in the function. Denote by $C_j(a)$ the  cost of an unitary annuity given buyer age $a$\footnote{The cost calculation assumes the annuity starts paying next period and discounts flow by the IRR.}: 
 \begin{align}\label{eq:ident_costs}
     C_j(a) &= \sum_{t=1}^{\infty} z_j^t \prod_{u=0}^{t-1} q_j(\bar{x}, a+u) 
 \end{align}
+
+Since $C_j(a) =\sum_{t}\hat{p}_{j}(t|x_{i}) \frac{1}{(1+\bar{r}_{j})^{t}} = \hat{\mathbb{E}}_{j}\left[\sum_{t}\frac{1}{(1+\bar{r}_{j})^{t}}\right] = \bar{c}_{ij}$ using the  actual pricing equation (\ref{eq:actual_pricing}) we have  $\frac{S_i}{C_j(a)} = \bar{F}$. Hence we can recover $C_j(a)$ from the observed offers.
+
 
 It is possible to prove that 
 
@@ -353,7 +341,7 @@ From our institutional context we know  that   $ q_j(\bar{x},110) =0$, but this 
 
 But if we knwe $ q_j(\bar{x},a_0)$ for a non-terminal $a_0$ then we would be able to identify all the parameters. One possibility is to assume that for certain age the firms use the same tables as the regulator. 
 
-In this case we could identify $z_j$ from 
+In this case, from equation (\ref{eq:identification1}), we could identify $z_j$ from 
 \begin{align}\label{eq:identification3}
      z_j  =\frac{C_j(a)}{ q_j(\bar{x}, a_0)[1+C_j(a+1)]}
 \end{align}

@@ -1,0 +1,75 @@
+ 
+
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+%\usepackage[backend=biber,style=apa,url=false,isbn=false, extra = false]{biblatex}
+
+%\addbibresource{references.bib}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+
+
+\setlength{\textfloatsep}{5pt}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.5in,bmargin=.7in,lmargin=.7in,rmargin=.7in,nomarginpar}
+\makeatletter
+
+\begin{document}
+
+\title{Initial empirical results from SCOMP data}
+
+\maketitle
+
+In this document I will present what we are learnign from out empirical work. This is the continuation of the file which presents the initial datawork. 
+
+\section{IE 4}
+
+\subsection{Elasticity of shoppers vs non-shoppers}
+
+The following table shows the coefficients of a conditional logit to test whether customers that ask for an external offer are more price elastic. Odd (even) columns run the specification on the sample with(without) external offers, which we think of as shoppers (non-shoppers). Once we control by the company fixed effects the shopers are more elastic. 
+
+\input{Tables/IE5/IE5_reg_by_rank.tex}
+ \newpage 
+ 
+ \input{Tables/IE5/IE5_reg_by_rank(2).tex}
+ 
+
+ 
+\subsection{Firms using more-less external offers}
+
+\begin{figure}[H]
+\caption{}
+ \label{fig:ie4_1}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.17]{figures/IE4/IE4_int_ext_offers_by_cia.png} 
+\end{tabular}
+\end{figure}
+
+   
+
+\end{document}

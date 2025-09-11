@@ -1,0 +1,16 @@
+\begin{table}[htbp]\centering
+\caption{Equality of Survival Functions Tests}
+\begin{tabular}{l*{3}{c}}
+\hline\hline
+            &       tests&            &            \\
+            &        Chi2&     P-value&          df\\
+\hline
+Log-rank    &      19.798&      0.0005&           4\\
+Wilcoxon    &      14.415&      0.0061&           4\\
+Stratified\_LR&      13.937&      0.0075&           4\\
+\hline\hline
+\multicolumn{4}{l}{\footnotesize Log-rank test is sensitive to late differences}\\
+\multicolumn{4}{l}{\footnotesize Wilcoxon test weights early times more heavily}\\
+\multicolumn{4}{l}{\footnotesize Stratified log-rank adjusts for 5-year age groups}\\
+\end{tabular}
+\end{table}

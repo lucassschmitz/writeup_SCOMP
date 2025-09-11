@@ -109,10 +109,10 @@ Offers with better credit ratings make worse offers, this could reflect cost iss
 \subsection{Intermediaries and external offers}
 
 
-
+Figure \ref{fig:ie4_7} shows the distribution of external offers by intermediary use, the table below show the ttest of means, where buyers with intermediaries receive .48 extra external offers, and this number is significant.  
 \begin{figure}[H]
 \caption{}
- \label{fig:ie4_6and7}
+ \label{fig:ie4_7}
 \centering{}%
 \begin{tabular}{cc}
 \includegraphics[scale=0.17]{figures/IE4/IE4_intermediary_search_box.png} 
@@ -120,24 +120,26 @@ Offers with better credit ratings make worse offers, this could reflect cost iss
 \end{figure}
 
 \input{Tables/ie4/IE4_ttest_full.tex}
-\input{Tables/ie4/IE4_intermediary_choice.tex}
+
 
 \newpage
 
 \subsection{Intermediaries and external offers(2)}
 
+Table 3 shows the number of external, initial offers received and  the probability of choosing one of the external offers by intermediary status. Buyers with intermediaries accept external offers at a significantly higher rate than those without them. 
+
+Table 4 shows the number of external offers and the probability of choosing one of the external offers by intermediary type. Buyers with agents receive the least amount of external offers but are the most likely to choose one of them reflecting that they buy from the agent's company. Whereas buyers with advisors receive more offers but are sligthly less likely to buy  from them. Figure \ref{fig:ie4_10} shows similar data and additionally the probability of choosing an external offer having one in the data, which is similar across groups. 
+ 
 \input{Tables/IE4/IE4_search_by_intermediary.tex}
 
 \input{Tables/IE4/IE4_search_by_intermediary_type.tex}
 
- 
-
- 
+ Figure \ref{fig:ie4_8and9} shows the averaage number of external offers by intermediary tye and the distribution of external offers by having/not having an intermediary. 
 
  
 \begin{figure}[H]
 \caption{}
- \label{fig:ie4_7and8}
+ \label{fig:ie4_8and9}
 \centering{}%
 \begin{tabular}{cc}
 \includegraphics[scale=0.17]{figures/IE4/IE4_external_offers_by_intermediary.png} & \includegraphics[scale=0.17]{figures/IE4/IE4_external_distribution_by_intermediary.png} 
@@ -146,16 +148,20 @@ Offers with better credit ratings make worse offers, this could reflect cost iss
  
 \begin{figure}[H]
 \caption{}
- \label{fig:ie4_9and10}
+ \label{fig:ie4_10}
 \centering{}%
 \begin{tabular}{cc}
 \includegraphics[scale=0.17]{figures/IE4/IE4_external_acceptance_by_intermediary.png} 
 \end{tabular}
 \end{figure} 
  
+Table 5 shows that intermediariees generally increase the number of external offers, but when desaggregating the effect, agents actually generate less offers and brokers are the ones driving the increase in offers. 
  \input{Tables/ie4/ie4_regression_external.tex}
-  \input{Tables/ie4/IE4_logit_choose_external.tex}
 
+ Table 6, shows that intermediareis increase the chances of accepting an external offer,  conditionaal on having offers, but this is driven mainly by agents and not by brokers.
+
+  \input{Tables/ie4/IE4_logit_choose_external.tex}
+figure \ref{fig:ie4_11} shows that buyers with intermediaries receive more offers along the income distribution. 
   \begin{figure}[H]
 \caption{}
  \label{fig:ie4_11}
@@ -168,7 +174,9 @@ Offers with better credit ratings make worse offers, this could reflect cost iss
 \newpage
 
 \subsection{Choose highest offer and Intermediaries}
- \input{Tables/ie4/IE4_chose_highest_stats.tex}
+
+Table 7 shows the share of buyers choosing the highest income, the foregone percentage in case (difference between highest and chosen offer) and the total number of offers by income quintile. Richer individuals receive higher offers but there is no clear pattern in the share of buyers choosing the highest offer or in the foregone percentage over income quintiles. Figure \ref{fig:ie4_12} shows the sam pattern of the share of buyers choosing the highest offer by income quintile. 
+
 
 \input{Tables/ie4/IE4_highest_by_income.tex}
 
@@ -181,11 +189,12 @@ Offers with better credit ratings make worse offers, this could reflect cost iss
 \end{tabular}
 \end{figure} 
 
- \input{Tables/ie4/IE4_highest_by_intermediary.tex}
+Table 8 shows that buyers with intermediaries have a lower likelihood of choosing the highest offer (first row in each subtable) and when they choose lower offers they forego a higher percentage of income (third row of each subtable).
+Figure \ref{fig:ie4_11} shows that actually this effect of intermediaries is driven by sales agents, and buyers with brokers actually choose the highest offer at a higher rate that those without any intermediaries. 
 
+\input{Tables/ie4/IE4_highest_by_intermediary.tex}
 
-
-   \begin{figure}[H]
+\begin{figure}[H]
 \caption{}
  \label{fig:ie4_11}
 \centering{}%
@@ -195,13 +204,14 @@ Offers with better credit ratings make worse offers, this could reflect cost iss
 \end{tabular}
 \end{figure} 
  
+Table 9 shos the patterns of table 8 but for buyers with and without external offers. Both types of buyers have a similar rate at which they choose the lower offers, this is not consistent with the idea that external offers are requested from firms with particularly good non-offer characteristics. 
 
 \input{Tables/IE4/IE4_highest_by_external.tex}
 
-
+Finally figures \ref{fig:ie4_12and13} show the patterns of the share of buyers choosing the highest offer by income quintile for buyers with and without intermediaries and with and without external offers.
   \begin{figure}[H]
 \caption{}
- \label{fig:ie4_11}
+ \label{fig:ie4_12and13}
 \centering{}%
 \begin{tabular}{cc}
 \includegraphics[scale=0.17]{figures/IE4/IE4_highest_income_intermediary.png} & \includegraphics[scale=0.17]{figures/IE4/IE4_highest_income_external.png} 
@@ -209,7 +219,7 @@ Offers with better credit ratings make worse offers, this could reflect cost iss
 \end{figure} 
 
 
-%\input{Tables/ie4/IE4_regression_chose_highest.tex}
+\input{Tables/ie4/IE4_regression_chose_highest.tex}
 
 
 
@@ -226,27 +236,29 @@ Offers with better credit ratings make worse offers, this could reflect cost iss
 
 \input{Tables/IE4/IE4_foregone_regression.tex}
 
-%\input{Tables/IE4/IE4_choice_by_intermediary.tex}
-%\input{Tables/IE4/IE4_.tex}
-
 
 \newpage
 
-\subsection{TBD}
-\input{Tables/ie4/IE4_rank_of_accepted_external.tex}
+\subsection{External offer ranking when accepted}
 
-  \begin{figure}[H]
+External offers are different (\ref{fig:ie4_11}), the difference is significant, see wilcoxon rank-sum. Table 12 shows a similar pattern. 
+\begin{figure}[H]
 \caption{}
- \label{fig:ie4_11}
+\label{fig:ie4_11}
 \centering{}%
 \begin{tabular}{cc}
 \includegraphics[scale=0.27]{figures/IE4/IE4_rank_of_accepted_external.png} 
 \end{tabular}
 \end{figure} 
 
+
+\input{Tables/IE4/IE4_rank_distribution_test.tex}
+
+
+ 
 \input{Tables/ie4/IE4_rank_comparison_external_internal.tex}
 
-
+Table 13 shows that 
 \input{Tables/ie4/IE4_share_best_offers.tex}
 
 
@@ -261,23 +273,30 @@ Offers with better credit ratings make worse offers, this could reflect cost iss
 \end{tabular}
 \end{figure} 
 
-
 \newpage
+A
+\newpage
+\subsection{Mortality and survival rates}
 
+Figure \ref{fig:ie4_12} shows the mortality curves for the biggest firm. 
 
-  \begin{figure}[H]
+\begin{figure}[H]
 \caption{}
- \label{fig:ie4_11}
+\label{fig:ie4_12}
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=0.27]{figures/IE4/IE4_mortality_curves_by_age.png} 
+\includegraphics[scale=0.2]{figures/IE4/IE4_mortality_curves_by_age.png} 
 \end{tabular}
 \end{figure} 
 
+\subsection{Mortality and survival rates}
 
-   \begin{figure}[H]
+Figure \ref{fig:ie4_13} shows the share of individuals at each age that die. The left panel is unshmoothed and the right panel is smoothed. We can see that some firms have consistently lower mortalities (e.g. firm2). 
+
+Figure \ref{fig:ie4_14} shows the survival curves for the same firms, where we can see that the survival rates vary across firms.
+\begin{figure}[H]
 \caption{}
- \label{fig:ie4_11}
+\label{fig:ie4_13}
 \centering{}%
 \begin{tabular}{cc}
 \includegraphics[scale=0.17]{figures/IE4/IE4_mortality_rates_unsmoothed.png} 
@@ -290,12 +309,15 @@ Offers with better credit ratings make worse offers, this could reflect cost iss
  
   \begin{figure}[H]
 \caption{}
- \label{fig:ie4_11}
+ \label{fig:ie4_14}
 \centering{}%
 \begin{tabular}{cc}
 \includegraphics[scale=0.2]{figures/IE4/IE4_survival_curves_by_age_top_firms.png} 
 \end{tabular}
 \end{figure} 
+
+\input{Tables/ie4/IE4_survival_tests.tex}
+
 
 
 \end{document}

@@ -1,68 +1,41 @@
 \begin{table}[htbp]\centering
 \def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
 \caption{Determinants of Choosing Highest Offer}
-\begin{tabular}{l*{5}{c}}
+\begin{tabular}{l*{4}{c}}
 \hline\hline
-            &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+            &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
 \hline
-main        &                     &                     &                     &                     &                     \\
-has\_intermediary&      -0.867\sym{***}&      -0.879\sym{***}&      -0.873\sym{***}&                     &      -0.209\sym{***}\\
-            &     (0.033)         &     (0.033)         &     (0.033)         &                     &     (0.008)         \\
+main        &                     &                     &                     &                     \\
+has\_intermediary&      -0.867\sym{***}&      -0.879\sym{***}&      -0.873\sym{***}&      -0.209\sym{***}\\
+            &     (0.033)         &     (0.033)         &     (0.033)         &     (0.008)         \\
 [1em]
-has\_external&       0.475\sym{***}&       0.498\sym{***}&       0.418\sym{***}&                     &       0.098\sym{***}\\
-            &     (0.040)         &     (0.040)         &     (0.046)         &                     &     (0.011)         \\
+has\_external&       0.475\sym{***}&       0.498\sym{***}&       0.418\sym{***}&       0.098\sym{***}\\
+            &     (0.040)         &     (0.040)         &     (0.046)         &     (0.011)         \\
 [1em]
-1.income\_q  &                     &       0.000         &       0.000         &       0.000         &       0.000         \\
-            &                     &         (.)         &         (.)         &         (.)         &         (.)         \\
+2.income\_q  &                     &       0.066         &       0.207\sym{***}&       0.049\sym{***}\\
+            &                     &     (0.048)         &     (0.049)         &     (0.012)         \\
 [1em]
-2.income\_q  &                     &       0.066         &       0.207\sym{***}&       0.211\sym{***}&       0.049\sym{***}\\
-            &                     &     (0.048)         &     (0.049)         &     (0.049)         &     (0.012)         \\
+3.income\_q  &                     &       0.122\sym{**} &       0.337\sym{***}&       0.079\sym{***}\\
+            &                     &     (0.048)         &     (0.052)         &     (0.012)         \\
 [1em]
-3.income\_q  &                     &       0.122\sym{**} &       0.337\sym{***}&       0.335\sym{***}&       0.079\sym{***}\\
-            &                     &     (0.048)         &     (0.052)         &     (0.052)         &     (0.012)         \\
+4.income\_q  &                     &       0.095\sym{*}  &       0.360\sym{***}&       0.085\sym{***}\\
+            &                     &     (0.048)         &     (0.055)         &     (0.013)         \\
 [1em]
-4.income\_q  &                     &       0.095\sym{*}  &       0.360\sym{***}&       0.351\sym{***}&       0.085\sym{***}\\
-            &                     &     (0.048)         &     (0.055)         &     (0.055)         &     (0.013)         \\
+5.income\_q  &                     &      -0.222\sym{***}&       0.009         &       0.003         \\
+            &                     &     (0.049)         &     (0.056)         &     (0.013)         \\
 [1em]
-5.income\_q  &                     &      -0.222\sym{***}&       0.009         &       0.026         &       0.003         \\
-            &                     &     (0.049)         &     (0.056)         &     (0.056)         &     (0.013)         \\
+n\_total\_offers&                     &                     &      -0.033\sym{***}&      -0.008\sym{***}\\
+            &                     &                     &     (0.003)         &     (0.001)         \\
 [1em]
-n\_total\_offers&                     &                     &      -0.033\sym{***}&      -0.025\sym{***}&      -0.008\sym{***}\\
-            &                     &                     &     (0.003)         &     (0.003)         &     (0.001)         \\
+n\_external  &                     &                     &       0.112\sym{***}&       0.026\sym{***}\\
+            &                     &                     &     (0.017)         &     (0.004)         \\
 [1em]
-n\_external  &                     &                     &       0.112\sym{***}&                     &       0.026\sym{***}\\
-            &                     &                     &     (0.017)         &                     &     (0.004)         \\
-[1em]
-0.has\_intermediary&                     &                     &                     &       0.000         &                     \\
-            &                     &                     &                     &         (.)         &                     \\
-[1em]
-1.has\_intermediary&                     &                     &                     &       0.028         &                     \\
-            &                     &                     &                     &     (0.083)         &                     \\
-[1em]
-0.has\_external&                     &                     &                     &       0.000         &                     \\
-            &                     &                     &                     &         (.)         &                     \\
-[1em]
-1.has\_external&                     &                     &                     &       0.809\sym{***}&                     \\
-            &                     &                     &                     &     (0.045)         &                     \\
-[1em]
-0.has\_intermediary#0.has\_external&                     &                     &                     &       0.000         &                     \\
-            &                     &                     &                     &         (.)         &                     \\
-[1em]
-0.has\_intermediary#1.has\_external&                     &                     &                     &       0.000         &                     \\
-            &                     &                     &                     &         (.)         &                     \\
-[1em]
-1.has\_intermediary#0.has\_external&                     &                     &                     &       0.000         &                     \\
-            &                     &                     &                     &         (.)         &                     \\
-[1em]
-1.has\_intermediary#1.has\_external&                     &                     &                     &      -1.056\sym{***}&                     \\
-            &                     &                     &                     &     (0.090)         &                     \\
-[1em]
-\_cons      &       0.235\sym{***}&       0.211\sym{***}&       0.416\sym{***}&       0.181\sym{***}&       0.600\sym{***}\\
-            &     (0.032)         &     (0.044)         &     (0.047)         &     (0.048)         &     (0.011)         \\
+\_cons      &       0.235\sym{***}&       0.211\sym{***}&       0.416\sym{***}&       0.600\sym{***}\\
+            &     (0.032)         &     (0.044)         &     (0.047)         &     (0.011)         \\
 \hline
-Obs.        &      18,292         &      18,292         &      18,292         &      18,292         &      18,292         \\
-Pseudo R2   &       0.029         &       0.032         &       0.038         &       0.041         &                     \\
+Obs.        &      18,292         &      18,292         &      18,292         &      18,292         \\
+Pseudo R2   &       0.029         &       0.032         &       0.038         &                     \\
 \hline\hline
-\multicolumn{6}{l}{\footnotesize Models 1-4: Logit. Model 5: LPM. Robust standard errors.}\\
+\multicolumn{5}{l}{\footnotesize Models 1-3: Logit. Model 4: LPM. Robust standard errors.}\\
 \end{tabular}
 \end{table}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  7 SEP 2025 18:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  13 SEP 2025 15:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -527,8 +527,14 @@ File: figures/IE4/IE4_int_ext_offers_by_cia.png Graphic file (type png)
 Package pdftex.def Info: figures/IE4/IE4_int_ext_offers_by_cia.png  used on input line 69.
 (pdftex.def)             Requested size: 287.52039pt x 172.51222pt.
  [3 <./figures/IE4/IE4_int_ext_offers_by_cia.png (PNG copy)>] [4] (empirical3.aux)
-Package rerunfilecheck Info: File `empirical3.out' has not changed.
-(rerunfilecheck)             Checksum: 57DBC81C023ABED4BF7946085A8E6EC9;579.
+
+Package rerunfilecheck Warning: File `empirical3.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `empirical3.out':
+(rerunfilecheck)             Before: FE84375D0E78FA7DD4AD14F5708D6BDF;582
+(rerunfilecheck)             After:  57DBC81C023ABED4BF7946085A8E6EC9;579.
  ) 
 Here is how much of TeX's memory you used:
  13716 strings out of 476331
@@ -539,7 +545,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  90i,13n,131p,460b,444s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on empirical3.pdf (4 pages, 209961 bytes).
+Output written on empirical3.pdf (4 pages, 209962 bytes).
 PDF statistics:
  77 PDF objects out of 1000 (max. 8388607)
  11 named destinations out of 1000 (max. 500000)

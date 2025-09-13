@@ -69,24 +69,29 @@
 
 \addbibresource{references.bib}
 \begin{document}
-\textbf{Some notes}
-
-
-\todo[inline]{Note that in insurance markets (just as in markets where there is a fixed cost) marginal cost is decreasing. In markets with a fixed cost firms can still make a profit because the fixed creates barriers to entry, hence equilibrium profits equal the fixed cost. But in an insurance market average cost is also decreasing, the difference is that there are no barriers to entry, hence I think that you do not even need many problesm with adverse selection. There could be a market where a monopolist charging their actual cost could survive but the }
-
-\newpage
-
-Assume that buyers differ in their health status, all sellers receive the same signal about the status. We study competition given a signal, which in our institutional context is equivalent to study the market of a particular group (e.g. women with a certain amount of savings and a certain age). 
 
 
 
-\section{Perfect information}
 
-We first present the demand side then we present the costs of insurers and the optimal pricing strategy. Finally we present equilibrium market shares. 
+\textbf{Overview}
 
-\subsection{Consumer choice}
+\begin{itemize}
+    \item We present a model of asymmetric competition in insurance markets with selection into  into the market (buyers are sicker on average), but not across firms (identical health mix across insurers).   
+    \item Given that there is no selection across firms the average cost is the same for all firms. Despite equal average costs, firms have different marginal costs. 
+\end{itemize}
 
-Following \textcite[p. 21 and 22]{hortacsu_structural_2023} consider a standard nested logit with two modules (outer nest): the outside option (Phased Withdrawal) and buying an annuity. And the inner nest consists on choosing among the insurers. 
+
+\hline
+
+\medskip
+
+We study an annuities market with private health information and differentiated insurers. Section  \ref{sec:model} presents demand, costs, and equilibrium; Section  \ref{sec:simulation}  uses simulations to quantify how changing the amount of private information affects prices, shares, and costs.
+
+
+\section{The model}\label{sec:model}
+\subsection{Consumer choice}\label{sec:consumer_choice}
+
+Following \textcite[p. 21 and 22]{hortacsu_structural_2023} consider a standard nested logit with two nests:the outside option versus buying an annuity; the inner nest consiste of insurers. 
 
 Denote by $\delta_j$ the mean utility of each option, where $j =0$ represents the outside option. 
 Then the probability of choosing insurer $j$ conditional on buying an annuity is 
@@ -94,7 +99,7 @@ Then the probability of choosing insurer $j$ conditional on buying an annuity is
 \begin{equation}\label{eq:inner_prob}
     s_{j\mid A} = \frac{\exp(\delta_{j} / \rho)}{\sum_{k=1}^{J} \exp(\delta_{k} / \rho)}  
 \end{equation}
-where $\rho \in [0,1]$ measures the degree of correlation among the alternatives, if $\rho =1 $ the model is a standard logit (without nests)\footnote{See \href{https://eml.berkeley.edu/choice2/ch4.pdf}{here}.}. 
+where $\rho \in [0,1]$ measures the degree of independence among the alternatives, if $\rho =1 $ the model is a standard logit (without nests)\footnote{See \href{https://eml.berkeley.edu/choice2/ch4.pdf}{here}.}. 
 And the probability of buying an annuity is: 
 
 
@@ -118,8 +123,7 @@ Then we have:
     s_{j\mid A}(h_i) = \frac{\exp((f(h_i) + \tilde{\delta}_j) / \rho)}{\sum_{k=1}^{J} \exp((f(h_i) + \tilde{\delta}_j)/ \rho)} = \frac{\exp( \tilde{\delta}_j / \rho)}{\sum_{k=1}^{J} \exp( \tilde{\delta}_j/ \rho)} \equiv s_{j\mid A}
 \end{equation}
 implying that, conditional on buying an annuity the health information does not affect the insurer choice. 
-
-\todo[inline]{Note that although there is no selection (equation \ref{eq:no_selection}) the marginal costs can still be different among the firms, see equation \ref{eq:mg_cost}. Because the diversion from the outside option is different. }
+ 
 
 Moreover 
 \begin{align}\label{eq:into_selection}
@@ -129,21 +133,22 @@ Moreover
 \end{align}
 implying that the probability of buying an annuity is increasing on health status. 
 
-Given that the  probability of buying an annuity is increasing on $h_i$, there is adverse selection into the annuities market. The cost of selling an annuity to an annuities buyer is on average higher than the cost of providing an annuity to a buyer choosing the outside option. For a formal proof see section \ref{sec:appendix2}.  
 
+\subsection{Average and marginal costs}\label{sec:costs}
 
-
-\subsection{Cost of the average and marginal buyers}
-
-
-Define $c_j(h_i)$ the cost for insurer $j$ of selling an annuity to buyer with health status $h_i$. Then the average cost of insurer $j$ is\footnote{Remember that we are studying a particular group of the population, hence is the average cost for individuals who have the same observables. }: 
+Define $c_j(h_i)$ the cost for insurer $j$ of selling an annuity to buyer with health status $h_i$, where the cost is increasing on its argument.  Then the average cost of insurer $j$ is\footnote{Remember that we are studying a particular group of the population, hence is the average cost for individuals who have the same observables. }: 
 
 \begin{align}\label{eq:avg_cost}
     \bar{c}_j = \frac{\int c_j(h)\cdot s_j(h) \cdot f_h(h) dh}{\int  s_j(h) \cdot f_h(h) dh}
 \end{align}
-where $f_h(\cdot)$ is the marginal distribution of the health status. 
+where $f_h(\cdot)$ is the density of health status. 
 
-To obtain the marginal cost, when increasing prices we need to obtain the marginal consumer, for tractability take the case when $\tilde{\delta}_j = \hat{\delta}_j - \alpha p_j$. Then: 
+The marginal cost is: 
+\begin{align}\label{eq:mg_cost}
+    c^m_j = \frac{\int c_j(h) \frac{\partial s_j(h)}{\partial p_j}  f_h(h) dh }{\int \frac{\partial s_j(h)}{\partial p_j}  f_h(h) dh }
+\end{align}
+
+To obtain a closed form solution for the semi-elasticities we assume  $\tilde{\delta}_j = \hat{\delta}_j - \alpha p_j$. Then: 
 
 \begin{align}\label{eq:price_der}
     \frac{\partial s_j(h)}{\partial p_j} 
@@ -152,19 +157,23 @@ To obtain the marginal cost, when increasing prices we need to obtain the margin
 \end{align}
 
 For the derivation see section \ref{sec:appendix1}.
+
+
 Note that $\frac{1}{\rho}(1-s_{j|A}(h))$ represents the consumers that are substituting from other firms and $s_{j|A}(h)  (1-s_A(h))$ represents the consumers that are substituting from the outside option. 
 If the shocks within the nest are correlated ( $\rho \rightarrow 0 $) then most of the marginal consumers are susbstituting from other firms, whereas if the outside option is very relevant $s_A \rightarrow 1 $ then most of the additional consumers come from the outside option. 
 
-The average cost of the consumers gained with a price decrease (marginal cost) is: 
-\begin{align}\label{eq:mg_cost}
-    c^m_j = \frac{\int c_j(h) \frac{\partial s_j(h)}{\partial p_j}  f_h(h) dh }{\int \frac{\partial s_j(h)}{\partial p_j}  f_h(h) dh }
-\end{align}
 
-In section \ref{sec:appendix3} we prove that 
-$ \bar{c}_j \geq c_j^m$, the intuition is simple, non-buyers have a lower $h_i$ and when reducing the price the marginal buyer is a linear combination of consumers diverted from other insurers and from consumers that were not buying an annuity, since the first group of consumers is not selected (see equation \ref{eq:no_selection}) and the latter group has a lower $h_i$ the marginal consumer tends to be less healthy than the average consumer. 
+Given that the  probability of buying an annuity is increasing on $h_i$ (see equation \ref{eq:into_selection}), there is adverse selection into the annuities market. The cost of selling an annuity to an annuities buyer is on average higher than the cost of providing an annuity to a buyer choosing the outside option. For a formal proof see section \ref{sec:appendix2}.  
+
+If all firms have the same cost function ($c_j(h) = c(h)$), then the average cost is the same for all firms. We refer by this result as \textit{no selection across firms} since all the cost differences would arise due to different cost functions and not due to consumers sorting into firms. For a formal proof see section \ref{sec:appendix2.1}.
+
+Moreover given that the non-buyers tend to be healthier than the buyers, the marginal cost is lower than the average costs. The intuition is that the marginal cost of a firm is the convex combination of the cost of buyers diverted from other firms and the cost of  buyers diverted from the outside option (see equation \ref{eq:price_der}), where this latter group has a lower cost, whereas the average cost is the same as the cost of buyers diverted from other firms.  For a formal proof that $ \bar{c}_j \geq c_j^m$, see section \ref{sec:appendix3}. 
 
 
-\subsection{Firm pricing}
+Even in the case firms have the same cost function, product differentiation generates  heterogeneity in marginal costs. This can appear counterintuitive, because previously we determined that there is no selection across firms which implies that they have the same average costs. To build some intuition, consider a duopoly with market shares 50\%, 1\% and 49\% does not buy the insurance. The market leader, when decreasing the costs, gets the healthy non buyers, whereas the small firms gets a mixture of previous buyers and non-buyers. Hence the bigger firm has smaller marginal costs than the smaller firm. 
+For a formal proof see section \ref{sec:appendix3.1}.
+
+\subsection{Firm pricing}\label{sec:pricing}
 The firm profits are:
 
 \begin{align}
@@ -194,21 +203,16 @@ Then we have:
 \begin{align}
     \int \frac{\partial s_j(h)}{\partial p_j} f(h) dh = - \alpha \int w(h) f(h) dh
 \end{align}
-Then the margin can be written as: 
+and the margin can be written as: 
 \begin{align}
     p_j- c^m_j  = \frac{ s_j}{\alpha \int w(h) f(h) dh} = 
 \end{align}
 
 
-The highest the market share the higher the margin since raising prices increases profits by increasing revenue from more infra-marginal consumers. 
+The higher the market share the higher the margin since raising prices increases profits by increasing revenue from more infra-marginal consumers. 
 
 The higher the competitive pressure the lower the margin, where the competitive pressure is given by the magnitude of marginal consumers. 
 For example the smaller the $\rho$ the stronger the correlation of idiosyncratic shocks making competition stronger and decreasing margins.. Or the higher $s_{j\mid A} s_0$ the more likely a consumer switches to the outside option, also decreasing margins. 
-
-
-
-
-
 
 Using the FOC and the functional forms previously assumed we can obtain the share of consumers who do not buy an annuity and is given by: 
 
@@ -232,7 +236,6 @@ In the model we presented, $h_i$ is the private information of the buyer. Provid
 
     \item From equations \ref{eq:avg_cost} and \ref{eq:mg_cost} we can calculate the average cost and the marginal cost as a function of $\sigma$ and from them determine the degree of adverse selection. 
 
-    \item 
 \end{itemize}
 
 
@@ -241,16 +244,51 @@ Note that given that we do not have a close form solution for the equilibrium pr
 
 
 
-\section{Simulation}
+\section{Simulation}\label{sec:simulation}
 
 For the simulations we assume that the cost function of the firm is the same for all of them and is given by: 
-
 $c(h) = c_0 + \gamma \cdot h$
 
+Figure \ref{fig:1} shows three patterns. (i) Average cost exceeds marginal cost, consistent with marginal buyers being healthier than the average buyer. (ii) Marginal costs differ across firms even though  $c(\cdot)$ is common. Firms with a higher market share have lower marginal cost.  (iii) Both average and marginal costs rise with $\sigma$. This reflects selection, a higher $\sigma$ increases the share of consumers choosing the outside option, increasing the health status of the marginal consumer. 
+
+
+
+
+
+\begin{figure}[H]
+\caption{}
+ \label{fig:1}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.61]{figures/simulations/costs_vs_sigma.png} 
+\end{tabular}
+\end{figure}
+
+
+Figure \ref{fig:2} left panel shows the market shares as function of $\sigma$. The main pattern is that when the amount of private information increases (higher $\sigma$) there is unraveling, the amount of individuals choosing the outside option grows. This is generated by higher prices (right panel) which are generated due to the higher level of selection into the market. 
+
+
+\begin{figure}[H]
+\caption{}
+ \label{fig:2}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.6]{figures/simulations/shares_vs_sigma.png} & \includegraphics[scale=0.6]{figures/simulations/prices_vs_sigma.png}
+\end{tabular}
+\end{figure}
 \newpage
  
 
- \section{Appendix}
+\section{Additional thoughts}
+
+\begin{itemize}
+    \item Practitioners told me that the regulator tables are constructed based on the whole population of Chilean retirees, whereas the firms construct their tables based on annuity buyers. From equation \ref{eq:price_der} we can see that in fact the marginal cost is not determined by the mortality of the buyers or non-buyers, but from a combination of both. 
+
+    \item Our model has competition implications. For example a merge will increase market power, but also will decrease the marginal cost beyond just creating synergies, but by increasing the share of marginal buyers who are diverted from the outside option. 
+\end{itemize}
+
+
+\section{Appendix}
 
 \subsection{Own elasticity in nested logit}\label{sec:appendix1}
 From equation \ref{eq:choice_prob} we derive the derivative of the probability with respect to price. 
@@ -307,7 +345,7 @@ and the buyers diverted from the outside option are:
     \alpha \ s_j  s_{j|A}  (1-s_A)  
 \end{align}
 
-\pagebreak
+\bigskip
 
 
 \subsection{Cross elasticity in nested logit}\label{sec:appendix1.1}
@@ -356,23 +394,26 @@ Pluging equations \ref{eq:app4} and \ref{eq:app5} into \ref{eq:app1} we have:
 \end{align}
 
 
+\bigskip
 
-
-\subsection{Cost difference}\label{sec:appendix2}
+\subsection{Cost difference: selection into the market}\label{sec:appendix2}
+In this subsection we prove that the average cost for buyers is higher than for non-buyers, what we call selection into the market. 
 
 From equation \ref{eq:into_selection} 
-$s_A(h)$ is strictly increasing in $h$.  By Bayes' rule the conditional densities are
+$s_A(h)$ is strictly increasing in $h$.  By Bayes' rule the density among the buyers ($f_A(h)$) and among non-buyers ($f_0(h)$) are: 
     $$f_A(h) = \frac{s_A(h)f(h)}{s_A}, \quad f_0(h) = \frac{(1-s_A(h))f(h)}{s_0}.$$
 Consider the likelihood-ratio
     $$R(h) = \frac{f_A(h)}{f_0(h)} = \frac{s_0}{s_A} \cdot \frac{s_A(h)}{1-s_A(h)}.$$
 
 Since $s_A(h)$ is strictly increasing in $h$ then $R(h)$ also is. 
-Given that $f_A/f_0$ exhibits the monotone likelihood ratio (MLR) property, then $f_A$ exhibits first order stochastic dominance (FOSD) with respect to $f_0$\footnote{See the \href{https://en.wikipedia.org/wiki/Monotone_likelihood_ratio?utm_source=chatgpt.com}{here}}. FOSD implies that\footnote{See \href{https://economics.stackexchange.com/questions/15134/implication-of-first-order-stochastic-dominance?utm_source=chatgpt.com}{here} for a proof that FOSD implies an inequality of expected values. }: 
+Given that $f_A/f_0$ exhibits the monotone likelihood ratio (MLR) property, then $f_A$ exhibits first order stochastic dominance (FOSD) with respect to $f_0$\footnote{See  \href{https://en.wikipedia.org/wiki/Monotone_likelihood_ratio?utm_source=chatgpt.com}{here}, for a source of the claim that MLR implies FOSD.}. FOSD implies that\footnote{See \href{https://economics.stackexchange.com/questions/15134/implication-of-first-order-stochastic-dominance?utm_source=chatgpt.com}{here} for a proof that FOSD implies an inequality of expected values. }: 
 
 $$E[c(H)|A] \geq E[c(H)|0],$$
 
-\subsection{Cost difference(1)}\label{sec:appendix2.1}
+\bigskip
 
+\subsection{Cost difference: no across firms selection}\label{sec:appendix2.1}
+In this subsection we prove that all firms have the same average cost, there is no selection across firms. 
 
 Assume that $c_j(h) = c(h), \forall j$ then, for any firm $j$: 
 \begin{align}
@@ -380,13 +421,14 @@ Assume that $c_j(h) = c(h), \forall j$ then, for any firm $j$:
 =  \frac{\int c(h)s_A(h) f(h)\,dh}{\int s_A(h) f(h)\,dh} = \bar{c}_A    
 \end{align}
 where the last equality uses equation \ref{eq:no_selection}. 
- 
 
-\subsection{Cost difference (2)}\label{sec:appendix3}
+\bigskip
 
-    
+\subsection{Cost difference: marginal cost lower than average cost}\label{sec:appendix3}
 
-using equation \ref{eq:price_der} in equation \ref{eq:avg_cost} we have: 
+
+
+Using equation \ref{eq:price_der} in equation \ref{eq:avg_cost} we have: 
 \begin{align}
     c^m_j = \frac{\int c_j(h) \left[\alpha \ s_A(h) s_{j\mid A}(h) \left[ \left(\frac{1}{\rho}(1-s_{j|A}(h))\right)  + s_{j|A}(h)  (1-s_A(h)) \right]  \right]  f_h(h) dh }{\int  \left[\alpha \ s_A(h) s_{j\mid A}(h) \left[ \left(\frac{1}{\rho}(1-s_{j|A}(h))\right)  + s_{j|A}(h)  (1-s_A(h)) \right]  \right]  f_h(h) dh }
 \end{align}
@@ -419,15 +461,15 @@ replacing equations \ref{eq:numerator} and \ref{eq:denominator}, we have the mar
 
 Define
 
-\begin{align}
+\begin{align}\label{eq:definitions}
 X =   \int c_j(h)  \ s_A(h) f_h(h) dh \quad 
 A =   \ s_A(h) f_h(h) dh \notag \\
 Y =   \int c_j(h)  \ s_A(h) (1-s_A(h)) f_h(h) dh \quad 
-B =   \int s_A(h) (1-s_A(h)) f_h(h) dh \notag 
+B =   \int s_A(h) (1-s_A(h)) f_h(h) dh 
 \end{align}
  replacing in the marginal cost (equation \ref{eq:mg_cost2}) we have: 
 
- \begin{align}
+ \begin{align}\label{eq:37}
     c^m_j 
     &= \frac{a X +b Y }{aA + bB } = \frac{aA\frac{X}{A}+bB\frac{Y}{B}}{aA+bB} = \frac{aA}{aA+bB}\cdot\frac{X}{A} + \frac{bB}{aA+bB}\cdot\frac{Y}{B}.
 \end{align}
@@ -436,13 +478,11 @@ B =   \int s_A(h) (1-s_A(h)) f_h(h) dh \notag
 Define
 $$ \lambda := \frac{aA}{aA+bB} \in [0,1], \quad 1-\lambda = \frac{bB}{aA+bB} \in [0,1].$$
 
-
- \begin{align}
+\begin{align}
     c^m_j = \lambda \frac{X}{A} + (1-\lambda)\frac{Y}{B}.
 \end{align}
 
 Now we need to prove that $\frac{Y}{B} \le \frac{X}{A}$. 
-
 
 Introduce the probability measure $d\nu(h) := \frac{s_A(h)f(h)}{A}\,dh$.
 Let $r(h) := 1-s_A(h)$. Then
@@ -456,6 +496,69 @@ then we have:
  \begin{align}
     c^m_j = \lambda \frac{X}{A} + (1-\lambda)\frac{Y}{B} \leq  \lambda \frac{X}{A} + (1-\lambda)\frac{X}{A} = \frac{X}{A} =\bar{c}_j 
 \end{align}
+
+\bigskip
+
+\subsection{Cost difference: heterogeneity in marginal costs}\label{sec:appendix3.1}
+
+Using the definitions of equation \ref{eq:definitions} and  $a_j \equiv  \alpha s_{j\mid A} \frac{1}{\rho}(1-s_{j|A}), \quad b_j \equiv \alpha s_{j\mid A}^2 $. 
+
+
+\begin{align}\label{eq:3.6.1}
+W_j & \equiv \alpha \int w_j(h) f(h) dh. = \alpha \int s_A(h) s_{j|A} \left[ \frac{1}{\rho}(1-s_{j|A}) + s_{j|A}(1-s_A(h)) \right] f(h) dh \\
+ &= \alpha s_{j|A}\left[ \int s_A(h)   \left[ \frac{1}{\rho}(1-s_{j|A}) + s_{j|A}(1-s_A(h)) \right] f(h) dh \right] \\
+&= \alpha s_{j|A} \left[ \frac{1}{\rho}(1-s_{j|A}) \underbrace{\int s_A(h) f(h) dh}_{A} + s_{j|A} \underbrace{\int s_A(h)(1-s_A(h)) f(h) dh}_{B} \right].
+\end{align}
+where $w_j(h)$ is defined by equation \ref{eq:comp_weight} and $(A,B)$ are defined by equation \ref{eq:definitions}. 
+
+Then we have: 
+
+\begin{equation}
+W_j = a_j A + b_j B
+\end{equation}
+
+Moreover from equation \ref{eq:37} we have \footnote{In the original equation $a$ and $b$ were not indexed by $j$ just to simplify notation.}:
+ \begin{align}
+    c^m_j 
+    &=  \underbrace{\frac{a_jA}{a_jA+b_jB}}_{\lambda_j}\cdot\frac{X}{A} + \underbrace{\frac{b_jB}{a_jA+b_jB}}_{1-\lambda_j}\cdot\frac{Y}{B}.
+\end{align}
+
+Replacing $a_j$ and $b_j$ we have that: 
+\begin{align}
+    \lambda = \frac{\left(\alpha s_{j\mid A} \frac{1}{\rho}(1-s_{j|A})\right)A}{\left(\alpha s_{j\mid A} \frac{1}{\rho}(1-s_{j|A})\right)A+\left(\alpha s_{j\mid A}^2\right)B}  = \frac{\left(\alpha  \frac{1}{\rho}(1-s_{j|A})\right)A}{\left(\alpha  \frac{1}{\rho}(1-s_{j|A})\right)A+\left(\alpha s_{j\mid A}\right)B} 
+\end{align}
+
+note that the differences in marginal cost arise only due to the weights of the linear combination and since  in section \ref{sec:appendix3} we already proved that $ \frac{Y}{B} \leq \frac{X}{A}$, then marginal cost is increasing in  $\lambda_j$. 
+
+This shows that even though the average costs for the firms are the same (see equation \ref{eq:no_selection}), the marginal costs are different. 
+
+Note that 
+
+\begin{align*}
+s_{j|A} \to 0 &\implies \lambda_j \to 1 \implies c_{m,j} \to \frac{X}{A}, \\
+s_{j|A} \to 1 &\implies \lambda_j \to 0 \implies c_{m,j} \to \frac{Y}{B}.
+\end{align*}
+Let $u := \frac{1}{\rho}(1-s_{j|A})A$ and $v := s_{j|A}B$, so $\lambda_j = u/(u+v)$. Then
+\[
+\frac{\partial \lambda_j}{\partial s_{j|A}} = \frac{-\frac{1}{\rho}A(u+v) - u(-\frac{1}{\rho}A+B)}{(u+v)^2} = -\frac{\frac{1}{\rho}Av + uB}{(u+v)^2} < 0, \implies  \frac{\partial c_{m,j}}{\partial s_{j|A}} < 0
+\]
+
+Products with \textbf{larger} $s_{j|A}$ have \textbf{smaller} marginal cost. The intution is that products with high market shares get more diversion from the outside margin, where consumers have a lower cost. 
+
+Moreover 
+ 
+\[
+\frac{\partial \lambda_j}{\partial \rho} = \frac{(\partial u / \partial \rho)v}{(u+v)^2} = -\frac{(1-s_{j|A})A}{\rho^2} \cdot \frac{v}{(u+v)^2} < 0, \implies  \frac{\partial c_{m,j}}{\partial \rho} < 0 
+\]
+
+
+a \textbf{higher} $\rho$ (weaker within-nest correlation) moves weight toward $\frac{Y}{B}$ and \textbf{lowers} $c_{m,j}$.
+
+
+   
+ 
+
+\bigskip
 
 \subsection{Outside share}\label{sec:appendix4}
 

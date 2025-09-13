@@ -46,30 +46,41 @@
 
 In this document I will present what we are learnign from out empirical work. This is the continuation of the file which presents the initial datawork. 
 
-\section{IE 4}
+\section{IE 5}
 
-\subsection{Elasticity of shoppers vs non-shoppers}
+\subsection{Granularity of the insurer mortality tables}
 
-The following table shows the coefficients of a conditional logit to test whether customers that ask for an external offer are more price elastic. Odd (even) columns run the specification on the sample with(without) external offers, which we think of as shoppers (non-shoppers). Once we control by the company fixed effects the shopers are more elastic. 
+The logic in table 1 is that more sophisticated firms should have a statistically significant value of savings (val\_uf\_prima) because they include it in the mortality tables. Whereas less sophisticated firms do not include it and therefore the coefficient should be statistically insignificant. We rank firms according to sales and we show the firms with odd ranks (1,3,5,7,9, ..., 15), and we assume is a proxy of sophistication\footnote{If creating better mortality tables is a fixed cost then it is natural to expect firms with more sales to have more granular mortality tables.} There does not appear to be a trend in which firms with lower ranks have a smaller value of the savings coefficient. This could be caused by the fact that the model is misspecified, we are trying to approximate the pricing formula which contains thousands of coefficients (mortality rates) with 5 coefficients. 
 
-\input{Tables/IE5/IE5_reg_by_rank.tex}
- \newpage 
+In table 2 we repeat the excercise but without controlling for savings under the logic that the R2 of more sophisticated firms should be lower because we are missing a key variables in the pricing formula. There does not appear to be a trend in which firms with lower ranks have a higher R2. Again, this could be caused by misspecification.
+
+
+\input{../Tables/IE5/IE5_reg_by_rank.tex}
  
- \input{Tables/IE5/IE5_reg_by_rank(2).tex}
+
+If more sophisticated firms are using t
+ 
+\input{../Tables/IE5/IE5_reg_by_rank(2).tex}
+ 
  
 
- 
-\subsection{Firms using more-less external offers}
+\newpage 
 
-\begin{figure}[H]
-\caption{}
- \label{fig:ie4_1}
-\centering{}%
-\begin{tabular}{cc}
-\includegraphics[scale=0.17]{figures/IE4/IE4_int_ext_offers_by_cia.png} 
-\end{tabular}
-\end{figure}
+A second approach is to: 
+\begin{enumerate}
+    \item Generate groups based on covariates $x = (age, savings, year)$ and $\hat{x}= (x, savings)$ 
+    \item Calculate the coefficient of variation for groups within the groups based on $x$ and $\hat{x}$. 
+    \item Variation in groups using $x$ should be higher for more sophisticated firms since we are not accounting for savings. Moreover if we calculate the decrease in variation when using $\hat{x}$  instead of $x$ then we should see a decrease for sophisticated firms but not for the other firms. 
+\end{enumerate}
 
-   
+
+%\begin{figure}[H]
+%\caption{}
+% \label{fig:ie4_1}
+%\centering{}%
+%\begin{tabular}{cc}
+%\includegraphics[scale=0.17]{figures/IE4/IE4_int_ext_offers_by_cia.png} 
+%\end{tabular}
+%\end{figure}
 
 \end{document}

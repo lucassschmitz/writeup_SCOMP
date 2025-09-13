@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  13 SEP 2025 15:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  13 SEP 2025 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical3.tex"
-(c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical3.tex
+**"c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical3.tex"
+(c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical3.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-03-30> (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -508,46 +508,34 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
-(Tables/IE5/IE5_reg_by_rank.tex
-Overfull \hbox (72.28473pt too wide) in paragraph at lines 4--54
+(../Tables/IE5/IE5_reg_by_rank.tex
+Overfull \hbox (78.15967pt too wide) in paragraph at lines 4--36
+ [][] 
+ []
+
+) (../Tables/IE5/IE5_reg_by_rank(2).tex
+Overfull \hbox (56.37018pt too wide) in paragraph at lines 4--33
  [][] 
  []
 
 ) [1
 
-{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (Tables/IE5/IE5_reg_by_rank(2).tex
-Overfull \hbox (69.047pt too wide) in paragraph at lines 4--51
- [][] 
- []
-
-)
-<figures/IE4/IE4_int_ext_offers_by_cia.png, id=32, 1691.31876pt x 1014.79124pt>
-File: figures/IE4/IE4_int_ext_offers_by_cia.png Graphic file (type png)
-<use figures/IE4/IE4_int_ext_offers_by_cia.png>
-Package pdftex.def Info: figures/IE4/IE4_int_ext_offers_by_cia.png  used on input line 69.
-(pdftex.def)             Requested size: 287.52039pt x 172.51222pt.
- [3 <./figures/IE4/IE4_int_ext_offers_by_cia.png (PNG copy)>] [4] (empirical3.aux)
-
-Package rerunfilecheck Warning: File `empirical3.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `empirical3.out':
-(rerunfilecheck)             Before: FE84375D0E78FA7DD4AD14F5708D6BDF;582
-(rerunfilecheck)             After:  57DBC81C023ABED4BF7946085A8E6EC9;579.
+{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] (empirical3.aux)
+Package rerunfilecheck Info: File `empirical3.out' has not changed.
+(rerunfilecheck)             Checksum: E9714282595D5EDFD1E4D1F7B0ECA5ED;353.
  ) 
 Here is how much of TeX's memory you used:
- 13716 strings out of 476331
- 227160 string characters out of 5787765
- 1879660 words of memory out of 5000000
- 33910 multiletter control sequences out of 15000+600000
+ 13706 strings out of 476331
+ 226923 string characters out of 5787765
+ 1877660 words of memory out of 5000000
+ 33901 multiletter control sequences out of 15000+600000
  522078 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,13n,131p,460b,444s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on empirical3.pdf (4 pages, 209962 bytes).
+ 90i,11n,131p,1025b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on empirical3.pdf (3 pages, 126010 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 90 PDF objects out of 1000 (max. 8388607)
+ 13 named destinations out of 1000 (max. 500000)
+ 17 words of extra memory for PDF output out of 10000 (max. 10000000)
 

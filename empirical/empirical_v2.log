@@ -435,4 +435,333 @@ LaTeX Font Info:    ... okay on input line 41.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay 
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(50.58878pt, 513.11745pt, 50.58878pt)
+* v-part:(T,H,B)=(36.135pt, 708.24622pt, 50.58878pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=513.11745pt
+* \textheight=708.24622pt
+* \oddsidemargin=-21.68121pt
+* \evensidemargin=-21.68121pt
+* \topmargin=-73.135pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count300
+\scratchdimen=\dimen260
+\scratchbox=\box61
+\nofMPsegments=\count301
+\nofMParguments=\count302
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count303
+\MPscratchDim=\dimen261
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
+\everyMPtoPDFconversion=\toks39
+) (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring OFF on input line 41.
+ (empirical_v2.out) (empirical_v2.out)
+\@outlinefile=\write4
+\openout4 = `empirical_v2.out'.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+ (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
+ (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: No \author given.
+
+
+Overfull \hbox (64.51541pt too wide) in paragraph at lines 58--59
+[]\OT1/cmr/m/n/12 In the file '2[]ofertas[]muestra[]acep' we do the fol-low-ing sam-ple se-lec-tion: 1) kept only 'cod[]modalidad[]pension
+ []
+
+(../Tables/IE2_sample_size.tex)
+<../figures/IE0_plot0.png, id=68, 1075.01625pt x 644.4075pt>
+File: ../figures/IE0_plot0.png Graphic file (type png)
+<use ../figures/IE0_plot0.png>
+Package pdftex.def Info: ../figures/IE0_plot0.png  used on input line 95.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+ [1
+
+{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+<../figures/IE0_plot1.png, id=84, 1075.01625pt x 644.4075pt>
+File: ../figures/IE0_plot1.png Graphic file (type png)
+<use ../figures/IE0_plot1.png>
+Package pdftex.def Info: ../figures/IE0_plot1.png  used on input line 108.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+
+
+LaTeX Warning: Reference `fig:ie0_2' on page 2 undefined on input line 114.
+
+<../figures/IE0_plot2.png, id=85, 1075.01625pt x 644.4075pt>
+File: ../figures/IE0_plot2.png Graphic file (type png)
+<use ../figures/IE0_plot2.png>
+Package pdftex.def Info: ../figures/IE0_plot2.png  used on input line 123.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+<../figures/IE0_plot3.png, id=86, 1075.01625pt x 644.4075pt>
+File: ../figures/IE0_plot3.png Graphic file (type png)
+<use ../figures/IE0_plot3.png>
+Package pdftex.def Info: ../figures/IE0_plot3.png  used on input line 123.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+
+Overfull \hbox (91.39912pt too wide) in paragraph at lines 122--125
+ [][] 
+ []
+
+[2 <../figures/IE0_plot0.png (PNG copy)> <../figures/IE0_plot1.png (PNG copy)>]
+<../figures/IE0_plot4.png, id=93, 1075.01625pt x 644.4075pt>
+File: ../figures/IE0_plot4.png Graphic file (type png)
+<use ../figures/IE0_plot4.png>
+Package pdftex.def Info: ../figures/IE0_plot4.png  used on input line 136.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+<../figures/IE0_plot5.png, id=95, 1075.01625pt x 644.4075pt>
+File: ../figures/IE0_plot5.png Graphic file (type png)
+<use ../figures/IE0_plot5.png>
+Package pdftex.def Info: ../figures/IE0_plot5.png  used on input line 146.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+ [3 <../figures/IE0_plot2.png (PNG copy)> <../figures/IE0_plot3.png (PNG copy)> <../figures/IE0_plot4.png (PNG copy)>]
+<../figures/IE1_credit_history.png, id=104, 1075.01625pt x 644.4075pt>
+File: ../figures/IE1_credit_history.png Graphic file (type png)
+<use ../figures/IE1_credit_history.png>
+Package pdftex.def Info: ../figures/IE1_credit_history.png  used on input line 159.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+<../figures/IE3_dist_external_offers.png, id=107, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_dist_external_offers.png Graphic file (type png)
+<use ../figures/IE3_dist_external_offers.png>
+Package pdftex.def Info: ../figures/IE3_dist_external_offers.png  used on input line 178.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+ [4 <../figures/IE0_plot5.png (PNG copy)> <../figures/IE1_credit_history.png (PNG copy)>]
+<../figures/IE3_dist_external_offers_byyear.png, id=113, 969.6225pt x 646.415pt>
+File: ../figures/IE3_dist_external_offers_byyear.png Graphic file (type png)
+<use ../figures/IE3_dist_external_offers_byyear.png>
+Package pdftex.def Info: ../figures/IE3_dist_external_offers_byyear.png  used on input line 186.
+(pdftex.def)             Requested size: 261.80157pt x 174.53438pt.
+<../figures/IE3_CDF_number_extoffers.png, id=115, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_CDF_number_extoffers.png Graphic file (type png)
+<use ../figures/IE3_CDF_number_extoffers.png>
+Package pdftex.def Info: ../figures/IE3_CDF_number_extoffers.png  used on input line 197.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+<../figures/IE3_hazard_number_extoffers.png, id=116, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_hazard_number_extoffers.png Graphic file (type png)
+<use ../figures/IE3_hazard_number_extoffers.png>
+Package pdftex.def Info: ../figures/IE3_hazard_number_extoffers.png  used on input line 197.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+
+Overfull \hbox (91.39912pt too wide) in paragraph at lines 196--199
+ [][] 
+ []
+
+[5 <../figures/IE3_dist_external_offers.png (PNG copy)> <../figures/IE3_dist_external_offers_byyear.png (PNG copy)>] (../Tables/IE3_coefficient1.tex)
+<../figures/IE3_search_by_income_quintile.png, id=125, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_search_by_income_quintile.png Graphic file (type png)
+<use ../figures/IE3_search_by_income_quintile.png>
+Package pdftex.def Info: ../figures/IE3_search_by_income_quintile.png  used on input line 211.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+<../figures/IE3_search_CDF_by_income_quintile.png, id=127, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_search_CDF_by_income_quintile.png Graphic file (type png)
+<use ../figures/IE3_search_CDF_by_income_quintile.png>
+Package pdftex.def Info: ../figures/IE3_search_CDF_by_income_quintile.png  used on input line 222.
+(pdftex.def)             Requested size: 279.49763pt x 167.54199pt.
+<../figures/IE3_search_hazardrate_by_income_quintile.png, id=128, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_search_hazardrate_by_income_quintile.png Graphic file (type png)
+<use ../figures/IE3_search_hazardrate_by_income_quintile.png>
+Package pdftex.def Info: ../figures/IE3_search_hazardrate_by_income_quintile.png  used on input line 222.
+(pdftex.def)             Requested size: 279.49763pt x 167.54199pt.
+
+Overfull \hbox (69.87785pt too wide) in paragraph at lines 221--224
+ [][] 
+ []
+
+(../Tables/IE3_coefficient11.tex) [6 <../figures/IE3_CDF_number_extoffers.png (PNG copy)> <../figures/IE3_hazard_number_extoffers.png (PNG copy)> <../figures/IE3_search_by_income_quintile.png (PNG copy)> <../figures/IE3_search_CDF_by_income_quintile.png (PNG copy)> <../figures/IE3_search_hazardrate_by_income_quintile.png (PNG copy)>]
+<../figures/IE3_search_by_gender.png, id=136, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_search_by_gender.png Graphic file (type png)
+<use ../figures/IE3_search_by_gender.png>
+Package pdftex.def Info: ../figures/IE3_search_by_gender.png  used on input line 235.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+ (../Tables/IE3_within_group_dispersion.tex) (../Tables/IE3_coefficient2.tex [7 <../figures/IE3_search_by_gender.png (PNG copy)>])
+<../figures/IE3_dispertion_choice_set.png, id=147, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_dispertion_choice_set.png Graphic file (type png)
+<use ../figures/IE3_dispertion_choice_set.png>
+Package pdftex.def Info: ../figures/IE3_dispertion_choice_set.png  used on input line 290.
+(pdftex.def)             Requested size: 279.49763pt x 167.54199pt.
+<../figures/IE3_dispertion_choice_set_range.png, id=148, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_dispertion_choice_set_range.png Graphic file (type png)
+<use ../figures/IE3_dispertion_choice_set_range.png>
+Package pdftex.def Info: ../figures/IE3_dispertion_choice_set_range.png  used on input line 290.
+(pdftex.def)             Requested size: 279.49763pt x 167.54199pt.
+
+Overfull \hbox (69.87785pt too wide) in paragraph at lines 289--292
+ [][] 
+ []
+
+[8] (../Tables/IE3_choiceset_dispersion.tex) (../Tables/IE3_offer_improvement.tex)
+<../figures/IE3_offer_improvement_histogram.png, id=159, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_offer_improvement_histogram.png Graphic file (type png)
+<use ../figures/IE3_offer_improvement_histogram.png>
+Package pdftex.def Info: ../figures/IE3_offer_improvement_histogram.png  used on input line 309.
+(pdftex.def)             Requested size: 322.50737pt x 193.32373pt.
+ [9 <../figures/IE3_dispertion_choice_set.png (PNG copy)> <../figures/IE3_dispertion_choice_set_range.png (PNG copy)>]
+<../Tables/IE3_offer_improvement_bygender.png, id=171, 414.79968pt x 374.90062pt>
+File: ../Tables/IE3_offer_improvement_bygender.png Graphic file (type png)
+<use ../Tables/IE3_offer_improvement_bygender.png>
+Package pdftex.def Info: ../Tables/IE3_offer_improvement_bygender.png  used on input line 321.
+(pdftex.def)             Requested size: 290.3578pt x 262.42863pt.
+ [10 <../figures/IE3_offer_improvement_histogram.png (PNG copy)>]
+<../Tables/IE3_offer_improvement_byincomequintile.png, id=181, 440.39531pt x 765.6103pt>
+File: ../Tables/IE3_offer_improvement_byincomequintile.png Graphic file (type png)
+<use ../Tables/IE3_offer_improvement_byincomequintile.png>
+Package pdftex.def Info: ../Tables/IE3_offer_improvement_byincomequintile.png  used on input line 333.
+(pdftex.def)             Requested size: 308.27461pt x 535.92355pt.
+ [11 <../Tables/IE3_offer_improvement_bygender.png>] (../Tables/IE3_offer_change_max_internal.tex)
+<../figures/IE3_offer_change_max_internal.png, id=189, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_offer_change_max_internal.png Graphic file (type png)
+<use ../figures/IE3_offer_change_max_internal.png>
+Package pdftex.def Info: ../figures/IE3_offer_change_max_internal.png  used on input line 351.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+ [12 <../Tables/IE3_offer_improvement_byincomequintile.png>] (../Tables/IE3_number_initial_offers.tex) (../Tables/IE3_share_acc_highest.tex)
+<../figures/IE3_foregone_hist.png, id=199, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_foregone_hist.png Graphic file (type png)
+<use ../figures/IE3_foregone_hist.png>
+Package pdftex.def Info: ../figures/IE3_foregone_hist.png  used on input line 375.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+ [13 <../figures/IE3_offer_change_max_internal.png (PNG copy)>] (../Tables/IE3_foregone.tex) (../Tables/IE3_clogit.tex) (../Tables/IE3_dead_has_external.tex [14 <../figures/IE3_foregone_hist.png (PNG copy)>]) (../Tables/IE3_dead_has_external2.tex) (../Tables/IE3_dead_external_logi.tex) [15] (../Tables/IE3_ttest_improvement_pct.tex) (../Tables/IE3_dead_on_improvements.tex)
+<../figures/IE3_supply_age_quintile.png, id=236, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_age_quintile.png Graphic file (type png)
+<use ../figures/IE3_supply_age_quintile.png>
+Package pdftex.def Info: ../figures/IE3_supply_age_quintile.png  used on input line 434.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+ [16]
+<../figures/IE3_supply_income_quintile.png, id=247, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_income_quintile.png Graphic file (type png)
+<use ../figures/IE3_supply_income_quintile.png>
+Package pdftex.def Info: ../figures/IE3_supply_income_quintile.png  used on input line 443.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+<../figures/IE3_supply_age.png, id=248, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_age.png Graphic file (type png)
+<use ../figures/IE3_supply_age.png>
+Package pdftex.def Info: ../figures/IE3_supply_age.png  used on input line 453.
+(pdftex.def)             Requested size: 258.00917pt x 154.66095pt.
+<../figures/IE3_supply_agebin.png, id=249, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_agebin.png Graphic file (type png)
+<use ../figures/IE3_supply_agebin.png>
+Package pdftex.def Info: ../figures/IE3_supply_agebin.png  used on input line 454.
+(pdftex.def)             Requested size: 258.00917pt x 154.66095pt.
+
+Overfull \hbox (26.90092pt too wide) in paragraph at lines 452--456
+ [][] 
+ []
+
+[17 <../figures/IE3_supply_age_quintile.png (PNG copy)> <../figures/IE3_supply_income_quintile.png (PNG copy)> <../figures/IE3_supply_age.png (PNG copy)> <../figures/IE3_supply_agebin.png (PNG copy)>]
+<../figures/IE3_supply_offerprob_income_q.png, id=261, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_offerprob_income_q.png Graphic file (type png)
+<use ../figures/IE3_supply_offerprob_income_q.png>
+Package pdftex.def Info: ../figures/IE3_supply_offerprob_income_q.png  used on input line 479.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+<../figures/IE3_supply_offerprob_age.png, id=262, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_offerprob_age.png Graphic file (type png)
+<use ../figures/IE3_supply_offerprob_age.png>
+Package pdftex.def Info: ../figures/IE3_supply_offerprob_age.png  used on input line 489.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+<../figures/IE3_supply_offerprob_age_q.png, id=263, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_offerprob_age_q.png Graphic file (type png)
+<use ../figures/IE3_supply_offerprob_age_q.png>
+Package pdftex.def Info: ../figures/IE3_supply_offerprob_age_q.png  used on input line 499.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+ [18 <../figures/IE3_supply_offerprob_income_q.png (PNG copy)> <../figures/IE3_supply_offerprob_age.png (PNG copy)>]
+<../figures/IE3_supply_offerprob_age_q_2012.png, id=271, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_offerprob_age_q_2012.png Graphic file (type png)
+<use ../figures/IE3_supply_offerprob_age_q_2012.png>
+Package pdftex.def Info: ../figures/IE3_supply_offerprob_age_q_2012.png  used on input line 511.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+<../figures/IE3_supply_offerprob_age_q_2013.png, id=272, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_offerprob_age_q_2013.png Graphic file (type png)
+<use ../figures/IE3_supply_offerprob_age_q_2013.png>
+Package pdftex.def Info: ../figures/IE3_supply_offerprob_age_q_2013.png  used on input line 512.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+
+Overfull \hbox (91.39912pt too wide) in paragraph at lines 510--514
+ [][] 
+ []
+
+<../figures/IE3_supply_offerprob_age_q_2014.png, id=273, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_offerprob_age_q_2014.png Graphic file (type png)
+<use ../figures/IE3_supply_offerprob_age_q_2014.png>
+Package pdftex.def Info: ../figures/IE3_supply_offerprob_age_q_2014.png  used on input line 522.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+<../figures/IE3_supply_offerprob_age_q_2015.png, id=274, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_supply_offerprob_age_q_2015.png Graphic file (type png)
+<use ../figures/IE3_supply_offerprob_age_q_2015.png>
+Package pdftex.def Info: ../figures/IE3_supply_offerprob_age_q_2015.png  used on input line 523.
+(pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
+
+Overfull \hbox (91.39912pt too wide) in paragraph at lines 521--525
+ [][] 
+ []
+
+[19 <../figures/IE3_supply_offerprob_age_q.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2012.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2013.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2014.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2015.png (PNG copy)>] (empirical_v2.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `empirical_v2.out' has not changed.
+(rerunfilecheck)             Checksum: E49B2869EC31341D69BB19F7EADF3196;2984.
+ ) 
+Here is how much of TeX's memory you used:
+ 14142 strings out of 476331
+ 241829 string characters out of 5787765
+ 1865660 words of memory out of 5000000
+ 34181 multiletter control sequences out of 15000+600000
+ 523415 words of font info for 74 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 90i,14n,131p,1103b,544s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on empirical_v2.pdf (19 pages, 2761502 bytes).
+PDF statistics:
+ 357 PDF objects out of 1000 (max. 8388607)
+ 87 named destinations out of 1000 (max. 500000)
+ 294 words of extra memory for PDF output out of 10000 (max. 10000000)
+

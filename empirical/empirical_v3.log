@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  5 SEP 2025 13:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  13 SEP 2025 17:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical_v3.tex"
-(c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical_v3.tex
+**"c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical_v3.tex"
+(c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical_v3.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-03-30> (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -524,152 +524,168 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
-(Tables/IE4/IE4_price_elasticity_clogit.tex
+(../Tables/IE4/IE4_price_elasticity_clogit.tex
 Overfull \hbox (61.23706pt too wide) in paragraph at lines 4--28
  [][] 
  []
 
 )
-<figures/IE4/IE4_int_ext_offers_by_cia.png, id=43, 1691.31876pt x 1014.79124pt>
-File: figures/IE4/IE4_int_ext_offers_by_cia.png Graphic file (type png)
-<use figures/IE4/IE4_int_ext_offers_by_cia.png>
-Package pdftex.def Info: figures/IE4/IE4_int_ext_offers_by_cia.png  used on input line 65.
+<../figures/IE4/IE4_int_ext_offers_by_cia.png, id=43, 1691.31876pt x 1014.79124pt>
+File: ../figures/IE4/IE4_int_ext_offers_by_cia.png Graphic file (type png)
+<use ../figures/IE4/IE4_int_ext_offers_by_cia.png>
+Package pdftex.def Info: ../figures/IE4/IE4_int_ext_offers_by_cia.png  used on input line 64.
 (pdftex.def)             Requested size: 287.52039pt x 172.51222pt.
  [1
 
 {C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-<figures/IE4/IE4_total_internal_offers_bycompany.png, id=56, 1691.31876pt x 1014.79124pt>
-File: figures/IE4/IE4_total_internal_offers_bycompany.png Graphic file (type png)
-<use figures/IE4/IE4_total_internal_offers_bycompany.png>
-Package pdftex.def Info: figures/IE4/IE4_total_internal_offers_bycompany.png  used on input line 74.
+<../figures/IE4/IE4_total_internal_offers_bycompany.png, id=56, 1691.31876pt x 1014.79124pt>
+File: ../figures/IE4/IE4_total_internal_offers_bycompany.png Graphic file (type png)
+<use ../figures/IE4/IE4_total_internal_offers_bycompany.png>
+Package pdftex.def Info: ../figures/IE4/IE4_total_internal_offers_bycompany.png  used on input line 73.
 (pdftex.def)             Requested size: 287.52039pt x 172.51222pt.
-<figures/IE4/IE4_variation_share_external.png, id=57, 1691.31876pt x 1014.79124pt>
-File: figures/IE4/IE4_variation_share_external.png Graphic file (type png)
-<use figures/IE4/IE4_variation_share_external.png>
-Package pdftex.def Info: figures/IE4/IE4_variation_share_external.png  used on input line 74.
+<../figures/IE4/IE4_variation_share_external.png, id=57, 1691.31876pt x 1014.79124pt>
+File: ../figures/IE4/IE4_variation_share_external.png Graphic file (type png)
+<use ../figures/IE4/IE4_variation_share_external.png>
+Package pdftex.def Info: ../figures/IE4/IE4_variation_share_external.png  used on input line 73.
 (pdftex.def)             Requested size: 287.52039pt x 172.51222pt.
 
-Overfull \hbox (85.92336pt too wide) in paragraph at lines 73--76
+Overfull \hbox (85.92336pt too wide) in paragraph at lines 72--75
  [][] 
  []
 
-[2 <./figures/IE4/IE4_int_ext_offers_by_cia.png (PNG copy)> <./figures/IE4/IE4_total_internal_offers_bycompany.png (PNG copy)> <./figures/IE4/IE4_variation_share_external.png (PNG copy)>]
-<figures/IE4/IE4_scatter_rating_offer.png, id=64, 1691.31876pt x 1014.79124pt>
-File: figures/IE4/IE4_scatter_rating_offer.png Graphic file (type png)
-<use figures/IE4/IE4_scatter_rating_offer.png>
-Package pdftex.def Info: figures/IE4/IE4_scatter_rating_offer.png  used on input line 89.
+[2 <../figures/IE4/IE4_int_ext_offers_by_cia.png (PNG copy)> <../figures/IE4/IE4_total_internal_offers_bycompany.png (PNG copy)> <../figures/IE4/IE4_variation_share_external.png (PNG copy)>]
+<../figures/IE4/IE4_scatter_rating_offer.png, id=64, 1691.31876pt x 1014.79124pt>
+File: ../figures/IE4/IE4_scatter_rating_offer.png Graphic file (type png)
+<use ../figures/IE4/IE4_scatter_rating_offer.png>
+Package pdftex.def Info: ../figures/IE4/IE4_scatter_rating_offer.png  used on input line 89.
 (pdftex.def)             Requested size: 287.52039pt x 172.51222pt.
-<figures/IE4/IE4_binscatter_rating_offer.png, id=65, 1691.31876pt x 1014.79124pt>
-File: figures/IE4/IE4_binscatter_rating_offer.png Graphic file (type png)
-<use figures/IE4/IE4_binscatter_rating_offer.png>
-Package pdftex.def Info: figures/IE4/IE4_binscatter_rating_offer.png  used on input line 98.
+<../figures/IE4/IE4_binscatter_rating_offer.png, id=65, 1691.31876pt x 1014.79124pt>
+File: ../figures/IE4/IE4_binscatter_rating_offer.png Graphic file (type png)
+<use ../figures/IE4/IE4_binscatter_rating_offer.png>
+Package pdftex.def Info: ../figures/IE4/IE4_binscatter_rating_offer.png  used on input line 98.
 (pdftex.def)             Requested size: 287.52039pt x 172.51222pt.
-<figures/IE4/IE4_box_rating_offer.png, id=66, 1691.31876pt x 1014.79124pt>
-File: figures/IE4/IE4_box_rating_offer.png Graphic file (type png)
-<use figures/IE4/IE4_box_rating_offer.png>
-Package pdftex.def Info: figures/IE4/IE4_box_rating_offer.png  used on input line 98.
+<../figures/IE4/IE4_box_rating_offer.png, id=66, 1691.31876pt x 1014.79124pt>
+File: ../figures/IE4/IE4_box_rating_offer.png Graphic file (type png)
+<use ../figures/IE4/IE4_box_rating_offer.png>
+Package pdftex.def Info: ../figures/IE4/IE4_box_rating_offer.png  used on input line 98.
 (pdftex.def)             Requested size: 287.52039pt x 172.51222pt.
 
 Overfull \hbox (85.92336pt too wide) in paragraph at lines 97--100
  [][] 
  []
 
-(Tables/IE4/IE4_rating_correlation.tex) [3 <./figures/IE4/IE4_scatter_rating_offer.png (PNG copy)> <./figures/IE4/IE4_binscatter_rating_offer.png (PNG copy)> <./figures/IE4/IE4_box_rating_offer.png (PNG copy)>]
-<figures/IE4/IE4_intermediary_search_box.png, id=74, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_intermediary_search_box.png Graphic file (type png)
-<use figures/IE4/IE4_intermediary_search_box.png>
-Package pdftex.def Info: figures/IE4/IE4_intermediary_search_box.png  used on input line 118.
+(../Tables/IE4/IE4_rating_correlation.tex) [3 <../figures/IE4/IE4_scatter_rating_offer.png (PNG copy)> <../figures/IE4/IE4_binscatter_rating_offer.png (PNG copy)> <../figures/IE4/IE4_box_rating_offer.png (PNG copy)>]
+<../figures/IE4/IE4_intermediary_search_box.png, id=74, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_intermediary_search_box.png Graphic file (type png)
+<use ../figures/IE4/IE4_intermediary_search_box.png>
+Package pdftex.def Info: ../figures/IE4/IE4_intermediary_search_box.png  used on input line 117.
 (pdftex.def)             Requested size: 179.33763pt x 107.67084pt.
- (Tables/ie4/IE4_ttest_full.tex) [4 <./figures/IE4/IE4_intermediary_search_box.png (PNG copy)>] (Tables/IE4/IE4_search_by_intermediary.tex) (Tables/IE4/IE4_search_by_intermediary_type.tex)
-<figures/IE4/IE4_external_offers_by_intermediary.png, id=83, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_external_offers_by_intermediary.png Graphic file (type png)
-<use figures/IE4/IE4_external_offers_by_intermediary.png>
-Package pdftex.def Info: figures/IE4/IE4_external_offers_by_intermediary.png  used on input line 145.
+ (../Tables/ie4/IE4_ttest_full.tex) [4 <../figures/IE4/IE4_intermediary_search_box.png (PNG copy)>] (../Tables/IE4/IE4_search_by_intermediary.tex) (../Tables/IE4/IE4_search_by_intermediary_type.tex)
+<../figures/IE4/IE4_external_offers_by_intermediary.png, id=83, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_external_offers_by_intermediary.png Graphic file (type png)
+<use ../figures/IE4/IE4_external_offers_by_intermediary.png>
+Package pdftex.def Info: ../figures/IE4/IE4_external_offers_by_intermediary.png  used on input line 146.
 (pdftex.def)             Requested size: 179.33763pt x 107.67084pt.
-<figures/IE4/IE4_external_distribution_by_intermediary.png, id=84, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_external_distribution_by_intermediary.png Graphic file (type png)
-<use figures/IE4/IE4_external_distribution_by_intermediary.png>
-Package pdftex.def Info: figures/IE4/IE4_external_distribution_by_intermediary.png  used on input line 145.
+<../figures/IE4/IE4_external_distribution_by_intermediary.png, id=84, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_external_distribution_by_intermediary.png Graphic file (type png)
+<use ../figures/IE4/IE4_external_distribution_by_intermediary.png>
+Package pdftex.def Info: ../figures/IE4/IE4_external_distribution_by_intermediary.png  used on input line 146.
 (pdftex.def)             Requested size: 179.33763pt x 107.67084pt.
-<figures/IE4/IE4_external_acceptance_by_intermediary.png, id=85, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_external_acceptance_by_intermediary.png Graphic file (type png)
-<use figures/IE4/IE4_external_acceptance_by_intermediary.png>
-Package pdftex.def Info: figures/IE4/IE4_external_acceptance_by_intermediary.png  used on input line 154.
+<../figures/IE4/IE4_external_acceptance_by_intermediary.png, id=85, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_external_acceptance_by_intermediary.png Graphic file (type png)
+<use ../figures/IE4/IE4_external_acceptance_by_intermediary.png>
+Package pdftex.def Info: ../figures/IE4/IE4_external_acceptance_by_intermediary.png  used on input line 155.
 (pdftex.def)             Requested size: 179.33763pt x 107.67084pt.
- [5 <./figures/IE4/IE4_external_offers_by_intermediary.png (PNG copy)> <./figures/IE4/IE4_external_distribution_by_intermediary.png (PNG copy)>] (Tables/ie4/ie4_regression_external.tex) (Tables/ie4/IE4_logit_choose_external.tex)
-<figures/IE4/IE4_external_by_income_intermediary.png, id=94, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_external_by_income_intermediary.png Graphic file (type png)
-<use figures/IE4/IE4_external_by_income_intermediary.png>
-Package pdftex.def Info: figures/IE4/IE4_external_by_income_intermediary.png  used on input line 170.
+ [5 <../figures/IE4/IE4_external_offers_by_intermediary.png (PNG copy)> <../figures/IE4/IE4_external_distribution_by_intermediary.png (PNG copy)>] (../Tables/ie4/ie4_regression_external.tex) (../Tables/ie4/IE4_logit_choose_external.tex)
+<../figures/IE4/IE4_external_by_income_intermediary.png, id=94, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_external_by_income_intermediary.png Graphic file (type png)
+<use ../figures/IE4/IE4_external_by_income_intermediary.png>
+Package pdftex.def Info: ../figures/IE4/IE4_external_by_income_intermediary.png  used on input line 171.
 (pdftex.def)             Requested size: 284.83795pt x 171.01117pt.
- [6 <./figures/IE4/IE4_external_acceptance_by_intermediary.png (PNG copy)> <./figures/IE4/IE4_external_by_income_intermediary.png (PNG copy)>] [7] (Tables/ie4/IE4_highest_by_income.tex)
-<figures/IE4/IE4_highest_by_income.png, id=110, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_highest_by_income.png Graphic file (type png)
-<use figures/IE4/IE4_highest_by_income.png>
-Package pdftex.def Info: figures/IE4/IE4_highest_by_income.png  used on input line 188.
+ [6 <../figures/IE4/IE4_external_acceptance_by_intermediary.png (PNG copy)> <../figures/IE4/IE4_external_by_income_intermediary.png (PNG copy)>] [7] (../Tables/ie4/IE4_highest_by_income.tex)
+<../figures/IE4/IE4_highest_by_income.png, id=110, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_highest_by_income.png Graphic file (type png)
+<use ../figures/IE4/IE4_highest_by_income.png>
+Package pdftex.def Info: ../figures/IE4/IE4_highest_by_income.png  used on input line 190.
 (pdftex.def)             Requested size: 284.83795pt x 171.01117pt.
- [8] (Tables/ie4/IE4_highest_by_intermediary.tex)
-<figures/IE4/IE4_highest_by_intermediary_type.png, id=118, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_highest_by_intermediary_type.png Graphic file (type png)
-<use figures/IE4/IE4_highest_by_intermediary_type.png>
-Package pdftex.def Info: figures/IE4/IE4_highest_by_intermediary_type.png  used on input line 202.
+ [8] (../Tables/ie4/IE4_highest_by_intermediary.tex)
+<../figures/IE4/IE4_highest_by_intermediary_type.png, id=118, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_highest_by_intermediary_type.png Graphic file (type png)
+<use ../figures/IE4/IE4_highest_by_intermediary_type.png>
+Package pdftex.def Info: ../figures/IE4/IE4_highest_by_intermediary_type.png  used on input line 206.
 (pdftex.def)             Requested size: 179.33763pt x 107.67084pt.
-<figures/IE4/IE4_highest_by_intermediary_type(2).png, id=119, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_highest_by_intermediary_type(2).png Graphic file (type png)
-<use figures/IE4/IE4_highest_by_intermediary_type(2).png>
-Package pdftex.def Info: figures/IE4/IE4_highest_by_intermediary_type(2).png  used on input line 203.
+<../figures/IE4/IE4_highest_by_intermediary_type(2).png, id=119, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_highest_by_intermediary_type(2).png Graphic file (type png)
+<use ../figures/IE4/IE4_highest_by_intermediary_type(2).png>
+Package pdftex.def Info: ../figures/IE4/IE4_highest_by_intermediary_type(2).png  used on input line 207.
 (pdftex.def)             Requested size: 179.33763pt x 107.67084pt.
- [9 <./figures/IE4/IE4_highest_by_income.png (PNG copy)>] (Tables/IE4/IE4_highest_by_external.tex)
-<figures/IE4/IE4_highest_income_intermediary.png, id=127, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_highest_income_intermediary.png Graphic file (type png)
-<use figures/IE4/IE4_highest_income_intermediary.png>
-Package pdftex.def Info: figures/IE4/IE4_highest_income_intermediary.png  used on input line 217.
+ [9 <../figures/IE4/IE4_highest_by_income.png (PNG copy)>] (../Tables/IE4/IE4_highest_by_external.tex)
+<../figures/IE4/IE4_highest_income_intermediary.png, id=127, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_highest_income_intermediary.png Graphic file (type png)
+<use ../figures/IE4/IE4_highest_income_intermediary.png>
+Package pdftex.def Info: ../figures/IE4/IE4_highest_income_intermediary.png  used on input line 221.
 (pdftex.def)             Requested size: 179.33763pt x 107.67084pt.
-<figures/IE4/IE4_highest_income_external.png, id=128, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_highest_income_external.png Graphic file (type png)
-<use figures/IE4/IE4_highest_income_external.png>
-Package pdftex.def Info: figures/IE4/IE4_highest_income_external.png  used on input line 217.
+<../figures/IE4/IE4_highest_income_external.png, id=128, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_highest_income_external.png Graphic file (type png)
+<use ../figures/IE4/IE4_highest_income_external.png>
+Package pdftex.def Info: ../figures/IE4/IE4_highest_income_external.png  used on input line 221.
 (pdftex.def)             Requested size: 179.33763pt x 107.67084pt.
- (Tables/ie4/IE4_regression_chose_highest.tex)
-<figures/IE4/IE4_foregone_distribution.png, id=129, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_foregone_distribution.png Graphic file (type png)
-<use figures/IE4/IE4_foregone_distribution.png>
-Package pdftex.def Info: figures/IE4/IE4_foregone_distribution.png  used on input line 232.
+ (../Tables/ie4/IE4_regression_chose_highest.tex)
+<../figures/IE4/IE4_foregone_distribution.png, id=129, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_foregone_distribution.png Graphic file (type png)
+<use ../figures/IE4/IE4_foregone_distribution.png>
+Package pdftex.def Info: ../figures/IE4/IE4_foregone_distribution.png  used on input line 235.
 (pdftex.def)             Requested size: 284.83795pt x 171.01117pt.
- [10 <./figures/IE4/IE4_highest_by_intermediary_type.png (PNG copy)> <./figures/IE4/IE4_highest_by_intermediary_type(2).png (PNG copy)> <./figures/IE4/IE4_highest_income_intermediary.png (PNG copy)> <./figures/IE4/IE4_highest_income_external.png (PNG copy)>] [11] (Tables/IE4/IE4_foregone_regression.tex) [12 <./figures/IE4/IE4_foregone_distribution.png (PNG copy)>]
-<figures/IE4/IE4_rank_of_accepted_external.png, id=149, 1275.76625pt x 764.8575pt>
-File: figures/IE4/IE4_rank_of_accepted_external.png Graphic file (type png)
-<use figures/IE4/IE4_rank_of_accepted_external.png>
-Package pdftex.def Info: figures/IE4/IE4_rank_of_accepted_external.png  used on input line 250.
+ [10 <../figures/IE4/IE4_highest_by_intermediary_type.png (PNG copy)> <../figures/IE4/IE4_highest_by_intermediary_type(2).png (PNG copy)> <../figures/IE4/IE4_highest_income_intermediary.png (PNG copy)> <../figures/IE4/IE4_highest_income_external.png (PNG copy)>] [11] (../Tables/IE4/IE4_foregone_regression.tex) [12 <../figures/IE4/IE4_foregone_distribution.png (PNG copy)>]
+<../figures/IE4/IE4_rank_of_accepted_external.png, id=149, 1275.76625pt x 764.8575pt>
+File: ../figures/IE4/IE4_rank_of_accepted_external.png Graphic file (type png)
+<use ../figures/IE4/IE4_rank_of_accepted_external.png>
+Package pdftex.def Info: ../figures/IE4/IE4_rank_of_accepted_external.png  used on input line 253.
 (pdftex.def)             Requested size: 344.46149pt x 206.51428pt.
- (Tables/IE4/IE4_rank_distribution_test.tex) (Tables/ie4/IE4_rank_comparison_external_internal.tex) (Tables/ie4/IE4_share_best_offers.tex)
-<figures/IE4/IE4_rank_by_type_income.png, id=150, 1054.94125pt x 633.36626pt>
-File: figures/IE4/IE4_rank_by_type_income.png Graphic file (type png)
-<use figures/IE4/IE4_rank_by_type_income.png>
-Package pdftex.def Info: figures/IE4/IE4_rank_by_type_income.png  used on input line 272.
+ (../Tables/IE4/IE4_rank_distribution_test.tex) (../Tables/ie4/IE4_rank_comparison_external_internal.tex) (../Tables/ie4/IE4_share_best_offers.tex)
+<../figures/IE4/IE4_rank_by_type_income.png, id=150, 1054.94125pt x 633.36626pt>
+File: ../figures/IE4/IE4_rank_by_type_income.png Graphic file (type png)
+<use ../figures/IE4/IE4_rank_by_type_income.png>
+Package pdftex.def Info: ../figures/IE4/IE4_rank_by_type_income.png  used on input line 273.
 (pdftex.def)             Requested size: 179.33763pt x 107.67084pt.
- [13 <./figures/IE4/IE4_rank_of_accepted_external.png (PNG copy)> <./figures/IE4/IE4_rank_by_type_income.png (PNG copy)>] [14]
-<figures/IE4/IE4_mortality_curves_by_age.png, id=164, 1275.76625pt x 764.8575pt>
-File: figures/IE4/IE4_mortality_curves_by_age.png Graphic file (type png)
-<use figures/IE4/IE4_mortality_curves_by_age.png>
-Package pdftex.def Info: figures/IE4/IE4_mortality_curves_by_age.png  used on input line 288.
+ [13 <../figures/IE4/IE4_rank_of_accepted_external.png (PNG copy)> <../figures/IE4/IE4_rank_by_type_income.png (PNG copy)>] [14]
+<../figures/IE4/IE4_mortality_curves_by_age.png, id=164, 1275.76625pt x 764.8575pt>
+File: ../figures/IE4/IE4_mortality_curves_by_age.png Graphic file (type png)
+<use ../figures/IE4/IE4_mortality_curves_by_age.png>
+Package pdftex.def Info: ../figures/IE4/IE4_mortality_curves_by_age.png  used on input line 289.
 (pdftex.def)             Requested size: 255.14873pt x 152.96878pt.
-<figures/IE4/IE4_mortality_rates_unsmoothed.png, id=167, 1275.76625pt x 764.8575pt>
-File: figures/IE4/IE4_mortality_rates_unsmoothed.png Graphic file (type png)
-<use figures/IE4/IE4_mortality_rates_unsmoothed.png>
-Package pdftex.def Info: figures/IE4/IE4_mortality_rates_unsmoothed.png  used on input line 302.
+<../figures/IE4/IE4_mortality_rates_unsmoothed.png, id=167, 1275.76625pt x 764.8575pt>
+File: ../figures/IE4/IE4_mortality_rates_unsmoothed.png Graphic file (type png)
+<use ../figures/IE4/IE4_mortality_rates_unsmoothed.png>
+Package pdftex.def Info: ../figures/IE4/IE4_mortality_rates_unsmoothed.png  used on input line 305.
 (pdftex.def)             Requested size: 216.8774pt x 130.02405pt.
-<figures/IE4/IE4_mortality_rates_smoothed.png, id=168, 1275.76625pt x 764.8575pt>
-File: figures/IE4/IE4_mortality_rates_smoothed.png Graphic file (type png)
-<use figures/IE4/IE4_mortality_rates_smoothed.png>
-Package pdftex.def Info: figures/IE4/IE4_mortality_rates_smoothed.png  used on input line 303.
+<../figures/IE4/IE4_mortality_rates_smoothed.png, id=168, 1275.76625pt x 764.8575pt>
+File: ../figures/IE4/IE4_mortality_rates_smoothed.png Graphic file (type png)
+<use ../figures/IE4/IE4_mortality_rates_smoothed.png>
+Package pdftex.def Info: ../figures/IE4/IE4_mortality_rates_smoothed.png  used on input line 306.
 (pdftex.def)             Requested size: 216.8774pt x 130.02405pt.
-<figures/IE4/IE4_survival_curves_by_age_top_firms.png, id=169, 1275.76625pt x 764.8575pt>
-File: figures/IE4/IE4_survival_curves_by_age_top_firms.png Graphic file (type png)
-<use figures/IE4/IE4_survival_curves_by_age_top_firms.png>
-Package pdftex.def Info: figures/IE4/IE4_survival_curves_by_age_top_firms.png  used on input line 315.
+<../figures/IE4/IE4_survival_curves_by_age_top_firms.png, id=169, 1275.76625pt x 764.8575pt>
+File: ../figures/IE4/IE4_survival_curves_by_age_top_firms.png Graphic file (type png)
+<use ../figures/IE4/IE4_survival_curves_by_age_top_firms.png>
+Package pdftex.def Info: ../figures/IE4/IE4_survival_curves_by_age_top_firms.png  used on input line 318.
 (pdftex.def)             Requested size: 255.14873pt x 152.96878pt.
- (Tables/ie4/IE4_survival_tests.tex [15 <./figures/IE4/IE4_mortality_curves_by_age.png (PNG copy)> <./figures/IE4/IE4_mortality_rates_unsmoothed.png (PNG copy)> <./figures/IE4/IE4_mortality_rates_smoothed.png (PNG copy)> <./figures/IE4/IE4_survival_curves_by_age_top_firms.png (PNG copy)>]) [16] (empirical_v3.aux)
+ [15 <../figures/IE4/IE4_mortality_curves_by_age.png (PNG copy)> <../figures/IE4/IE4_mortality_rates_unsmoothed.png (PNG copy)> <../figures/IE4/IE4_mortality_rates_smoothed.png (PNG copy)>]
+<../figures/IE4/IE4_km_curves_by_firm.png, id=176, 1275.76625pt x 764.8575pt>
+File: ../figures/IE4/IE4_km_curves_by_firm.png Graphic file (type png)
+<use ../figures/IE4/IE4_km_curves_by_firm.png>
+Package pdftex.def Info: ../figures/IE4/IE4_km_curves_by_firm.png  used on input line 327.
+(pdftex.def)             Requested size: 276.83452pt x 165.97002pt.
+<../figures/IE4/IE4_km_curves_by_firm_males.png, id=177, 1275.76625pt x 764.8575pt>
+File: ../figures/IE4/IE4_km_curves_by_firm_males.png Graphic file (type png)
+<use ../figures/IE4/IE4_km_curves_by_firm_males.png>
+Package pdftex.def Info: ../figures/IE4/IE4_km_curves_by_firm_males.png  used on input line 328.
+(pdftex.def)             Requested size: 276.83452pt x 165.97002pt.
+
+Overfull \hbox (64.55162pt too wide) in paragraph at lines 326--330
+ [][] 
+ []
+
+(../Tables/ie4/IE4_survival_tests.tex) (../Tables/ie4/IE4_survival_tests_males.tex) [16 <../figures/IE4/IE4_survival_curves_by_age_top_firms.png (PNG copy)> <../figures/IE4/IE4_km_curves_by_firm.png (PNG copy)> <../figures/IE4/IE4_km_curves_by_firm_males.png (PNG copy)>] [17] (empirical_v3.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -677,17 +693,17 @@ Package rerunfilecheck Info: File `empirical_v3.out' has not changed.
 (rerunfilecheck)             Checksum: 1B0AFF24B76B6E92E0630EF00671B0F1;2295.
  ) 
 Here is how much of TeX's memory you used:
- 14001 strings out of 476331
- 239349 string characters out of 5787765
+ 14024 strings out of 476331
+ 240962 string characters out of 5787765
  1870660 words of memory out of 5000000
- 34085 multiletter control sequences out of 15000+600000
+ 34100 multiletter control sequences out of 15000+600000
  521433 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,14n,131p,652b,463s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,14n,131p,662b,444s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on empirical_v3.pdf (16 pages, 1782825 bytes).
+Output written on empirical_v3.pdf (17 pages, 1925743 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
- 58 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 231 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 206 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -241,6 +241,15 @@ In the model we presented, $h_i$ is the private information of the buyer. Provid
 
 Note that given that we do not have a close form solution for the equilibrium prices, and as a consequence neither for the market shares and costs, we will perform simulations. In the next section we present the functional forms used and the results obtained. 
 
+\newpage
+
+\subsection{Cost differences}
+
+\textcolor{red}{When are the differences in marginal costs across firms the biggest? }
+
+\subsection{Differentiation in the symmetric case}
+
+\textcolor{red}{Here we want to analyze what is the impact of $\rho$ (the differentiation parameter) when firms are symmetric ($\delta_j = \delta$ and the cost functionos are the same) }
 
 
 
@@ -261,7 +270,7 @@ The upper left panel of figure \ref{fig:sigma} shows the market shares as functi
  \label{fig:sigma}
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=1.4]{figures/simulations/sigma_panels.png} 
+\includegraphics[scale=.8]{figures/simulations/sigma_panels.png} 
 \end{tabular}
 \end{figure}
 
@@ -269,7 +278,14 @@ The upper left panel of figure \ref{fig:sigma} shows the market shares as functi
 
 
 
- 
+ \begin{figure}[H]
+\caption{}
+ \label{fig:sigma}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=.8]{figures/simulations/rho_panels.png} 
+\end{tabular}
+\end{figure}
  
 
 \section{Additional thoughts}
@@ -286,7 +302,18 @@ The upper left panel of figure \ref{fig:sigma} shows the market shares as functi
 Consider the case of a homogenous  annuities market, meaning $\delta_j = \delta_A$ for every insurer and $\rho = 0$\footnote{We are not assuming that there are an infinite number of firms.}.
 In what follows we compare the homogeneous case with the heterogeneous case. 
 
-Homogeneity affects prices via changing $w(h)$ in two ways. First, given that $\rho \rightarrow 0$, this increases $w(h)$ for any health status. 
+
+The effect of $\rho$ on prices is ambiguous. On the demand side an increase of $\rho$ softens competition by increasing the importance of the firm level taste shocks. But If the market share of the outside good is big enough, decreasing the correlation between shocks also decreases the marginal cost because implies that the marginal consumer has a higher likelihood of being diverted from the outside option. 
+
+
+Homogeneity affects prices via: 
+\begin{itemize}
+    \item By increasing competition 
+    
+    
+    From equation \ref{eq:price_der} it increases the price semi-elasticity for any $h$. But the effect will be higher the higher $s_j(h)$ hence it will make the 
+    \item 
+\end{itemize}changing $w(h)$ in two ways. First, given that $\rho \rightarrow 0$, this increases $w(h)$ for any health status. But since the elasticity is higher for healthier individuals, th
 
 
 
@@ -470,7 +497,7 @@ Define
 
 \begin{align}\label{eq:definitions}
 X =   \int c_j(h)  \ s_A(h) f_h(h) dh \quad 
-A =   \ s_A(h) f_h(h) dh \notag \\
+A =   \int s_A(h) f_h(h) dh \notag \\
 Y =   \int c_j(h)  \ s_A(h) (1-s_A(h)) f_h(h) dh \quad 
 B =   \int s_A(h) (1-s_A(h)) f_h(h) dh 
 \end{align}
@@ -495,8 +522,10 @@ Introduce the probability measure $d\nu(h) := \frac{s_A(h)f(h)}{A}\,dh$.
 Let $r(h) := 1-s_A(h)$. Then
 $$E_{\nu}[c_j] = \frac{X}{A}, \quad E_{\nu}[r] = \frac{B}{A}, \quad E_{\nu}[c_j r] = \frac{Y}{A}.$$
 Hence
- 
-$$ \frac{Y}{B} = \frac{E_{\nu}[c_j r]}{E_{\nu}[r]} = \frac{E_{\nu}[c_j]E_{\nu}[r] + Cov_{\nu}(c_j,r)}{E_{\nu}[r]} = E_{\nu}[c_j] + \frac{Cov_{\nu}(c_j,r)}{E_{\nu}[r]} \le E_{\nu}[c_j] = \frac{X}{A},$$
+\begin{align}\label{eq:39}
+   \frac{Y}{B} = \frac{E_{\nu}[c_j r]}{E_{\nu}[r]} = \frac{E_{\nu}[c_j]E_{\nu}[r] + Cov_{\nu}(c_j,r)}{E_{\nu}[r]} = E_{\nu}[c_j] + \frac{Cov_{\nu}(c_j,r)}{E_{\nu}[r]} \le E_{\nu}[c_j] = \frac{X}{A} 
+\end{align} 
+
 since $c_j$ is (weakly) increasing in $h$ while $r(h)=1-s_A(h)$ is (weakly) decreasing in $h$, implying $Cov_{\nu}(c_j,r) \le 0$. The inequality is strict if both are nonconstant on sets of positive measure.
 
 then we have: 
@@ -525,13 +554,13 @@ W_j = a_j A + b_j B
 \end{equation}
 
 Moreover from equation \ref{eq:37} we have \footnote{In the original equation $a$ and $b$ were not indexed by $j$ just to simplify notation.}:
- \begin{align}
+ \begin{align}\label{eq:mgcost_convex}
     c^m_j 
     &=  \underbrace{\frac{a_jA}{a_jA+b_jB}}_{\lambda_j}\cdot\frac{X}{A} + \underbrace{\frac{b_jB}{a_jA+b_jB}}_{1-\lambda_j}\cdot\frac{Y}{B}.
 \end{align}
 
 Replacing $a_j$ and $b_j$ we have that: 
-\begin{align}
+\begin{align}\label{eq:46}
     \lambda = \frac{\left(\alpha s_{j\mid A} \frac{1}{\rho}(1-s_{j|A})\right)A}{\left(\alpha s_{j\mid A} \frac{1}{\rho}(1-s_{j|A})\right)A+\left(\alpha s_{j\mid A}^2\right)B}  = \frac{\left(\alpha  \frac{1}{\rho}(1-s_{j|A})\right)A}{\left(\alpha  \frac{1}{\rho}(1-s_{j|A})\right)A+\left(\alpha s_{j\mid A}\right)B} 
 \end{align}
 
@@ -566,6 +595,39 @@ a \textbf{higher} $\rho$ (weaker within-nest correlation) moves weight toward $\
  
 
 \bigskip
+
+\newpage
+\subsection{Magnitude of heterogeneity in marginal costs}
+
+From equation \ref{eq:mgcost_convex} we have that: 
+
+ \begin{align} 
+    c^m_j -c^m_k = (\lambda_j - \lambda_k)\left(\frac{X}{A}-\frac{Y}{B}\right)
+\end{align}
+Given that $\frac{X}{A}-\frac{Y}{B}$ is common across firms, differences in marginal cost arise due to differences in $\lambda_j$. 
+
+From equation \ref{eq:39} we have: 
+\begin{align}
+   \frac{X}{A} -\frac{Y}{B}=  -\frac{Cov_{\nu}(c_j,r)}{E_{\nu}[r]} 
+\end{align} 
+where $dv(h) = \frac{s_A(h)f(h)}{A}dh$ and $r(h) = 1-s_A(h)$. Putting both equations together: 
+
+ \begin{align} 
+    c^m_j -c^m_k = (\lambda_k - \lambda_j)\left(\frac{Cov_{\nu}(c_j,r)}{E_{\nu}[r]}\right)
+\end{align}
+From equation \ref{eq:46}
+
+\begin{align}
+    \lambda_j = \frac{(1-s_{j|A})A}{(1-s_{j|A})A+\rho s_{j\mid A}B} 
+\end{align}
+Hence the magnitude of $\lambda_k - \lambda_j$ is greater when the one of the firms has an inside market share of 0 and the other a market share of 1, moreover the gap is greater the smaller the $\rho$. 
+
+\vspace{2cm}
+
+
+ 
+
+
 
 \subsection{Outside share}\label{sec:appendix4}
 

@@ -1,0 +1,156 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+
+\textcolor{red}{model generated to show that what Phil was taking was not correct}
+Phil was not sure that better information reduces selection problems. He mentioned the selection death spiral, where in the US they do not permit conditioning on preconditions. Because if you price the preconditions then the people who have the preconditions then people would not buy. - Analysis Insurance is welfare enhancing if pools up risk smoothing consumption between lucky and unlucky states. This happens when the risk is not realized yet. The thing that Phil is mentioning is that preconditions make some consumers not to buy insurance. This is optimal, because if they are not buying it under the full set of information then it is inefficient for them to buy insurance once the price is distorted by a lack of information. Moreover by pooling consumers you are distorting prices for healthy consumers hence some consumers without preconditions that should be buying the insurance stop buying it. Phil had a model in mind where the precondition increases the marginal utility of consumption (because utility is concave) but in this case rather than not allowing for discrimination based on the preconditions what one should do is to allow discrimination and do transfers ex-ante from people withhout to people with pre-conditions. Formalize my analysis by providing a simple model. Try to keep the model as simple as possible
+\section*{Setup}
+
+Individuals have income $y$ and von Neumann-Morgenstern utility $u(\cdot)$, with $u' > 0$, $u'' < 0$. A medical loss $L > 0$ may occur in period 1.
+
+Each individual has a \textbf{precondition} indicator $D \in \{0, 1\}$ known to the individual at purchase time. Loss probability is
+\begin{equation}
+q(D) = 
+\begin{cases}
+    q_0 & \text{if } D = 0, \\
+    q_1 & \text{if } D = 1,
+\end{cases}
+\quad 0 \le q_0 < q_1 \le 1.
+\tag{1}
+\end{equation}
+Let $\Pr(D=1) = \lambda \in (0,1)$. An insurance contract is full coverage ($b=L$) at premium $P$. Insurers are competitive and risk neutral; any offered contract must break even on the pool that purchases it.
+
+Uninsured expected utility for type $D$ is
+\begin{equation}
+U^{\text{out}}(D) = q(D) u(y-L) + (1-q(D)) u(y).
+\tag{2}
+\end{equation}
+If insured at premium $P$ with full coverage, consumption is $y-P$ in all states and utility
+\begin{equation}
+U^{\text{in}}(P) = u(y-P).
+\tag{3}
+\end{equation}
+We analyze two information/pricing regimes.
+
+\section*{Regime A: No risk rating (community rating, insurers cannot condition on $D$)}
+
+Given a community premium $P$, the set of buyers is
+\begin{equation}
+S(P) = \{D \in \{0,1\} : u(y-P) \ge U^{\text{out}}(D)\}.
+\tag{4}
+\end{equation}
+Under competition, the offered premium must break even on the \textbf{composition of buyers}:
+\begin{equation}
+P = E[q(D)L \mid D \in S(P)] \equiv L\bar{q}(P),
+\tag{5}
+\end{equation}
+where $\bar{q}(P)$ is the average risk among those who choose to buy at price $P$.
+
+Equations (4)-(5) jointly determine a \textbf{fixed point $P^*$}. Because $U^{\text{out}}(D)$ is decreasing in $q(D)$ (risk hurts the uninsured), there exists a cutoff structure: at any $P$, the high-risk ($D=1$) weakly buy whenever the low-risk ($D=0$) do. Thus as $P$ rises, low-risk drop out first, raising $\bar{q}(P)$ and pushing $P$ up---this is the \textbf{adverse-selection feedback} (the ``death spiral''). A pooling equilibrium may fail to exist, or exist only with limited coverage of $D=0$.
+
+\textbf{Economic content.} Community rating implicitly taxes $D=0$ and subsidizes $D=1$ when both buy ($P=L\bar{q} < Lq_1$). This cross-subsidy can sustain coverage for $D=1$; but it distorts $D=0$ prices upward, potentially pushing some healthy individuals out of the market.
+
+\section*{Regime B: Risk rating (insurers may condition on $D$)}
+
+Competition yields actuarially fair type-specific prices:
+\begin{equation}
+P_D = q(D)L.
+\tag{6}
+\end{equation}
+A type $D$ buys if $u(y-P_D) \ge U^{\text{out}}(D)$. For $q(D) \in (0,1)$ and zero loads, \textbf{full insurance strictly improves} expected utility by concavity (standard Arrow result). For $q(D) = 1$ (a ``certain loss'' precondition), $P_1 = L$ and
+\begin{equation}
+u(y-P_1) = u(y-L) = U^{\text{out}}(1),
+\tag{7}
+\end{equation}
+so the high-risk are \textbf{indifferent}: insurance provides no risk-smoothing if the loss is already certain for them. With even tiny loads or administrative costs, they \textbf{choose not to buy}. Thus, \textbf{better information removes selection} (prices no longer depend on who else buys) but can \textbf{reduce coverage} for those whose risk is already (nearly) realized.
+
+\subsection*{Phil's point, formalized}
+\begin{enumerate}
+    \item \textbf{Insurance is valuable before risk is realized} (it smooths consumption across lucky/unlucky states). If the ``precondition'' effectively \textbf{resolves the risk} (e.g., $q_1 \approx 1$), then pricing on $D=1$ converts insurance into a certain transfer $P_1$ with no smoothing benefit---so it's efficient that some $D=1$ do not buy in Regime B.
+    \item \textbf{Community rating trades off coverage and distortion.} It may keep $D=1$ covered (via cross-subsidy) but distorts prices for $D=0$, causing some healthy to exit (adverse selection). That is, better insurer information \textbf{reduces selection} but can \textbf{lower coverage} for already-identified high-risk.
+\end{enumerate}
+
+\section*{First-best benchmark and policy insight}
+
+Suppose society can implement \textbf{ex-ante transfers} (decided before $D$ is realized for a cohort). Let the planner allow risk-based pricing $P_D = q(D)L$ and choose lump-sum transfers $T(D)$ with $E[T(D)] = 0$. Each person's budget becomes $y + T(D) - P_D$.
+\begin{itemize}
+    \item Because prices equal expected costs, \textbf{no selection} arises.
+    \item Risk sharing within each $D$ is efficient (full insurance at fair price).
+    \item Transfers can redistribute from $D=0$ to $D=1$ to address equity or the higher marginal utility of consumption for $D=1$ (``precondition raises marginal utility'' in Phil's phrasing).
+\end{itemize}
+\textbf{Conclusion (policy):} If the social goal is both efficiency and redistribution to people with preconditions, the right object is \textbf{risk rating plus ex-ante transfers} (or equivalently, community rating financed by broad lump-sum taxation), not suppressing information per se. Banning risk rating (Regime A) blurs efficiency and redistribution: it funds transfers via distorted premiums, inviting adverse selection and potential unraveling.
+
+\subsection*{Optional micro-extensions (keep or drop)}
+\begin{itemize}
+    \item \textbf{Partial insurance / loads.} Add a loading $\ell > 0$ so $P_D = (1+\ell)q(D)L$. Then even when $q(D) \in (0,1)$, some high-risk may optimally choose partial insurance; with $q_1 \to 1$, any $\ell > 0$ makes $D=1$ strictly prefer no insurance under risk rating.
+    \item \textbf{Continuum of risks.} Let $q \sim F$ known to the individual. Under community rating, equilibrium solves $P = L E[q \mid u(y-P) \ge q u(y-L) + (1-q) u(y)]$; monotone selection delivers a fixed-point cutoff $q^*(P)$. Under risk rating, everybody with $q \in (0,1)$ buys (absent loads), and those with $q=1$ are indifferent (and typically exit if $\ell > 0$).
+\end{itemize}
+\end{document}

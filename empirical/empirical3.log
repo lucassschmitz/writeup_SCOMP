@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  13 SEP 2025 15:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  20 SEP 2025 11:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -413,7 +413,11 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count299
 \l__pdf_internal_box=\box60
-) (empirical3.aux)
+) (empirical3.aux
+
+LaTeX Warning: Label `fig:ie6_2' multiply defined.
+
+)
 \openout1 = `empirical3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -520,22 +524,68 @@ Overfull \hbox (56.37018pt too wide) in paragraph at lines 4--33
 
 ) [1
 
-{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] (empirical3.aux)
+{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
+<../figures/IE6/IE6_hist_dies.png, id=39, 1249.66875pt x 749.80125pt>
+File: ../figures/IE6/IE6_hist_dies.png Graphic file (type png)
+<use ../figures/IE6/IE6_hist_dies.png>
+Package pdftex.def Info: ../figures/IE6/IE6_hist_dies.png  used on input line 91.
+(pdftex.def)             Requested size: 337.41507pt x 202.44904pt.
+ [3]
+<../figures/IE6/IE6_survival_year_all.png, id=51, 1249.66875pt x 749.80125pt>
+File: ../figures/IE6/IE6_survival_year_all.png Graphic file (type png)
+<use ../figures/IE6/IE6_survival_year_all.png>
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_all.png  used on input line 101.
+(pdftex.def)             Requested size: 337.41507pt x 202.44904pt.
+<../figures/IE6/IE6_survival_year_males.png, id=52, 1249.66875pt x 749.80125pt>
+File: ../figures/IE6/IE6_survival_year_males.png Graphic file (type png)
+<use ../figures/IE6/IE6_survival_year_males.png>
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_males.png  used on input line 115.
+(pdftex.def)             Requested size: 312.41643pt x 187.44984pt.
+<../figures/IE6/IE6_survival_year_income1.png, id=53, 1249.66875pt x 749.80125pt>
+File: ../figures/IE6/IE6_survival_year_income1.png Graphic file (type png)
+<use ../figures/IE6/IE6_survival_year_income1.png>
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_income1.png  used on input line 115.
+(pdftex.def)             Requested size: 312.41643pt x 187.44984pt.
+
+Overfull \hbox (135.71544pt too wide) in paragraph at lines 114--117
+ [][] 
+ []
+
+[4 <../figures/IE6/IE6_hist_dies.png (PNG copy)> <../figures/IE6/IE6_survival_year_all.png (PNG copy)>]
+<../figures/IE6/IE6_survival_year_income2.png, id=60, 1249.66875pt x 749.80125pt>
+File: ../figures/IE6/IE6_survival_year_income2.png Graphic file (type png)
+<use ../figures/IE6/IE6_survival_year_income2.png>
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_income2.png  used on input line 124.
+(pdftex.def)             Requested size: 312.41643pt x 187.44984pt.
+<../figures/IE6/IE6_survival_year_income3.png, id=61, 1249.66875pt x 749.80125pt>
+File: ../figures/IE6/IE6_survival_year_income3.png Graphic file (type png)
+<use ../figures/IE6/IE6_survival_year_income3.png>
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_income3.png  used on input line 124.
+(pdftex.def)             Requested size: 312.41643pt x 187.44984pt.
+
+Overfull \hbox (127.63205pt too wide) in paragraph at lines 123--126
+ [][] 
+ []
+
+[5 <../figures/IE6/IE6_survival_year_males.png (PNG copy)> <../figures/IE6/IE6_survival_year_income1.png (PNG copy)> <../figures/IE6/IE6_survival_year_income2.png (PNG copy)> <../figures/IE6/IE6_survival_year_income3.png (PNG copy)>] (../Tables/IE6/test_cia_dummies_pvalue.tex) [6] (empirical3.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `empirical3.out' has not changed.
-(rerunfilecheck)             Checksum: E9714282595D5EDFD1E4D1F7B0ECA5ED;353.
+(rerunfilecheck)             Checksum: 1D05550A5CA1BC49A8C4478288EA7B1A;660.
  ) 
 Here is how much of TeX's memory you used:
- 13706 strings out of 476331
- 226923 string characters out of 5787765
+ 13782 strings out of 476331
+ 229407 string characters out of 5787765
  1877660 words of memory out of 5000000
- 33901 multiletter control sequences out of 15000+600000
- 522078 words of font info for 70 fonts, out of 8000000 for 9000
+ 33952 multiletter control sequences out of 15000+600000
+ 523522 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,11n,131p,1025b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on empirical3.pdf (3 pages, 126010 bytes).
+ 90i,14n,131p,1025b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on empirical3.pdf (6 pages, 539043 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
- 13 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 149 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
+ 55 words of extra memory for PDF output out of 10000 (max. 10000000)
 

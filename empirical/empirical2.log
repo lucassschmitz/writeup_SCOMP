@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  13 SEP 2025 17:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  20 SEP 2025 11:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical_v3.tex"
-(c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical_v3.tex
+**"c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical2.tex"
+(c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical2.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-03-30> (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -413,7 +413,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count299
 \l__pdf_internal_box=\box60
-) (empirical_v3.aux
+) (empirical2.aux
 
 LaTeX Warning: Label `fig:ie4_11' multiply defined.
 
@@ -430,7 +430,7 @@ LaTeX Warning: Label `fig:ie4_11' multiply defined.
 LaTeX Warning: Label `fig:ie4_12' multiply defined.
 
 )
-\openout1 = `empirical_v3.aux'.
+\openout1 = `empirical2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
@@ -509,9 +509,9 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 41.
- (empirical_v3.out) (empirical_v3.out)
+ (empirical2.out) (empirical2.out)
 \@outlinefile=\write4
-\openout4 = `empirical_v3.out'.
+\openout4 = `empirical2.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
  (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -685,23 +685,23 @@ Overfull \hbox (64.55162pt too wide) in paragraph at lines 326--330
  [][] 
  []
 
-(../Tables/ie4/IE4_survival_tests.tex) (../Tables/ie4/IE4_survival_tests_males.tex) [16 <../figures/IE4/IE4_survival_curves_by_age_top_firms.png (PNG copy)> <../figures/IE4/IE4_km_curves_by_firm.png (PNG copy)> <../figures/IE4/IE4_km_curves_by_firm_males.png (PNG copy)>] [17] (empirical_v3.aux)
+(../Tables/ie4/IE4_survival_tests.tex) (../Tables/ie4/IE4_survival_tests_males.tex) [16 <../figures/IE4/IE4_survival_curves_by_age_top_firms.png (PNG copy)> <../figures/IE4/IE4_km_curves_by_firm.png (PNG copy)> <../figures/IE4/IE4_km_curves_by_firm_males.png (PNG copy)>] [17] (empirical2.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `empirical_v3.out' has not changed.
+Package rerunfilecheck Info: File `empirical2.out' has not changed.
 (rerunfilecheck)             Checksum: 1B0AFF24B76B6E92E0630EF00671B0F1;2295.
  ) 
 Here is how much of TeX's memory you used:
  14024 strings out of 476331
- 240962 string characters out of 5787765
+ 240926 string characters out of 5787765
  1870660 words of memory out of 5000000
  34100 multiletter control sequences out of 15000+600000
  521433 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,14n,131p,662b,444s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,14n,131p,660b,444s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on empirical_v3.pdf (17 pages, 1925743 bytes).
+Output written on empirical2.pdf (17 pages, 1925743 bytes).
 PDF statistics:
  231 PDF objects out of 1000 (max. 8388607)
  61 named destinations out of 1000 (max. 500000)

@@ -74,13 +74,80 @@ A second approach is to:
 \end{enumerate}
 
 
-%\begin{figure}[H]
-%\caption{}
-% \label{fig:ie4_1}
-%\centering{}%
-%\begin{tabular}{cc}
-%\includegraphics[scale=0.17]{figures/IE4/IE4_int_ext_offers_by_cia.png} 
-%\end{tabular}
-%\end{figure}
+
+\section{IE 6: Differences in Hazard rates across firms. }
+
+In this section we prove that there are diffferences in hazard rates between companies and they are not only explained by differences in observables. 
+
+
+Figure \ref{fig:ie6_1} shows the distribution of age at death. 
+
+
+\begin{figure}[H]
+\caption{}
+\label{fig:ie6_1}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{../figures/IE6/IE6_hist_dies.png} 
+\end{tabular}
+\end{figure}
+
+Figure \ref{fig:ie6_2} shows the survival function by each firm. There are differences among firms. 
+\begin{figure}[H]
+\caption{}
+\label{fig:ie6_2}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.27]{../figures/IE6/IE6_survival_year_all.png} 
+\end{tabular}
+\end{figure}
+
+One possibility is that the differences represent differences in observable characteristics, not on unobservables. 
+
+As a first step we look only at the sample of men (to control for gender differences) and we also group buyers in 3 income groups (to control for income differences). 
+
+
+\begin{figure}[H]
+\caption{}
+\label{fig:ie6_3}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.25]{../figures/IE6/IE6_survival_year_males.png} & \includegraphics[scale=0.25]{../figures/IE6/IE6_survival_year_income1.png} 
+\end{tabular}
+\end{figure}
+
+\begin{figure}[H]
+\caption{}
+\label{fig:ie6_2}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.25]{../figures/IE6/IE6_survival_year_income2.png} \includegraphics[scale=0.25]{../figures/IE6/IE6_survival_year_income3.png} 
+\end{tabular}
+\end{figure}
+
+The differences once we use this subsamples continue being significant, the exception is income group 2 for which they are not significant any more (p-value 0.15).
+
+To do a more formal test we use a Cox proportional hazard model.
+
+
+We estimate Cox PH models of the form
+\[
+h_i(t \mid X_i) \;=\; h_0(t)\,\exp\!\big( X_i^\top \beta \big),
+\]
+where \(h_0(t)\) is an unspecified baseline hazard and \(X\) collects the screened covariates (sex, premium level, intermediation type, guaranteed-months dummies). We then add company indicators to test for across-firm differences:
+\[
+\text{\bf Baseline PH:}\qquad
+h_i(t \mid X_i,\text{Firm}_i)=h_0(t)\,\exp\!\big( X_i^\top \beta + \gamma_{\text{Firm}_i} \big).
+\]
+To relax proportionality for the \emph{covariates} (but not for firm dummies), we also estimate a model with time-varying coefficients using \(\ln t\) interactions (Stata’s \texttt{tvc()} with \texttt{texp(ln(\_t))}):
+\[
+h_i(t)=h_0(t)\,\exp\!\big( X_i^\top \beta + (\ln t)\,X_i^\top \delta + \gamma_{\text{Firm}_i} \big).
+\]
+This allows the effect of \(X\) to change with time while still testing whether firms differ by a \emph{proportional} shift.
+
+After each Cox fit with firm dummies, we run a Wald test of
+$$H_0:\ \gamma_2=\cdots=\gamma_J=0,$$
+we get \input{../Tables/IE6/test_cia_dummies_pvalue.tex} as the p-values. 
+
 
 \end{document}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  16 SEP 2025 13:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  20 SEP 2025 11:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical_v2.tex"
-(c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical_v2.tex
+**"c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical1.tex"
+(c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/empirical/empirical1.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-03-30> (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -413,12 +413,9 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 File: l3backend-pdftex.def 2023-03-30 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count299
 \l__pdf_internal_box=\box60
-) (empirical_v2.aux
-
-LaTeX Warning: Label `fig:aux' multiply defined.
-
 )
-\openout1 = `empirical_v2.aux'.
+No file empirical1.aux.
+\openout1 = `empirical1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
@@ -438,7 +435,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -497,9 +493,8 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring OFF on input line 41.
- (empirical_v2.out) (empirical_v2.out)
 \@outlinefile=\write4
-\openout4 = `empirical_v2.out'.
+\openout4 = `empirical1.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
  (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -518,29 +513,34 @@ Overfull \hbox (64.51541pt too wide) in paragraph at lines 58--59
  []
 
 (../Tables/IE2_sample_size.tex)
-<../figures/IE0_plot0.png, id=68, 1075.01625pt x 644.4075pt>
+
+LaTeX Warning: Reference `fig:ie0_0' on page 1 undefined on input line 84.
+
+<../figures/IE0_plot0.png, id=3, 1075.01625pt x 644.4075pt>
 File: ../figures/IE0_plot0.png Graphic file (type png)
 <use ../figures/IE0_plot0.png>
 Package pdftex.def Info: ../figures/IE0_plot0.png  used on input line 95.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
- [1
+[1
 
 {C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-<../figures/IE0_plot1.png, id=84, 1075.01625pt x 644.4075pt>
+
+LaTeX Warning: Reference `fig:ie0_1' on page 2 undefined on input line 100.
+
+<../figures/IE0_plot1.png, id=18, 1075.01625pt x 644.4075pt>
 File: ../figures/IE0_plot1.png Graphic file (type png)
 <use ../figures/IE0_plot1.png>
 Package pdftex.def Info: ../figures/IE0_plot1.png  used on input line 108.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
 
-
 LaTeX Warning: Reference `fig:ie0_2' on page 2 undefined on input line 114.
 
-<../figures/IE0_plot2.png, id=85, 1075.01625pt x 644.4075pt>
+<../figures/IE0_plot2.png, id=19, 1075.01625pt x 644.4075pt>
 File: ../figures/IE0_plot2.png Graphic file (type png)
 <use ../figures/IE0_plot2.png>
 Package pdftex.def Info: ../figures/IE0_plot2.png  used on input line 123.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
-<../figures/IE0_plot3.png, id=86, 1075.01625pt x 644.4075pt>
+<../figures/IE0_plot3.png, id=20, 1075.01625pt x 644.4075pt>
 File: ../figures/IE0_plot3.png Graphic file (type png)
 <use ../figures/IE0_plot3.png>
 Package pdftex.def Info: ../figures/IE0_plot3.png  used on input line 123.
@@ -551,39 +551,58 @@ Overfull \hbox (91.39912pt too wide) in paragraph at lines 122--125
  []
 
 [2 <../figures/IE0_plot0.png (PNG copy)> <../figures/IE0_plot1.png (PNG copy)>]
-<../figures/IE0_plot4.png, id=93, 1075.01625pt x 644.4075pt>
+
+LaTeX Warning: Reference `fig:ie0_4' on page 3 undefined on input line 128.
+
+<../figures/IE0_plot4.png, id=27, 1075.01625pt x 644.4075pt>
 File: ../figures/IE0_plot4.png Graphic file (type png)
 <use ../figures/IE0_plot4.png>
 Package pdftex.def Info: ../figures/IE0_plot4.png  used on input line 136.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
-<../figures/IE0_plot5.png, id=95, 1075.01625pt x 644.4075pt>
+
+LaTeX Warning: Reference `fig:ie0_5' on page 3 undefined on input line 140.
+
+<../figures/IE0_plot5.png, id=28, 1075.01625pt x 644.4075pt>
 File: ../figures/IE0_plot5.png Graphic file (type png)
 <use ../figures/IE0_plot5.png>
 Package pdftex.def Info: ../figures/IE0_plot5.png  used on input line 146.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
- [3 <../figures/IE0_plot2.png (PNG copy)> <../figures/IE0_plot3.png (PNG copy)> <../figures/IE0_plot4.png (PNG copy)>]
-<../figures/IE1_credit_history.png, id=104, 1075.01625pt x 644.4075pt>
+[3 <../figures/IE0_plot2.png (PNG copy)> <../figures/IE0_plot3.png (PNG copy)> <../figures/IE0_plot4.png (PNG copy)>]
+
+LaTeX Warning: Reference `fig:ie1_1' on page 4 undefined on input line 153.
+
+<../figures/IE1_credit_history.png, id=35, 1075.01625pt x 644.4075pt>
 File: ../figures/IE1_credit_history.png Graphic file (type png)
 <use ../figures/IE1_credit_history.png>
 Package pdftex.def Info: ../figures/IE1_credit_history.png  used on input line 159.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
-<../figures/IE3_dist_external_offers.png, id=107, 1075.01625pt x 644.4075pt>
+
+LaTeX Warning: Reference `fig:ie3_0' on page 4 undefined on input line 172.
+
+
+LaTeX Warning: Reference `fig:ie3_1' on page 4 undefined on input line 172.
+
+<../figures/IE3_dist_external_offers.png, id=36, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_dist_external_offers.png Graphic file (type png)
 <use ../figures/IE3_dist_external_offers.png>
 Package pdftex.def Info: ../figures/IE3_dist_external_offers.png  used on input line 178.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
- [4 <../figures/IE0_plot5.png (PNG copy)> <../figures/IE1_credit_history.png (PNG copy)>]
-<../figures/IE3_dist_external_offers_byyear.png, id=113, 969.6225pt x 646.415pt>
+[4 <../figures/IE0_plot5.png (PNG copy)> <../figures/IE1_credit_history.png (PNG copy)>]
+<../figures/IE3_dist_external_offers_byyear.png, id=45, 969.6225pt x 646.415pt>
 File: ../figures/IE3_dist_external_offers_byyear.png Graphic file (type png)
 <use ../figures/IE3_dist_external_offers_byyear.png>
 Package pdftex.def Info: ../figures/IE3_dist_external_offers_byyear.png  used on input line 186.
 (pdftex.def)             Requested size: 261.80157pt x 174.53438pt.
-<../figures/IE3_CDF_number_extoffers.png, id=115, 1075.01625pt x 644.4075pt>
+
+
+LaTeX Warning: Reference `fig:ie3_2' on page 5 undefined on input line 190.
+
+<../figures/IE3_CDF_number_extoffers.png, id=46, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_CDF_number_extoffers.png Graphic file (type png)
 <use ../figures/IE3_CDF_number_extoffers.png>
 Package pdftex.def Info: ../figures/IE3_CDF_number_extoffers.png  used on input line 197.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
-<../figures/IE3_hazard_number_extoffers.png, id=116, 1075.01625pt x 644.4075pt>
+<../figures/IE3_hazard_number_extoffers.png, id=47, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_hazard_number_extoffers.png Graphic file (type png)
 <use ../figures/IE3_hazard_number_extoffers.png>
 Package pdftex.def Info: ../figures/IE3_hazard_number_extoffers.png  used on input line 197.
@@ -593,18 +612,26 @@ Overfull \hbox (91.39912pt too wide) in paragraph at lines 196--199
  [][] 
  []
 
-[5 <../figures/IE3_dist_external_offers.png (PNG copy)> <../figures/IE3_dist_external_offers_byyear.png (PNG copy)>] (../Tables/IE3_coefficient1.tex)
-<../figures/IE3_search_by_income_quintile.png, id=125, 1075.01625pt x 644.4075pt>
+[5 <../figures/IE3_dist_external_offers.png (PNG copy)> <../figures/IE3_dist_external_offers_byyear.png (PNG copy)>]
+
+LaTeX Warning: Reference `fig:ie3_3' on page 6 undefined on input line 203.
+
+(../Tables/IE3_coefficient1.tex)
+<../figures/IE3_search_by_income_quintile.png, id=55, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_search_by_income_quintile.png Graphic file (type png)
 <use ../figures/IE3_search_by_income_quintile.png>
 Package pdftex.def Info: ../figures/IE3_search_by_income_quintile.png  used on input line 211.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
-<../figures/IE3_search_CDF_by_income_quintile.png, id=127, 1075.01625pt x 644.4075pt>
+
+
+LaTeX Warning: Reference `fig:ie3_4' on page 6 undefined on input line 215.
+
+<../figures/IE3_search_CDF_by_income_quintile.png, id=56, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_search_CDF_by_income_quintile.png Graphic file (type png)
 <use ../figures/IE3_search_CDF_by_income_quintile.png>
 Package pdftex.def Info: ../figures/IE3_search_CDF_by_income_quintile.png  used on input line 222.
 (pdftex.def)             Requested size: 279.49763pt x 167.54199pt.
-<../figures/IE3_search_hazardrate_by_income_quintile.png, id=128, 1075.01625pt x 644.4075pt>
+<../figures/IE3_search_hazardrate_by_income_quintile.png, id=57, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_search_hazardrate_by_income_quintile.png Graphic file (type png)
 <use ../figures/IE3_search_hazardrate_by_income_quintile.png>
 Package pdftex.def Info: ../figures/IE3_search_hazardrate_by_income_quintile.png  used on input line 222.
@@ -614,19 +641,25 @@ Overfull \hbox (69.87785pt too wide) in paragraph at lines 221--224
  [][] 
  []
 
+
+LaTeX Warning: Reference `fig:ie3_4b' on page 6 undefined on input line 227.
+
 (../Tables/IE3_coefficient11.tex) [6 <../figures/IE3_CDF_number_extoffers.png (PNG copy)> <../figures/IE3_hazard_number_extoffers.png (PNG copy)> <../figures/IE3_search_by_income_quintile.png (PNG copy)> <../figures/IE3_search_CDF_by_income_quintile.png (PNG copy)> <../figures/IE3_search_hazardrate_by_income_quintile.png (PNG copy)>]
-<../figures/IE3_search_by_gender.png, id=136, 1075.01625pt x 644.4075pt>
+<../figures/IE3_search_by_gender.png, id=65, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_search_by_gender.png Graphic file (type png)
 <use ../figures/IE3_search_by_gender.png>
 Package pdftex.def Info: ../figures/IE3_search_by_gender.png  used on input line 235.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
  (../Tables/IE3_within_group_dispersion.tex) (../Tables/IE3_coefficient2.tex [7 <../figures/IE3_search_by_gender.png (PNG copy)>])
-<../figures/IE3_dispertion_choice_set.png, id=147, 1075.01625pt x 644.4075pt>
+
+LaTeX Warning: Reference `fig:ie3_5' on page 8 undefined on input line 283.
+
+<../figures/IE3_dispertion_choice_set.png, id=76, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_dispertion_choice_set.png Graphic file (type png)
 <use ../figures/IE3_dispertion_choice_set.png>
 Package pdftex.def Info: ../figures/IE3_dispertion_choice_set.png  used on input line 290.
 (pdftex.def)             Requested size: 279.49763pt x 167.54199pt.
-<../figures/IE3_dispertion_choice_set_range.png, id=148, 1075.01625pt x 644.4075pt>
+<../figures/IE3_dispertion_choice_set_range.png, id=77, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_dispertion_choice_set_range.png Graphic file (type png)
 <use ../figures/IE3_dispertion_choice_set_range.png>
 Package pdftex.def Info: ../figures/IE3_dispertion_choice_set_range.png  used on input line 290.
@@ -636,54 +669,93 @@ Overfull \hbox (69.87785pt too wide) in paragraph at lines 289--292
  [][] 
  []
 
-[8] (../Tables/IE3_choiceset_dispersion.tex) (../Tables/IE3_offer_improvement.tex)
-<../figures/IE3_offer_improvement_histogram.png, id=159, 1075.01625pt x 644.4075pt>
+[8] (../Tables/IE3_choiceset_dispersion.tex)
+
+LaTeX Warning: Hyper reference `bhfn:1' on page 9 undefined on input line 300.
+
+(../Tables/IE3_offer_improvement.tex)
+<../figures/IE3_offer_improvement_histogram.png, id=89, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_offer_improvement_histogram.png Graphic file (type png)
 <use ../figures/IE3_offer_improvement_histogram.png>
 Package pdftex.def Info: ../figures/IE3_offer_improvement_histogram.png  used on input line 309.
 (pdftex.def)             Requested size: 322.50737pt x 193.32373pt.
  [9 <../figures/IE3_dispertion_choice_set.png (PNG copy)> <../figures/IE3_dispertion_choice_set_range.png (PNG copy)>]
-<../Tables/IE3_offer_improvement_bygender.png, id=171, 414.79968pt x 374.90062pt>
+
+LaTeX Warning: Reference `fig:aux' on page 10 undefined on input line 315.
+
+<../Tables/IE3_offer_improvement_bygender.png, id=102, 414.79968pt x 374.90062pt>
 File: ../Tables/IE3_offer_improvement_bygender.png Graphic file (type png)
 <use ../Tables/IE3_offer_improvement_bygender.png>
 Package pdftex.def Info: ../Tables/IE3_offer_improvement_bygender.png  used on input line 321.
 (pdftex.def)             Requested size: 290.3578pt x 262.42863pt.
- [10 <../figures/IE3_offer_improvement_histogram.png (PNG copy)>]
-<../Tables/IE3_offer_improvement_byincomequintile.png, id=181, 440.39531pt x 765.6103pt>
+[10 <../figures/IE3_offer_improvement_histogram.png (PNG copy)>]
+
+LaTeX Warning: Reference `fig:aux2' on page 11 undefined on input line 327.
+
+<../Tables/IE3_offer_improvement_byincomequintile.png, id=110, 440.39531pt x 765.6103pt>
 File: ../Tables/IE3_offer_improvement_byincomequintile.png Graphic file (type png)
 <use ../Tables/IE3_offer_improvement_byincomequintile.png>
 Package pdftex.def Info: ../Tables/IE3_offer_improvement_byincomequintile.png  used on input line 333.
 (pdftex.def)             Requested size: 308.27461pt x 535.92355pt.
- [11 <../Tables/IE3_offer_improvement_bygender.png>] (../Tables/IE3_offer_change_max_internal.tex)
-<../figures/IE3_offer_change_max_internal.png, id=189, 1075.01625pt x 644.4075pt>
+[11 <../Tables/IE3_offer_improvement_bygender.png>]
+
+LaTeX Warning: Reference `fig:ie3_6' on page 12 undefined on input line 340.
+
+(../Tables/IE3_offer_change_max_internal.tex)
+<../figures/IE3_offer_change_max_internal.png, id=117, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_offer_change_max_internal.png Graphic file (type png)
 <use ../figures/IE3_offer_change_max_internal.png>
 Package pdftex.def Info: ../figures/IE3_offer_change_max_internal.png  used on input line 351.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
  [12 <../Tables/IE3_offer_improvement_byincomequintile.png>] (../Tables/IE3_number_initial_offers.tex) (../Tables/IE3_share_acc_highest.tex)
-<../figures/IE3_foregone_hist.png, id=199, 1075.01625pt x 644.4075pt>
+
+LaTeX Warning: Reference `fig:ie3_7' on page 13 undefined on input line 365.
+
+
+LaTeX Warning: Hyper reference `bhfn:2' on page 13 undefined on input line 367.
+
+<../figures/IE3_foregone_hist.png, id=126, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_foregone_hist.png Graphic file (type png)
 <use ../figures/IE3_foregone_hist.png>
 Package pdftex.def Info: ../figures/IE3_foregone_hist.png  used on input line 375.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
- [13 <../figures/IE3_offer_change_max_internal.png (PNG copy)>] (../Tables/IE3_foregone.tex) (../Tables/IE3_clogit.tex) (../Tables/IE3_dead_has_external.tex [14 <../figures/IE3_foregone_hist.png (PNG copy)>]) (../Tables/IE3_dead_has_external2.tex) (../Tables/IE3_dead_external_logi.tex) [15] (../Tables/IE3_ttest_improvement_pct.tex) (../Tables/IE3_dead_on_improvements.tex)
-<../figures/IE3_supply_age_quintile.png, id=236, 1075.01625pt x 644.4075pt>
+[13 <../figures/IE3_offer_change_max_internal.png (PNG copy)>] (../Tables/IE3_foregone.tex)
+
+LaTeX Warning: Hyper reference `bhfn:3' on page 14 undefined on input line 381.
+
+(../Tables/IE3_clogit.tex) (../Tables/IE3_dead_has_external.tex [14 <../figures/IE3_foregone_hist.png (PNG copy)>]) (../Tables/IE3_dead_has_external2.tex) (../Tables/IE3_dead_external_logi.tex) [15] (../Tables/IE3_ttest_improvement_pct.tex) (../Tables/IE3_dead_on_improvements.tex)
+
+LaTeX Warning: Reference `fig:ie3_9' on page 16 undefined on input line 424.
+
+
+LaTeX Warning: Reference `fig:ie3_10' on page 16 undefined on input line 424.
+
+
+LaTeX Warning: Reference `fig:ie3_11' on page 16 undefined on input line 424.
+
+
+LaTeX Warning: Reference `fig:ie3_9' on page 16 undefined on input line 425.
+
+
+LaTeX Warning: Reference `fig:ie3_10' on page 16 undefined on input line 426.
+
+<../figures/IE3_supply_age_quintile.png, id=161, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_age_quintile.png Graphic file (type png)
 <use ../figures/IE3_supply_age_quintile.png>
 Package pdftex.def Info: ../figures/IE3_supply_age_quintile.png  used on input line 434.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
- [16]
-<../figures/IE3_supply_income_quintile.png, id=247, 1075.01625pt x 644.4075pt>
+[16]
+<../figures/IE3_supply_income_quintile.png, id=171, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_income_quintile.png Graphic file (type png)
 <use ../figures/IE3_supply_income_quintile.png>
 Package pdftex.def Info: ../figures/IE3_supply_income_quintile.png  used on input line 443.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
-<../figures/IE3_supply_age.png, id=248, 1075.01625pt x 644.4075pt>
+<../figures/IE3_supply_age.png, id=172, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_age.png Graphic file (type png)
 <use ../figures/IE3_supply_age.png>
 Package pdftex.def Info: ../figures/IE3_supply_age.png  used on input line 453.
 (pdftex.def)             Requested size: 258.00917pt x 154.66095pt.
-<../figures/IE3_supply_agebin.png, id=249, 1075.01625pt x 644.4075pt>
+<../figures/IE3_supply_agebin.png, id=173, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_agebin.png Graphic file (type png)
 <use ../figures/IE3_supply_agebin.png>
 Package pdftex.def Info: ../figures/IE3_supply_agebin.png  used on input line 454.
@@ -693,29 +765,50 @@ Overfull \hbox (26.90092pt too wide) in paragraph at lines 452--456
  [][] 
  []
 
+
+LaTeX Warning: Reference `fig:ie3_12' on page 17 undefined on input line 460.
+
+
+LaTeX Warning: Reference `fig:ie3_13' on page 17 undefined on input line 460.
+
+
+LaTeX Warning: Reference `fig:ie3_14' on page 17 undefined on input line 460.
+
 [17 <../figures/IE3_supply_age_quintile.png (PNG copy)> <../figures/IE3_supply_income_quintile.png (PNG copy)> <../figures/IE3_supply_age.png (PNG copy)> <../figures/IE3_supply_agebin.png (PNG copy)>]
-<../figures/IE3_supply_offerprob_income_q.png, id=261, 1075.01625pt x 644.4075pt>
+
+LaTeX Warning: Reference `fig:ie3_12' on page 18 undefined on input line 465.
+
+
+LaTeX Warning: Reference `fig:ie3_13' on page 18 undefined on input line 467.
+
+
+LaTeX Warning: Reference `fig:ie3_14' on page 18 undefined on input line 467.
+
+
+LaTeX Warning: Reference `fig:ie3_14' on page 18 undefined on input line 468.
+
+<../figures/IE3_supply_offerprob_income_q.png, id=181, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_offerprob_income_q.png Graphic file (type png)
 <use ../figures/IE3_supply_offerprob_income_q.png>
 Package pdftex.def Info: ../figures/IE3_supply_offerprob_income_q.png  used on input line 479.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
-<../figures/IE3_supply_offerprob_age.png, id=262, 1075.01625pt x 644.4075pt>
+<../figures/IE3_supply_offerprob_age.png, id=182, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_offerprob_age.png Graphic file (type png)
 <use ../figures/IE3_supply_offerprob_age.png>
 Package pdftex.def Info: ../figures/IE3_supply_offerprob_age.png  used on input line 489.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
-<../figures/IE3_supply_offerprob_age_q.png, id=263, 1075.01625pt x 644.4075pt>
+<../figures/IE3_supply_offerprob_age_q.png, id=183, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_offerprob_age_q.png Graphic file (type png)
 <use ../figures/IE3_supply_offerprob_age_q.png>
 Package pdftex.def Info: ../figures/IE3_supply_offerprob_age_q.png  used on input line 499.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
- [18 <../figures/IE3_supply_offerprob_income_q.png (PNG copy)> <../figures/IE3_supply_offerprob_age.png (PNG copy)>]
-<../figures/IE3_supply_offerprob_age_q_2012.png, id=271, 1075.01625pt x 644.4075pt>
+[18 <../figures/IE3_supply_offerprob_income_q.png (PNG copy)> <../figures/IE3_supply_offerprob_age.png (PNG copy)>]
+<../figures/IE3_supply_offerprob_age_q_2012.png, id=191, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_offerprob_age_q_2012.png Graphic file (type png)
 <use ../figures/IE3_supply_offerprob_age_q_2012.png>
 Package pdftex.def Info: ../figures/IE3_supply_offerprob_age_q_2012.png  used on input line 511.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
-<../figures/IE3_supply_offerprob_age_q_2013.png, id=272, 1075.01625pt x 644.4075pt>
+<../figures/IE3_supply_offerprob_age_q_2013.png, id=192, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_offerprob_age_q_2013.png Graphic file (type png)
 <use ../figures/IE3_supply_offerprob_age_q_2013.png>
 Package pdftex.def Info: ../figures/IE3_supply_offerprob_age_q_2013.png  used on input line 512.
@@ -725,12 +818,12 @@ Overfull \hbox (91.39912pt too wide) in paragraph at lines 510--514
  [][] 
  []
 
-<../figures/IE3_supply_offerprob_age_q_2014.png, id=273, 1075.01625pt x 644.4075pt>
+<../figures/IE3_supply_offerprob_age_q_2014.png, id=193, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_offerprob_age_q_2014.png Graphic file (type png)
 <use ../figures/IE3_supply_offerprob_age_q_2014.png>
 Package pdftex.def Info: ../figures/IE3_supply_offerprob_age_q_2014.png  used on input line 522.
 (pdftex.def)             Requested size: 290.25827pt x 173.99234pt.
-<../figures/IE3_supply_offerprob_age_q_2015.png, id=274, 1075.01625pt x 644.4075pt>
+<../figures/IE3_supply_offerprob_age_q_2015.png, id=194, 1075.01625pt x 644.4075pt>
 File: ../figures/IE3_supply_offerprob_age_q_2015.png Graphic file (type png)
 <use ../figures/IE3_supply_offerprob_age_q_2015.png>
 Package pdftex.def Info: ../figures/IE3_supply_offerprob_age_q_2015.png  used on input line 523.
@@ -740,28 +833,34 @@ Overfull \hbox (91.39912pt too wide) in paragraph at lines 521--525
  [][] 
  []
 
-[19 <../figures/IE3_supply_offerprob_age_q.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2012.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2013.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2014.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2015.png (PNG copy)>] (empirical_v2.aux)
+[19 <../figures/IE3_supply_offerprob_age_q.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2012.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2013.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2014.png (PNG copy)> <../figures/IE3_supply_offerprob_age_q_2015.png (PNG copy)>] (empirical1.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `empirical_v2.out' has not changed.
-(rerunfilecheck)             Checksum: E49B2869EC31341D69BB19F7EADF3196;2984.
+
+Package rerunfilecheck Warning: File `empirical1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `empirical1.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  E49B2869EC31341D69BB19F7EADF3196;2984.
  ) 
 Here is how much of TeX's memory you used:
- 14142 strings out of 476331
- 241829 string characters out of 5787765
+ 14119 strings out of 476331
+ 241194 string characters out of 5787765
  1865660 words of memory out of 5000000
- 34181 multiletter control sequences out of 15000+600000
+ 34164 multiletter control sequences out of 15000+600000
  523415 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,14n,131p,1103b,544s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,14n,131p,1101b,544s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on empirical_v2.pdf (19 pages, 2761502 bytes).
+Output written on empirical1.pdf (19 pages, 2750066 bytes).
 PDF statistics:
- 357 PDF objects out of 1000 (max. 8388607)
+ 277 PDF objects out of 1000 (max. 8388607)
  87 named destinations out of 1000 (max. 500000)
- 294 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 

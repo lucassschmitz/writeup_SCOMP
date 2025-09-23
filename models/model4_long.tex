@@ -172,6 +172,7 @@ Moreover given that the non-buyers tend to be healthier than the buyers, the mar
 
 Even in the case firms have the same cost function, product differentiation generates  heterogeneity in marginal costs. This can appear counterintuitive, because previously we determined that there is no selection across firms which implies that they have the same average costs. To build some intuition, consider a duopoly with market shares 50\%, 1\% and 49\% does not buy the insurance. The market leader, when decreasing the costs, gets the healthy non buyers, whereas the small firms gets a mixture of previous buyers and non-buyers. Hence the bigger firm has smaller marginal costs than the smaller firm. 
 For a formal proof see section \ref{sec:appendix3.1}.
+In section \ref{sec:appendix3.2} we show what are the determinants of marginal cost heterogeneity. 
 
 \subsection{Firm pricing}\label{sec:pricing}
 The firm profits are:
@@ -243,13 +244,11 @@ Note that given that we do not have a close form solution for the equilibrium pr
 
 \newpage
 
-\subsection{Cost differences}
 
-\textcolor{red}{When are the differences in marginal costs across firms the biggest? }
 
 \subsection{Differentiation in the symmetric case}
 
-\textcolor{red}{Here we want to analyze what is the impact of $\rho$ (the differentiation parameter) when firms are symmetric ($\delta_j = \delta$ and the cost functionos are the same) }
+\textcolor{red}{HERE WE WANT TO ANALYZE THE IMPACT OF  $\rho$ (THE DIFFERENTIATION PARAMETER) WHEN FIRMS ARE SYMMETRIC ($\delta_j = \delta$ AND THE COST FUNCTIONS ARE THE SAME) }
 
 
 
@@ -270,7 +269,7 @@ The right panel in figure \ref{fig:sigma}   shows three patterns. (i) Average co
  \label{fig:sigma}
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=.7]{figures/simulations/sigma_panels.png} 
+\includegraphics[scale=.7]{figures/simulations/sigma_panels_2firms.png} 
 \end{tabular}
 \end{figure}
 
@@ -283,10 +282,13 @@ The upper left panel of figure \ref{fig:sigma} shows the market shares as functi
  \label{fig:sigma}
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=.7]{figures/simulations/rho_panels.png} 
+\includegraphics[scale=.7]{figures/simulations/rho_panels_2firms.png} 
 \end{tabular}
 \end{figure}
- 
+
+
+For figures using other parameters see \ref{sec:appendix9} 
+\textcolor{red}{I HAVE NOT INTERPRETED THE SECOND PICTURE. }
 
 \section{Additional thoughts}
 
@@ -295,30 +297,6 @@ The upper left panel of figure \ref{fig:sigma} shows the market shares as functi
 
     \item Our model has competition implications. For example a merge will increase market power, but also will decrease the marginal cost beyond just creating synergies, but by increasing the share of marginal buyers who are diverted from the outside option. 
 \end{itemize}
-
-
-\textbf{Effects of firm differentiation}
-
-Consider the case of a homogenous  annuities market, meaning $\delta_j = \delta_A$ for every insurer and $\rho = 0$\footnote{We are not assuming that there are an infinite number of firms.}.
-In what follows we compare the homogeneous case with the heterogeneous case. 
-
-
-The effect of $\rho$ on prices is ambiguous. On the demand side an increase of $\rho$ softens competition by increasing the importance of the firm level taste shocks. But If the market share of the outside good is big enough, decreasing the correlation between shocks also decreases the marginal cost because implies that the marginal consumer has a higher likelihood of being diverted from the outside option. 
-
-
-Homogeneity affects prices via: 
-\begin{itemize}
-    \item By increasing competition 
-    
-    
-    From equation \ref{eq:price_der} it increases the price semi-elasticity for any $h$. But the effect will be higher the higher $s_j(h)$ hence it will make the 
-    \item 
-\end{itemize}changing $w(h)$ in two ways. First, given that $\rho \rightarrow 0$, this increases $w(h)$ for any health status. But since the elasticity is higher for healthier individuals, th
-
-
-
-From equation \ref{eq:price_der} we can see that the marginal consumer will be diverted from other firms and not from the outside option. 
-Given an outside option market share, this will increase costs since the marginal consumer will be healthier.  But of course 
 
 
  
@@ -597,7 +575,7 @@ a \textbf{higher} $\rho$ (weaker within-nest correlation) moves weight toward $\
 \bigskip
 
 \newpage
-\subsection{Magnitude of heterogeneity in marginal costs}
+\subsection{Magnitude of heterogeneity in marginal costs}\label{sec:appendix3.2}
 
 From equation \ref{eq:mgcost_convex} we have that: 
 
@@ -640,7 +618,7 @@ Then we have that the difference is:
 \]
 From which is clear that the constant has no effect since it cancels out in both ratios and the difference scales linearly with the sensititivy of costs to health status ($c_1$). 
 
-\vspace{2cm}
+
 
 
 
@@ -685,5 +663,50 @@ Given the outside share for a given health status we can obtain the outside shar
     s_0 = \int s_0(h) f_h(h) dh
 \end{align}
 
+ 
+
+\subsection{Additional plots}\label{sec:appendix9}
+Plots for other parameters are: 
+\begin{figure}[H]
+\caption{}
+ \label{fig:sigma}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=.7]{figures/simulations/sigma_panels_3firms.png} 
+\end{tabular}
+\end{figure}
+
+
+ 
+
+ \begin{figure}[H]
+\caption{}
+ \label{fig:sigma}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=.7]{figures/simulations/rho_panels_3firms.png} 
+\end{tabular}
+\end{figure}
+ 
+\begin{figure}[H]
+\caption{}
+ \label{fig:sigma}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=.7]{figures/simulations/sigma_panels_4firms.png} 
+\end{tabular}
+\end{figure}
+
+
+ 
+
+ \begin{figure}[H]
+\caption{}
+ \label{fig:sigma}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=.7]{figures/simulations/rho_panels_4firms.png} 
+\end{tabular}
+\end{figure}
  
 \end{document}

@@ -150,4 +150,54 @@ $$H_0:\ \gamma_2=\cdots=\gamma_J=0,$$
 we get \input{../Tables/IE6/test_cia_dummies_pvalue.tex} as the p-values. 
 
 
+\section{IE 7: learning or discriminating} 
+
+It is not clear why firms increase the amount offered when making an external offer. 
+
+Two possible explanations are that 1) firms are learning about the offers made by competitors and they want to increase their offer to match teh competitors or 2) buyers who ask for external offers are more price elastic and firms are trying to price discriminate. 
+
+Given that people in the industry say that the pricing formula equalizes the savings to the discounted value of payments, the first hypothesis does not appear to be very likely. 
+
+\input{../Tables/IE7/IE7_learning_regressions.tex}
+
+
+In columns 1 to 3 we can see that firms when making an external offer increase their offer more if they see that the initial offers of the competitors are higher. In columns (4) to (6) we also see that the firm that made the highest initial offer increases their offer as a function of the average of the other offers but not as a function of the maximum of the other offers.
+
+The issue is that if one thinks about the pricing game as a sort of Bertrand with imperfect information, where firms want to just overbid the competitors, then the firm with the highest initial offer might just not submit an external offer. Hence there is an endogeneity issue. In column (7) we run a logit regression to see what is the effect of seeing the competitors offers in the probability of the highest firm making an external offer. The coefficient is negative meaning that the higher the gap (in absolute value) the lower the probability of making an external offer, which is consistent with the idea of the firm trying to just overbid the competitors.
+
+Figures \ref{fig:ie7_1} and \ref{fig:ie7_2} show visually the positive relationship between the gap to other offers and the increase in the external offer.
+\begin{figure}[H]
+\caption{}
+\label{fig:ie7_1}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.25]{../figures/IE7/IE7_learning_scatter_avg.png}
+\end{tabular}
+\end{figure}
+
+
+\begin{figure}[H]
+\caption{}
+\label{fig:ie7_2}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.25]{../figures/IE7/IE7_learning_binscatter_avg.png}
+\end{tabular}
+\end{figure}
+
+\begin{figure}[H]
+\caption{}
+\label{fig:ie7_3}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.3]{../figures/IE7/IE7_hist_bunching_max(2).png} & \includegraphics[scale=0.3]{../figures/IE7/IE7_rd_bunching_max(2).png}
+\end{tabular}
+\end{figure}
+
+Figure \ref{fig:ie7_3} shows that visually there appears to be bunching around the cutoff where the cutoff is the amount the external offer has to increase to be higher than any of the initial offers. 
+
+
+
+
+
 \end{document}

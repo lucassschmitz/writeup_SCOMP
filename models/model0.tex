@@ -1,0 +1,274 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.8in,bmargin=1in,lmargin=.9in,rmargin=.9in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [rectangle, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+\tikzstyle{mechanism} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+ 
+
+\newpage
+ \title{{\Large Centralized annuities marketplace}}
+\author{Lucas Schmitz\thanks{Yale University \texttt{lucas.schmitz@yale.edu}}} 
+\date{}
+
+%\thispagestyle{empty}
+
+\vspace{-1cm}
+
+%\newpage \onehalfspacing
+%\setcounter{page}{1}
+
+Our model presents some particularities from the standard model of consumers buying goods:
+\begin{itemize}
+    \item Prices are individualized, insurers take into account the  risk
+\end{itemize}
+
+\textbf{Demand model}
+ 
+Individuals are indexed by $i\in \mathcal{I}$, they are grouped into segments depending on their observed characteristics (age, gender, marital status, age of legal beneficiaries and savings decile\footnote{The observed characteristics include savings, but to create the groups we use savings decile.}). Segments are indexed by $k \in \mathcal{K}$, with $k(i)$ being the segment of individual $i$, insurers are indexed by $j\in \mathcal{J}$.  The utility of $i$ when accepting offer $j$ is: 
+
+\begin{align*}\label{eq:utility}
+   u_{ijt} = \beta X_{jt}+ \alpha_{k(i)} r_{ij} + \xi_j +\xi_{jt} + \varepsilon_{ijt}   
+\end{align*}
+
+where $r_{ij}$ is the interest rate, $X_{jt}$  are insurer characteristics (credit-rating, number of customer service offices), $\xi_j$ are persistent unobserved insurer characteristics, and  $\xi_{jt}$ are mean-zero demand shocks.  
+Note that the distinctive feature is that the interest rate is at the individual level, hence to estimate this model requires to have individual level prices, which are the main advantage of our data. Moreover we expect the $\alpha_k$ coefficient to be positive, since in a certain way the consumer is lending money to the insurer. 
+
+Define the mean utility $\delta_{jt} = \beta X_{jt} + \xi_j + \xi_{jt}$
+
+Assuming the idiosincratic shocks are distributed type 1 extreme value, the probability consumer $i$ chooses $j$ is: 
+
+\begin{align*}
+    Pr_{ij}((r_{ij})_{i}|\theta, X) = \frac{\exp(\delta_{jt} + \alpha_{k(i)}r_{ij})}{\sum_{j'\in J_i}\exp(\delta_{j't} + \alpha_{k(i)}r_{ij'})}
+\end{align*}
+
+where $J_i$ is the set of insurers who send an offer to individual $i$. 
+
+Given our scenario, denote by $Y_i$ the savings of consumer $i$, we define a savings weighted market share as: 
+\begin{align}
+    s_j((r_{ij})_{ij}|\theta, X) = \sum_i Y_i Pr_{ij}((r_{ij})_{ij}|\theta, X)
+\end{align}
+
+For the supply model we present later it will be useful to assume that insurers offer a single price for all individuals of the same type, all individuals of the same type have the same amount of savings and the set of insurers making an offer is the same within a type of individuals. In this case, for any individual of type $k$ the probability of buying an annuity from $j$ is: 
+
+
+\begin{align*}
+    s_{kj} = Pr_{kj}((r_{kj})_{j}|\theta, X) = \frac{\exp(\delta_{jt} + \alpha_{k}r_{kj})}{\sum_{j'\in J_k}\exp(\delta_{kt} + \alpha_kr_{ik'})}
+\end{align*}
+
+
+
+In this case the savings weighted market shares are: 
+\begin{align}
+    s_j((r_{kj})_{kj}|\theta, X) = \sum_{k  \in \mathcal{K}} Y_k Pr_{kj}((r_{kj})_{kj}|\theta, X)N_k
+\end{align}
+where $N_k$ is the share of consumers who are type $k$. 
+
+A note of caution, if we want to micro-found our demand model, we have to consider the bequest motives which implies modelling a joint survial problem (see \textcite{illanes_switching_2017}). One solution adopted is to restrict the sample to individuals without beneficiaries or to be careful by including structural errors that account for this issue. 
+
+
+\textbf{Supply model}
+
+To answer some of the research questions outlined before we need a supply model of how insurers behave. For example, if there is a government guarantee, the valuation for certain insurers' offer will increase, thereby changing the residual demand they face and the equilibrium interest rates they offer. 
+
+Insurers form beliefs about the remaining years of life of an individual type $k$, denote by $F_k(a)$ the probability they assigned to the individual surviving at least $a$ additional periods. 
+
+In our model insurer differentiation generates market power, we assume that in every other aspect they are homogeneous \footnote{A natural extension would be to assume different financing costs and also allow for different prediction technologies to generate beliefs, in which case $F_k(a)$ would have to be indexed by $j$. }.
+
+Insurer's financing cost is denoted by $\bar{r}_t$, then the profits derived from enrolling an individual $i$ of type $k$ when making an offer $r_{kj}$ are: 
+
+\begin{align}\label{eq:individual_profits}
+    \pi_{i}(r_{k(i)j}) =
+    Y_k -   \sum_{t=1}^{\infty} F_{k(i)}(t) \frac{P(r_{k(i)j},Y_k)}{(1+\bar{r}_t)^t} 
+\end{align}
+
+where $P(r_{kj})$ is the associated monthly payment with the interest rate offered by the insurer. This monthly payment is constructed using the official mortality tables constructed by the regulator, in what follows we explain their construction. 
+
+The regulator publishes mortality tables based on age and gender, denote by $k^m \in \mathcal{K}^m$ an age-gender combination and by $F_k^m(a)$ the probability that the mortality table assigns to an individual type $k^m$ of living at least $a$ additional years, then $P(r_{kj},Y_k)$ solves:
+
+\begin{align}
+    Y_k = \sum_{t=1}^{\infty} F_k^m(t) \frac{P(r_{kj},Y_k)}{(1+r_{kj})^t} \implies  P(r_{kj},Y_k) = \left[\sum_{t=1}^{\infty}  \frac{F_k^m(t)}{(1+r_{kj})^t} \right]^{-1} Y_k
+\end{align}
+
+%In the case in which the mortality tables generate the same distribution of remaining years of life than $F_k(t)$\footnote{Note that the mortality tables condition on less variables than the ones observed by the insurers, hence we are assuming that saving amount, marital status and the other observed variables are not relevant to determine the distribution of years left. }, the profits derived from enrolling an individual of type $k$ when making an offer $r_{kj}$ are: 
+
+
+
+
+Then, firms profits in the segment $k$ are given by: 
+\begin{align}
+    \pi_{jk}( r_k) = \left[Y_k -   \sum_{t=1}^{\infty} F_k(t) \frac{P(r_{kj},Y_k)}{(1+\bar{r}_t)^t} \right] \left[\frac{\exp(\delta_{jt} + \alpha_{k}r_{kj})}{\sum_{j'\in J_k}\exp(\delta_{kt} + \alpha_kr_{ik'})}\right]
+\end{align}
+
+note that $\frac{\partial s_kj}{\partial r_{kj}} = \alpha_{jk}s_{jk}(1-s_{jk})$ then the FOC with respect to the interest rate is: 
+\begin{align*}
+    \frac{\partial \pi_{jk}( r_k)}{\partial r_{jk}} = - \frac{\partial P(r_{kj},Y_k)}{\partial r_{kj}}  \sum_{t=1}^{\infty}  \frac{F_k(t)}{(1+\bar{r}_t)^t}  \left[\frac{\exp(\delta_{jt} + \alpha_{k}r_{kj})}{\sum_{j'\in J_k}\exp(\delta_{kt} + \alpha_kr_{ik'})}\right] \\
+    + \left[Y_k -   \sum_{t=1}^{\infty} F_k(t) \frac{P(r_{kj},Y_k)}{(1+\bar{r}_t)^t} \right] 
+    \alpha_{jk}s_{jk}(1-s_{jk}) =0
+\end{align*}
+which simplifies to: 
+\begin{align*}
+    - \frac{\partial P(r_{kj},Y_k)}{\partial r_{kj}}  \sum_{t=1}^{\infty}  \frac{F_k(t)}{(1+\bar{r}_t)^t}  
+    + \left[Y_k -   \sum_{t=1}^{\infty} F_k(t) \frac{P(r_{kj},Y_k)}{(1+\bar{r}_t)^t} \right] 
+    \alpha_{jk}(1-s_{jk}) =0
+\end{align*}
+
+note that whenever the mortality tables provided by the regulator are used by the firms to make their offers then we have: 
+
+\begin{align}\label{eq:FOC_simplified}
+    - \frac{\partial P(r_{kj},Y_k)}{\partial r_{kj}}  \sum_{t=1}^{\infty}  \frac{F_k^m(t)}{(1+\bar{r}_t)^t}  
+    + \left[Y_k -   \sum_{t=1}^{\infty} F_k^m(t) \frac{P(r_{kj},Y_k)}{(1+\bar{r}_t)^t} \right] 
+    \alpha_{jk}(1-s_{jk}) =0
+\end{align}
+
+Denote by $r_k \equiv (r_{kj})_{j\in \mathcal{J}_k}$ the vector of interest rates received by consumer of type $k$. \
+
+\textbf{Aftermarket}
+
+Consumers can reject the offers and ask for what are called external offers. To ask for the external offers the consumer has to physically go to the customer service office of the insurer, hence we assume that there is a fixed cost $F$ of doing this. We assume each consumer requests at most one external offer. 
+
+Moreover we assume that once they go to the office they bargain with the insurer. During the bargaining, upon disagreeing, the consumer can choose one of the previous offers.  
+
+Before explaining our model it is useful to make explicit our assumptions about the knowledge the firm has about the consumers. We assume that when making the first round offers insurers do not know the idiosincratic prefernces of the consumers ($\varepsilon_i$), this assumption generates that within a group the offers are the same. If the $\varepsilon_i$ were known by the firms then there would not be any uncertainty about the choice the consumer makes when receiving the offers. 
+
+Given $\varepsilon_i$ consumers decide whether to ask for external offers and in case they do, from which insurer to request the offers. We assume insurers never observe $\varepsilon_i$, but when someone requests an external offer from them they update their prior about the distribution of errors. 
+
+Given that they never observe the errors, once they bargain with a consumer of type $k$ they will arrive to a new interest rate which we denote by $r_{jk}^b$ which is at the type level, denote by $r_{k}^b= (r_{jk}^b)_{j\in \mathcal{J}}$
+
+Denote by $u_{kj}(r,\epsilon_j)$ the utility of a consumer of type $k$ when he accepts plan $j$ at an interest rate $r$ and given his taste shock for that plan. 
+
+
+Denote by $\tilde{\varepsilon}_{k}$ the set of errors which generate the consumer of type $k$ to ask for an external offer, and $\tilde{\varepsilon}_{kj}$ the set of errors which generate the consumer of type $k$ to ask for an external offer from insurer $j$. Formally: 
+
+\begin{align}
+    \tilde{\varepsilon}_{kj}(r_k, r_{k}^b) = \{ \varepsilon \in \mathbb{R}^J: \underset{j}{\max} \quad u_{kj}(r_{jk}^b, \epsilon_j) - F \geq u_{k}(r_k, \varepsilon) 
+\end{align}
+and $\tilde{\varepsilon}_{k}(r_k, r_{k}^b) = \bigcup_{j\in \mathcal{J}} \tilde{\varepsilon}_{kj}  $
+
+where $u_{k}(r_k, \varepsilon) = \underset{j}{\max} \ \ u_{kj}(r_{jk}, \varepsilon_j)$ is the utility if the consumer were prohibited to request external offers. 
+
+We assume that the bargained interest rate solves the expected Nash product:  
+\begin{align}\label{eq:bargaining}
+    r_{jk}^b = \underset{r\geq r_i}{\arg \max} \ \  \mathbb{E}\left[
+    \{u_{kj}(r, \varepsilon_j) -u_{k}(r_k, \varepsilon)\} ^{1-\alpha_j} 
+    \{GOT_j(r_k, r, \epsilon) \}^{\alpha_j}
+    | \varepsilon \in \tilde{\varepsilon}_{kj}(r_k, r_{k}^b)
+    \right] 
+\end{align}
+
+where $GOT_j(r_k, r, \epsilon) = \pi_i(r)-\pi_i(r_{k(i)j}) 1( u_k(r_k, \varepsilon) = u_{kj}(r_{jk}, \varepsilon_j))$
+
+%Given that the highest previous offer was $r_i$ and the highest utility of the previous offer was  $\bar{u}_i$\footnote{Note that the highest utility might not be generated by the highest offer because there are factors affecting the utility beyond the interest rate.} 
+
+%Then, individual $i$ when bargaining with insurer $j$, determine $r_{ij}$ which has to solve: 
+
+%\begin{align}\label{eq:bargaining}
+%    r_{ij} = \underset{r\geq r_i}{\arg \max} (u_{ij}(r) - \bar{u}_i) ^{1-\alpha_j} \left[\pi_i(r)- 1( \bar{u}_i= u_{ijt})\pi_i(r_{k(i)j})\right] ^{\alpha_j}
+%\end{align}
+
+Note that by regulation the bargained rate can not be lower than the highest rate of the initial offers, also the gains of trade for the insurer include the opportunity cost of making a better offer in the case in which they were the preferred provider in the first stage\footnote{This involves a strong assumption that the idiosyncratic taste shocks ($\varepsilon_{ij}$) are known by the insurer. One could choose a variation of this specification in which they have a probabilistic belief over whether they are the best offer. }. Finally, the renegotiation fixed cost is sunk at the moment of bargaining, hence does not appear in equation \ref{eq:bargaining}. 
+
+ 
+
+
+
+
+\textbf{Extensions}
+Some aspects we are leaving out of the model and could potentially be included in it: 
+\begin{itemize}
+    \item Unobservable risk determinants: as it stands there is no selection, given that is an insurance market it might be useful to model it.
+
+    \item Related to the previous point, we assume no new information is revealed when asking for external offers.
+\end{itemize}
+
+
+
+\textbf{Comments}
+\begin{itemize}
+    \item In our previous model is crucial to estimate the survival probabilities $F_k$, the mortality tables provided by the regulator are probabilities for the whole population, but if there is selection the survival probabilities of the buyers will be different to the ones of the regulator. 
+\end{itemize}
+
+
+\section{Estimation}
+Estimation of the demand model can be done via ML: 
+\begin{enumerate}
+    \item Estimate  ($\delta_{jt}, \alpha_k$) to maximize the likelihood 
+    \item Use $\mathbb{E}[\delta_{jt}|x_{jt},x_{-jt}]= 0$ to estimate ($\beta, \xi_j, \xi_{jt}$)
+\end{enumerate}
+
+Moreover, if we assume that firms use the mortality tables published by the regulator to create beliefs over the remaining time, then from equation \ref{eq:FOC_simplified} we can recover the financing costs of the firms. Note that in this case identifying firm-specific financing costs -firm specific $\bar{r}_{jt}$ would be possible. 
+
+The fixed cost is identified from the variation in choosing to apply for external offers. 
+
+
+ 
+\end{document}
+

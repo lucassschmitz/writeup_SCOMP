@@ -50,18 +50,34 @@ In this document I will present what we are learnign from out empirical work. Th
 
 \subsection{Granularity of the insurer mortality tables}
 
-The logic in table 1 is that more sophisticated firms should have a statistically significant value of savings (val\_uf\_prima) because they include it in the mortality tables. Whereas less sophisticated firms do not include it and therefore the coefficient should be statistically insignificant. We rank firms according to sales and we show the firms with odd ranks (1,3,5,7,9, ..., 15), and we assume is a proxy of sophistication\footnote{If creating better mortality tables is a fixed cost then it is natural to expect firms with more sales to have more granular mortality tables.} There does not appear to be a trend in which firms with lower ranks have a smaller value of the savings coefficient. This could be caused by the fact that the model is misspecified, we are trying to approximate the pricing formula which contains thousands of coefficients (mortality rates) with 5 coefficients. 
+\textbf{Summary} in general it appears as if bigger firms use more granular mortality tables. but the evidence is not super robust. For example when creating buckets based on age, gender, savings, and date of purchase, there is still variation in the ratio of flow payment to stock of savings, it is not clear whether it is because the buckets are not granular enough or there is some noise due to comissions and also because interest rates can change over time even within a month. 
 
-In table 2 we repeat the excercise but without controlling for savings under the logic that the R2 of more sophisticated firms should be lower because we are missing a key variables in the pricing formula. There does not appear to be a trend in which firms with lower ranks have a higher R2. Again, this could be caused by misspecification.
+
+
+
+
+
+
+
+The logic in table 1 is that more sophisticated firms should have a statistically significant value of savings (val\_uf\_prima) because they include it in the mortality tables. Whereas less sophisticated firms do not include it and therefore the coefficient should be statistically insignificant. We rank firms according to sales and we show the firms with odd ranks (1,3,5,7,9,..., 15), and we assume is a proxy of sophistication\footnote{If creating better mortality tables is a fixed cost then it is natural to expect firms with more sales to have more granular mortality tables.} There does not appear to be a trend in which firms with lower ranks have a smaller value of the savings coefficient. This could be caused by the fact that the model is misspecified, we are trying to approximate the pricing formula which contains thousands of coefficients (mortality rates) with 5 coefficients. 
+
+For example if the age has a non-linear effect, let's say age squared is statistically significant, and at the same time age squared is correlated with savings, then the coefficient of savings could be significantly different from zero even if the firm is not using savings in the mortality tables.
+
+
+In table 2 we repeat the excercise but without controlling for savings under the logic that the R2 of more sophisticated firms should be lower because we are missing a key variables in the pricing formula. There does not appear to be a trend in which firms with lower ranks have a higher R2. Again, this could be caused by misspecification. Also in table 3 we show that adding the savings in the regresssion increases the R2 ver little (around 0.001-0.002) for two particular firms. Hence it appears as if the big determinant of ratio is gender and age and the savings are not a first order importance determinant, which could explain that even if only some firms use the savings in the mortality tables, we do not see a difference in the amount the R2 changes when we include savings in the regression, in Table 2. 
+
+In section \ref{sec:appendix_ie5} we run regressions for the determinants of ratio for all firms, ranked by their market share (first 3 tables). It seems like bigger firms have more significant coefficients for savings. To corroborate the this hypothesis in the fourth table of the section we run a regression with an interaction between savings and firm buckets, where the Nth column has N buckets. For example the variable Size2 takes the value of 1 for the biggest 8 firms and 2 for the smallest 8 firms (there are a total of 16 firms), similarly for size3, size4 and size5. Generally biggger firms have a higher coefficient for savings, which is consistent with the hypothesis that bigger firms have more granular mortality tables.
+
+
 
 
 \input{../Tables/IE5/IE5_reg_by_rank.tex}
  
 
-If more sophisticated firms are using t
  
 \input{../Tables/IE5/IE5_reg_by_rank(2).tex}
- 
+
+\input{../Tables/IE5/ratio_reg0.tex}
  
 
 \newpage 
@@ -198,6 +214,87 @@ Figure \ref{fig:ie7_3} shows that visually there appears to be bunching around t
 
 
 
+\newpage
 
+\section{IE10: }
+
+
+
+In the table below we can observe that some firms are correlated in their offers. 
+\textcolor{red}{It is not clear what to make out of it.}
+
+Some firms have consistently more similar algorithms. 
+\input{../Tables/IE10/correlation_table.tex}
+
+In the table below we estimate a logit model of the form: 
+\begin{align}
+    d_{itj} = \text{logit}(\beta_j + \gamma_j Z_{itj} + \epsilon_{itj})
+\end{align}
+where $i$ indexes individual, $t$ indexes time and $j$ indexes firms. 
+$d_{itj}$ is a dummy that takes the value of if the individual dies, $\beta_j$ aims to account for certain firms consistently bidding more and $z_{itj}$ is the deviation. In some cases we add a set of individual level controls $X_i$. 
+ 
+
+
+\textbf{Discussion of specification}
+
+
+In our logit model we need to include a constant to account for the fact that in our sample people die between 5 and 10\% of the years. If we do not include a constant the model will use the coefficients to match the average death rate and even in the case where the $z_{itj}$ are not predictive we will end up with positive coefficients. 
+
+The next decision to make is whether the constant is firm-specific or not. 
+
+If firms make offers to groups of people who vary systematically in their mortality rates then we need to include firm-specific constants\footnote{If a firm only makes offers to women (healthier) that would already be included in the mean price hence would not be a problem.}.
+
+
+But the problem of including firm-specific constants is that the offering probability could be endogenous, for example if a firm predicts a low mortality and makes offers only to individuals with high predicted mortality then we would be in a problem. Hence we assume that the offer probability is exogenous, which allows us to use a common constant. In this case we would have censorizing, e.g. if the z would be too low then the firm does not offer. 
+
+
+
+
+
+when including a firm-specific constant most of the constants (11 out of 17) are significant. What does this mean? shoul we include firm-specific constants or not?
+
+One possibility is to use only observations where many firms made an offer. 
+
+
+
+
+
+\newpage 
+\input{../Tables/IE10/mortality_regressions.tex}
+
+\input{../Tables/IE10/mortality_regressions_offers.tex}
+
+
+\input{../Tables/IE10/mortality_regressions(2).tex}
+
+\input{../Tables/IE10/mortality_regressions(3).tex}
+
+
+
+\textbf{Interpretation} 
+
+In the second table col 1 there are coefficients different from zero when we do not include the controls. But this coefficients become no different from zero once we include the controls. 
+What is our interpretation? 
+
+It means that the 
+
+
+
+\newpage
+
+
+
+
+
+
+\section{Appendix: IE5 granularity}\label{sec:appendix_ie5}
+
+\input{../Tables/IE5/ratio_reg.tex}
+
+\input{../Tables/IE5/ratio_reg_2.tex}
+
+\input{../Tables/IE5/ratio_reg_3.tex}
+
+\input{../Tables/IE5/ratio_reg_4.tex}
 
 \end{document}

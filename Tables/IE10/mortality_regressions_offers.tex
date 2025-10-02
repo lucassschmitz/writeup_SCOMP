@@ -1,0 +1,59 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                    &\multicolumn{1}{c}{Died}&\multicolumn{1}{c}{Died}&\multicolumn{1}{c}{Died}&\multicolumn{1}{c}{Died}\\
+\hline
+Died                &                     &                     &                     &                     \\
+rank\_sales=1 $\times$ Offer: monthly payment&    -0.00776\sym{**} &     0.00777\sym{**} &                     &                     \\
+                    &     (-2.88)         &      (3.07)         &                     &                     \\
+rank\_sales=2 $\times$ Offer: monthly payment&     -0.0107\sym{***}&     0.00818\sym{**} &                     &                     \\
+                    &     (-3.61)         &      (3.01)         &                     &                     \\
+rank\_sales=3 $\times$ Offer: monthly payment&     -0.0140\sym{***}&     0.00725\sym{**} &                     &                     \\
+                    &     (-5.00)         &      (2.78)         &                     &                     \\
+rank\_sales=4 $\times$ Offer: monthly payment&     -0.0154\sym{***}&      0.0102\sym{***}&                     &                     \\
+                    &     (-4.94)         &      (3.31)         &                     &                     \\
+rank\_sales=5 $\times$ Offer: monthly payment&     -0.0128\sym{***}&     0.00727\sym{**} &                     &                     \\
+                    &     (-4.75)         &      (2.90)         &                     &                     \\
+rank\_sales=6 $\times$ Offer: monthly payment&     -0.0155\sym{***}&     0.00680\sym{*}  &                     &                     \\
+                    &     (-5.39)         &      (2.53)         &                     &                     \\
+rank\_sales=7 $\times$ Offer: monthly payment&    -0.00113         &     0.00637         &                     &                     \\
+                    &     (-0.31)         &      (1.78)         &                     &                     \\
+rank\_sales=8 $\times$ Offer: monthly payment&     -0.0171\sym{***}&     0.00539         &                     &                     \\
+                    &     (-3.80)         &      (1.36)         &                     &                     \\
+rank\_sales=9 $\times$ Offer: monthly payment&     0.00290         &     0.00528         &                     &                     \\
+                    &      (0.97)         &      (1.59)         &                     &                     \\
+rank\_sales=10 $\times$ Offer: monthly payment&     -0.0131\sym{***}&     0.00750\sym{**} &                     &                     \\
+                    &     (-4.67)         &      (2.86)         &                     &                     \\
+rank\_sales=11 $\times$ Offer: monthly payment&     -0.0113\sym{*}  &      0.0107\sym{*}  &                     &                     \\
+                    &     (-2.24)         &      (2.32)         &                     &                     \\
+rank\_sales=12 $\times$ Offer: monthly payment&     -0.0152\sym{**} &      0.0107\sym{*}  &                     &                     \\
+                    &     (-3.06)         &      (2.22)         &                     &                     \\
+rank\_sales=13 $\times$ Offer: monthly payment&    -0.00665         &     0.00783\sym{*}  &                     &                     \\
+                    &     (-1.63)         &      (2.25)         &                     &                     \\
+rank\_sales=14 $\times$ Offer: monthly payment&   0.0000487         &     0.00340         &                     &                     \\
+                    &      (0.01)         &      (1.02)         &                     &                     \\
+rank\_sales=15 $\times$ Offer: monthly payment&    -0.00755\sym{*}  &     0.00860\sym{**} &                     &                     \\
+                    &     (-2.37)         &      (2.90)         &                     &                     \\
+rank\_sales=16 $\times$ Offer: monthly payment&     0.00710         &     0.00985\sym{*}  &                     &                     \\
+                    &      (1.80)         &      (2.45)         &                     &                     \\
+rank\_sales=17 $\times$ Offer: monthly payment&     -0.0261\sym{**} &     0.00363         &                     &                     \\
+                    &     (-2.87)         &      (0.47)         &                     &                     \\
+male                &                     &       0.825\sym{***}&                     &                     \\
+                    &                     &     (38.70)         &                     &                     \\
+log\_savings         &                     &      -0.583\sym{***}&                     &                     \\
+                    &                     &    (-21.94)         &                     &                     \\
+current\_age         &                     &      0.0972\sym{***}&                     &                     \\
+                    &                     &     (51.26)         &                     &                     \\
+Offer: monthly payment $\times$ market\_share&                     &                     &     -0.0925\sym{***}&                     \\
+                    &                     &                     &    (-10.14)         &                     \\
+Offer: monthly payment $\times$ rank\_sales&                     &                     &                     &   -0.000811\sym{***}\\
+                    &                     &                     &                     &     (-8.52)         \\
+\hline
+Observations        &     1536359         &     1536359         &     1536359         &     1536359         \\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}

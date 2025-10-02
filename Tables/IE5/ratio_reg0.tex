@@ -1,0 +1,38 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                    &\multicolumn{1}{c}{ratio}&\multicolumn{1}{c}{ratio}&\multicolumn{1}{c}{ratio}&\multicolumn{1}{c}{ratio}\\
+\hline
+ym\_now              &     -2840.6\sym{***}&     -2829.0\sym{***}&           0         &           0         \\
+                    &    (-31.63)         &    (-31.49)         &         (.)         &         (.)         \\
+ym\_now2             &           0         &           0         &           0         &           0         \\
+                    &         (.)         &         (.)         &         (.)         &         (.)         \\
+ym\_now3             &      0.0129\sym{***}&      0.0128\sym{***}&    0.000900\sym{**} &    0.000901\sym{**} \\
+                    &     (32.11)         &     (31.97)         &      (3.26)         &      (3.27)         \\
+ym\_now4             &  -0.0000193\sym{***}&  -0.0000193\sym{***}& -0.00000216\sym{**} & -0.00000216\sym{**} \\
+                    &    (-32.34)         &    (-32.21)         &     (-3.28)         &     (-3.29)         \\
+ym\_now5             &    8.71e-09\sym{***}&    8.68e-09\sym{***}&    1.38e-09\sym{***}&    1.38e-09\sym{***}\\
+                    &     (32.57)         &     (32.44)         &      (3.30)         &      (3.31)         \\
+male                &      -8.300\sym{***}&      -8.014\sym{***}&      -5.928\sym{***}&      -5.885\sym{***}\\
+                    &    (-23.47)         &    (-22.29)         &    (-11.62)         &    (-11.25)         \\
+val\_uf\_prima2       &                     &       1.349\sym{***}&                     &       0.593         \\
+                    &                     &      (4.15)         &                     &      (0.87)         \\
+val\_uf\_prima\_pol2   &                     &      -0.215\sym{***}&                     &      -0.166         \\
+                    &                     &     (-3.52)         &                     &     (-1.01)         \\
+val\_uf\_prima\_pol3   &                     &      0.0120\sym{**} &                     &      0.0197         \\
+                    &                     &      (3.22)         &                     &      (1.45)         \\
+val\_uf\_prima\_pol4   &                     &   -0.000208\sym{**} &                     &   -0.000519         \\
+                    &                     &     (-3.12)         &                     &     (-1.54)         \\
+Constant            &    758074.4\sym{***}&    754647.2\sym{***}&    -19825.8\sym{*}  &    -20992.5\sym{**} \\
+                    &     (31.42)         &     (31.27)         &     (-2.50)         &     (-2.65)         \\
+\hline
+Observations        &       18266         &       18266         &        6151         &        6151         \\
+R-squared           &       0.670         &       0.671         &       0.671         &       0.673         \\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{5}{l}{\footnotesize Col 1 and 2 are for rank\_sales == 1 and the last two fro rank\_sales ==12 }\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}

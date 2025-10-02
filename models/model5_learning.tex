@@ -1,0 +1,236 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\usepackage{hyperref}
+
+\setcounter{MaxMatrixCols}{10}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+
+
+\textbf{Overview}
+
+\begin{itemize}
+    \item a
+\end{itemize}
+
+This model tries to rationalize the increase in the amount offered between the initial offer and the external offers. Broadly the idea is that there will be some learning. 
+
+We first start by deriving a model without external offers. 
+
+\subsection{Base model }
+There is a consumer and $J$ firms. 
+
+Each firm $j$ receives a signal about the cost of consumer $i$, denoted as $\tilde{c}_{j}$.The firms update their beliefs about the cost of consumer $i$ based on this signal.
+This signal is drawn from a distribution with pdf $F_j$ mean $c_i$ and variance $\sigma^2$\footnote{The variance can come due to commissions or interest rates} , after observing the signal the firms makes an offer $p_j$.  Denote by $p = (p_1, ..., p_J)$ the vector of offers received by the buyer.  The consumer faces a discrete choice problem where we denote the probability of him choosing $j$ as $D_j(p)$. 
+
+An equilibrium of the pricing game are functions $p_j(c_i)$ such that for all $j$:
+\begin{align}
+\label{eq:base_equilibrium}
+    p_j(c_i) = \arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{} (p_j - c_j) D_j(p_j, p_{-j}(c_{-j})) dF(p_{-j} \mid c_j)
+\end{align} 
+
+where $p_{-j}(c_{-j}) = (p_n(c_n))_{n \neq j}$ and $F(p_{-j} \mid c_j)$ is the distribution of the offers of the other firms given firm's $j$ cost. 
+
+\subsection{Model with external offers}
+
+Now suppose that firms are in the same situation as before, but after making their offers with probability $\lambda$ the consumer chooses to request an external offer. In which case he chooses randomly one firm from which to request the external offer, then the firm can observe the initial offers made by the other firms and decide whether to update its offer \footnote{The firms are not always able to observe the prior offers. In this model we are assuming $\lambda$ is exogenous and the firm observes initial offers. One possible extension is to endogeneize the search behavior (searches if certain conditions are met) and also to assume that sometimes the firm does not observe the prior offers. Note that this could considerably complicate the model because the disclosure of the initial offers is strategic and by itself could reveal somethin, but we do not observe whether the buyer discloses. }.
+
+We will use backward induction to solve the new game. 
+
+In the second stage a firm chooses an offer $p_{j,2}'$ equal to the maximum between the initial offer and the optimal offer after observing all the initial offers, i.e. 
+\begin{align}
+\label{eq:base_equilibrium2}
+    p_{j,2}(c_j, p) = \max(p_j, p^*)
+\end{align}
+where the optimal offer is given by: 
+\begin{align}
+    p^* = \arg \max_{p_j'} (p_j' - c_j) D_j(p_j', p_{-j}) 
+\end{align}
+
+Then the expected profits of firm $j$ in the case that the consumer requests an external offer are: 
+\begin{align}\label{eq:profits_external}
+    \pi_j(p_j, p_{-j}, c_j) =  \frac{1}{J} \left( (p_{j,2}(c_j, p) - c_j) D_j(p_{j,2}(c_j, p), p_{-j}) + \sum_{j'\neq j} (p_j - c_j) D_j(p_j, p_{j',2}(c_{j'}, p), p_{-j, -j'}) \right)
+\end{align}
+
+where $p_{-j, -j'}$ is the vector of offers excluding firms $j$ and $j'$.
+
+Define the profits of firm $j$ when the buyer asks them for the external offers: 
+\begin{align}
+    \pi_j^{(j)}(p_j, p_{-j}, c_j) =  (p_{j,2}(c_j, p) - c_j) D_j(p_{j,2}(c_j, p), p_{-j})
+\end{align}
+and when the buyer asks another firm $j'$ for the external offer:
+\begin{align}
+    \pi_j^{(j')}(p_j, p_{-j}, c_j) =  (p_j - c_j) D_j(p_j, p_{j',2}(c_{j'}, p), p_{-j, -j'})
+\end{align}
+Then we have: 
+
+
+\begin{align}\label{eq:profits_external2}
+    \pi_j(p_j, p_{-j}, c_j) =  \frac{1}{J} \left( \pi_j^{(j)}(p_j, p_{-j}, c_j)  + \sum_{j'\neq j} \pi_j^{(j')}(p_j, p_{-j}, c_j) \right)
+\end{align}
+
+Note that due to the upward rigidity of prices we have that: 
+\begin{align}\label{eq:option_value}
+    \frac{d}{d p_j}   \pi_j^{(j)}(p_j, p_{-j}, c_j) \leq 0
+\end{align}
+because the firm can not decrease the price already offered. Essentially the firm has an option value when it sets a higher price. 
+
+Then the expected profits of firm $j$ in the first stage are: 
+\begin{align}
+    \Pi_j(p_j, p_{-j}, c_j) = (1-\lambda) (p_j - c_j) D_j(p_j, p_{-j}) + \lambda \pi_j(p_j, p_{-j}, c_j)
+\end{align}
+
+An equilibrium of the pricing functions are functions $p_j(c_i)$ such that for all $j$:
+\begin{align}\label{eq:base_equilibrium3}
+    p_j(c_i) = \arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{} \Pi_j(p_j, p_{-j}(c_{-j}), c_j) dF(p_{-j} \mid c_j)   
+\end{align}
+
+
+
+
+\vspace{2cm}
+
+\textbf{Comparison of the two models }
+
+Define $g(p_j, p_{-j}) =  D_j + (p_j - c_j) \frac{\partial D_j}{\partial p_j}$ 
+Then the FOC of condition \ref{eq:base_equilibrium} is:
+\begin{align}
+\label{eq:FOC_base} 
+    \mathbb{E}\left[ \frac{\partial \pi_j^{\text{base}}}{\partial p_j} \right] = \mathbb{E}\left[ g(p_j, p_{-j}) \right] = 0
+\end{align}
+where the expectation is with respect to $F(p_{-j} \mid c_j)$
+
+In the case with the external offer the FOC condition is: 
+\begin{align}
+\label{eq:FOC_external} 
+    \mathbb{E}\left[ \frac{\partial \Pi_j}{\partial p_j} \right] = (1-\lambda) \mathbb{E}\left[ g(p_j, p_{-j}) \right] + \lambda \mathbb{E}\left[ \frac{\partial \pi_j}{\partial p_j} \right] = 0   
+\end{align}
+
+
+
+
+
+
+
+
+\vspace{2cm}
+
+Using the corrected expression for $\pi_j^{ext}$, its derivative is:
+\[
+\frac{\partial \pi_j^{ext}}{\partial p_j} = \underbrace{\frac{1}{J} \frac{\partial}{\partial p_j} \left[ (p_{j,2} - c_j) D_j(p_{j,2}, p_{-j}) \right]}_{\text{Option Value Effect}} + \underbrace{\frac{1}{J} \sum_{j' \ne j} g(p_j, p_{-j}^{(j')})}_{\text{Competitive Threat Effect}}.
+\]
+
+\subsection*{3. Evaluating the FOC at the Base Model Price}
+
+Now, we evaluate the marginal profit in the external offer model at the base model's equilibrium price, $p^{base}$. If this marginal profit is negative, it means firms have an incentive to cut prices, and the new equilibrium must be lower.
+%\[
+%E \left[  \frac{\partial \Pi_j}{\partial p_j} \right|_{p=p^{base}} \right] = (1-\lambda) \underbrace{E[g(p^{base})]}_{=0} + \frac{\lambda}{J} E \left[  \frac{\partial(\text{Option Value Profit})}{\partial p_j} \mid_{p=p^{base}} \right] + \frac{\lambda}{J} \sum_{j' \ne j} E[g(p_j^{base}, p_{-j}^{(j')})]
+%\]
+%Since $E[g(p^{base})] = 0$, the expression simplifies to:
+%\[
+%E \left[  \frac{\partial \Pi_j}{\partial p_j} \right|_{p=p^{base}} \right] = \frac{\lambda}{J} \left( E \left[ \frac{\partial(\text{Option Value Profit})}{\partial p_j} \right] + \sum_{j' \ne j} E[g(p_j^{base}, p_{-j}^{(j')})] \right)
+%\]
+%We must now sign the two remaining terms.
+%\begin{itemize}
+%    \item \textbf{Signing the Competitive Threat Effect:} \\When a rival firm $j'$ updates its price, it does so with full knowledge of other firms' initial offers. Its new price, $p'_{j',2}$, is an optimal response to known prices, whereas its initial price, $p_{j',1}$, was an optimal response to a \textit{distribution} of prices. In standard Bertrand competition models, resolving uncertainty leads to more aggressive pricing. Thus, $p'_{j',2} < p_{j'}$.
+    
+%    A lower competitor price makes the market tougher for firm $j$. Per our assumption, firm $j$'s demand $D_j$ falls and becomes more elastic. This means both terms in $g(p_j, p_{-j}^{(j')}) = D_j(p_j, p_{-j}^{(j')}) + (p_j - c_j) \frac{\partial D_j}{\partial p_j}$ decrease compared to their values in the base case. Therefore, $g(p_j^{base}, p_{-j}^{(j')}) < g(p_j^{base}, p_{-j}^{base})$.
+    
+    %Taking expectations, $E[g(p_j^{base}, p_{-j}^{(j')})] < E[g(p_j^{base}, p_{-j}^{base})] = 0$. The entire summation term $\sum_{j' \ne j} E[g(p_j^{base}, p_{-j}^{(j')})]$ is \textbf{negative}.
+
+    %\item \textbf{Signing the Option Value Effect:} \\
+    %The profit in this scenario depends on $p_{j,2} = \max(p_j, p^*)$. The derivative of this profit component with respect to the initial price $p_j$ is non-negative ($\ge 0$). This is because a slight increase in the initial bid $p_j$ can never hurt and may help (if $p_j > p^*$) in the specific case where firm $j$ gets to update its offer. So, $E \left[ \frac{\partial(\text{Option Value Profit})}{\partial p_j} \right]$ is \textbf{non-negative}.
+%\end{itemize}
+
+\subsection*{4. Conclusion}
+At the base model's equilibrium price, the firm's marginal profit in the external offer model is the sum of a non-negative term (the Option Value Effect) and a strictly negative term (the Competitive Threat Effect).
+
+The sign of $E \left[  \frac{\partial \Pi_j}{\partial p_j} \right|_{p=p^{base}} \right]$ is therefore ambiguous without further specification. However, for any market with $J \ge 2$ firms, the competitive threat is driven by the actions of all $J-1$ potential rivals, whereas the option value comes from a single $1/J$ probability event. It is a standard result in such models that the aggregate competitive pressure from rivals outweighs the value of a firm's own unilateral option.
+
+Under the reasonable assumption that the \textbf{negative competitive threat effect dominates the non-negative option value effect}, we have:
+\[
+E \left[  \frac{\partial \Pi_j}{\partial p_j} \right|_{p=p^{base}} \right] < 0
+\]
+Since the marginal profit at the price $p^{base}$ is negative, and assuming profit is concave, the firm's optimal response is to lower its price. Therefore, the new equilibrium price, $p^{external}$, must be lower than the base model's equilibrium price.
+\[
+p^{external} < p^{base}
+\]
+This completes the proof.
+
+
+
+
+
+
+
+
+
+\vspace{2cm}
+
+
+ 
+
+\subsection{Comments}
+
+\begin{itemize}
+    \item I will need to take a stance on what is generating the uncertainty about the other firms' offers. If it is the mortality tables there is a winner's curse, if there is interest rate there is no winner's curse.
+\end{itemize}
+ 
+
+
+Equation  \ref{eq:base_equilibrium}
+Equation \ref{eq:base_equilibrium2}
+Equation  \ref{eq:profits_external}
+Equation  \ref{eq:profits_external2}
+Equation \ref{eq:option_value}
+Equation \ref{eq:base_equilibrium3}
+Equation \ref{eq:FOC_base}
+Equation \ref{eq:FOC_external}
+
+
+
+
+\end{document}

@@ -1,0 +1,59 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                    &\multicolumn{1}{c}{ratio}&\multicolumn{1}{c}{ratio}&\multicolumn{1}{c}{ratio}&\multicolumn{1}{c}{ratio}\\
+\hline
+age\_months          &      -10.32\sym{***}&      -10.34\sym{***}&      -10.29\sym{***}&      -10.41\sym{***}\\
+                    &     (-4.01)         &     (-4.01)         &     (-4.00)         &     (-4.04)         \\
+age\_m2              &      0.0165\sym{***}&      0.0165\sym{***}&      0.0164\sym{***}&      0.0166\sym{***}\\
+                    &      (3.64)         &      (3.64)         &      (3.62)         &      (3.67)         \\
+age\_m3              &  -0.0000121\sym{***}&  -0.0000122\sym{***}&  -0.0000121\sym{***}&  -0.0000122\sym{***}\\
+                    &     (-3.45)         &     (-3.46)         &     (-3.43)         &     (-3.48)         \\
+age\_m4              &    3.33e-09\sym{**} &    3.34e-09\sym{**} &    3.31e-09\sym{**} &    3.36e-09\sym{***}\\
+                    &      (3.27)         &      (3.27)         &      (3.25)         &      (3.29)         \\
+ym\_now              &       54.15\sym{***}&       54.35\sym{***}&       55.39\sym{***}&       55.11\sym{***}\\
+                    &     (23.86)         &     (23.93)         &     (24.39)         &     (24.25)         \\
+ym\_now2             &     -0.0800\sym{***}&     -0.0803\sym{***}&     -0.0819\sym{***}&     -0.0815\sym{***}\\
+                    &    (-23.43)         &    (-23.49)         &    (-23.96)         &    (-23.82)         \\
+ym\_now3             &   0.0000396\sym{***}&   0.0000397\sym{***}&   0.0000405\sym{***}&   0.0000403\sym{***}\\
+                    &     (23.12)         &     (23.16)         &     (23.66)         &     (23.51)         \\
+male                &      -8.243\sym{***}&      -8.264\sym{***}&      -8.227\sym{***}&      -8.236\sym{***}\\
+                    &    (-80.09)         &    (-80.23)         &    (-79.96)         &    (-79.97)         \\
+Size2=1 $\times$ val\_uf\_prima2&       0.654\sym{***}&                     &                     &                     \\
+                    &     (37.48)         &                     &                     &                     \\
+Size2=2 $\times$ val\_uf\_prima2&       0.153\sym{***}&                     &                     &                     \\
+                    &      (8.22)         &                     &                     &                     \\
+Size3=1 $\times$ val\_uf\_prima2&                     &       0.668\sym{***}&                     &                     \\
+                    &                     &     (34.96)         &                     &                     \\
+Size3=2 $\times$ val\_uf\_prima2&                     &       0.281\sym{***}&                     &                     \\
+                    &                     &     (13.32)         &                     &                     \\
+Size3=3 $\times$ val\_uf\_prima2&                     &       0.278\sym{***}&                     &                     \\
+                    &                     &     (13.41)         &                     &                     \\
+Size4=1 $\times$ val\_uf\_prima2&                     &                     &       0.547\sym{***}&                     \\
+                    &                     &                     &     (26.73)         &                     \\
+Size4=2 $\times$ val\_uf\_prima2&                     &                     &       0.782\sym{***}&                     \\
+                    &                     &                     &     (35.25)         &                     \\
+Size4=3 $\times$ val\_uf\_prima2&                     &                     &      0.0258         &                     \\
+                    &                     &                     &      (1.08)         &                     \\
+Size4=4 $\times$ val\_uf\_prima2&                     &                     &       0.272\sym{***}&                     \\
+                    &                     &                     &     (11.76)         &                     \\
+Size5=1 $\times$ val\_uf\_prima2&                     &                     &                     &       0.578\sym{***}\\
+                    &                     &                     &                     &     (25.51)         \\
+Size5=2 $\times$ val\_uf\_prima2&                     &                     &                     &       0.647\sym{***}\\
+                    &                     &                     &                     &     (29.05)         \\
+Size5=3 $\times$ val\_uf\_prima2&                     &                     &                     &       0.450\sym{***}\\
+                    &                     &                     &                     &     (17.66)         \\
+Size5=4 $\times$ val\_uf\_prima2&                     &                     &                     &      0.0145         \\
+                    &                     &                     &                     &      (0.50)         \\
+Size5=5 $\times$ val\_uf\_prima2&                     &                     &                     &       0.269\sym{***}\\
+                    &                     &                     &                     &     (11.64)         \\
+\hline
+Observations        &      229190         &      229190         &      229190         &      229190         \\
+R-squared           &       0.644         &       0.644         &       0.645         &       0.644         \\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}

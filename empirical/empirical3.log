@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  23 SEP 2025 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  30 SEP 2025 13:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -512,106 +512,139 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: No \author given.
 
-(../Tables/IE5/IE5_reg_by_rank.tex) (../Tables/IE5/IE5_reg_by_rank(2).tex
-Overfull \hbox (56.37018pt too wide) in paragraph at lines 4--33
- [][] 
- []
+[1
 
-) [1
+{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (../Tables/IE5/IE5_reg_by_rank.tex) (../Tables/IE5/IE5_reg_by_rank(2).tex) (../Tables/IE5/ratio_reg0.tex) [2]
+Overfull \vbox (68.30237pt too high) has occurred while \output is active []
 
-{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-<../figures/IE6/IE6_hist_dies.png, id=43, 1249.66875pt x 749.80125pt>
+ [3]
+<../figures/IE6/IE6_hist_dies.png, id=58, 1249.66875pt x 749.80125pt>
 File: ../figures/IE6/IE6_hist_dies.png Graphic file (type png)
 <use ../figures/IE6/IE6_hist_dies.png>
-Package pdftex.def Info: ../figures/IE6/IE6_hist_dies.png  used on input line 91.
+Package pdftex.def Info: ../figures/IE6/IE6_hist_dies.png  used on input line 107.
 (pdftex.def)             Requested size: 337.41507pt x 202.44904pt.
- [3]
-<../figures/IE6/IE6_survival_year_all.png, id=55, 1249.66875pt x 749.80125pt>
+<../figures/IE6/IE6_survival_year_all.png, id=60, 1249.66875pt x 749.80125pt>
 File: ../figures/IE6/IE6_survival_year_all.png Graphic file (type png)
 <use ../figures/IE6/IE6_survival_year_all.png>
-Package pdftex.def Info: ../figures/IE6/IE6_survival_year_all.png  used on input line 101.
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_all.png  used on input line 117.
 (pdftex.def)             Requested size: 337.41507pt x 202.44904pt.
-<../figures/IE6/IE6_survival_year_males.png, id=56, 1249.66875pt x 749.80125pt>
+ [4 <../figures/IE6/IE6_hist_dies.png (PNG copy)>]
+<../figures/IE6/IE6_survival_year_males.png, id=71, 1249.66875pt x 749.80125pt>
 File: ../figures/IE6/IE6_survival_year_males.png Graphic file (type png)
 <use ../figures/IE6/IE6_survival_year_males.png>
-Package pdftex.def Info: ../figures/IE6/IE6_survival_year_males.png  used on input line 115.
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_males.png  used on input line 131.
 (pdftex.def)             Requested size: 312.41643pt x 187.44984pt.
-<../figures/IE6/IE6_survival_year_income1.png, id=57, 1249.66875pt x 749.80125pt>
+<../figures/IE6/IE6_survival_year_income1.png, id=72, 1249.66875pt x 749.80125pt>
 File: ../figures/IE6/IE6_survival_year_income1.png Graphic file (type png)
 <use ../figures/IE6/IE6_survival_year_income1.png>
-Package pdftex.def Info: ../figures/IE6/IE6_survival_year_income1.png  used on input line 115.
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_income1.png  used on input line 131.
 (pdftex.def)             Requested size: 312.41643pt x 187.44984pt.
 
-Overfull \hbox (135.71544pt too wide) in paragraph at lines 114--117
+Overfull \hbox (135.71544pt too wide) in paragraph at lines 130--133
  [][] 
  []
 
-[4 <../figures/IE6/IE6_hist_dies.png (PNG copy)> <../figures/IE6/IE6_survival_year_all.png (PNG copy)>]
-<../figures/IE6/IE6_survival_year_income2.png, id=64, 1249.66875pt x 749.80125pt>
+<../figures/IE6/IE6_survival_year_income2.png, id=73, 1249.66875pt x 749.80125pt>
 File: ../figures/IE6/IE6_survival_year_income2.png Graphic file (type png)
 <use ../figures/IE6/IE6_survival_year_income2.png>
-Package pdftex.def Info: ../figures/IE6/IE6_survival_year_income2.png  used on input line 124.
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_income2.png  used on input line 140.
 (pdftex.def)             Requested size: 312.41643pt x 187.44984pt.
-<../figures/IE6/IE6_survival_year_income3.png, id=65, 1249.66875pt x 749.80125pt>
+<../figures/IE6/IE6_survival_year_income3.png, id=74, 1249.66875pt x 749.80125pt>
 File: ../figures/IE6/IE6_survival_year_income3.png Graphic file (type png)
 <use ../figures/IE6/IE6_survival_year_income3.png>
-Package pdftex.def Info: ../figures/IE6/IE6_survival_year_income3.png  used on input line 124.
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_income3.png  used on input line 140.
 (pdftex.def)             Requested size: 312.41643pt x 187.44984pt.
 
-Overfull \hbox (127.63205pt too wide) in paragraph at lines 123--126
+Overfull \hbox (127.63205pt too wide) in paragraph at lines 139--142
  [][] 
  []
 
-[5 <../figures/IE6/IE6_survival_year_males.png (PNG copy)> <../figures/IE6/IE6_survival_year_income1.png (PNG copy)> <../figures/IE6/IE6_survival_year_income2.png (PNG copy)> <../figures/IE6/IE6_survival_year_income3.png (PNG copy)>] (../Tables/IE6/test_cia_dummies_pvalue.tex) (../Tables/IE7/IE7_learning_regressions.tex)
-Overfull \hbox (14.92708pt too wide) in paragraph at lines 3--162
+[5 <../figures/IE6/IE6_survival_year_all.png (PNG copy)> <../figures/IE6/IE6_survival_year_males.png (PNG copy)> <../figures/IE6/IE6_survival_year_income1.png (PNG copy)>] (../Tables/IE6/test_cia_dummies_pvalue.tex) (../Tables/IE7/IE7_learning_regressions.tex)
+Overfull \hbox (14.92708pt too wide) in paragraph at lines 3--178
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--162
+Underfull \hbox (badness 10000) in paragraph at lines 3--178
 
  []
 
-<../figures/IE7/IE7_learning_scatter_avg.png, id=79, 813.0375pt x 487.8225pt>
+[6 <../figures/IE6/IE6_survival_year_income2.png (PNG copy)> <../figures/IE6/IE6_survival_year_income3.png (PNG copy)>]
+<../figures/IE7/IE7_learning_scatter_avg.png, id=93, 813.0375pt x 487.8225pt>
 File: ../figures/IE7/IE7_learning_scatter_avg.png Graphic file (type png)
 <use ../figures/IE7/IE7_learning_scatter_avg.png>
-Package pdftex.def Info: ../figures/IE7/IE7_learning_scatter_avg.png  used on input line 174.
+Package pdftex.def Info: ../figures/IE7/IE7_learning_scatter_avg.png  used on input line 190.
 (pdftex.def)             Requested size: 203.25888pt x 121.95532pt.
-[6]
-<../figures/IE7/IE7_learning_binscatter_avg.png, id=86, 813.0375pt x 487.8225pt>
+<../figures/IE7/IE7_learning_binscatter_avg.png, id=94, 813.0375pt x 487.8225pt>
 File: ../figures/IE7/IE7_learning_binscatter_avg.png Graphic file (type png)
 <use ../figures/IE7/IE7_learning_binscatter_avg.png>
-Package pdftex.def Info: ../figures/IE7/IE7_learning_binscatter_avg.png  used on input line 184.
+Package pdftex.def Info: ../figures/IE7/IE7_learning_binscatter_avg.png  used on input line 200.
 (pdftex.def)             Requested size: 203.25888pt x 121.95532pt.
-<../figures/IE7/IE7_hist_bunching_max(2).png, id=87, 813.0375pt x 487.8225pt>
+ [7 <../figures/IE7/IE7_learning_scatter_avg.png (PNG copy)>]
+<../figures/IE7/IE7_hist_bunching_max(2).png, id=102, 813.0375pt x 487.8225pt>
 File: ../figures/IE7/IE7_hist_bunching_max(2).png Graphic file (type png)
 <use ../figures/IE7/IE7_hist_bunching_max(2).png>
-Package pdftex.def Info: ../figures/IE7/IE7_hist_bunching_max(2).png  used on input line 193.
+Package pdftex.def Info: ../figures/IE7/IE7_hist_bunching_max(2).png  used on input line 209.
 (pdftex.def)             Requested size: 243.91313pt x 146.34787pt.
-<../figures/IE7/IE7_rd_bunching_max(2).png, id=88, 813.0375pt x 487.8225pt>
+<../figures/IE7/IE7_rd_bunching_max(2).png, id=103, 813.0375pt x 487.8225pt>
 File: ../figures/IE7/IE7_rd_bunching_max(2).png Graphic file (type png)
 <use ../figures/IE7/IE7_rd_bunching_max(2).png>
-Package pdftex.def Info: ../figures/IE7/IE7_rd_bunching_max(2).png  used on input line 193.
+Package pdftex.def Info: ../figures/IE7/IE7_rd_bunching_max(2).png  used on input line 209.
 (pdftex.def)             Requested size: 243.91313pt x 146.34787pt.
- [7 <../figures/IE7/IE7_learning_scatter_avg.png (PNG copy)> <../figures/IE7/IE7_learning_binscatter_avg.png (PNG copy)> <../figures/IE7/IE7_hist_bunching_max(2).png (PNG copy)> <../figures/IE7/IE7_rd_bunching_max(2).png (PNG copy)>] (empirical3.aux)
+ [8 <../figures/IE7/IE7_learning_binscatter_avg.png (PNG copy)> <../figures/IE7/IE7_hist_bunching_max(2).png (PNG copy)> <../figures/IE7/IE7_rd_bunching_max(2).png (PNG copy)>] (../Tables/IE10/correlation_table.tex) [9] (../Tables/IE10/mortality_regressions.tex) (../Tables/IE10/mortality_regressions_offers.tex
+Overfull \vbox (17.15298pt too high) has occurred while \output is active []
+
+ [10]) (../Tables/IE10/mortality_regressions(2).tex
+Overfull \vbox (17.15298pt too high) has occurred while \output is active []
+
+ [11]) (../Tables/IE10/mortality_regressions(3).tex
+Overfull \vbox (17.15298pt too high) has occurred while \output is active []
+
+ [12])
+Overfull \vbox (46.15295pt too high) has occurred while \output is active []
+
+ [13] [14] (../Tables/IE5/ratio_reg.tex) (../Tables/IE5/ratio_reg_2.tex)
+Overfull \hbox (16.75697pt too wide) in paragraph at lines 3--295
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--295
+
+ []
+
+[15] (../Tables/IE5/ratio_reg_3.tex)
+Overfull \hbox (14.92323pt too wide) in paragraph at lines 3--297
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--297
+
+ []
+
+[16] (../Tables/IE5/ratio_reg_4.tex) [17]
+Overfull \vbox (17.15298pt too high) has occurred while \output is active []
+
+ [18] (empirical3.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `empirical3.out' has not changed.
-(rerunfilecheck)             Checksum: F92D584C7FE2BFBB4C2D39F164744C10;875.
+(rerunfilecheck)             Checksum: B6A0A761ACA97D359AEB8218AF44D23A;1125.
  ) 
 Here is how much of TeX's memory you used:
- 13827 strings out of 476331
- 231170 string characters out of 5787765
- 1877660 words of memory out of 5000000
- 33982 multiletter control sequences out of 15000+600000
- 523522 words of font info for 75 fonts, out of 8000000 for 9000
+ 13902 strings out of 476331
+ 233848 string characters out of 5787765
+ 1886660 words of memory out of 5000000
+ 34007 multiletter control sequences out of 15000+600000
+ 523868 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,14n,131p,1025b,442s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on empirical3.pdf (7 pages, 743315 bytes).
+ 90i,14n,131p,1024b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on empirical3.pdf (18 pages, 785449 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 240 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
+ 99 words of extra memory for PDF output out of 10000 (max. 10000000)
 

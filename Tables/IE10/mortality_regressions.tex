@@ -1,0 +1,59 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                    &\multicolumn{1}{c}{Died}&\multicolumn{1}{c}{Died}&\multicolumn{1}{c}{Died}&\multicolumn{1}{c}{Died}\\
+\hline
+Died                &                     &                     &                     &                     \\
+rank\_sales=1 $\times$ Z-score&      -0.300\sym{***}&     -0.0523         &                     &                     \\
+                    &     (-7.04)         &     (-1.27)         &                     &                     \\
+rank\_sales=2 $\times$ Z-score&      -0.146\sym{***}&      0.0317         &                     &                     \\
+                    &     (-3.92)         &      (0.83)         &                     &                     \\
+rank\_sales=3 $\times$ Z-score&      0.0897\sym{*}  &      0.0198         &                     &                     \\
+                    &      (2.09)         &      (0.48)         &                     &                     \\
+rank\_sales=4 $\times$ Z-score&       0.191\sym{***}&     -0.0382         &                     &                     \\
+                    &      (5.80)         &     (-1.13)         &                     &                     \\
+rank\_sales=5 $\times$ Z-score&      0.0108         &     -0.0266         &                     &                     \\
+                    &      (0.35)         &     (-0.85)         &                     &                     \\
+rank\_sales=6 $\times$ Z-score&       0.184\sym{***}&      0.0617         &                     &                     \\
+                    &      (5.53)         &      (1.81)         &                     &                     \\
+rank\_sales=7 $\times$ Z-score&     -0.0756         &     -0.0287         &                     &                     \\
+                    &     (-1.13)         &     (-0.42)         &                     &                     \\
+rank\_sales=8 $\times$ Z-score&       0.447\sym{***}&       0.101         &                     &                     \\
+                    &      (5.28)         &      (1.22)         &                     &                     \\
+rank\_sales=9 $\times$ Z-score&      0.0991         &      0.0358         &                     &                     \\
+                    &      (1.80)         &      (0.69)         &                     &                     \\
+rank\_sales=10 $\times$ Z-score&      -0.116\sym{**} &     -0.0666         &                     &                     \\
+                    &     (-2.78)         &     (-1.58)         &                     &                     \\
+rank\_sales=11 $\times$ Z-score&      0.0852\sym{*}  &      0.0263         &                     &                     \\
+                    &      (2.03)         &      (0.61)         &                     &                     \\
+rank\_sales=12 $\times$ Z-score&      0.0713         &      0.0541         &                     &                     \\
+                    &      (1.32)         &      (1.07)         &                     &                     \\
+rank\_sales=13 $\times$ Z-score&      -0.130         &      0.0215         &                     &                     \\
+                    &     (-1.33)         &      (0.22)         &                     &                     \\
+rank\_sales=14 $\times$ Z-score&      -0.175\sym{***}&     -0.0569         &                     &                     \\
+                    &     (-3.46)         &     (-1.17)         &                     &                     \\
+rank\_sales=15 $\times$ Z-score&     -0.0824\sym{*}  &    -0.00309         &                     &                     \\
+                    &     (-1.98)         &     (-0.08)         &                     &                     \\
+rank\_sales=16 $\times$ Z-score&     -0.0570         &      -0.127\sym{*}  &                     &                     \\
+                    &     (-0.90)         &     (-1.97)         &                     &                     \\
+rank\_sales=17 $\times$ Z-score&      -0.533\sym{***}&      0.0235         &                     &                     \\
+                    &     (-4.71)         &      (0.20)         &                     &                     \\
+male                &                     &       0.836\sym{***}&                     &                     \\
+                    &                     &     (39.39)         &                     &                     \\
+log\_savings         &                     &      -0.465\sym{***}&                     &                     \\
+                    &                     &    (-34.30)         &                     &                     \\
+current\_age         &                     &      0.1000\sym{***}&                     &                     \\
+                    &                     &     (54.52)         &                     &                     \\
+Z-score $\times$ market\_share&                     &                     &      -0.215         &                     \\
+                    &                     &                     &     (-1.73)         &                     \\
+Z-score $\times$ rank\_sales&                     &                     &                     &   -0.000496         \\
+                    &                     &                     &                     &     (-0.38)         \\
+\hline
+Observations        &     1536283         &     1536283         &     1536283         &     1536283         \\
+\hline\hline
+\multicolumn{5}{l}{\footnotesize \textit{t} statistics in parentheses}\\
+\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+\end{tabular}
+}

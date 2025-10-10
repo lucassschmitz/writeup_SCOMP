@@ -1,0 +1,220 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\usepackage{hyperref}
+
+\setcounter{MaxMatrixCols}{10}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+
+
+
+This model tries to rationalize the increase in the amount offered between the initial offer and the external offers. Broadly the idea is that there will be some learning\footnote{We take a stance on what is generating uncertainty about the other firms' offers. If it is the mortality tables there is a winner's curse, if it is interest rate variation there's no curse. We assume the latter. }. 
+
+We first start by deriving a model without external offers, which we call the one stage game. 
+
+\subsection{One stage game}
+There is a consumer and $J$ firms. 
+
+Each firm $j$ has a cost $c_j$ to sell to the consumer. But the costs are private knowledge, they are draws from a distribution with cdf $F_j$\footnote{The private knowledge is because interest rates are changed frequently and also there are commissions paid to intermediaries, which are not known by the competitors. 
+} , after observing the signal firms make  offers $p_j$.  Denote by $p = (p_1, ..., p_J)$ the vector of offers received by the buyer.  The consumer faces a discrete choice problem where we denote the probability of him choosing $j$ as $D_j(p)$. 
+
+An equilibrium of the pricing game are functions $p_j(c_i)$ such that for all $j$:
+\begin{align}
+\label{eq:base_equilibrium} %eq 1 
+    p_j(c_j) = \arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{} (p_j - c_j) D_j(p_j, p_{-j}(c_{-j})) dF(c_{-j} \mid c_j)
+\end{align} 
+
+where $p_{-j}(c_{-j}) = (p_n(c_n))_{n \neq j}$ and $F(p_{-j} \mid c_j)$ is the distribution of the offers of the other firms given firm's $j$ cost. Note that firm profits in this case are: $\pi_j^{O}(p_j, p_{-j}, c_j) = \int (p_j - c_j) D_j(p_j, p_{-j}(c_{-j})) dF(p_{-j} \mid c_j)$
+
+Where the $O$ supraindex denote the game of only one stage. 
+
+
+\subsection{Two stage game:  with external offers}
+
+Now suppose that firms are in the same situation as before, but after making their offers with probability $\lambda$ the consumer chooses to request an external offer. In which case he chooses randomly one firm from which to request the external offer, then the firm can observe the initial offers made by the other firms and decide whether to update its offer \footnote{The firms are not always able to observe the prior offers. In this model we are assuming $\lambda$ is exogenous and the firm observes initial offers. One possible extension is to endogeneize the search behavior (searches if certain conditions are met) and also to assume that sometimes the firm does not observe the prior offers. Note that this could considerably complicate the model because the disclosure of the initial offers is strategic and by itself could reveal something, but we do not observe whether the buyer discloses. }.
+
+We will use backward induction to solve the two stage game. 
+
+In the second stage a firm chooses an offer $p_{j}^{T2}$ equal to the minimum between the initial offer and the optimal offer after observing all the initial offers, i.e. 
+\begin{align}
+\label{eq:base_equilibrium2} %eq 2 
+    p_{j}^{T2}(c_j, p^{T1}) = \min(p_j^{T1}, p^*)
+\end{align}
+where the optimal offer is given by: 
+\begin{align} %eq 3
+    p^* = \arg \max_{p_j} (p_j - c_j) D_j(p_j, p_{-j}^{T1}) 
+\end{align}
+
+
+
+Then, the profits of firm $j$ if the buyer requests an external offer from firm $j$ are: 
+
+\begin{align}\label{eq:asking_j} %eq 4
+    \pi_j^{(j)}(p^{T1}, c_j) =   (p_j^{T2}(c_j, p^{T1}) - c_j) D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) 
+\end{align}
+
+And the profits of firm $j$ if the buyer requests an external offer from firm $j'$ are: 
+
+\begin{align}\label{eq:asking_j'} %eq 5
+    \pi_j^{(j')}(p^{T1}, c_j, c_{j'}) = (p_j^{T1} - c_j) D_j(p_{-j'}^{T1}, p_{ j'}^{T2}(c_{j'}, p^{T1})) 
+\end{align}
+
+Then, the expected profits of firm $j$ in the case the consumer requests an external offer are: 
+
+\begin{align}\label{eq:profits_external2}
+    \pi_j^{T2}(p^{T1}, c_j, c_{-j}) =  \frac{1}{J} \left( \pi_j^{(j)}(p^{T1}, c_j)   + \sum_{j'\neq j} \pi_j^{(j')}(p^{T1}, c_j, c_{j'}) \right)
+\end{align}
+
+
+note that the costs of the competitors ($c_{-j}$) enter into the profits since they affect the way the competitors update their prices in case they are asked to update their prices.
+
+Then, given strategies  $p_j^{T2}(c_j, p^{T1})$ we can calculate the expected profits given a prices set in the first stage and teh costs: 
+\begin{align}
+    \pi_j^{T1}(p^{T1}, c_j, c_{-j}) = (1-\lambda) \pi_j^O(p^{T1}, c_j) + \lambda \pi_j^{T2}(p^{T1}, c_j, c_{-j})
+\end{align}
+
+Finally, given that the costs of the rivals are not known, the equilibrium prices set in the first stage have to solve: 
+
+
+\textbf{Equilibrium definition}
+
+An equilibrium of the two stage game are pricing functions $(p^{T1}, p^{T2})_{j=1}^J$ such that 
+
+
+\begin{align}\label{eq:eq_second_stage}
+    p_j^{T2}(c_j, p^{T1}) = \arg \max_{p_j \leq p_j^{T1}} (p_j - c_j) D_j(p_j, p_{-j}^{T1}) 
+\end{align}
+and 
+\begin{align}
+    p_j^{T1}(c_j) = \arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{}  \pi_j^{T1}(p_j, p_{-j}^{T1}(c_{-j}), c_j) dF(c_{-j} \mid c_j)   
+\end{align}
+where note that $\pi_j^{T1}$ is also a function of $p_j^{T2}$. 
+
+
+
+
+ 
+\section{Simulation}
+The parameters to do this are: 
+\begin{itemize}
+    \item Demand parameters $(\delta_j)_{j=1}^J, \alpha$
+    \item Cost distributions $(F_j)_{j=1}^J$
+    \item Probability of requesting external offer $\lambda$
+\end{itemize}
+
+The solution are firm-specific pricing functions. 
+
+\medskip
+
+We simulate a scenario with $J$ firms, with mean utility $\delta_j$ which is the same for all of them. Costs are drawn from a normal distribution $(\mu_c, \sigma_c)$. %We look for symmetric equilibria. 
+Moreover we assume logit demand. 
+\subsection{Base model}
+Note that the equilibrium consists on $J$ functions, essentially we have to find $(p_j(c_j))_{j=1}^J$. We start with the symmetric case (mean utilities are the same and costs drawn from the same distribution) and for the symmetric equilibrium, meaning that we only need to find a single pricing function. 
+
+Given that we are looking for a symmetric equilibria our algorithm assumes that $J-1$ firms are playing a strategy  and we aim to minimize the distance: 
+
+
+\begin{align}
+    d(c) = \hat{p}(c) -\underbrace{\arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{} (p_j - c_j) D_j(p_j, \hat{p}_{-j}(c_{-j}; \theta_0)) dF(c_{-j} \mid c_j)}_{p_j(c)}
+\end{align} 
+where the first term represent the current guess of the optimal strategy and the  second term represents optimal pricing 
+
+
+We consider $C$ points in a grid in the range $[\underline{c}, \bar{c}] $
+
+\begin{enumerate}
+    \item Make an initial guess $\hat{p}^0(c)$. 
+    \item For each cost in the grid we calculate the optimal response by solving: 
+    \begin{align}
+        p(c) = \arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{} (p_j - c_j) D_j(p_j, \hat{p}^0_{-j}(c_{-j})) dF(c_{-j})
+    \end{align}  
+    where the integral is calculated over the grid of costs.
+    The FOC is:  
+    \begin{align}
+        \int D_j(\cdot) -\alpha  (p_j - c_j)  D_j(\cdot) [1-D_j(\cdot)] dF(c_{-j}) = 0 
+    \end{align} 
+    where $D_j(\cdot) = D_j(p_j, \hat{p}^0_{-j}(c_{-j}))$
+    
+
+    
+    \item We calculate a distance 
+    \begin{align}
+        \int | d(c_j) | dF(c_j)
+    \end{align}
+    if the distance is lower than a tolerance level we stop. If it is higher we update each price according to 
+
+    $\hat{p}^1(c) = \hat{p}^0(c) - \beta d(c)$
+    
+\end{enumerate}
+
+\subsection{Two stage game}
+
+Now the equilibrium consists on $2J$ functions, essentially we have to find $(p_j^{T1}(c_j), p_j^{T2}(c_j, p^{T1}))_{j=1}^J$. We start with the symmetric case (mean utilities are the same and costs drawn from the same distribution) and for the symmetric equilibrium, meaning that we only need to find two pricing functions.
+
+
+From equation \ref{eq:eq_second_stage}, and assuming logit demand, the FOC of the second stage is:
+
+
+\begin{align}\label{eq:14}
+    %D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) + (p_j^{T2}(c_j, p^{T1}) - c_j) \frac{\partial D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1})}{\partial p_j} = 0 \notag \\
+    %D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) + (p_j^{T2}(c_j, p^{T1}) - c_j) \left[-\alpha\, D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1})\,\bigl(1 -D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1})\bigr)\right] = 0 \notag \\
+    %1 = (p_j^{T2}(c_j, p^{T1}) - c_j) \alpha \bigl(1 -D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1})\bigr) = 0 \notag \\
+    p_j^{T2}(c_j, p^{T1}) = c_j+\frac{1}{\alpha   (1 -D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}))}  
+\end{align}
+
+Using \ref{eq:14} to replace in equation \ref{eq:asking_j} and \ref{eq:asking_j'} we can obtain the second stage equilibrium profits in case the firm asks for an external offer from any firm $\pi_j^{(j)}(p^{T1}, c_j)$ and $\pi_j^{(j')}(p^{T1}, c_j, c_{j'})$, then using equation \ref{eq:profits_external2} we can obtain $\pi_j^{T2}(p^{T1}, c_j, c_{-j})$. 
+ 
+
+\newpage
+
+
+
+\textcolor{red}{To do}
+\begin{enumerate}
+    \item \textcolor{red}{Solve the model with the extension assuming that the strategies are just linear on costs. }
+\end{enumerate}
+ 
+\end{document}

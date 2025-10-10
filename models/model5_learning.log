@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  2 OCT 2025 16:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  10 OCT 2025 15:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -885,7 +885,7 @@ Package biblatex Warning: Load 'inputenc' before biblatex.
 
 \@quotelevel=\count463
 \@quotereset=\count464
-No file model5_learning.aux.
+(model5_learning.aux)
 \openout1 = `model5_learning.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
@@ -906,6 +906,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -997,69 +998,47 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 50.
+(model5_learning.out) (model5_learning.out)
 \@outlinefile=\write6
 \openout6 = `model5_learning.out'.
 
 
+
 Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 50.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
 (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
  (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-LaTeX Warning: Hyper reference `bhfn:1' on page 1 undefined on input line 67.
-
-
-LaTeX Warning: Hyper reference `bhfn:2' on page 1 undefined on input line 79.
+LaTeX Warning: Hyper reference `bhfn:3' on page 1 undefined on input line 76.
 
 [1
 
-{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
 
-LaTeX Warning: Reference `eq:base_equilibrium' on page 2 undefined on input line 139.
+LaTeX Warning: Citation 'spulber_bertrand_1995' on page 3 undefined on input line 163.
 
-[2]
-c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/models/model5_learning.tex:191: Extra \right.
-l.191 ...partial p_j} \right|_{p=p^{base}} \right]
-                                                  $ is therefore ambiguous w...
-I'm ignoring a \right that had no matching \left.
-
-c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/models/model5_learning.tex:195: Extra \right.
-l.195 ...partial p_j} \right|_{p=p^{base}} \right]
-                                                   < 0
-I'm ignoring a \right that had no matching \left.
-
-[3]
-
-LaTeX Warning: Reference `eq:base_equilibrium' on page 4 undefined on input line 224.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 163.
+(C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\omlcmr.fd
+File: omlcmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/bx/n' in size <12> not available
+(Font)              Font shape `OML/cmm/b/it' tried instead on input line 163.
 
 
-LaTeX Warning: Reference `eq:base_equilibrium2' on page 4 undefined on input line 225.
+LaTeX Warning: Citation '' on page 3 undefined on input line 163.
 
 
-LaTeX Warning: Reference `eq:profits_external' on page 4 undefined on input line 226.
+Overfull \hbox (101.9772pt too wide) in paragraph at lines 163--164
+[][]\OT1/cmr/m/n/12 I THINK THAT FOR THE CASE with no dif-fer-en-ti-a-tion we can use [][]
+ []
 
-
-LaTeX Warning: Reference `eq:profits_external2' on page 4 undefined on input line 227.
-
-
-LaTeX Warning: Reference `eq:option_value' on page 4 undefined on input line 228.
-
-
-LaTeX Warning: Reference `eq:base_equilibrium3' on page 4 undefined on input line 229.
-
-
-LaTeX Warning: Reference `eq:FOC_base' on page 4 undefined on input line 230.
-
-
-LaTeX Warning: Reference `eq:FOC_external' on page 4 undefined on input line 231.
-
-[4] (model5_learning.aux)
+[3] [4] (model5_learning.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1072,8 +1051,8 @@ Package rerunfilecheck Warning: File `model5_learning.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `model5_learning.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  AB43A6B336ED013DD5D957E50E9574A8;379.
+(rerunfilecheck)             Before: AB43A6B336ED013DD5D957E50E9574A8;379
+(rerunfilecheck)             After:  7662B257E62604D95D685A30CD7849BD;703.
 
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                model5_learning
@@ -1084,17 +1063,35 @@ Package logreq Info: Writing requests to 'model5_learning.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32081 strings out of 476331
- 617823 string characters out of 5787765
- 1869660 words of memory out of 5000000
- 51983 multiletter control sequences out of 15000+600000
- 520676 words of font info for 65 fonts, out of 8000000 for 9000
+ 32321 strings out of 476331
+ 622583 string characters out of 5787765
+ 1871660 words of memory out of 5000000
+ 52194 multiletter control sequences out of 15000+600000
+ 521640 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,131p,1036b,5175s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on model5_learning.pdf (4 pages, 185830 bytes).
+ 99i,16n,131p,1036b,5175s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{equation.4} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{BackrefHyperFootnoteCounter.6} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{BackrefHyperFootnoteCounter.2} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.21} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.5} has been referenced but does not exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.1} has been referenced but does not exist, replaced by a fixed one
+
+ <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on model5_learning.pdf (4 pages, 203099 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 177 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 37 words of extra memory for PDF output out of 10000 (max. 10000000)
 

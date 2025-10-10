@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  10 OCT 2025 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.4) (preloaded format=pdflatex 2025.2.10)  10 OCT 2025 18:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/models/model5_v2.tex"
-(c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/models/model5_v2.tex
+**"c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/models/model5_v3.tex"
+(c:/Users/lucas/OneDrive - Yale University/GitHub/SCOMP/writeup_SCOMP/models/model5_v3.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-03-30> (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -885,8 +885,8 @@ Package biblatex Warning: Load 'inputenc' before biblatex.
 
 \@quotelevel=\count463
 \@quotereset=\count464
-(model5_v2.aux)
-\openout1 = `model5_v2.aux'.
+(model5_v3.aux)
+\openout1 = `model5_v3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
@@ -985,12 +985,12 @@ File: english.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout4 = `model5_v2.bcf'.
+\openout4 = `model5_v3.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'model5_v2.bbl' not found.
+Package biblatex Info: ... file 'model5_v3.bbl' not found.
 
-No file model5_v2.bbl.
+No file model5_v3.bbl.
 Package biblatex Info: Reference section=0 on input line 50.
 Package biblatex Info: Reference segment=0 on input line 50.
 Package caption Info: Begin \AtBeginDocument code.
@@ -998,9 +998,9 @@ Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 50.
-(model5_v2.out) (model5_v2.out)
+(model5_v3.out) (model5_v3.out)
 \@outlinefile=\write6
-\openout6 = `model5_v2.out'.
+\openout6 = `model5_v3.out'.
 
 
 
@@ -1015,25 +1015,25 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] (model5_v2.aux)
-Package rerunfilecheck Info: File `model5_v2.out' has not changed.
-(rerunfilecheck)             Checksum: 89CC23D9EA6A2F9C2979FF4FFF4A1485;567.
-Package logreq Info: Writing requests to 'model5_v2.run.xml'.
-\openout1 = `model5_v2.run.xml'.
+{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] (model5_v3.aux)
+Package rerunfilecheck Info: File `model5_v3.out' has not changed.
+(rerunfilecheck)             Checksum: 946C02020BB38AE0697591EA3D67B972;700.
+Package logreq Info: Writing requests to 'model5_v3.run.xml'.
+\openout1 = `model5_v3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32095 strings out of 476331
- 618104 string characters out of 5787765
+ 32104 strings out of 476331
+ 618210 string characters out of 5787765
  1871660 words of memory out of 5000000
- 51986 multiletter control sequences out of 15000+600000
+ 51991 multiletter control sequences out of 15000+600000
  521282 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,16n,131p,1031b,5175s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on model5_v2.pdf (3 pages, 179711 bytes).
+Output written on model5_v3.pdf (4 pages, 183648 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 45 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 168 PDF objects out of 1000 (max. 8388607)
+ 34 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

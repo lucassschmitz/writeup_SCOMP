@@ -53,7 +53,12 @@
 
 
 
-
+\AtBeginSection[]
+{
+  \begin{frame}{Outline}
+    \tableofcontents[currentsection]%,hideothersubsections]
+  \end{frame}
+}
 
 % 3. BibLaTeX settings
 \usepackage[
@@ -61,7 +66,7 @@
   style=apa,
   citestyle=authoryear
 ]{biblatex}
-\addbibresource{references.bib}
+\addbibresource{../references.bib}
 
 \title{Equiilibrium effects of price updating: evidence from a centralized marketplace for annuities}
 %\subtitle{A Mini Literature Overview}
@@ -91,6 +96,7 @@
 \begin{frame}{Motivation}
 \begin{itemize}
     \item  Before beginning: in red aspects I especially would like to get feedback on. 
+    \item \textcolor{red}{How to start without having explained text}
 \end{itemize}
 \end{frame}
 
@@ -106,7 +112,7 @@
 
 \begin{frame}{Literature}
 \begin{itemize}
-    \item Aftermarkets: \textcite{larsen_efficiency_2021, allen_search_2019}
+    \item Aftermarkets: \textcite{allen_search_2019} %larsen_efficiency_2021
 
     \item Competition in selection markets: \textcite{mahoney_imperfect_2017, cuesta_price_2018, cosconati_competing_2025}
 
@@ -117,47 +123,40 @@
 
 %%%%%%%%%
 
+\section{Setting and Data}
 
-
-\begin{frame}{Outline}
-\begin{itemize}
-    \item a
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Setting: centralized annuities marketplace}\label{slide:setting}
-       
+\begin{frame}{Setting: annuities}\label{slide:setting}
+    
+    
     \begin{itemize}%[<+->]
-    \item SCOMP steps: 
-    \begin{enumerate}
-        \item Request of balance statement 
-        \item Request for offers: asks for certain type of contracts (e.g. annuity)
-        \item Insurers post initial prices (e.g. \$20 per \$1 of flow) \hyperlink{slide:fig5}{\beamerbutton{Offer Certificate}}
-        \item Retiree chooses one of the insurers or asks for revised prices
-
-    \end{enumerate}
-
-        \item Revised prices: bargaining and information disclosure
-        
-
-    \item Firms competition 1. financing cost 2. prediction algorithm 
-
-    \item Profits of firm $j$: 
+        \item Profits of firm $j$: 
     \begin{align*}
     \pi_{ji}(F) = S_i-  \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{F}{(1+r_j)^t}|x_i \right]
     \end{align*}
     % if it was only financing cost, it would be a monopoly
-    \end{itemize}
-
+   
      $S$: stock of savings, $F$: per period annuity payment, $x_i$: individual mortality factors
     
+    \item Firm heterogeneity: algorithm (mortality tables), financing costs ($r_j$) and risk ratings. 
+    \end{itemize}
+
     \note{
     \begin{itemize}
         \item Explicitly not link the annuities market with pensions because generates confusion
         \item Explain what annuities are. 
     \end{itemize}}
 \end{frame}
+
+
+\begin{frame}{SCOMP Process Flow Diagram}\label{slide:setting2}
+\begin{center}
+\input{../figures/tikz/SCOMP_diagram.tex}
+\end{center}
+\begin{itemize}
+    \item \hyperlink{slide:fig5}{\beamerbutton{Offer Certificate}}
+\end{itemize}
+\end{frame}
+
 
 
 \begin{frame}{Data} \label{slide:data}
@@ -170,25 +169,33 @@
     \end{itemize}
      \item Retirement insurance companies: risk ratings
 \end{itemize}
-\note{Important to mention that the advantage of our data is that 1) elicits prices from almost all companies and 2) records all the elicited prices. }
 
-\textcolor{red}{the particularity of our data is: }
+Particularities of the data/setting: 
+
+\begin{itemize}
+    \item One observes all the offers received by the buyers 
+    \item One observes the same information as the firms (gender, age, savings)
+\end{itemize}
 \end{frame}
 
+
+
+\section{Empirical Evidence}
  
 
 \begin{frame}{Descriptive Evidence}\label{slide:Descriptive_evidence}
 \begin{itemize}
-    \item Most buyers request external offers and the improvement is sizeable. \hyperlink{slide:fig1}{\beamerbutton{Search by income}} 
+    \item Most buyers request external offers and the improvement is sizeable. \hyperlink{slide:fig1}{\beamerbutton{External offers}} 
     \item Products are differentiated \hyperlink{slide:fig2}{\beamerbutton{Foregone value}} 
-    \item Firms learn about other firms' prices
+    \item Selection into companies \hyperlink{slide:fig3}{\beamerbutton{Heterogeneity in algorithm precision}}
+    \item Firms learn about other firms' prices  \hyperlink{slide:fig4}{\beamerbutton{Learning}} 
 \end{itemize}
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}\frametitle{Different use of the aftermarket}\label{slide:fig1}
+\begin{frame}\frametitle{Prevalence of external offers}\label{slide:fig1}
 \begin{figure}
     \centering
     \includegraphics[width=0.49\textwidth]{../figures/IE3_dist_external_offers.png}
@@ -198,9 +205,7 @@
 
 \begin{itemize}
     \item   75\% of the purchases are through external offers. 
-     \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}} 
-    
-    \textcolor{red}{[What are the determinants of search? Search direction?] }
+     \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}   
 \end{itemize}
 
 \note{
@@ -217,7 +222,7 @@ In a model where search costs are not correlated with valuations, the aftermarke
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Heterogeneity in preferences}\label{slide:fig2}    
+\begin{frame}{Differentiation}\label{slide:fig2}    
 Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly wages.
 \begin{figure}[H]
 %\caption{}
@@ -226,45 +231,157 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 \includegraphics[scale=0.25]{../figures/IE3_foregone_hist.png}
 \end{tabular}
 \end{figure}
-\hyperlink{slide:answer1}{\beamerbutton{Go back}}
+\hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}{Heterogeneity in preferences}\label{slide:fig3}    
-Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly wages.
+\begin{frame}{Heterogeneity in algorithm precision}\label{slide:fig3}    
 \begin{figure}[H]
 %\caption{}
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=0.25]{../figures/IE6/IE6_survival_year_all.png}
+\includegraphics[scale=0.264]{../figures/IE6/IE6_survival_year_all.png}
 \end{tabular}
 \end{figure}
-\hyperlink{slide:answer1}{\beamerbutton{Go back}}
+\hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
 \end{frame}
 
 
-\begin{frame}%{Learning}
-\input{../Tables/IE7/IE7_learning_regressions.tex}
+\begin{frame}{Learning}\label{slide:fig4}    
+\scalebox{0.8}{
+    \input{../Tables/IE7/IE7_learning_regressions.tex}
+}
+\hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
 \end{frame}
 
-\begin{frame}{Learning(1)}
+
+\begin{frame}{Learning(1)}\label{slide:fig5}
   \begin{figure}[H]
-\caption{}
-\label{fig:ie7_3}
+%\caption{}
 \centering{}%
 \begin{tabular}{cc}
 \includegraphics[scale=0.39]{../figures/IE7/IE7_hist_bunching_max(2).png} 
 \end{tabular}
 \end{figure}
+\hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
 \end{frame}
 
-\begin{frame}{}
+\section{Model}
+
+
+
+\begin{frame}{Learning Model: Overview}
+\begin{itemize}
+    \item \textbf{Goal:} Rationalize the increase in offers between initial and external offers
+    
+    \item \textbf{Key mechanism:} Firms learn competitors' offers when consumer requests external offers
+    
+    \item \textbf{Setup:}
+    \begin{itemize}
+        \item One consumer and $J$ firms
+        \item Firm $j$ has private cost $c_j \sim F_j$ (due to interest rate variation)
+        \item Consumer chooses firm with probability $D_j(p)$ (logit demand)
+    \end{itemize}
+    
+    \item \textbf{Innovation:} Two-stage pricing with learning opportunity
+\end{itemize}
 \end{frame}
 
-\begin{frame}{Initial prices}\label{slide:fig5}    
+\begin{frame}{Two-Stage Game: Timeline}
+\begin{enumerate}
+    \item \textbf{Stage 1 (Initial offers):}
+    \begin{itemize}
+        \item Firms simultaneously post initial prices $p^{T1}_j$
+        \item Consumer observes all offers
+    \end{itemize}
+    
+    \vspace{0.3cm}
+    
+    \item \textbf{Consumer decision:}
+    \begin{itemize}
+        \item With probability $1-\lambda$: accepts one of the initial offers
+        \item With probability $\lambda$: requests external offer from random firm
+    \end{itemize}
+    
+    \vspace{0.3cm}
+    
+    \item \textbf{Stage 2 (External offers):}
+    \begin{itemize}
+        \item Selected firm observes all initial offers $p^{T1}$
+        \item Can update its offer: $p^{T2}_j(c_j, p^{T1}) = \min(p^{T1}_j, p^*)$
+        \item Consumer chooses among all available offers
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Second Stage: Optimal Pricing with Learning}
+\textbf{When selected for external offer, firm observes competitors' initial prices}
+
+\vspace{0.3cm}
+
+\textbf{Optimal updated offer:}
+$$p^{T2}_j(c_j, p^{T1}) = \min(p^{T1}_j, p^*)$$
+
+where
+$$p^* = \arg\max_{p_j} (p_j - c_j) D_j(p_j, p^{T1}_{-j})$$
+
+\vspace{0.5cm}
+
+\textbf{Key insight:} Firm can only lower its price (or keep it unchanged)
+
+\vspace{0.3cm}
+After observing competitors, firm best-responds to known prices rather than expected prices
+\end{frame}
+
+\begin{frame}{Expected Profits in Second Stage}
+\textbf{When consumer searches, firm $j$ faces two scenarios:}
+
+\vspace{0.3cm}
+
+\textbf{1. Selected for external offer ($\frac{1}{J}$ probability):}
+$$\pi^{(j)}_j(p^{T1}, c_j) = (p^{T2}_j(c_j, p^{T1}) - c_j) D_j(p^{T2}_j(c_j, p^{T1}), p^{T1}_{-j})$$
+
+\vspace{0.3cm}
+
+\textbf{2. Competitor $j'$ selected ($\frac{1}{J}$ probability):}
+$$\pi^{(j')}_j(p^{T1}, c_j, c_{j'}) = (p^{T1}_j - c_j) D_j(p^{T1}_{-j'}, p^{T2}_{j'}(c_{j'}, p^{T1}))$$
+
+\vspace{0.5cm}
+
+\textbf{Expected second stage profits:}
+$$\pi^{T2}_j(p^{T1}, c_j, c_{-j}) = \frac{1}{J}\left[\pi^{(j)}_j(p^{T1}, c_j) + \sum_{j' \neq j} \pi^{(j')}_j(p^{T1}, c_j, c_{j'})\right]$$
+\end{frame}
+
+\begin{frame}{First Stage: Strategic Pricing}
+\textbf{Firms anticipate the second stage when setting initial prices}
+
+\vspace{0.5cm}
+
+\textbf{Expected profits in first stage:}
+$$\pi^{T1}_j(p^{T1}, c_j, c_{-j}) = (1-\lambda)\underbrace{(p^{T1}_j - c_j)D_j(p^{T1})}_{\text{Immediate acceptance}} + \lambda \underbrace{\pi^{T2}_j(p^{T1}, c_j, c_{-j})}_{\text{Search occurs}}$$
+
+\vspace{0.5cm}
+
+\textbf{Equilibrium condition:}
+$$p^{T1}_j(c_j) = \arg\max_{p_j} \int \pi^{T1}_j(p_j, p^{T1}_{-j}(c_{-j}), c_j) dF(c_{-j}|c_j)$$
+
+\vspace{0.3cm}
+Trade-off: higher initial price (if accepted) vs. competitive position if search occurs
+\end{frame}
+
+
+\begin{frame}{Simulations }
+    \begin{itemize}
+        \item \textcolor{red}{SHOW SIMULATION RESULTS TO BUILD INTUITION}
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Initial prices}\label{slide:fig6}    
 \begin{figure}[H]
 %\caption{}
 \centering{}%
@@ -272,321 +389,10 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 \includegraphics[scale=0.49]{../figures/annuity_offer.png}
 \end{tabular}
 \end{figure}
-\hyperlink{slide:setting}{\beamerbutton{Go back}}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
-\begin{frame}{Answer the question}\label{slide:answer1}
-    \begin{itemize}
-        \item Equilibrium model of search and revised prices  
-        \begin{itemize}
-            \item First stage: sellers post initial prices and consumers buy or search 
-            \item Second stage: If buyer searches is matched with a seller and they bargain
-        \end{itemize}
-        \item Desiderata:
-        \begin{itemize}
-           \item Imperfect-assymmetric competition\hyperlink{slide:fig2}{\beamerbutton{Evidence}}
-            \item Differentiated products   \hyperlink{slide:fig3}{\beamerbutton{Evidence}}
-            \item Adverse selection
-        \end{itemize}
-    \end{itemize}
-
-    \textcolor{red}{[How to model selection with competition?]}
-    \note{\textbf{ Imperfect-assymmetric competition:} the differences in market share can be due to preferences, but not so the differences in probability of posting a price
-   
-   \textbf{Diff products:} if not the case then everyone would choose the lowest price
-   }
+\hyperlink{slide:setting}{\beamerbutton{Go back: Diagram}} 
+\hyperlink{slide:setting}{\beamerbutton{Go back: Data}}
 \end{frame}
 
 
-    
-% **CHANGES MARKED**: New slide added at end with simplified English SCOMP flow diagram
-
-\begin{frame}{SCOMP Process Flow Diagram}
-\begin{center}
-\begin{tikzpicture}[node distance=1.2cm, scale=0.6, every node/.style={transform shape}]
-
-% **CHANGES MARKED**: Removed main process boxes (affiliate, participate, system, offers)
-% **CHANGES MARKED**: Kept only numbered steps in sequential order
-
-% Sequential numbered steps
-\node[terminal] (step1) {1. Request balance\\certificate from AFP};
-\node[terminal, below=of step1] (step2) {2. Choose participation:\\a. AFP (direct or agent)\\b. Provisional advisor\\c. CSV (direct or agent)};
-\node[terminal, below=of step2] (step3) {3. Define pension\\offer request};
-\node[terminal, below=of step3] (step4) {4. Send offer request\\to system};
-\node[terminal, below=of step4] (step5) {5. System validates\\the request};
-\node[terminal, below=of step5] (step6) {6. System sends\\request to AFPs\\and CSVs};
-\node[terminal, below=of step6] (step7) {7. Offers sent to\\system for\\pension amounts};
-\node[terminal, below=of step7] (step8) {8. System sends\\offers to\\affiliates};
-
-% Decision node
-\node[decision, below=of step8] (decision) {Pensioner must choose between:};
-
-% Choice options
-\node[terminal, below left=1.2cm and -1cm of decision] (choice_a) {a) Accept\\internal offer};
-\node[terminal, below=0.3cm of choice_a] (choice_b) {b) Request\\external offers};
-\node[terminal, below=0.3cm of choice_b] (choice_c) {c) Submit new\\offer request};
-\node[terminal, below right=1.2cm and -1cm of decision] (choice_e) {e) Request\\resubmission};
-
-% External offers path
-\node[terminal, right=2cm of choice_b] (external) {Accept\\external\\offer};
-
-% Final outcomes
-\node[end, below=of choice_c, yshift=-0.5cm] (pension) {Pension granted and\\pension process ends};
-\node[terminal, below right=0.5cm and 1cm of choice_e] (no_pension) {d) Not retire};
-
-% **CHANGES MARKED**: Sequential arrows through numbered steps
-\draw[arrow] (step1) -- (step2);
-\draw[arrow] (step2) -- (step3);
-\draw[arrow] (step3) -- (step4);
-\draw[arrow] (step4) -- (step5);
-\draw[arrow] (step5) -- (step6);
-\draw[arrow] (step6) -- (step7);
-\draw[arrow] (step7) -- (step8);
-\draw[arrow] (step8) -- (decision);
-
-% Decision paths
-\draw[arrow] (decision) -- (choice_a);
-\draw[arrow] (decision) -- (choice_b);
-\draw[arrow] (decision) -- (choice_c);
-\draw[arrow] (decision) -- (choice_e);
-
-% External offer path
-\draw[arrow] (choice_b) -- (external);
-\draw[arrow] (external) -- (pension);
-
-% Outcomes
-\draw[arrow] (choice_a) -- (pension);
-\draw[arrow] (choice_c) -- (pension);
-\draw[arrow] (choice_e) -- (no_pension);
-
-% Loop back arrows
-\draw[arrow] (choice_c) -| ([xshift=-3cm]step3.west) |- (step3);
-\draw[arrow] (choice_e) -| ([xshift=3cm]step4.east) |- (step4);
-
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-
-% **CHANGES MARKED**: New slide with horizontal left-to-right flow diagram in multiple rows
-
-\begin{frame}{SCOMP Process Flow Diagram}
-\begin{center}
-\begin{tikzpicture}[node distance=1.8cm and 1.5cm, scale=0.65, every node/.style={transform shape}]
-
-% **CHANGES MARKED**: First row - left to right
-\node[terminal] (step1) {1. Request balance\\certificate from AFP};
-\node[terminal, right=of step1] (step2) {2. Choose participation:\\a. AFP (direct or agent)\\b. Provisional advisor\\c. CSV (direct or agent)};
-\node[terminal, right=of step2] (step3) {3. Define pension\\offer request};
-\node[terminal, right=of step3] (step4) {4. Send offer request\\to system};
-
-% **CHANGES MARKED**: Second row - right to left
-\node[terminal, below=of step4] (step5) {5. System validates\\the request};
-\node[terminal, left=of step5] (step6) {6. System sends\\request to AFPs\\and CSVs};
-\node[terminal, left=of step6] (step7) {7. Offers sent to\\system for\\pension amounts};
-\node[terminal, left=of step7] (step8) {8. System sends\\offers to\\affiliates};
-
-% **CHANGES MARKED**: Third row - decision and outcomes (left to right)
-\node[decision, below=1.5cm of step8] (decision) {Pensioner must\\choose between:};
-\node[terminal, right=1.2cm of decision] (choice_a) {a) Accept\\internal offer};
-\node[terminal, right=of choice_a] (choice_b) {b) Request\\external offers};
-\node[terminal, right=of choice_b] (external) {Accept\\external\\offer};
-
-% Additional choices below decision
-\node[terminal, below=0.8cm of decision] (choice_c) {c) Submit new\\offer request};
-\node[terminal, below=0.8cm of choice_a] (choice_e) {e) Request\\resubmission};
-\node[terminal, below=0.8cm of choice_b] (no_pension) {d) Not retire};
-
-% Final outcome
-\node[end, below=0.8cm of external] (pension) {Pension granted and\\pension process ends};
-
-% **CHANGES MARKED**: Horizontal flow arrows - first row (left to right)
-\draw[arrow] (step1) -- (step2);
-\draw[arrow] (step2) -- (step3);
-\draw[arrow] (step3) -- (step4);
-
-% **CHANGES MARKED**: Connect first row to second row
-\draw[arrow] (step4) -- (step5);
-
-% **CHANGES MARKED**: Second row arrows (right to left)
-\draw[arrow] (step5) -- (step6);
-\draw[arrow] (step6) -- (step7);
-\draw[arrow] (step7) -- (step8);
-
-% **CHANGES MARKED**: Connect second row to decision
-\draw[arrow] (step8) -- (decision);
-
-% Decision paths
-\draw[arrow] (decision) -- (choice_a);
-\draw[arrow] (decision) -- (choice_b);
-\draw[arrow] (decision) -- (choice_c);
-\draw[arrow] (decision) -| (choice_e);
-
-% External offer path
-\draw[arrow] (choice_b) -- (external);
-
-% Outcomes to pension
-\draw[arrow] (choice_a) |- (pension);
-\draw[arrow] (external) -- (pension);
-\draw[arrow] (choice_c) -| (pension);
-
-% Loop back arrows
-\draw[arrow] (choice_c) -- ++(0,-0.5) -| ([yshift=-0.5cm]step3.south);
-\draw[arrow] (choice_e) -- ++(0,-0.5) -| ([yshift=-0.5cm]step4.south);
-
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-
-% **CHANGES MARKED**: Merged steps 3-4, and steps 5-6-7 into simplified flow
-
-\begin{frame}{SCOMP Process Flow Diagram}
-\begin{center}
-\begin{tikzpicture}[node distance=1.8cm and 1.5cm, scale=0.65, every node/.style={transform shape}]
-
-% **CHANGES MARKED**: First row - left to right (3 steps now)
-\node[terminal] (step1) {1. Request balance\\certificate from AFP};
-\node[terminal, right=of step1] (step2) {2. Choose participation:\\a. AFP (direct or agent)\\b. Provisional advisor\\c. CSV (direct or agent)};
-% **CHANGES MARKED**: Merged steps 3 and 4
-\node[terminal, right=of step2] (step3) {3. Define pension offer\\request and send\\to system};
-
-% **CHANGES MARKED**: Second row - right to left (2 steps now)
-% **CHANGES MARKED**: Merged steps 5, 6, and 7
-\node[terminal, below=of step3] (step4) {4. Firms receive requests\\and make offers};
-\node[terminal, left=of step4] (step5) {5. System sends\\offers to\\affiliates};
-
-% **CHANGES MARKED**: Third row - decision and outcomes (left to right)
-\node[decision, below=1.5cm of step5] (decision) {Pensioner must\\choose between:};
-\node[terminal, right=1.2cm of decision] (choice_a) {a) Accept\\internal offer};
-\node[terminal, right=of choice_a] (choice_b) {b) Request\\external offers};
-\node[terminal, right=of choice_b] (external) {Accept\\external\\offer};
-
-% Additional choices below decision
-\node[terminal, below=0.8cm of decision] (choice_c) {c) Submit new\\offer request};
-\node[terminal, below=0.8cm of choice_a] (choice_e) {e) Request\\resubmission};
-\node[terminal, below=0.8cm of choice_b] (no_pension) {d) Not retire};
-
-% Final outcome
-\node[end, below=0.8cm of external] (pension) {Pension granted and\\pension process ends};
-
-% **CHANGES MARKED**: Horizontal flow arrows - first row (left to right, now 3 steps)
-\draw[arrow] (step1) -- (step2);
-\draw[arrow] (step2) -- (step3);
-
-% **CHANGES MARKED**: Connect first row to second row
-\draw[arrow] (step3) -- (step4);
-
-% **CHANGES MARKED**: Second row arrows (right to left, now 2 steps)
-\draw[arrow] (step4) -- (step5);
-
-% **CHANGES MARKED**: Connect second row to decision
-\draw[arrow] (step5) -- (decision);
-
-% Decision paths
-\draw[arrow] (decision) -- (choice_a);
-\draw[arrow] (decision) -- (choice_b);
-\draw[arrow] (decision) -- (choice_c);
-\draw[arrow] (decision) -| (choice_e);
-
-% External offer path
-\draw[arrow] (choice_b) -- (external);
-
-% Outcomes to pension
-\draw[arrow] (choice_a) |- (pension);
-\draw[arrow] (external) -- (pension);
-\draw[arrow] (choice_c) -| (pension);
-
-% **CHANGES MARKED**: Loop back arrows now go to merged step 3
-\draw[arrow] (choice_c) -- ++(0,-0.5) -| ([yshift=-0.5cm]step3.south);
-\draw[arrow] (choice_e) -- ++(0,-0.5) -| ([yshift=-0.5cm]step3.south);
-
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-
-
-\begin{frame}{SCOMP Process Flow Diagram}
-\begin{center}
-\begin{tikzpicture}[node distance=1.8cm and 1.5cm, scale=0.6, every node/.style={transform shape}]
-
-% **CHANGES MARKED**: First row - left to right
-\node[terminal] (step1) {1. Request balance\\certificate from AFP};
-\node[terminal, right=of step1] (step2) {2. Choose participation:\\a. AFP (direct or agent)\\b. Provisional advisor\\c. CSV (direct or agent)};
-\node[terminal, right=of step2] (step3) {3. Define offer request \\ and send it to the system};
-\node[terminal, right=of step3] (step4) {4. System sends\\request to AFPs\\and CSVs, who \\ make their offers};
-
-% **CHANGES MARKED**: Second row - right to left
-%\node[terminal, below=of step4] (step5) {5. Offers sent to\\system for\\pension amounts};
-\node[terminal, below =of step4] (step6) {5. System sends\\offers to\\affiliates};
-\node[decision, left=of step6] (step7) {6. Pensioner must\\choose between:};
-
-
-% **CHANGES MARKED**: Third row - decision and outcomes (left to right)
-%\node[decision, below=1.5cm of step8] (decision) {Pensioner must\\choose between:};
-\node[terminal, below=1.2cm of step7] (choice_b) {b) Request\\external offers};
-\node[terminal, left=of choice_b] (choice_a) {a) Accept\\internal offer};
-\node[terminal, right= of choice_b ] (choice_c) {c) Submit new\\offer request};
-%\node[terminal, right=of choice_b] (external) {Accept\\external\\offer};
-
-% Additional choices below decision
-
-\node[terminal, below=0.8cm of choice_b] (no_pension) {d) Not retire};
-
-% Final outcome
-\node[end, below=0.8cm of external] (pension) {Pension granted and\\pension process ends};
-
-% **CHANGES MARKED**: Horizontal flow arrows - first row (left to right)
-\draw[arrow] (step1) -- (step2);
-\draw[arrow] (step2) -- (step3);
-\draw[arrow] (step3) -- (step4);
-
-% **CHANGES MARKED**: Connect first row to second row
-\draw[arrow] (step4) -- (step5);
-
-% **CHANGES MARKED**: Second row arrows (right to left)
-\draw[arrow] (step5) -- (step6);
-\draw[arrow] (step6) -- (step7);
-\draw[arrow] (step7) -- (choice_a);
-\draw[arrow] (step7) -- (choice_b);
-\draw[arrow] (step7) -- (choice_c);
-
-% **CHANGES MARKED**: Connect second row to decision
-%\draw[arrow] (step8) -- (decision);
-
-% Decision paths
-%\draw[arrow] (decision) -- (choice_a);
-%\draw[arrow] (decision) -- (choice_b);
-%\draw[arrow] (decision) -- (choice_c);
-%\draw[arrow] (decision) -| (choice_e);
-
-% External offer path
-%\draw[arrow] (choice_b) -- (external);
-
-% Outcomes to pension
-%\draw[arrow] (choice_a) |- (pension);
-%\draw[arrow] (external) -- (pension);
-%\draw[arrow] (choice_c) -| (pension);
-
-% Loop back arrows
-%\draw[arrow] (choice_c) -- ++(0,-0.5) -| ([yshift=-0.5cm]step3.south);
-%\draw[arrow] (choice_e) -- ++(0,-0.5) -| ([yshift=-0.5cm]step4.south);
-
-\end{tikzpicture}
-\end{center}
-\end{frame}
 
 \end{document}

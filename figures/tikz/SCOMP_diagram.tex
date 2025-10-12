@@ -1,0 +1,34 @@
+\begin{tikzpicture}[node distance=1.5cm and 1.3cm, scale=0.7, every node/.style={transform shape}]
+
+\node[terminal] (step1) {1. Request of \\  balance statement};
+\node[terminal, right=of step1] (step2) {2. Choose intermediary:\\a. AFP (direct or agent)\\b. Provisional advisor\\c. CSV (direct or agent)};
+\node[terminal, right=of step2] (step3) {3. Request offers: ask for certain type of contracts \\ (e.g. annuity) };
+\node[terminal, below =of step3] (step4) {4. Firms make initial offers, \\ retiree receives them (e.g. \$1000 per month)};
+
+% **CHANGES MARKED**: Second row - right to left
+\node[decision, left=of step4] (step5) {5. Pensioner must\\choose between:};
+
+
+% **CHANGES MARKED**: Third row - decision and outcomes (left to right)
+\node[terminal, below=1.2cm of step5] (choice_b) {b) Request\\external offers};
+\node[terminal, left=of choice_b] (choice_a) {a) Accept\\internal offer};
+\node[terminal, right= of choice_b ] (choice_c) {c) Submit new\\offer request};
+
+% Additional choices below decision
+\node[terminal, below=of choice_b] (choice_b2) {Receives offer and returns to step 5.};
+%\node[terminal, below=0.8cm of choice_b] (no_pension) {d) Not retire};
+
+
+% **CHANGES MARKED**: Horizontal flow arrows - first row (left to right)
+\draw[arrow] (step1) -- (step2);
+\draw[arrow] (step2) -- (step3);
+\draw[arrow] (step3) -- (step4);
+\draw[arrow] (step4) -- (step5);
+
+% **CHANGES MARKED**: Second row arrows (right to left)
+\draw[arrow] (choice_b) -- (choice_b2);
+\draw[arrow] (step5) -- (choice_a);
+\draw[arrow] (step5) -- (choice_b);
+\draw[arrow] (step5) -- (choice_c);
+
+\end{tikzpicture}

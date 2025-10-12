@@ -3056,11 +3056,10 @@
   <!-- CITATION DATA -->
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
-    <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
+    <bcf:datasource type="file" datatype="bibtex" glob="false">../references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">larsen_efficiency_2021</bcf:citekey>
-    <bcf:citekey order="1" intorder="2">allen_search_2019</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">allen_search_2019</bcf:citekey>
     <bcf:citekey order="2" intorder="1">mahoney_imperfect_2017</bcf:citekey>
     <bcf:citekey order="2" intorder="2">cuesta_price_2018</bcf:citekey>
     <bcf:citekey order="2" intorder="3">cosconati_competing_2025</bcf:citekey>

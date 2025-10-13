@@ -1177,4 +1177,555 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `251015_tea_v2.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package 
+Package biblatex Info: ... file '251015_tea_v2.bbl' not found.
+
+No file 251015_tea_v2.bbl.
+Package biblatex Info: Reference section=0 on input line 86.
+Package biblatex Info: Reference segment=0 on input line 86.
+(251015_tea_v2.nav)
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 90.
+ (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmss.fd
+File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 90.
+ (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 90.
+ (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 90.
+ (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 90.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 90.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 90.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 90.
+ (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 90.
+ (C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <9> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 90.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 90.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 90.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 90.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 90.
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
+
+ []
+
+
+Overfull \vbox (39.39339pt too high) detected at line 90
+ []
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 115.
+LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 115.
+LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 115.
+(C:\Users\lucas\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmss.fd
+File: ts1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [2
+
+{C:/Users/lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation1}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.115 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.115 \end{frame}
+                 
+
+] [3
+
+{C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation2}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.130 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.130 \end{frame}
+                 
+
+]
+
+LaTeX Warning: Citation 'allen_search_2019' on page 4 undefined on input line 155.
+
+
+LaTeX Warning: Citation 'mahoney_imperfect_2017' on page 4 undefined on input line 155.
+
+
+LaTeX Warning: Citation 'cuesta_price_2018' on page 4 undefined on input line 155.
+
+
+LaTeX Warning: Citation 'cosconati_competing_2025' on page 4 undefined on input line 155.
+
+[4
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation3}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.155 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.155 \end{frame}
+                 
+
+] (251015_tea_v2.toc) [5
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation4}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.159 \section{Setting and Data}
+                                
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.159 \section{Setting and Data}
+                                
+
+] [6
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation5}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.186 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.186 \end{frame}
+                 
+
+] (../figures/tikz/SCOMP_diagram.tex)
+Overfull \vbox (14.1519pt too high) detected at line 196
+ []
+
+[7
+
+{C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation6}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.196 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.196 \end{frame}
+                 
+
+] [8
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation7}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.217 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.7}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.217 \end{frame}
+                 
+
+] (251015_tea_v2.toc) [9
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation8}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.221 \section{Empirical Evidence}
+                                  
+pdfTeX warning (ext4): destination with the same identifier (name{page.8}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.221 \section{Empirical Evidence}
+                                  
+
+] [10
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation9}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.231 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.9}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.231 \end{frame}
+                 
+
+]
+<../figures/IE3_dist_external_offers.png, id=136, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_dist_external_offers.png Graphic file (type png)
+<use ../figures/IE3_dist_external_offers.png>
+Package pdftex.def Info: ../figures/IE3_dist_external_offers.png  used on input line 259.
+(pdftex.def)             Requested size: 195.1881pt x 117.00113pt.
+<../figures/IE3_offer_improvement_histogram.png, id=137, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_offer_improvement_histogram.png Graphic file (type png)
+<use ../figures/IE3_offer_improvement_histogram.png>
+Package pdftex.def Info: ../figures/IE3_offer_improvement_histogram.png  used on input line 259.
+(pdftex.def)             Requested size: 195.1881pt x 117.00113pt.
+ [11
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation10}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.259 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.10}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.259 \end{frame}
+                 
+
+]
+<../figures/IE3_foregone_hist.png, id=156, 1075.01625pt x 644.4075pt>
+File: ../figures/IE3_foregone_hist.png Graphic file (type png)
+<use ../figures/IE3_foregone_hist.png>
+Package pdftex.def Info: ../figures/IE3_foregone_hist.png  used on input line 273.
+(pdftex.def)             Requested size: 268.7534pt x 161.10147pt.
+
+Overfull \vbox (8.29341pt too high) detected at line 273
+ []
+
+[12
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation11}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.273 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.11}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.273 \end{frame}
+                 
+
+ <../figures/IE3_dist_external_offers.png (PNG copy)> <../figures/IE3_offer_improvement_histogram.png (PNG copy)>]
+<../figures/IE6/IE6_survival_year_all.png, id=167, 1249.66875pt x 749.80125pt>
+File: ../figures/IE6/IE6_survival_year_all.png Graphic file (type png)
+<use ../figures/IE6/IE6_survival_year_all.png>
+Package pdftex.def Info: ../figures/IE6/IE6_survival_year_all.png  used on input line 287.
+(pdftex.def)             Requested size: 329.9212pt x 197.95271pt.
+
+Overfull \vbox (24.4003pt too high) detected at line 287
+ []
+
+[13
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation12}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.287 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.12}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.287 \end{frame}
+                 
+
+ <../figures/IE3_foregone_hist.png (PNG copy)>] (../Tables/IE7/IE7_learning_regressions.tex)
+Overfull \vbox (14.42719pt too high) detected at line 295
+ []
+
+[14
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation13}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.295 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.13}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.295 \end{frame}
+                 
+
+ <../figures/IE6/IE6_survival_year_all.png (PNG copy)>]
+<../figures/IE7/IE7_hist_bunching_max(2).png, id=189, 813.0375pt x 487.8225pt>
+File: ../figures/IE7/IE7_hist_bunching_max(2).png Graphic file (type png)
+<use ../figures/IE7/IE7_hist_bunching_max(2).png>
+Package pdftex.def Info: ../figures/IE7/IE7_hist_bunching_max(2).png  used on input line 307.
+(pdftex.def)             Requested size: 317.08334pt x 190.25pt.
+
+Overfull \vbox (16.69759pt too high) detected at line 307
+ []
+
+[15
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation14}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.307 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.14}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.307 \end{frame}
+                 
+
+] (251015_tea_v2.toc) [16
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation15}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.311 \section{Model and Simulations}
+                                     
+pdfTeX warning (ext4): destination with the same identifier (name{page.15}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.311 \section{Model and Simulations}
+                                     
+
+ <../figures/IE7/IE7_hist_bunching_max(2).png (PNG copy)>] [17
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation16}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.329 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.16}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.329 \end{frame}
+                 
+
+] [18
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation17}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.358 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.17}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.358 \end{frame}
+                 
+
+] [19
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation18}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.379 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.18}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.379 \end{frame}
+                 
+
+] [20
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation19}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.400 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.19}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.400 \end{frame}
+                 
+
+] [21
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation20}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.419 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.20}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.419 \end{frame}
+                 
+
+]
+<../figures/simulations/model5/pricesCI_IC.png, id=263, 353.4003pt x 299.9205pt>
+File: ../figures/simulations/model5/pricesCI_IC.png Graphic file (type png)
+<use ../figures/simulations/model5/pricesCI_IC.png>
+Package pdftex.def Info: ../figures/simulations/model5/pricesCI_IC.png  used on input line 429.
+(pdftex.def)             Requested size: 247.37851pt x 209.9429pt.
+
+Overfull \vbox (22.39049pt too high) detected at line 429
+ []
+
+[22
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation21}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.429 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.21}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.429 \end{frame}
+                 
+
+]
+<../figures/annuity_offer.png, id=272, 657.2053pt x 388.45125pt>
+File: ../figures/annuity_offer.png Graphic file (type png)
+<use ../figures/annuity_offer.png>
+Package pdftex.def Info: ../figures/annuity_offer.png  used on input line 442.
+(pdftex.def)             Requested size: 322.03342pt x 190.34277pt.
+
+Overfull \vbox (16.79036pt too high) detected at line 442
+ []
+
+[23
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation22}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.442 \end{frame}
+                 
+pdfTeX warning (ext4): destination with the same identifier (name{page.22}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.442 \end{frame}
+                 
+
+ <../figures/simulations/model5/pricesCI_IC.png (PNG copy)>]
+\tf@nav=\write7
+\openout7 = `251015_tea_v2.nav'.
+
+\tf@toc=\write8
+\openout8 = `251015_tea_v2.toc'.
+
+\tf@snm=\write9
+\openout9 = `251015_tea_v2.snm'.
+
+ [24
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{Navigation23}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.446 \end{document}
+                    
+pdfTeX warning (ext4): destination with the same identifier (name{page.23}) has been already used, duplicate ignored
+
+\pgfpages@shipoutshipoutbox ...physicalpagesizes }
+                                                  \endgroup 
+l.446 \end{document}
+                    
+
+ <../figures/annuity_offer.png>] (251015_tea_v2.aux)
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `251015_tea_v2.out' has not changed.
+(rerunfilecheck)             Checksum: F18EBBD16BAD202AE534DB36C3A5BBB2;419.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                251015_tea_v2
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to '251015_tea_v2.run.xml'.
+\openout1 = `251015_tea_v2.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 36250 strings out of 476331
+ 750461 string characters out of 5787765
+ 1884660 words of memory out of 5000000
+ 55912 multiletter control sequences out of 15000+600000
+ 580227 words of font info for 78 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 128i,13n,122p,1979b,5177s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss9.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso8.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsso9.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on 251015_tea_v2.pdf (23 pages, 822878 bytes).
+PDF statistics:
+ 391 PDF objects out of 1000 (max. 8388607)
+ 60 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+

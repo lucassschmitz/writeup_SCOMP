@@ -1,7 +1,7 @@
-\begin{tikzpicture}[node distance=1.5cm and 1.3cm, scale=0.7, every node/.style={transform shape}]
+\begin{tikzpicture}[node distance=1cm and 1cm, scale=0.65, every node/.style={transform shape}]
 
 \node[terminal] (step1) {1. Request of \\  balance statement};
-\node[terminal, right=of step1] (step2) {2. Choose intermediary:\\a. AFP (direct or agent)\\b. Provisional advisor\\c. CSV (direct or agent)};
+\node[terminal, right=of step1] (step2) {2. Choose intermediary:};
 \node[terminal, right=of step2] (step3) {3. Request offers: ask for certain type of contracts \\ (e.g. annuity) };
 \node[terminal, below =of step3] (step4) {4. Firms make initial offers, \\ retiree receives them (e.g. \$1000 per month)};
 
@@ -15,7 +15,10 @@
 \node[terminal, right= of choice_b ] (choice_c) {c) Submit new\\offer request};
 
 % Additional choices below decision
-\node[terminal, below=of choice_b] (choice_b2) {Receives offer and returns to step 5.};
+\node[terminal, below=of choice_b] (choice_b2) {Firms revise their offers};
+
+
+\node[terminal, below=of choice_b2] (choice_b3) {Buyer receives offer and chooses one (including internal offers)};
 %\node[terminal, below=0.8cm of choice_b] (no_pension) {d) Not retire};
 
 
@@ -30,5 +33,8 @@
 \draw[arrow] (step5) -- (choice_a);
 \draw[arrow] (step5) -- (choice_b);
 \draw[arrow] (step5) -- (choice_c);
+
+\draw[arrow] (choice_b2) -- (choice_b3);
+
 
 \end{tikzpicture}

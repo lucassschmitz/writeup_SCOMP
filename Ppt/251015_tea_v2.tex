@@ -132,22 +132,19 @@
  %%%%%%%%% Slide 4 %%%%%%%%%%%%%
 
 \begin{frame}{Literature}
-
-
 \begin{itemize}
     \item Search in selection markets: \textcite{allen_search_2019} %larsen_efficiency_2021
 
+    \item Competition in selection markets: \textcite{mahoney_imperfect_2017, crawford_asymmetric_2018,
+    cuesta_price_2018, cosconati_competing_2025} 
 
-    \item Competition in selection markets: \textcite{mahoney_imperfect_2017, cuesta_price_2018, cosconati_competing_2025} %Crawford et al 2018
-
-    \item Centralized marketplaces in selection markets : %Tebaldi (2024), 
+    \item Centralized marketplaces in selection markets : \textcite{abaluck_when_2023,tebaldi_estimating_2025} 
     
-    \item SCOMP specific: % boehm 2024, illanes and padi 2019, alcalde and via.  % 
+    \item SCOMP specific: \textcite{boehm_intermediation_2024, illanes_retirement_2019, alcalde_intermediary_2021}
     
     %\item Selection in multiple dimensions: \textcite{finkelstein_adverse_2004} and Finkelstein and McGarry (2006).  
 
-    %\item Aftermarkets: \textcite{allen_search_2019} %larsen_efficiency_2021
-     
+    %\item Aftermarkets: \textcite{allen_search_2019} %larsen_efficiency_2021   
 \end{itemize}
 \note{
 \textcolor{blue}{ ADD THE CONTRIBUTIONS TO EACH LITERATURE AND ADD MORE PAPERS}
@@ -174,7 +171,6 @@
     
     \item Firm heterogeneity: algorithm (mortality tables), financing costs ($r_j$) and risk ratings. 
     
-    \item Our setti
     \end{itemize}
 
 
@@ -185,23 +181,33 @@
     \end{itemize}}
 \end{frame}
 
+%%%%%%%%% Slide 7 %%%%%%%%%%%%%
 
-\begin{frame}{SCOMP Process Flow Diagram}\label{slide:setting2}
+\begin{frame}{SCOMP Process}\label{slide:setting2}
 \begin{center}
-\input{../figures/tikz/SCOMP_diagram.tex}
+\input{../figures/tikz/SCOMP_diagram_v2.tex}
 \end{center}
 \begin{itemize}
     \item \hyperlink{slide:fig_offer_certificate}{\beamerbutton{Offer Certificate}}
 \end{itemize}
+\note{
+Explain that: 
+\begin{itemize}
+    \item Mention that external offers are called this way because they are external to the system, moreover they are less regulated
+    \item An exception to less regulation is that they can not be lower than initial offers. 
+    \item only initial bidders can make an external offer 
+    %\item We do not observe requests only the external offers. 
+\end{itemize}
+}
 \end{frame}
 
-%%%%%%%%%
+%%%%%%%%% Slide 8 
 
 \begin{frame}{Data} \label{slide:data}
 \begin{itemize}
     \item SCOMP data at the individual level  
     \begin{itemize}
-        \item Posted and revised prices, and consumer decisions 
+        \item Posted and revised prices, consumer acceptance. \textbf{Not} requests 
         \item Total savings 
         \item Demographics: age and gender \hyperlink{slide:fig_offer_certificate}{\beamerbutton{Certificate with initial prices}}
     \end{itemize}
@@ -209,12 +215,14 @@
 \end{itemize}
 
 Particularities of the data/setting: 
-
 \begin{itemize}
     \item One observes all the offers received by the buyers 
     \item One observes the same information as the firms (gender, age, savings)
 \end{itemize}
+\textcolor{red}{[best way of leveraging this particularities?]}
 \end{frame}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -229,7 +237,6 @@ Particularities of the data/setting:
     \item Firms learn about other firms' prices  \hyperlink{slide:fig4}{\beamerbutton{Learning}} 
 \end{itemize}
 \end{frame}
-
 
 %%%%
 

@@ -104,7 +104,7 @@ And the profits of firm $j$ if the buyer requests an external offer from firm $j
 
 Then, the expected profits of firm $j$ in the case the consumer requests an external offer are: 
 
-\begin{align}\label{eq:profits_external2}
+\begin{align}\label{eq:profits_external2} %eq 6
     \pi_j^{T2}(p^{T1}, c_j, c_{-j}) =  \frac{1}{J} \left( \pi_j^{(j)}(p^{T1}, c_j)   + \sum_{j'\neq j} \pi_j^{(j')}(p^{T1}, c_j, c_{j'}) \right)
 \end{align}
 
@@ -112,7 +112,7 @@ Then, the expected profits of firm $j$ in the case the consumer requests an exte
 note that the costs of the competitors ($c_{-j}$) enter into the profits since they affect the way the competitors update their prices in case they are asked to update their prices.
 
 Then, given strategies  $p_j^{T2}(c_j, p^{T1})$ we can calculate the expected profits given a prices set in the first stage and teh costs: 
-\begin{align}
+\begin{align} % eq 7 
     \pi_j^{T1}(p^{T1}, c_j, c_{-j}) = (1-\lambda) \pi_j^O(p^{T1}, c_j) + \lambda \pi_j^{T2}(p^{T1}, c_j, c_{-j})
 \end{align}
 
@@ -124,11 +124,11 @@ Finally, given that the costs of the rivals are not known, the equilibrium price
 An equilibrium of the two stage game are pricing functions $(p^{T1}, p^{T2})_{j=1}^J$ such that 
 
 
-\begin{align}\label{eq:eq_second_stage}
+\begin{align}\label{eq:eq_second_stage} %eq 8
     p_j^{T2}(c_j, p^{T1}) = \arg \max_{p_j \leq p_j^{T1}} (p_j - c_j) D_j(p_j, p_{-j}^{T1}) 
 \end{align}
 and 
-\begin{align}
+\begin{align}\label{eq:eq_first_stage} %eq 9 
     p_j^{T1}(c_j) = \arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{}  \pi_j^{T1}(p_j, p_{-j}^{T1}(c_{-j}), c_j) dF(c_{-j} \mid c_j)   
 \end{align}
 where note that $\pi_j^{T1}$ is also a function of $p_j^{T2}$. 
@@ -157,7 +157,7 @@ Note that the equilibrium consists on $J$ functions, essentially we have to find
 Given that we are looking for a symmetric equilibria our algorithm assumes that $J-1$ firms are playing a strategy  and we aim to minimize the distance: 
 
 
-\begin{align}
+\begin{align} % eq 10 
     d(c) = \hat{p}(c) -\underbrace{\arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{} (p_j - c_j) D_j(p_j, \hat{p}_{-j}(c_{-j}; \theta_0)) dF(c_{-j} \mid c_j)}_{p_j(c)}
 \end{align} 
 where the first term represent the current guess of the optimal strategy and the  second term represents optimal pricing 
@@ -168,12 +168,12 @@ We consider $C$ points in a grid in the range $[\underline{c}, \bar{c}] $
 \begin{enumerate}
     \item Make an initial guess $\hat{p}^0(c)$. 
     \item For each cost in the grid we calculate the optimal response by solving: 
-    \begin{align}
+    \begin{align} %eq 11
         p(c) = \arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{} (p_j - c_j) D_j(p_j, \hat{p}^0_{-j}(c_{-j})) dF(c_{-j})
     \end{align}  
     where the integral is calculated over the grid of costs.
     The FOC is:  
-    \begin{align}
+    \begin{align} % eq 12   
         \int D_j(\cdot) -\alpha  (p_j - c_j)  D_j(\cdot) [1-D_j(\cdot)] dF(c_{-j}) = 0 
     \end{align} 
     where $D_j(\cdot) = D_j(p_j, \hat{p}^0_{-j}(c_{-j}))$
@@ -181,7 +181,7 @@ We consider $C$ points in a grid in the range $[\underline{c}, \bar{c}] $
 
     
     \item We calculate a distance 
-    \begin{align}
+    \begin{align} % eq 13
         \int | d(c_j) | dF(c_j)
     \end{align}
     if the distance is lower than a tolerance level we stop. If it is higher we update each price according to 
@@ -190,31 +190,141 @@ We consider $C$ points in a grid in the range $[\underline{c}, \bar{c}] $
     
 \end{enumerate}
 
-\subsection{Two stage game}
+\subsection{Two stage game: symmetric case}
 
 Now the equilibrium consists on $2J$ functions, essentially we have to find $(p_j^{T1}(c_j), p_j^{T2}(c_j, p^{T1}))_{j=1}^J$. We start with the symmetric case (mean utilities are the same and costs drawn from the same distribution) and for the symmetric equilibrium, meaning that we only need to find two pricing functions.
 
 
-From equation \ref{eq:eq_second_stage}, and assuming logit demand, the FOC of the second stage is:
+We approximate $F$ on a grid $\{c_i\}_{i=1}^C$ with weights $\{w_i\}_{i=1}^C$, $\sum_i w_i=1$, and use common random numbers to draw $\{c_{-j}^{(r)}\}_{r=1}^R$ for rivals at each grid node.
 
+From equation \ref{eq:eq_second_stage}, and assuming logit demand, the second stage price solves: 
 
-\begin{align}\label{eq:14}
+\begin{align}\label{eq:14} % eq 14
     %D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) + (p_j^{T2}(c_j, p^{T1}) - c_j) \frac{\partial D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1})}{\partial p_j} = 0 \notag \\
     %D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) + (p_j^{T2}(c_j, p^{T1}) - c_j) \left[-\alpha\, D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1})\,\bigl(1 -D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1})\bigr)\right] = 0 \notag \\
     %1 = (p_j^{T2}(c_j, p^{T1}) - c_j) \alpha \bigl(1 -D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1})\bigr) = 0 \notag \\
-    p_j^{T2}(c_j, p^{T1}) = c_j+\frac{1}{\alpha   (1 -D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}))}  
+    p_j^{T2}(c_j, p^{T1}) = \min \{c_j+\frac{1}{\alpha   (1 -D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}))}, p_j^{T1}  \}
 \end{align}
 
 Using \ref{eq:14} to replace in equation \ref{eq:asking_j} and \ref{eq:asking_j'} we can obtain the second stage equilibrium profits in case the firm asks for an external offer from any firm $\pi_j^{(j)}(p^{T1}, c_j)$ and $\pi_j^{(j')}(p^{T1}, c_j, c_{j'})$, then using equation \ref{eq:profits_external2} we can obtain $\pi_j^{T2}(p^{T1}, c_j, c_{-j})$. 
- 
 
-\newpage
+\paragraph{Goal.} In the symmetric equilibrium, we solve for a single first stage and another single second stage pricing function where jointly they have to satisfy equations \ref{eq:eq_second_stage} and \ref{eq:eq_first_stage}. 
 
+\paragraph{Inputs.} Number of firms $J$, demand parameters $(\delta,\alpha)$, cost distribution $F$,
+request probability $\lambda\in[0,1]$, grid size $C$, Monte Carlo draws $R$, damping $\beta\in(0,1]$,
+tolerance $\varepsilon>0$, and a search bracket $[\underline p(c), \overline p(c)]$ with
+$\underline p(c)=c$ and $\overline p(c)=c+\bar m$ for some $\bar m>0$.
 
+\paragraph{Discretization.} Approximate $F$ on a grid $\{c_i\}_{i=1}^C$ with weights
+$\{w_i\}_{i=1}^C$ ($\sum_i w_i=1$). For each node $c_i$, pre-draw $R$ i.i.d.\ rival cost vectors
+$\{c^{(r)}_{-j}\}_{r=1}^R \sim F^{J-1}$ and \emph{keep these draws fixed across iterations}
+(common random numbers).
 
-\textcolor{red}{To do}
+\vspace{3cm}
+
+\paragraph{Algorithm (backward induction inside an outer fixed point).}
 \begin{enumerate}
-    \item \textcolor{red}{Solve the model with the extension assuming that the strategies are just linear on costs. }
+  \item \textbf{Initialization.} Set an initial first-stage function $p^{T1}_0(c)$.
+  A stable choice is a one-stage cost-plus guess,
+  \[
+    p^{T1}_0(c) \;=\; c \;+\; \frac{1}{\alpha\,(1-\bar s)},\qquad \bar s \approx \frac{1}{J}
+  \]
+  
+  \item \textbf{Inner Stage-2 operator $\mathcal{T}_2$ (given $p^{T1}_k$).}
+  For each grid node $c = (c_1, ..., c_J)$:
+  \begin{enumerate}
+    \item Compute the stage-2 best reply $p^\star(c_j; p^{T1}_{-j})$ by solving
+    the one-dimensional fixed point from (14):
+    \[
+      p \;=\; c_j \;+\; \frac{1}{\alpha\bigl(1 - D_j(p,\,p^{T1}_{-j})\bigr)}.
+    \]
+    \item Apply the no-increase cap from (2):
+    \[
+      p^{T2}_k (c_j; p^{T1}_{-j})
+      \;=\; \min\!\left\{\,p^{T1}_k(c_j),\; p^\star(c_j; p^{T1}_{-j}) \right\}.
+    \]
+  \end{enumerate}
+
+  \item \textbf{Stage-2 profits (conditional on a request).}
+  Using \ref{eq:asking_j}, \ref{eq:asking_j'} and \ref{eq:profits_external2}, form for each $(c_j, c^{(r)}_{-j})$:
+  First map $c^{(r)}_{-j}$ into $p^{T1}_{-j}(c^{(r)}_{-j})$ using $p^{T1}_k$,
+  then compute
+  \[
+  \begin{aligned}
+   &\pi^{(j)}_j(p^{T1}_k, c_j) =
+   \bigl( p^{T2}_k (c_j; p^{T1}_{-j}) 
+    -c_j\bigr)    D_j\!\Bigl(    p^{T2}_k (c_j; p^{T1}_{-j})  ,\,p^{T1}_{-j}\Bigr) ,\\[2pt]
+   &\pi^{(j')}_j\bigl(p^{T1}_k, c_j, c^{(r)}_{-j}\bigr)
+   \;=\; \frac{1}{J-1}\sum_{m\neq j}
+   \Bigl(p^{T1}_k(c_j)-c_j\Bigr)\,
+   D_j\!\Bigl(p^{T1}_k(c_j),\,
+   p^{T1}_{-j}(\,c^{(r)}_{-j}\,)\big|_{m \leftarrow p^{T2}_k(c^{(r)}_{m};\,c^{(r)}_{-m})}\Bigr),\\[2pt]
+   &\pi^{T2}_j\bigl(p^{T1}_k, c_i, c^{(r)}_{-j}\bigr)
+   \;=\; \frac{1}{J}\,\pi^{(j)}_j\bigl(p^{T1}_k, c_i\bigr)
+   \;+\; \frac{J-1}{J}\,\pi^{(j')}_j\bigl(p^{T1}_k, c_i, c^{(r)}_{-j}\bigr).
+  \end{aligned}
+  \]
+
+  \item \textbf{Stage-1 objective at $(p;c_i)$ (Monte Carlo version of (7)).}
+  For any trial price $p$ at cost $c_i$,
+  \[
+  \widehat{\pi}^{O}_j(p;c_i)
+  \;=\;
+  \frac{1}{R}\sum_{r=1}^R (p-c_i)\,
+  D_j\!\Bigl(p,\,p^{T1}_{-j}(\,c^{(r)}_{-j}\,)\Bigr),
+  \]
+
+  \[
+  \widehat{\pi}^{T2}_j(p;c_i)
+  \;=\;
+  \frac{1}{R}\sum_{r=1}^R \pi^{T2}_j\bigl(p^{T1}_k, c_i, c^{(r)}_{-j}\bigr)
+  \quad\text{(with $p^{T2}$ from Step 2),}
+  \]
+  \[
+  \widehat{\Pi}^{(1)}(p;c_i)
+  \;=\;
+  (1-\lambda)\,\widehat{\pi}^{O}_j(p;c_i)
+  \;+\; \lambda\,\widehat{\pi}^{T2}_j(p;c_i).
+  \]
+
+  \item \textbf{Pointwise best response (implements (9)).}
+  For each $c_i$, compute
+  \[
+    p^{\mathrm{BR}}_k(c_i)
+    \;\in\; \arg\max_{\,p \in [\,c_i,\,c_i+\bar m\,]}\;\widehat{\Pi}^{(1)}(p;c_i).
+  \]
+  (A simple and robust choice is a bracketed 1D search.)
+
+  \item \textbf{Distance update (mirrors (10)–(13)).}
+  Define the distance $d_k(c_i)=p^{T1}_k(c_i)-p^{\mathrm{BR}}_k(c_i)$ and update
+  \[
+    p^{T1}_{k+1}(c_i) \;=\; p^{T1}_{k}(c_i) \;-\; \beta\, d_k(c_i).
+  \]
+  Optionally enforce monotonicity in costs (isotonic regression on $\{(c_i,p^{T1}_{k+1}(c_i))\}$).
+
+  \item \textbf{Stopping rule.}
+  Stop when the weighted $L^1$ distance falls below tolerance,
+  \[
+    \mathcal{D}_k \;=\; \sum_{i=1}^C w_i\,\bigl|\,p^{T1}_{k+1}(c_i)-p^{T1}_{k}(c_i)\,\bigr|
+    \;<\; \varepsilon,
+  \]
+  or equivalently when $\sum_i w_i |d_k(c_i)|<\varepsilon$.
 \end{enumerate}
+
+\paragraph{Output.} The fixed point $p^{T1}_\star(\cdot)$ and the induced
+$p^{T2}_\star(\cdot;\cdot)=\mathcal{T}_2[p^{T1}_\star]$ constitute the symmetric two-stage equilibrium
+satisfying (8)–(9) with stage-2 prices computed via (14) and capped by (2).
+
+\paragraph{Implementation tips.}
+(i) Keep the rival cost draws fixed across iterations (variance reduction).
+(ii) Use damping $\beta$ and a reasonable $\bar m$ to stabilize the outer loop.
+(iii) The 1D fixed point in (14) is a contraction under logit; a damped update $p\leftarrow
+c + 1/(\alpha(1-D_j(p,\cdot)))$ converges rapidly, then apply the cap $p^{T2}\le p^{T1}$.
+
+
+
+
+
+
  
 \end{document}

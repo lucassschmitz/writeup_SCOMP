@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>251015_tea.bcf</file>
+      <file>251015_tea_v2.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>251015_tea.bbl</file>
+      <file>251015_tea_v2.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -68,19 +68,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>251015_tea</infile>
+      <infile>251015_tea_v2</infile>
     </cmdline>
     <input>
-      <file>251015_tea.bcf</file>
+      <file>251015_tea_v2.bcf</file>
     </input>
     <output>
-      <file>251015_tea.bbl</file>
+      <file>251015_tea_v2.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>251015_tea.bbl</file>
+      <file>251015_tea_v2.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>251015_tea.bcf</file>
+      <file>251015_tea_v2.bcf</file>
     </requires>
     <requires type="editable">
       <file>../references.bib</file>

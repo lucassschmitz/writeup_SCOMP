@@ -1,0 +1,79 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\usepackage{hyperref}
+
+\setcounter{MaxMatrixCols}{10}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+
+Here we explore what determines whether prices are higher/lower in a model with price uncertainty. The simplest model is that firms draw cost $c_j$ from a distribution $F_j$ and then make an offer $p_j$. The consumer then decides whether to accept one of the offers, their demand is given by $D_j(p)$. 
+
+Then firm prices satisfy: 
+\begin{align} \label{eq:base_equilibrium} %eq 1 
+    p_j(c_j) = \arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{} (p_j - c_j) D_j(p_j, p_{-j}(c_{-j})) dF(c_{-j})
+\end{align} 
+where $p_{-j}(c_{-j}) = (p_n(c_n))_{n \neq j}$ and $F(c_{-j} )$ is the distribution of costs for the rival firms. 
+
+
+The FOC is: 
+\begin{align} % eq 1b
+    \int \left[ D_j(\cdot) - (p_j - c_j) \frac{\partial D_j(\cdot)}{\partial p_j } \right] dF(c_{-j}) = 0  
+\end{align}
+
+
+Define $ \pi(p_j, p_{-j}, c_j) = (p_j - c_j) D_j(p_j, p_{-j})$ the profits of firm $j$ given prices and costs. 
+
+Assume that $\pi(p_j, p_{-j}, c_j)$ is concave in $p_j$\footnote{Standard assumption, required for the FOC to provide the optimal price.}
+then we have that 
+
+
+
+\subsection{Example: logit demand}
+With logit demand we have that
+
+\vspace{3cm}
+
+\end{document}

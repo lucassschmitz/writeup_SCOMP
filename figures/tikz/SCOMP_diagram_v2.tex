@@ -1,4 +1,4 @@
-\begin{tikzpicture}[node distance=1cm and 1cm, scale=0.65, every node/.style={transform shape}]
+\begin{tikzpicture}[node distance=.9cm and .9cm, scale=0.65, every node/.style={transform shape}]
 
 \node[terminal] (step1) {1. Request of \\  balance statement};
 \node[terminal, right=of step1] (step2) {2. Choose intermediary:};
@@ -10,17 +10,15 @@
 
 
 % **CHANGES MARKED**: Third row - decision and outcomes (left to right)
-\node[terminal, below=1.2cm of step5] (choice_b) {b) Request\\external offers};
-\node[terminal, left=of choice_b] (choice_a) {a) Accept\\internal offer};
-\node[terminal, right= of choice_b ] (choice_c) {c) Submit new\\offer request};
+\node[terminal, left =of step5] (choice_a) {a) Accept\\internal offer};
+\node[terminal, below= of choice_a ] (choice_b) {b) Submit new\\offer request};
+\node[terminal, below =1.2cm of step5] (choice_c) {c) Request\\revised offers};
+\node[terminal, right =1.2cm of choice_c] (choice_d) {d) Not annuity};
 
 % Additional choices below decision
-\node[terminal, below=of choice_b] (choice_b2) {Firms revise their offers};
+\node[terminal, below=of choice_c] (choice_c2) {Firms revise their offers};
 
-
-\node[terminal, below=of choice_b2] (choice_b3) {Buyer receives offer and chooses one (including internal offers)};
-%\node[terminal, below=0.8cm of choice_b] (no_pension) {d) Not retire};
-
+\node[terminal, below=of choice_c2] (choice_c3) {Buyer receives offer and chooses one (including internal offers)};
 
 % **CHANGES MARKED**: Horizontal flow arrows - first row (left to right)
 \draw[arrow] (step1) -- (step2);
@@ -29,12 +27,15 @@
 \draw[arrow] (step4) -- (step5);
 
 % **CHANGES MARKED**: Second row arrows (right to left)
-\draw[arrow] (choice_b) -- (choice_b2);
+%\draw[arrow] (choice_b) -- (choice_b2);
 \draw[arrow] (step5) -- (choice_a);
 \draw[arrow] (step5) -- (choice_b);
 \draw[arrow] (step5) -- (choice_c);
+\draw[arrow] (step5) -- (choice_d);
 
-\draw[arrow] (choice_b2) -- (choice_b3);
+
+\draw[arrow] (choice_c) -- (choice_c2);
+\draw[arrow] (choice_c2) -- (choice_c3);
 
 
 \end{tikzpicture}

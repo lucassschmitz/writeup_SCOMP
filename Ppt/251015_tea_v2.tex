@@ -12,7 +12,7 @@
 \usecolortheme{rose} %beaver, dolphin, crane, 
 
 
-%\setbeamersize{text margin left=4mm, text margin right=4mm}
+\setbeamersize{text margin left=4mm, text margin right=4mm}
 
 
 \usecolortheme{default}
@@ -167,7 +167,7 @@
     \end{align*}
     % if it was only financing cost, it would be a monopoly
    
-     $S$: stock of savings, $F$: per period annuity payment, $x_i$: individual mortality factors
+     $S$: stock of savings, $F$: per period annuity payment, $x_i$: buyer mortality factors
     
     \item Firm heterogeneity: algorithm (mortality tables), financing costs ($r_j$) and risk ratings. 
     
@@ -178,6 +178,7 @@
     \begin{itemize}
         \item Explicitly not link the annuities market with pensions because generates confusion
         \item Explain what annuities are. 
+        \item Mention that $x_i$ is not firm specific. Firms observe the same covariates.
     \end{itemize}}
 \end{frame}
 
@@ -197,6 +198,7 @@ Explain that:
     \item An exception to less regulation is that they can not be lower than initial offers. 
     \item only initial bidders can make an external offer 
     %\item We do not observe requests only the external offers. 
+    \item When requesting revised offers, firms learn competitors' initial offers.
 \end{itemize}
 }
 \end{frame}
@@ -220,6 +222,12 @@ Particularities of the data/setting:
     \item One observes the same information as the firms (gender, age, savings)
 \end{itemize}
 \textcolor{red}{[best way of leveraging this particularities?]}
+\note{
+    \begin{itemize}
+        \item I observe only the external offers made not the requested ones. 
+
+    \end{itemize}
+}
 \end{frame}
 
 
@@ -254,7 +262,7 @@ Particularities of the data/setting:
 \end{itemize}
 
 \note{
-That only some people use the aftermarket suggest: 
+That only some people request revised offers suggests: 
 \begin{itemize}
     \item There are search costs 
     \item Firms could be discriminating based on the search likelihood. 
@@ -317,6 +325,7 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model and Simulations}
 
+%%%%%%%%% Slide 17 %%%%%%%%%%%%% 
 
 \begin{frame}{Learning Model: Overview}
 \begin{itemize}
@@ -324,14 +333,16 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
     
     \item \textbf{Key mechanism:} Firms learn competitors' offers when consumer requests external offers
     
-    \item \textbf{Setup:}
+
+
+    \item \textbf{Incorporate:}
     \begin{itemize}
-        \item One consumer and $J$ firms
-        \item Firm $j$ has private cost $c_j \sim F_j$ (due to interest rate variation)
-        \item Consumer chooses firm with probability $D_j(p)$ (logit demand)
+        \item Search cost [not today]
+        \item Product Differentiation [today]
+        \item Prediction precision [not today]
+        \item Learning [today]
     \end{itemize}
-    
-    \item \textbf{Innovation:} Two-stage pricing with learning opportunity
+
 \end{itemize}
 \end{frame}
 
@@ -341,6 +352,7 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 \begin{enumerate}
     \item \textbf{Stage 1 (Initial offers):}
     \begin{itemize}
+        \item Firms draw costs $c_j$ from distribution $F(c_j|c_{-j})$ they only observe their own cost.
         \item Firms simultaneously post initial prices $p^{T1}_j$
         \item Consumer observes all offers
     \end{itemize}
@@ -350,12 +362,12 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
     \item \textbf{Consumer decision:}
     \begin{itemize}
         \item With probability $1-\lambda$: accepts one of the initial offers
-        \item With probability $\lambda$: requests external offer from random firm
+        \item With probability $\lambda$: requests a revised offer from a randomly chosen firms
     \end{itemize}
     
     \vspace{0.3cm}
     
-    \item \textbf{Stage 2 (External offers):}
+    \item \textbf{Stage 2 (Revised offers):}
     \begin{itemize}
         \item Selected firm observes all initial offers $p^{T1}$
         \item Can update its offer: $p^{T2}_j(c_j, p^{T1}) = \min(p^{T1}_j, p^*)$
@@ -376,10 +388,6 @@ $$p^{T2}_j(c_j, p^{T1}) = \min(p^{T1}_j, p^*)$$
 
 where
 $$p^* = \arg\max_{p_j} (p_j - c_j) D_j(p_j, p^{T1}_{-j})$$
-
-\vspace{0.5cm}
-
-\textbf{Key insight:} Firm can only lower its price (or keep it unchanged)
 
 \vspace{0.3cm}
 After observing competitors, firm best-responds to known prices rather than expected prices
@@ -423,6 +431,8 @@ $$p^{T1}_j(c_j) = \arg\max_{p_j} \int \pi^{T1}_j(p_j, p^{T1}_{-j}(c_{-j}), c_j) 
 
 \vspace{0.3cm}
 Trade-off: higher initial price (if accepted) vs. competitive position if search occurs
+
+\textcolor{red}{How to compute equilibrium?}
 \end{frame}
 
 
@@ -435,7 +445,14 @@ Trade-off: higher initial price (if accepted) vs. competitive position if search
 \end{figure}
 \end{frame}
 
-
+\begin{frame}{Extensions}
+Possible extensions
+\begin{itemize}
+    \item To add search costs
+    \item Allow for more than one search 
+    \item Model prediction precision 
+\end{itemize}
+\end{frame}
 
 \begin{frame}{Initial prices}\label{slide:fig_offer_certificate}    
 \begin{figure}[H]

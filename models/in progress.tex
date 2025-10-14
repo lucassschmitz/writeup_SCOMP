@@ -1,0 +1,219 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\usepackage{hyperref}
+
+\setcounter{MaxMatrixCols}{10}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+
+
+Take the case a buyer and perfect information. 
+
+Firms are indexed by $j=1,...,J$. Each firm has a cost $c_j$ to sell to the consumer. 
+
+Denote by $P^O = (p_j^O)_{j=1}^J$ the equilibrium prices of the one stage game, a standard Nash Bertrand. Consumer demand $D_j(p)$ depends on the vector of prices $p$. 
+
+The one stage equilibrium satisfies 
+\begin{align}\label{eq:1}
+    p_j^O = \arg \max_{p_j} (p_j - c_j) D_j(p_j, p_{-j}^O)
+\end{align}
+hence 
+\begin{align}\label{eq:2}
+    D_j(p_j^O, p_{-j}^O) (p_j^O - c_j) \geq D_j(p_j, p_{-j}^O) (p_j - c_j) \quad \forall p_j
+\end{align}
+
+\vspace{1cm}
+
+Now suppose that after playing the Nash Bertrand game, with probability $\lambda$ the consumer requests an external offer from one of the firms. Only shoppers request an external offer. Denote by $D_j^s(p)$ the demand of shoppers and by $D_j^{ns}(p)$ the demand of non-shoppers, hence $D_j(p) = (1-\lambda) D_j^{ns}(p) + \lambda D_j^s(p)$.
+Moreove denote by $P^{T1} = (p_j^{T1})_{j=1}^J$ the prices set in the first stage of the two stage game and by $P^{T2} = (p_j^{T2})_{j=1}^J$ the prices set in the second stage of the two stage game, the revised prices. 
+
+\subsection{Case when $D_j^{ns}(p) = D_j^s(p)$}
+
+
+Conjecture: $p_j^{T1} =p_j^{T2} = p_j^O$ 
+
+Note that the second stage price satisfies: 
+\begin{align}\label{eq:3}
+    p_j^{T2} = \arg \max_{p_j \leq p_j^{T1}} (p_j - c_j) D_j^s(p_j, p_{-j}^{T1})
+\end{align}
+note that the price is constrained and also the firm learns that the buyer is a shopper. Assuming that $p^{T1} = p^O$ and given that the demand for shoppers and non shoppers is the same then: 
+\begin{align}
+    p_j^{T2} = \arg \max_{p_j \leq p_j^{O}} (p_j - c_j) D_j(p_j, p_{-j}^{O})
+\end{align}
+
+and from \ref{eq:2} we have that $p_j^O$ solves the unconstrained maximization problem, hence $p_j^O$ is also the solution of the constrained maximization problem. Note that the restriction is not binding. 
+
+Then second stage profits are: 
+\begin{align}
+  \pi_j^{T2}(p^{T1}) =  \frac{1}{J} \left( (p_j^{T2}(p^{T1}) - c_j) D_j(p_j^{T2}(p^{T1}), p_{-j}^{T1})    + \sum_{j'\neq j}  (p_j^{T1} - c_j) D_j(p_{-j'}^{T1}, p_{ j'}^{T2}(p^{T1}))  \right)
+\end{align}
+Then the profits of the firm in the two stage game are:
+
+
+
+\begin{align}\label{eq:4}
+    \pi_j^{T1}(p^{T1}) = (1-\lambda) & (p_j^{T1} - c_j) D_j^{ns}(p^{T1}) \notag \\
+    & + \lambda \frac{1}{J} \left( (p_j^{T2}(p^{T1}) - c_j) D_j(p_j^{T2}(p^{T1}), p_{-j}^{T1}) \right) \notag \\ 
+    & + \lambda \frac{1}{J} \left(  \sum_{j'\neq j}  (p_j^{T1} - c_j) D_j(p_{-j'}^{T1}, p_{ j'}^{T2}(p^{T1}))  \right)
+\end{align}
+
+Then the FOC is: 
+
+\begin{align}
+    &(1-\lambda) \left( D_j^{ns}(p^{T1}) + (p_j^{T1} - c_j) \frac{\partial D_j^{ns}(p^{T1})}{\partial p_j^{T1}} \right) \notag  \\ 
+    & + \lambda \frac{1}{J}\,\frac{\partial p_j^{T2}(p^{T1})}{\partial p_j^{T1}}\,
+    \Bigg[ D_j\!\big(p_j^{T2}(p^{T1}),\, p_{-j}^{T1}\big)
+    + \big(p_j^{T2}(p^{T1}) - c_j\big)\,
+    \frac{\partial D_j\!\big(p_j^{T2}(p^{T1}),\, p_{-j}^{T1}\big)}{\partial p_j^{T2}} \Bigg]. \notag \\
+    & + \lambda \frac{1}{J} \sum_{j'\neq j} \left(D_j(\cdot) + (p_j^{T1} - c_j) \left[ \frac{\partial D_j(\cdot)}{\partial p_j^{T1}} + \frac{\partial D_j(\cdot)}{\partial p_{j'}^{T2}} \frac{\partial p_{j'}^{T2}(p^{T1})}{\partial p_j^{T1}}\right]\right)  
+\end{align}
+
+Where the first line is the standard effect of raising prices in a Nash-Bertrand, the second line represents the effect of loosening the contraint that the second stage prices have to be lower than the first stage prices, and the third line is the effect of raising the prices in the first stage on the prices of the competitors. 
+
+Note that by since both groups have the same demand and $p_j^O$ is optimal, then the first line evaluated at $p^{T1} = p^O$ is equal to zero. 
+Morover, given that $p_j^O$  is also optimal in the second stage then the whole term in the square brackets in the second line is also equal to zero. Then we have to determine whether the following expression is equal to zero: 
+
+
+\begin{align}
+    \lambda \frac{1}{J} \sum_{j'\neq j} \left(D_j(\cdot) + (p_j^{T1} - c_j) \left[ \frac{\partial D_j(\cdot)}{\partial p_j^{T1}} + \frac{\partial D_j(\cdot)}{\partial p_{j'}^{T2}} \frac{\partial p_{j'}^{T2}(p^{T1})}{\partial p_j^{T1}}\right]\right)  
+\end{align}
+
+given that our conjecture was that $p^{T1} = p^O$ and $p^{T2} = p^O$. Then we have that: 
+
+\begin{align*}
+    D_j(\cdot) + (p_j^{T1} - c_j) \left[ \frac{\partial D_j(\cdot)}{\partial p_j^{T1}} + \frac{\partial D_j(\cdot)}{\partial p_{j'}^{T2}} \frac{\partial p_{j'}^{T2}(p^{T1})}{\partial p_j^{T1}}\right]  = 
+    (p_j^{T1} - c_j) \left[ \frac{\partial D_j(\cdot)}{\partial p_{j'}^{T2}} \frac{\partial p_{j'}^{T2}(p^{T1})}{\partial p_j^{T1}}\right] 
+\end{align*}
+
+assuming that prices are strategic complements (e.g. logit demand) then this term is positive. 
+
+
+\textbf{Price increases}
+In this section we analyze whether the model can generate a price  decrease $p_j^{T1} > p_j^{T2}$. To facilitate the analysis, we will study the unconstrained second stage problem
+
+
+The FOC of the second stage is: 
+\begin{align}
+    D_j^s(p_j^{T2}, p_{-j}^{T1}) + (p_j^{T2} - c_j) \frac{\partial D_j^s(p_j^{T2}, p_{-j}^{T1})}{\partial p_j^{T2}} = 0 
+\end{align}
+and the FOC of the first stage is: 
+\begin{align}\label{eq:10}
+  &(1-\lambda) \left( D_j^{ns}(p^{T1}) + (p_j^{T1} - c_j) \frac{\partial D_j^{ns}(p^{T1})}{\partial p_j^{T1}} \right) \notag  \\ 
+    & + \lambda \frac{1}{J}\,\frac{\partial p_j^{T2}(p^{T1})}{\partial p_j^{T1}}\,
+    \Bigg[ D_j\!\big(p_j^{T2}(p^{T1}),\, p_{-j}^{T1}\big)
+    + \big(p_j^{T2}(p^{T1}) - c_j\big)\,
+    \frac{\partial D_j\!\big(p_j^{T2}(p^{T1}),\, p_{-j}^{T1}\big)}{\partial p_j^{T2}} \Bigg]. \notag \\
+    & + \lambda \frac{1}{J} \sum_{j'\neq j} \left(D_j(\cdot) + (p_j^{T1} - c_j) \left[ \frac{\partial D_j(\cdot)}{\partial p_j^{T1}} + \frac{\partial D_j(\cdot)}{\partial p_{j'}^{T2}} \frac{\partial p_{j'}^{T2}(p^{T1})}{\partial p_j^{T1}}\right]\right)  
+\end{align}
+evaluating equation \ref{eq:10} at $p^{T1} = p^{T2}$ we have that the first and second rows are zero, hence: 
+
+
+
+\begin{align}\label{eq:11}
+    \sum_{j'\neq j} \left(
+    \underbrace{D_j(\cdot) + (p_j^{T1} - c_j)\frac{\partial D_j(\cdot)}{\partial p_j^{T1}}}_{=0} +
+    (p_j^{T1} - c_j) \frac{\partial D_j(\cdot)}{\partial p_{j'}^{T2}} \frac{\partial p_{j'}^{T2}(p^{T1})}{\partial p_j^{T1}}\right)  
+    = 
+    \sum_{j'\neq j} (p_j^{T1} - c_j) \frac{\partial D_j(\cdot)}{\partial p_{j'}^{T2}} \frac{\partial p_{j'}^{T2}(p^{T1})}{\partial p_j^{T1}}  
+\end{align}
+
+assuming prices are strategic complements then this term is positive meaning that $p_j^{T1} >   p_j^{T2}$.
+Hence, prices are lowered for shoppers but it is not because shoppers are more price sensitive, but rather because increasing initial prices has an effect on price updating by the competitors. Whereas when setting revised prcies this effect is not longer present. 
+
+
+
+
+\vspace{3cm}
+ 
+
+
+
+
+
+\textcolor{red}{In this model the one stage prices are not an equilibrium of the two stage game. The reason is that the firm has the incentive to increase the initial price to increase the prices of the other firm in the second stage. }
+ 
+ 
+
+
+
+
+
+\vspace{3cm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage 
+
+\subsection{Two stage game:  with external offers}
+
+
+\begin{align}\label{eq:asking_j} %eq 12
+    \pi_j^{(j)}(p^{T1}, c_j) =   (p_j^{T2}(c_j, p^{T1}) - c_j) D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) 
+\end{align}
+
+And the profits of firm $j$ if the buyer requests an external offer from firm $j'$ are: 
+
+\begin{align}\label{eq:asking_j'} %eq 13
+    \pi_j^{(j')}(p^{T1}, c_j, c_{j'}) = (p_j^{T1} - c_j) D_j(p_{-j'}^{T1}, p_{ j'}^{T2}(c_{j'}, p^{T1})) 
+\end{align}
+
+Then, the expected profits of firm $j$ in the case the consumer requests an external offer are: 
+
+\begin{align}\label{eq:profits_external2} %eq 6
+    \pi_j^{T2}(p^{T1}, c_j, c_{-j}) =  \frac{1}{J} \left( \pi_j^{(j)}(p^{T1}, c_j)   + \sum_{j'\neq j} \pi_j^{(j')}(p^{T1}, c_j, c_{j'}) \right)
+\end{align}
+
+note that the costs of the competitors ($c_{-j}$) enter into the profits since they affect the way the competitors update their prices in case they are asked to update their prices.
+
+Then, given strategies  $p_j^{T2}(c_j, p^{T1})$ we can calculate the expected profits given a prices set in the first stage and teh costs: 
+\begin{align} % eq 12 
+    \pi_j^{T1}(p^{T1}, c_j, c_{-j}) = (1-\lambda) \pi_j^O(p^{T1}, c_j) + \lambda \pi_j^{T2}(p^{T1}, c_j, c_{-j})
+\end{align}
+
+Finally, given that the costs of the rivals are not known, the equilibrium prices set in the first stage have to solve: 
+
+\end{document}

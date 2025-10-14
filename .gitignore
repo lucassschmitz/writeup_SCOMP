@@ -2,3 +2,4 @@
 *.bcf
 *.out
 *.run.xml
+*.synctex.gz

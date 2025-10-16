@@ -5,7 +5,7 @@
 
 
 % Add this line to your preamble
-\setbeameroption{show notes on second screen=right}
+%\setbeameroption{show notes on second screen=right}
 
 %\usetheme{Singapore} %Boadilla, Madrid, default, etc. 
 \usetheme[progressbar=frametitle]{metropolis}
@@ -68,7 +68,7 @@
 ]{biblatex}
 \addbibresource{../references.bib}
 
-\title{Equiilibrium effects of price updating: evidence from a centralized marketplace for annuities}
+\title{Equilibrium effects of price updating: evidence from a centralized marketplace for annuities}
 %\subtitle{A Mini Literature Overview}
 
 \author{%
@@ -93,25 +93,37 @@
 
  %%%%%%%%% Slide 2  %%%%%%%%%%%%%
 
-\begin{frame}{Motivation} 
+\begin{frame}{Motivation}\label{slide:motivation}
 \begin{itemize}
     \item  In several markets consumers receive initial offers, then they can request revised offers. Examples: 
     \begin{itemize}
-        \item Loans: consumers get a loan estimate (LE) and showing a LE to another lender could lead to a revised offer. [\href{https://chatgpt.com/share/68eaf593-1518-800d-b874-1fba1adbe177}{1}]
-        \item Auto dealerships: buyers can shop around and dealers are willing to revise their initial offers [\href{https://chatgpt.com/share/68eaf593-1518-800d-b874-1fba1adbe177}{2}]
+        \item Loans: consumers get a loan estimate (LE) and showing a LE to another lender could lead to a revised offer. \hyperlink{slide:fig_LE}{\beamerbutton{Loan Estimate}} %[\href{https://chatgpt.com/share/68eaf593-1518-800d-b874-1fba1adbe177}{1}]
+        \item Auto dealerships: buyers can shop around and dealers are willing to revise their initial offers %[\href{https://chatgpt.com/share/68eaf593-1518-800d-b874-1fba1adbe177}{2}]
     \end{itemize}
 
-    \item What are the impacts of allowing consumers to request revised offers?
-    \item Economic forces at play: 
+    \item What is  the welfare impact of allowing consumers to request revised offers?
+    \item Effects of prohibiting revised offers: 
+    
     \begin{itemize}
-        \item Learning: firms learn competitors' prices and can best respond.
-        \item Discrimination: if search cost are correlated with preferences. [not today] 
+        \item Direct impact: buyer can no longer improve initial offer. 
+        \item Indirect effect: buyers improve their initial offers 
     \end{itemize}
+
+    %Economic forces at play: 
+    %\begin{itemize}
+    %    \item Learning: firms learn competitors' prices and can best respond.
+    %  \item Discrimination: if search cost are correlated with preferences. [not today] 
+    %\end{itemize}
+    \note{Mention that only firms who made an initial offer can revise their offers. }
+    
 \end{itemize}
+
 \note{
     \begin{itemize}
         \item I am going to study the effects of being able to request revised offers in a centralized marketplace for annuities in Chile.  
     \end{itemize}}
+
+
 \end{frame}
 
 %%%%%%%%% Slide 3 %%%%%%%%%%%%%
@@ -125,7 +137,7 @@
         \item After: consumers can only accept/reject initial offers.
         \item Rationale for elimination: "firms will not make their best efforts in the initial phase"
     \end{itemize}
-    \item Also provides evidence on assymmetries in infomration precision in selection markets. 
+    %\item Also provides evidence on asymmetries in information precision in selection markets. 
 \end{itemize}
 \end{frame}
 
@@ -179,6 +191,7 @@
         \item Explicitly not link the annuities market with pensions because generates confusion
         \item Explain what annuities are. 
         \item Mention that $x_i$ is not firm specific. Firms observe the same covariates.
+        \item Explain that the risk rating is a measure of the bankruptcy risk of the firm, I am assuming that only affects demand.
     \end{itemize}}
 \end{frame}
 
@@ -186,7 +199,7 @@
 
 \begin{frame}{SCOMP Process}\label{slide:setting2}
 \begin{center}
-\input{../figures/tikz/SCOMP_diagram_v2.tex}
+\input{../figures/tikz/SCOMP_diagram_v3.tex}
 \end{center}
 \begin{itemize}
     \item \hyperlink{slide:fig_offer_certificate}{\beamerbutton{Offer Certificate}}
@@ -194,10 +207,10 @@
 \note{
 Explain that: 
 \begin{itemize}
-    \item Mention that external offers are called this way because they are external to the system, moreover they are less regulated
+    \item Mention that revise  offers are less regulated
     \item An exception to less regulation is that they can not be lower than initial offers. 
-    \item only initial bidders can make an external offer 
-    %\item We do not observe requests only the external offers. 
+    \item only initial bidders can make revised offers 
+    \item We do not observe requests only the revised offers. 
     \item When requesting revised offers, firms learn competitors' initial offers.
 \end{itemize}
 }
@@ -209,9 +222,9 @@ Explain that:
 \begin{itemize}
     \item SCOMP data at the individual level  
     \begin{itemize}
-        \item Posted and revised prices, consumer acceptance. \textbf{Not} requests 
+        \item Posted and revised offers, consumer acceptance. \textbf{Not} requests 
         \item Total savings 
-        \item Demographics: age and gender \hyperlink{slide:fig_offer_certificate}{\beamerbutton{Certificate with initial prices}}
+        \item Demographics: age and gender \hyperlink{slide:fig_offer_certificate}{\beamerbutton{Certificate with initial offers}}
     \end{itemize}
      \item Retirement insurance companies: risk ratings
 \end{itemize}
@@ -224,7 +237,7 @@ Particularities of the data/setting:
 \textcolor{red}{[best way of leveraging this particularities?]}
 \note{
     \begin{itemize}
-        \item I observe only the external offers made not the requested ones. 
+        \item I observe only the revised offers made not the requested ones. 
 
     \end{itemize}
 }
@@ -238,27 +251,29 @@ Particularities of the data/setting:
  
 
 \begin{frame}{Descriptive Evidence}\label{slide:Descriptive_evidence}
-\begin{itemize}
-    \item Most buyers request external offers and the improvement is sizeable. \hyperlink{slide:fig1}{\beamerbutton{External offers}} 
+
+\begin{enumerate}
+    \item Most buyers request revised offers and the improvement is sizeable. \hyperlink{slide:fig1}{\beamerbutton{Revised offers}} 
     \item Products are differentiated \hyperlink{slide:fig2}{\beamerbutton{Foregone value}} 
     \item Selection into companies \hyperlink{slide:fig3}{\beamerbutton{Heterogeneity in algorithm precision}}
     \item Firms learn about other firms' prices  \hyperlink{slide:fig4}{\beamerbutton{Learning}} 
-\end{itemize}
+\end{enumerate}
 \end{frame}
 
 %%%%
 
-\begin{frame}\frametitle{Prevalence of external offers}\label{slide:fig1}
+\begin{frame}\frametitle{Prevalence of revisions}\label{slide:fig1}
 \begin{figure}
     \centering
-    \includegraphics[width=0.49\textwidth]{../figures/IE3_dist_external_offers.png}
+    \includegraphics[width=0.49\textwidth]{../figures/IE3/IE3_dist_external_offers.png}
     \hfill 
-    \includegraphics[width=0.49\textwidth]{../figures/IE3_offer_improvement_histogram.png}
+    \includegraphics[width=0.49\textwidth]{../figures/IE3/IE3_offer_improvement_histogram.png}
 \end{figure}
 
 \begin{itemize}
-    \item   75\% of the purchases are through external offers. 
+    \item   75\% of the purchases are through revised offers. 
      \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}   
+    \item Not everyone requests revised offers $\rightarrow$ search costs. 
 \end{itemize}
 
 \note{
@@ -281,7 +296,7 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 %\caption{}
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=0.25]{../figures/IE3_foregone_hist.png}
+\includegraphics[scale=0.25]{../figures/IE3/IE3_foregone_hist.png}
 \end{tabular}
 \end{figure}
 \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
@@ -295,11 +310,22 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 %\caption{}
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=0.264]{../figures/IE6/IE6_survival_year_all.png}
+\includegraphics[scale=0.2964]{../figures/IE6/IE6_survival_year_all.png}
 \end{tabular}
 \end{figure}
 \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
 \end{frame}
+
+\begin{frame}{Learning} 
+    If firms do not know competitors' prices one expects them to increase their offers more when the competitors' prices are higher. 
+    \begin{itemize}
+        \item $$ F_{ij}^R - F_{ij}^I = \beta_0 + \beta_1 \left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I\right) + \epsilon_{ij}$$
+        
+        \item $$ \mathbb{1} (F_{ij}^R  - F_{ij}^I)  = \alpha_0 + \alpha_1 \left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I\right) + \epsilon_{ij}$$
+    \end{itemize}
+    
+\end{frame}
+
 
 
 \begin{frame}{Learning}\label{slide:fig4}    
@@ -322,6 +348,8 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 \end{frame}
 
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model and Simulations}
 
@@ -329,9 +357,9 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 
 \begin{frame}{Learning Model: Overview}
 \begin{itemize}
-    \item \textbf{Goal:} Rationalize the increase in offers between initial and external offers
+    \item \textbf{Goal:} Rationalize the increase in offers between initial and revised offers
     
-    \item \textbf{Key mechanism:} Firms learn competitors' offers when consumer requests external offers
+    \item \textbf{Key mechanism:} Firms learn competitors' offers when consumer requests revised offers
     
 
 
@@ -379,7 +407,7 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 %%%%%
 
 \begin{frame}{Second Stage: Optimal Pricing with Learning}
-\textbf{When selected for external offer, firm observes competitors' initial prices}
+\textbf{When selected for revised offer, firm observes competitors' initial prices}
 
 \vspace{0.3cm}
 
@@ -400,7 +428,7 @@ After observing competitors, firm best-responds to known prices rather than expe
 
 \vspace{0.3cm}
 
-\textbf{1. Selected for external offer ($\frac{1}{J}$ probability):}
+\textbf{1. Selected for revised offer ($\frac{1}{J}$ probability):}
 $$\pi^{(j)}_j(p^{T1}, c_j) = (p^{T2}_j(c_j, p^{T1}) - c_j) D_j(p^{T2}_j(c_j, p^{T1}), p^{T1}_{-j})$$
 
 \vspace{0.3cm}
@@ -454,17 +482,33 @@ Possible extensions
 \end{itemize}
 \end{frame}
 
+
+\section{Appendix}
+
+
+\begin{frame}{Loan estimate}\label{slide:fig_LE}    
+\begin{figure}[H]
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.42]{../figures/docs_screenshots/Loan Estimate_cut.png}
+\end{tabular}
+\end{figure}
+\hyperlink{slide:motivation}{\beamerbutton{Go back: Motivation}}
+\end{frame}
+
+
+
+
+
 \begin{frame}{Initial prices}\label{slide:fig_offer_certificate}    
 \begin{figure}[H]
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=0.49]{../figures/annuity_offer.png}
+\includegraphics[scale=0.49]{../figures/docs_screenshots/annuity_offer.png}
 \end{tabular}
 \end{figure}
 \hyperlink{slide:setting2}{\beamerbutton{Go back: Diagram}} 
 \hyperlink{slide:data}{\beamerbutton{Go back: Data}}
 \end{frame}
-
-
 
 \end{document}

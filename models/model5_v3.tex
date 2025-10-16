@@ -112,9 +112,18 @@ Then, the expected profits of firm $j$ in the case the consumer requests an exte
 note that the costs of the competitors ($c_{-j}$) enter into the profits since they affect the way the competitors update their prices in case they are asked to update their prices.
 
 Then, given strategies  $p_j^{T2}(c_j, p^{T1})$ we can calculate the expected profits given a prices set in the first stage and teh costs: 
-\begin{align} % eq 7 
+\begin{align}\label{eq:7} % eq 7 
     \pi_j^{T1}(p^{T1}, c_j, c_{-j}) = (1-\lambda) \pi_j^O(p^{T1}, c_j) + \lambda \pi_j^{T2}(p^{T1}, c_j, c_{-j})
 \end{align}
+
+
+The FOC of equation \ref{eq:7} with respect to $p_j^{T1}$ is:
+\begin{align}
+    \frac{\partial \pi_j^{T1}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} &= (1-\lambda) \frac{\partial \pi_j^O(p^{T1}, c_j)}{\partial p_j^{T1}} + \lambda \frac{\partial \pi_j^{T2}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} \notag \\
+    &= (1-\lambda) \left( \int D_j(p_j^{T1}, p_{-j}^{T1}) dF(c_{-j} \mid c_j) - \alpha (p_j^{T1} - c_j) \int D_j(p_j^{T1}, p_{-j}^{T1}) [1-D_j(p_j^{T1}, p_{-j}^{T1})] dF(c_{-j} \mid c_j) \right) + \lambda \frac{\partial \pi_j^{T2}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} \notag \\
+    &= 0  
+\end{align}
+
 
 Finally, given that the costs of the rivals are not known, the equilibrium prices set in the first stage have to solve: 
 

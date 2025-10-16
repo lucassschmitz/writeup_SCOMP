@@ -64,16 +64,65 @@ The FOC is:
 \end{align}
 
 
-Define $ \pi(p_j, p_{-j}, c_j) = (p_j - c_j) D_j(p_j, p_{-j})$ the profits of firm $j$ given prices and costs. 
+Define $ \pi(p_j, p_{-j}, c_j) = (p_j - c_j) D_j(p_j, p_{-j})$ the profits of firm $j$ given prices and costs. Then the FOC is: 
 
+\begin{align} % eq 1b
+    \int \frac{\partial \pi(p_j, p_{-j}(c_{-j}), c_j) }{\partial p_j} dF(c_{-j}) = 0  
+\end{align}
 Assume that $\pi(p_j, p_{-j}, c_j)$ is concave in $p_j$\footnote{Standard assumption, required for the FOC to provide the optimal price.}
-then we have that 
 
+\textcolor{red}{there has to be a result that says that increasing the uncertainty over other firm costs increases or decreses the price.}
+
+
+
+
+\vspace{3cm}
 
 
 \subsection{Example: logit demand}
-With logit demand we have that
+With logit demand we have that profits are given by: 
+\begin{align}
+    \pi(p_j, p_{-j}, c_j) = (p_j - c_j) \frac{e^{v_j - p_j}}{1 + \sum_{k} e^{v_k - p_k}}
+\end{align}
+and the FOC is: 
+\begin{align}
+    D_j(p_j, p_{-j}) + (p_j - c_j) \frac{\partial D_j(p_j, p_{-j})}{\partial p_j} = 0
+\end{align}
+since $\frac{\partial D_j(p_j, p_{-j})}{\partial p_j} = - D_j(p_j, p_{-j}) (1 - D_j(p_j, p_{-j}))$ we have that:
+\begin{align}\label{eq:2.3}
+    D_j(p_j, p_{-j}) - (p_j - c_j) D_j(p_j, p_{-j}) (1 - D_j(p_j, p_{-j})) = 0
+\end{align}
 
-\vspace{3cm}
+\textbf{Without uncertainty}
+without uncertainty, using equation \ref{eq:2.3} we have that:
+
+\begin{align}\label{eq:2.4}
+    1 - (p_j - c_j)  (1 - D_j(p_j, p_{-j})) = 0 \implies p_j(c_j) = c_j + \frac{1}{1 - D_j(p_j, p_{-j})}
+\end{align}
+
+\textbf{With uncertainty}
+With uncertainty, using equation \ref{eq:2.3} we have that:
+\begin{align}\label{eq:2.5}
+    \int \left[ 1 - (p_j - c_j)  (1 - D_j(p_j, p_{-j}(c_{-j}))) \right] D_j(p_j, p_{-j}(c_{-j})) dF(c_{-j}) = 0
+\end{align}
+
+
+\begin{align} 
+    \mathbb{E}\int \left[ 1 - (p_j - c_j)  (1 - D_j(p_j, p_{-j}(c_{-j}))) \right] D_j(p_j, p_{-j}(c_{-j})) dF(c_{-j}) = 0
+\end{align}
+
+\textbf{Symmetric case}
+
+To simplify the proof let's consider the symmetric duopoly.  
+
+Assume that a mean preserving spread of the cost distribution $F$ leads to a higher expected price. 
+Then, given that the 
+
+\newpage
+
+The previous cases where too complicated because we want to determine the effect of a mean preserving speread of the distribution of costs on the prices, but is not clear what is the effect of the mean preserving spread on the distribution of rival prices which is what enters directly the profits of the firm. 
+
+
+
 
 \end{document}

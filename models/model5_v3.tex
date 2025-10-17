@@ -119,10 +119,60 @@ Then, given strategies  $p_j^{T2}(c_j, p^{T1})$ we can calculate the expected pr
 
 The FOC of equation \ref{eq:7} with respect to $p_j^{T1}$ is:
 \begin{align}
-    \frac{\partial \pi_j^{T1}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} &= (1-\lambda) \frac{\partial \pi_j^O(p^{T1}, c_j)}{\partial p_j^{T1}} + \lambda \frac{\partial \pi_j^{T2}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} \notag \\
-    &= (1-\lambda) \left( \int D_j(p_j^{T1}, p_{-j}^{T1}) dF(c_{-j} \mid c_j) - \alpha (p_j^{T1} - c_j) \int D_j(p_j^{T1}, p_{-j}^{T1}) [1-D_j(p_j^{T1}, p_{-j}^{T1})] dF(c_{-j} \mid c_j) \right) + \lambda \frac{\partial \pi_j^{T2}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} \notag \\
-    &= 0  
+    \frac{\partial \pi_j^{T1}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} &= (1-\lambda) \frac{\partial \pi_j^O(p^{T1}, c_j)}{\partial p_j^{T1}} + \lambda \frac{\partial \pi_j^{T2}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} = 0   
 \end{align}
+
+
+Define $g(p_j, p_{-j}) =  D_j + (p_j - c_j) \frac{\partial D_j}{\partial p_j}$, then we have $     \frac{\partial \pi_j^{O}}{\partial p_j} =  g(p_j, p_{-j}) $. 
+
+Moreover,
+
+\begin{align}\label{eq:asking_j} %eq 4
+    \frac{\partial \pi_j^{(j)}(p^{T1}, c_j) }{\partial p_j^{T1} } 
+    %&=       \frac{\partial p_j^{T2}(c_j, p^{T1})}{\partial  p_j^{T1} }D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) + (p_j^{T2}(c_j, p^{T1}) - c_j) \left[  \frac{\partial D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) }{\partial p_j^{T2} }      \frac{\partial p_j^{T2}}{\partial p_j^{T1} }\right] \notag \\
+    %& = \frac{\partial p_j^{T2}}{\partial p_j^{T1} } \left(D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) + (p_j^{T2}(c_j, p^{T1}) - c_j)  \frac{\partial D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) }{\partial p_j^{T2} } \right) \notag \\ 
+    & = \frac{\partial p_j^{T2}}{\partial p_j^{T1} } g(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) =
+    \begin{cases}
+    g\!\left(p_j^{T1},\,p_{-j}^{T1}\right), & \text{if } p_j^{T1} < p^*(c_j, p_{-j}^{T1}),\\
+    0, & \text{if } p_j^{T1} \ge p^*(c_j, p_{-j}^{T1}).
+    \end{cases} 
+\end{align}
+And we also have 
+
+
+
+\begin{align}
+    \frac{\partial \pi_j^{(j')}(p^{T1}, c_j, c_{j'})}{\partial p_j^{T1}} =
+    D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) + (p_j^{T1} - c_j)
+    \left[     \frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_j^{T1}} +
+    \frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_{ j'}^{T2} } 
+    \frac{\partial p_{ j'}^{T2}}{\partial p_j^{T1}} \right]
+\end{align}
+
+Putting everything together we have: 
+
+
+
+
+\begin{align}
+    \frac{\partial \pi_j^{T1}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} &= (1-\lambda) g(p_j^{T1}, p_{-j}^{T1})+ \frac{\lambda}{J}\left(
+    \underbrace{\frac{\partial p_j^{T2}}{\partial p_j^{T1} } g(p_j^{T2}, p_{-j}^{T1}) }_{\text{Option value}}
+    + \notag \\
+    & \sum_{j' \ne j} 
+    D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) + (p_j^{T1} - c_j)
+    \left[     \frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_j^{T1}} +
+    \underbrace{\frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_{ j'}^{T2} } 
+    \frac{\partial p_{ j'}^{T2}}{\partial p_j^{T1}}}_{\text{Strategic complementarity}}
+     \right]
+    \right)  = 0   
+\end{align}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\vspace{2cm}
 
 
 Finally, given that the costs of the rivals are not known, the equilibrium prices set in the first stage have to solve: 
@@ -143,8 +193,7 @@ and
 where note that $\pi_j^{T1}$ is also a function of $p_j^{T2}$. 
 
 
-
-
+\newpage 
  
 \section{Simulation}
 The parameters to do this are: 

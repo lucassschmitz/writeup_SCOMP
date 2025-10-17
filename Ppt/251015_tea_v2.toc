@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Setting and Data}{5}{0}{1}
+\beamer@sectionintoc {2}{Empirical Evidence}{9}{0}{2}
+\beamer@sectionintoc {3}{Model and Simulations}{18}{0}{3}
+\beamer@sectionintoc {4}{Appendix}{27}{0}{4}

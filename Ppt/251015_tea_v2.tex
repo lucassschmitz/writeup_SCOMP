@@ -142,7 +142,6 @@
 \end{frame}
 
  %%%%%%%%% Slide 4 %%%%%%%%%%%%%
-
 \begin{frame}{Literature}
 \begin{itemize}
     \item Search in selection markets: \textcite{allen_search_2019} %larsen_efficiency_2021
@@ -196,7 +195,6 @@
 \end{frame}
 
 %%%%%%%%% Slide 7 %%%%%%%%%%%%%
-
 \begin{frame}{SCOMP Process}\label{slide:setting2}
 \begin{center}
 \input{../figures/tikz/SCOMP_diagram_v3.tex}
@@ -217,7 +215,6 @@ Explain that:
 \end{frame}
 
 %%%%%%%%% Slide 8 
-
 \begin{frame}{Data} \label{slide:data}
 \begin{itemize}
     \item SCOMP data at the individual level  
@@ -249,7 +246,7 @@ Particularities of the data/setting:
 
 \section{Empirical Evidence}
  
-
+%%%%%%%%% Slide 10
 \begin{frame}{Descriptive Evidence}\label{slide:Descriptive_evidence}
 
 \begin{enumerate}
@@ -260,8 +257,7 @@ Particularities of the data/setting:
 \end{enumerate}
 \end{frame}
 
-%%%%
-
+%%%%%%%%% Slide 11
 \begin{frame}\frametitle{Prevalence of revisions}\label{slide:fig1}
 \begin{figure}
     \centering
@@ -288,8 +284,7 @@ In a model where search costs are not correlated with valuations, the aftermarke
 }
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%% Slide 12 %%%%%%%%%%%%%
 \begin{frame}{Differentiation}\label{slide:fig2}    
 Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly wages.
 \begin{figure}[H]
@@ -301,6 +296,16 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 \end{figure}
 \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
 \end{frame}
+
+
+\begin{frame}{Algorithm precision} 
+    \begin{itemize}
+        \item If firms have different algorithms precision, e.g. the real type is $\theta_i$ and firm $j$ observes a signal $\hat{\theta}_{ij} \sim N(\theta_i, \sigma_j^2)$  
+
+        \item [Work on this slide ]
+    \end{itemize}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -316,32 +321,36 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
 \end{frame}
 
+%%%%%%%%% Slide 14 
+
 \begin{frame}{Learning} 
     If firms do not know competitors' prices one expects them to increase their offers more when the competitors' prices are higher. 
     \begin{itemize}
-        \item $$ F_{ij}^R - F_{ij}^I = \beta_0 + \beta_1 \left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I\right) + \epsilon_{ij}$$
-        
-        \item $$ \mathbb{1} (F_{ij}^R  - F_{ij}^I)  = \alpha_0 + \alpha_1 \left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I\right) + \epsilon_{ij}$$
+        \item $$ F_{ij}^R - F_{ij}^I = \beta_0 + \beta_1 \text{Avg. gap}_{ij} + \beta_2 \text{Max. gap}_{ij} + \epsilon_{ij}$$
+
+        \item $$ 1(F_{ij}^R  - F_{ij}^I)  = \alpha_0 + \alpha_1 \text{Avg. gap}_{ij} + \alpha_2 \text{Max. gap}_{ij} + \epsilon_{ij}$$
     \end{itemize}
+    where  $$ \text{Avg. gap }_{ij} = \left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I - F_{ij}^I\right) \quad \text{Max. gap } = \left(\max_{k \neq j} F_{ik}^I - F_{ij}^I\right)$$
     
 \end{frame}
 
 
-
-\begin{frame}{Learning}\label{slide:fig4}    
+%%%%%%%%% Slide 15
+\begin{frame}{Learning(1)}\label{slide:fig4}    
 \scalebox{0.8}{
     \input{../Tables/IE7/IE7_learning_regressions.tex}
 }
+
 \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
 \end{frame}
 
-
-\begin{frame}{Learning(1)}\label{slide:fig5}
+%%%%%%%%% Slide 16
+\begin{frame}{Learning(2)}\label{slide:fig5}
   \begin{figure}[H]
 %\caption{}
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=0.39]{../figures/IE7/IE7_hist_bunching_max(2).png} 
+\includegraphics[scale=0.35]{../figures/IE7/IE7_hist_bunching_max(2).png} 
 \end{tabular}
 \end{figure}
 \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
@@ -376,9 +385,10 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 
 %%%%%
 
-\begin{frame}{Two-Stage Game: Timeline}
+\begin{frame}{Two-Stage Game: Timeline}\label{slide:timeline}
 \begin{enumerate}
-    \item \textbf{Stage 1 (Initial offers):}
+    \item \textbf{Stage 1 (Initial offers):} \hyperlink{slide:connection}{\beamerbutton{Connection with setting}}
+
     \begin{itemize}
         \item Firms draw costs $c_j$ from distribution $F(c_j|c_{-j})$ they only observe their own cost.
         \item Firms simultaneously post initial prices $p^{T1}_j$
@@ -509,6 +519,24 @@ Possible extensions
 \end{figure}
 \hyperlink{slide:setting2}{\beamerbutton{Go back: Diagram}} 
 \hyperlink{slide:data}{\beamerbutton{Go back: Data}}
+\end{frame}
+
+
+\begin{frame}{Connection model with setting}\label{slide:connection}    
+\begin{itemize}
+    \item Firms cost: 
+    \begin{align*}
+        c_{ij} =  \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{1}{(1+r_j)^t}|x_i \right]
+    \end{align*}  
+    \item Firm prices: $p_j = S_i/F_{ij}$
+    \item Firm profits: 
+    \begin{align*}
+        \pi_{ij}(F) = (p_j - c_{ij}) D_{ij} = \frac{S}{4}
+    \end{align*}
+\end{itemize}
+
+\hyperlink{slide:timeline}{\beamerbutton{Go back: Timeline}}
+[STILL WORK ON THIS SLIDE]
 \end{frame}
 
 \end{document}

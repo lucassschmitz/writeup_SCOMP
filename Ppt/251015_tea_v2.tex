@@ -476,17 +476,36 @@ Trade-off: higher initial price (if accepted) vs. competitive position if search
 
 \begin{frame}{Strategic considerations}
 Define $g(p_j, p_{-j}) =  D_j + (p_j - c_j) \frac{\partial D_j}{\partial p_j}$
-\begin{align}
-    \frac{\partial \pi_j^{T1}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} &= (1-\lambda) g(p_j^{T1}, p_{-j}^{T1})+ \frac{\lambda}{J}\left(
-    \underbrace{\frac{\partial p_j^{T2}}{\partial p_j^{T1} } g(p_j^{T2}, p_{-j}^{T1}) }_{\text{Option value}}
-    + \notag \\
-    & \sum_{j' \ne j} 
-    D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) + (p_j^{T1} - c_j)
-    \left[     \frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_j^{T1}} +
-    \underbrace{\frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_{ j'}^{T2} } 
-    \frac{\partial p_{ j'}^{T2}}{\partial p_j^{T1}}}_{\text{Strategic complementarity}}
-     \right]     \right)  \notag   
-\end{align}
+
+\begin{align*}
+\frac{\partial \pi_j^{T1}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}}
+&= (1-\lambda) g(p_j^{T1}, p_{-j}^{T1})
++ \frac{\lambda}{J}\bigg(
+\underbrace{\frac{\partial p_j^{T2}}{\partial p_j^{T1}} g(p_j^{T2}, p_{-j}^{T1})}_{\text{Option value}}
+\\ &
++ \sum_{j' \ne j} \Big[
+D_j(p_{-j'}^{T1}, p_{j'}^{T2}) + (p_j^{T1} - c_j)
+\bigg( \frac{\partial D_j(p_{-j'}^{T1}, p_{j'}^{T2})}{\partial p_j^{T1}}
++ \underbrace{\frac{\partial D_j(p_{-j'}^{T1}, p_{j'}^{T2})}{\partial p_{j'}^{T2}}
+\frac{\partial p_{j'}^{T2}}{\partial p_j^{T1}}}_{\text{Strategic complementarity}}
+\bigg) \Big]
+\bigg)
+\end{align*}
+
+
+%\begin{align}
+    %\frac{\partial \pi_j^{T1}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}}
+    %&= (1-\lambda) g(p_j^{T1}, p_{-j}^{T1})
+    %+ \frac{\lambda}{J} \bigg(
+    %\underbrace{\frac{\partial p_j^{T2}}{\partial p_j^{T1}} g(p_j^{T2}, p_{-j}^{T1})}_{\text{Option value}}
+    %+ \notag \\
+    %& \sum_{j' \ne j} 
+    %D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) + (p_j^{T1} - c_j)
+    %\left[     \frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_j^{T1}} +
+    %\underbrace{\frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_{ j'}^{T2} } 
+    %\frac{\partial p_{ j'}^{T2}}{\partial p_j^{T1}}}_{\text{Strategic complementarity}}
+    % \right]  \bigg)  \notag   
+%\end{align}
 \end{frame}
 
 

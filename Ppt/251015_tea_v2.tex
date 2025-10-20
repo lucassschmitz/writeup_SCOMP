@@ -264,7 +264,7 @@ Particularities of the data/setting:
 \begin{frame}\frametitle{Revised offers: quantity and size}\label{slide:fig1}
 \begin{figure}
     \centering
-    \includegraphics[width=0.49\textwidth]{../figures/IE3/IE3_dist_external_offers.png}
+    \includegraphics[width=0.49\textwidth]{../figures/IE3/IE3_dist_external_offers(1).png}
     \hfill 
     \includegraphics[width=0.49\textwidth]{../figures/IE3/IE3_offer_improvement_histogram.png}
 \end{figure}
@@ -301,21 +301,26 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 \end{frame}
 
 
-%\begin{frame}{Algorithm precision} 
-%    \begin{itemize}
-%        \item If firms have different algorithms precision, e.g. the real type is $\theta_i$ and firm $j$ observes a signal $\hat{\theta}_{ij} \sim N(\theta_i, \sigma_j^2)$  
+\begin{frame}{Sorting into firms}
+    \begin{itemize}
+        \item Risk Sorting: firm differ in terms of the distribution of the buyer's risk
 
-%        \item [Work on this slide ]
-%    \end{itemize}
-%\end{frame}
+        \item Possible cause 
+        \begin{itemize}
+            \item Differences in screening technology: firms. Type $\theta$ and firms observe $\theta_j\sim N(\theta, \sigma_j)$ 
+            \item Correlation between buyer's risk and preferences. 
+            \item Others... 
+        \end{itemize}
+    \end{itemize}
+\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}{Heterogeneity in algorithm precision}\label{slide:fig3}    
+\begin{frame}{Sorting into firms (2)}\label{slide:fig3}    
+\vspace{-.2cm}
 \begin{figure}[H]
-%\caption{}
 \centering{}%
 \begin{tabular}{cc}
 \includegraphics[scale=0.2964]{../figures/IE6/IE6_survival_year_all.png}
@@ -331,7 +336,7 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
     \begin{itemize}
         \item $$ F_{ij}^R - F_{ij}^I = \beta_0 + \beta_1 \text{Avg. gap}_{ij} + \beta_2 \text{Max. gap}_{ij} + \epsilon_{ij}$$
 
-        \item $$ 1(F_{ij}^R  - F_{ij}^I)  = \alpha_0 + \alpha_1 \text{Avg. gap}_{ij} + \alpha_2 \text{Max. gap}_{ij} + \epsilon_{ij}$$
+        \item $$ 1(F_{ij}^R  - F_{ij}^I > 0)  = \alpha_0 + \alpha_1 \text{Avg. gap}_{ij} + \alpha_2 \text{Max. gap}_{ij} + \epsilon_{ij}$$
     \end{itemize}
     where  $$ \text{Avg. gap }_{ij} = \frac{1}{F_{ij}^I}\left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I - F_{ij}^I\right) \quad \text{Max. gap } = \frac{1}{F_{ij}^I}\left(\max_{k \neq j} F_{ik}^I - F_{ij}^I\right)$$
     

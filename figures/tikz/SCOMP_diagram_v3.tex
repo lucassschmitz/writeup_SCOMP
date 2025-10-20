@@ -1,11 +1,11 @@
 \begin{tikzpicture}[node distance=.9cm and .9cm, scale=0.65, every node/.style={transform shape}]
 
-\node[terminal] (step1) {1. Request of \\  balance statement};
+\node[terminal] (step1) {1. Request of \\  balance statement \\ (e.g. savings = \$100,000)};
 \node[terminal, right=of step1] (step2) {2. Request offers: ask for certain type of contracts \\ (e.g. annuity) };
 \node[terminal, right =of step2] (step3) {3. Firms make initial offers, \\ retiree receives them (e.g. \$1000 per month)};
 
 % **CHANGES MARKED**: Second row - right to left
-\node[decision, below=of step2] (step4) {4. Pensioner must\\choose between:};
+\node[decision, below=of step2] (step4) {4. Buyer must\\choose between:};
 
 
 

@@ -51,7 +51,7 @@
 \begin{frame}{Motivation}
 \justifying
 \begin{itemize}
-  \item Firms increasingly differ in \emph{information precision} (data access/analytics) and in \emph{cost structures}.
+  \item Firms increasingly differ in \emph{information precision} (data access/analytics) %and in \emph{cost structures}.
   \item This creates information asymmetries \emph{between} firms (beyond classic buyer--seller asymmetry).
   \item Policy interest: regulations that equalize or share consumer risk information (e.g., centralized ``risk bureau'', Open Banking policies).
 \end{itemize}
@@ -70,8 +70,8 @@
   \begin{itemize}
   \item A tractable model of imperfect competition with firm-specific information precision and costs.
   \item New identification/estimation strategy using offered-price distributions and demand to recover signals.
-  \item Evidence from Italian auto liability insurance with rich panel linking consumers across insurers.
-  \item Counterfactuals: centralized risk bureau, full information, and privacy/high-variance restrictions.
+  \item Evidence from Italian auto insurance using a panel linking consumers across insurers.
+  \item Counterfactuals: centralized risk bureau, full information, and data privacy regulation. 
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -92,7 +92,7 @@
     $\rightarrow$ Extends demand estimation when prices are not observed. 
   \end{itemize}
   
-  \item Antitrus/Consumer protection and Big Data  
+  \item Antitrust/Consumer protection and Big Data  
   \begin{itemize}
     \item Einav et al. (2013), Chatterjee et al. (2023), Blattner \& Nelson (2021), Lam \& Liu (2020), Jin \& Wagman (2021)
     
@@ -107,21 +107,26 @@
 \section{Setting and Data}
 
 % 5 - Institutional Background
-\begin{frame}{Institutional Background: Italian Auto Liability (RCA)}
+\begin{frame}{Institutional Background: Italian Auto Insurance}
 \justifying
 \begin{itemize}
   \item Mandatory, annual, exclusive contracts; insurers cannot reject consumers.
   \item Large market: $\approx$31M contracts in 2018; $\approx$50 national competitors.
-  \item Key contract features widely standardized; little use of deductibles.
+  \item Key contract features widely standardized; little use of deductibles and full coverage
 \end{itemize}
 \end{frame}
 
 % 6 - Data
-\begin{frame}{Data: IVASS IPER Microdata}
+\begin{frame}{Data}
 \justifying
 \begin{itemize}
-  \item Nationally representative matched insurer--insuree panel with claims frequency/severity, premiums, coverage.
-  \item Tracks policyholders across insurers and time $\Rightarrow$ measure risk using ex-post claims panel.
+  \item Nationally representative matched insurer--insuree panel
+  \begin{itemize}
+      \item Observable risk factors
+      \item Premiums 
+      \item Frequency and severity of claims 
+  \end{itemize}
+  \item Tracks policyholders across insurers and time
   \item Focus sample: new customers in Rome (2013--2021); top 10 firms + fringe group.
 \end{itemize}
 \end{frame}
@@ -144,37 +149,46 @@
 \end{figure}
 \end{frame}
 
-% 10 - Stylized Facts
-\begin{frame}{Stylized Facts: Price Variation \& Sorting}
+% 10 - Price variation and Sorting
+\begin{frame}{Price Variation \& Sorting}
 \begin{figure}[H]
 \centering{}%
 \begin{tabular}{cc}
 \includegraphics[scale=0.47]{Figures/Fig1.png}
 \end{tabular}
 \end{figure}
-\vspace{0.75em}
+\vspace{0cm}
 \begin{itemize}
-  \item Large cross-firm variation in average premiums even at similar average risks/market shares.
-  \item Firms with higher average claim costs attract riskier consumers $\Rightarrow$ sorting across firms.
+  \item Substantial cross-firm variation in: 
+  \begin{itemize}
+      \item Prices, even at similar risk/market share. (e.g. F4 and F5). 
+      \item Average claim payouts (e.g. F3 and F8)
+  \end{itemize}
+  
+  \item Variation in claim payouts suggests sorting. 
 \end{itemize}
 \end{frame}
 
 % 11 - Measuring Information Precision
-\begin{frame}{Measuring Information Precision}
+\begin{frame}{Measuring Information Precision}\label{slide:measuring}
 \begin{enumerate}
-\item Step 1: Construct individual risk measures
+\item  Construct individual risk measures
 \begin{itemize}
 \item Panel regression of claim counts and size  with individual fixed effects
-%\item Log-normal regression of claim severity conditional on accident
 \item Risk measure = $ \underbrace{\exp(X_{it}\delta_c + \zeta_i)}_{\text{Claim Count}} \cdot  \underbrace{\exp(\delta_0 + X_{it}+ \eta_{it})}_{\text{Claim Size}}$
+\vspace{.1cm}
+\item $X_{it}$ includes age, vehicle features, geographic location and contractual clauses. 
 \end{itemize}
-\item Step 2: Firm-specific premium-risk regressions
+\item Firm-specific premium-risk regressions
 \begin{itemize}
-\item For each firm $j$: $\text{Premium}_{ij} = \alpha_j + \beta_j \cdot \text{Risk}_i + \varepsilon_{ij}$
+\item For firm $j$: 
+$$\text{Premium}_{ij,t=1} = \alpha_j + \beta_j \cdot \text{Risk}_{i,t=1} + \varepsilon_{ij,t=1}$$
 \item Higher $\beta_j$ suggests firm's prices are more responsive to actual risk
 \end{itemize}
 \end{enumerate}
+ \hyperlink{slide:simple_example}{\beamergotobutton{Example}}
 \end{frame}
+
 
 % 12 - Heterogeneity in Risk Sensitivity
 \begin{frame}{Heterogeneity in Risk Sensitivity}
@@ -187,6 +201,7 @@
 \vspace{0.75em}
 \begin{figure}[H]
 \centering{}%
+\caption{Estimated $\beta_j$}
 \begin{tabular}{cc}
 \includegraphics[scale=0.45]{Figures/Fig2.png}
 \end{tabular}
@@ -204,7 +219,7 @@
   \item $J$ insurers; standardized product; no outside option.
   \item Consumer true risk $\theta$ (expected cost/year) unobserved ex ante.
   \item Firm $j$ observes a private signal $\hat{\theta}_j$ with precision that differs across firms.
-  \item $D$ denotes the contract chosen by the consumer.
+  \item $D =j$: consumer chooses firm $j$. 
 \end{itemize}
 \end{frame}
 
@@ -223,6 +238,11 @@
 \begin{align}
   E(\theta | \hat{\theta}_j, D=j) = \int_{\theta} \theta f(\theta | \hat{\theta}_j, D=j) d\theta = \frac{\int_{\theta} \theta \overbrace{\Pr(D=j | \hat{\theta}_j, \theta)}^{\text{Selection Prob.}} \phi(\hat{\theta}_j; \theta, \sigma_j) f_0(\theta) d\theta}{\int_{\theta} \Pr(D=j | \hat{\theta}_j, \theta) \phi(\hat{\theta}_j; \theta, \sigma_j) f_0(\theta) d\theta}  
 \end{align}
+%\item Without selection: 
+%\begin{align}
+%  E(\theta | \hat{\theta}_j, D=j) = E(\theta | \hat{\theta}_j)=
+%    \frac{\hat{\theta}_j\sigma_0^2+ \mu_0\sigma_j^2}{\sigma_j^2+ \sigma_0^2}
+%\end{align}
 \end{itemize}
 \note{Emphasize that the probability of choosing given type and signals is an equilibrium object. }
 \end{frame}
@@ -243,8 +263,8 @@ p_j(\hat{\theta}_j) \;=\; \alpha_j \;+\; \beta_j \, \mathbb{E}[\theta \mid \hat{
 \begin{frame}{Demand}
 \justifying
 \begin{itemize}
-  \item Consumers choose one insurer (no outside option); utility depends on price and observable characteristics.
-  \item Preference parameters allowed to vary with observables and risk type. Consumer $i$'s utility from firm $j$:
+  \item Consumers choose one insurer (no outside option)
+  \item Preference parameters allowed to vary with  risk type. Consumer $i$'s utility from firm $j$:
 \end{itemize}
 \begin{align}
   U_{ij} = -\gamma(\theta)p_j(\tilde{\theta}_j) + \xi_j(\theta) + \varepsilon_{ij} 
@@ -263,13 +283,14 @@ p_j(\hat{\theta}_j) \;=\; \alpha_j \;+\; \beta_j \, \mathbb{E}[\theta \mid \hat{
         \item Firm $j$'s profit 
         
         \[\pi_j(\alpha, \beta) = 
-        \int_{\hat{\theta}} \int_{\theta} \underbrace{(p_j(\hat{\theta}_j) + c_j - k_j\theta)}_{\text{net profit}} \underbrace{\Pr(D=j|\hat{\theta})}_{\text{choice prob.}} \underbrace{\left(\prod_{j'=1}^{J} \phi(\hat{\theta}_{j'}; \theta, \sigma_{j'}) \right)}_{\text{signal dist.}} \underbrace{f_0(\theta)}_{\text{type dist.}} d\theta d\hat{\theta}.
+        \int_{\hat{\theta}} \int_{\theta} \underbrace{(p_j(\hat{\theta}_j) + c_j - k_j\theta)}_{\text{net profit}} \underbrace{\Pr(D=j|\hat{\theta}, \mathbf{\theta})}_{\text{choice prob.}} \underbrace{\left(\prod_{j'=1}^{J} \phi(\hat{\theta}_{j'}; \theta, \sigma_{j'}) \right)}_{\text{signal dist.}} \underbrace{f_0(\theta)}_{\text{type dist.}} d\theta d\hat{\theta}.
         \]
         
         \medskip
         \item $c_j$: ``net benefits'' of contracting with a customer irrespective of the risk.
         
         \item $k_j$: efficiency at processing claims.
+        %\item Equilibrium exists, but is not necessarily unique. 
     \end{itemize}
 \end{frame}
 
@@ -294,7 +315,7 @@ p_j(\hat{\theta}_j) \;=\; \alpha_j \;+\; \beta_j \, \mathbb{E}[\theta \mid \hat{
     \end{itemize}
     \item Supply ($\alpha_j, \beta_j, \sigma_j^2, c_j, k_j$)
     \begin{itemize}
-      \item Average price conditional on risk identifies $(\alpha_j, \beta_j)$  \hyperlink{appendix:slide3}{\beamergotobutton{Details}}
+      \item Average price and covariance of price and risk identify $(\alpha_j, \beta_j)$  \hyperlink{appendix:slide3}{\beamergotobutton{Details}}
       \item $\sigma_j$ is identified from price dispersion given risk  \hyperlink{appendix:slide3.1}{\beamergotobutton{Details}}
       \item Cost parameters $(c_j, k_j)$ recovered from first-order conditions \hyperlink{appendix:slide4}{\beamergotobutton{Details}}
     \end{itemize}
@@ -313,18 +334,19 @@ p_j(\hat{\theta}_j) \;=\; \alpha_j \;+\; \beta_j \, \mathbb{E}[\theta \mid \hat{
 \end{itemize}
 
 \vspace{0.3cm}
-\textbf{Solution:}
-\begin{itemize}
-    \item Use selection rule (demand model) to recover distribution of offered prices
-\end{itemize}
+\textbf{Solution:} use selection rule (demand model) to recover distribution of offered prices
+%\begin{itemize}
+%    \item Use selection rule (demand model) to recover distribution of offered prices
+%\end{itemize}
 
 \vspace{0.2cm}
 {\small
 Relationship:
-$$ g(p|\theta, D=j) \propto g_j(p|\theta) \Pr(D=j|p_j=p, \theta) $$
+$$ \underbrace{g(p|\theta, D=j)}_{\text{Accepted prices}} \propto \underbrace{g_j(p|\theta)}_{\text{Offered pricess}} \Pr(D=j|p_j=p, \theta) $$
 
 Recover offered prices:
-$$ g_j(p|\theta) = \frac{g(p|\theta, D=j) / \Pr(D=j|p_j=p, \theta)}{\int_{p'} g(p|\theta, D=j) / \Pr(D=j|p_j=p', \theta)dp'} $$
+$$ 
+g_j(p|\theta) = \frac{g(p|\theta, D=j) / \Pr(D=j|p_j=p, \theta)}{\int_{p'} g(p|\theta, D=j) / \Pr(D=j|p_j=p', \theta)dp'} $$
 }
 \hyperlink{appendix:slide2}{\beamergotobutton{Details}}
 \end{column}
@@ -338,7 +360,7 @@ $$ g_j(p|\theta) = \frac{g(p|\theta, D=j) / \Pr(D=j|p_j=p, \theta)}{\int_{p'} g(
 \end{frame}
 
 % 22 - Iterative Algorithm 
-\begin{frame}{Iterative Algorithm for Demand Estimation}
+\begin{frame}{Iterative Algorithm for Demand Estimation}\label{slide:iterative}
 \small 
 \textbf{Nested Fixed-Point Algorithm:} Jointly estimate sorting probabilities, price distributions, and demand parameters
 
@@ -347,7 +369,7 @@ $$ g_j(p|\theta) = \frac{g(p|\theta, D=j) / \Pr(D=j|p_j=p, \theta)}{\int_{p'} g(
 \textbf{Inner Loop:} For fixed $\gamma$ (price sensitivity)
 
 \begin{enumerate}
-    \item Initialize: $\xi_j^1 = 0$ and $\Pr^1(D=j|p_j=p, \theta) = \exp(\alpha p)$ for all $j$
+    \item Initialize: $\xi_j^1 = 0$ and $\Pr^1(D=j|p_j=p, \theta) = \exp(-\gamma p)$ for all $j$
     
     \item Update offered-price density, using Bayes' rule: 
     {\small
@@ -356,19 +378,34 @@ $$ g_j(p|\theta) = \frac{g(p|\theta, D=j) / \Pr(D=j|p_j=p, \theta)}{\int_{p'} g(
     
     \item Update $\xi^{r+1}$ to match observed market shares:
     {\small
-    $$ \hat{s}_j = \int_\theta \int_p \frac{\exp(\alpha p_j + \xi_j^{r+1})}{\sum_{j'} \exp(\alpha p_{j'} + \xi_{j'}^{r+1})} \left(\prod_{j'} g_{j'}^r(p_{j'}|\theta)\right) f_0(\theta) dp d\theta $$
+    $$ \hat{s}_j = \int_\theta \int_p \frac{\exp(\gamma p_j + \xi_j^{r+1})}{\sum_{j'} \exp(\gamma p_{j'} + \xi_{j'}^{r+1})} \left(\prod_{j'} g_{j'}^r(p_{j'}|\theta)\right) f_0(\theta) dp d\theta $$
     }
     
-    \item Update selection probabilities $\Pr^{r+1}(D=j|p_j=p, \theta)$ using demand model
+    \item Update selection probabilities $\Pr^{r+1}(D=j|p_j=p, \theta)$ using demand model \hyperlink{appendix:slide2}{\beamergotobutton{Details}}
     
     \item Iterate until $g^r$ converges. Output $\{g_j(p\mid\theta;\gamma)\}_j$, $\Pr(D=j\mid p,\theta;\gamma)$, and $\xi(\gamma)$.
 \end{enumerate}
 
 \vspace{0.2cm}
 
-\textbf{Outer Loop:} Estimate $\alpha$ by matching risk sorting patterns via maximum likelihood
+\textbf{Outer Loop:} Estimate $\gamma$ by matching risk sorting patterns via maximum likelihood
 
 \end{frame}
+
+\begin{frame}{Outer Loop}
+\begin{itemize}
+    \item Outer loop is over $\gamma$: 
+\end{itemize}
+
+\begin{align}
+    LL_d(\gamma) = \sum_{i=1}^{N} \sum_{j=1}^{J} \mathbf{1}\{D_i = j\} \log \left( \Pr(D_i = j | \tilde{\theta}_i; \gamma) \right),
+\end{align}
+where demand comes from the inner loop: 
+\begin{align}
+    \Pr(D = j | \theta; \gamma) = \int_{\mathbf{p}} \frac{\exp(-\gamma p_j + \xi_j(\gamma))}{\sum_{j'} \exp(-\gamma p_{j'} + \xi_{j'}(\gamma))} \left( \prod_{j'} g_{j'}(p_{j'}|\theta; \gamma) \right) d\mathbf{p}.
+\end{align}
+\end{frame}
+
 
 
 \section{Results and Counterfactuals}
@@ -438,7 +475,7 @@ $$ g_j(p|\theta) = \frac{g(p|\theta, D=j) / \Pr(D=j|p_j=p, \theta)}{\int_{p'} g(
 \begin{figure}[H]
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=0.57]{Figures/Tab5.png}
+\includegraphics[scale=0.53]{Figures/Tab5.png}
 \end{tabular}
 \end{figure}
 \end{frame}
@@ -487,7 +524,7 @@ $$ g_j(p|\theta) = \frac{g(p|\theta, D=j) / \Pr(D=j|p_j=p, \theta)}{\int_{p'} g(
 % 30 - Conclusion and Comments
 \begin{frame}{Conclusion}
 \begin{itemize}
-  \item This paper develops empirical framework for studying competition under information assymetries 
+  \item This paper develops empirical framework for studying competition under information asymmetries 
   \item This paper studies the impacts of a credit bureau, it finds: 
   \begin{itemize}
     \item Centralized information can  lower prices, raise consumer surplus and reorient sorting toward cost efficiency.
@@ -500,12 +537,13 @@ $$ g_j(p|\theta) = \frac{g(p|\theta, D=j) / \Pr(D=j|p_j=p, \theta)}{\int_{p'} g(
 % 31 - Comments
 \begin{frame}{Comments }
 \begin{itemize}
-  \item What is the impact of a credit bureau on a dynamic world with learning-switching costs? 
+  \item What is the impact of a credit bureau if there is learning and switching frictions?  
   \begin{itemize}
-    \item Cost of risk missclassification is low -> can update prices. 
+    \item Cost of risk miss-classification is low -> can update prices. 
+    \item Efficient firms might invest in learning, not in reducing $\sigma_j$
     \item $c_j$ should be risk specific to capture inertia? 
   \end{itemize}
-  \item What is a credit bureau doing in the model 
+  \item What does a credit bureau do?  
   \begin{itemize}
     \item Pooling Data: if there are economies of scale, what is the market failure? 
     \item Sharing algorithms: impact of investment in algorithms. 
@@ -541,6 +579,7 @@ $$ g_j(p|\theta) = \frac{g(p|\theta, D=j) / \Pr(D=j|p_j=p, \theta)}{\int_{p'} g(
   \Pr(D=j|p_j=p, \theta) = \int_{\mathbf{p}_{-j}} \frac{\exp(-\gamma p + \xi_j)}{\exp(-\gamma p + \xi_j) + \sum_{j' \ne j} \exp(-\gamma p_{j'} + \xi_{j'})} \left( \prod_{j' \ne j} g_{j'}(p'_{j'}|\theta) \right) d\textbf{p}_{-j}.
   \]
     \hyperlink{estimation:demand}{\beamergotobutton{Go back}}
+    \hyperlink{slide:iterative}{\beamergotobutton{Go back: iterative algorithm}}
 \end{itemize}
 \end{frame}
 
@@ -629,6 +668,67 @@ $$ E(\theta|\hat{\theta}_j, D=j; \sigma_j) = \frac{\int_\theta \theta \Pr(D=j|p_
 \vspace{0.2cm}
 
 \textbf{Solution:} Given previously recovered $\{g_j,\,E(\theta\mid\hat\theta_j,D=j),\,\alpha_j,\,\beta_j,\,\sigma_j\}$ and $\Pr(D=j\mid\cdot)$, it is a system of 2 linear equations in $(c_j, k_j)$ where all other terms are known \hyperlink{estimation:overview}{\beamergotobutton{Go back}}
+\end{frame}
+
+
+
+%\begin{frame}{Measuring Information Precision}\label{slide:measuring}
+%\begin{itemize}
+%    \item Assume
+%    \begin{itemize}
+%        \item Claim count $\in \{0,1\}$ depending on a contractual clause $X_{it}\in \{0,1\}$. Buyers who (do not) include the clause, (do not) have accidents.
+%        \item Claim Size is always 1. 
+%    \end{itemize}
+%    \item $i$ does not buy the clause the first period, but does the $T-1$ periods after that. 
+%
+%    \item $i$'s risk measure 
+%\end{itemize}
+% \hyperlink{slide:simple_example}{\beamergotobutton{Example}}
+%\end{frame}
+%\begin{frame}{Simple example}\label{slide:simple_example}
+%\begin{itemize}
+%    \item Buyer risk is  $\theta_i = x_1 + x_2$, the number of accidents (assume size is always 1) is $\theta_i + u_i$, with $u_i$ iid. 
+%    \item There are two firms (A,B)
+%    \item The econometrician and A  observe $x_1$. B observes $x_1$ and $x_2$. 
+    
+%    \item Both firms have the same strategy, they price at the observed risk, $p_A = x_1, p_B = x_1+x_2$.
+    
+    
+    %Hence $\beta_1 =1+\frac{\text{cov}(x_1,x_2)}{\text{var}(x_1)}, \beta_2 =1  $
+    %\item The econometrician concludes $\hat{\beta}_A = 1$, $\hat{\beta}_B =1+\frac{\text{cov}(x_1,x_2)}{\text{var}(x_1)} $
+    %\item If $\text{covar}(x_1,x_1) < 0$ one concludes that $B$ is more precise. 
+%\end{itemize}
+% \hyperlink{slide:measuring}{\beamergotobutton{Go back}}
+%\end{frame}
+
+
+\begin{frame}{Simple example}\label{slide:simple_example}
+\begin{itemize}
+    \item There is no uncertainty, and real risk is $\theta_i = x_1 + x_2$. 
+    \item There are two firms (A,B)
+    \item The econometrician and A  observe $x_1$. B observes $x_1$ and $x_2$. 
+    \item Both firms have the same strategy, they price at the observed risk, $p_A = x_1, p_B = x_1+x_2$. Hence $\beta_1 =1+\frac{\text{cov}(x_1,x_2)}{\text{var}(x_1)}, \beta_2 =1  $
+    \item The econometrician concludes $\hat{\beta}_A = 1$, $\hat{\beta}_B =1+\frac{\text{cov}(x_1,x_2)}{\text{var}(x_1)} $
+    \item If $\text{covar}(x_1,x_1) < 0$ one concludes that $B$ is more precise. 
+\end{itemize}
+ \hyperlink{slide:measuring}{\beamergotobutton{Go back}}
+
+If the dist. of consumers over years is uniform, they have an average of 4 years for each consumer and a claim rate of .08. Probably noisy fixed effects in the risk regressions.
+\end{frame}
+
+
+\begin{frame}{Capturing markups, not precision example}\label{slide:simple_example}
+\begin{itemize}
+    \item The model estimates $\hat{\theta_i}=\theta+v_i$.
+    
+    \item The model fit could be low (few covariates, short panel and low likelihood of occurrence)
+
+    \item If firms observe the true risk, but they have different pricing strategies $p_{ij} = \alpha_j+\beta_{j}\theta_i$ then: 
+
+    $$ \hat{\beta}_j=\beta_j\frac{\text{var}(\theta_i)}{\text{var}(\theta_i)+\text{var}(v_i)}$$   
+    
+    \end{itemize}
+ \hyperlink{slide:measuring}{\beamergotobutton{Go back}}
 \end{frame}
  
 \end{document}

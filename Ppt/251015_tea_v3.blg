@@ -1,0 +1,23 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is '251015_tea_v3.blg'
+[395] biber-MSWIN64:340> INFO - === 
+[513] Biber.pm:419> INFO - Reading '251015_tea_v3.bcf'
+[888] Biber.pm:979> INFO - Found 10 citekeys in bib section 0
+[944] Biber.pm:4419> INFO - Processing section 0
+[980] Biber.pm:4610> INFO - Looking for bibtex file '../references.bib' for section 0
+[1252] bibtex.pm:1713> INFO - LaTeX decoding ...
+[4950] bibtex.pm:1519> INFO - Found BibTeX data source '../references.bib'
+[5349] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[5350] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[5350] Biber.pm:4239> INFO - Sorting list 'apa/apasortcite//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[5350] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[5422] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[5422] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[5423] Biber.pm:4239> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[5423] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[5464] bbl.pm:660> INFO - Writing '251015_tea_v3.bbl' with encoding 'UTF-8'
+[5499] bbl.pm:763> INFO - Output to 251015_tea_v3.bbl
+[5499] Biber.pm:131> WARN - Duplicate entry key: 'backus_common_2021' in file '../references.bib', skipping ...
+[5499] Biber.pm:131> WARN - Duplicate entry key: 'shapiro_trends_2024' in file '../references.bib', skipping ...
+[5500] Biber.pm:131> WARN - Duplicate entry key: 'amiti_trade_2007' in file '../references.bib', skipping ...
+[5500] Biber.pm:133> INFO - WARNINGS: 3

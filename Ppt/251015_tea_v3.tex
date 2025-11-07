@@ -23,6 +23,7 @@
 \usepackage{xcolor}
 \usepackage{tikz}
 \usepackage{booktabs} % Required for \toprule, \midrule, \bottomrule
+\usepackage{amsmath,amssymb,dsfont} % for \text, \mathbb, \mathds{1}
 \usetikzlibrary{shapes.geometric, arrows, positioning}
 
 \tikzstyle{block} = [rectangle, draw, text width=4cm, align=center, rounded corners, minimum height=1cm]
@@ -329,22 +330,23 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
 \end{frame}
 
-%%%%%%%%% Slide 14 
+%%%%%%%%% Slide 15 
 
-\begin{frame}{Learning}
+\begin{frame}{Learning}\label{slide:fig4}    
 \begin{columns}[T] % [T] aligns columns at the top
 \begin{column}{0.48\textwidth}
      \begin{itemize}
         \item     If firms do not know competitors' prices one expects them to increase their offers more when the competitors' prices are higher. 
-    \end{itemize}
     $$ F_{ij}^R - F_{ij}^I = \beta_0 + \beta_1 \text{Avg. gap}_{ij} + \beta_2 \text{Max. gap}_{ij} + \beta_j + \epsilon_{ij}$$
-    where  
+    where  \\
     $ \text{Avg. gap }_{ij} = \frac{1}{F_{ij}^I}\left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I - F_{ij}^I\right) $\\ 
     $ \text{Max. gap } = \frac{1}{F_{ij}^I}\left(\max_{k \neq j} F_{ik}^I - F_{ij}^I\right)$
+    \item How to deal with selection (observe revisions not requests)? 
+\end{itemize}
 \end{column}
 \hfill
 \begin{column}{0.48\textwidth}
- \scalebox{0.8}{
+ \scalebox{.9}{
     \input{../Tables/IE7/IE7_learning_regressions(presentation).tex}
 }
 \end{column}
@@ -352,44 +354,45 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 \end{frame}
 
 
-\begin{frame}{Learning} 
-    If firms do not know competitors' prices one expects them to increase their offers more when the competitors' prices are higher. 
-    \begin{itemize}
-        \item $$ F_{ij}^R - F_{ij}^I = \beta_0 + \beta_1 \text{Avg. gap}_{ij} + \beta_2 \text{Max. gap}_{ij} + \beta_j + \epsilon_{ij}$$
 
-        %\item $$ 1(F_{ij}^R  - F_{ij}^I > 0)  = \alpha_0 + \alpha_1 \text{Avg. gap}_{ij} + \alpha_j +  \epsilon_{ij}$$
 
-        %\item $$ 1(F_{ij}^R  - F_{ij}^I > 0)  = \alpha_0 + \alpha_1 \text{Avg. gap}_{ij} + \alpha_2 \text{Max. gap}_{ij} + \epsilon_{ij}$$
+%%%%%%%%% Slide 16
+\begin{frame}{Learning}\label{slide:fig5}    
+\begin{columns}[T] % [T] aligns columns at the top
+\begin{column}{0.35\textwidth}
+     \begin{itemize}
+        \item Firms might want to just outbid their competitors.
     \end{itemize}
-    where  $ \text{Avg. gap }_{ij} = \frac{1}{F_{ij}^I}\left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I - F_{ij}^I\right) \quad \text{Max. gap } = \frac{1}{F_{ij}^I}\left(\max_{k \neq j} F_{ik}^I - F_{ij}^I\right)$
-\scalebox{0.8}{
-    \input{../Tables/IE7/IE7_learning_regressions(presentation).tex}
-}
-\hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}  
-\end{frame}
-
-
-%%%%%%%%% Slide 16
-\begin{frame}{Learning(1)}\label{slide:fig4}    
-\scalebox{0.8}{
-    \input{../Tables/IE7/IE7_learning_regressions(presentation).tex}
-}
-
-\hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
-\end{frame}
-
-
-%%%%%%%%% Slide 16
-\begin{frame}{Learning(2)}\label{slide:fig5}
-  \begin{figure}[H]
-%\caption{}
+    $$ \underbrace{\frac{ F_{ij}^R - F_{ij}^I}{F_{ij}^I}}_{\text{Improvement}} - \underbrace{\frac{ max_{k \neq j} F_{ik}^I - F_{ij}^I}{F_{ij}^I}}_{\text{"Necessary" improvement}}$$ 
+    $$    =\frac{ F_{ij}^R -max_{k \neq j} F_{ik}^I}{F_{ij}^I }  $$
+\end{column}
+\hfill
+\begin{column}{0.69\textwidth}
+ \begin{figure}[H]
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=0.35]{../figures/IE7/IE7_hist_bunching_max(2).png} 
+\includegraphics[scale=0.26]{../figures/IE7/IE7_hist_bunching_max(2).png} 
 \end{tabular}
 \end{figure}
-\hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
+\end{column}
+\end{columns}
 \end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -446,35 +449,35 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 
 %%%%%
 
-\begin{frame}{Second Stage: Optimal Pricing with Learning}
-\textbf{When selected for revised offer, firm observes competitors' initial prices}
+\begin{frame}{Second Stage: optimal pricing}
+
+\begin{itemize}
+    \item When selected for revised offer, firm observes competitors' initial prices
+    \item After observing competitors, firm best-responds to known prices rather than expected prices
+\end{itemize}
 
 \vspace{0.3cm}
 
 \textbf{Optimal updated offer:}
-$$p^{T2}_j(c_j, p^{T1}) = \min(p^{T1}_j, p^*)$$
+$$p^{T2}_j(c_j, p^{T1}) = \min(p^{T1}_j, p^*(c_j, p^{T1}_{-j}))$$
 
 where
-$$p^* = \arg\max_{p_j} (p_j - c_j) D_j(p_j, p^{T1}_{-j})$$
-
-\vspace{0.3cm}
-After observing competitors, firm best-responds to known prices rather than expected prices
+$$p^*(c_j, p^{T1}_{-j}) = \arg\max_{p_j} (p_j - c_j) D_j(p_j, p^{T1}_{-j})$$
 \end{frame}
 
 %%%%%
 
-\begin{frame}{Expected Profits in Second Stage}
-\textbf{When consumer searches, firm $j$ faces two scenarios:}
+\begin{frame}{Second stage: profits}
+\begin{itemize}
+    \item When consumer searches, firm $j$ faces two scenarios:
+\end{itemize}
+\begin{enumerate}
+    \item Selected for revised offer ($\frac{1}{J}$ probability):
+    $$\pi^{(j)}_j(p^{T1}, c_j) = (p^{T2}_j(c_j, p^{T1}) - c_j) D_j(p^{T2}_j(c_j, p^{T1}), p^{T1}_{-j})$$
+    \item Competitor $j'$ selected ($\frac{1}{J}$ probability):
+    $$\pi^{(j')}_j(p^{T1}, c_j, c_{j'}) = (p^{T1}_j - c_j) D_j(p^{T1}_{-j'}, p^{T2}_{j'}(c_{j'}, p^{T1}))$$
+\end{enumerate}
 
-\vspace{0.3cm}
-
-\textbf{1. Selected for revised offer ($\frac{1}{J}$ probability):}
-$$\pi^{(j)}_j(p^{T1}, c_j) = (p^{T2}_j(c_j, p^{T1}) - c_j) D_j(p^{T2}_j(c_j, p^{T1}), p^{T1}_{-j})$$
-
-\vspace{0.3cm}
-
-\textbf{2. Competitor $j'$ selected ($\frac{1}{J}$ probability):}
-$$\pi^{(j')}_j(p^{T1}, c_j, c_{j'}) = (p^{T1}_j - c_j) D_j(p^{T1}_{-j'}, p^{T2}_{j'}(c_{j'}, p^{T1}))$$
 
 \vspace{0.5cm}
 
@@ -486,22 +489,15 @@ $$\pi^{T2}_j(p^{T1}, c_j, c_{-j}) = \frac{1}{J}\left[\pi^{(j)}_j(p^{T1}, c_j) + 
 
  
 \begin{frame}{First Stage: Strategic Pricing}
-\textbf{Firms anticipate the second stage when setting initial prices}
+\begin{itemize}
+    \item Firms anticipate the second stage when setting initial prices
+    \item Expected profits in the first stage:
+    $$\pi^{T1}_j(p^{T1}, c_j, c_{-j}) = (1-\lambda)\underbrace{(p^{T1}_j - c_j)D_j(p^{T1})}_{\text{Immediate acceptance}} + \lambda \underbrace{\pi^{T2}_j(p^{T1}, c_j, c_{-j})}_{\text{Search occurs}}$$
+    \item Equilibrium condition:
+    $$p^{T1}_j(c_j) = \arg\max_{p_j} \int \pi^{T1}_j(p_j, p^{T1}_{-j}(c_{-j}), c_j) dF(c_{-j}|c_j)$$
+\end{itemize}
 
-\vspace{0.5cm}
-
-\textbf{Expected profits in first stage:}
-$$\pi^{T1}_j(p^{T1}, c_j, c_{-j}) = (1-\lambda)\underbrace{(p^{T1}_j - c_j)D_j(p^{T1})}_{\text{Immediate acceptance}} + \lambda \underbrace{\pi^{T2}_j(p^{T1}, c_j, c_{-j})}_{\text{Search occurs}}$$
-
-\vspace{0.5cm}
-
-\textbf{Equilibrium condition:}
-$$p^{T1}_j(c_j) = \arg\max_{p_j} \int \pi^{T1}_j(p_j, p^{T1}_{-j}(c_{-j}), c_j) dF(c_{-j}|c_j)$$
-
-\vspace{0.3cm}
-Trade-off: higher initial price (if accepted) vs. competitive position if search occurs
-
-\textcolor{red}{How to compute equilibrium?}
+\textcolor{red}{[How to compute equilibrium?]}
 \end{frame}
 
 \begin{frame}{Strategic considerations}
@@ -521,31 +517,19 @@ D_j(p_{-j'}^{T1}, p_{j'}^{T2}) + (p_j^{T1} - c_j)
 \bigg) \Big]
 \bigg)
 \end{align*}
-
-
-%\begin{align}
-    %\frac{\partial \pi_j^{T1}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}}
-    %&= (1-\lambda) g(p_j^{T1}, p_{-j}^{T1})
-    %+ \frac{\lambda}{J} \bigg(
-    %\underbrace{\frac{\partial p_j^{T2}}{\partial p_j^{T1}} g(p_j^{T2}, p_{-j}^{T1})}_{\text{Option value}}
-    %+ \notag \\
-    %& \sum_{j' \ne j} 
-    %D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) + (p_j^{T1} - c_j)
-    %\left[     \frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_j^{T1}} +
-    %\underbrace{\frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_{ j'}^{T2} } 
-    %\frac{\partial p_{ j'}^{T2}}{\partial p_j^{T1}}}_{\text{Strategic complementarity}}
-    % \right]  \bigg)  \notag   
-%\end{align}
 \end{frame}
 
 
-\begin{frame}{Simulations }
+\begin{frame}{Simulations: equilibrium strategies}
 \begin{figure}[H]
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=0.7]{../figures/simulations/model5/pricesCI_IC.png}
+\includegraphics[scale=0.5]{../figures/simulations/model5/pricesCI_IC.png}
 \end{tabular}
 \end{figure}
+\begin{itemize}
+    \item Parameters: $J= 4, \alpha = 1, \delta = 2, c_j \sim N(2, 0.5^2)$  
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Extensions}
@@ -594,14 +578,15 @@ Possible extensions
         c_{ij} =  \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{1}{(1+r_j)^t}|x_i \right]
     \end{align*}  
     \item Firm prices: $p_j = S_i/F_{ij}$
+    \item Demand: $ D_{ij}(F_{ij}) = F_{ij}\mathds{1}(\text{i chooses j})  $
     \item Firm profits: 
     \begin{align*}
-        \pi_{ij}(F) = (p_j - c_{ij}) D_{ij} = \frac{S}{4}
+        \pi_{ij}(F) = (p_j - c_{ij}) D_{ij}(F_{ij})  %= \left(\frac{S}{F_{ij}}-   \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{1}{(1+r_j)^t}|x_i \right]\right) F_{ij}\mathds{1}(\text{i chooses j}) 
+        = \left(S_i- \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{F_{ij}}{(1+r_j)^t}|x_i \right]\right)\mathds{1}(\text{i chooses j}) 
     \end{align*}
 \end{itemize}
 
 \hyperlink{slide:timeline}{\beamerbutton{Go back: Timeline}}
-[STILL WORK ON THIS SLIDE]
-\end{frame}
 
+\end{frame}
 \end{document}

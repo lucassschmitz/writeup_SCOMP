@@ -1,0 +1,206 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+ 
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\setlength{\marginparwidth}{2cm} 
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}%[section] commented out to avoid numbering by section
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{ass}[thm]{Assumption}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{theorem}[thm]{Theorem}   % alias for \begin{theorem}
+\newtheorem{definition}{Definition}
+\makeatother
+
+% \newtheorem{thm}{\protect\theoremname}
+% \theoremstyle{plain}
+% \newtheorem{prop}[thm]{\protect\propositionname}
+% \providecommand{\propositionname}{Proposition}
+% \providecommand{\theoremname}{Theorem}
+% \makeatother
+% \providecommand{\propositionname}{Proposition}
+% \providecommand{\theoremname}{Theorem}
+% \newtheorem{thm}[thm]{Theorem}
+% \newtheorem{ass}[thm]{Assumption}
+% \newtheorem{lemma}[thm]{Lemma}  
+% \newtheorem{definition}{Definition}
+% \newtheorem{theorem}[thm]{Theorem}   % alias so \begin{theorem} works
+% \makeatother
+
+
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+%\addbibresource{../references.bib}
+\begin{document}
+ 
+% \title{{\Large Centralized annuities marketplace}}
+%\author{Lucas Condeza\thanks{Yale University %\texttt{lucas.schmitz@yale.edu}}} 
+%\date{}
+%\maketitle
+
+\textcolor{red}{This document has just some notes on the proof of existence, for a proper proof look at other document which uses Athey 2001. }
+
+
+Consider a simple Cournot game with number of firms $N = 2$, where demand is linear given by $q = 2-p$ and costs are drawn from a uniform distribution $c_i \sim U[0,1]$. Each firm $i$ chooses quantity $q_i$ simultaneously. We look for a symmetric equilibrium. 
+
+Firm $i$ chooses $q_i(c)$ to maximize: 
+
+\begin{align*}
+    q_i(c) &= \arg \max_{q} \int_{0}^{1} q \cdot (2-q - q(c_j) - c) dc_j = \arg \max_{q} 2q - q^2 - q\cdot c -  q E(q_j)
+\end{align*}
+Then the FOC is: 
+\begin{align}
+    2 - 2q - E(q_j) - c &= 0 \implies q = 1 - \frac{E(q_j) + c}{2}
+\end{align}
+
+Applying expectation over the costs we have that: 
+\begin{align*}
+    E(q_i) &=1 - \frac{E(q_j)}{2} - \frac{E(c)}{2}  \implies E(q_i) = \frac{2}{3} - E(c)/ 3
+\end{align*}
+
+
+
+\subsection{case 2 }
+
+Previously we took a given demand, now we will consider the case of discrete choice where demand is logit. 
+
+\subsection{Proof of existence of pricing game}
+
+Assumptions:
+\begin{enumerate}
+    \item Continuous demand function $D_i(p_i, p_{-i})$ that is decreasing in own price and increasing in competitors prices.
+    \item Profits are quasi-concave in own price.\footnote{For example for logit demand we have that    
+    \[
+    \frac{\partial \pi_i}{\partial p_i} =s_i(p) - \alpha(p_i - c_i)s_i(p)(1 - s_i(p))
+    \]
+    \[
+    \frac{\partial^2 \pi_i}{\partial p_i^2} =\frac{\partial s_i}{\partial p_i} - \alpha(1 - s_i)s_i - \alpha(p_i - c_i)\frac{\partial}{\partial p_i}(s_i(1 - s_i))
+    \]
+    
+    Using $\frac{\partial s_i}{\partial p_i} = -\alpha s_i(1 - s_i)$ and $\frac{\partial}{\partial p_i}[s_i(1 - s_i)] = -\alpha s_i(1 - s_i)(1 - 2s_i)$, one obtains $\frac{\partial^2 \pi_i}{\partial p_i^2} < 0$ on $P$. Thus $\pi_i(\cdot, p_{-i})$ is strictly concave, so firm $i$'s best reply $b_i(p_{-i})$ exists and is unique.
+    } 
+\end{enumerate}
+
+
+The set of strategies is a compact convex set in a close interval. The price is chosen to be in the interval $[c_i, p^m_i]$. Meaning it is greater than the cost and lower than the monopoly price.
+
+The payoff function is: 
+\begin{align*}
+    \pi_i(p_i, p_{-i}) &= (p_i - c_i) \cdot D_i(p_i, p_{-i}) 
+\end{align*}
+which is continuous given the assumption of continuous demand. 
+
+
+By assumption 2 the best response function is non-empty and convex. If we had assumed that the profit function is strictly concave then the best response correspondence would actually be a function.
+
+Then by Kakutani fixed point theorem there exists a fixed point in the best response correspondence, which is a Nash equilibrium in this pricing game.
+
+
+
+\newpage 
+
+\section{Adapt Milgrom and Weber (1985)}
+Here we adapt the proof of MW. Types are transformed into costs, actions into prices and payoffs into profits.
+
+In their setting the model consists of the following elements: 
+\begin{enumerate}
+    \item the set of players: $N = \{1, 2, \ldots, n\}$.
+    \item the set of types for each player: $\{C_i\}_{i \in N}$. Each $C_i$ is a complete, separable metric space.
+    \item the set of actions available to each player: $\{P_i\}_{i \in N}$. Each $P_i$ is a compact metric space\footnote{In our particular case we assume prices are chosen from the set of positive integers lower than the monopoly price.}. 
+    \item the set of possible states: $C_0$, a complete, separable metric space.
+Let $C \equiv C_0 \times \cdots \times C_n$ and let $P \equiv P_1 \times \cdots \times P_n$.
+
+    \item the payoff functions: $\{\pi_i\}_{i \in N}$. Each $\pi_i$ is a bounded, measurable function from $C \times P$ into $\mathbb{R}$.
+    \item the information structure: $\eta$, a probability measure on the Borel subsets of $C$. Associated with the information structure $\eta$ is a marginal distribution on each $C_i$ which we denote by $\eta_i$. Thus, if $S$ is a Borel subset of $C_i$, then $\eta_i(S) = \eta(C_0 \times S \times C_2 \times \cdots \times C_n)$.
+\end{enumerate}
+
+
+The regularity conditions are: 
+\begin{enumerate}
+    \item Equicontinuous payoffs: For each firm $i$, and every $\epsilon> 0$ there is a subset $E$ of $C$ such that $\eta(E) > 1- \epsilon. $ and such that the family of functions $\{\pi_i(t, \cdot ) \mid c\in E\}$ is equicontinuous.\footnote{Note that if the cost distribution is continuous and bounded by $1, \overline c_i$ then the first condition is met because there is always some $\eta([\underline c_i + \delta, \overline c_i - \delta]) = 1 - \epsilon/2$. 
+    Note that if $\delta =\epsilon \frac{1}{\max_i \overline c_i+ 1 }$ then for any $|x-y|< \delta$ we have that $|\pi_i(t,x)-\pi_i(t,y)|<|D_i x - D_i y| < |x-y| D_i < |x-y| < \epsilon \frac{1}{\max_i \overline c_i+ 1 } < \epsilon$ }
+
+    \item Absolutely continous information: the measure $\eta$ is absolutely continuous with respect to the product measure $\hat \eta \equiv \eta_0 \times \eta_1 \times \cdots \times \eta_n$. We denote the density of $\eta$ with respect to $\hat \eta$ by $f$.
+\end{enumerate}
+
+We assume $D_i(p)$ is continuous. 
+
+
+We can use proposition 1 to show that R1 is satisfied. Particularly, (a) is satisfied because prices are chosen from a set of integers with upper and lower bounds, (b) is 
+satisfied since profits are continuous on prices and costs, and the domain of prices and costs is compact, thus by Heine-Cantor\footnote{Heine-Cantor: if $f: M \rightarrow N$ is a continuous function between two metric spaces $M$ and $N$, and $M$ is compact, then $f$ is uniformly continuous. } theorem profits are uniformly continuous. To provoe (c), consider the $\ell_\infty$ metric on $P \subset \mathbb{Z}^N$. Take $\delta(c, \epsilon) = \frac{1}{2}$ for all $c \in C$. If $d_P(p, p') < \delta(c, \epsilon)$ then $p = p'$ and thus $|\pi_i(c, p) - \pi_i(c, p')| = 0 < \epsilon$. Thus $\pi_i(c, \cdot)$ is uniformly continuous with modulus $\delta(c, \epsilon) = 1/2$.  (c) is satisfied. 
+
+
+Finally, we assume the $c_i$ are independent draws from a continuous distribution with bounded support, hence hence R2 is satisfied. 
+
+By theorem 1 in MW, the pricing game has an equilibrium point in distributional strategies.s 
+
+
+Then we can use theorem 4 to prove that there is an equilibrium in pure strategies. We show that the conditions are satisfied: 
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\item Satisfied since nature does not play in this game ($c_0$ is a singleton) and that the types are independent draws 
+\item Given that the cost distributions are continuous they are atomless. 
+\item Since other firms' costs do not enter directly into firm $i$'s profit function, 
+\item Given by our assumption that prices are chosen from a set of integers 
+\item R1 already proved 
+\item $C_0$ is a singleton. 
+\end{enumerate}
+
+\newpage
+
+
+\end{document}

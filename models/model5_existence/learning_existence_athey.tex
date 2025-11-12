@@ -1,0 +1,301 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+ 
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\setlength{\marginparwidth}{2cm} 
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}%[section] commented out to avoid numbering by section
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{ass}[thm]{Assumption}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{theorem}[thm]{Theorem}   % alias for \begin{theorem}
+\newtheorem{definition}{Definition}
+\makeatother
+
+
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+%\addbibresource{../references.bib}
+\begin{document}
+ 
+% \title{{\Large Centralized annuities marketplace}}
+%\author{Lucas Condeza\thanks{Yale University %\texttt{lucas.schmitz@yale.edu}}} 
+%\date{}
+%\maketitle
+\textcolor{red}{This document adapts Athey(2001, ECMA) to prove existence of a game with unknown types(costs) it uses theorem 4 to prove it for a logit demand -which is log-supermodular- but does not prove it for more general cases. }
+\section{Adapt Athey(2001)}
+
+For the definitions and lemmas from Athey (2001) that we use, see Appendix \ref{sec:app_definitions}.
+
+Fix \(I\ge 2\) firms. For each firm \(i\in\{1,\dots,I\}\):
+
+\begin{enumerate}
+\item \textbf{Types (costs).} The privately known type is the marginal cost \(t_i:=c_i\in C_i:=[\underline c_i,\overline c_i]\subset\mathbb R_+\).
+Let \(C:=\prod_{i=1}^I C_i\). Types are drawn once from a common prior \(F\) on \(C\) with atomless density.\footnote{Athey (2001), Assumption 1, p. 865.} 
+We allow arbitrary affiliation across \((t_1,\ldots,t_I)\); independence is a special case.
+
+\item \textbf{Actions (prices).} Firm \(i\) chooses a price \(a_i:=p_i\in A_i:=[\underline p_i,\overline p_i]\).  
+\footnote{Given that costs are bounded, monopoly prices provide a natural upper bound $\overline p_i$. }
+%\footnote{For example we can set $\underline p_i = \underline c_i$ and $\overline p_i$ to be the monoopolist price when cost is $\overline c_i$. }
+Let $ p = (p_1,\dots,p_I)$ the price vector and $A = \prod_{i=1}^I A_i \in \mathbb R_+$ the action space. 
+
+\item \textbf{Demand and payoffs.} Let \(D_i:A\to\mathbb R_+\) be firm \(i\)'s (deterministic) market demand, continuous in \(p\). We assume \(D_i\) is weakly decreasing in own price \(p_i\) and weakly increasing in rivals' prices \(p_j\) for \(j\neq i\).
+Per-period profit is \footnote{See Athey (2001, p. 873) for the particular case in which utility takes this form. }
+\[
+u_i(p,t)\;=\;(p_i-t_i)\,D_i(p),
+\]
+
+\item \textbf{Strategies and information.} A (pure) strategy is a Borel-measurable pricing rule
+\(\sigma_i:C_i\to A_i\). Given opponents' strategies \(\sigma_{-i}\), firm \(i\)'s interim expected payoff is
+\[
+U_i(p_i\,;\,t_i,\sigma_{-i})
+\;=\;\mathbb E_{t_{-i}\mid t_i}\big[(p_i-t_i)\,D_i\big(p_i,\sigma_{-i}(t_{-i})\big)\big],
+\]
+so each firm “plays against” the \emph{distribution of rival prices} induced by \(\sigma_{-i}\) and \(F\).
+
+\end{enumerate}
+
+
+
+Assume:
+\begin{enumerate}
+  \item[\emph{(LSM)}] $D_i(\cdot)$ is \emph{log-supermodular} in prices; equivalently,
+  $\frac{\partial^2}{\partial p_i\,\partial p_j}\ln D_i(p)\ge 0$ for all $j\neq i$ wherever defined.
+  \footnote{This holds for standard systems such as logit, CES, translog, and suitable linear forms.   Athey's pricing example with $u_i(p,t)=(p_i-t_i)D_i(p)$ and discussion of log-supermodular   demand, p. 873.}
+  \item[\emph{(Aff)}] Types are affiliated; independence is a special case.\footnote{
+  Claim: If $(T_1,\dots,T_n)$ have an independent joint density $f(t)=\prod_{i=1}^n f_i(t_i)$, then the vector is affiliated.
+Affiliation is equivalent to the joint density being log-supermodular almost everywhere (Athey, 2001, Fact (iv), p. 872). Let $x,y\in\mathbb{R}^n$ and write $x\vee y$ and $x\wedge y$ for the coordinatewise max and min. Under independence,
+\[
+f(x\vee y)\,f(x\wedge y)
+= \prod_{i=1}^n f_i(\max\{x_i,y_i\})\,f_i(\min\{x_i,y_i\})
+= \prod_{i=1}^n f_i(x_i)f_i(y_i)
+= f(x)\,f(y).
+\]
+Thus $f(x\vee y)\,f(x\wedge y)\ge f(x)f(y)$ holds with equality for all $x,y$, so $f$ is log-supermodular. By the equivalence in Athey (2001), the variables are affiliated.
+  }
+  \item[\emph{(PD)}] For prices in the pricing  space, $p_i\in [\underline p_i,\overline p_i]$, demand is strictly positive ($D_i(p)>0$)\footnote{We require this assumption to later take logarithms of the demand.}
+\end{enumerate}
+
+
+
+
+
+\textbf{Claim 1 (nonnegativity and log-supermodularity of $u_i$ in $(p,t)$).}
+On the domain $\{(p,t): p_i\ge t_i,\ i=1,\dots,I\}$, $u_i$ is nonnegative and \emph{log-supermodular} in the full vector $(p,t)$.
+
+\emph{Proof.}
+Nonnegativity is immediate from $p_i\ge t_i$ and $D_i\ge 0$. 
+For log-supermodularity, write on the interior $p_i>t_i$:
+\[
+g(p,t)\;=\;\ln u_i(p,t)\;=\;\ln(p_i-t_i)\;+\;\ln D_i(p).
+\]
+We verify that all distinct cross-partials of $g$ are weakly nonnegative (a sufficient condition for log-supermodularity where $u_i>0$):
+\[
+\frac{\partial^2 g}{\partial p_j\,\partial p_k} \;=\; \frac{\partial^2}{\partial p_j\,\partial p_k}\ln D_i(p)\ \ge\ 0\quad(j\neq k)
+\]
+by Assumption LSM. For the own-price and own-cost pair,
+\[
+\frac{\partial^2 g}{\partial p_i\,\partial t_i} \;=\; \frac{\partial^2}{\partial p_i\,\partial t_i}\ln(p_i-t_i)\;=\;\frac{1}{(p_i-t_i)^2}\;>\;0.
+\]
+For $j\neq i$,
+\[
+\frac{\partial^2 g}{\partial p_j\,\partial t_i} \;=\;0,\qquad
+\frac{\partial^2 g}{\partial t_i\,\partial t_k} \;=\;0\quad(k\neq i),
+\]
+since $D_i$ is independent of $t$ and $\ln(p_i-t_i)$ is independent of all $p_j$ with $j\neq i$ and all $t_k$ with $k\neq i$.
+Hence $g$ is supermodular in $(p,t)$ wherever $u_i>0$, so $u_i$ is log-supermodular on the domain; the inequality version extends to the boundary $p_i=t_i$ by continuity of $D_i$ and nonnegativity of $(p_i-t_i)_+$. \hfill$\square$ \vspace{0.5em}
+
+
+
+\textbf{Step 2 (From log-supermodularity to SCC under affiliation).}
+
+By Claim 1 and Assumption (Aff), using Theorem \ref{thm:4_athey} the game satisfies SCC, thus given that action sets are compact intervals and the profit function is continuous on prices, there exists a pure-strategy NE in nondecreasing strategies.
+
+
+
+\newpage
+
+% --- Replace your Claim 1 and Step 2 with the block below ---
+
+\paragraph{Aggregated logit demand and SCC}
+
+Fix a finite set of consumer segments \(g=1,\dots,G\). Segment \(g\) has weight \(w_g>0\) in the market and price sensitivity \(\alpha_g>0\). Let the segment-\(g\) systematic utility for product \(i\) be \(\delta_i^{(g)}\) (any constants allowed). The segment-\(g\) multinomial‑logit share is
+\[
+s_i^{(g)}(p)
+=\frac{\exp\{\delta_i^{(g)}-\alpha_g p_i\}}{\sum_{\ell=1}^I \exp\{\delta_\ell^{(g)}-\alpha_g p_\ell\}},
+\]
+and the total (deterministic) demand for product \(i\) is the positive linear combination
+\[
+D_i(p)=\sum_{g=1}^G w_g\,s_i^{(g)}(p).
+\]
+Each \(s_i^{(g)}\) is continuous, strictly decreasing in \(p_i\), and increasing in \(p_j\) for \(j\neq i\), with
+\[
+\frac{\partial s_i^{(g)}}{\partial p_i}
+=-\alpha_g\,s_i^{(g)}(1-s_i^{(g)})\le 0,
+\qquad
+\frac{\partial s_i^{(g)}}{\partial p_j}
+=\alpha_g\,s_i^{(g)}s_j^{(g)}\ge 0\quad(j\neq i).
+\]
+Hence \(D_i\) is continuous, \(\partial D_i/\partial p_i\le 0\), and \(\partial D_i/\partial p_j\ge 0\) for \(j\neq i\) by linearity.
+
+Note that $\pi^g_i =  (p_i - t_i) s_i^{(g)}(p) $ is supermodular in $p$. \footnote{
+$\frac{\partial \pi_i^{(g)}}{\partial p_i} = s_i^{(g)}(p) + (p_i - t_i) \frac{\partial s_i^{(g)}}{\partial p_i} = s_i^{(g)}(p) - \alpha_g (p_i - t_i) s_i^{(g)}(p)(1 - s_i^{(g)}(p))$. 
+then 
+$\frac{\partial \pi_i^{(g)}}{\partial p_i \partial p_j} = s_i^{(g)}(p) - \alpha_g (p_i - t_i) s_i^{(g)}(p)(1 - s_i^{(g)}(p))$. 
+}
+
+\vspace{1cm}
+\medskip
+\noindent\textbf{Claim (SCC and existence for sums of logit demands).}
+Consider the differentiated‑product Bertrand game with private marginal costs \(t_i\) (affiliated types) and payoffs
+\[
+u_i(p,t)=(p_i-t_i)\,D_i(p),
+\]
+where \(D_i\) is the sum‑of‑segments logit demand above. Then the game satisfies Athey’s Single Crossing Condition (SCC). Under Assumption A1 and compact price intervals with continuity, there exists a pure‑strategy Bayesian Nash equilibrium in nondecreasing strategies.
+
+\emph{Proof.}
+(i) The mapping \(u_i(p,t)=(p_i-t_i)D_i(p)\) is exactly Athey’s pricing form (her “Bertrand pricing example”).\footnote{See Athey (2001), p. 873, where payoffs are \(u_i(a,t)=(a_i-t_i)D_i(a)\) in the pricing application.} By the calculations above, the demand system is downward‑sloping in own price and (weakly) increasing in rival prices.
+
+(ii) Athey’s Theorem 7 for “Bertrand pricing with downward‑sloping demand” states that when types are affiliated (private values is a special case), the game satisfies the SCC.\footnote{Theorem 7, item 4, pp. 881–882, lists Bertrand with downward‑sloping demand under several information structures, including affiliated private values and conditionally independent common values, as satisfying the SCC.} Our aggregated‑logit \(D_i\) satisfies those monotonicity requirements, so SCC holds.
+
+(iii) With SCC in hand, compact action intervals \(A_i=[\bar c_i,\bar p_i]\) (trim so \(p_i\ge t_i\) to keep profits nonnegative if desired), and continuity in prices, existence for the continuum‑action game follows from Athey’s finite‑grid approximation result.\footnote{Theorem 2 and Corollary 2.1, p. 871, deliver existence of a PSNE in nondecreasing strategies for interval action sets with continuous payoffs. The SCC definition is on p. 866.} \(\square\)
+
+\newpage
+
+
+\section{Appendix}
+
+\subsection{Definitions/Lemmas Athey(2001)}\label{sec:app_definitions}
+
+
+\begin{definition}[Single Crossing Property of Incremental Returns (SCP-IR), as in Athey(2001, p. 865)]\label{def:SCP-IR}
+
+A function $h:\mathbb{R}^2 \to \mathbb{R}$ satisfies the (Milgrom–Shannon) \emph{single crossing property of incremental returns} (SCP-IR) in $(x;\theta)$ if, for all $x_H > x_L$ and all $\theta_H > \theta_L$,
+\[
+h(x_H,\theta_L) - h(x_L,\theta_L) \ge 0 \; (\!>\!0) \implies
+h(x_H,\theta_H) - h(x_L,\theta_H) \ge 0 \; (\!>\!0).
+\]
+It satisfies the \emph{weak} SCP-IR if, for all $x_H > x_L$ and $\theta_H > \theta_L$,
+\[
+h(x_H,\theta_L) - h(x_L,\theta_L) > 0 \implies
+h(x_H,\theta_H) - h(x_L,\theta_H) \ge 0.
+\]
+If $h$ is twice differentiable, a sufficient condition for SCP-IR is
+$$ \frac{\partial^2 h}{\partial x \, \partial \theta} \ge 0  \quad \text{or equivalently} \quad  \frac{\partial^2 \ln h}{\partial x \, \partial \theta} \ge 0.
+$$
+\end{definition}
+
+
+\begin{lemma}[Milgrom and Shannon (1994)]\label{lemma:SCP-IR}
+
+Let $h:\mathbb{R}^2 \to \mathbb{R}$.  
+Then $h$ satisfies the SCP-IR if and only if the correspondence
+\[
+x^*(\theta,B) = \arg\max_{x\in B} h(x,\theta)
+\]
+is nondecreasing in $\theta$ and $B$ in the strong set order.
+\end{lemma}
+
+
+
+\begin{theorem}[Theorem 2, Athey (2001, p. 870)]\label{thm:2_athey}
+Assume A1. Suppose that  
+\begin{enumerate}%[(i)]
+    \item for all $i$, $A_i=[\underline a_i,\overline a_i]$;  
+    \item for all $i$, $u_i(a,t)$ is continuous in $a$; and  
+    \item for any finite $\tilde A\subseteq A$, a pure-strategy Nash equilibrium exists in nondecreasing strategies.  
+\end{enumerate}
+Then a pure-strategy Nash equilibrium exists in nondecreasing strategies in the game where players choose actions from $A$.
+\end{theorem}
+
+
+\begin{definition}[Supermodularity, Athey (2001, p.871)]\label{def:supermodularity}
+Let $X$ be a lattice. A function $h : X \to \mathbb{R}$ is \emph{supermodular} if, for all $x,y \in X$,
+$$ h(x \vee y) + h(x \wedge y) \geq h(x) + h(y), $$
+where $\vee$ and $\wedge$ denote the join and meet operators, respectively.
+When $h : \mathbb{R}^n \to \mathbb{R}$ and vectors are ordered in the usual way, $h$ is supermodular if and only if
+$$\frac{\partial^2 h(x)}{\partial x_i \, \partial x_j} \ge 0 \quad \text{for all } i \neq j.  $$
+\end{definition}
+
+
+\begin{definition}[Log-supermodularity, Athey (2001, p.871)]\label{def:log_supermodularity}
+A nonnegative function $h : X \to \mathbb{R}$ is \emph{log-supermodular} if, for all $x,y \in X$,
+$$ h(x \vee y) \, h(x \wedge y) \ge h(x)\, h(y) $$
+Equivalently, $\ln h$ is supermodular wherever $h>0$.
+\end{definition}
+
+
+\begin{theorem}[Theorem 3, Athey (2001, p. 872)]\label{thm:3_athey}
+Suppose that  
+\begin{enumerate}%[(i)]
+    \item for all $i$, $u_i(a,t)$ is supermodular in $a$ and in $(a_i,t_j)$ for each $j=1,\ldots,I$; and  
+    \item the types are affiliated.  
+\end{enumerate}
+Then the game satisfies the Single Crossing Condition (SCC). Thus, under Assumption A1, if either $A_i$ is finite, or else for all $i$, $A_i=[\underline a_i,\overline a_i]$ and $u_i(a,t)$ is continuous in $a$, there exists a pure-strategy Nash equilibrium in nondecreasing strategies.
+\end{theorem}
+
+
+\begin{theorem}[Theorem 4, Athey (2001, p. 873)]\label{thm:4_athey}
+Suppose:   
+\begin{enumerate}%[(i)]
+    \item for all $i$, $u_i(a,t)$ is non-negative and log-supermodular in $(a,t)$; and 
+    \item the types are affiliated.  
+\end{enumerate}
+Then the game satisfies the Single Crossing Condition (SCC). Thus, under Assumption A1, if either $A$ is finite, or else for all $i$, $A_i=[\underline a_i,\overline a_i]$ and $u_i(a,t)$ is continuous in $a$, there exists a pure-strategy Nash equilibrium in nondecreasing strategies.
+\end{theorem}
+
+\end{document}

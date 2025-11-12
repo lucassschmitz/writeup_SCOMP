@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+ 
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{hyperref}
+
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\setlength{\marginparwidth}{2cm} 
+
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}%[section] commented out to avoid numbering by section
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{ass}[thm]{Assumption}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{theorem}[thm]{Theorem}   % alias for \begin{theorem}
+\newtheorem{definition}{Definition}
+\makeatother
+
+% \newtheorem{thm}{\protect\theoremname}
+% \theoremstyle{plain}
+% \newtheorem{prop}[thm]{\protect\propositionname}
+% \providecommand{\propositionname}{Proposition}
+% \providecommand{\theoremname}{Theorem}
+% \makeatother
+% \providecommand{\propositionname}{Proposition}
+% \providecommand{\theoremname}{Theorem}
+% \newtheorem{thm}[thm]{Theorem}
+% \newtheorem{ass}[thm]{Assumption}
+% \newtheorem{lemma}[thm]{Lemma}  
+% \newtheorem{definition}{Definition}
+% \newtheorem{theorem}[thm]{Theorem}   % alias so \begin{theorem} works
+% \makeatother
+
+
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+%\addbibresource{../references.bib}
+\begin{document}
+ 
+% \title{{\Large Centralized annuities marketplace}}
+%\author{Lucas Condeza\thanks{Yale University %\texttt{lucas.schmitz@yale.edu}}} 
+%\date{}
+%\maketitle
+
+
+\begin{itemize}
+    \item \textbf{In many markets customers are allowed to shop around and give examples.}
+    
+    In markets where prices are set for each individual it is common for consumers to get initial offers which they can leverage to get revised offers. For example, when requesting a loan, banks make initial offers to customers and give them a Loan Estimate (LO) which is a document with the terms of the offer (see Figure \ref{fig:LE_example}). Then customers can use the LO from one bank to improve the terms of the offer from another bank.\footnote{For example the Consumer Financial Protection Bureau says: "Your best bargaining chip is usually having Loan Estimates from other lenders in hand"(\href{https://www.consumerfinance.gov/owning-a-home/compare/compare-loan-estimates/\#:~:text=Negotiate\%20to\%20get\%20the\%20best,deal\%20for\%20you}{CFPB}), and an article providing advice on how to get a mortgage says: 
+    " Keep in mind that the mortgage quotes you get are not set in stone. Mortgage lenders have the flexibility to adjust their fees and even their interest rates. That means you can often use competing offers as leverage to negotiate your costs."(\href{https://themortgagereports.com/26016/shopping-for-a-mortgage-how-many-mortgage-quotes-do-i-need}{source}) and another website says "Once you have loan estimates from a few lenders, take a lower rate quote from a competitor to other lenders if you like the customer service or loan officer. They might be willing to match or beat the rate quote to win your business. That’s why shopping around pays off." (\href{https://www.credible.com/mortgage/how-to-shop-for-mortgage-rates}{source}) or " Many mortgage companies are advertising “bring me your LE, and we will meet it or beat it.”" (\href{https://nationalmortgageprofessional.com/news/keep-cool-calm-and-compliant}{source})}. Or when buying car insurance, it is advised to get quotes from multiple providers and to ask a company whether they can match a competitor's price or at least to provide a price lower than the initial quote. \footnote{For example this website says :"Similar to retail stores matching their competitors' sales prices, some insurance companies will offer you a lower rate on your car insurance if it's the same rate their competitor offers. " and then provides steps to negotiate price matching which are: \begin{enumerate}
+    \item Gather several different quotes from a variety of providers. Make sure you get quotes for the same amount of coverage that you already have.
+    \item Contact your current provider.
+    \item Let your provider know that you were able to find a lower rate for your policy. Ask them if they're willing to match the price or at least offer a lower rate than what you're currently paying.
+    \item If your insurance company refuses to lower your rates, you might want to consider going with another company. Find a company with good customer reviews and contact them with your quotes.
+    \item Keep contacting providers until you find one willing to price match or give you the lowest rates. Just make sure you get the coverage you need.
+    \end{enumerate} } 
+
+
+
+
+    \item \textbf{The effects of shopping around are ambiguous-> give an economic intuition. }
+    \item \textbf{Knowing other firm prices is a good assumption for goods, not for products where prices are personalized.}
+    
+    \item \textbf{}
+    \item \textbf{}
+    \item \textbf{}
+    \item \textbf{}
+    \item \textbf{}
+    \item \textbf{}
+    \item \textbf{}
+    \item \textbf{}
+    \item \textbf{}
+    \item \textbf{}
+
+\end{itemize}
+
+
+
+
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{figures/docs_screenshots/Loan Estimate.png}
+    \caption{Example of a Loan Estimate, source: \url{https://www.consumerfinance.gov/owning-a-home/loan-estimate/}}
+    \label{fig:LE_example}
+\end{figure}
+
+
+ 
+ 
+
+\end{document}

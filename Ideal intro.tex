@@ -86,7 +86,7 @@
 
 
 
-%\addbibresource{../references.bib}
+\addbibresource{references.bib}
 \begin{document}
  
 % \title{{\Large Centralized annuities marketplace}}
@@ -98,13 +98,11 @@
 \begin{itemize}
     \item \textbf{In many markets customers are allowed to shop around and give examples.}
     
-    In markets where prices are set for each individual it is common for consumers to get initial offers which they can leverage to get revised offers. For example, when requesting a loan, banks make initial offers to customers and give them a Loan Estimate (LO) which is a document with the terms of the offer (see Figure \ref{fig:LE_example}). Then customers can use the LO from one bank to improve the terms of the offer from another bank.
-    
+    In markets where prices are set for each individual it is common for consumers to get initial offers which they can leverage to get revised offers\footnote{Selection markets, where the cost of providing the good is consumer dependent are one case of consumer specific prices, are the most prominent case of markets witt consumer specific prices}. For example, when requesting a loan, banks make initial offers to customers and give them a Loan Estimate (LO) which is a document with the terms of the offer (see Figure \ref{fig:LE_example}). Then customers can use the LO from one bank to improve the terms of the offer from another bank
     \footnote{For example the Consumer Financial Protection Bureau says: "Your best bargaining chip is usually having Loan Estimates from other lenders in hand"(\href{https://www.consumerfinance.gov/owning-a-home/compare/compare-loan-estimates/\#:~:text=Negotiate\%20to\%20get\%20the\%20best,deal\%20for\%20you}{CFPB}), and an article providing advice on how to get a mortgage says: 
     " Keep in mind that the mortgage quotes you get are not set in stone. Mortgage lenders have the flexibility to adjust their fees and even their interest rates. That means you can often use competing offers as leverage to negotiate your costs."(\href{https://themortgagereports.com/26016/shopping-for-a-mortgage-how-many-mortgage-quotes-do-i-need}{source}) and another website says "Once you have loan estimates from a few lenders, take a lower rate quote from a competitor to other lenders if you like the customer service or loan officer. They might be willing to match or beat the rate quote to win your business. That’s why shopping around pays off." (\href{https://www.credible.com/mortgage/how-to-shop-for-mortgage-rates}{source}) or " Many mortgage companies are advertising “bring me your LE, and we will meet it or beat it.”" (\href{https://nationalmortgageprofessional.com/news/keep-cool-calm-and-compliant}{source})}
     .
     Or when buying car insurance, it is advised to get quotes from multiple providers and to ask a company whether they can match a competitor's price or at least to provide a price lower than the initial quote. 
-    
     \footnote{For example \href{https://www.caranddriver.com/car-insurance/a36291420/price-matching-car-insurance/}{this} website says :"Similar to retail stores matching their competitors' sales prices, some insurance companies will offer you a lower rate on your car insurance if it's the same rate their competitor offers. " and then provides steps to negotiate price matching which are: \begin{enumerate}
     \item Gather several different quotes from a variety of providers. Make sure you get quotes for the same amount of coverage that you already have.
     \item Contact your current provider.
@@ -113,25 +111,45 @@
     \item Keep contacting providers until you find one willing to price match or give you the lowest rates. Just make sure you get the coverage you need.
     \end{enumerate}
     . Or \href{https://www.autoinsurance.org/what-is-an-auto-insurance-price-match/}{this} page says "Auto insurance price match is a practice where car insurance companies offer to match the lower price offered by a competitor for the same coverage. It allows consumers to get the same coverage at a lower cost by comparing rates from different companies."
-    } 
-    
-    
+    }   
     For example a \href{https://www.moneygeek.com/insurance/auto/how-to-lower-your-car-insurance-rate-if-you-cant-negotiate/}{website} suggests saying: 
 
 "I've received quotes from [competitor] for less for the same coverage. What can you do to help me stay with your company?"
  
 
-    \item \textbf{The effects of shopping around are ambiguous-> give an economic intuition. }
+    \item \textbf{The effects of revised offers are ambiguous-> give an economic intuition. }
 
-    The effects of being able to request a revised offer, leveraging an initial offer to improve the subsequent offer of a company, are ambiguous. On one hand requesting a revised offer allows consumers to improve the terms offered by the firms in the initial instance. On the other hand, if firms anticipate consumers requesting revised offers then they might make worse initial offers\footnote{IT IS CRUCIAL TO HAVE A SIMPLE MODEL WHERE REVISED OFFERS IMPROVE THE EQUILIBRIUM SO THAT THE ARGUMENT MAKES SENSE AND TO PROVIDE A BETTER INTUITION. }. Moreover, revised offers could have distributional impacts, since some groups could be more likely to request the revised offers. \footnote{For example in the mortgage markte the CFPF is paying close attention to pricing exception in the context of fair lending (\href{https://www.mitchellsandler.com/news/pricing-exceptions-in-an-increasing-rate-environment#:~:text=More%20specifically%2C%20the%20targeted%20lenders,Finally%2C%20the%20lenders%20failed}{source}).  } 
+    The effects of being able to request a revised offer, leveraging an initial offer to improve the subsequent offer of a company, are ambiguous. On one hand requesting a revised offer allows consumers to improve the terms offered by the firms in the initial instance. On the other hand, if firms anticipate consumers requesting revised offers then they might make worse initial offers\footnote{IT IS CRUCIAL TO HAVE A SIMPLE MODEL WHERE REVISED OFFERS IMPROVE THE EQUILIBRIUM SO THAT THE ARGUMENT MAKES SENSE AND TO PROVIDE A BETTER INTUITION. }. Moreover, revised offers could have distributional impacts, since some groups could be more likely to request the revised offers. \footnote{For example in the mortgage markte the CFPF is paying close attention to pricing exception in the context of fair lending (\href{https://www.mitchellsandler.com/news/pricing-exceptions-in-an-increasing-rate-environment\#:~:text=More\%20specifically\%2C\%20the\%20targeted\%20lenders,Finally\%2C\%20the\%20lenders\%20failed}{source}), particularly how minorities seem to be getting less pricing exceptions - the term used to refer to revised offers in this market.} 
 
-\item 
+
+    \item \textbf{Lack of evidence and reasons}
+    
+    Despite the prevalence of revised offers in many markets, there is limited evidence on how allowing consumers to request revised offers affects market outcomes. One reason for this lack of evidence is the difficulty of getting data on offers. Ideally one would observe data not only on the initial offers made by firms to consumers, but also on all the revised offers made when consumers request them and on the choice made by consumers, the purchase decision. But most datasets that we are aware of contain purchases, where is not possible to see the sequence of offers made to a particular consumer. 
+
+
+    \item \textbf{What we do}
+
+    We study the impact of allowing consumers to request revised offers in a centralized market for annuities in Chile. The setting offers rich administrative data on initial and revised offers, as well as on the purchase decision of consumers. Moreover we are leverage variation in the market design, since in [YEAR] the regulator banned the request of revised offers.    
+    We build a two-stage model of firm competition and consumer choice to study the effects of allowing revised offers on market outcomes. In a first stage firms simultaneously send initial offers to consumers. Consumers then decide whether to request revised offers from firms, to choose one of the initial offers or to not purchase. In the second stage firms simultaneously send revised offers to consumers that requested them. Finally consumers choose one of the revised offers, one of the initial offers or to not purchase. 
+
+    We find that [RESULTS TO BE ADDED]
+
+    \item \textbf{Particularities of our data}
     
     
     \item \textbf{Knowing other firm prices is a good assumption for goods, not for products where prices are personalized.}
     
-    \item \textbf{}
-    \item \textbf{}
+    \item \textbf{Review of the literature}
+    
+    Our paper contributes to three strands of the literature. First, we contribute to the  work on [WRITE HERE]
+
+    Second, we contribute to the empirical literature on
+    
+    Finally, our work speaks to the literature on
+    
+    \item \textbf{Paper organization}
+    
+    The remainder of the paper is organized as follows. Section 2 describes our setting and  data. Section 3 provides descriptive evidence [WHAT DESCRIPTIVES]. Section  4 describes our model of competition with revised offers. Section 5 discusses the identification  and estimation of the model and the main results from the estimates. Section 6 discusses  our counterfactual analysis of the impacts of banning revised offers. Finally, Section 7 concludes.
     \item \textbf{}
     \item \textbf{}
     \item \textbf{}

@@ -77,6 +77,7 @@
 % \newtheorem{theorem}[thm]{Theorem}   % alias so \begin{theorem} works
 % \makeatother
 
+\newcommand{\sepline}{\par\bigskip\noindent\rule{\linewidth}{0.4pt}\par\medskip}
 
 % \input{tcilatex}
 \usepackage{tikz}
@@ -95,23 +96,23 @@
 %\maketitle
 
 
+\begin{abstract}
+We study the welfare and distributional effects of allowing consumers to request revised, personalized price offers. Using proprietary administrative data from the Chilean centralized annuities market that records initial and revised offers and a regulatory reform that temporarily banned revised-offer requests, we estimate a structural two-stage model of firm competition and consumer choice. Firms send simultaneous initial offers, consumers decide whether to solicit revisions, and firms respond with revised offers; we recover preference and cost parameters from observed offer sequences and purchase decisions. Counterfactuals calibrated to the estimates show that permitting revised offers increases purchase rates and lowers average final prices, raising aggregate consumer surplus, but also induces firms to soften initial offers and creates heterogeneous impacts across consumer groups. 
+\end{abstract}
+
+\sepline
+
+\newpage
+
 \begin{itemize}
     \item \textbf{In many markets customers are allowed to shop around and give examples.}
     
-    In markets where prices are set for each individual it is common for consumers to get initial offers which they can leverage to get revised offers\footnote{Selection markets, where the cost of providing the good is consumer dependent are one case of consumer specific prices, are the most prominent case of markets witt consumer specific prices}. For example, when requesting a loan, banks make initial offers to customers and give them a Loan Estimate (LO) which is a document with the terms of the offer (see Figure \ref{fig:LE_example}). Then customers can use the LO from one bank to improve the terms of the offer from another bank
-    \footnote{For example the Consumer Financial Protection Bureau says: "Your best bargaining chip is usually having Loan Estimates from other lenders in hand"(\href{https://www.consumerfinance.gov/owning-a-home/compare/compare-loan-estimates/\#:~:text=Negotiate\%20to\%20get\%20the\%20best,deal\%20for\%20you}{CFPB}), and an article providing advice on how to get a mortgage says: 
-    " Keep in mind that the mortgage quotes you get are not set in stone. Mortgage lenders have the flexibility to adjust their fees and even their interest rates. That means you can often use competing offers as leverage to negotiate your costs."(\href{https://themortgagereports.com/26016/shopping-for-a-mortgage-how-many-mortgage-quotes-do-i-need}{source}) and another website says "Once you have loan estimates from a few lenders, take a lower rate quote from a competitor to other lenders if you like the customer service or loan officer. They might be willing to match or beat the rate quote to win your business. That’s why shopping around pays off." (\href{https://www.credible.com/mortgage/how-to-shop-for-mortgage-rates}{source}) or " Many mortgage companies are advertising “bring me your LE, and we will meet it or beat it.”" (\href{https://nationalmortgageprofessional.com/news/keep-cool-calm-and-compliant}{source})}
-    .
+    In markets where prices are set for each individual it is common for consumers to get initial offers, which they can leverage to get revised offers.
+    \footnote{Selection markets, where the cost of providing the good is consumer dependent are one case of consumer specific prices, are the most prominent case of markets with consumer specific prices}
+    For example, when requesting a loan, banks make initial offers to customers and give them a Loan Estimate (LO) which is a document with the terms of the offer (see Figure \ref{fig:LE_example}). Then customers can use the LO from one bank to improve the terms of the offer from another bank.
+    \footnote{For example the Consumer Financial Protection Bureau says: "Your best bargaining chip is usually having Loan Estimates from other lenders in hand"(\href{https://www.consumerfinance.gov/owning-a-home/compare/compare-loan-estimates/\#:~:text=Negotiate\%20to\%20get\%20the\%20best,deal\%20for\%20you}{CFPB}), and an article providing advice on how to get a mortgage says: " Keep in mind that the mortgage quotes you get are not set in stone. Mortgage lenders have the flexibility to adjust their fees and even their interest rates. That means you can often use competing offers as leverage to negotiate your costs."(\href{https://themortgagereports.com/26016/shopping-for-a-mortgage-how-many-mortgage-quotes-do-i-need}{Mortgage Report}) and another website says "Once you have loan estimates from a few lenders, take a lower rate quote from a competitor to other lenders if you like the customer service or loan officer. They might be willing to match or beat the rate quote to win your business. That’s why shopping around pays off." (\href{https://www.credible.com/mortgage/how-to-shop-for-mortgage-rates}{Credible.com}) or " Many mortgage companies are advertising “bring me your LE, and we will meet it or beat it.”" (\href{https://nationalmortgageprofessional.com/news/keep-cool-calm-and-compliant}{National Mortgage Professional})}
     Or when buying car insurance, it is advised to get quotes from multiple providers and to ask a company whether they can match a competitor's price or at least to provide a price lower than the initial quote. 
-    \footnote{For example \href{https://www.caranddriver.com/car-insurance/a36291420/price-matching-car-insurance/}{this} website says :"Similar to retail stores matching their competitors' sales prices, some insurance companies will offer you a lower rate on your car insurance if it's the same rate their competitor offers. " and then provides steps to negotiate price matching which are: \begin{enumerate}
-    \item Gather several different quotes from a variety of providers. Make sure you get quotes for the same amount of coverage that you already have.
-    \item Contact your current provider.
-    \item Let your provider know that you were able to find a lower rate for your policy. Ask them if they're willing to match the price or at least offer a lower rate than what you're currently paying.
-    \item If your insurance company refuses to lower your rates, you might want to consider going with another company. Find a company with good customer reviews and contact them with your quotes.
-    \item Keep contacting providers until you find one willing to price match or give you the lowest rates. Just make sure you get the coverage you need.
-    \end{enumerate}
-    . Or \href{https://www.autoinsurance.org/what-is-an-auto-insurance-price-match/}{this} page says "Auto insurance price match is a practice where car insurance companies offer to match the lower price offered by a competitor for the same coverage. It allows consumers to get the same coverage at a lower cost by comparing rates from different companies."
-    }   
+    \footnote{For example \href{https://www.caranddriver.com/car-insurance/a36291420/price-matching-car-insurance/}{this} website says :"Similar to retail stores matching their competitors' sales prices, some insurance companies will offer you a lower rate on your car insurance if it's the same rate their competitor offers. " and then provides steps to negotiate price matching which are: \begin{enumerate}  \item Gather several different quotes from a variety of providers. Make sure you get quotes for the same amount of coverage that you already have. \item Contact your current provider.   \item Let your provider know that you were able to find a lower rate for your policy. Ask them if they're willing to match the price or at least offer a lower rate than what you're currently paying.     \item If your insurance company refuses to lower your rates, you might want to consider going with another company. Find a company with good customer reviews and contact them with your quotes.     \item Keep contacting providers until you find one willing to price match or give you the lowest rates. Just make sure you get the coverage you need.     \end{enumerate} Or \href{https://www.autoinsurance.org/what-is-an-auto-insurance-price-match/}{this} page says "Auto insurance price match is a practice where car insurance companies offer to match the lower price offered by a competitor for the same coverage. It allows consumers to get the same coverage at a lower cost by comparing rates from different companies."    }   
     For example a \href{https://www.moneygeek.com/insurance/auto/how-to-lower-your-car-insurance-rate-if-you-cant-negotiate/}{website} suggests saying: 
 
 "I've received quotes from [competitor] for less for the same coverage. What can you do to help me stay with your company?"
@@ -129,8 +130,8 @@
 
     \item \textbf{What we do}
 
-    We study the impact of allowing consumers to request revised offers in a centralized market for annuities in Chile. The setting offers rich administrative data on initial and revised offers, as well as on the purchase decision of consumers. Moreover we are leverage variation in the market design, since in [YEAR] the regulator banned the request of revised offers.    
-    We build a two-stage model of firm competition and consumer choice to study the effects of allowing revised offers on market outcomes. In a first stage firms simultaneously send initial offers to consumers. Consumers then decide whether to request revised offers from firms, to choose one of the initial offers or to not purchase. In the second stage firms simultaneously send revised offers to consumers that requested them. Finally consumers choose one of the revised offers, one of the initial offers or to not purchase. 
+    We study the impact of allowing consumers to request revised offers in a centralized market for annuities in Chile. The setting offers rich administrative data on initial and revised offers, as well as on the purchase decision of consumers. Moreover we leverage variation in the market design, since in [YEAR] the regulator banned the request of revised offers.    
+    We build a two-stage model of firm competition and consumer choice to study the effects of allowing revised offers on market outcomes. In a first stage firms simultaneously send initial offers to consumers. Consumers then decide whether to request revised offers from firms, to choose one of the initial offers or to not purchase. In the second stage firms simultaneously send revised offers to consumers that requested them. Finally, consumers choose one of the revised offers, one of the initial offers or to not purchase. 
 
     We find that [RESULTS TO BE ADDED]
 
@@ -157,13 +158,26 @@
     \item \textbf{}
     \item \textbf{}
     \item \textbf{}
-    \item \textbf{}
+    \item \textbf{Discrimination and banning of revised offers}
+    
+    Revised offers have raised concerns about distribuional impacts. 
+
+    For example the CFPB in the US has expressed concerns about minorities getting less revised offers in the mortgage market. \footnote{In the mortgage market the revised offers are called \textit{pricing exceptions} }
+
+    % find evidence of banning pricing exceptions. 
 
 \end{itemize}
 
 
+% Say that congestion is a problem 
 
+% airlines need a slot: how do they get it? 
 
+% the effects of slot allcoation are ambiguous, and cite discussion and reform proposals. 
+
+% this paper 
+
+% why focus on EU
 
 
 
@@ -173,6 +187,8 @@
     \caption{Example of a Loan Estimate, source: \url{https://www.consumerfinance.gov/owning-a-home/loan-estimate/}}
     \label{fig:LE_example}
 \end{figure}
+
+
 
 
  

@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+\addbibresource{references.bib}
+\begin{document}
+
+
+
+
+
+
+Let $J$ denote the number of firms, and let $\theta \in \{0,1\}$ represent the consumer type where $\theta = 0 $ represent the shoppers and $\theta = 1$ the non-shoppers. A share $\lambda$ is non-shoppers. We denote by $D_i^S$ the demand of searchers and by $D_i^{NS}$  the demand of non-searchers. 
+
+Denote by $\eta_i(p)= \frac{\partial D_i(p)}{\partial p} \frac{p}{D_i(p)}$ the elasticity of types $i$. We assume: 
+
+\[
+\eta_{0}(p) > \eta_{1}(p) 
+\]
+
+We consider a setting with $J=2$ firms.  
+Each firm $j \in \{1,2\}$ sets a price $p_{tj}^t$ in the $t$ stage of the game. 
+
+\paragraph{Profits.}
+The profit function for firm $i$ is:
+\begin{align}
+\Pi_i(P_i, P_{-i}) 
+&= \lambda D_i^S(P_{11}^T, P_{12}^T)(P_{11}^T - c_1) 
++ \frac{(1 - \lambda)}{2}
+\left[
+D_i^{NS}(P_{21}^T, P_{12}^T)(P_{21}^T - c_i),
++   D_i^{NS}(P_{11}^T, P_{22}^T)(P_{11}^T - c_i),
+\right]
+\end{align}
+where $c_i$ is the marginal cost.
+
+The first term corresponds to the profit from non-searchers.  The second and third terms correspond to searchers, depending on whether they request a revised offer from firm 1 or 2. 
+
+
+ 
+
+
+\paragraph{First-Order Conditions.}
+the derivative of profits with respect to firm $1$’s own price $p_{11}^T$ is:
+\begin{align}
+\frac{\partial \Pi_1}{\partial p_{11}^T} 
+&= \lambda \left[
+\frac{\partial D_1^S(p_{11}^T, p_{12}^T)}{\partial p_{11}^T}(p_{11}^T - c_1)
++ D_1^S(p_{11}^T, p_{12}^T)
+\right] \notag \\
+&\quad + \frac{(1 - \lambda)}{2}
+\left[
+\frac{\partial D_1^{NS}(p_{11}^T, p_{22}^T)}{\partial p_{11}^T}(p_{11}^T - c_1)
++ D_1^{NS}(p_{11}^T, p_{22}^T)\right] \notag \\
+& \quad + \frac{(1 - \lambda)}{2}
+\left[
+\frac{\partial D_1^{NS}(p_{11}^T, p_{22}^T)}{\partial p_{22}^T}(p_{11}^T - c_1) \frac{\partial P_{22}^T}{\partial P_{11}^T} +
+\underbrace{\frac{\partial D_1^{NS}(p_{21}^T, p_{12}^T)}{\partial p_{21}^T}(p_{21}^T - c_1) \frac{\partial P_{21}^T}{\partial P_{11}^T}}_{=0} \right] 
+\end{align}
+
+ Define $g_i(p) = \frac{\partial D_i^S(p)}{\partial p_{i}}(p_i - c_i) + D_i^S(p)$ and  $\tilde g_i(p) = \frac{\partial D_i^{NS}(p)}{\partial p_{i}}(p_i - c_i) + D_i^{NS}(p)$
+
+Then the FOC can be written as: 
+
+
+
+\begin{align}
+\frac{\partial \Pi_1}{\partial p_{11}^T} 
+= \lambda g_1(p_{11}^T, p_{12}^T) 
++ \frac{(1 - \lambda)}{2}
+\left[ g_1(p_{11}^T, p_{22}^T)
++ 
+\frac{\partial D_1^{NS}(p_{11}^T, p_{22}^T)}{\partial p_{22}^T}(p_{11}^T - c_1) \frac{\partial P_{22}^T}{\partial P_{11}^T}  \right] 
+\end{align}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,293 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+ 
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{hyperref}
+
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\setlength{\marginparwidth}{2cm} 
+
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}%[section] commented out to avoid numbering by section
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{ass}[thm]{Assumption}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{theorem}[thm]{Theorem}   % alias for \begin{theorem}
+\newtheorem{definition}{Definition}
+\makeatother
+
+% \newtheorem{thm}{\protect\theoremname}
+% \theoremstyle{plain}
+% \newtheorem{prop}[thm]{\protect\propositionname}
+% \providecommand{\propositionname}{Proposition}
+% \providecommand{\theoremname}{Theorem}
+% \makeatother
+% \providecommand{\propositionname}{Proposition}
+% \providecommand{\theoremname}{Theorem}
+% \newtheorem{thm}[thm]{Theorem}
+% \newtheorem{ass}[thm]{Assumption}
+% \newtheorem{lemma}[thm]{Lemma}  
+% \newtheorem{definition}{Definition}
+% \newtheorem{theorem}[thm]{Theorem}   % alias so \begin{theorem} works
+% \makeatother
+
+\newcommand{\sepline}{\par\bigskip\noindent\rule{\linewidth}{0.4pt}\par\medskip}
+
+% \input{tcilatex}
+\usepackage{enumitem} % allows custom labels
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\addbibresource{references.bib}
+\begin{document}
+ 
+\title{\Large Search and Leverage: With an Empirical Application to the Chilean Annuities Market\thanks{We thank...}}
+\author{Lucas Schmitz\thanks{Yale University (email: \texttt{lucas.schmitz@yale.edu}). Corresponding author.} \,\,\,\,\,\, and \,\,\,\,\,\, Diego Cussen\thanks{New York University (email: \texttt{dc5004@nyu.edu}).}} 
+\date{\today}
+\maketitle
+
+\begin{abstract}
+
+In markets with asymmetric information, consumers may use initial price offers as leverage to obtain better prices. The welfare and distributional effects of this consumer search, however, are ambiguous. If searching signals lower search costs or higher price elasticity, firms can best respond by offering higher initial prices. This description fits the
+markets for retirement annuities, personal loans, auto insurance, and housing, among others. Despite potentially significant effects on welfare and competition, there is limited evidence on the size and magnitude of this “search and leverage” effect. We show that identifying the joint distribution of search costs and price elasticity is critical for understanding the effects of search and leverage. Using data from the Chilean annuities market, we estimate this distribution and show that the Chilean regulator’s decision to forbid the search for revised offers increased welfare by 11\%, with significant distributional effects.
+
+
+% Diego: May this have anticompetitive effects? Like price matching, that helps firms monitor collusion (even if it is tacit). Maybe forbidding new requests reduces price transparency. The effect of transparency on competition and  prices is ambiguous: Green and Porter (1984), Ater and Rigbi (2023?), Luco (2017?), Montag et al (??), mi paper con JP.
+\end{abstract}
+
+
+\newpage
+
+\section{Introduction}
+
+Consider a market where consumers receive offers from one or more sellers, and then use those offers to negotiate better prices. 
+
+
+ \newpage
+
+In our setting all consumers are first time buyers. No switching, no complementary products/cross-selling. No need to restrict to ``first-time buyers'' like \textcite{cosconati_competing_2025} (where it is hard to even define what a first time buyer is).
+
+\noindent So, there are none of the following three confounders:
+\begin{itemize}
+    \item Previous history
+    \item No switching (so, no selling at low price today to behavioral types, just to raise prices in the future)
+    \item No cross-selling
+\end{itemize}
+
+\newpage
+
+%%%%In many markets customers are allowed to shop around and give examples.}
+
+In markets where prices are set for each individual, it is common for consumers to receive initial offers and then leverage them to request revised offers—improved quotes provided after the consumer asks for better terms.
+%In markets where prices are set for each individual it is common for consumers to get initial offers, which they can leverage to get revised offers.
+\footnote{Selection markets, where the cost of providing the good is consumer-dependent, are a prominent case of consumer-specific pricing}
+       
+For example, when requesting a loan, banks make initial offers to customers and give them a Loan Estimate (LE) which is a document with the terms of the offer (see Figure \ref{fig:LE_example}). Then, customers can use the LE from one bank to improve the terms of the offer from another bank.
+Similarly, when buying car insurance, consumers are advised to gather quotes from multiple providers and ask firms to match a competitor’s price or at least to provide a price lower than the initial quote
+\footnote{See section \ref{sec:other_markets} for details and examples.  }.       
+For example a consumer advice \href{https://www.moneygeek.com/insurance/auto/how-to-lower-your-car-insurance-rate-if-you-cant-negotiate/}{website} suggests asking: 
+
+``I've received quotes from [competitor] for less for the same coverage. What can you do to help me stay with your company?''
+%  OJO CON LAS COMILLAS
+ 
+
+%%%%  \textbf{The effects of revised offers are ambiguous-> give an economic intuition. }
+
+The effects of allowing consumers to  request revised offers, leveraging an initial offer to improve the subsequent offer of a company, are ambiguous. On one hand,     revised offers can improve terms relative to the initial offers.  On the other hand, if firms anticipate requests for revised offers, they might make worse initial offers\footnote{IT IS CRUCIAL TO HAVE A SIMPLE MODEL WHERE REVISED OFFERS IMPROVE THE EQUILIBRIUM SO THAT THE ARGUMENT MAKES SENSE AND TO PROVIDE A BETTER INTUITION. }. Moreover, revised offers could have distributional impacts, since some groups could be more likely to request revised offers. \footnote{
+In mortgages, the Consumer Financial Protection Bureau has scrutinized revised offers and the disparities by race/ethnicity (\href{https://www.mitchellsandler.com/news/pricing-exceptions-in-an-increasing-rate-environment\#:~:text=More\%20specifically\%2C\%20the\%20targeted\%20lenders,Finally\%2C\%20the\%20lenders\%20failed}{source}).} 
+
+
+%%%% Lack of evidence and reasons}
+
+Despite the prevalence of revised offers in many markets, there is limited evidence on their impact\footnote{\textcolor{red}{WE SHOULD MAKE A BETTER ARGUMENT WHY KNOWING THEIR IMPACT IS IMPORTANT. MAYBE ONE LINE OF ARGUMENT WOULD BE TO SAY THAT THERE COULD BE POTENTIAL BENEFITS OF POSTING PRICING WITHOUT THIS SEQUENTIAL OFFERS MECHANISM}}. One reason is data availability. 
+Ideally, one would observe not only initial offers but also all revised offers and the consumer’s purchase decision. But most datasets contain only purchases\footnote{One notable exception is \textcite{coen_price_2023}, which contains all the initial offers, but without distinction between initial and revised offers. }, so it is not possible to see the sequence of offers made to a particular consumer.
+
+    
+%%%%% \textbf{Our setting}
+
+
+%%%% \textbf{What we do}
+
+We study the impact of allowing consumers to request revised offers in a centralized market for annuities in Chile. The setting offers rich administrative data on initial and revised offers, as well as on the final purchase decision. Moreover, we leverage variation in the market design, since in 2025 the regulator prohibited revised offers. 
+
+%We use data from the Chilean centralized annuities marketplace to study the impact of revised offers. This market presents several particularities that make it suitable to study the impact of revised offers. First, because it is a centralized market there is data on all the initial and revised offers consumers receive. Secondly, prior to 2025 requesting revised offers was common, in our sample more than 70\% of consumers requested one. Third, in 2025 the regulator prohibited revised offers, which provides exogenous variation. 
+
+
+We first provide descriptive evidence of the role of the revised offers. In our data more than 70\% of customers request a revised offer. Moreover, when requesting a revised offer they get significant improvements over the initial offer of the same company, on average the improvement corresponds to almost two monthly wages. 
+%Revised offers are significantly higher than initial offers.  When asking a revised offers the improvement over the initial offer is on average \textbf{1.8} monthly wages. 
+
+To study the welfare effects of revised offers, we build a two‑stage model of firm competition and consumer choice. In a first stage, firms simultaneously send initial offers to consumers. Consumers then decide whether to request revised offers from firms, choose one of the initial offers, or not purchase. In the second stage, firms simultaneously send revised offers to consumers that requested them. Finally, consumers choose one of the revised offers, one of the initial offers, or not purchase. 
+
+    We find that [RESULTS TO BE ADDED]
+
+\vspace{.5cm}
+    
+%Review of the literature
+    
+Our paper contributes to three strands of the literature. First, we contribute to the  work on [WRITE HERE]
+
+Second, we contribute to the empirical literature on
+    
+Finally, our work speaks to the literature on
+
+\vspace{.5cm}
+%Paper organization
+    
+The remainder of the paper is organized as follows. Section 2 describes our setting and  data. Section 3 provides descriptive evidence [WHAT DESCRIPTIVES]. Section  4 describes our model of competition with revised offers. Section 5 discusses the identification  and estimation of the model and the main results from the estimates. Section 6 discusses  our counterfactual analysis of the impacts of banning revised offers. Finally, Section 7 concludes.
+
+\newpage
+
+%   To be added: 
+%    \begin{itemize}
+%        \item Why is it important to understand the effect of revised offers. 
+%        \item What economic forces are in our model {later: this requires to write model first}. Some examples: 
+%       \begin{itemize}
+%            \item Knowing other firm prices is a good assumption for goods, not for products where prices are personalized. Hence there could be revelation of information between the initial and revised offers.
+%            \item  sequential pricing generates higher prices than simultaneous pricing because the firm pricing in the first stage take into account the impact of increasing prices on the price of the firm pricing in the second stage, intuition similar to Stackelberg
+%            \item Search costs 
+%        \end{itemize}
+%    \end{itemize}
+    
+    
+
+\section{Appendix}
+
+\subsection{Other markets}\label{sec:other_markets}
+
+This section documents that the two stage pricing environment with revised offers we study is not unique to SCOMP.  In both mortgages and auto insurance, consumers first receive an initial quote and are explicitly encouraged to shop and present rival offers; firms then often respond with \emph{revised} terms (sometimes framed as “match or beat”).
+
+
+In this section we review the institutional details of other markets which use revised offers. 
+
+\subsubsection{Mortgage market}\label{sec:other_mortgage}
+
+
+In the mortgage market,  lenders issue a standardized  Loan Estimate (LE) summarizing the terms of an initial offer (see Figure~\ref{fig:LE_example}). 
+Guidance from regulators and industry sources explicitly tells borrowers to leverage competing LEs to obtain improved terms. Concretely: 
+%A commonly advised practice is to request an improvement on the LE, for example some advices are: 
+\begin{itemize}
+    \item \textbf{Regulator (CFPB).} ``Your best bargaining chip is usually having Loan Estimates from other lenders in hand'' (\cite{cfpb_compare_2024}).
+    \item \textbf{Consumer guide} ``Keep in mind that the mortgage quotes you get are not set in stone. Mortgage lenders have the flexibility to adjust their fees and even their interest rates. That means you can often use competing offers as leverage to negotiate your costs.'' (\cite{mortgage_reports_how_2025})
+    \item \textbf{Consumer guide } ``Once you have loan estimates from a few lenders, take a lower rate quote from a competitor to other lenders if you like the customer service or loan officer. They might be willing to match or beat the rate quote to win your business. That’s why shopping around pays off.'' (\cite{kearns_how_2024})
+    \item \textbf{Industry piece } ``Many mortgage companies are advertising `bring me your LE, and we will meet it or beat it.'\,'' (\cite{conner_keep_2024})
+\end{itemize}
+
+%\begin{itemize}
+%    \item  "Your best bargaining chip is usually having Loan Estimates from other lenders in hand"(\cite{cfpb_compare_2024}) % https://www.consumerfinance.gov/owning-a-home/compare/compare-loan-estimates/
+%    \item  "Keep in mind that the mortgage quotes you get are not set in stone. Mortgage lenders have the flexibility to adjust their fees and even their interest rates. That means you can often use competing offers as leverage to negotiate your costs."(\cite{mortgage_reports_how_2025}) %https://themortgagereports.com/26016/shopping-for-a-mortgage-how-many-mortgage-quotes-do-i-need 
+%    \item  "Once you have loan estimates from a few lenders, take a lower rate quote from a competitor to other lenders if you like the customer service or loan officer. They might be willing to match or beat the rate quote to win your business. That’s why shopping around pays off." (\cite{kearns_how_2024}) 
+%    \item " Many mortgage companies are advertising “bring me your LE, and we will meet it or beat it.”" (\cite{conner_keep_2024})
+%\end{itemize}
+
+
+These sources describe the same two‑stage interaction we study: a standardized, comparable \emph{initial} quote (the LE), followed by \emph{revised} offers when borrowers present rival LEs. The advice to ``match or beat'' makes the revision step explicit rather than incidental, and it hinges on the LE’s comparability—exactly the role initial offers play in our setting. 
+
+
+\textit{Why this is analogous.} 
+\begin{enumerate}[label=(\roman*)]
+    \item There is a standardized initial document (the LE) that makes offers comparable across firms—analogous to the initial, comparable quotes in our setting.
+    \item The equilibrium interaction is explicitly two‑stage: initial quote, followed by targeted improvements when the borrower returns with rival terms.
+    \item Pricing is personalized (risk‑ and borrower‑specific), so the revised offer matters for who benefits, not just the average borrower.
+\end{enumerate}
+
+
+\subsubsection{Auto insurance}\label{sec:other_carinsurance}
+
+Consumer guides describe a similar process for auto insurance: obtain multiple quotes for the same coverage, then ask your current provider to match the lower competitor quote or at least offer a reduced rate; some insurers advertise price‑matching explicitly, while others are less flexible. Some examples of advice given to consumers are: 
+
+\begin{enumerate}[label=(\roman*)]
+    \item  \textcite{hearst_autos_research_price_2021} says "Similar to retail stores matching their competitors' sales prices, some insurance companies will offer you a lower rate on your car insurance if it's the same rate their competitor offers." 
+    and then provides steps to negotiate price matching which are: 
+\begin{enumerate}  
+    \item Gather several different quotes from a variety of providers. Make sure you get quotes for the same amount of coverage that you already have. 
+    \item Contact your current provider. 
+    \item Let your provider know that you were able to find a lower rate for your policy. Ask them if they're willing to match the price or at least offer a lower rate than what you're currently paying.   
+    \item If your insurance company refuses to lower your rates, you might want to consider going with another company. Find a company with good customer reviews and contact them with your quotes.   
+    \item Keep contacting providers until you find one willing to price match or give you the lowest rates. Just make sure you get the coverage you need.   
+\end{enumerate} 
+\item "Auto insurance price match is a practice where car insurance companies offer to match the lower price offered by a competitor for the same coverage. It allows consumers to get the same coverage at a lower cost by comparing rates from different companies."  \textcite{sims_what_2020}
+\end{enumerate}
+
+
+\textit{Why this is analogous.} (i) Consumers start with individualized quotes and can trigger improved
+terms by disclosing competitor offers—again a two‑stage interaction. (ii) Firm responses vary: some “meet or
+beat,” others do not. This heterogeneity parallels differences in how firms revise terms in our setting and helps
+explain distributional effects.
+
+ 
+Diego: this looks a lot like continuous time labor models with on-the-job (OTJ) search. Those models, however, assume perfect info once a firm and an employed worker meet. 
+
+
+\textcolor{red}{Some articles say that insurance policies are non-negotiable, eg. \cite{roehr_roehr_2024}}
+
+
+%\subsubsection{Housing market}
+
+%In the housing market something similar occurs. Sellers frequently get several offers for their house, what is called a multiple offer situation. 
+
+%In that situation it is advised to 
+%"Ask all buyers to submit their highest and best offer within a limited time. This will spark competition among buyers, prompting them to submit their best and final offer. You can then analyze and choose the the best suited offer for you" (\cite{houzeo_highest_2025}). Although in this situation there are multiple buyers and one seller, it maintains the structure of the annuities market and of our prior examples, there are many agents in the uninformed side of the market and one informed party.  
+
+%The National Association of Realtors(\cite{nar_buyers_2009}), suggests: "It’s possible you may be faced with multiple competing offers to purchase your property". In this case, one of the strategies is: "you can inform all potential purchasers that other offers are “on the table” and invite them to make their “best” offer". 
+
+
+
+\subsection{Figures}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figures/docs_screenshots/Loan Estimate.png}
+    \caption{Example of a Loan Estimate, source: \url{https://www.consumerfinance.gov/owning-a-home/loan-estimate/}}
+    \label{fig:LE_example}
+\end{figure}
+
+
+\newpage
+\printbibliography
+
+\end{document}

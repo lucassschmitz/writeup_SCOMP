@@ -93,15 +93,9 @@ Particularly, if search costs are correlated with private information then searc
 
 What happens when there is interaction between search and selection. 
 
-Setting: 
-\begin{itemize}
-    \item Common value auction 
-    \item Selection 
-    \item Search cost
-\end{itemize}
  
 
-\newpage
+\section{Model}
 There are $J$ insurers in the market. 
 
 Consumer type is given by $\theta$ which is distributed with a pdf $f_0(\theta)$.
@@ -136,7 +130,7 @@ and the probability that the a consumer who searches and is of type $\theta$ cho
 
  
 
-The consumer decides whether to search. Define $U_{i0}(\theta, \hat \theta) = \max_j u_{ij}(F_j^{1T}(\hat \theta_j))$ and $U_{i1}(\theta, \hat \theta) = \max_j u_{ij}(F_j^{2T}(\hat \theta))$ he searches if: 
+The consumer decides whether to search. Define $U_{i0}(\theta, \hat \theta) = \max_j u_{ij}(F_j^{1T}(\hat \theta_j))$ and $U_{i1}(\theta, \hat \theta) = \max_j u_{ij}(F_j^{2T}(\hat \theta))$ he searches if\footnote{\textcolor{red}{FIX THIS PART, THE CONSUMER SHOULD CHOOSE ONLY TAKING INTO ACCOUNT THE UTILITY WITHOUT THE IDIOSINCRATIC ERROR. }}: 
 
 \begin{align}
     \underbrace{U_{i1}(\theta, \hat \theta)  - U_{i0}(\theta, \hat \theta)}_{\equiv G(\theta, \hat \theta)}> s_i
@@ -182,9 +176,10 @@ The conditional demand for non-searchers in the first stage is given by:
 and the conditional demand for searchers is given by:  
 
 \begin{align} 
-    D_{j1}(\theta, \hat \theta_j) = Pr(D=j | S =1, \theta_j, \theta) =\int_{\hat \theta_{-j}}  Pr(D = j \mid S =1, \theta_j, \theta) \phi(\hat \theta_{-j}; \theta) f_0(\theta) d\theta d\hat \theta_{-j}
+    D_{j1}(\theta, \hat \theta_j) = Pr(D=j | S =1, \hat  \theta_j, \theta) =\int_{\hat \theta_{-j}}  Pr(D = j \mid S =1, \hat \theta, \theta) 
+    \phi(\hat \theta_{-j}; \theta)  d\hat \theta_{-j}
+    %\phi(\hat \theta_{-j}; \theta) f_0(\theta) d\theta d\hat \theta_{-j}
 \end{align}
-
 
 Also define 
 \begin{align}
@@ -195,72 +190,68 @@ Also define
      [1-\pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))] 
     \phi(\hat \theta_{-j}; \theta) d\hat \theta_{-j}
 \end{align}
-and equivalently for searchers, define: 
+and similarly for searchers define:
 
-
-\begin{align}
-    \hat D_{j1}(\theta, \hat \theta_j) &= Pr( D = j, S= 1  \mid \hat \theta_j, \theta) 
-    %= \int_{\hat \theta_{-j}} Pr( D = j \mid \hat \theta, \theta, S=0) [1-\pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))]
-    %  \phi(\hat \theta_{-j}; \theta) d\hat \theta_{-j} \notag \\
-    %&= \int_{\hat \theta_{-j}} \frac{\exp( \gamma(\theta) F_j^{1T}(\hat \theta_j) + \xi_j + \beta r_j )}{1+ \sum_{k =1 }^J \exp(\gamma(\theta) F_k^{1T}(\hat \theta_k) + \xi_k + \beta r_k )}
+%\begin{align}
+%    \hat D_{j1}(\theta, \hat \theta_j) &= Pr( D = j, S= 1  \mid \hat \theta_j, \theta) 
+%    = \int_{\hat \theta_{-j}} Pr( D = j \mid \hat \theta, \theta, S=1) \pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))
+%      \phi(\hat \theta_{-j}; \theta) d\hat \theta_{-j} \notag \\
+%    &= \int_{\hat \theta_{-j}} \frac{\exp( \gamma(\theta) F_j^{1T}(\hat \theta_j) + \xi_j + \beta r_j )}{1+ \sum_{k =1 }^J \exp(\gamma(\theta) F_k^{1T}(\hat \theta_k) + \xi_k + \beta r_k )}
     % [1-\pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))] 
     %\phi(\hat \theta_{-j}; \theta) d\hat \theta_{-j}
-\end{align}
+%\end{align}
 
-
-\vspace{2cm}
-
-Then the firm posterior mean when the consumer does not search is gien by: 
-\begin{align}
-    \mathbb{E}(\theta \mid \hat \theta_j, D=j, S=0) 
-    &= \int_\theta \theta f(\theta\mid \hat \theta_j, D=j, S=0) d\theta \notag \\
-    &= \int_\theta \theta 
-    \frac{  Pr(D = j \mid \theta, \hat \theta_j, S= 0) \cdot f(\theta \mid \hat \theta_j, S=0)     }{Pr(D= j \mid \hat \theta_j, S = 0)}
-    d\theta \notag \\ 
-    &= \int_\theta \theta 
-    \frac{ D_{j0}(\theta, \hat \theta_j) \cdot f(\theta \mid \hat \theta_j, S=0)     }{Pr(D= j \mid \hat \theta_j, S = 0)}
-    d\theta 
-\end{align}
-
-We can use: 
-\begin{align}
-     Pr(D= j \mid \hat \theta_j, S = 0) &= \int_{\theta'}  Pr(D = j \mid \theta', \hat \theta_j, S= 0) \cdot f(\theta' \mid \hat \theta_j, S=0) d \theta' \notag \\
-    &= \int_{\theta'} D_{j0}(\theta', \hat \theta_j) \cdot f(\theta' \mid \hat \theta_j, S=0) d \theta' 
-\end{align}
-to get: 
-\begin{align}
-    &= \int_\theta \theta 
-    \frac{ D_{j0}(\theta, \hat \theta_j) \cdot f(\theta \mid \hat \theta_j, S=0)     }{\int_{\theta'} D_{j0}(\theta', \hat \theta_j) \cdot f(\theta' \mid \hat \theta_j, S=0) d \theta' }
-    d\theta \\ 
-    &=  \frac{  \int_\theta \theta  D_{j0}(\theta, \hat \theta_j) \cdot f(\theta \mid \hat \theta_j, S=0)     }{\int_{\theta'} D_{j0}(\theta', \hat \theta_j) \cdot f(\theta' \mid \hat \theta_j, S=0) d \theta' }
-    d\theta \\ 
-\end{align}
-given that 
-\begin{align}
-    f(\theta \mid \hat \theta_j, S =0) = f(\theta_j \mid \theta, S= 0) f(\theta )
-\end{align}
-
-\vspace{2cm}
-\begin{align}
-    \mathbb{E}(\theta \mid \hat \theta_j, D=j, S=0) 
-    &= \int_\theta \theta f(\theta\mid \hat \theta_j, D=j, S=0) d\theta
-    =  \frac{ \int_\theta \theta f(D=j  \mid \theta, \hat \theta_j, S=0) \phi(\hat \theta_j; \theta, \sigma_j) f_0(\theta)}{\int_{\theta'} f(D=j \mid \theta', \hat \theta_j, S =0 ) \phi(\hat \theta_j; \theta', \sigma_j) f_0(\theta') d\theta'} d\theta \notag \\
-    &=  \frac{ \int_\theta \theta D_{j0}(\theta, \hat \theta_j) 
-    \phi(\hat \theta_j; \theta, \sigma_j) f_0(\theta)}{\int_{\theta'} D_{j0}(\theta', \hat \theta_j) \phi(\hat \theta_j; \theta', \sigma_j) f_0(\theta') d\theta'} d\theta 
-\end{align}
-
-
-and the posterior mean given that the consumer searches is given by: 
 
 \begin{align}
-    \mathbb{E}(\theta \mid \hat \theta, D=j, S=1) 
-    &= \int_\theta \theta f(\theta\mid \hat \theta, D=j, S=1) d\theta
-    %= \int_\theta \theta \frac{f(D=j, S=1 \mid \theta, \hat \theta) \phi(\hat \theta; \theta, \sigma_j) f_0(\theta)}{\int_{\theta'} f(D=j,  S=1 \mid \theta', \hat \theta ) \phi(\hat \theta; \theta', \sigma_j) f_0(\theta') d\theta'} d\theta \notag \\
-    %&=  \frac{ \int_\theta \theta f(D=j, S=1 \mid \theta, \hat \theta)     \phi(\hat \theta; \theta, \sigma_j) f_0(\theta)}{\int_{\theta'} f(D=j,  S=1  \mid \theta', \hat \theta) \phi(\hat \theta; \theta', \sigma_j) f_0(\theta') d\theta'} d\theta \\
-    &=  \frac{ \int_\theta \theta D_{j1} (\theta, \hat \theta)
-    \phi(\hat \theta; \theta, \sigma_j) f_0(\theta)}{\int_{\theta'} 
-    D_{j1} (\theta', \hat \theta)     \phi(\hat \theta; \theta', \sigma_j) f_0(\theta') d\theta'} d\theta
+    \hat D_{j1}(\theta, \hat \theta) &= Pr( D = j, S= 1  \mid \hat \theta, \theta) 
+    =  Pr( D = j \mid \hat \theta, \theta, S=1) \pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))
+       \notag \\
+    &= \frac{\exp( \gamma(\theta) F_j^{2T}(\hat \theta) + \xi_j + \beta r_j )}{1+ \sum_{k =1 }^J \exp(\gamma(\theta) F_k^{2T}(\hat \theta) + \xi_k + \beta r_k )}
+    \pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))   
 \end{align}
+
+ 
+
+Then the posterior for non-searchers is\footnote{See section \ref{sec:non_posterior} for the derivation}:
+
+\begin{align}
+E\!\left(\theta \mid \hat\theta_j, D=j, S=0\right)
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \widehat D_{j0}(\theta,\hat\theta_j)\,
+             \varphi\!\left(\hat\theta_j;\theta,\sigma_j\right)\,
+             f_0(\theta)\, d\theta}
+       {\displaystyle
+        \int
+             \widehat D_{j0}(\theta',\hat\theta_j)\,
+             \varphi\!\left(\hat\theta_j;\theta',\sigma_j\right)\,
+             f_0(\theta')\, d\theta'} .
+\label{eq:post0_final}
+\end{align}
+
+ 
+
+
+and the posterior mean given that the consumer searches is given by\footnote{See section \ref{sec:ser_posterior}}: 
+
+
+\begin{align}
+E\!\left(\theta \mid \hat\theta, D=j, S=1\right)
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \hat D_{j1}(\theta,\hat\theta)\,
+             \phi\!\left(\hat\theta;\theta\right)\,
+             f_0(\theta)\, d\theta}
+     {\displaystyle
+        \int
+             \hat D_{j1}(\theta',\hat\theta)\,
+             \phi\!\left(\hat\theta;\theta'\right)\,
+             f_0(\theta')\, d\theta'} .
+\label{eq:post1_final}
+\end{align}
+ 
 
 
 
@@ -285,20 +276,6 @@ we can use the fact that: $Pr(D = j, S = 0 \mid \theta, \hat \theta) = Pr(D = j 
 \subsection{Analysis}
 
 
-The model includes three elements that are present in this setting: selection, search and asymmetric information.
-
-%% timing of the game 
-The timing of the game is as follows. First, firms observe a noisy signal about the consumer's type. 
-
-
-% what happens between stages: learning about other firms signals and also updating priors about the consumer. 
-
-%% selection interacts with search 
-
-% search interacts with common value auction 
-
-
-
 Your model introduces a dynamic screening mechanism into a selection market where the act of searching does more than just uncover a better price; it fundamentally alters the information structure of the equilibrium. This transformation occurs through two simultaneous channels that determine whether search ultimately helps or hurts market efficiency.
 
 First, for consumers who search, there is an **information aggregation channel**. By soliciting second-stage offers, searchers effectively compel firms to reveal their private signals through their posted prices. Since all competing firms observe these initial offers, the information asymmetry *between* firms vanishes for the searcher pool. This eliminates the "winner's curse"—the fear of winning a customer only because rivals saw a risk factor you missed—and allows firms to price aggressively based on a pooled, highly precise estimate of the consumer's "true" risk. This mechanism effectively replicates the benefits of a centralized information bureau for the subset of consumers who search.
@@ -306,90 +283,34 @@ First, for consumers who search, there is an **information aggregation channel**
 Second, there is a **screening channel** driven by the correlation between search costs and risk types. The decision to search sorts consumers into two distinct pools with different average risk profiles. If low-risk consumers are more likely to search, perhaps due to lower search costs, they successfully "cream-skim" themselves out of the general pool. They benefit doubly: first from the competitive, precise pricing of the second stage, and second by signaling they are low-risk. However, this creates a pecuniary externality on those who remain. As low-risk consumers exit, the pool of non-searchers deteriorates, forcing firms to raise first-stage prices to cover the higher expected cost of this residual "adverse" group. Conversely, if high-risk consumers are the ones searching, the act of searching itself becomes a negative signal. This "signaling trap" can backfire, causing firms to offer worse terms to searchers and potentially collapsing the search market entirely. Thus, search "helps" when it efficiently identifies low-risk drivers but "hurts" when it concentrates bad risk in the stagnant pool of non-searchers.
 
 
-\newpage 
-
-
-Then the firm posterior mean when the consumer does not search is gien by: 
-\begin{align}
-    \mathbb{E}(\theta \mid \hat \theta_j, D=j, S=0) 
-    &= \int_\theta \theta f(\theta\mid \hat \theta_j, D=j, S=0) d\theta \notag \\
-    &= \int_\theta \theta 
-    \frac{  Pr(D = j, S = 0  \mid \theta, \hat \theta_j) \cdot  f(\theta \mid \hat \theta_j, S=0)     }{Pr(D= j \mid \hat \theta_j, S = 0)}
-    d\theta \notag \\ 
-    &= \int_\theta \theta 
-    \frac{ D_{j0}(\theta, \hat \theta_j) \cdot f(\theta \mid \hat \theta_j, S=0)     }{Pr(D= j \mid \hat \theta_j, S = 0)}
-    d\theta 
-\end{align}
-
-We can use: 
-\begin{align}
-     Pr(D= j \mid \hat \theta_j, S = 0) &= \int_{\theta'}  Pr(D = j \mid \theta', \hat \theta_j, S= 0) \cdot f(\theta' \mid \hat \theta_j, S=0) d \theta' \notag \\
-    &= \int_{\theta'} D_{j0}(\theta', \hat \theta_j) \cdot f(\theta' \mid \hat \theta_j, S=0) d \theta' 
-\end{align}
-to get: 
-\begin{align}
-    &= \int_\theta \theta 
-    \frac{ D_{j0}(\theta, \hat \theta_j) \cdot f(\theta \mid \hat \theta_j, S=0)     }{\int_{\theta'} D_{j0}(\theta', \hat \theta_j) \cdot f(\theta' \mid \hat \theta_j, S=0) d \theta' }
-    d\theta \\ 
-    &=  \frac{  \int_\theta \theta  D_{j0}(\theta, \hat \theta_j) \cdot f(\theta \mid \hat \theta_j, S=0)     }{\int_{\theta'} D_{j0}(\theta', \hat \theta_j) \cdot f(\theta' \mid \hat \theta_j, S=0) d \theta' }
-    d\theta \\ 
-\end{align}
-given that 
-\begin{align}
-    f(\theta \mid \hat \theta_j, S =0) = f(\theta_j \mid \theta, S= 0) f(\theta )
-\end{align}
-
-\vspace{2cm}
-\begin{align}
-    \mathbb{E}(\theta \mid \hat \theta_j, D=j, S=0) 
-    &= \int_\theta \theta f(\theta\mid \hat \theta_j, D=j, S=0) d\theta
-    =  \frac{ \int_\theta \theta f(D=j  \mid \theta, \hat \theta_j, S=0) \phi(\hat \theta_j; \theta, \sigma_j) f_0(\theta)}{\int_{\theta'} f(D=j \mid \theta', \hat \theta_j, S =0 ) \phi(\hat \theta_j; \theta', \sigma_j) f_0(\theta') d\theta'} d\theta \notag \\
-    &=  \frac{ \int_\theta \theta D_{j0}(\theta, \hat \theta_j) 
-    \phi(\hat \theta_j; \theta, \sigma_j) f_0(\theta)}{\int_{\theta'} D_{j0}(\theta', \hat \theta_j) \phi(\hat \theta_j; \theta', \sigma_j) f_0(\theta') d\theta'} d\theta 
-\end{align}
-
-
-and the posterior mean given that the consumer searches is given by: 
-
-\begin{align}
-    \mathbb{E}(\theta \mid \hat \theta, D=j, S=1) 
-    &= \int_\theta \theta f(\theta\mid \hat \theta, D=j, S=1) d\theta
-    %= \int_\theta \theta \frac{f(D=j, S=1 \mid \theta, \hat \theta) \phi(\hat \theta; \theta, \sigma_j) f_0(\theta)}{\int_{\theta'} f(D=j,  S=1 \mid \theta', \hat \theta ) \phi(\hat \theta; \theta', \sigma_j) f_0(\theta') d\theta'} d\theta \notag \\
-    %&=  \frac{ \int_\theta \theta f(D=j, S=1 \mid \theta, \hat \theta)     \phi(\hat \theta; \theta, \sigma_j) f_0(\theta)}{\int_{\theta'} f(D=j,  S=1  \mid \theta', \hat \theta) \phi(\hat \theta; \theta', \sigma_j) f_0(\theta') d\theta'} d\theta \\
-    &=  \frac{ \int_\theta \theta D_{j1} (\theta, \hat \theta)
-    \phi(\hat \theta; \theta, \sigma_j) f_0(\theta)}{\int_{\theta'} 
-    D_{j1} (\theta', \hat \theta)     \phi(\hat \theta; \theta', \sigma_j) f_0(\theta') d\theta'} d\theta
-\end{align}
 
 
 \newpage 
- 
 
-\newpage 
-% Posterior for non-searchers: step-by-step derivation
+\section{Derivations}
+\subsection{Non-searchers posterior}\label{sec:non_posterior}% Posterior for non-searchers: step-by-step derivation
 
 \begin{align}
 E\!\left(\theta \mid \hat\theta_j, D=j, S=0\right)
-&= \int \theta \, f\!\left(\theta \mid \hat\theta_j, D=j, S=0\right)\, d\theta
-&\text{(definition of conditional expectation)} \label{eq:post0_def}\\ 
+&= \int \theta \, f\!\left(\theta \mid \hat\theta_j, D=j, S=0\right)\, d\theta 
+ \quad \quad \quad \text{(definition of conditional expectation)} \label{eq:post0_def}\\ 
 &= \int \theta \,
    \frac{f\!\left(\theta, D=j, S=0 \mid \hat\theta_j\right)}
         {\Pr\!\left(D=j, S=0 \mid \hat\theta_j\right)}\, d\theta
-&&\text{(Bayes' rule)} \label{eq:post0_bayes}\\[0.75em]
+\quad \quad \quad \text{(Bayes' rule)} \label{eq:post0_bayes}\\
 &= \int \theta \,
    \frac{\Pr\!\left(D=j, S=0 \mid \theta, \hat\theta_j\right)\,
          f\!\left(\theta \mid \hat\theta_j\right)}
         {\Pr\!\left(D=j, S=0 \mid \hat\theta_j\right)}\, d\theta
-&&\text{(chain rule: joint = prob $\times$ density)} \label{eq:post0_chain}\\[0.75em]
-&= \frac{\displaystyle
+\quad \quad \quad  \text{(joint = prob $\times$ density)} \label{eq:post0_chain}\\
+&= \frac{
         \int \theta \,
              \Pr\!\left(D=j, S=0 \mid \theta, \hat\theta_j\right)\,
              f\!\left(\theta \mid \hat\theta_j\right)\, d\theta}
-       {\displaystyle
-        \int
+       {\int
              \Pr\!\left(D=j, S=0 \mid \theta', \hat\theta_j\right)\,
              f\!\left(\theta' \mid \hat\theta_j\right)\, d\theta'}
-&&\text{(factor common denominator outside integral).}
+\quad \quad \quad  \text{(factor common denominator outside integral).}
 \label{eq:post0_ratio}
 \end{align}
 
@@ -442,6 +363,92 @@ E\!\left(\theta \mid \hat\theta_j, D=j, S=0\right)
              \varphi\!\left(\hat\theta_j;\theta',\sigma_j\right)\,
              f_0(\theta')\, d\theta'} .
 \label{eq:post0_final}
+\end{align}
+
+
+
+\subsection{Searchers posterior}\label{sec:ser_posterior}
+
+We want the posterior mean when the consumer searches and firms observe the
+full signal vector $\hat\theta $:
+
+
+\begin{align}
+E\!\left(\theta \mid \hat\theta, D=j, S=1\right)
+&= \int \theta \,
+      f\!\left(\theta \mid \hat\theta, D=j, S=1\right)\, d\theta
+&&\text{(definition of conditional expectation)}
+\label{eq:post1_def}\\
+&= \int \theta \,
+   \frac{f\!\left(\theta, D=j, S=1 \mid \hat\theta\right)}
+        {\Pr\!\left(D=j, S=1 \mid \hat\theta\right)}\, d\theta
+&&\text{(Bayes' rule)}
+\label{eq:post1_bayes}\\
+&= \int \theta \,
+   \frac{\Pr\!\left(D=j, S=1 \mid \theta,\hat\theta\right)\,
+         f\!\left(\theta \mid \hat\theta\right)}
+        {\Pr\!\left(D=j, S=1 \mid \hat\theta\right)}\, d\theta
+&&\text{(joint = prob $\times$ density)}
+\label{eq:post1_chain}\\[0.75em]
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \Pr\!\left(D=j, S=1 \mid \theta,\hat\theta\right)\,
+             f\!\left(\theta \mid \hat\theta\right)\, d\theta}
+     {\displaystyle
+        \int
+             \Pr\!\left(D=j, S=1 \mid \theta',\hat\theta\right)\,
+             f\!\left(\theta' \mid \hat\theta\right)\, d\theta'}
+&&\text{(factor common denominator).}
+\label{eq:post1_ratio}
+\end{align}
+
+Now apply Bayes' rule to the signal posterior:
+\begin{align}
+f\!\left(\theta \mid \hat\theta\right)
+&=
+\frac{f\!\left(\hat\theta \mid \theta\right)\,f_0(\theta)}
+     {\displaystyle\int f\!\left(\hat\theta \mid \theta'\right)\,f_0(\theta')\,d\theta'}
+\label{eq:signal_post_search_1}\\[0.5em]
+&=
+\frac{\phi\!\left(\hat\theta;\theta\right)\,f_0(\theta)}
+     {\displaystyle\int \phi\!\left(\hat\theta;\theta'\right)\,f_0(\theta')\,d\theta'} ,
+\label{eq:signal_post_search_2}
+\end{align}
+
+Substituting \eqref{eq:signal_post_search_2} into \eqref{eq:post1_ratio}, the normalising
+denominator in \eqref{eq:signal_post_search_2} cancels between numerator and denominator
+of \eqref{eq:post1_ratio}, yielding
+\begin{align}
+E\!\left(\theta \mid \hat\theta, D=j, S=1\right)
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \Pr\!\left(D=j, S=1 \mid \theta,\hat\theta\right)\,
+             \phi\!\left(\hat\theta;\theta\right)\,
+             f_0(\theta)\, d\theta}
+     {\displaystyle
+        \int
+             \Pr\!\left(D=j, S=1 \mid \theta',\hat\theta\right)\,
+             \phi\!\left(\hat\theta;\theta'\right)\,
+             f_0(\theta')\, d\theta'} .
+\label{eq:post1_phi}
+\end{align}
+
+\begin{align}
+E\!\left(\theta \mid \hat\theta, D=j, S=1\right)
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \hat D_{j1}(\theta,\hat\theta)\,
+             \phi\!\left(\hat\theta;\theta\right)\,
+             f_0(\theta)\, d\theta}
+     {\displaystyle
+        \int
+             \hat D_{j1}(\theta',\hat\theta)\,
+             \phi\!\left(\hat\theta;\theta'\right)\,
+             f_0(\theta')\, d\theta'} .
+\label{eq:post1_final}
 \end{align}
 
 

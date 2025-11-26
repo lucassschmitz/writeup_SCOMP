@@ -1,0 +1,398 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+\addbibresource{../references.bib}
+\begin{document}
+
+
+Consumer search and selection are prevalent in selection markets. 
+
+If search propensity and private information are not independent, then searching might reveal something about the consumer's private information. 
+
+Particularly, if search costs are correlated with private information then searching could reveal information about the consumer's type and improve or worsen selection issues. For example if healthy consumers search then they can get better quotes, which could help with adverse selection. 
+
+What happens when there is interaction between search and selection. 
+
+Setting: 
+\begin{itemize}
+    \item Private value auction
+    %\item Common value auction 
+    \item Selection 
+    \item Search cost
+\end{itemize}
+
+Consumer utility is 
+
+\begin{align}
+    u_{ij} = \beta r_{j} - \alpha_i F_{ij} + \xi_j + \epsilon_{ij}
+\end{align}
+where $r_j$ is the risk rating of the firm, $F_{ij}$ is flow payment of the offer, and $\xi_j$ is a firm-specific unobserved characteristic. We assume that $\epsilon_{ij}$ is distributed Gumbel. 
+
+
+Consumers have search costs ($s_i$), to simplify we assume that they can be shoppers or non-shoppers,  and also private information about their health ($h_i$), which creates selection. The joint distribution is denoted by $F(s, h)$. For now we assume that a share $\lambda$ of consumers are shoppers. 
+
+Assume $\alpha_i \in \{\alpha^S, \alpha^N \}$, where $|\alpha^S| > |\alpha^N|$, i.e. shoppers are more price sensitive than non-shoppers. 
+
+Assume that the demand from shoppers is $D^S_j(F)$ and the demand from non-shoppers is $D^N_j(F)$. 
+%Moreover we have that the elasticity of searchers is higher than the elasticity of non-searchers, i.e. $\eta^S(F) > \eta^N(F)$, where $\eta^i(F) = \frac{\partial D^i(F)}{\partial F} \frac{F}{D^i(F)}$.
+
+
+For each consumer firms draw a cost $\theta_j$ from a distribution $F_j(\cdot)$, which represents the cost of serving that consumer\footnote{Costs are given by the discounted present value of expected flows, where the expectation is taken using the mortality tables. We assume that mortality tables are the same across firms, but that the interest rate is not observable.}. 
+
+%For each consumer firms observe a signal about the cost of the consumer, denoted by $\hat \theta_{ji}$ drawn from a $\mathcal{N}(0, \sigma_j^2)$ with density $\phi(\hat \theta_{ji};\theta_j, \sigma_j)$. Note that this is a private value auction, and 
+
+
+The game has two stages, first firms make initial offers $F_{ij}^{T1}$, then consumers decide whether to search or not depending on their search costs, in the second stage firms compete in an English auction. We sill use backward induction to solve the game. 
+
+\textbf{Second stage}
+
+Following \textcite{allen_search_2019} we assume that consumers are price takers but sellers do not know their search cost.
+
+The firm that creates the highest surplus wins the auction, making an offer that leaves the consumer indifferent between accepting the offer or the second next offer. Without loss of generality assume that firm $j$ creates the $j$-th highest surplus, then firm $1$ offer is: 
+
+
+
+
+
+
+
+
+
+
+
+In the second stage firms observe the offers made in the first stage, and they compete in an English auction. 
+
+Given first stage offers $F^{T1}$, insurers update their offers according to: 
+
+\begin{align}
+    F_{ij}^{T2}(\theta_j, F^{T1}) = \min(F_{ij}^{T1}, F^*)
+\end{align}
+
+where the optimal offer is given by: 
+\begin{align}
+    F^* = \arg \max_{F_{ij}} (F_{ij} - \theta_j) D_j(F_{ij}, F_{-j}^{T1})
+\end{align}
+
+
+
+
+
+
+
+
+\newpage 
+
+
+
+\vspace{2cm}
+
+For each consumer firms observe a signal about the cost of the consumer, denoted by $\hat \theta_{ji}$ drawn from a $\mathcal{N}(0, \sigma_j^2)$ with density $\phi(\hat \theta_{ji};\theta, \sigma_j)$. 
+
+
+Initially firms make offers $F_{ij}^{T1}$. 
+
+In the second stage firms compete in a English auction, and they observe the offers made in the first stage. 
+
+
+\textbf{Second stage}
+
+In the second stage firms observe the offers made in the first stage, and they compete in an English auction. 
+
+Given first stage offers $F^{T1}$, insurers update their beliefs about the consumer type. 
+
+
+\textbf{First stage}
+
+Insurers get a signal about the expected cost of the consumer. 
+
+
+
+
+
+
+
+
+\newpage
+
+Effects of the second stage: 
+
+\begin{itemize}
+    \item Information is revealed about the consumer type, which increases the level of competition, e.g. see \textcite{cosconati_competing_2025}
+    
+    \item There are distributional effects: shoppers might win and non-shoppers might end up with a worse offer. 
+    
+    \item 
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+Let $J$ denote the number of firms, and let $\theta \in \{0,1\}$ represent the consumer type where $\theta = 0 $ represent the shoppers and $\theta = 1$ the non-shoppers. A share $\lambda$ is non-shoppers. We denote by $D_i^S$ the demand of searchers and by $D_i^{NS}$  the demand of non-searchers. 
+
+Denote by $\eta_i(p)= \frac{\partial D_i(p)}{\partial p} \frac{p}{D_i(p)}$ the elasticity of types $i$. We assume: 
+
+\[
+\eta_{0}(p) > \eta_{1}(p) 
+\]
+
+We consider a setting with $J=2$ firms.  
+Each firm $j \in \{1,2\}$ sets a price $p_{tj}^t$ in the $t$ stage of the game. 
+
+\paragraph{Profits.}
+The profit function for firm $i$ is:
+\begin{align}
+\Pi_i(P_i, P_{-i}) 
+&= \lambda D_i^S(P_{11}^T, P_{12}^T)(P_{11}^T - c_1) 
++ \frac{(1 - \lambda)}{2}
+\left[
+D_i^{NS}(P_{21}^T, P_{12}^T)(P_{21}^T - c_i),
++   D_i^{NS}(P_{11}^T, P_{22}^T)(P_{11}^T - c_i),
+\right]
+\end{align}
+where $c_i$ is the marginal cost.
+
+The first term corresponds to the profit from non-searchers.  The second and third terms correspond to searchers, depending on whether they request a revised offer from firm 1 or 2. 
+
+
+ 
+
+
+\paragraph{First-Order Conditions.}
+the derivative of profits with respect to firm $1$’s own price $p_{11}^T$ is:
+\begin{align}
+\frac{\partial \Pi_1}{\partial p_{11}^T} 
+&= \lambda \left[
+\frac{\partial D_1^S(p_{11}^T, p_{12}^T)}{\partial p_{11}^T}(p_{11}^T - c_1)
++ D_1^S(p_{11}^T, p_{12}^T)
+\right] \notag \\
+&\quad + \frac{(1 - \lambda)}{2}
+\left[
+\frac{\partial D_1^{NS}(p_{11}^T, p_{22}^T)}{\partial p_{11}^T}(p_{11}^T - c_1)
++ D_1^{NS}(p_{11}^T, p_{22}^T)\right] \notag \\
+& \quad + \frac{(1 - \lambda)}{2}
+\left[
+\frac{\partial D_1^{NS}(p_{11}^T, p_{22}^T)}{\partial p_{22}^T}(p_{11}^T - c_1) \frac{\partial P_{22}^T}{\partial P_{11}^T} +
+\underbrace{\frac{\partial D_1^{NS}(p_{21}^T, p_{12}^T)}{\partial p_{21}^T}(p_{21}^T - c_1) \frac{\partial P_{21}^T}{\partial P_{11}^T}}_{=0} \right] 
+\end{align}
+
+ Define $g_i(p) = \frac{\partial D_i^S(p)}{\partial p_{i}}(p_i - c_i) + D_i^S(p)$ and  $\tilde g_i(p) = \frac{\partial D_i^{NS}(p)}{\partial p_{i}}(p_i - c_i) + D_i^{NS}(p)$
+
+Then the FOC can be written as: 
+
+
+
+\begin{align}
+\frac{\partial \Pi_1}{\partial p_{11}^T} 
+= \lambda g_1(p_{11}^T, p_{12}^T) 
++ \frac{(1 - \lambda)}{2}
+\left[ g_1(p_{11}^T, p_{22}^T)
++ 
+\frac{\partial D_1^{NS}(p_{11}^T, p_{22}^T)}{\partial p_{22}^T}(p_{11}^T - c_1) \frac{\partial P_{22}^T}{\partial P_{11}^T}  \right] 
+\end{align}
+
+
+
+
+
+
+\newpage 
+
+\subsection{Two stage game:  with external offers}
+
+Now suppose that firms are in the same situation as before, but after making their offers with probability $\lambda$ the consumer chooses to request an external offer. In which case he chooses randomly one firm from which to request the external offer, then the firm can observe the initial offers made by the other firms and decide whether to update its offer \footnote{The firms are not always able to observe the prior offers. In this model we are assuming $\lambda$ is exogenous and the firm observes initial offers. One possible extension is to endogeneize the search behavior (searches if certain conditions are met) and also to assume that sometimes the firm does not observe the prior offers. Note that this could considerably complicate the model because the disclosure of the initial offers is strategic and by itself could reveal something, but we do not observe whether the buyer discloses. }.
+
+We will use backward induction to solve the two stage game. 
+
+In the second stage a firm chooses an offer $p_{j}^{T2}$ equal to the minimum between the initial offer and the optimal offer after observing all the initial offers, i.e. 
+\begin{align}
+\label{eq:base_equilibrium2} %eq 2 
+    p_{j}^{T2}(c_j, p^{T1}) = \min(p_j^{T1}, p^*)
+\end{align}
+where the optimal offer is given by: 
+\begin{align} %eq 3
+    p^* = \arg \max_{p_j} (p_j - c_j) D_j(p_j, p_{-j}^{T1}) 
+\end{align}
+
+
+
+Then, the profits of firm $j$ if the buyer requests an external offer from firm $j$ are: 
+
+\begin{align}\label{eq:asking_j} %eq 4
+    \pi_j^{(j)}(p^{T1}, c_j) =   (p_j^{T2}(c_j, p^{T1}) - c_j) D_j(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) 
+\end{align}
+
+And the profits of firm $j$ if the buyer requests an external offer from firm $j'$ are: 
+
+\begin{align}\label{eq:asking_j'} %eq 5
+    \pi_j^{(j')}(p^{T1}, c_j, c_{j'}) = (p_j^{T1} - c_j) D_j(p_{-j'}^{T1}, p_{ j'}^{T2}(c_{j'}, p^{T1})) 
+\end{align}
+
+Then, the expected profits of firm $j$ in the case the consumer requests an external offer are: 
+
+\begin{align}\label{eq:profits_external2} %eq 6
+    \pi_j^{T2}(p^{T1}, c_j, c_{-j}) =  \frac{1}{J} \left( \pi_j^{(j)}(p^{T1}, c_j)   + \sum_{j'\neq j} \pi_j^{(j')}(p^{T1}, c_j, c_{j'}) \right)
+\end{align}
+
+
+note that the costs of the competitors ($c_{-j}$) enter into the profits since they affect the way the competitors update their prices in case they are asked to update their prices.
+
+Then, given strategies  $p_j^{T2}(c_j, p^{T1})$ we can calculate the expected profits given a prices set in the first stage and teh costs: 
+\begin{align}\label{eq:7} % eq 7 
+    \pi_j^{T1}(p^{T1}, c_j, c_{-j}) = (1-\lambda) \pi_j^O(p^{T1}, c_j) + \lambda \pi_j^{T2}(p^{T1}, c_j, c_{-j})
+\end{align}
+
+
+The FOC of equation \ref{eq:7} with respect to $p_j^{T1}$ is:
+\begin{align}
+    \frac{\partial \pi_j^{T1}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} &= (1-\lambda) \frac{\partial \pi_j^O(p^{T1}, c_j)}{\partial p_j^{T1}} + \lambda \frac{\partial \pi_j^{T2}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}} = 0   
+\end{align}
+
+
+Define $g(p_j, p_{-j}) =  D_j + (p_j - c_j) \frac{\partial D_j}{\partial p_j}$, then we have $     \frac{\partial \pi_j^{O}}{\partial p_j} =  g(p_j, p_{-j}) $. 
+
+Moreover,
+
+\begin{align}\label{eq:asking_j} %eq 4
+    \frac{\partial \pi_j^{(j)}(p^{T1}, c_j) }{\partial p_j^{T1} } 
+    & = \frac{\partial p_j^{T2}}{\partial p_j^{T1} } g(p_j^{T2}(c_j, p^{T1}), p_{-j}^{T1}) =
+    \begin{cases}
+    g\!\left(p_j^{T1},\,p_{-j}^{T1}\right), & \text{if } p_j^{T1} < p^*(c_j, p_{-j}^{T1}),\\
+    0, & \text{if } p_j^{T1} \ge p^*(c_j, p_{-j}^{T1}).
+    \end{cases} 
+\end{align}
+And we also have 
+
+
+
+\begin{align}
+    \frac{\partial \pi_j^{(j')}(p^{T1}, c_j, c_{j'})}{\partial p_j^{T1}} =
+    D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) + (p_j^{T1} - c_j)
+    \left[     \frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_j^{T1}} +
+    \frac{\partial D_j(p_{-j'}^{T1}, p_{ j'}^{T2}) }{\partial p_{ j'}^{T2} } 
+    \frac{\partial p_{ j'}^{T2}}{\partial p_j^{T1}} \right]
+\end{align}
+
+Putting everything together we have: 
+
+
+
+
+ 
+\begin{align}
+    \frac{\partial \pi_j^{T1}(p^{T1}, c_j, c_{-j})}{\partial p_j^{T1}}
+    &= (1-\lambda)\,g\bigl(p_j^{T1},p_{-j}^{T1}\bigr)
+    + \frac{\lambda}{J}\Biggl[
+      \underbrace{\frac{\partial p_j^{T2}}{\partial p_j^{T1}}\;g\bigl(p_j^{T2},p_{-j}^{T1}\bigr)}_{\text{Option value}}
+      \notag \\[4pt]
+    &\qquad\qquad + \sum_{j'\neq j}\Bigl\{
+       D_j\bigl(p_{-j'}^{T1},p_{j'}^{T2}\bigr)
+       + (p_j^{T1}-c_j)\Bigl(
+          \frac{\partial D_j\bigl(p_{-j'}^{T1},p_{ j'}^{T2}\bigr)}{\partial p_j^{T1}}
+          \notag \\[4pt]
+    &\qquad\qquad\qquad\qquad\qquad\qquad\qquad
+          + \underbrace{\frac{\partial D_j\bigl(p_{-j'}^{T1},p_{ j'}^{T2}\bigr)}{\partial p_{ j'}^{T2}}
+            \frac{\partial p_{ j'}^{T2}}{\partial p_j^{T1}}}_{\text{Strategic complementarity}}
+       \Bigr)
+    \Bigr\}
+    \Biggr] \;=\; 0
+\end{align}
+ 
+
+Finally, given that the costs of the rivals are not known, the equilibrium prices set in the first stage have to solve: 
+
+
+\textbf{Equilibrium definition}
+
+An equilibrium of the two stage game are pricing functions $(p^{T1}, p^{T2})_{j=1}^J$ such that 
+
+
+\begin{align}\label{eq:eq_second_stage} %eq 8
+    p_j^{T2}(c_j, p^{T1}) = \arg \max_{p_j \leq p_j^{T1}} (p_j - c_j) D_j(p_j, p_{-j}^{T1}) 
+\end{align}
+and 
+\begin{align}\label{eq:eq_first_stage} %eq 9 
+    p_j^{T1}(c_j) = \arg \max_{p_j} \int_{\mathbb{R}^{N-1}}^{}  \pi_j^{T1}(p_j, p_{-j}^{T1}(c_{-j}), c_j) dF(c_{-j} \mid c_j)   
+\end{align}
+where note that $\pi_j^{T1}$ is also a function of $p_j^{T2}$. 
+ 
+ 
+
+\end{document}

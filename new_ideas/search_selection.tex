@@ -1,0 +1,191 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+%\usepackage[sort,comma]{natbib}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+ 
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{hyperref}
+
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\setlength{\marginparwidth}{2cm} 
+
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}%[section] commented out to avoid numbering by section
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{ass}[thm]{Assumption}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{theorem}[thm]{Theorem}   % alias for \begin{theorem}
+\newtheorem{definition}{Definition}
+\makeatother
+
+
+
+\newcommand{\sepline}{\par\bigskip\noindent\rule{\linewidth}{0.4pt}\par\medskip}
+
+% \input{tcilatex}
+\usepackage{enumitem} % allows custom labels
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\addbibresource{../references.bib}
+\begin{document}
+ 
+\title{\Large Search and Leverage: With an Empirical Application to the Chilean Annuities Market\thanks{We thank...}}
+\author{Lucas Schmitz\thanks{Yale University (email: \texttt{lucas.schmitz@yale.edu}). Corresponding author.} \,\,\,\,\,\, and \,\,\,\,\,\, Diego Cussen\thanks{New York University (email: \texttt{dc5004@nyu.edu}).}} 
+\date{\today}
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+Following \textcite{handel_adverse_2013} one could consider the case where search costs decrease adverse selection in the market. 
+
+If the search costs are not independent of the private type, then the search behavior of consumers can reveal information about their private type. 
+
+
+\begin{itemize}
+    \item Annuities do not have inertia since they are bought only once. 
+    \item 
+\end{itemize}
+
+
+
+
+\newpage
+
+
+
+
+
+
+There is this story where people have private information about their risk and there is selection into the market. But I highly doubt that people actually can select into the market based on their risk type. My prior is that people have private information about their risk but actually do not use it correctly to choose the most convenient products. 
+
+To prove the point we would need to show that people do not use private information as much as they should, hence we would need to observe private information. I think Chile is a good setting since we could merge the annuities data with health records. 
+
+This would go in the same line as \textcite{handel_adverse_2013} that shows that inertia decreases adverse selection, because people are not choosing optimally. In this case it would be similar in the sense that people are just not using their private information to choose the best product. 
+
+
+\textbf{Empirical strategy}
+
+We can follow the annuities literature and estimate a model of annuities choice with private information, but in our setting we would have access to part of the private information (health records). Using this, we can use a mortality model to estimate the mortality risk given our observed health records, and given the estimated mortality model we can compute the effect o
+
+
+For example consider that firms observe the covariates $x$ and consumers observe $x$ and $y$. Denote by $\mu_t(x,y)$ the probability an individual dies at age t $x$ and $y$ and by $\mu(x)$ the probability conditional only on $x$.
+Denote by $S(t|x,y)$ and $S(t|x)$ the corresponding survival functions.
+
+
+Consider a demand for annuities that depends on the expected mortality risk. Which we can microfound. For example the utility of an annuity could be: 
+\begin{equation}
+    U = \mathbb{E}_T\left[\int_0^{T} e^{-\delta t} c_t^\alpha dt \right] = \int_0^\infty e^{-\delta t} S(t|x,y) c_t^\alpha dt
+\end{equation}
+
+We assume that firms only observe $x$, individuals observe $x$ and $y$ and the econometrician also observes $x$ and $y$.
+
+Individuals face a choice set $\mathcal{C}$ of annuities contracts with different guaranteed periods and prices. We observe the choice of annuity $j \in \mathcal{C}$ that maximizes their utility given their information:
+
+
+\textbf{Identification argument}
+
+Given that firms observe only $x$, the choice set $\mathcal{C}$ depends only on $x$, variation in prices and average choices across different $x$ allows us to identify the 
+
+
+Hence the choice of annuity $j$ reveals information about $y$ since individuals choose the annuity that maximizes their utility given their information $(x,y)$ over the choice set $\mathcal{C}(x)$.
+
+Identification issue: if individuals are bad at translating their information ($x,y$) into mortality beliefs, then we cannot identify the model. 
+
+\begin{itemize}
+    \item Note that here the data from SCOMP is not better than the medicare data, it seems unlikely that no researcher has tried to estimate this behavioral bias before. 
+\end{itemize}
+
+\newpage
+
+We leverage the fact that $x$ is priced into the annuities but $y$ is not to determine whether individuals use their private information $y$ when choosing annuities.
+
+\vspace{2em}
+
+\paragraph{Identification.}
+Let $x$ denote information observed by firms (age, gender, savings, beneficiaries), and $y$ denote health information observed privately by individuals (and by the econometrician after merging to health records). Firms set annuity offers as a function of $x$ only. For any contract $j$ in individual $i$'s menu $\mathcal{C}_i$ we define the actuarial surplus
+\[
+\AS_{ij}(x,y) \equiv \sum_{t\ge 0} \beta^t S(t\mid x,y) \Pi_{jt} \;-\; \Price_{ij}(x),
+\quad
+\AS_{ij}(x) \equiv \sum_{t\ge 0} \beta^t S(t\mid x) \Pi_{jt} \;-\; \Price_{ij}(x),
+\]
+and the unpriced incremental surplus $\Delta\AS_{ij}\equiv \AS_{ij}(x,y)-\AS_{ij}(x)$.
+We allow for misspecification in the mapping from private information to beliefs by positing that the surplus used in choice is a convex combination
+\[
+\AS_{ij}^{\text{used}} = (1-\lambda)\,\AS_{ij}(x) + \lambda\,\AS_{ij}(x,y), \qquad \lambda\in[0,1].
+\]
+Under a standard random utility model,
+\(
+U_{ij} = \delta_j + \theta\,\AS_{ij}^{\text{used}} + \varepsilon_{ij}
+\)
+and similarly for the PW option.
+Estimating a logit with regressors $\AS_{ij}(x)$ and $\Delta\AS_{ij}$ yields coefficients $(\gamma_1,\gamma_2)=(\theta,\theta\lambda)$, so that
+\[
+\boxed{\ \lambda = \gamma_2/\gamma_1\ }.
+\]
+Because $\Price_{ij}(x)$ depends on $x$ only, $\Delta\AS_{ij}$ is driven solely by $y$ and is therefore exogenous within rich $x$ fixed effects. Hence $\lambda$ is point‑identified and directly measures the extent to which individuals incorporate private health information into preferences. The null of full use is $\lambda=1$; the null of complete neglect is $\lambda=0$.
+
+
+
+\newpage
+
+
+\sepline
+
+What are the impacts of LTV policies? Some thoughts: 
+
+\begin{itemize}
+    \item Poor people can not save enough equity to buy a house. 
+    \item Housing prices decrease due to a lower demand. 
+    \item Risky consumers are screened out of the market. 
+    \item 
+\end{itemize}
+
+\printbibliography
+
+\end{document}

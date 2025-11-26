@@ -1,0 +1,139 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=BibTeX}
+%TCIDATA{LastRevised=Sunday, April 28, 2024 18:12:38}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{Language=American English}
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=1in,rmargin=.9in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+
+
+
+\addbibresource{../references.bib}
+\begin{document}
+ 
+% \title{{\Large Centralized annuities marketplace}}
+%\author{Lucas Condeza\thanks{Yale University %\texttt{lucas.schmitz@yale.edu}}} 
+%\date{}
+%\maketitle
+
+
+
+
+\subsection*{Institutional Context and Data}\label{sec: context and data}
+
+In Chile, upon reaching retirement age, individuals must convert their savings into a stream of retirement income by selecting a pension product. Retirees are  not allowed to make lump-sum withdrawals.
+
+The most common choice is to purchase an annuity from an insurance company. This choice entails the individual giving up ownership of their savings in exchange for longevity insurance\footnote{If the individual does not purchase an annuity, they risk exhausting their savings.}: the insurance company contracts an obligation to pay a fixed, inflation-adjusted amount for the remaining duration of the retiree’s lives.
+
+Retirees have the ability to tailor their annuity contracts, particularly by selecting guarantee and deferral options. A guarantee period ensures that the annuity will continue to make payments for a minimum period, offering some protection against early death while still allowing for a potential bequest. Retirees can also allocate a portion of their savings to purchase a deferred annuity, using the remaining balance to increase initial payouts. It is possible to combine guarantee and deferral features within a single contract.
+
+\textbf{Centralized exchange}
+
+By regulation, the process that leads to the purchase of an annuity takes place in SCOMP.  Established in 2004, SCOMP was designed to enhance retirees' access to information about their available options and to simplify the process of obtaining and comparing offers from various insurance companies %and PFAs
+ (CMF, 2019). Individuals who have accumulated savings above a minimum threshold can request quotes for annuities with different combinations of guarantee and deferral periods. These quote requests are circulated to all insurance companies active in the market, accompanied only by basic information: the retiree’s age, gender, marital status, the age of any legal beneficiaries, and the total amount of savings. Each insurer then decides whether to respond with a quote for each requested pension product.
+
+All offers are compiled into a  document called the Offers Certificate (see figure \ref{fig:offer_ann1}), which is mailed to the retiree.
+Retirees also receive information about the risk rating assigned to each insurance company, an important consideration since retirees are only partially protected in the event of insurer insolvency. 
+ 
+Once they receive the Offers Certificate, retirees can either accept one of the offers, postpone their decision, or request a revised offer, which is an updated offer from the insurance companies to improve the initial offer. If the retiree is paying an intermediary he will contact the insurers asking for better terms, otherwise the retiree must physically visit the branch of the insurance company. Firms are prohibited from offering worse terms during this stage. On average external offers represent increases of around 2\% compared to the original SCOMP offer (\cite{illanes_retirement_2019}). In 2025 the regulator decided to ban revised offers, arguing that they created incentives for insurers not to provide their best offers in the first stage. 
+
+%The number of retirees using SCOMP has increased through time, reaching over 50, 000 in 2018, at which point the annual value of the pension market was over 6 billion dollars.
+From 2004 onwards, 19 insurance companies have participated in the annuity market. 
+%For a majority of them, annuities constitute an important business line, making up over 60\% of both revenues and liabilities. 
+Insurance companies are differentiated by their risk rating, an evaluation of their creditworthiness assessed periodically by two independent agencies. The regulator explicitly forbids the bundling of pension products with other types of insurance. Nevertheless, insurance companies might also differ in terms of their customer service, office locations and brand appeal.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.85\linewidth]{../figures/docs_screenshots/annuity_offer.png}
+    \caption{Annuity offer (source \textcite{illanes_retirement_2019})}
+    \label{fig:offer_ann1}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Data}
+
+Centralized offer exchange database SCOMP, available from the regulating agencies, which contains all retirees from August 2004 until July 2020. This database includes basic demographic information about retirees – age, gender, and legal dependents – total savings, geographic location at the city/precinct level. The data also records every offer received by each potential retiree, information about intermediation, pension product accepted, and commission paid. Finally, I also observe the date of death if it occurs before July 2021. I complement this information with publicly available reports on insurance companies’ risk ratings, information about the number of intermediaries, and their registered locations. 
+
+
+
+The great advantage of the setting and associated data is that:
+\begin{enumerate}
+    \item We observe selected and non-selected offers. Most datasets in insurance/credit markets observe only the purchased offer (\cite{cosconati_competing_2025,allen_search_2019,cuesta_price_2018}).
+    
+    \item We observe all the information observed by the firms, given that it is a centralized market and all the offers are made based on the same information set.
+\end{enumerate}
+
+
+\subsection*{Research questions and motivation}
+
+There are a series of factors that decrease adverse selection issues. For example, \textcite{handel_adverse_2013} finds that inertia decreases adverse selection in the health insurance market and \textcite{crawford_asymmetric_2018} finds that market power decreases adverse selection in the loan market. 
+
+Our research question is: what are the effects of search on adverse selection in this annuity market? Intuitively, search can interact with adverse selection in several ways. On one hand, if high-mortality (unhealthy) retirees search more aggressively for high immediate income or better terms, firms that anticipate this composition might respond by increasing payouts to searchers, decreasing selection. 
+On the other hand, if search frictions are higher for unhealthy individuals then firms will price accordingly, increasing selection. In the first case, search has the potential to mitigate adverse selection. 
+
+
+\printbibliography
+ 
+\end{document}

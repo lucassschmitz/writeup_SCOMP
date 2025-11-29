@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+ \documentclass[12pt]{article}
 \usepackage{amsfonts}
 \usepackage{eurosym}
 \usepackage{geometry}
@@ -77,29 +77,9 @@
 \author{Lucas Schmitz\thanks{Yale University (email: \texttt{lucas.schmitz@yale.edu}). Corresponding author.} \,\,\,\,\,\, and \,\,\,\,\,\, Diego Cussen\thanks{New York University (email: \texttt{dc5004@nyu.edu}).}} 
 \date{\today}
 \maketitle
+ 
 
-\begin{abstract}
-
-\end{abstract}
-
-Following \textcite{handel_adverse_2013} one could consider the case where search costs decrease adverse selection in the market. 
-
-If the search costs are not independent of the private type, then the search behavior of consumers can reveal information about their private type. 
-
-
-\begin{itemize}
-    \item Annuities do not have inertia since they are bought only once. 
-    \item 
-\end{itemize}
-
-
-
-
-\newpage
-
-
-
-
+ 
 
 
 There is this story where people have private information about their risk and there is selection into the market. But I highly doubt that people actually can select into the market based on their risk type. My prior is that people have private information about their risk but actually do not use it correctly to choose the most convenient products. 
@@ -148,7 +128,7 @@ Identification issue: if individuals are bad at translating their information ($
 
 \paragraph{1. Environment.}
 
-Time is $t=1,2$. Each individual has initial wealth (savings) $W>0$ at $t=1$.
+Time is $t=1,2$. Each individual has initial wealth (savings) $W=0$ at $t=1$.
 
 \begin{itemize}
     \item True probability of being alive at $t=2$ is $x\in(0,1)$.
@@ -270,6 +250,160 @@ where $s^\ast = s^\ast(x,\theta,\beta_i,W)$ solves
 \]
 subject to $0 \le s \le W$.
 
+\newpage 
+
+\subsection*{Identification of $\theta$ and the distribution of $\beta_i$}
+
+\paragraph{Setup.}
+
+Recall the two-period model above. For each individual $i$:
+
+\begin{itemize}
+    \item True survival probability from period 1 to 2 is $x_i\in(0,1)$.
+    \item Believed survival probability is $\hat x_i = \theta x_i$, with $\theta>0$ and $\theta x_i\in(0,1)$.
+    \item Bequest weight $\beta_i$ is heterogeneous with CDF $F_\beta$ on $[0,\infty)$.
+    \item Initial wealth $W>0$ and annuity payout $F>0$ are common and observed.
+\end{itemize}
+
+The expected utility from buying the annuity is
+\[
+    U^{A}(x_i,\theta) = (1+\theta x_i)F^\alpha.
+\]
+
+The expected utility from not buying the annuity, given bequest weight $\beta_i$, is
+\[
+    U^{N}(c_1;x_i,\theta,\beta_i) 
+    = c_1^\alpha + \theta x_i (W-c_1)^\alpha + (1-\theta x_i)\beta_i (W-c_1),
+\]
+and the individual chooses $c_1^\ast(x_i,\theta,\beta_i)$ solving the FOC
+\[
+    \alpha c_1^{\alpha-1} 
+    - \alpha \theta x_i (W-c_1)^{\alpha-1}
+    - (1-\theta x_i)\beta_i = 0,
+\]
+with $0\le c_1^\ast\le W$.
+Define the optimized no-annuity value
+\[
+    U^{N,\ast}(x_i,\theta,\beta_i) 
+    \equiv U^{N}(c_1^\ast(x_i,\theta,\beta_i);x_i,\theta,\beta_i).
+\]
+
+The observed binary choice is
+\[
+    D_i = 
+    \begin{cases}
+        1, & \text{if the individual buys the annuity},\\
+        0, & \text{otherwise}.
+    \end{cases}
+\]
+
+We assume that for each $i$, the individual chooses the option with higher (perceived) expected utility:
+\[
+    D_i = \mathbf 1\!\left\{U^{A}(x_i,\theta)\ge U^{N,\ast}(x_i,\theta,\beta_i)\right\}.
+\]
+
+We observe $(x_i,D_i)$ in the data; the primitives of interest are the scalar $\theta$ and the CDF $F_\beta$.
+
+\paragraph{Step 1: Threshold structure in $\beta_i$.}
+
+\begin{lemma}[Single crossing in $\beta_i$]
+For any fixed $(x,\theta)$, $U^{A}(x,\theta)$ is independent of $\beta$, and $U^{N,\ast}(x,\theta,\beta)$ is strictly increasing in $\beta$. Hence the difference
+\[
+    \Delta U(x,\theta,\beta) \equiv U^{A}(x,\theta)-U^{N,\ast}(x,\theta,\beta)
+\]
+is strictly decreasing in $\beta$.
+\end{lemma}
+
+\begin{proof}
+By construction, $U^{A}(x,\theta)$ does not depend on $\beta$. In $U^{N}(c_1;x,\theta,\beta)$ the term $(1-\theta x)\beta (W-c_1)$ is strictly increasing in $\beta$ whenever $W-c_1>0$ and $\theta x<1$. Optimization over $c_1$ preserves monotonicity in $\beta$, so $U^{N,\ast}(x,\theta,\beta)$ is increasing in $\beta$. Therefore $\Delta U(x,\theta,\beta)$ is strictly decreasing in $\beta$.
+\end{proof}
+
+\begin{corollary}[Threshold rule]
+For each $(x,\theta)$ there exists a (possibly infinite) cutoff $\beta^\ast(x;\theta)\in[0,\infty]$ such that
+\[
+    D_i = 1
+    \iff
+    \beta_i \le \beta^\ast(x_i;\theta),
+\]
+i.e.
+\[
+    \Delta U(x_i,\theta,\beta_i)\ge 0
+    \iff
+    \beta_i \le \beta^\ast(x_i;\theta).
+\]
+\end{corollary}
+
+\paragraph{Step 2: Choice probabilities given $(\theta,F_\beta)$.}
+
+Define the conditional annuitization probability
+\[
+    p(x) \equiv \Pr(D_i=1\mid x_i=x).
+\]
+Using the threshold result,
+\[
+    p(x) = \Pr(\beta_i\le \beta^\ast(x;\theta))
+         = F_\beta\big(\beta^\ast(x;\theta)\big).
+\]
+Thus, for any given pair $(\theta,F_\beta)$, the model implies the choice-probability function
+\begin{equation}
+    p(x;\theta,F_\beta) = F_\beta\big(\beta^\ast(x;\theta)\big).
+    \label{eq:prob_function}
+\end{equation}
+
+\paragraph{Step 3: Observables and non-identification.}
+
+Assume that from the data we know the function $p(x)$ for all $x$ in the support of $x_i$.\footnote{Formally, we observe the joint distribution of $(x_i,D_i)$, so $p(x)=\Pr(D_i=1\mid x_i=x)$ is identified.}
+
+Equation \eqref{eq:prob_function} shows that the observables pin down only the \emph{composition} of $F_\beta$ with the cutoff function $\beta^\ast(\cdot;\theta)$:
+\[
+    p(x) = F_\beta\big(\beta^\ast(x;\theta)\big).
+\]
+
+We now show that $(\theta,F_\beta)$ is \emph{not} identified from $p(x)$ alone.
+
+\begin{assumption}[Monotonic $\beta^\ast$ in $x$]
+For each fixed $\theta>0$, the function $x\mapsto \beta^\ast(x;\theta)$ is strictly monotone and continuous on the support of $x$, hence invertible, with inverse $b\mapsto x^\theta(b)$.
+\end{assumption}
+
+\begin{proposition}[Non-identification of $(\theta,F_\beta)$]
+Suppose the data are generated by some true pair $(\theta_0,F_\beta^0)$, yielding choice probabilities $p(x) = F_\beta^0(\beta^\ast(x;\theta_0))$.
+Then for any alternative $\theta_1>0$ with monotone $\beta^\ast(\cdot;\theta_1)$, there exists a CDF $F_\beta^1$ such that
+\[
+    p(x) = F_\beta^1\big(\beta^\ast(x;\theta_1)\big)
+    \quad\text{for all }x.
+\]
+Hence $(\theta,F_\beta)$ is not point-identified.
+\end{proposition}
+
+\begin{proof}
+Fix any $\theta_1>0$ and consider the function $\beta^\ast(x;\theta_1)$.
+By monotonicity, it has an inverse $x^{\theta_1}(b)$ satisfying $\beta^\ast(x^{\theta_1}(b);\theta_1)=b$.
+
+Define a new CDF $F_\beta^1$ on the range of $\beta^\ast(\cdot;\theta_1)$ by
+\[
+    F_\beta^1(b) \equiv p\big(x^{\theta_1}(b)\big), \qquad 
+    b\in \mathrm{Range}\big(\beta^\ast(\cdot;\theta_1)\big).
+\]
+Because $p(\cdot)$ is nondecreasing in $x$ and $x^{\theta_1}(\cdot)$ is monotone in $b$, $F_\beta^1$ is nondecreasing in $b$ and can be completed to a valid CDF on $[0,\infty)$.
+
+Then, for any $x$,
+\[
+    F_\beta^1\big(\beta^\ast(x;\theta_1)\big)
+    = p\big(x^{\theta_1}(\beta^\ast(x;\theta_1))\big)
+    = p(x).
+\]
+Thus the pair $(\theta_1,F_\beta^1)$ generates exactly the same choice probabilities $p(x)$ as the true pair $(\theta_0,F_\beta^0)$.
+
+Therefore the mapping $(\theta,F_\beta)\mapsto p(x)$ is not injective: different pairs $(\theta,F_\beta)$ produce the same observable distribution of $(x_i,D_i)$, so $(\theta,F_\beta)$ is not identified.
+\end{proof}
+
+\paragraph{Conclusion.}
+
+In this two-period model with one binary annuitization choice and heterogeneous bequest weights $\beta_i\sim F_\beta$, the observable choice probabilities by risk type $x$ satisfy
+\[
+    p(x) = F_\beta\big(\beta^\ast(x;\theta)\big),
+\]
+which depends on $(\theta,F_\beta)$ only through their composition. Without additional structure (e.g.\ parametric restrictions on $F_\beta$, extra product dimensions that shift the cutoff differently for beliefs vs.\ $\beta_i$, or direct information on $\beta_i$), the belief parameter $\theta$ and the distribution $F_\beta$ cannot be separately identified.
 
 
 \newpage

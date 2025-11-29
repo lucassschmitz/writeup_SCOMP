@@ -143,32 +143,132 @@ Identification issue: if individuals are bad at translating their information ($
 
 \newpage
 
-We leverage the fact that $x$ is priced into the annuities but $y$ is not to determine whether individuals use their private information $y$ when choosing annuities.
 
-\vspace{2em}
+\subsection*{Two-period model with distorted survival beliefs}
 
-\paragraph{Identification.}
-Let $x$ denote information observed by firms (age, gender, savings, beneficiaries), and $y$ denote health information observed privately by individuals (and by the econometrician after merging to health records). Firms set annuity offers as a function of $x$ only. For any contract $j$ in individual $i$'s menu $\mathcal{C}_i$ we define the actuarial surplus
+\paragraph{1. Environment.}
+
+Time is $t=1,2$. Each individual has initial wealth (savings) $W>0$ at $t=1$.
+
+\begin{itemize}
+    \item True probability of being alive at $t=2$ is $x\in(0,1)$.
+    \item Individual beliefs about survival are distorted: the perceived survival probability is
+    \[
+        \hat x \equiv \theta x,
+    \]
+    where $\theta>0$ and $\theta=1$ corresponds to rational beliefs.
+    \item Period utility from consumption is
+    \[
+        u(c) = c^{\alpha}, \qquad \alpha\in(0,1).
+    \]
+    \item Bequest utility is linear:
+    \[
+        v(B) = \beta_i B, \qquad \beta_i \ge 0.
+    \]
+    \item No time discounting.
+\end{itemize}
+
+At $t=1$ the individual chooses between:
+
+\begin{enumerate}
+    \item Not buying an annuity (self-insuring with savings).
+    \item Buying an annuity that pays a fixed amount $F>0$ in each period in which the individual is alive (no bequest from the annuity).
+\end{enumerate}
+
+\paragraph{2. No annuity: optimal consumption and expected utility.}
+
+If the individual does not buy the annuity, she chooses savings $s \in [0,W]$ at $t=1$:
 \[
-\AS_{ij}(x,y) \equiv \sum_{t\ge 0} \beta^t S(t\mid x,y) \Pi_{jt} \;-\; \Price_{ij}(x),
-\quad
-\AS_{ij}(x) \equiv \sum_{t\ge 0} \beta^t S(t\mid x) \Pi_{jt} \;-\; \Price_{ij}(x),
+    c_1 = W - s.
 \]
-and the unpriced incremental surplus $\Delta\AS_{ij}\equiv \AS_{ij}(x,y)-\AS_{ij}(x)$.
-We allow for misspecification in the mapping from private information to beliefs by positing that the surplus used in choice is a convex combination
+
+At $t=2$:
+\begin{itemize}
+    \item If alive, consumption is $c_2 = s$ and bequest $B=0$.
+    \item If dead, consumption is $c_2=0$ and bequest is $B = s$.
+\end{itemize}
+
+Given beliefs $\hat x = \theta x$, expected utility from not buying the annuity, for a given $s$, is
+\begin{align*}
+    U^{N}(s; x,\theta,\beta_i)
+    &= u(c_1)
+       + \hat x \, u(c_2)
+       + (1-\hat x)\, v(B) \\
+    &= (W - s)^{\alpha}
+       + \theta x \, s^{\alpha}
+       + (1-\theta x)\, \beta_i s.
+\end{align*}
+
+The individual chooses $s$ to maximize $U^{N}(s; x,\theta,\beta_i)$ subject to $0 \le s \le W$.
+Assuming an interior solution $s^\ast \in (0,W)$, the first-order condition is
+\begin{align*}
+    \frac{\partial U^{N}}{\partial s}
+    &= -\alpha (W - s)^{\alpha-1}
+       + \theta x \, \alpha s^{\alpha-1}
+       + (1-\theta x)\,\beta_i
+       \;=\;0.
+\end{align*}
+
+Denote the optimal choice by $s^\ast(x,\theta,\beta_i,W)$ (solution to the FOC and bounds).  
+Optimal consumptions are then
 \[
-\AS_{ij}^{\text{used}} = (1-\lambda)\,\AS_{ij}(x) + \lambda\,\AS_{ij}(x,y), \qquad \lambda\in[0,1].
+    c_1^\ast = W - s^\ast, 
+    \qquad
+    c_2^\ast = s^\ast,
+    \qquad
+    B^\ast = s^\ast.
 \]
-Under a standard random utility model,
-\(
-U_{ij} = \delta_j + \theta\,\AS_{ij}^{\text{used}} + \varepsilon_{ij}
-\)
-and similarly for the PW option.
-Estimating a logit with regressors $\AS_{ij}(x)$ and $\Delta\AS_{ij}$ yields coefficients $(\gamma_1,\gamma_2)=(\theta,\theta\lambda)$, so that
+
+The maximal expected utility from not buying the annuity is
 \[
-\boxed{\ \lambda = \gamma_2/\gamma_1\ }.
+    V^{N}(x,\theta,\beta_i,W)
+    \;=\;
+    (W - s^\ast)^{\alpha}
+    + \theta x \, (s^\ast)^{\alpha}
+    + (1-\theta x)\, \beta_i s^\ast.
 \]
-Because $\Price_{ij}(x)$ depends on $x$ only, $\Delta\AS_{ij}$ is driven solely by $y$ and is therefore exogenous within rich $x$ fixed effects. Hence $\lambda$ is point‑identified and directly measures the extent to which individuals incorporate private health information into preferences. The null of full use is $\lambda=1$; the null of complete neglect is $\lambda=0$.
+
+\paragraph{3. Buying the annuity: expected utility.}
+
+If the individual buys the annuity, assume she uses all her wealth $W$ to buy an annuity that pays $F$ in each period she is alive, with no bequest from the annuity and no additional savings.
+
+Then:
+\begin{itemize}
+    \item At $t=1$: consumption $c_1 = F$.
+    \item At $t=2$: if alive, $c_2 = F$ and $B=0$; if dead, $c_2=0$ and $B=0$.
+\end{itemize}
+
+Given beliefs $\hat x = \theta x$, expected utility from buying the annuity is
+\begin{align*}
+    V^{A}(x,\theta)
+    &= u(F) + \hat x \, u(F) + (1-\hat x)\, v(0) \\
+    &= F^{\alpha} + \theta x \, F^{\alpha} \\
+    &= (1 + \theta x)\, F^{\alpha}.
+\end{align*}
+
+\paragraph{4. Adoption condition for the annuity.}
+
+The individual buys the annuity if and only if
+\[
+    V^{A}(x,\theta)
+    \;\ge\;
+    V^{N}(x,\theta,\beta_i,W),
+\]
+i.e.
+\[
+    (1 + \theta x)\, F^{\alpha}
+    \;\ge\;
+    (W - s^\ast)^{\alpha}
+    + \theta x \, (s^\ast)^{\alpha}
+    + (1-\theta x)\, \beta_i s^\ast,
+\]
+where $s^\ast = s^\ast(x,\theta,\beta_i,W)$ solves
+\[
+    -\alpha (W - s)^{\alpha-1}
+    + \theta x \, \alpha s^{\alpha-1}
+    + (1-\theta x)\,\beta_i = 0
+\]
+subject to $0 \le s \le W$.
 
 
 
@@ -180,9 +280,9 @@ Because $\Price_{ij}(x)$ depends on $x$ only, $\Delta\AS_{ij}$ is driven solely 
 What are the impacts of LTV policies? Some thoughts: 
 
 \begin{itemize}
-    \item Poor people can not save enough equity to buy a house. 
-    \item Housing prices decrease due to a lower demand. 
-    \item Risky consumers are screened out of the market. 
+    \item Poor people can not save enough equity to buy a house. [they are left out]
+    \item Housing prices and quantity decrease due to a lower demand 
+    \item Risky consumers are screened out of the market 
     \item 
 \end{itemize}
 

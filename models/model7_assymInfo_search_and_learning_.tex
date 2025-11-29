@@ -61,19 +61,31 @@
 \addbibresource{../references.bib}
 \begin{document}
 
-This document presents a model of Nash-Bertrand competition that includes selection, search and asymmetric information. The asymmetric information is modeled following \textcite{cosconati_competing_2025}. 
+
+
+\section{Introduction}
+
+Consumer search and adverse selection are common features of selection markets. 
+This document presents a model of Nash-Bertrand competition that incorporates adverse selection, consumer search and asymmetric information among firms. We build upon the framework of \textcite{cosconati_competing_2025} to model asymmetric information. 
 
 
 %% timing of the game 
-A buyer has a private type, firms observe a noisy signal about the buyer's type and make their first stage offers. Consumers decide whether to accept one of the initial offers or to request revised offers (search).  In a second stage we assume that firms are able to observe the offers of their rivals and make their second stage offers.
+The gam proceeds in two stages. 
+In the first stage, each  buyer draws a private risk type, while firms observe a noisy signal of his type and make their initial offers. Then, consumers decide whether to accept one of the initial offers or to request revised offers (search).  The decision to search is based on the consumer's search cost and the expected benefit, which depends on their type and on the signals received by the firms.
+
+Conditional on consumer search,  firms observe rivals' initial offers , from which they back out the signals of the other firms and update beliefs. In the second stage firms make their revised offers. 
+
+
 
 % what happens between stages: learning about other firms signals and also updating priors about the consumer. 
 
-%% selection interacts with search 
+%% -  selection interacts with search  i) depends on the joint distribution F(s, theta) and ii) given that 
 
 In the model search interacts with asymmetric information and with selection. 
-The interaction between search and selection is given by the joint density of search costs and types. Buyers decide to search based: their search cost and the expected benefit from searching, which depends on their type. \footnote{\textcolor{red}{ADD THAT IT COMES FROM THE REVELATION OF INFORMATION.}}
 
+
+The interaction between search and selection is governed by the joint density of search costs and risk types. Buyers decide whether to search based on their search cost and the expected benefit from searching, which depends on their type.
+% \footnote{\textcolor{red}{ADD THAT IT COMES FROM THE REVELATION OF INFORMATION.}}
 
 
 % search interacts with common value auction 
@@ -82,19 +94,6 @@ Moreover when consumers search, firms are able to observe the offers of their ri
  
 
 
-
-
-
-
-
-
-Consumer search and selection are prevalent in selection markets. 
-
-If search propensity and private information are not independent, then searching might reveal something about the consumer's private information. 
-
-Particularly, if search costs are correlated with private information then searching could reveal information about the consumer's type and improve or worsen selection issues. For example if healthy consumers search then they can get better quotes, which could help with adverse selection. 
-
-What happens when there is interaction between search and selection. 
 
  
 
@@ -276,14 +275,9 @@ we can use the fact that: $Pr(D = j, S = 0 \mid \theta, \hat \theta) = Pr(D = j 
 \end{align}
 
 
-\subsection{Analysis}
+\subsection{Identification}
 
 
-Your model introduces a dynamic screening mechanism into a selection market where the act of searching does more than just uncover a better price; it fundamentally alters the information structure of the equilibrium. This transformation occurs through two simultaneous channels that determine whether search ultimately helps or hurts market efficiency.
-
-First, for consumers who search, there is an **information aggregation channel**. By soliciting second-stage offers, searchers effectively compel firms to reveal their private signals through their posted prices. Since all competing firms observe these initial offers, the information asymmetry *between* firms vanishes for the searcher pool. This eliminates the "winner's curse"—the fear of winning a customer only because rivals saw a risk factor you missed—and allows firms to price aggressively based on a pooled, highly precise estimate of the consumer's "true" risk. This mechanism effectively replicates the benefits of a centralized information bureau for the subset of consumers who search.
-
-Second, there is a **screening channel** driven by the correlation between search costs and risk types. The decision to search sorts consumers into two distinct pools with different average risk profiles. If low-risk consumers are more likely to search, perhaps due to lower search costs, they successfully "cream-skim" themselves out of the general pool. They benefit doubly: first from the competitive, precise pricing of the second stage, and second by signaling they are low-risk. However, this creates a pecuniary externality on those who remain. As low-risk consumers exit, the pool of non-searchers deteriorates, forcing firms to raise first-stage prices to cover the higher expected cost of this residual "adverse" group. Conversely, if high-risk consumers are the ones searching, the act of searching itself becomes a negative signal. This "signaling trap" can backfire, causing firms to offer worse terms to searchers and potentially collapsing the search market entirely. Thus, search "helps" when it efficiently identifies low-risk drivers but "hurts" when it concentrates bad risk in the stagnant pool of non-searchers.
 
 
 

@@ -1,0 +1,100 @@
+%\documentclass[notes,10pt,aspectratio=169]{beamer}
+
+%\documentclass[notes, 10pt,aspectratio=169]{beamer}
+\documentclass[10pt,aspectratio=169]{beamer}
+
+
+% Add this line to your preamble
+%\setbeameroption{show notes on second screen=right}
+
+%\usetheme{Singapore} %Boadilla, Madrid, default, etc. 
+\usetheme[progressbar=frametitle]{metropolis}
+\usecolortheme{rose} %beaver, dolphin, crane, 
+
+
+%\setbeamersize{text margin left=4mm, text margin right=4mm}
+
+
+\usecolortheme{default}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{booktabs} % Required for \toprule, \midrule, \bottomrule
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+\tikzstyle{block} = [rectangle, draw, text width=4cm, align=center, rounded corners, minimum height=1cm]
+\tikzstyle{decision} = [rectangle, draw, text width=5cm, align=center, fill=blue!10, rounded corners, minimum height=1cm]
+\tikzstyle{terminal} = [rectangle, draw, text width=4.5cm, align=center, fill=yellow!30, rounded corners, minimum height=1cm]
+\tikzstyle{end} = [rectangle, draw, text width=5cm, align=center, fill=green!30, rounded corners, minimum height=1cm]
+\tikzstyle{arrow} = [->, thick]
+
+
+
+\usepackage{adjustbox}
+%2. change the bullets 
+\setbeamertemplate{itemize item}[triangle] %circle, square,... 
+
+
+% 1. Define custom colors and set colors 
+%\definecolor{myblue}{HTML}{003366}
+\definecolor{accent}{RGB}{78,205,196}
+
+%\setbeamercolor{title}{fg=white,bg=myblue}
+\setbeamercolor{frametitle}{fg=black,bg=white}
+%\setbeamercolor{normal text}{fg=mygray}
+\setbeamercolor{block title}{fg=black,bg=blue}
+%\setbeamercolor{block body}{fg=black,bg=white}
+
+\setbeamercolor{item}{fg= orange!80} % Change bullet color
+\setbeamercolor{button}{bg=orange, fg=white}
+
+
+
+
+
+% 3. BibLaTeX settings
+\usepackage[
+  backend=biber,
+  style=apa,
+  citestyle=authoryear
+]{biblatex}
+\addbibresource{references.bib}
+
+\title{Meetin with SPoints to discuss with Steve}
+%\subtitle{A Mini Literature Overview}
+
+\author{%
+ Lucas Schmitz
+\inst{1} \and
+   %\and
+%  Coauthor Three\inst{3}
+}
+\institute{
+  \inst{1} Yale University \\
+}
+
+\date{\today}
+
+\begin{document}
+
+%\begin{frame}
+%  \titlepage
+%\end{frame}
+
+
+
+
+
+
+\begin{frame}{This meeting}
+
+ \begin{itemize}
+        \item Discuss model with asymmetric information. See document attached. 
+        \item Discuss whether presenting what I have in the IO lunch is the best strategy. 
+\end{itemize}
+\end{frame}
+
+\end{document}

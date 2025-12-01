@@ -78,60 +78,8 @@
 \date{\today}
 \maketitle
  
-
  
-Some thoughts: 
-\begin{itemize}
-    \item Imagine that you have all the info observed by the firms ($x$) and all the private information $y$. Then you can calculate the survival probabilities for each individual $f(x,y)$. My intuition is that one can calculate the variation of $f()$ given by $y$ 
 
-    The degree of adverse selection should tell you something about whether individuals are using $y$. 
-\end{itemize}
-
-
-
-There is this story where people have private information about their risk and there is selection into the market. But I highly doubt that people actually can select into the market based on their risk type. My prior is that people have private information about their risk but actually do not use it correctly to choose the most convenient products. 
-
-To prove the point we would need to show that people do not use private information as much as they should, hence we would need to observe private information. I think Chile is a good setting since we could merge the annuities data with health records. 
-
-This would go in the same line as \textcite{handel_adverse_2013} that shows that inertia decreases adverse selection, because people are not choosing optimally. In this case it would be similar in the sense that people are just not using their private information to choose the best product. 
-
-
-
-
-
-\textbf{Empirical strategy}
-
-We can follow the annuities literature and estimate a model of annuities choice with private information, but in our setting we would have access to part of the private information (health records). Using this, we can use a mortality model to estimate the mortality risk given our observed health records, and given the estimated mortality model we can compute the effect o
-
-
-For example consider that firms observe the covariates $x$ and consumers observe $x$ and $y$. Denote by $\mu_t(x,y)$ the probability an individual dies at age t $x$ and $y$ and by $\mu(x)$ the probability conditional only on $x$.
-Denote by $S(t|x,y)$ and $S(t|x)$ the corresponding survival functions.
-
-
-Consider a demand for annuities that depends on the expected mortality risk. Which we can microfound. For example the utility of an annuity could be: 
-\begin{equation}
-    U = \mathbb{E}_T\left[\int_0^{T} e^{-\delta t} c_t^\alpha dt \right] = \int_0^\infty e^{-\delta t} S(t|x,y) c_t^\alpha dt
-\end{equation}
-
-We assume that firms only observe $x$, individuals observe $x$ and $y$ and the econometrician also observes $x$ and $y$.
-
-Individuals face a choice set $\mathcal{C}$ of annuities contracts with different guaranteed periods and prices. We observe the choice of annuity $j \in \mathcal{C}$ that maximizes their utility given their information:
-
-
-\textbf{Identification argument}
-
-Given that firms observe only $x$, the choice set $\mathcal{C}$ depends only on $x$, variation in prices and average choices across different $x$ allows us to identify the 
-
-
-Hence the choice of annuity $j$ reveals information about $y$ since individuals choose the annuity that maximizes their utility given their information $(x,y)$ over the choice set $\mathcal{C}(x)$.
-
-Identification issue: if individuals are bad at translating their information ($x,y$) into mortality beliefs, then we cannot identify the model. 
-
-\begin{itemize}
-    \item Note that here the data from SCOMP is not better than the medicare data, it seems unlikely that no researcher has tried to estimate this behavioral bias before. 
-\end{itemize}
-
-\newpage
 
 
 \subsection*{Two-period model with distorted survival beliefs}

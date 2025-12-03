@@ -118,13 +118,6 @@ Diego Cussen
     \note{Mention that only firms who made an initial offer can revise their offers. }
     
 \end{itemize}
-
-\note{
-    \begin{itemize}
-        \item I am going to study the effects of being able to request revised offers in a centralized marketplace for annuities in Chile.  
-    \end{itemize}}
-
-
 \end{frame}
 
 %%%%%%%%% Slide 3 %%%%%%%%%%%%%
@@ -134,14 +127,16 @@ Diego Cussen
     \item Studies the equilibrium impacts of revised offers 
     
     \item We use data from a centralized marketplace for annuities in Chile (SCOMP)
-    \item A recent law eliminated the possibility of requesting revised offers.
+    \item Policy shock: elimination of the possibility of requesting revised offers.
     \begin{itemize}
         \item Before: consumers receive initial offers, then can request revised offers from one firm.
         \item After: consumers can only accept/reject initial offers.
         \item Rationale for elimination: "firms will not make their best efforts in the initial phase"
     \end{itemize}
+    \item Model of search and selection allowing for asymmetric information to simulate the counterfactual (banned aftermarket).
 \end{itemize}
 \end{frame}
+
 
  %%%%%%%%% Slide 4 %%%%%%%%%%%%%
 \begin{frame}{Literature}
@@ -175,22 +170,15 @@ Diego Cussen
     \begin{itemize}%[<+->]
     \item Annuities: transform a stock of savings into a stream of payments until death.
     \item Reasons to buy: insure against overlife risk
-        \item Profits of firm $j$: 
-    %\begin{align*}
-    %\pi_{ji}(F) = S_i-  \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{F}{(1+r_j)^t}|x_i \right]
-    %\end{align*}
-
-    %\begin{align*}
-    %\pi_{ji}(F) = S_i-  \sum_{t=1}^T Pr_j (\text{alive}|x_i)\frac{F}{(1+r_j)^t}
-    %\end{align*}
-
+        \item Expected profits of firm $j$: 
+    
     \begin{align*}
-    \pi_{ji}(F) = S_i -  \sum_{t=1}^T \frac{\Pr_j(\text{alive} \mid x_i)}{(1+r_j)^t} F 
+    \hat \pi_{ji}(F) = S_i -  \sum_{t=1}^T \frac{\Pr_j(\text{alive} \mid x_i)}{(1+r_j)^t} F 
     \end{align*}
 
     % if it was only financing cost, it would be a monopoly
    
-     $S$: stock of savings, $F$: per period annuity payment, $x_i$: buyer mortality factors
+     $S$: stock of savings, $F$: per period annuity payment, $x_i$: buyer mortality factors (e.g. age, gender)
     
     %\item Firm heterogeneity: algorithm (mortality tables), financing costs ($r_j$) and risk ratings. 
     \item Firm heterogeneity: algorithm (mortality tables) and financing costs ($r_j$)
@@ -210,7 +198,7 @@ Diego Cussen
 %%%%%%%%% Slide 7 %%%%%%%%%%%%%
 \begin{frame}{SCOMP Process}\label{slide:setting2}
 \begin{center}
-\input{../figures/tikz/SCOMP_diagram_v3.tex}
+\input{../figures/tikz/SCOMP_diagram_v4.tex}
 \end{center}
 \begin{itemize}
     \item \hyperlink{slide:fig_offer_certificate}{\beamerbutton{Offer Certificate}}
@@ -232,24 +220,12 @@ Explain that:
 \begin{itemize}
     \item SCOMP data at the individual level  
     \begin{itemize}
-        \item Posted and revised offers, consumer acceptance. \textbf{Not} requests 
+        \item Initial and revised offers, consumer choice. \textbf{Not} requests 
         \item Total savings 
         \item Demographics: age and gender \hyperlink{slide:fig_offer_certificate}{\beamerbutton{Certificate with initial offers}}
     \end{itemize}
      \item Retirement insurance companies: risk ratings
 \end{itemize}
-
-Particularities of the data/setting: 
-\begin{itemize}
-    \item One observes all the offers received by the buyers 
-    \item One observes the same information as the firms (gender, age, savings)
-\end{itemize}
-\note{
-    \begin{itemize}
-        \item I observe only the revised offers made not the requested ones. 
-
-    \end{itemize}
-}
 \end{frame}
 
 
@@ -259,16 +235,16 @@ Particularities of the data/setting:
 \section{Empirical Evidence}
  
 %10 - Descriptive evidence 
-\begin{frame}{Descriptive Evidence}\label{slide:Descriptive_evidence}
+%\begin{frame}{Descriptive Evidence}\label{slide:Descriptive_evidence}
 
-\begin{enumerate}
+%\begin{enumerate}
     %\item Not all buyers request revised offers  $\rightarrow$ search costs \hyperlink{slide:fig1}{\beamerbutton{Revised offers}}
     %\item Most buyers request revised offers and the improvement is substantial $\rightarrow$ search costs \hyperlink{slide:fig1}{\beamerbutton{Revised offers}} 
     %\item Buyers choose lower offers $\rightarrow$ product differentiation  \hyperlink{slide:fig2}{\beamerbutton{Foregone value}} 
-    \item Sorting into firms $\rightarrow$ firm asymmetric information     \hyperlink{slide:fig3}{\beamerbutton{Sorting into firms}} % we could add "firm preferences correlated with buyer risk"
-    \item Patterns in revised offers $\rightarrow$ firm learning of initial offers.   \hyperlink{slide:fig4}{\beamerbutton{Learning}} 
-\end{enumerate}
-\end{frame}
+    %\item Sorting into firms $\rightarrow$ firm asymmetric information     \hyperlink{slide:fig3}{\beamerbutton{Sorting into firms}} % we could add "firm preferences correlated with buyer risk"
+    %\item Patterns in revised offers $\rightarrow$ firm learning of initial offers.   \hyperlink{slide:fig4}{\beamerbutton{Learning}} 
+%\end{enumerate}
+%\end{frame}
 
 %11 - Prevalence of revisions 
 %\begin{frame}\frametitle{Revised offers: quantity and size}\label{slide:fig1}
@@ -304,7 +280,7 @@ Particularities of the data/setting:
 
         \item Possible cause 
         \begin{itemize}
-            \item Differences in screening technology: firms. Type $\theta$ and firms observe $\theta_j\sim N(\theta, \sigma_j)$ 
+            \item Differences in screening technology across firms. Consumer type $\theta$ and firms observe $\theta_j\sim N(\theta, \sigma_j)$ 
             \item Correlation between buyer's risk and preferences. 
             \item Others... 
         \end{itemize}
@@ -350,6 +326,17 @@ Particularities of the data/setting:
 \end{frame}
 
 
+\begin{frame}{Summary of Empirical Evidence}
+\begin{itemize}
+    \item The data reveals: 
+    \begin{enumerate}
+        \item \textbf{Risk sorting}: Firms differ systematically in the risk composition of their buyers
+        \item \textbf{Information revelation}: Firms adjust revised offers based on competitors' initial prices
+    \end{enumerate}
+    \item These patterns motivate our model of search with asymmetric information
+\end{itemize}
+\end{frame}
+
 
 
 %%%%%%%%% Slide 16
@@ -389,24 +376,8 @@ Particularities of the data/setting:
     \begin{enumerate}
         \item Firms post initial offers using private signals.
         \item Buyer either accepts (no search) or pays $s_i$ to request revised offers (search).
-        \item Upon search, all firms observe the full vector $\hat \theta$ through posted prices and can update offers.
+        \item Upon search, all firms observe the full vector $\hat \theta$ through posted prices and can revise their offers.
     \end{enumerate}
-\end{itemize}
-\end{frame}
-
-%%%%%
-
-\begin{frame}{Signals, Beliefs, and Pricing}
-\begin{itemize}
-    \item Following \textcite{cosconati_competing_2025}, equilibrium pricing is linear in posterior mean risk.
-    \item Firms allow for different markups in the posted and revised-offer stages to capture learning.
-\end{itemize}
-\begin{align*}
-    F_j^{1T}(\hat \theta_j) &= \alpha_j + \beta_j \, E[\theta \mid \hat \theta_j, D=j, S=0], \\
-    F_j^{2T}(\hat \theta) &= \alpha_j^{2T} + \beta_j^{2T} \, E[\theta \mid (\hat \theta_j, \hat \theta_{-j}), D=j, S=1].
-\end{align*}
-\begin{itemize}
-    \item Stage-2 pricing uses the pooled signal vector revealed through initial offers, removing informational asymmetries among firms for searchers.
 \end{itemize}
 \end{frame}
 
@@ -414,21 +385,26 @@ Particularities of the data/setting:
 
 \begin{frame}{Demand and Search Decision}\label{slide:demand}
 \begin{itemize}
-    \item Indirect utility for type $\theta$ from firm $j$ in stage $s \in \{0,1\}$:
+    \item Indirect utility for type $\theta$ from firm $j$ in stage $t \in \{1,2\}$:
     \begin{align*}
-        u_{ij}^{(s)} = \gamma(\theta) F_j^{sT} + \xi_j + \beta r_j + \epsilon_{ij}.
+        u_{ij}^{(t)} = \gamma(\theta)  \underbrace{F_j^{t}}_{\text{Flow payment}} + \underbrace{\xi_j}_{\text{Demand shock }} + \underbrace{\beta r_j}_{\text{Risk rating}} +  \underbrace{\epsilon_{ij}}_{\text{idiosyncratic shock}}.
     \end{align*}
     \item Logit demand conditional on search choice:
     \begin{align*}
-        \Pr(D=j \mid \hat \theta, \theta, S=s) = \frac{\exp(\gamma(\theta) F_j^{sT}(\hat \theta) + \xi_j + \beta r_j)}{1 + \sum_k \exp(\gamma(\theta) F_k^{sT}(\hat \theta) + \xi_k + \beta r_k)}.
+        \Pr(D=j \mid \hat \theta, \theta, S=s) = \frac{\exp(\gamma(\theta) F_j^{t}(\hat \theta) + \xi_j + \beta r_j)}{1 + \sum_k \exp(\gamma(\theta) F_k^{t}(\hat \theta) + \xi_k + \beta r_k)}.
     \end{align*}
     \item Search occurs when the expected gain from revised offers exceeds the idiosyncratic cost:
     \begin{align*}
-        G(\theta, \hat \theta) &= U_{i1}(\theta, \hat \theta) - U_{i0}(\theta, \hat \theta) > s_i, \\[-0.3em]
+        G(\theta, \hat \theta) &= 
+        E_{\epsilon}\left[\max_j u_{ij}^{(2)}\right]
+        - E_{\epsilon}\left[\max_j u_{ij}^{(1)}\right] > s_i, 
+    \end{align*}
+     \item Search probability:
+    \begin{align*}
         \pi_1(\theta, \hat \theta) &= F_{s\mid \theta}\big(G(\theta, \hat \theta)\big).
     \end{align*}
 \end{itemize}
-\hyperlink{slide:demand}{\beamerbutton{Differentiated product}}
+\hyperlink{slide:fig2}{\beamerbutton{Differentiated product}}
 
 \end{frame}
 
@@ -461,31 +437,45 @@ E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \,
 \, \phi(\hat \theta; \theta') f_0(\theta') d\theta'}.
 \end{align*}
 \normalsize
+
+\end{frame}
+
+%%%%%
+
+\begin{frame}{Signals, Beliefs, and Pricing}
 \begin{itemize}
-    \item Terms $\widehat D_{js}$ weight beliefs by the probability the consumer chooses firm $j$ in stage $s$.
+    \item Following \textcite{cosconati_competing_2025}, equilibrium pricing is linear in posterior mean risk.
+    \item Firms allow for different markups in the posted and revised-offer stages to capture learning.
+\end{itemize}
+\begin{align*}
+    F_j^{1}(\hat \theta_j) &= \alpha_j^{1} + \beta_j^{1} \, E[\theta \mid \hat \theta_j, D=j, S=0], \\
+    F_j^{2}(\hat \theta) &= \alpha_j^{2} + \beta_j^{2} \, E[\theta \mid (\hat \theta_j, \hat \theta_{-j}), D=j, S=1].
+\end{align*}
+\begin{itemize}
+    \item Stage-2 pricing uses the pooled signal vector revealed through initial offers, removing informational asymmetries among firms for searchers.
 \end{itemize}
 \end{frame}
- 
- 
 
+%%%%%%%%%%%%% 
+  
 \begin{frame}{Profits and Equilibrium}
 \small
 \begin{align*}
-    \pi_j &= \int_{\theta} \int_{\hat \theta} (W - F_j^{1T}(\hat \theta_j)  k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, S=0) (1-\pi_1(\theta, \hat \theta)) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta \\
-    &\quad + \int_{\theta} \int_{\hat \theta} (W - F_j^{2T}(\hat \theta) k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, S=1) \pi_1(\theta, \hat \theta) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta.
+    \pi_j &= \int_{\theta} \int_{\hat \theta} (W - F_j^{1}(\hat \theta_j)  k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, S=0) (1-\pi_1(\theta, \hat \theta)) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta \\
+    &\quad + \int_{\theta} \int_{\hat \theta} (W - F_j^{2}(\hat \theta) k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, S=1) \pi_1(\theta, \hat \theta) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta.
 \end{align*}
 \normalsize
 \begin{itemize}
-    \item Firms choose $(\alpha_j, \beta_j, \alpha_j^{2T}, \beta_j^{2T})$ anticipating both selection (risk composition) and search (information revelation).
+    \item Firms choose $(\alpha_j^{1}, \beta_j^{1}, \alpha_j^{2}, \beta_j^{2})$ anticipating both selection (risk composition) and search (information revelation).
     \item Equilibrium trades off the profit erosion from better information in the aftermarket with the option value of serving non-searchers at higher markups.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Equilibrium Conditions}
-\begin{itemize}
-    \item 
-\end{itemize}
-\end{frame}
+%\begin{frame}{Equilibrium Conditions}
+%\begin{itemize}
+%    \item 
+%\end{itemize}
+%\end{frame}
 
 
 
@@ -532,10 +522,10 @@ E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \,
 \begin{frame}{Differentiation}\label{slide:fig2}    
 Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly wages.
 \begin{figure}[H]
-\caption{}
+%\caption{}
 \centering{}%
 \begin{tabular}{cc}
-\includegraphics[scale=0.25]{../figures/IE3/IE3_foregone_hist.png}
+\includegraphics[scale=0.23]{../figures/IE3/IE3_foregone_hist.png}
 \end{tabular}
 \end{figure}
 \hyperlink{slide:demand}{\beamerbutton{Go back}}

@@ -54,8 +54,7 @@
 
 
 
-\AtBeginSection[]
-{
+\AtBeginSection[]{
   \begin{frame}{Outline}
     \tableofcontents[currentsection]%,hideothersubsections]
   \end{frame}
@@ -111,7 +110,7 @@ Diego Cussen
     \item Effects of  revised offers: 
     
     \begin{itemize}
-        \item Permits discrimination based on search costs 
+        \item Allows for screening of consumers by firms 
         \item Decreases information rents 
     \end{itemize}
 
@@ -133,32 +132,32 @@ Diego Cussen
         \item After: consumers can only accept/reject initial offers.
         \item Rationale for elimination: "firms will not make their best efforts in the initial phase"
     \end{itemize}
-    \item Model of search and selection allowing for asymmetric information to simulate the counterfactual (banned aftermarket).
+    \item Model of search and selection allowing for asymmetric information across firms to simulate the counterfactual of banning revised offers
 \end{itemize}
 \end{frame}
 
 
  %%%%%%%%% Slide 4 %%%%%%%%%%%%%
-\begin{frame}{Literature}
-\begin{itemize}
-    \item Search in selection markets: \textcite{allen_search_2019} %larsen_efficiency_2021
+%\begin{frame}{Literature}
+%\begin{itemize}
+%    \item Search in selection markets: \textcite{allen_search_2019} %larsen_efficiency_2021
 
-    \item Competition in selection markets: \textcite{mahoney_imperfect_2017, crawford_asymmetric_2018,
-    cuesta_price_2018, cosconati_competing_2025} 
+%    \item Competition in selection markets: \textcite{mahoney_imperfect_2017, crawford_asymmetric_2018,
+%    cuesta_price_2018, cosconati_competing_2025} 
 
-    \item Centralized marketplaces in selection markets : \textcite{abaluck_when_2023,tebaldi_estimating_2025} 
+%    \item Centralized marketplaces in selection markets : \textcite{abaluck_when_2023,tebaldi_estimating_2025} 
     
-    \item SCOMP specific: \textcite{boehm_intermediation_2024, illanes_retirement_2019, alcalde_intermediary_2021,aryal_auctioning_2021}
+%    \item SCOMP specific: \textcite{boehm_intermediation_2024, illanes_retirement_2019, alcalde_intermediary_2021,aryal_auctioning_2021}
     
     
     %\item Selection in multiple dimensions: \textcite{finkelstein_adverse_2004} and Finkelstein and McGarry (2006).  
 
     %\item Aftermarkets: \textcite{allen_search_2019} %larsen_efficiency_2021   
-\end{itemize}
-\note{
-\textcolor{blue}{ ADD THE CONTRIBUTIONS TO EACH LITERATURE AND ADD MORE PAPERS}
-}
-\end{frame}
+%\end{itemize}
+%\note{
+%\textcolor{blue}{ ADD THE CONTRIBUTIONS TO EACH LITERATURE AND ADD MORE PAPERS}
+%}
+%\end{frame}
 
 %%%%%%%%%
 
@@ -309,7 +308,7 @@ Explain that:
 \begin{column}{0.48\textwidth}
      \begin{itemize}
         \item     If firms do not know competitors' prices one expects them to increase their offers more when the competitors' prices are higher. 
-    $$ F_{ij}^R - F_{ij}^I = \beta_0 + \beta_1 \text{Avg. gap}_{ij} + \beta_2 \text{Max. gap}_{ij} + \beta_j + \epsilon_{ij}$$
+    $$ \underbrace{Offer \\ improvement}_{F_{ij}^R - F_{ij}^I} = \beta_0 + \beta_1 \text{Avg. gap}_{ij} + \beta_2 \text{Max. gap}_{ij} + \beta_j + \epsilon_{ij}$$
     where  \\
     $ \text{Avg. gap }_{ij} = \frac{1}{F_{ij}^I}\left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I - F_{ij}^I\right) $\\ 
     $ \text{Max. gap } = \frac{1}{F_{ij}^I}\left(\max_{k \neq j} F_{ik}^I - F_{ij}^I\right)$
@@ -467,7 +466,7 @@ E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \,
 \normalsize
 \begin{itemize}
     \item Firms choose $(\alpha_j^{1}, \beta_j^{1}, \alpha_j^{2}, \beta_j^{2})$ anticipating both selection (risk composition) and search (information revelation).
-    \item Equilibrium trades off the profit erosion from better information in the aftermarket with the option value of serving non-searchers at higher markups.
+    \item Equilibrium trades off the profit erosion from better information in the second stage with the option value of serving non-searchers at higher markups.
 \end{itemize}
 \end{frame}
 
@@ -487,7 +486,7 @@ E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \,
 \begin{itemize}
     \item \textbf{Information aggregation}: searchers force firms to pool their signals, eliminating winner's-curse concerns and intensifying competition for that pool.
     \item \textbf{Screening channel}: correlation between $s_i$ and $\theta$ means the act of searching signals risk type, changing the composition of non-searchers.
-    \item If low-risk consumers search, the aftermarket improves selection and disciplines initial offers for everyone.
+    \item If low-risk consumers search, the second stage improves selection and disciplines initial offers for everyone.
     \item If high-risk consumers search, revised offers may worsen selection and can even collapse the search market.
     \item Policy experiments (e.g., banning revised offers) affect both price dispersion and the endogenous sorting of types across search decisions.
 \end{itemize}

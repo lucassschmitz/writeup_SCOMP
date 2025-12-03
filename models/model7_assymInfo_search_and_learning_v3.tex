@@ -47,11 +47,13 @@
 \newtheorem{thm}{\protect\theoremname}
 \theoremstyle{plain}
 \newtheorem{prop}[thm]{\protect\propositionname}
+\theoremstyle{definition}  % Add this line
+\newtheorem{definition}[thm]{Definition}  % Add this line
+\theoremstyle{remark}  % Add this line
+\newtheorem{remark}[thm]{Remark}  % Add this line
 \providecommand{\propositionname}{Proposition}
 \providecommand{\theoremname}{Theorem}
 \makeatother
-\providecommand{\propositionname}{Proposition}
-\providecommand{\theoremname}{Theorem}
 \newtheorem{ass}[thm]{Assumption}
 % \input{tcilatex}
 \usepackage{tikz}
@@ -60,7 +62,6 @@
 
 \addbibresource{../references.bib}
 \begin{document}
-
 
 
 \section{Introduction}
@@ -218,32 +219,74 @@ note that prices in the second stage depend on the signals of all firms, since a
 We use $\alpha^{1T}, \beta^{1T}, \alpha^{2T}, \beta^{2T}$ to denote the vector of parameters for all firms. The profits of fimr $j$ are: 
 \begin{align}
     \pi_j(\alpha^{1T}, \beta^{1T}, \alpha^{2T}, \beta^{2T}) 
-    &= \int_\theta \int_{\hat \theta} (F_j^{1T}(\hat \theta_j) - k_j \theta) Pr(D = j, S = 0 \mid \theta, \hat \theta) \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta \notag \\ 
-    & \quad   + \int_\theta \int_{\hat \theta} (F_j^{2T}(\hat \theta) - k_j \theta) Pr(D = j, S= 1\mid \theta, \hat \theta)  \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta
+    &= \int_\theta \int_{\hat \theta} (W- F_j^{1T}(\hat \theta_j) k_j \theta) Pr(D = j, S = 0 \mid \theta, \hat \theta) \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta \notag \\ 
+    & \quad   + \int_\theta \int_{\hat \theta} (W -F_j^{2T}(\hat \theta) k_j \theta) Pr(D = j, S= 1\mid \theta, \hat \theta)  \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta
 \end{align}
 we can use the fact that: $Pr(D = j, S = 0 \mid \theta, \hat \theta) = Pr(D = j \mid \theta, \hat \theta, S=0) \cdot (1-\pi_1(\theta, \hat \theta))$ and $Pr(D = j, S = 1 \mid \theta, \hat \theta) = Pr(D = j \mid \theta, \hat \theta, S=1) \cdot \pi_1(\theta, \hat \theta)$ to rewrite the profits as:
 
 \begin{align}
     \pi_j(\alpha^{1T}, \beta^{1T}, \alpha^{2T}, \beta^{2T}) 
-    &= \int_\theta \int_{\hat \theta} (F_j^{1T}(\hat \theta_j) - k_j \theta)  Pr(D = j \mid \theta, \hat \theta, S=0) \cdot (1-\pi_1(\theta, \hat \theta)) \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta \notag \\ 
-    & \quad   + \int_\theta \int_{\hat \theta} (F_j^{2T}(\hat \theta) - k_j \theta)  Pr(D = j \mid \theta, \hat \theta, S=1) \cdot \pi_1(\theta, \hat \theta) \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta
+    &= \int_\theta \int_{\hat \theta} (W - F_j^{1T}(\hat \theta_j) k_j \theta)  Pr(D = j \mid \theta, \hat \theta, S=0) \cdot (1-\pi_1(\theta, \hat \theta)) \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta \notag \\ 
+    & \quad   + \int_\theta \int_{\hat \theta} (W - F_j^{2T}(\hat \theta) k_j \theta)  Pr(D = j \mid \theta, \hat \theta, S=1) \cdot \pi_1(\theta, \hat \theta) 	\phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta
 \end{align}
 
 
+ 
 \subsection{Equilibrium}
 
-\textcite{cosconati_competing_2025} verify numerically that profits are concave in $(\alpha_j, \beta_j)$, given that strategy spaces are non-empty compact convex subsets of a Euclidean space, then a pure strategy Nash equilibrium exists by Fudenberg and Tirole (1991, theorem 1.2).
+\begin{definition}[Nash-Bertrand Equilibrium with Search and Asymmetric Information]
+A pure-strategy Nash-Bertrand equilibrium is a tuple of pricing strategies 
+$\{(\alpha_j^{1T}, \beta_j^{1T}, \alpha_j^{2T}, \beta_j^{2T})\}_{j=1}^J$, 
+consumer search decisions $\{S_i(\theta_i, \hat\theta)\}$, 
+and purchase decisions $\{D_i(\theta_i, \hat\theta, S_i)\}$ such that:
+
+\begin{enumerate}
+    \item \textbf{Consumer optimality (Search):} Given pricing strategies, each consumer $i$ of type $\theta_i$ with signals $\hat\theta$ chooses to search ($S_i=1$) if and only if
+    \begin{align*}
+        G(\theta_i, \hat\theta) = U_{i1}(\theta_i, \hat\theta) - U_{i0}(\theta_i, \hat\theta) > s_i.
+    \end{align*}
+    
+    \item \textbf{Consumer optimality (Purchase):} Given search decision $S_i$ and pricing strategies, consumer $i$ chooses firm $j$ to maximize utility:
+    \begin{align*}
+        D_i = \arg\max_{j \in \{1,\ldots,J\}} u_{ij}^{(t)} = \gamma(\theta_i) F_j^{t}(\hat\theta) + \xi_j + \beta r_j + \epsilon_{ij},
+    \end{align*}
+    where $t=1$ if $S_i=0$ (initial offers) and $t=2$ if $S_i=1$ (revised offers).
+    
+    \item \textbf{Firm optimality:} For each firm $j$, the pricing strategy $(\alpha_j^{1T}, \beta_j^{1T}, \alpha_j^{2T}, \beta_j^{2T})$ maximizes expected profits given rivals' strategies:
+    \begin{align*}
+        (\alpha_j^{1T}, \beta_j^{1T}, \alpha_j^{2T}, \beta_j^{2T}) &\in \arg\max_{(\alpha_j^{1T}, \beta_j^{1T}, \alpha_j^{2T}, \beta_j^{2T})} \pi_j(\alpha_j^{1T}, \beta_j^{1T}, \alpha_j^{2T}, \beta_j^{2T}; \alpha_{-j}^{1T}, \beta_{-j}^{1T}, \alpha_{-j}^{2T}, \beta_{-j}^{2T}),
+    \end{align*}
+    where
+    \begin{align*}
+        \pi_j(\cdot) &= \int_\theta \int_{\hat\theta} (W - F_j^{1T}(\hat\theta_j) - k_j\theta) \Pr(D=j \mid \theta, \hat\theta, S=0) [1-\pi_1(\theta, \hat\theta)]  \times \phi(\hat\theta; \theta) f_0(\theta) \, d\theta \, d\hat\theta \\
+        &\quad + \int_\theta \int_{\hat\theta} (W - F_j^{2T}(\hat\theta) - k_j\theta) \Pr(D=j \mid \theta, \hat\theta, S=1) \pi_1(\theta, \hat\theta) \times \phi(\hat\theta; \theta) f_0(\theta) \, d\theta \, d\hat\theta,
+    \end{align*}
+    subject to the linear pricing constraints:
+    \begin{align*}
+        F_j^{1T}(\hat\theta_j) &= \alpha_j^{1T} + \beta_j^{1T} E[\theta \mid \hat\theta_j, D=j, S=0], \\
+        F_j^{2T}(\hat\theta) &= \alpha_j^{2T} + \beta_j^{2T} E[\theta \mid \hat\theta, D=j, S=1].
+    \end{align*}
+    
+    \item \textbf{Belief consistency:} Posterior beliefs are formed using Bayes' rule given equilibrium strategies:
+    \begin{align*}
+        E[\theta \mid \hat\theta_j, D=j, S=0] &= \frac{\int \theta \, \hat D_{j0}(\theta,\hat\theta_j) \phi(\hat\theta_j;\theta,\sigma_j) f_0(\theta) \, d\theta}{\int \hat D_{j0}(\theta',\hat\theta_j) \phi(\hat\theta_j;\theta',\sigma_j) f_0(\theta') \, d\theta'}, \\
+        E[\theta \mid \hat\theta, D=j, S=1] &= \frac{\int \theta \, \hat D_{j1}(\theta,\hat\theta) \phi(\hat\theta;\theta) f_0(\theta) \, d\theta}{\int \hat D_{j1}(\theta',\hat\theta) \phi(\hat\theta;\theta') f_0(\theta') \, d\theta'}.
+    \end{align*}
+\end{enumerate}
+\end{definition}
+
+%\begin{remark}[Existence]
+%Following \textcite{cosconati_competing_2025}, if profits $\pi_j(\alpha_j^{1T}, \beta_j^{1T}, \alpha_j^{2T}, \beta_j^{2T})$ are continuous and quasi-concave in firm $j$'s own parameters, and the strategy space is a non-empty, compact, convex subset of $\mathbb{R}^4$, then a pure-strategy Nash equilibrium exists by Fudenberg and Tirole (1991, Theorem 1.2). Numerical verification of quasi-concavity may be required.
+%\end{remark}
+
+%\textcite{cosconati_competing_2025} verify numerically that profits are concave in $(\alpha_j, \beta_j)$, given that strategy spaces are non-empty compact convex subsets of a Euclidean space, then a pure strategy Nash equilibrium exists by Fudenberg and Tirole (1991, theorem 1.2).
 
 
 
-\subsection{Identification}
+%\subsection{Identification}
 
-Following \textcite{cosconati_competing_2025} we can identify the risk type distribution using the ex-post realized mortality. 
+%Following \textcite{cosconati_competing_2025} we can identify the risk type distribution using the ex-post realized mortality. 
 
-
-
-
-\newpage 
 
 \section{Derivations}
 \subsection{Non-searchers posterior}\label{sec:non_posterior}% Posterior for non-searchers: step-by-step derivation

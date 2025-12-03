@@ -69,7 +69,7 @@
 ]{biblatex}
 \addbibresource{../references.bib}
 
-\title{Equilibrium effects of price updating: evidence from a centralized marketplace for annuities}
+\title{Equilibrium effects of revised offers: evidence from a centralized marketplace for annuities}
 %\subtitle{A Mini Literature Overview}
 
 \author{%
@@ -100,22 +100,21 @@ Diego Cussen
     \item  In several markets consumers receive initial offers, then they can request revised offers. Examples: 
     \begin{itemize}
         \item Loans: consumers get a loan estimate (LE) and showing a LE to another lender could lead to a revised offer. \hyperlink{slide:fig_LE}{\beamerbutton{Loan Estimate}} %[\href{https://chatgpt.com/share/68eaf593-1518-800d-b874-1fba1adbe177}{1}]
-        \item Auto dealerships: buyers can shop around and dealers are willing to revise their initial offers %[\href{https://chatgpt.com/share/68eaf593-1518-800d-b874-1fba1adbe177}{2}]
     \end{itemize}
 
-    \item What is  the welfare impact of allowing consumers to request revised offers?
-    \item Effects of prohibiting revised offers: 
+    \item Features: 
+    \begin{itemize}
+        \item Search cost: requesting a revised offer is costly
+        \item Firms learn competitors' initial offers
+    \end{itemize}
+
+    \item Effects of  revised offers: 
     
     \begin{itemize}
-        \item Direct impact: buyer can no longer improve initial offer. 
-        \item Indirect effect: buyers improve their initial offers 
+        \item Permits discrimination based on search costs 
+        \item Decreases information rents 
     \end{itemize}
 
-    %Economic forces at play: 
-    %\begin{itemize}
-    %    \item Learning: firms learn competitors' prices and can best respond.
-    %  \item Discrimination: if search cost are correlated with preferences. [not today] 
-    %\end{itemize}
     \note{Mention that only firms who made an initial offer can revise their offers. }
     
 \end{itemize}
@@ -132,14 +131,15 @@ Diego Cussen
 
 \begin{frame}{This research}
 \begin{itemize}
-    \item Studies a centralized marketplace for annuities in Chile (SCOMP)
+    \item Studies the equilibrium impacts of revised offers 
+    
+    \item We use data from a centralized marketplace for annuities in Chile (SCOMP)
     \item A recent law eliminated the possibility of requesting revised offers.
     \begin{itemize}
         \item Before: consumers receive initial offers, then can request revised offers from one firm.
         \item After: consumers can only accept/reject initial offers.
         \item Rationale for elimination: "firms will not make their best efforts in the initial phase"
     \end{itemize}
-    %\item Also provides evidence on asymmetries in information precision in selection markets. 
 \end{itemize}
 \end{frame}
 
@@ -176,9 +176,18 @@ Diego Cussen
     \item Annuities: transform a stock of savings into a stream of payments until death.
     \item Reasons to buy: insure against overlife risk
         \item Profits of firm $j$: 
+    %\begin{align*}
+    %\pi_{ji}(F) = S_i-  \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{F}{(1+r_j)^t}|x_i \right]
+    %\end{align*}
+
+    %\begin{align*}
+    %\pi_{ji}(F) = S_i-  \sum_{t=1}^T Pr_j (\text{alive}|x_i)\frac{F}{(1+r_j)^t}
+    %\end{align*}
+
     \begin{align*}
-    \pi_{ji}(F) = S_i-  \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{F}{(1+r_j)^t}|x_i \right]
+    \pi_{ji}(F) = S_i -  \sum_{t=1}^T \frac{\Pr_j(\text{alive} \mid x_i)}{(1+r_j)^t} F 
     \end{align*}
+
     % if it was only financing cost, it would be a monopoly
    
      $S$: stock of savings, $F$: per period annuity payment, $x_i$: buyer mortality factors
@@ -235,7 +244,6 @@ Particularities of the data/setting:
     \item One observes all the offers received by the buyers 
     \item One observes the same information as the firms (gender, age, savings)
 \end{itemize}
-\textcolor{red}{[best way of leveraging this particularities?]}
 \note{
     \begin{itemize}
         \item I observe only the revised offers made not the requested ones. 
@@ -254,53 +262,40 @@ Particularities of the data/setting:
 \begin{frame}{Descriptive Evidence}\label{slide:Descriptive_evidence}
 
 \begin{enumerate}
-    \item Not all buyers request revised offers  $\rightarrow$ search costs \hyperlink{slide:fig1}{\beamerbutton{Revised offers}}
+    %\item Not all buyers request revised offers  $\rightarrow$ search costs \hyperlink{slide:fig1}{\beamerbutton{Revised offers}}
     %\item Most buyers request revised offers and the improvement is substantial $\rightarrow$ search costs \hyperlink{slide:fig1}{\beamerbutton{Revised offers}} 
-    \item Buyers choose lower offers $\rightarrow$ product differentiation  \hyperlink{slide:fig2}{\beamerbutton{Foregone value}} 
-    \item Sorting into firms $\rightarrow$ algorithm precision?  \hyperlink{slide:fig3}{\beamerbutton{Sorting into firms}}
+    %\item Buyers choose lower offers $\rightarrow$ product differentiation  \hyperlink{slide:fig2}{\beamerbutton{Foregone value}} 
+    \item Sorting into firms $\rightarrow$ firm asymmetric information     \hyperlink{slide:fig3}{\beamerbutton{Sorting into firms}} % we could add "firm preferences correlated with buyer risk"
     \item Patterns in revised offers $\rightarrow$ firm learning of initial offers.   \hyperlink{slide:fig4}{\beamerbutton{Learning}} 
 \end{enumerate}
 \end{frame}
 
 %11 - Prevalence of revisions 
-\begin{frame}\frametitle{Revised offers: quantity and size}\label{slide:fig1}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.49\textwidth]{../figures/IE3/IE3_dist_external_offers(1).png}
-    \hfill 
-    \includegraphics[width=0.49\textwidth]{../figures/IE3/IE3_offer_improvement_histogram.png}
-\end{figure}
+%\begin{frame}\frametitle{Revised offers: quantity and size}\label{slide:fig1}
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.49\textwidth]{../figures/IE3/IE3_dist_external_offers(1).png}
+%    \hfill 
+%    \includegraphics[width=0.49\textwidth]{../figures/IE3/IE3_offer_improvement_histogram.png}
+%\end{figure}
 
-\begin{itemize}
-    \item   75\% of the purchases are through revised offers. 
-     \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}   
-    \item Not everyone requests revised offers $\rightarrow$ search costs. 
-\end{itemize}
+%\begin{itemize}
+%    \item   75\% of the purchases are through revised offers. 
+%     \hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}   
+%    \item Not everyone requests revised offers $\rightarrow$ search costs. 
+%\end{itemize}
 
-\note{
-That only some people request revised offers suggests: 
-\begin{itemize}
-    \item There are search costs 
-    \item Firms could be discriminating based on the search likelihood. 
-\end{itemize}
-Any assessment of the welfare effects of the aftermarket has to consider that by banning it buyers will save in search costs, but will not be able to improve on the initial posted prices. 
+%\note{
+%That only some people request revised offers suggests: 
+%\begin{itemize}
+%    \item There are search costs 
+%    \item Firms could be discriminating based on the search likelihood. 
+%\end{itemize}
+%Any assessment of the welfare effects of the aftermarket has to consider that by banning it buyers will save in search costs, but will not be able to improve on the initial posted prices. 
+%}
+%\end{frame}
 
-In a model where search costs are not correlated with valuations, the aftermarket prices by the sellers are the same as the initial prices.
-}
-\end{frame}
-
-%%%%%%%%% Slide 12 %%%%%%%%%%%%%
-\begin{frame}{Differentiation}\label{slide:fig2}    
-Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly wages.
-\begin{figure}[H]
-%\caption{}
-\centering{}%
-\begin{tabular}{cc}
-\includegraphics[scale=0.25]{../figures/IE3/IE3_foregone_hist.png}
-\end{tabular}
-\end{figure}
-\hyperlink{slide:Descriptive_evidence}{\beamerbutton{Go back}}
-\end{frame}
+ 
 
 
 \begin{frame}{Sorting into firms}
@@ -342,7 +337,7 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
     where  \\
     $ \text{Avg. gap }_{ij} = \frac{1}{F_{ij}^I}\left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I - F_{ij}^I\right) $\\ 
     $ \text{Max. gap } = \frac{1}{F_{ij}^I}\left(\max_{k \neq j} F_{ik}^I - F_{ij}^I\right)$
-    \item How to deal with selection (observe revisions not requests)? 
+    
 \end{itemize}
 \end{column}
 \hfill
@@ -358,43 +353,26 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 
 
 %%%%%%%%% Slide 16
-\begin{frame}{Learning}\label{slide:fig5}    
-\begin{columns}[T] % [T] aligns columns at the top
-\begin{column}{0.35\textwidth}
-     \begin{itemize}
-        \item Firms might want to just outbid their competitors.
-    \end{itemize}
-    $$ \underbrace{\frac{ F_{ij}^R - F_{ij}^I}{F_{ij}^I}}_{\text{Improvement}} - \underbrace{\frac{ max_{k \neq j} F_{ik}^I - F_{ij}^I}{F_{ij}^I}}_{\text{"Necessary" improvement}}$$ 
-    $$    =\frac{ F_{ij}^R -max_{k \neq j} F_{ik}^I}{F_{ij}^I }  $$
-\end{column}
-\hfill
-\begin{column}{0.69\textwidth}
- \begin{figure}[H]
-\centering{}%
-\begin{tabular}{cc}
-\includegraphics[scale=0.26]{../figures/IE7/IE7_hist_bunching_max(2).png} 
-\end{tabular}
-\end{figure}
-\end{column}
-\end{columns}
-\end{frame}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+%\begin{frame}{Learning}\label{slide:fig5}    
+%\begin{columns}[T] % [T] aligns columns at the top
+%\begin{column}{0.35\textwidth}
+%     \begin{itemize}
+ %       \item Firms might want to just outbid their competitors.
+ %   \end{itemize}
+ %   $$ \underbrace{\frac{ F_{ij}^R - F_{ij}^I}{F_{ij}^I}}_{\text{Improvement}} - \underbrace{\frac{ max_{k \neq j} F_{ik}^I - F_{ij}^I}{F_{ij}^I}}_{\text{"Necessary" improvement}}$$ 
+ %   $$    =\frac{ F_{ij}^R -max_{k \neq j} F_{ik}^I}{F_{ij}^I }  $$
+%\end{column}
+%\hfill
+%\begin{column}{0.69\textwidth}
+% \begin{figure}[H]
+%\centering{}%
+%\begin{tabular}{cc}
+%\includegraphics[scale=0.26]{../figures/IE7/IE7_hist_bunching_max(2).png} 
+%\end{tabular}
+%\end{figure}
+%\end{column}
+%\end{columns}
+%\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model}
@@ -403,11 +381,11 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 
 \begin{frame}{Asymmetric-Information Search Model}
 \begin{itemize}
-    \item $J$ retirement insurers compete in a centralized marketplace.
-    \item Buyer type $\theta$ (mortality risk) is private; prior density $f_0(\theta)$.
-    \item Each firm $j$ observes a noisy signal $\hat \theta_j \sim \mathcal{N}(\theta, \sigma_j^2)$ before posting its initial offer $F_j^{1T}$.
-    \item Buyers draw search cost $s_i$ from a joint distribution $F(s,\theta)$ that can correlate search propensity with risk.
-    \item Timeline:
+    \item Buyer wants to annuitize $W$ unit of savings. 
+    \item $J$ firms compete in a centralized marketplace.
+    \item Buyer has private type (mortality risk) $\theta$; prior density $f_0(\theta)$.
+    \item Each firm $j$ observes a noisy signal $\hat \theta_j \sim \mathcal{N}(\theta, \sigma_j^2)$ with pdf $\phi(\hat \theta_j; \theta, \sigma_j)$ before posting its initial offer $F_j^{1T}$.
+    \item Buyers draw search cost $s_i$ from a joint distribution $F(s,\theta)$    \item Timeline:
     \begin{enumerate}
         \item Firms post initial offers using private signals.
         \item Buyer either accepts (no search) or pays $s_i$ to request revised offers (search).
@@ -434,7 +412,7 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
 
 %%%%%
 
-\begin{frame}{Demand and Search Decision}
+\begin{frame}{Demand and Search Decision}\label{slide:demand}
 \begin{itemize}
     \item Indirect utility for type $\theta$ from firm $j$ in stage $s \in \{0,1\}$:
     \begin{align*}
@@ -450,33 +428,51 @@ Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly
         \pi_1(\theta, \hat \theta) &= F_{s\mid \theta}\big(G(\theta, \hat \theta)\big).
     \end{align*}
 \end{itemize}
+\hyperlink{slide:demand}{\beamerbutton{Differentiated product}}
+
 \end{frame}
 
 %%%%%
 
 \begin{frame}{Posterior Beliefs}
 \begin{itemize}
-    \item Non-searchers keep firms in the dark: each firm only observes $\hat \theta_j$.
-    \item Searchers reveal the full vector $\hat \theta$, so all firms share information.
+    \item Beliefs are updated based on the probability of the consumer choosing firm $j$.
+    
+
+    %\item Non-searchers keep firms in the dark: each firm only observes $\hat \theta_j$.
+    %\item Searchers reveal the full vector $\hat \theta$, so all firms share information.
 \end{itemize}
 \small
 \begin{align*}
-E(\theta \mid \hat \theta_j, D=j, S=0) &= \frac{\int \theta \, \widehat D_{j0}(\theta, \hat \theta_j) \, \varphi(\hat \theta_j; \theta, \sigma_j) f_0(\theta) d\theta}{\int \widehat D_{j0}(\theta', \hat \theta_j) \, \varphi(\hat \theta_j; \theta', \sigma_j) f_0(\theta') d\theta'}, \\[0.4em]
-E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \, \widehat D_{j1}(\theta, \hat \theta) \, \phi(\hat \theta; \theta) f_0(\theta) d\theta}{\int \widehat D_{j1}(\theta', \hat \theta) \, \phi(\hat \theta; \theta') f_0(\theta') d\theta'}.
+E(\theta \mid \hat \theta_j, D=j, S=0) &= \frac{\int \theta \, 
+%\textcolor{blue}{\widehat D_{j0}(\theta, \hat \theta_j)}
+\textcolor{blue}{\Pr(D = j, S= 0 \mid \theta, \hat \theta_j)}
+\, \phi(\hat \theta_j; \theta, \sigma_j) f_0(\theta) d\theta}{\int 
+%\textcolor{blue}{\widehat D_{j0}(\theta', \hat \theta_j)}
+%\widehat D_{j0}(\theta', \hat \theta_j) 
+\textcolor{blue}{\Pr(D = j, S= 0 \mid \theta', \hat \theta_j)}
+\, \phi(\hat \theta_j; \theta', \sigma_j) f_0(\theta') d\theta'}, \\[0.4em]
+E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \, 
+%\widehat D_{j1}(\theta, \hat \theta) 
+\textcolor{blue}{\Pr(D = j, S= 1 \mid \theta, \hat \theta)}
+\, \phi(\hat \theta; \theta) f_0(\theta) d\theta}{\int 
+%\widehat D_{j1}(\theta', \hat \theta) 
+\textcolor{blue}{\Pr(D = j, S= 1 \mid \theta', \hat \theta)}
+\, \phi(\hat \theta; \theta') f_0(\theta') d\theta'}.
 \end{align*}
 \normalsize
 \begin{itemize}
     \item Terms $\widehat D_{js}$ weight beliefs by the probability the consumer chooses firm $j$ in stage $s$.
 \end{itemize}
 \end{frame}
-
-%%%%%
+ 
+ 
 
 \begin{frame}{Profits and Equilibrium}
 \small
 \begin{align*}
-    \pi_j &= \int_{\theta} \int_{\hat \theta} (F_j^{1T}(\hat \theta_j) - k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, S=0) (1-\pi_1(\theta, \hat \theta)) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta \\
-    &\quad + \int_{\theta} \int_{\hat \theta} (F_j^{2T}(\hat \theta) - k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, S=1) \pi_1(\theta, \hat \theta) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta.
+    \pi_j &= \int_{\theta} \int_{\hat \theta} (W - F_j^{1T}(\hat \theta_j)  k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, S=0) (1-\pi_1(\theta, \hat \theta)) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta \\
+    &\quad + \int_{\theta} \int_{\hat \theta} (W - F_j^{2T}(\hat \theta) k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, S=1) \pi_1(\theta, \hat \theta) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta.
 \end{align*}
 \normalsize
 \begin{itemize}
@@ -484,6 +480,16 @@ E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \, \widehat D_{j1}(\th
     \item Equilibrium trades off the profit erosion from better information in the aftermarket with the option value of serving non-searchers at higher markups.
 \end{itemize}
 \end{frame}
+
+\begin{frame}{Equilibrium Conditions}
+\begin{itemize}
+    \item 
+\end{itemize}
+\end{frame}
+
+
+
+
 
 %%%%%
 
@@ -511,10 +517,6 @@ E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \, \widehat D_{j1}(\th
 \hyperlink{slide:motivation}{\beamerbutton{Go back: Motivation}}
 \end{frame}
 
-
-
-
-
 \begin{frame}{Initial prices}\label{slide:fig_offer_certificate}    
 \begin{figure}[H]
 \centering{}%
@@ -527,22 +529,16 @@ E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \, \widehat D_{j1}(\th
 \end{frame}
 
 
-\begin{frame}{Connection model with setting}\label{slide:connection}    
-\begin{itemize}
-    \item Firms cost: 
-    \begin{align*}
-        c_{ij} =  \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{1}{(1+r_j)^t} \, \middle| \, x_i \right]
-    \end{align*}  
-    \item Firm prices: $p_j = S_i/F_{ij}$
-    \item Demand: $ D_{ij}(F_{ij}) = F_{ij}\mathds{1}(\text{i chooses j})  $
-    \item Firm profits: 
-    \begin{align*}
-        \pi_{ij}(F) = (p_j - c_{ij}) D_{ij}(F_{ij})  %= \left(\frac{S}{F_{ij}}-   \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{1}{(1+r_j)^t}|x_i \right]\right) F_{ij}\mathds{1}(\text{i chooses j}) 
-        = \left(S_i- \mathbb{E}^j_{T} \left[\sum_{t=1}^T\frac{F_{ij}}{(1+r_j)^t} \, \middle| \, x_i \right]\right)\mathds{1}(\text{i chooses j}) 
-    \end{align*}
-\end{itemize}
-
-\hyperlink{slide:timeline}{\beamerbutton{Go back: Timeline}}
-
+\begin{frame}{Differentiation}\label{slide:fig2}    
+Buyers do not always buy highest annuity. Average foregone value is 1.57 monthly wages.
+\begin{figure}[H]
+\caption{}
+\centering{}%
+\begin{tabular}{cc}
+\includegraphics[scale=0.25]{../figures/IE3/IE3_foregone_hist.png}
+\end{tabular}
+\end{figure}
+\hyperlink{slide:demand}{\beamerbutton{Go back}}
 \end{frame}
+
 \end{document}

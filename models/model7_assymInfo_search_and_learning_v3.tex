@@ -1,0 +1,413 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+\addbibresource{../references.bib}
+\begin{document}
+
+
+
+\section{Introduction}
+
+Consumer search and adverse selection are common features of selection markets. 
+This document presents a model of Nash-Bertrand competition that incorporates adverse selection, consumer search and asymmetric information among firms. We build upon the framework of \textcite{cosconati_competing_2025} to model asymmetric information. 
+
+
+%% timing of the game 
+The game proceeds in two stages. 
+In the first stage, the  buyer draws a private risk type, while firms observe a noisy signal of his type and make their initial offers. Then, consumers decide whether to accept one of the initial offers or to request revised offers (search).  The decision to search is based on the consumer's search cost and the expected benefit, which depends on their type and on the signals received by the firms.
+Conditional on consumer search,  firms observe rivals' initial offers , from which they back out the signals of the other firms and update beliefs. In the second stage firms make their revised offers. 
+
+
+
+% what happens between stages: learning about other firms signals and also updating priors about the consumer. 
+
+%% -  selection interacts with search  i) depends on the joint distribution F(s, theta) and ii) given that 
+
+In the model search interacts with asymmetric information and with selection. 
+
+
+The interaction between search and selection is governed by the joint density of search costs and risk types. Buyers decide whether to search based on their search cost and the expected benefit from searching, which depends on their type and the signals. 
+% \footnote{\textcolor{red}{ADD THAT IT COMES FROM THE REVELATION OF INFORMATION.}}
+
+
+% search interacts with common value auction 
+
+Moreover when consumers search, firms are able to observe the offers of their rivals, which reveals information about the signals their rivals received in the first stage. Hence, searching can increase competition by eliminating the asymmetric information between firms. This logic comes from \textcite{cosconati_competing_2025}, where information pooling across firms eliminates information rents and increases competition. 
+ 
+%% effects of the revised offers. 
+ 
+
+\section{Model}
+There are $J$ insurers in the market. 
+
+Consumer type is denoted by $\theta$ which is distributed with a pdf $f_0(\theta)$.
+
+Firms do not observe the true type, firm $j$ receives a signal $\hat \theta_j \sim \mathcal{N}(\theta, \sigma_j^2)$ with density $\phi(\hat \theta_j; \theta, \sigma_j)$. The conditional joint density of signals is given by $\phi(\hat \theta; \theta) = \prod_{j =1 }^{J} \phi(\hat \theta_j; \theta, \sigma_j)$. Also we use the notation  $\phi(\hat \theta_{-j}; \theta) = \prod_{k \neq j }^{} \phi(\hat \theta_k; \theta, \sigma_k)$, for the joint density of signals of all firms except firm $j$.
+
+Consumer utility is given by: $u_{ij} = \gamma(\theta_i) F_j(\theta) + \xi_j + \beta r_j +  \epsilon_{ij}$, where $F_j(\theta)$ is the flow payment of firm $j$ for consumer type $\theta$, $r_j$ is the risk-rating of firm $j$ and $\xi_j$ captures firm-specific unobserved characteristics.  We assume that $\epsilon_{ij}$ is distributed Gumbel.
+
+The consumer has search cost $s_i$. The joint distribution of search costs and consumer types is given by $F(s, \theta)$. We denote by $S = 1 $ if the consumer searches and $S=0$ otherwise.
+
+
+\subsection{Consumer demand and search}
+
+
+The consumer decides whether to search. Define $U_{i0}(\theta, \hat \theta) = \max_j \mathbb{E}[u_{ij}(F_j^{1T}(\hat \theta_j))]$ and $U_{i1}(\theta, \hat \theta) =\max_j  \mathbb{E}[u_{ij}(F_j^{2T}(\hat \theta))]$ he searches if\footnote{We assume that the consumer when deciding whether to search has still no knowledge about his 
+idiosyncratic taste shocks, $\epsilon_{ij}$. We make this assumption to avoid selection based on the shocks.}: 
+\begin{align}
+    \underbrace{U_{i1}(\theta, \hat \theta)  - U_{i0}(\theta, \hat \theta)}_{\equiv G(\theta, \hat \theta)}> s_i
+\end{align}
+hence the search probability given the signals and his type is given by: 
+\begin{align}
+    \pi_1(\theta, \hat \theta) = F_{s\mid \theta}(G(\theta, \hat \theta))  
+\end{align}
+Denote by $F_j^{1T}(\hat \theta_j)$ the first stage offer of firm $j$ given its signal and by $F_j^{2T}(\hat \theta)$ the second stage offer of firm $j$ given the full vector of signals.
+
+Then, consumer demand conditional on not searching and on the signals is:  
+\begin{align}
+    Pr( D = j \mid \hat \theta, \theta, S=0) = \frac{\exp( \gamma(\theta) F_j^{1T}(\hat \theta_j) + \xi_j + \beta r_j )}{1+ \sum_{k =1 }^J \exp(\gamma(\theta) F_k^{1T}(\hat \theta_k) + \xi_k + \beta r_k )}
+\end{align}
+
+
+and the probability that the a consumer who searches and is of type $\theta$ chooses firm $j$ is given by: 
+
+\begin{align}
+    Pr( D = j \mid \hat \theta, \theta, S=1) = \frac{\exp( \gamma(\theta) F_j^{2T}(\hat \theta) + \xi_j + \beta r_j )}{1+ \sum_{k =1 }^J \exp(\gamma(\theta) F_k^{2T}(\hat \theta) + \xi_k + \beta r_k )}
+\end{align}
+
+
+
+
+
+\subsection{Posterior beliefs}
+
+
+The demand,  conditional on $\hat \theta_j$,  for non-searchers in the first stage is given by:
+\begin{align}
+    D_{j0}(\theta, \hat \theta_j) &= Pr( D = j \mid \hat \theta_j, \theta, S=0) 
+%    = \int_{\hat \theta_{-j}} Pr( D = j \mid \hat \theta, \theta, S=0)[1-\pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))]  \phi(\hat \theta_{-j}; \theta) d\hat \theta_{-j} 
+      \notag \\
+    &= \int_{\hat \theta_{-j}} \frac{\exp( \gamma(\theta) F_j^{1T}(\hat \theta_j) + \xi_j + \beta r_j )}{1+ \sum_{k =1 }^J \exp(\gamma(\theta) F_k^{1T}(\hat \theta_k) + \xi_k + \beta r_k )}
+    % [1-\pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))] 
+    \phi(\hat \theta_{-j}; \theta) d\hat \theta_{-j}
+\end{align}
+and the demand, conditional on $\hat \theta_j$, for searchers is given by:  
+\begin{align} 
+    D_{j1}(\theta, \hat \theta_j) = Pr(D=j | S =1, \hat  \theta_j, \theta) =\int_{\hat \theta_{-j}}  Pr(D = j \mid S =1, \hat \theta, \theta) 
+    \phi(\hat \theta_{-j}; \theta)  d\hat \theta_{-j}
+    %\phi(\hat \theta_{-j}; \theta) f_0(\theta) d\theta d\hat \theta_{-j}
+\end{align}
+Also define 
+\begin{align}
+    \hat D_{j0}(\theta, \hat \theta_j) &= Pr( D = j, S= 0  \mid \hat \theta_j, \theta) 
+    %= \int_{\hat \theta_{-j}} Pr( D = j \mid \hat \theta, \theta, S=0) [1-\pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))] \phi(\hat \theta_{-j}; \theta) d\hat \theta_{-j}
+       \notag \\
+    &= \int_{\hat \theta_{-j}} \frac{\exp( \gamma(\theta) F_j^{1T}(\hat \theta_j) + \xi_j + \beta r_j )}{1+ \sum_{k =1 }^J \exp(\gamma(\theta) F_k^{1T}(\hat \theta_k) + \xi_k + \beta r_k )}
+     [1-\pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))] 
+    \phi(\hat \theta_{-j}; \theta) d\hat \theta_{-j}
+\end{align}
+and similarly for searchers define:
+\begin{align}
+    \hat D_{j1}(\theta, \hat \theta) &= Pr( D = j, S= 1  \mid \hat \theta, \theta) 
+    %=  Pr( D = j \mid \hat \theta, \theta, S=1) \pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))
+       \notag \\
+    &= \frac{\exp( \gamma(\theta) F_j^{2T}(\hat \theta) + \xi_j + \beta r_j )}{1+ \sum_{k =1 }^J \exp(\gamma(\theta) F_k^{2T}(\hat \theta) + \xi_k + \beta r_k )}
+    \pi_1(\theta, (\hat \theta_{-j}, \hat \theta_j))   
+\end{align}
+
+ 
+Then the posterior for non-searchers is\footnote{See section \ref{sec:non_posterior} for the derivation}:
+\begin{align}
+E\!\left(\theta \mid \hat\theta_j, D=j, S=0\right)
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \widehat D_{j0}(\theta,\hat\theta_j)\,
+             \phi\!\left(\hat\theta_j;\theta,\sigma_j\right)\,
+             f_0(\theta)\, d\theta}
+       {\displaystyle
+        \int
+             \widehat D_{j0}(\theta',\hat\theta_j)\,
+             \phi\!\left(\hat\theta_j;\theta',\sigma_j\right)\,
+             f_0(\theta')\, d\theta'} .
+\label{eq:post0_final}
+\end{align}
+and the posterior mean given that the consumer searches is given by\footnote{See section \ref{sec:ser_posterior}}: 
+\begin{align}
+E\!\left(\theta \mid \hat\theta, D=j, S=1\right)
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \hat D_{j1}(\theta,\hat\theta)\,
+             \phi\!\left(\hat\theta;\theta\right)\,
+             f_0(\theta)\, d\theta}
+     {\displaystyle
+        \int
+             \hat D_{j1}(\theta',\hat\theta)\,
+             \phi\!\left(\hat\theta;\theta'\right)\,
+             f_0(\theta')\, d\theta'} .
+\label{eq:post1_final}
+\end{align}
+ 
+\subsection{Firm pricing and profits}
+
+Following \textcite{cosconati_competing_2025} we assume that firms pricing strategy is linear on its posterior expectation of the consumer type. But we allow for different pricing strategies for the first and second stage.  Specifically, firm $j$ sets prices according to: 
+\begin{align}
+    F_{j}^{1T}(\hat \theta_j) = \alpha_j + \beta_j E[\theta \mid \hat \theta_j, D = j,  S=0] \\ 
+    F_{j}^{2T}(\hat \theta) = \alpha_j^{2T} + \beta_j^{2T} E[\theta \mid (\hat \theta_j, \hat\theta_{-j}), D = j,  S=1] 
+\end{align}
+note that prices in the second stage depend on the signals of all firms, since all firms observe the offers made in the first stage. 
+
+We use $\alpha^{1T}, \beta^{1T}, \alpha^{2T}, \beta^{2T}$ to denote the vector of parameters for all firms. The profits of fimr $j$ are: 
+\begin{align}
+    \pi_j(\alpha^{1T}, \beta^{1T}, \alpha^{2T}, \beta^{2T}) 
+    &= \int_\theta \int_{\hat \theta} (F_j^{1T}(\hat \theta_j) - k_j \theta) Pr(D = j, S = 0 \mid \theta, \hat \theta) \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta \notag \\ 
+    & \quad   + \int_\theta \int_{\hat \theta} (F_j^{2T}(\hat \theta) - k_j \theta) Pr(D = j, S= 1\mid \theta, \hat \theta)  \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta
+\end{align}
+we can use the fact that: $Pr(D = j, S = 0 \mid \theta, \hat \theta) = Pr(D = j \mid \theta, \hat \theta, S=0) \cdot (1-\pi_1(\theta, \hat \theta))$ and $Pr(D = j, S = 1 \mid \theta, \hat \theta) = Pr(D = j \mid \theta, \hat \theta, S=1) \cdot \pi_1(\theta, \hat \theta)$ to rewrite the profits as:
+
+\begin{align}
+    \pi_j(\alpha^{1T}, \beta^{1T}, \alpha^{2T}, \beta^{2T}) 
+    &= \int_\theta \int_{\hat \theta} (F_j^{1T}(\hat \theta_j) - k_j \theta)  Pr(D = j \mid \theta, \hat \theta, S=0) \cdot (1-\pi_1(\theta, \hat \theta)) \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta \notag \\ 
+    & \quad   + \int_\theta \int_{\hat \theta} (F_j^{2T}(\hat \theta) - k_j \theta)  Pr(D = j \mid \theta, \hat \theta, S=1) \cdot \pi_1(\theta, \hat \theta) \phi(\hat \theta; \theta) f_0(\theta) d\theta d\hat \theta
+\end{align}
+
+
+\subsection{Equilibrium}
+
+\textcite{cosconati_competing_2025} verify numerically that profits are concave in $(\alpha_j, \beta_j)$, given that strategy spaces are non-empty compact convex subsets of a Euclidean space, then a pure strategy Nash equilibrium exists by Fudenberg and Tirole (1991, theorem 1.2).
+
+
+
+\subsection{Identification}
+
+Following \textcite{cosconati_competing_2025} we can identify the risk type distribution using the ex-post realized mortality. 
+
+
+
+
+\newpage 
+
+\section{Derivations}
+\subsection{Non-searchers posterior}\label{sec:non_posterior}% Posterior for non-searchers: step-by-step derivation
+
+\begin{align}
+E\!\left(\theta \mid \hat\theta_j, D=j, S=0\right)
+&= \int \theta \, f\!\left(\theta \mid \hat\theta_j, D=j, S=0\right)\, d\theta 
+ \quad \quad \quad \text{(definition of conditional expectation)} \label{eq:post0_def}\\ 
+&= \int \theta \,
+   \frac{f\!\left(\theta, D=j, S=0 \mid \hat\theta_j\right)}
+        {\Pr\!\left(D=j, S=0 \mid \hat\theta_j\right)}\, d\theta
+\quad \quad \quad \text{(Bayes' rule)} \label{eq:post0_bayes}\\
+&= \int \theta \,
+   \frac{\Pr\!\left(D=j, S=0 \mid \theta, \hat\theta_j\right)\,
+         f\!\left(\theta \mid \hat\theta_j\right)}
+        {\Pr\!\left(D=j, S=0 \mid \hat\theta_j\right)}\, d\theta
+\quad \quad \quad  \text{(joint = prob $\times$ density)} \label{eq:post0_chain}\\
+&= \frac{
+        \int \theta \,
+             \Pr\!\left(D=j, S=0 \mid \theta, \hat\theta_j\right)\,
+             f\!\left(\theta \mid \hat\theta_j\right)\, d\theta}
+       {\int
+             \Pr\!\left(D=j, S=0 \mid \theta', \hat\theta_j\right)\,
+             f\!\left(\theta' \mid \hat\theta_j\right)\, d\theta'}
+\quad \quad \quad  \text{(factor common denominator outside integral).}
+\label{eq:post0_ratio}
+\end{align}
+
+Now use Bayes' rule for the signal posterior:
+\begin{align}
+f\!\left(\theta \mid \hat\theta_j\right)
+&= \frac{f\!\left(\hat\theta_j \mid \theta\right)\,f_0(\theta)}
+         {\displaystyle\int f\!\left(\hat\theta_j \mid \theta'\right)\,f_0(\theta')\,d\theta'}
+ = \frac{\phi\!\left(\hat\theta_j;\theta,\sigma_j\right)\,f_0(\theta)}
+         {\displaystyle\int \phi\!\left(\hat\theta_j;\theta',\sigma_j\right)\,f_0(\theta')\,d\theta'} .
+\label{eq:signal_posterior}
+\end{align}
+
+Substitute \eqref{eq:signal_posterior} into \eqref{eq:post0_ratio}. The normalizing
+denominator in \eqref{eq:signal_posterior} cancels between numerator and denominator
+of \eqref{eq:post0_ratio}, giving
+\begin{align}
+E\!\left(\theta \mid \hat\theta_j, D=j, S=0\right)
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \Pr\!\left(D=j, S=0 \mid \theta, \hat\theta_j\right)\,
+             \phi\!\left(\hat\theta_j;\theta,\sigma_j\right)\,
+             f_0(\theta)\, d\theta}
+       {\displaystyle
+        \int
+             \Pr\!\left(D=j, S=0 \mid \theta', \hat\theta_j\right)\,
+             \phi\!\left(\hat\theta_j;\theta',\sigma_j\right)\,
+             f_0(\theta')\, d\theta'} .
+\label{eq:post0_phi}
+\end{align}
+
+It is convenient to introduce the shorthand
+\begin{align}
+\widehat D_{j0}(\theta,\hat\theta_j)
+&:= \Pr\!\left(D=j, S=0 \mid \theta, \hat\theta_j\right),
+\end{align}
+in which case \eqref{eq:post0_phi} becomes
+\begin{align}
+E\!\left(\theta \mid \hat\theta_j, D=j, S=0\right)
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \widehat D_{j0}(\theta,\hat\theta_j)\,
+             \phi\!\left(\hat\theta_j;\theta,\sigma_j\right)\,
+             f_0(\theta)\, d\theta}
+       {\displaystyle
+        \int
+             \widehat D_{j0}(\theta',\hat\theta_j)\,
+             \phi\!\left(\hat\theta_j;\theta',\sigma_j\right)\,
+             f_0(\theta')\, d\theta'} .
+\label{eq:post0_final}
+\end{align}
+
+
+
+\subsection{Searchers posterior}\label{sec:ser_posterior}
+
+We want the posterior mean when the consumer searches and firms observe the
+full signal vector $\hat\theta $:
+
+
+\begin{align}
+E\!\left(\theta \mid \hat\theta, D=j, S=1\right)
+&= \int \theta \,
+      f\!\left(\theta \mid \hat\theta, D=j, S=1\right)\, d\theta
+&&\text{(definition of conditional expectation)}
+\label{eq:post1_def}\\
+&= \int \theta \,
+   \frac{f\!\left(\theta, D=j, S=1 \mid \hat\theta\right)}
+        {\Pr\!\left(D=j, S=1 \mid \hat\theta\right)}\, d\theta
+&&\text{(Bayes' rule)}
+\label{eq:post1_bayes}\\
+&= \int \theta \,
+   \frac{\Pr\!\left(D=j, S=1 \mid \theta,\hat\theta\right)\,
+         f\!\left(\theta \mid \hat\theta\right)}
+        {\Pr\!\left(D=j, S=1 \mid \hat\theta\right)}\, d\theta
+&&\text{(joint = prob $\times$ density)}
+\label{eq:post1_chain}\\[0.75em]
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \Pr\!\left(D=j, S=1 \mid \theta,\hat\theta\right)\,
+             f\!\left(\theta \mid \hat\theta\right)\, d\theta}
+     {\displaystyle
+        \int
+             \Pr\!\left(D=j, S=1 \mid \theta',\hat\theta\right)\,
+             f\!\left(\theta' \mid \hat\theta\right)\, d\theta'}
+&&\text{(factor common denominator).}
+\label{eq:post1_ratio}
+\end{align}
+
+Now apply Bayes' rule to the signal posterior:
+\begin{align}
+f\!\left(\theta \mid \hat\theta\right)
+&=
+\frac{f\!\left(\hat\theta \mid \theta\right)\,f_0(\theta)}
+     {\displaystyle\int f\!\left(\hat\theta \mid \theta'\right)\,f_0(\theta')\,d\theta'}
+\label{eq:signal_post_search_1}\\[0.5em]
+&=
+\frac{\phi\!\left(\hat\theta;\theta\right)\,f_0(\theta)}
+     {\displaystyle\int \phi\!\left(\hat\theta;\theta'\right)\,f_0(\theta')\,d\theta'} ,
+\label{eq:signal_post_search_2}
+\end{align}
+
+Substituting \eqref{eq:signal_post_search_2} into \eqref{eq:post1_ratio}, the normalising
+denominator in \eqref{eq:signal_post_search_2} cancels between numerator and denominator
+of \eqref{eq:post1_ratio}, yielding
+\begin{align}
+E\!\left(\theta \mid \hat\theta, D=j, S=1\right)
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \Pr\!\left(D=j, S=1 \mid \theta,\hat\theta\right)\,
+             \phi\!\left(\hat\theta;\theta\right)\,
+             f_0(\theta)\, d\theta}
+     {\displaystyle
+        \int
+             \Pr\!\left(D=j, S=1 \mid \theta',\hat\theta\right)\,
+             \phi\!\left(\hat\theta;\theta'\right)\,
+             f_0(\theta')\, d\theta'} .
+\label{eq:post1_phi}
+\end{align}
+
+\begin{align}
+E\!\left(\theta \mid \hat\theta, D=j, S=1\right)
+&=
+\frac{\displaystyle
+        \int \theta \,
+             \hat D_{j1}(\theta,\hat\theta)\,
+             \phi\!\left(\hat\theta;\theta\right)\,
+             f_0(\theta)\, d\theta}
+     {\displaystyle
+        \int
+             \hat D_{j1}(\theta',\hat\theta)\,
+             \phi\!\left(\hat\theta;\theta'\right)\,
+             f_0(\theta')\, d\theta'} .
+\label{eq:post1_final}
+\end{align}
+
+
+\end{document}

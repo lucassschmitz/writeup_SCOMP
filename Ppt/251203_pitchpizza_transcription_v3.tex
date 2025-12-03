@@ -1,0 +1,201 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+\addbibresource{../references.bib}
+\begin{document}
+
+
+
+\section{Introduction}
+
+\subsection*{Slide 1: titlepage}
+Hi everyone I am Lucas Schmitz and I will present “Equilibrium effects of revised offers: evidence from a centralized marketplace for annuities”. Looking forward to receive comments. 
+
+\subsection*{Slide 2: Motivation} 
+
+\textcolor{orange}{Let me start by motivating the kind of environment I have in mind}. In insurance markets it is common to receive initial offers from a number of firms and then to ask for revised offers an initial offer and then to ask for revised offers. 
+
+\vspace{.4cm}
+
+For example, when shopping for mortgage loans banks give consumers a loan estimate and then the consumer can use the LE of one firm to request a revised offer from competing firms. 
+
+
+
+\begin{itemize}
+    \item If being asked why I am not considering bargaining. I would say that the auto dealership has commitment power because is a player that is playing a repeated game whereas the buyer is making a one time purchase. 
+\end{itemize}
+
+Two features are important in this settings. 
+First, requesting a revised offer is costly for consumer. 
+Secondly, when requesting a revised offer to a firm, the consumer reveals the initial offers made by other firms. Which reveal information about the riskiness of the consumer. 
+%Two important features are requesting a revised offer implies a search cost and, and there is an informational component, because each firm when observing the offers made by the other firms can learn about the riskiness of the consumer. 
+
+
+Hence revised offers have two effects: 
+
+Related to the first feature: firms can use revised offers to price discriminate. If consumers with lower search costs are also less elastic, firms might make worse offers initially which would be targeted to the high-search inelastic consumers and only later on make good offers to consumers who request a revised offer. 
+Secondly, revised offers can reduce informational rents. Given that firms have private information about the consumer, when a firm who is being requested a revised offer observes the initial offers of other firms the firm can update the beliefs about the riskiness of the consumer. 
+
+%Secondly, revised offers can help to reveal information. Firms have private information about the consumer and when making revised offers, firms can observe the initial offers of the other firms. Hence firms can use the offers made by other firms to update their beliefs about the riskiness of the consumer. 
+
+
+\subsection*{Slide 3: this research }
+
+
+This research studies the equilibrium impacts of revised offers in a centralized marketplace for annuities in Chile, called ScOMP. 
+
+In particular we 
+
+
+This setting is useful to answer our research question because it allows firms to revise their offers, but recently policymakers decided to prohibit offers revisions; and their motivation was that the possibility of revision created incentives for firms to not make their best offers. We study the equilibrium impacts of the elimination of the revised offers. 
+Given this scenario our research question is what is the equilibrium impact of the revised offers. Specifically, what are the welfare implications of prohibiting revised prices. 
+
+
+\subsection*{Slide 4: Literature}
+Skip literature section. 
+
+\section{Setting and data}
+
+\subsection*{Slide 6: Setting: annuities}
+
+Before jumping into the institutional context, I will briefly explain what annuities are. They transform a stock of savings into a stream of payments until death. They are commonly bought by retirees to insure against longevity risk - the risk of outliving their savings
+The profits for firm j when selling an annuity can be expressed as shown in the equation: the firm receives the stock of savings S, and pays out a flow F per period, discounted at the firm's financing cost $r_j$. The expected value depends on buyer mortality factors $x_i$.
+I want to note that the expectancy operator is firm dependent because firms have different mortality tables, whereas $x_i$
+ is not firm dependent because in our setting all firms observe the same information about the buyer. 
+Firms are heterogeneous along two dimensions: they use different algorithms which are  mortality tables and, they face different financing costs $r_j$. 
+
+\subsection*{Slide 7: Setting: SCOMP}
+
+“Here's the institutional timeline. First, a buyer requests a balance statement, which states the amount of savings, then requests offer for a specific contract type, we will focus only on simple annuities. Then the firms make initial offers {show the SCOMP certificate}
+Then the buyer chooses between accepting one of the initial offers, submitting a new offer request, which involves doing the whole process again or requesting a revised offer. 
+In case the buyer requests a revised offer, he chooses the firms from which to request the revised offer, then firms make the revised offers, and the buyer chooses among the whole set of offers, which includes the initial and revised offers. 
+There are three important institutional features about the revised offers. 
+First, only firms which made an initial offer can make a revised offer. 
+Secondly, firms cannot lower their initial offer. 
+Thirdly, when requesting a revised offer the buyer is requested the certificate with the initial offers, hence firms are able to observe the initial offers. 
+
+\subsection*{Slide 8: Data }
+
+We observe SCOMP data at the individual level, which means the initial and revised offers and the consumer decision. We do Not observe the request. We also observe the demographics and savings of the buyer. 
+At the firm level we observe the risk ratings, given that the payment to the buyer is into the future he might care about the bankruptcy probability of the insurer. 
+There are two features of the data I would like to highlight; the first one is that we observe many offers for each buyer. This is uncommon given that in most of the literature on selection markets i) the buyer might not request an offer from each firm and ii) even for the offers requested, they are not recorded in the data unless they are accepted. 
+Secondly, we observe the same information about the buyer as the firm, which is the gender, age and savings. 
+
+\section{Empirical evidence}
+
+\subsection*{Slide 10} 
+To motivate the model I will present four pieces of evidence and connect them to a modeling decision. 
+First, not all buyers request revised offers, which can be rationalized by the existence of search costs. 
+Secondly, in some cases do not choose the highest offer, which can be rationalized by differentiation. 
+Third, there is sorting into firms. This could be caused by different factors, but one possibility is that firms differ in the precision of their algorithm. 
+Finally, the way firms are revising their offers can be rationalized by firm learning 
+
+\subsection*{Slide 11 }
+
+Let me start with the first piece of evidence: the prevalence and magnitude of revised offers.
+Looking at the left panel, we see the distribution of the number of revised offers a consumer gets. Around 55\% of buyers get exactly one revised offer, while approximately 23\% do not request any revised offers at all. 
+To construct the right figure I took the improvement between the initial and revised offer, and calculated the improvement of that improvement as a share of the monthly wage of the individual. Note that there are many individuals who get one or more months of their wage. 
+This two pieces of evidence, that some buyers do not request revised offers, and that upon requesting individuals get an improvement in their initial offer motivates modeling search costs. 
+
+\subsection*{Slide 12: Product Differentiation}
+
+The second piece of evidence concerns product differentiation. This figure shows the distribution of foregone value - the percentage difference between the highest offer available and the offer the buyer actually chose.
+If buyers only cared about maximizing their annuity payment, we would see a mass point at zero. Instead, we observe substantial dispersion. The average foregone value is 1.57 monthly wages.
+Why might buyers choose lower offers? They likely value other product attributes beyond just the payment amount - things like the insurer's risk rating, brand reputation, customer service, or specific contract features. We can see in the certificate I showed earlier that risk ratings are prominently displayed, suggesting buyers do pay attention to these factors.
+
+\subsection*{Slide 13} 
+
+The third piece of evidence is related to sorting. By risk sorting I mean that in equilibrium firms end up selling to different risk profiles. Two possible causes of sorting are that firms have different screening technologies. Firms with a more precise screening technology could be able to detect which buyers will die earlier and be more aggressive when bidding to those buyers, in that case firms with a noisier screening technology would end up selling to healthier buyers. 
+Another possibility is that the type of the consumer is correlated with their preference. 
+
+\subsection*{Slide 14}
+Beyond the specific cause of sorting, in this figure we  can see that there is sorting across firms. Each line displays survival curves for a firm, we can see that firm with the purple line has a higher survival thant the green firm, moreover this differences are statistically significant. One possibility to generate this patterns in the model is to allow different precision in the signal that firms receive. 
+
+\subsection*{Slide 15}
+
+The last piece of evidence is that there appears to be learning between the initial and the revised offers. 
+If, when making the initial offers, firms do not know the offer that the competitors will make. And then before revising their offer they get to see the other offers, since offers are strategic complements, one would expect the improvement to be higher the higher where the other offers. 
+I would like to mention that there is a selection issue because we only observe revised offers and not the requests. Hence this evidence is just suggestive. 
+
+\subsection*{Slide 16 }
+
+A second pattern one would expect to observe if firms had uncertainty about other firms prices and if there is a share of buyers who choose the highest offer is that firms would try to just overbid their rivals. 
+This figure shows the revised offer of the firm minus the highest initial offer of the rivals, normalized by the initial offer of the firm. We can observe that there is bunching at 0 which would mean that firms sometimes try to just overbid the highest initial offer. 
+
+\subsection*{Slide 18}
+
+
+
+\subsection*{Slide 19 }
+
+
+
+
+\subsection*{Slide 20}
+ 
+\subsection*{Slide 21}
+
+\subsection*{Slide 22 }
+
+
+
+
+
+\end{document}

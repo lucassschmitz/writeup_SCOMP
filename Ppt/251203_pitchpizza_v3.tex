@@ -172,15 +172,15 @@ Diego Cussen
         \item Expected profits of firm $j$: 
     
     \begin{align*}
-    \hat \pi_{ji}(F) = S_i -  \sum_{t=1}^T \frac{\Pr_j(\text{alive} \mid x_i)}{(1+r_j)^t} F 
+    \hat \pi_{j}(F_{ij}) = W_i -  \sum_{t=1}^T \frac{\Pr_j(\text{alive} \mid x_i)}{(1+I_j)^t} F_{ij} 
     \end{align*}
 
     % if it was only financing cost, it would be a monopoly
    
-     $S$: stock of savings, $F$: per period annuity payment, $x_i$: buyer mortality factors (e.g. age, gender)
+     $S_i$: stock of savings, $F_{ij}$: per period annuity payment, $x_i$: buyer mortality factors (e.g. age, gender)
     
     %\item Firm heterogeneity: algorithm (mortality tables), financing costs ($r_j$) and risk ratings. 
-    \item Firm heterogeneity: algorithm (mortality tables) and financing costs ($r_j$)
+    \item Firm heterogeneity: mortality tables and financing costs ($I_j$)
     
     \end{itemize}
 
@@ -307,11 +307,11 @@ Explain that:
 \begin{columns}[T] % [T] aligns columns at the top
 \begin{column}{0.48\textwidth}
      \begin{itemize}
-        \item     If firms do not know competitors' prices one expects them to increase their offers more when the competitors' prices are higher. 
-    $$ \underbrace{Offer \\ improvement}_{F_{ij}^R - F_{ij}^I} = \beta_0 + \beta_1 \text{Avg. gap}_{ij} + \beta_2 \text{Max. gap}_{ij} + \beta_j + \epsilon_{ij}$$
+        \item     If firms do not know competitors' offers one expects them to increase their offers more when the competitors' offers are higher. 
+    $$ \underbrace{F_{ij}^2 - F_{ij}^1}_{\text{Improvement}} = \beta_0 + \beta_1 \text{Avg. gap}_{ij} + \beta_2 \text{Max. gap}_{ij} + \beta_j + \epsilon_{ij}$$
     where  \\
-    $ \text{Avg. gap }_{ij} = \frac{1}{F_{ij}^I}\left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^I - F_{ij}^I\right) $\\ 
-    $ \text{Max. gap } = \frac{1}{F_{ij}^I}\left(\max_{k \neq j} F_{ik}^I - F_{ij}^I\right)$
+    $ \text{Avg. gap }_{ij} = \frac{1}{F_{ij}^1}\left(\frac{1}{J-1}\sum_{k \neq j} F_{ik}^1 - F_{ij}^1\right) $\\ 
+    $ \text{Max. gap } = \frac{1}{F_{ij}^1}\left(\max_{k \neq j} F_{ik}^1 - F_{ij}^1\right)$
     
 \end{itemize}
 \end{column}
@@ -370,8 +370,8 @@ Explain that:
     \item Buyer wants to annuitize $W$ unit of savings. 
     \item $J$ firms compete in a centralized marketplace.
     \item Buyer has private type (mortality risk) $\theta$; prior density $f_0(\theta)$.
-    \item Each firm $j$ observes a noisy signal $\hat \theta_j \sim \mathcal{N}(\theta, \sigma_j^2)$ with pdf $\phi(\hat \theta_j; \theta, \sigma_j)$ before posting its initial offer $F_j^{1T}$.
-    \item Buyers draw search cost $s_i$ from a joint distribution $F(s,\theta)$    \item Timeline:
+    \item Each firm $j$ observes a noisy signal $\hat \theta_j \sim \mathcal{N}(\theta, \sigma_j^2)$ with pdf $\phi(\hat \theta_j; \theta, \sigma_j)$ before posting its initial offer $F_j^{1}$.
+    \item Buyers draw search cost $s$ from a joint distribution $F(s,\theta)$    \item Timeline:
     \begin{enumerate}
         \item Firms post initial offers using private signals.
         \item Buyer either accepts (no search) or pays $s_i$ to request revised offers (search).
@@ -386,17 +386,17 @@ Explain that:
 \begin{itemize}
     \item Indirect utility for type $\theta$ from firm $j$ in stage $t \in \{1,2\}$:
     \begin{align*}
-        u_{ij}^{(t)} = \gamma(\theta)  \underbrace{F_j^{t}}_{\text{Flow payment}} + \underbrace{\xi_j}_{\text{Demand shock }} + \underbrace{\beta r_j}_{\text{Risk rating}} +  \underbrace{\epsilon_{ij}}_{\text{idiosyncratic shock}}.
+        u_{j}^{(t)} = \gamma(\theta)  \underbrace{F_j^{t}}_{\text{Flow payment}} + \underbrace{\xi_j}_{\text{Unobserved heterogeneity }} + \underbrace{\beta r_j}_{\text{Risk rating}} +  \underbrace{\epsilon_{j}}_{\text{idiosyncratic shock}}.
     \end{align*}
     \item Logit demand conditional on search choice:
     \begin{align*}
-        \Pr(D=j \mid \hat \theta, \theta, S=s) = \frac{\exp(\gamma(\theta) F_j^{t}(\hat \theta) + \xi_j + \beta r_j)}{1 + \sum_k \exp(\gamma(\theta) F_k^{t}(\hat \theta) + \xi_k + \beta r_k)}.
+        \Pr(D=j \mid \hat \theta, \theta, t) = \frac{\exp(\gamma(\theta) F_j^{t}(\hat \theta) + \xi_j + \beta r_j)}{1 + \sum_k \exp(\gamma(\theta) F_k^{t}(\hat \theta) + \xi_k + \beta r_k)}.
     \end{align*}
     \item Search occurs when the expected gain from revised offers exceeds the idiosyncratic cost:
     \begin{align*}
         G(\theta, \hat \theta) &= 
-        E_{\epsilon}\left[\max_j u_{ij}^{(2)}\right]
-        - E_{\epsilon}\left[\max_j u_{ij}^{(1)}\right] > s_i, 
+        E_{\epsilon}\left[\max_j u_{j}^{(2)}\right]
+        - E_{\epsilon}\left[\max_j u_{j}^{(1)}\right] > s 
     \end{align*}
      \item Search probability:
     \begin{align*}
@@ -419,20 +419,20 @@ Explain that:
 \end{itemize}
 \small
 \begin{align*}
-E(\theta \mid \hat \theta_j, D=j, S=0) &= \frac{\int \theta \, 
+E(\theta \mid \hat \theta_j, D=j, t=1) &= \frac{\int \theta \, 
 %\textcolor{blue}{\widehat D_{j0}(\theta, \hat \theta_j)}
-\textcolor{blue}{\Pr(D = j, S= 0 \mid \theta, \hat \theta_j)}
+\textcolor{blue}{\Pr(D = j, t=1  \mid \theta, \hat \theta_j)}
 \, \phi(\hat \theta_j; \theta, \sigma_j) f_0(\theta) d\theta}{\int 
 %\textcolor{blue}{\widehat D_{j0}(\theta', \hat \theta_j)}
 %\widehat D_{j0}(\theta', \hat \theta_j) 
-\textcolor{blue}{\Pr(D = j, S= 0 \mid \theta', \hat \theta_j)}
+\textcolor{blue}{\Pr(D = j, t=1 \mid \theta', \hat \theta_j)}
 \, \phi(\hat \theta_j; \theta', \sigma_j) f_0(\theta') d\theta'}, \\[0.4em]
-E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \, 
+E(\theta \mid \hat \theta, D=j, t=2) &= \frac{\int \theta \, 
 %\widehat D_{j1}(\theta, \hat \theta) 
-\textcolor{blue}{\Pr(D = j, S= 1 \mid \theta, \hat \theta)}
+\textcolor{blue}{\Pr(D = j, t=2 \mid \theta, \hat \theta)}
 \, \phi(\hat \theta; \theta) f_0(\theta) d\theta}{\int 
 %\widehat D_{j1}(\theta', \hat \theta) 
-\textcolor{blue}{\Pr(D = j, S= 1 \mid \theta', \hat \theta)}
+\textcolor{blue}{\Pr(D = j, t=2 \mid \theta', \hat \theta)}
 \, \phi(\hat \theta; \theta') f_0(\theta') d\theta'}.
 \end{align*}
 \normalsize
@@ -447,8 +447,8 @@ E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \,
     \item Firms allow for different markups in the posted and revised-offer stages to capture learning.
 \end{itemize}
 \begin{align*}
-    F_j^{1}(\hat \theta_j) &= \alpha_j^{1} + \beta_j^{1} \, E[\theta \mid \hat \theta_j, D=j, S=0], \\
-    F_j^{2}(\hat \theta) &= \alpha_j^{2} + \beta_j^{2} \, E[\theta \mid (\hat \theta_j, \hat \theta_{-j}), D=j, S=1].
+    F_j^{1}(\hat \theta_j) &= \alpha_j^{1} + \beta_j^{1} \, E[\theta \mid \hat \theta_j, D=j, t=1], \\
+    F_j^{2}(\hat \theta) &= \alpha_j^{2} + \beta_j^{2} \, E[\theta \mid (\hat \theta_j, \hat \theta_{-j}), D=j,t=2].
 \end{align*}
 \begin{itemize}
     \item Stage-2 pricing uses the pooled signal vector revealed through initial offers, removing informational asymmetries among firms for searchers.
@@ -460,8 +460,8 @@ E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \,
 \begin{frame}{Profits and Equilibrium}
 \small
 \begin{align*}
-    \pi_j &= \int_{\theta} \int_{\hat \theta} (W - F_j^{1}(\hat \theta_j)  k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, S=0) (1-\pi_1(\theta, \hat \theta)) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta \\
-    &\quad + \int_{\theta} \int_{\hat \theta} (W - F_j^{2}(\hat \theta) k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, S=1) \pi_1(\theta, \hat \theta) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta.
+    \pi_j &= \int_{\theta} \int_{\hat \theta} (W - F_j^{1}(\hat \theta_j)  k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, t=1) (1-\pi_1(\theta, \hat \theta)) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta \\
+    &\quad + \int_{\theta} \int_{\hat \theta} (W - F_j^{2}(\hat \theta) k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, t=2) \pi_1(\theta, \hat \theta) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta.
 \end{align*}
 \normalsize
 \begin{itemize}
@@ -482,13 +482,16 @@ E(\theta \mid \hat \theta, D=j, S=1) &= \frac{\int \theta \,
 
 %%%%%
 
-\begin{frame}{Mechanisms and Predictions}
+\begin{frame}{Equilibrium and Mechanisms}
+
 \begin{itemize}
-    \item \textbf{Information aggregation}: searchers force firms to pool their signals, eliminating winner's-curse concerns and intensifying competition for that pool.
-    \item \textbf{Screening channel}: correlation between $s_i$ and $\theta$ means the act of searching signals risk type, changing the composition of non-searchers.
-    \item If low-risk consumers search, the second stage improves selection and disciplines initial offers for everyone.
-    \item If high-risk consumers search, revised offers may worsen selection and can even collapse the search market.
-    \item Policy experiments (e.g., banning revised offers) affect both price dispersion and the endogenous sorting of types across search decisions.
+    \item A pricing equilibrium consists on $(\alpha_j^t, \beta_j^t)_{t,j}$ such that $(\alpha_j^t, \beta_j^t)_{t}$ maximizes $\pi_j\left[(\alpha_j^t, \beta_j^t)_{t}; (\alpha_j^t, \beta_j^t)_{t,-j}\right] $ 
+\end{itemize}
+
+\begin{itemize}
+    \item \textbf{Information aggregation}: the revised offers allows firms to pool their signals, increasing price competition
+    \item \textbf{Screening channel}: correlation between $s_i$ and $\theta$ means the act of searching signals risk type, allowing firms to price discriminate 
+    \item Banning revised offers affect both price dispersion and the endogenous sorting of types across search decisions.
 \end{itemize}
 \end{frame}
 

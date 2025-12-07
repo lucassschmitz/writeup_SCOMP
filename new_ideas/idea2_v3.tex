@@ -75,48 +75,41 @@
 \addbibresource{../references.bib}
 \begin{document}
  
-\title{\Large Beliefs identification\thanks{We thank...}}
-\author{Lucas Schmitz\thanks{Yale University (email: \texttt{lucas.schmitz@yale.edu}). Corresponding author.} \,\,\,\,\,\, and \,\,\,\,\,\, Diego Cussen\thanks{New York University (email: \texttt{dc5004@nyu.edu}).}} 
+\title{\Large Beliefs identification}
+%\title{\Large Beliefs identification\thanks{We thank...}}
+%\author{Lucas Schmitz\thanks{Yale University (email: \texttt{lucas.schmitz@yale.edu}). Corresponding author.} \,\,\,\,\,\, and \,\,\,\,\,\, Diego Cussen\thanks{New York University (email: \texttt{dc5004@nyu.edu}).}} 
 \date{\today}
 \maketitle
  
  
-
+Adverse selection can be mitigated by some factors, for example \textcite{handel_adverse_2013} shows that there is inertia in the choice of health insurance plans, which weakens the link between private information and choices. \textcite{crawford_asymmetric_2018}, in the market for credit, shows that market power weakens adverse selection by increasing the value of the marginal borrower with respect to the average borrower. 
  
 
-\subsection*{Three-period model with distorted survival beliefs and guaranteed annuity}
+\section{Three-period model with distorted survival beliefs and guaranteed annuity}
 
-\paragraph{1. Environment.}
 
-Time is $t=1,2,3$. Each individual has initial wealth (savings) $W>0$ at $t=1$.
+Time is $t=1,2,3$. Each individual $i$ has initial wealth (savings) $W>0$ at $t=1$.
 
-\begin{itemize}
-    \item True survival probability between any two consecutive periods is $x\in(0,1)$.
-    \item Individual beliefs about survival are distorted: the perceived one-period survival probability is
-    \[
-        \hat x \equiv \theta x,
-    \]
-    with $\theta>0$ and $\hat x\in(0,1)$.
-    \item Period utility from consumption is 
-    \[
-        u(c) = c^{\alpha}, \qquad \alpha\in(0,1).
-    \]
-    \item Bequest utility is linear:
-    \[
-        v(B) = \beta_i B, \qquad \beta_i \ge 0.
-    \]
-    \item No time discounting.
-\end{itemize}
 
-The individual has three options at $t=1$:
+The true survival probability between any two consecutive periods is $x_i \in(0,1)$. Individual beliefs about survival are distorted: the perceived one-period survival probability is
+\[
+    \hat x_i \equiv \theta x_i,
+\]
+with $\theta>0$ and $\hat x_i\in(0,1)$. Period utility from consumption is 
+\[
+    u(c) = c^{\alpha}, \qquad \alpha\in(0,1).
+\]
+The bequest weight $\beta_i$ is heterogeneous with CDF $F_\beta$ on $[0,\infty)$. Bequest utility is linear:
+\[
+    v(B) = \beta_i B, \qquad \beta_i \ge 0.
+\]
+We assume no time discounting.
 
-\begin{enumerate}
-    \item[\textbf{N}] \textbf{No annuity (self-insurance with savings).}
-    \item[\textbf{A}] \textbf{Immediate annuity}: pays $F>0$ in each period the individual is alive, with no bequest.
-    \item[\textbf{G}] \textbf{Guaranteed annuity}: pays $F_g>0$ in each period the individual is alive; in addition, if the individual dies between periods 1 and 2, the contract pays a guaranteed amount $F_g$ at $t=2$ as a pure bequest (no consumption).
-\end{enumerate}
 
-\paragraph{2. No annuity: consumption--savings problem and value.}
+The individual has three options at $t=1$. The first option is no annuity (N), self-insurance with savings. The second option is an immediate annuity (A) that pays $F>0$ in each period the individual is alive, with no bequest. The third option is a guaranteed annuity (G)  that pays $F_g>0$ in each period the individual is alive; in addition, if the individual dies between periods 1 and 2, the contract pays a guaranteed amount $F_g$ at $t=2$ as a pure bequest (no consumption).
+
+
+\paragraph{1. No annuity: consumption--savings problem and value.}
 
 If the individual does not buy an annuity, she chooses a consumption--savings plan:
 \[
@@ -144,7 +137,7 @@ The value of self-insurance is
 \]
 Sometimes we also use $s_t$ for savings at the beginning of period $t$, for instance $s_1 = W - c_1$. 
 
-\paragraph{3. Immediate annuity (A).}
+\paragraph{2. Immediate annuity (A).}
 
 If the individual buys the immediate annuity, she uses all wealth $W$ to purchase a contract that pays $F$ in each period she is alive. There is no bequest from the annuity.
 
@@ -155,7 +148,7 @@ Expected utility under the immediate annuity is
     &= \big(1 + \hat x + \hat x^2\big)\, F^{\alpha}.
 \end{align*}
 
-\paragraph{4. Guaranteed annuity (G).}
+\paragraph{3. Guaranteed annuity (G).}
 
 If the individual buys the guaranteed annuity, she uses all wealth $W$ to purchase a contract that:
 
@@ -175,7 +168,7 @@ Hence, the expected utility under the guaranteed annuity is
        + (1-\hat x)\,\beta_i F_g.
 \end{align*}
 
-\paragraph{5. Choice among N, A, and G.}
+\paragraph{4. Choice among N, A, and G.}
 
 Given $(x,\theta,\beta_i,W)$, the individual chooses the option with highest expected utility:
 \[
@@ -183,24 +176,7 @@ Given $(x,\theta,\beta_i,W)$, the individual chooses the option with highest exp
     = \arg\max\big\{V^{N}(x,\theta,\beta_i,W),\, V^{A}(x,\theta),\, V^{G}(x,\theta,\beta_i)\big\}.
 \]
 
-
-
-\newpage 
-
-
-\subsection*{Non-Identification of $\theta$ and $F_\beta$ in the three-period model}
-
-\paragraph{Setup.}
-
-For each individual $i$:
-
-\begin{itemize}
-    \item True one-period survival probability is $x_i\in(0,1)$.
-    \item Believed survival is $\hat x_i = \theta x_i$, with $\theta>0$ and $\hat x_i\in(0,1)$.
-    \item Bequest weight $\beta_i$ is heterogeneous with CDF $F_\beta$ on $[0,\infty)$.
-    
-\end{itemize}
-
+\paragraph{5. Non-identification}
 
 The observed choice is
 \[
@@ -212,7 +188,7 @@ We observe the joint distribution of $(x_i,D_i)$; primitives of interest are $\t
 
 In this case we can prove a non-identification result, see section \ref{sec:appendix0}. 
 
-\vspace{2cm}
+
  
 
 \subsection*{Identification with price and wealth shifters}

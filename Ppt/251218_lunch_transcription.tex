@@ -1,0 +1,232 @@
+\documentclass[12pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsfonts}
+\usepackage{eurosym}
+\usepackage{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{ulem} 
+\usepackage{graphicx}
+\usepackage{comment}
+%\usepackage[sort,comma]{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage[backend=biber, style = apa]{biblatex}
+\usepackage{placeins} % to separate sections
+
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[hang, flushmargin, bottom]{footmisc}
+\usepackage{footnotebackref}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{todonotes}
+\setcounter{MaxMatrixCols}{10}
+
+
+%\setlength{\bibsep}{0.3pt}
+\setlength{\textfloatsep}{5pt}
+\hypersetup{breaklinks=true,hypertexnames=false,colorlinks=true,citecolor = teal}
+\captionsetup{font=normalsize}
+\newcommand{\cmark}{\ding{51}}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\renewcommand{\thetable}{\Roman{table}}
+\geometry{verbose,tmargin=.9in,bmargin=1in,lmargin=.8in,rmargin=.8in,nomarginpar}
+\makeatletter
+\DeclareTextSymbolDefault{\textquotedbl}{T1}
+\theoremstyle{plain}
+\newtheorem{thm}{\protect\theoremname}
+\theoremstyle{plain}
+\newtheorem{prop}[thm]{\protect\propositionname}
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\makeatother
+\providecommand{\propositionname}{Proposition}
+\providecommand{\theoremname}{Theorem}
+\newtheorem{ass}[thm]{Assumption}
+% \input{tcilatex}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning}
+
+
+\addbibresource{../references.bib}
+\begin{document}
+
+
+
+\section{Introduction}
+
+\subsection*{Slide 1: titlepage}
+Hi everyone I am Lucas Schmitz and I will present “Equilibrium effects of revised offers: evidence from a centralized marketplace for annuities”. Looking forward to receive comments. 
+
+\subsection*{Slide 2: Motivation} 
+
+\textcolor{orange}{Let me start by motivating the kind of environment I have in mind}. In insurance markets it is common to receive initial offers from multiple firms. After receiving and comparing this initial offers, consumers can go back to firms that made initial offers 
+and request revised offers from them. 
+
+Where by revised offer I mean a request to a firm for an improved offer. 
+
+
+\vspace{.4cm}
+
+For example, when shopping for mortgage loans banks give consumers a loan estimate and then the consumer can use the LE of one firm to request a revised offer from competing banks. 
+
+
+
+\begin{itemize}
+    \item If being asked why I am not considering bargaining. I would say that the auto dealership has commitment power because is a player that is playing a repeated game whereas the buyer is making a one time purchase. 
+\end{itemize}
+
+Two features are important in this settings. 
+First, requesting a revised offer is costly for consumer. 
+Secondly, when requesting a revised offer to a firm, the consumer reveals the initial offers made by other firms. In insurance markets, this could be revealing  information about the riskiness of the consumer. 
+%Two important features are requesting a revised offer implies a search cost and, and there is an informational component, because each firm when observing the offers made by the other firms can learn about the riskiness of the consumer. 
+
+
+Hence revised offers could have two effects: 
+
+Related to the first feature: firms can use revised offers to price discriminate. If consumers with lower search costs are also less elastic, firms might make worse offers initially which would be targeted to the high-search inelastic consumers and only later on make good offers to consumers who request a revised offer. 
+
+Secondly, revised offers can reduce informational rents. Given that firms have private information about the consumer, when a firm who is being requested a revised offer observes the initial offers of other firms the firm can update the beliefs about the riskiness of the consumer. 
+
+%Secondly, revised offers can help to reveal information. Firms have private information about the consumer and when making revised offers, firms can observe the initial offers of the other firms. Hence firms can use the offers made by other firms to update their beliefs about the riskiness of the consumer. 
+
+\textcolor{red}{make clearer than a buyer requests loan estimate from multiple firms and only then he requests revised offers. }
+
+\subsection*{Slide 3: this research }
+
+In this paper our goal is to study  the equilibrium effects of revised offers using data from the Chilean annuity market, known as SCOMP.
+
+This setting offers a unique natural experiment because a recent regulation actually banned the ability, of consumers, to request revised offers.
+
+The status quo allowed consumers to receive initial offers and then use them to solicit better, 'revised' offers. The regulator argued that this was harming consumers. 
+
+To answer our research question, I build a structural model of search and selection with asymmetric information. We plan to use the model to simulate the counterfactual scenario— where revised offers are eliminated  - quantify the welfare effects on consumers.
+
+\subsection*{Slide 4: Literature}
+Skip literature section. 
+
+\section{Setting and data}
+
+\subsection*{Slide 6: Setting: annuities}
+
+Before jumping into the institutional context, I will briefly explain what annuities are. They transform a stock of savings into a stream of payments until death. They are commonly bought by retirees to insure against longevity risk - the risk of outliving their savings. 
+
+The expected profits for firm j when selling an annuity can be expressed as shown in the equation: the firm receives the stock of savings S, and pays out a flow F per period, discounted at the firm's financing cost $r_j$. Where each payment is weighted by the probability that the buyer is still alive at that time, according to the firm's mortality table.
+
+This equation highlights two dimensions of firm heterogeneity. 
+ they use different algorithms which are  mortality tables and, they face different financing costs $r_j$. 
+
+\subsection*{Slide 7: Setting: SCOMP}
+
+“Here's the institutional timeline. First, a buyer requests a balance statement, which states the amount of savings, then requests offer for a specific contract type, we will focus only on simple annuities. Then the firms make initial offers {show the SCOMP certificate}
+Then the buyer chooses between accepting one of the initial offers, submitting a new offer request, which involves doing the whole process again or requesting a revised offer. 
+In case the buyer requests a revised offer, he chooses the firms from which to request the revised offer, then firms make the revised offers, and the buyer chooses among the whole set of offers, which includes the initial and revised offers. 
+There are three important institutional features about the revised offers. 
+First, only firms which made an initial offer can make a revised offer. 
+Secondly, firms cannot lower their initial offer. 
+Thirdly, when requesting a revised offer the buyer is requested the certificate with the initial offers, hence firms are able to observe the initial offers. 
+
+
+
+
+
+
+
+
+
+
+\subsection*{Slide 8: Data }
+
+We observe SCOMP data at the individual level, which means the initial and revised offers and the consumer decision. We do Not observe the request. We also observe the demographics and savings of the buyer. 
+At the firm level we observe the risk ratings, given that the payment to the buyer is into the future he might care about the bankruptcy probability of the insurer. 
+There are two features of the data I would like to highlight; the first one is that we observe many offers for each buyer. This is uncommon given that in most of the literature on selection markets i) the buyer might not request an offer from each firm and ii) even for the offers requested, they are not recorded in the data unless they are accepted. 
+Secondly, we observe the same information about the buyer as the firm, which is the gender, age and savings. 
+
+\section{Empirical evidence}
+
+\subsection*{Slide 10} 
+To motivate the model I will present two pieces of evidence. 
+
+
+First, there is sorting into firms.
+
+Secondly,  the way firms are revising their offers can be rationalized by firm learning 
+
+\subsection*{Slide 11 }
+
+The first piece of evidence is related to sorting. By risk sorting I mean that in equilibrium firms end up selling to different risk profiles. Two possible causes of sorting are that firms have different screening technologies. Firms with a more precise screening technology could be able to detect which buyers will die earlier and be more aggressive when bidding to those buyers, in that case firms with a noisier screening technology would end up selling to healthier buyers. 
+Another possibility is that the type of the consumer is correlated with their preference. 
+
+\subsection*{Slide 12}
+Beyond the specific cause of sorting, in this figure we  can see that there is sorting across firms. Each line displays survival curves for a firm, we can see that firm with the purple line has a higher survival thant the green firm, moreover this differences are statistically significant. One possibility to generate this patterns in the model is to allow different precision in the signal that firms receive. 
+
+\subsection*{Slide 13}
+
+The second piece of evidence is that there appears to be learning between the initial and the revised offers. 
+If, when making the initial offers, firms do not know the offer that the competitors will make. And then before revising their offer they get to see the other offers, since offers are strategic complements, one would expect the improvement to be higher the higher where the other offers. 
+I would like to mention that there is a selection issue because we only observe revised offers and not the requests. Hence this evidence is just suggestive. 
+
+\section{Model}
+
+\subsection*{Slide 15}
+
+\textcolor{orange}{To rationalize the empirical patterns we just observed}, I build a model of search and selection with asymmetric information. In this setup, a buyer with a stock of savings $W$ can buy an annuity from one of  $J$ firms. The crucial friction here is information. The buyer has a private mortality risk type $\theta$, firms, do not observe the type. Instead, each firm observes a private, noisy signal $\hat{\theta}_j$ about that risk.The timing of the game mirrors the SCOMP process. First, firms post initial offers based solely on their private signals. Second, the buyer observes these offers and draws an idiosyncratic search cost. They then decide whether to accept one of the initial offers immediately or to pay that search cost to request revised offers. If they choose to search, the game changes significantly because the act of searching reveals the full vector of private signals to all firms, eliminating the information asymmetry between competitors in the aftermarket.
+
+\subsection*{Slide 16: demand and search decision}
+
+The buyer's utility includes a term that represents the utility from the monthly payments, where $F_j$
+
+
+Moving to the consumer side, we model the demand and search decision.On the top equation, you see the indirect utility buyer $i$ gets from firm $j$. This depends on three key components:First, the financial value of the annuity payment $F$, which is weighted by $\gamma(\theta)$. 
+Crucially, this weight depends on the consumer's risk type—healthier consumers who expect to live longer will value these payments more highly.
+
+Second, we include risk ratings $r_j$ and unobserved preference shocks $\xi_j$ to capture unobserved product characteristics like customer service or reputation. 
+
+
+
+The bottom two equations define the search rule. A consumer calculates the expected gain $G$ from searching—which is the difference in expected utility between the revised and initial stages. 
+We use expected utility to avoid selection into searching based on the idiosyncratic shocks. 
+
+The buyer chooses to search if his gain exceeds their idiosyncratic search cost $s_i$. Hence using the model we can derive the search probability. 
+
+
+
+\subsection*{Slide 17}
+
+Given 
+
+1. the dependence of the utility parameters on the riss type and 
+2. the selection into search based on the search cost
+
+the firms will not naively price using the signal they received. 
+
+Firms have to condition their beliefs on them being the chosen firm and on whether the buyer searched or not. 
+
+
+The integral weights the prior by the probability of the choice given the signal observed by the firm. 
+
+Given time constraints I just want to note that for non-searchers the expected value is conditioning only on the firm's own signal, whereas for searchers the firm conditions on the full vector of signals.
+ 
+\subsection*{Slide 18}
+
+Given the posteriors defined in the previous slide, we assume that firms set prices linearly on the posterior. 
+
+
+
+\subsection*{Slide 19 }
+
+Finally, we close the model by defining the firm's objective function. The total profit, $\pi_j$, is simply the sum of profits from the two market segments.The first integral represents the 'non-searcher' market. Here, the firm earns the margin from its initial offer, weighted by the probability that the consumer chooses them and decides not to search, denoted by $(1-\pi_1)$.The second integral is the 'searcher' market, or the aftermarket. Here, the firm earns the margin from its revised offer, weighted by the probability that the consumer does search, $\pi_1$.The firm maximizes this sum by simultaneously choosing the pricing parameters for both stages. This links the two markets: an aggressive initial price might win more non-searchers (first integral), but it reveals more information and changes the selection of types who proceed to the second stage (second integral).
+
+
+
+\end{document}

@@ -114,7 +114,7 @@ The corresponding values of the options are: $V^{N}(x,\theta,\beta_i,W)$ for no 
 Given $(x,\theta,\beta_i,W, F, F_g)$, the individual chooses the option with highest expected utility:
 \[
     \text{Option chosen} 
-    = \arg\max\big\{V^{N}(x,\theta,\beta_i,W),\, V^{A}(x,\theta),\, V^{G}(x,\theta,\beta_i)\big\}.
+    = \arg\max\big\{V^{N}(x,\theta,\beta_i,W),\, V^{A}(x,\theta;F),\, V^{G}(x,\theta,\beta_i;F_g)\big\}.
 \]
 
 \paragraph{Non-identification}
@@ -137,7 +137,7 @@ In this case we can prove a non-identification result, see section \ref{sec:appe
 Previously we showed that data on $(x_i, D_i)$ is not sufficient to identify  $(\theta,F_\beta)$ 
 
 
-\paragraph{2. Adding exogenous price variation.}
+\paragraph{Adding exogenous price variation.}
 
 Now allow the annuity payments to depend on an observable ``price state'' $r$ (e.g.\ an
 interest rate or term-structure shifter):
@@ -148,25 +148,9 @@ with $r$ observed by the econometrician and exogenous:
 \[
 r\perp (\beta,x,\theta),
 \]
-and with sufficient support on some compact interval $\mathcal R$.   %\footnote{Formally assume that $r$ is distributed on a compact interval$\mathcal{R} = [\underline{r}, \bar{r}] \subset \mathbb{R}$ and that the functions $F(r)$ and $F_g(r)$ are continuous on $\mathcal{R}$.
+and with sufficient support on some compact interval $\mathcal R$.   
 
-%Given that the underlying utility functions are continuous on $F$ and $F_g$, this assumption implies that for any fixed $x$ and $\theta$, the sets:
-%\[ \mathcal{B}_1(x;\theta) \equiv \{ \beta_1(x,r;\theta) \mid r \in \mathcal{R} \} \quad \text{and} \quad \mathcal{B}_2(x;\theta) \equiv \{ \beta_2(x,r;\theta) \mid r \in \mathcal{R} \} \]
-%are compact, connected intervals in $\mathbb{R}$. This connectedness allows us to invert the mapping from probabilities to cutoffs continuously.
-%}
-
-For each $(x,r,\theta)$ define the payoffs
-\[
-V^{A}(x,r,\theta) = (1+\theta x + \theta^2 x^2)\, F(r)^\alpha,
-\]
-\[
-V^{G}(x,r,\theta,\beta) = (1+\theta x + \theta^2 x^2)\,F_g(r)^\alpha
-                         + (1-\theta x)\,\beta F_g(r),
-\]
-and $V^{N}(x,r,\theta,\beta,W)$ as before (note: with $W$ fixed, $V^N$ does not depend
-on $r$ if the outside savings technology is unchanged).
-
-For each $(x,r,\theta)$ we again obtain two cutoffs
+Now the value functions will also be indexed by $r$, for each $(x,r,\theta)$ we  obtain two cutoffs
 \[
 0\le \beta_1(x,r;\theta)\le \beta_2(x,r;\theta)\le\infty,
 \]
@@ -185,7 +169,7 @@ p_A(x,r) &= F_\beta\big(\beta_1(x,r;\theta)\big), \label{eq:pA_xr}\\
 p_A(x,r)+p_G(x,r) &= F_\beta\big(\beta_2(x,r;\theta)\big). \label{eq:pAG_xr}
 \end{align}
 
-\paragraph{3. Why price variation helps: breaking the simple relabeling.}
+\paragraph{Why price variation helps: breaking the simple relabeling.}
 
 Without $r$, the previous non-identification argument rests on the fact that
 \[
@@ -272,60 +256,12 @@ Since $F_\beta^0$ is a strictly increasing CDF (on the relevant support), (\ref{
 \end{equation}
 Substituting the definition from (\ref{eq:phi_def}), condition (\ref{eq:phi_constant}) requires that the true cutoff $\beta_j(\cdot; \theta_0)$ and the alternative cutoff $\beta_j(\cdot; \theta_1)$ move in perfect synchronization across $x$ and $r$. Given the non-linear interaction between beliefs $\theta x$ and prices $r$ in the value functions (specifically the ratio of annuity flows to bequest utility), this condition generically fails unless $\theta_1 = \theta_0$. Thus, $\theta$ is point identified.
 
-\noindent \textbf{Step 3: Identification of $F_\beta$}
+To prove this, note that equation \ref{eq:phi_constant} requires : 
 
-Once $\theta_0$ is identified, $F_\beta^0$ is recovered nonparametrically from (\ref{eq:obs_A}) and (\ref{eq:obs_G}) by sweeping $r$ over its support to trace out the distribution:
-\begin{equation}
-    F_\beta^0(b) = p_A(x, r_1^*(b, x; \theta_0)) \label{eq:recover_F}
-\end{equation}
-Assumption (C1) ensures that the domains of $\beta_1$ and $\beta_2$ overlap or connect, allowing identification of $F_\beta$ over the union of their images. \qed
-
-
-
-
-\newpage 
-
-Let $(\theta_0, F_\beta^0)$ be the true parameters generating the observed choice probabilities $p_A(x,r)$ and $p_G(x,r)$. Suppose there exists an alternative pair $(\theta_1, F_\beta^1)$ that is observationally equivalent. That is, for all $(x,r) \in \mathcal{X} \times \mathcal{R}$, the following equalities hold:
-
-\begin{equation}
-    F_\beta^1(\beta_1(x,r;\theta_1)) = p_A(x,r) = F_\beta^0(\beta_1(x,r;\theta_0)) \label{eq:obs_A}
-\end{equation}
-\begin{equation}
-    F_\beta^1(\beta_2(x,r;\theta_1)) = p_A(x,r) + p_G(x,r) = F_\beta^0(\beta_2(x,r;\theta_0)) \label{eq:obs_G}
-\end{equation}
-
-\noindent We define the index $j \in \{1,2\}$ to refer to the relevant margin. We can summarize (\ref{eq:obs_A}) and (\ref{eq:obs_G}) as:
-\begin{equation}
-    F_\beta^1(\beta_j(x,r;\theta_1)) = F_\beta^0(\beta_j(x,r;\theta_0)) \quad \text{for } j \in \{1,2\}. \label{eq:obs_equiv}
-\end{equation}
-
-\noindent \textbf{Step 1: Constructing the Mapping $\phi_j$}
-
-Fix an arbitrary survival probability $x \in \mathcal{X}$ and let $b$ be a bequest level in the image of $\beta_j(x, \cdot; \theta_1)$. By Assumption (C1), the function $r \mapsto \beta_j(x,r;\theta_1)$ is continuous and strictly monotone. Therefore, for a fixed $x$, there exists a unique inverse price function, denoted as $r_j^*(b, x; \theta_1)$, such that:
-\begin{equation}
-    \beta_j(x, r_j^*(b, x; \theta_1); \theta_1) = b \label{eq:inverse_r}
-\end{equation}
-Substitute the price $r = r_j^*(b, x; \theta_1)$ into the observational equivalence condition (\ref{eq:obs_equiv}):
-\begin{equation}
-    F_\beta^1(b) = F_\beta^0\left( \beta_j(x, r_j^*(b, x; \theta_1); \theta_0) \right) \label{eq:fundamental_id}
-\end{equation}
-We define the composite mapping $\phi_j(b, x; \theta_0, \theta_1)$ as the cutoff value implied by the true parameter $\theta_0$ at the state $(x, r_j^*)$:
-\begin{equation}
-    \phi_j(b, x; \theta_0, \theta_1) \equiv \beta_j(x, r_j^*(b, x; \theta_1); \theta_0) \label{eq:phi_def}
-\end{equation}
-Using this definition, equation (\ref{eq:fundamental_id}) becomes:
-\begin{equation}
-    F_\beta^1(b) = F_\beta^0(\phi_j(b, x; \theta_0, \theta_1)) \label{eq:F_constraint}
-\end{equation}
-
-\noindent \textbf{Step 2: Contradiction via Variation in $x$}
-
-The left-hand side of (\ref{eq:F_constraint}) depends only on $b$. Consequently, the right-hand side must be invariant to $x$. Since $F_\beta^0$ is strictly increasing, this requires that $\phi_j$ itself must be invariant to $x$:
 \begin{equation}
     \frac{\partial \phi_j(b, x; \theta_0, \theta_1)}{\partial x} = 0 \quad \text{for all } x. \label{eq:phi_invariant}
 \end{equation}
 
-\noindent \textbf{Formal Argument via Marginal Rates of Substitution:}
 Differentiating the definition of $\phi_j$ in (\ref{eq:phi_def}) with respect to $x$:
 \begin{equation}
     \frac{\partial \phi_j}{\partial x} = \frac{\partial \beta_j(\theta_0)}{\partial x} + \frac{\partial \beta_j(\theta_0)}{\partial r} \cdot \frac{\partial r_j^*}{\partial x} \label{eq:deriv_phi}
@@ -336,18 +272,53 @@ From the definition of the inverse price $r_j^*$ in (\ref{eq:inverse_r}), we app
 \end{equation}
 Substituting (\ref{eq:deriv_r}) into (\ref{eq:deriv_phi}), the condition $\partial \phi_j / \partial x = 0$ is equivalent to:
 \begin{equation}
-    \underbrace{\frac{\partial \beta_j(\theta_0) / \partial x}{\partial \beta_j(\theta_0) / \partial r}}_{\text{MRS}_{\theta_0}} = \underbrace{\frac{\partial \beta_j(\theta_1) / \partial x}{\partial \beta_j(\theta_1) / \partial r}}_{\text{MRS}_{\theta_1}} \label{eq:MRS_equality}
+    %\underbrace{\frac{\partial \beta_j(\theta_0) / \partial x}{\partial \beta_j(\theta_0) / \partial r}}_{\text{MRS}_{\theta_0}} = \underbrace{\frac{\partial \beta_j(\theta_1) / \partial x}{\partial \beta_j(\theta_1) / \partial r}}_{\text{MRS}_{\theta_1}} \label{eq:MRS_equality}
+    \frac{\partial \beta_j(\theta_0) / \partial x}{\partial \beta_j(\theta_0) / \partial r} = \frac{\partial \beta_j(\theta_1) / \partial x}{\partial \beta_j(\theta_1) / \partial r} \label{eq:MRS_equality}
 \end{equation}
-This condition states that the Marginal Rate of Substitution (MRS) between survival probability $x$ and price $r$ must be identical for both belief parameters.
-Recall that $\hat{x} = \theta x$. The function $\beta_1(x, r; \theta)$ (for example) typically takes the form:
-\[ \beta_1 \propto \frac{1 + \theta x + (\theta x)^2}{1 - \theta x} \cdot (F(r)^\alpha - F_g(r)^\alpha) \]
-The MRS depends on the derivative of the belief term with respect to $\theta x$. Due to the non-linear way $\theta$ enters the valuation of the annuity (geometric sum) versus the linear bequest, the function defining the MRS is strictly monotonic in $\theta$. Therefore, equation (\ref{eq:MRS_equality}) holds if and only if $\theta_1 = \theta_0$.
 
-If $\theta_1 \neq \theta_0$, then $\partial \phi_j / \partial x \neq 0$, which implies $F_\beta^1(b)$ would vary with $x$—a contradiction to it being a valid distribution of preferences. Thus, $\theta$ is point identified. \qed
+To see that \eqref{eq:MRS_equality} does not generally hold when $\theta_1\neq\theta_0$, it is convenient to consider the case with three periods and $j = 1$ (see section \ref{sec:appendix_valuefunctions}), in which case: 
+\[
+\beta_1(x,r;\theta)
+=
+f(\theta x)\,g(r),
+\qquad
+f(u) \equiv \frac{1+u+u^2}{1-u},\quad
+g(r) \equiv \frac{F(r)^\alpha - F_g(r)^\alpha}{F_g(r)}.
+\]
+In which case replacing in equation \ref{eq:MRS_equality} we have: 
+
+
+
+\begin{equation}
+    \frac{f'(\theta_0 x)x g(r)}{f(\theta_0 x) g'(r)} = \frac{f'(\theta_1 x)x g(r)}{f(\theta_1 x) g'(r)} \implies \frac{f'(\theta_0 x)}{f(\theta_0 x)} = \frac{f'(\theta_1 x)}{f(\theta_1 x) }
+\end{equation}
+
+using $\frac{f'(u)}{f(u)} = \frac{-u^2 + 2u + 2}{1-u^3}$ we have: 
+\begin{equation}
+     \frac{-(\theta_0 x)^2 + 2(\theta_0 x) + 2}{1-(\theta_0 x)^3} = \frac{-(\theta_1 x)^2 + 2(\theta_1 x) + 2}{1-(\theta_1 x)^3} 
+\end{equation}
+which is not generally true.  Therefore, equation (\ref{eq:MRS_equality}) holds if and only if $\theta_1 = \theta_0$.
+ Thus, $\theta_0, F_\beta^0$ are identified. \qed
+
+%\noindent \textbf{Step 3: Identification of $F_\beta$}
+
+%Once $\theta_0$ is identified, $F_\beta^0$ is recovered nonparametrically from (\ref{eq:obs_A}) and (\ref{eq:obs_G}) by sweeping $r$ over its support to trace out the distribution:
+%\begin{equation}
+%    F_\beta^0(b) = p_A(x, r_1^*(b, x; \theta_0)) \label{eq:recover_F}
+%\end{equation}
+%Assumption (C1) ensures that the domains of $\beta_1$ and $\beta_2$ overlap or connect, allowing identification of $F_\beta$ over the union of their images. \qed
+
+
 
 
 \newpage 
 
+
+The core identification problem is distinguishing whether individuals are buying annuities because they have low bequest motives (low $\beta$) or because they are optimistic about their survival (high belief $\hat{x} = \theta x$). In a static setting with fixed prices, these two forces are indistinguishable: a high-bequest pessimist might make the same choice as a low-bequest optimist. We break this observational equivalence by exploiting exogenous variation in annuity prices (driven by interest rates, $r$). The key insight is that beliefs ($\theta x$) and bequest motives ($\beta$) interact differently with price changes.Specifically, the "exchange rate" between annuity income and bequest value depends non-linearly on beliefs. When interest rates rise, annuity payouts increase. A rational agent ($\theta=1$) and a biased agent ($\theta \neq 1$) will re-evaluate the trade-off between the immediate annuity and the guaranteed annuity differently because their perceived "effective price" of the guarantee depends on their survival scaling $\theta$. By observing how the demand for each product shifts across different price levels for the same underlying survival type $x$, we can trace out a "marginal rate of substitution" curve. The shape of this curve is unique to the specific belief parameter $\theta$. 
+
+ 
+ 
+\newpage 
 
 
 
@@ -363,19 +334,11 @@ If $\theta_1 \neq \theta_0$, then $\partial \phi_j / \partial x \neq 0$, which i
 For estimation we can use maximum likelihood. 
 
 The likelihood contribution of individual $i$ is: 
-
 \begin{align}
     \mathcal{L}_i(\theta,F_\beta)
-    &= \Pr(D_i = A \mid x_i; \theta,F_\beta)^{\mathds{1}(D_i = A)} \notag \\
-    &\quad\times \Pr(D_i = G \mid x_i; \theta,F_\beta)^{\mathds{1}(D_i = G)} \notag \\
-    &\quad\times \Pr(D_i = N \mid x_i; \theta,F_\beta)^{\mathds{1}(D_i = N)} \notag \\
-    &= p_A(x_i;\theta,F_\beta)^{\mathds{1}(D_i = A)} \notag \\
-    &\quad\times p_G(x_i;\theta,F_\beta)^{\mathds{1}(D_i = G)} \notag \\
-    &\quad\times p_N(x_i;\theta,F_\beta)^{\mathds{1}(D_i = N)}. \notag
+    &= p_A(x_i;\theta,F_\beta)^{\mathds{1}(D_i = A)} \cdot  p_G(x_i;\theta,F_\beta)^{\mathds{1}(D_i = G)} \cdot p_N(x_i;\theta,F_\beta)^{\mathds{1}(D_i = N)}. \notag
 \end{align}
-
 Then, the likelihood function is: 
-
 \begin{align}
     \mathcal{L}(\theta,F_\beta)
     &= \prod_{i=1}^N \mathcal{L}_i(\theta,F_\beta).
@@ -731,12 +694,12 @@ than the left endpoint of the second. This is exactly the content of (A2).
 \subsection{Microfoundations for C1}
 
 
+[WORK IN PROGRESS]
 
-\newpage
 
- 
-  
-\newpage 
+\vspace{4cm}
+
+
 \subsubsection*{Support of the price state and plausibility of (C1)}
 
 We now formalize what we mean by “sufficient support” of the price state $r$, and we provide

@@ -88,98 +88,36 @@
 Adverse selection can be mitigated by some factors, for example \textcite{handel_adverse_2013} shows that there is inertia in the choice of health insurance plans, which weakens the link between private information and choices. \textcite{crawford_asymmetric_2018}, in the market for credit, shows that market power weakens adverse selection by increasing the value of the marginal borrower with respect to the average borrower. 
  
 
-\section{Three-period model with distorted survival beliefs and guaranteed annuity}
+\section{Model with distorted survival beliefs and guaranteed annuity}
+
+Consider an individual  $i$ has initial wealth (savings) $W>0$ at $t=1$.
 
 
-Time is $t=1,2,3$. Each individual $i$ has initial wealth (savings) $W>0$ at $t=1$.
+
+
 
 
 The true survival probability between any two consecutive periods is $x_i \in(0,1)$. Individual beliefs about survival are distorted: the perceived one-period survival probability is
 \[
     \hat x_i \equiv \theta x_i,
 \]
-with $\theta>0$ and $\hat x_i\in(0,1)$. Period utility from consumption is 
-\[
-    u(c) = c^{\alpha}, \qquad \alpha\in(0,1).
-\]
-The bequest weight $\beta_i$ is heterogeneous with CDF $F_\beta$ on $[0,\infty)$. Bequest utility is linear:
-\[
-    v(B) = \beta_i B, \qquad \beta_i \ge 0.
-\]
-We assume no time discounting.
+with $\theta>0$ and $\hat x_i\in(0,1)$. 
 
+Individuals also have a heterogenous bequest motive $\beta_i$, with CDF $F_\beta$ on $[0,\infty)$.
 
-The individual has three options at $t=1$. The first option is no annuity (N), self-insurance with savings. The second option is an immediate annuity (A) that pays $F>0$ in each period the individual is alive, with no bequest. The third option is a guaranteed annuity (G)  that pays $F_g>0$ in each period the individual is alive; in addition, if the individual dies between periods 1 and 2, the contract pays a guaranteed amount $F_g$ at $t=2$ as a pure bequest (no consumption).
+The individual has three options. 
 
+The first option is no annuity (N), self-insurance with savings. The second option is an immediate annuity (A) that pays $F>0$ in each period the individual is alive, with no bequest. The third option is a guaranteed annuity (G)  that pays $F_g>0$ in each period the individual is alive; in addition, if the individual dies before $T$ the annuity continues paying to the beneficiaries. 
 
-\paragraph{1. No annuity: consumption--savings problem and value.}
+The corresponding values of the options are: $V^{N}(x,\theta,\beta_i,W)$ for no annuity, $V^{A}(x,\theta; F)$ for immediate annuity, and $V^{G}(x,\theta,\beta_i; F_g)$ for guaranteed annuity. For a microfoundation of these value functions see appendix \ref{sec:appendix_valuefunctions}. 
 
-If the individual does not buy an annuity, she chooses a consumption--savings plan:
-\[
-    c_1, c_2, c_3 \ge 0 
-\]
-subject to $c_1 + c_2 + c_3 =  W$  and $c_1, c_2, c_3 \geq 0 $. 
-
-Given beliefs $\hat x = \theta x$, the expected utility from a given plan
-$(c_1,c_2,c_3)$ is
-\begin{align*}
-    U^{N}(c_1,c_2,c_3; x,\theta,\beta_i)
-    &= u(c_1)
-       + (1-\hat x)\, \beta_i ( W- c_1)  + \hat x\Big[
-            u(c_2)
-            + (1-\hat x)\,\beta_i (W- c_1 - c_2)  + \hat x\, u(c_3)
-        \Big].
-\end{align*}
-
-The value of self-insurance is
-\[
-    V^{N}(x,\theta,\beta_i,W)
-    \equiv
-    \max_{\substack{c_1,c_2,c_3\ge 0 \\ c_1+ c_2 + c_3 = W }}
-    U^{N}(c_1,c_2,c_3; x,\theta,\beta_i).
-\]
-Sometimes we also use $s_t$ for savings at the beginning of period $t$, for instance $s_1 = W - c_1$. 
-
-\paragraph{2. Immediate annuity (A).}
-
-If the individual buys the immediate annuity, she uses all wealth $W$ to purchase a contract that pays $F$ in each period she is alive. There is no bequest from the annuity.
-
-Expected utility under the immediate annuity is
-\begin{align*}
-    V^{A}(x,\theta)
-    %&= u(F) + \hat x\, u(F) + \hat x^2\, u(F) \\
-    &= \big(1 + \hat x + \hat x^2\big)\, F^{\alpha}.
-\end{align*}
-
-\paragraph{3. Guaranteed annuity (G).}
-
-If the individual buys the guaranteed annuity, she uses all wealth $W$ to purchase a contract that:
-
-\begin{itemize}
-    \item pays $F_g$ each period she is alive (as with an immediate annuity),
-    \item if she dies between $t=1$ and $t=2$, pays a guaranteed amount $F_g$ at $t=2$ as a bequest (no consumption).
-\end{itemize}
-
-Hence, the expected utility under the guaranteed annuity is
-\begin{align*}
-    V^{G}(x,\theta,\beta_i)
-    &= u(F_g)
-       + \hat x\, u(F_g)
-       + \hat x^2\, u(F_g)
-       + (1-\hat x)\, v(F_g) \\
-    &= \big(1 + \hat x + \hat x^2\big)\, F_g^{\alpha}
-       + (1-\hat x)\,\beta_i F_g.
-\end{align*}
-
-\paragraph{4. Choice among N, A, and G.}
-
-Given $(x,\theta,\beta_i,W)$, the individual chooses the option with highest expected utility:
+Given $(x,\theta,\beta_i,W, F, F_g)$, the individual chooses the option with highest expected utility:
 \[
     \text{Option chosen} 
     = \arg\max\big\{V^{N}(x,\theta,\beta_i,W),\, V^{A}(x,\theta),\, V^{G}(x,\theta,\beta_i)\big\}.
 \]
 
-\paragraph{5. Non-identification}
+\paragraph{Non-identification}
 
 The observed choice is
 \[
@@ -281,7 +219,6 @@ $\beta_1(x,r;\theta)$ and $\beta_2(x,r;\theta)$ sweep over the support of $\beta
 that generates \emph{overlapping evaluations} of $F_\beta$ at common $\beta$ values coming
 from different $(x,r)$ pairs.
 
-\newpage 
 
 \noindent \textbf{Proof of Identification under (C1)}
 
@@ -346,7 +283,70 @@ Assumption (C1) ensures that the domains of $\beta_1$ and $\beta_2$ overlap or c
 
 
 
+\newpage 
 
+Let $(\theta_0, F_\beta^0)$ be the true parameters generating the observed choice probabilities $p_A(x,r)$ and $p_G(x,r)$. Suppose there exists an alternative pair $(\theta_1, F_\beta^1)$ that is observationally equivalent. That is, for all $(x,r) \in \mathcal{X} \times \mathcal{R}$, the following equalities hold:
+
+\begin{equation}
+    F_\beta^1(\beta_1(x,r;\theta_1)) = p_A(x,r) = F_\beta^0(\beta_1(x,r;\theta_0)) \label{eq:obs_A}
+\end{equation}
+\begin{equation}
+    F_\beta^1(\beta_2(x,r;\theta_1)) = p_A(x,r) + p_G(x,r) = F_\beta^0(\beta_2(x,r;\theta_0)) \label{eq:obs_G}
+\end{equation}
+
+\noindent We define the index $j \in \{1,2\}$ to refer to the relevant margin. We can summarize (\ref{eq:obs_A}) and (\ref{eq:obs_G}) as:
+\begin{equation}
+    F_\beta^1(\beta_j(x,r;\theta_1)) = F_\beta^0(\beta_j(x,r;\theta_0)) \quad \text{for } j \in \{1,2\}. \label{eq:obs_equiv}
+\end{equation}
+
+\noindent \textbf{Step 1: Constructing the Mapping $\phi_j$}
+
+Fix an arbitrary survival probability $x \in \mathcal{X}$ and let $b$ be a bequest level in the image of $\beta_j(x, \cdot; \theta_1)$. By Assumption (C1), the function $r \mapsto \beta_j(x,r;\theta_1)$ is continuous and strictly monotone. Therefore, for a fixed $x$, there exists a unique inverse price function, denoted as $r_j^*(b, x; \theta_1)$, such that:
+\begin{equation}
+    \beta_j(x, r_j^*(b, x; \theta_1); \theta_1) = b \label{eq:inverse_r}
+\end{equation}
+Substitute the price $r = r_j^*(b, x; \theta_1)$ into the observational equivalence condition (\ref{eq:obs_equiv}):
+\begin{equation}
+    F_\beta^1(b) = F_\beta^0\left( \beta_j(x, r_j^*(b, x; \theta_1); \theta_0) \right) \label{eq:fundamental_id}
+\end{equation}
+We define the composite mapping $\phi_j(b, x; \theta_0, \theta_1)$ as the cutoff value implied by the true parameter $\theta_0$ at the state $(x, r_j^*)$:
+\begin{equation}
+    \phi_j(b, x; \theta_0, \theta_1) \equiv \beta_j(x, r_j^*(b, x; \theta_1); \theta_0) \label{eq:phi_def}
+\end{equation}
+Using this definition, equation (\ref{eq:fundamental_id}) becomes:
+\begin{equation}
+    F_\beta^1(b) = F_\beta^0(\phi_j(b, x; \theta_0, \theta_1)) \label{eq:F_constraint}
+\end{equation}
+
+\noindent \textbf{Step 2: Contradiction via Variation in $x$}
+
+The left-hand side of (\ref{eq:F_constraint}) depends only on $b$. Consequently, the right-hand side must be invariant to $x$. Since $F_\beta^0$ is strictly increasing, this requires that $\phi_j$ itself must be invariant to $x$:
+\begin{equation}
+    \frac{\partial \phi_j(b, x; \theta_0, \theta_1)}{\partial x} = 0 \quad \text{for all } x. \label{eq:phi_invariant}
+\end{equation}
+
+\noindent \textbf{Formal Argument via Marginal Rates of Substitution:}
+Differentiating the definition of $\phi_j$ in (\ref{eq:phi_def}) with respect to $x$:
+\begin{equation}
+    \frac{\partial \phi_j}{\partial x} = \frac{\partial \beta_j(\theta_0)}{\partial x} + \frac{\partial \beta_j(\theta_0)}{\partial r} \cdot \frac{\partial r_j^*}{\partial x} \label{eq:deriv_phi}
+\end{equation}
+From the definition of the inverse price $r_j^*$ in (\ref{eq:inverse_r}), we apply the Implicit Function Theorem to find $\partial r_j^* / \partial x$:
+\begin{equation}
+    \frac{\partial \beta_j(\theta_1)}{\partial x} + \frac{\partial \beta_j(\theta_1)}{\partial r} \frac{\partial r_j^*}{\partial x} = 0 \implies \frac{\partial r_j^*}{\partial x} = - \frac{\partial \beta_j(\theta_1) / \partial x}{\partial \beta_j(\theta_1) / \partial r} \label{eq:deriv_r}
+\end{equation}
+Substituting (\ref{eq:deriv_r}) into (\ref{eq:deriv_phi}), the condition $\partial \phi_j / \partial x = 0$ is equivalent to:
+\begin{equation}
+    \underbrace{\frac{\partial \beta_j(\theta_0) / \partial x}{\partial \beta_j(\theta_0) / \partial r}}_{\text{MRS}_{\theta_0}} = \underbrace{\frac{\partial \beta_j(\theta_1) / \partial x}{\partial \beta_j(\theta_1) / \partial r}}_{\text{MRS}_{\theta_1}} \label{eq:MRS_equality}
+\end{equation}
+This condition states that the Marginal Rate of Substitution (MRS) between survival probability $x$ and price $r$ must be identical for both belief parameters.
+Recall that $\hat{x} = \theta x$. The function $\beta_1(x, r; \theta)$ (for example) typically takes the form:
+\[ \beta_1 \propto \frac{1 + \theta x + (\theta x)^2}{1 - \theta x} \cdot (F(r)^\alpha - F_g(r)^\alpha) \]
+The MRS depends on the derivative of the belief term with respect to $\theta x$. Due to the non-linear way $\theta$ enters the valuation of the annuity (geometric sum) versus the linear bequest, the function defining the MRS is strictly monotonic in $\theta$. Therefore, equation (\ref{eq:MRS_equality}) holds if and only if $\theta_1 = \theta_0$.
+
+If $\theta_1 \neq \theta_0$, then $\partial \phi_j / \partial x \neq 0$, which implies $F_\beta^1(b)$ would vary with $x$—a contradiction to it being a valid distribution of preferences. Thus, $\theta$ is point identified. \qed
+
+
+\newpage 
 
 
 
@@ -399,7 +399,95 @@ Then, the likelihood function is:
 
 \section{Appendix}
 
-\subsection{Microfoundations for value functions}
+\subsection{Microfoundations for value functions}\label{sec:appendix_valuefunctions}
+
+Time is $t=1,2,3$. Each individual $i$ has initial wealth (savings) $W>0$ at $t=1$.
+
+
+The true survival probability between any two consecutive periods is $x_i \in(0,1)$. Individual beliefs about survival are distorted: the perceived one-period survival probability is
+\[
+    \hat x_i \equiv \theta x_i,
+\]
+with $\theta>0$ and $\hat x_i\in(0,1)$. Period utility from consumption is 
+\[
+    u(c) = c^{\alpha}, \qquad \alpha\in(0,1).
+\]
+The bequest weight $\beta_i$ is heterogeneous with CDF $F_\beta$ on $[0,\infty)$. Bequest utility is linear:
+\[
+    v(B) = \beta_i B, \qquad \beta_i \ge 0.
+\]
+We assume no time discounting.
+
+
+The individual has three options at $t=1$. The first option is no annuity (N), self-insurance with savings. The second option is an immediate annuity (A) that pays $F>0$ in each period the individual is alive, with no bequest. The third option is a guaranteed annuity (G)  that pays $F_g>0$ in each period the individual is alive; in addition, if the individual dies between periods 1 and 2, the contract pays a guaranteed amount $F_g$ at $t=2$ as a pure bequest (no consumption).
+
+
+\paragraph{1. No annuity: consumption--savings problem and value.}
+
+If the individual does not buy an annuity, she chooses a consumption--savings plan:
+\[
+    c_1, c_2, c_3 \ge 0 
+\]
+subject to $c_1 + c_2 + c_3 =  W$  and $c_1, c_2, c_3 \geq 0 $. 
+
+Given beliefs $\hat x = \theta x$, the expected utility from a given plan
+$(c_1,c_2,c_3)$ is
+\begin{align*}
+    U^{N}(c_1,c_2,c_3; x,\theta,\beta_i)
+    &= u(c_1)
+       + (1-\hat x)\, \beta_i ( W- c_1)  + \hat x\Big[
+            u(c_2)
+            + (1-\hat x)\,\beta_i (W- c_1 - c_2)  + \hat x\, u(c_3)
+        \Big].
+\end{align*}
+
+The value of self-insurance is
+\[
+    V^{N}(x,\theta,\beta_i,W)
+    \equiv
+    \max_{\substack{c_1,c_2,c_3\ge 0 \\ c_1+ c_2 + c_3 = W }}
+    U^{N}(c_1,c_2,c_3; x,\theta,\beta_i).
+\]
+Sometimes we also use $s_t$ for savings at the beginning of period $t$, for instance $s_1 = W - c_1$. 
+
+\paragraph{2. Immediate annuity (A).}
+
+If the individual buys the immediate annuity, she uses all wealth $W$ to purchase a contract that pays $F$ in each period she is alive. There is no bequest from the annuity.
+
+Expected utility under the immediate annuity is
+\begin{align*}
+    V^{A}(x,\theta)
+    %&= u(F) + \hat x\, u(F) + \hat x^2\, u(F) \\
+    &= \big(1 + \hat x + \hat x^2\big)\, F^{\alpha}.
+\end{align*}
+
+\paragraph{3. Guaranteed annuity (G).}
+
+If the individual buys the guaranteed annuity, she uses all wealth $W$ to purchase a contract that:
+
+\begin{itemize}
+    \item pays $F_g$ each period she is alive (as with an immediate annuity),
+    \item if she dies between $t=1$ and $t=2$, pays a guaranteed amount $F_g$ at $t=2$ as a bequest (no consumption).
+\end{itemize}
+
+Hence, the expected utility under the guaranteed annuity is
+\begin{align*}
+    V^{G}(x,\theta,\beta_i)
+    &= u(F_g)
+       + \hat x\, u(F_g)
+       + \hat x^2\, u(F_g)
+       + (1-\hat x)\, v(F_g) \\
+    &= \big(1 + \hat x + \hat x^2\big)\, F_g^{\alpha}
+       + (1-\hat x)\,\beta_i F_g.
+\end{align*}
+
+\paragraph{4. Choice among N, A, and G.}
+
+Given $(x,\theta,\beta_i,W)$, the individual chooses the option with highest expected utility:
+\[
+    \text{Option chosen} 
+    = \arg\max\big\{V^{N}(x,\theta,\beta_i,W),\, V^{A}(x,\theta),\, V^{G}(x,\theta,\beta_i)\big\}.
+\]
 
 
 

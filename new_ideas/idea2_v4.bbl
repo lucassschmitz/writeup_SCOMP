@@ -1,0 +1,355 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global}
+    \entry{crawford_asymmetric_2018}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d7deb170de48da4aacdd5bde828e25ab}{%
+           family={Crawford},
+           familyi={C\bibinitperiod},
+           given={Gregory\bibnamedelima S.},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=57f5b1d48dafa9b94c464888fec2f489}{%
+           family={Pavanini},
+           familyi={P\bibinitperiod},
+           given={Nicola},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3eeac8fd61d31f533f9ab9525347b991}{%
+           family={Schivardi},
+           familyi={S\bibinitperiod},
+           given={Fabiano},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{3828d4b8cd2f1190e6643827ac9669d4}
+      \strng{fullhash}{b39d3c67d431d1c404109627a5bdfe11}
+      \strng{bibnamehash}{b39d3c67d431d1c404109627a5bdfe11}
+      \strng{authorbibnamehash}{b39d3c67d431d1c404109627a5bdfe11}
+      \strng{authornamehash}{3828d4b8cd2f1190e6643827ac9669d4}
+      \strng{authorfullhash}{b39d3c67d431d1c404109627a5bdfe11}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We study the effects of asymmetric information and imperfect competition in the market for small business lines of credit. We estimate a structural model of credit demand, loan use, pricing, and firm default using matched firm-bank data from Italy. We find evidence of adverse selection in the form of a positive correlation between the unobserved determinants of demand for credit and default. Our counterfactual experiments show that while increases in adverse selection increase prices and defaults on average, reducing credit supply, banks’ market power can mitigate these negative effects. (JEL D22, D82, G21, G32, L13, L25)}
+      \field{issn}{0002-8282}
+      \field{journaltitle}{American Economic Review}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{Asymmetric {Information} and {Imperfect} {Competition} in {Lending} {Markets}}
+      \field{urlday}{6}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{108}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{1659\bibrangedash 1701}
+      \range{pages}{43}
+      \verb{doi}
+      \verb 10.1257/aer.20150487
+      \endverb
+      \verb{urlraw}
+      \verb https://pubs.aeaweb.org/doi/10.1257/aer.20150487
+      \endverb
+      \verb{url}
+      \verb https://pubs.aeaweb.org/doi/10.1257/aer.20150487
+      \endverb
+    \endentry
+    \entry{handel_adverse_2013}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c9ba2c1df7abf5014981a8354a23b3d4}{%
+           family={Handel},
+           familyi={H\bibinitperiod},
+           given={Benjamin\bibnamedelima R},
+           giveni={B\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \strng{fullhash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \strng{bibnamehash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \strng{authorbibnamehash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \strng{authornamehash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \strng{authorfullhash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This paper investigates consumer inertia in health insurance markets, where adverse selection is a potential concern. We leverage a major change to insurance provision that occurred at a large firm to identify substantial inertia, and develop and estimate a choice model that also quantifies risk preferences and ex ante health risk. We use these estimates to study the impact of policies that nudge consumers toward better decisions by reducing inertia. When aggregated, these improved individual-level choices substantially exacerbate adverse selection in our setting, leading to an overall reduction in welfare that doubles the existing welfare loss from adverse selection. (JEL D82, G22, I13)}
+      \field{issn}{0002-8282}
+      \field{journaltitle}{American Economic Review}
+      \field{month}{12}
+      \field{note}{Publisher: American Economic Association}
+      \field{number}{7}
+      \field{shorttitle}{Adverse {Selection} and {Inertia} in {Health} {Insurance} {Markets}}
+      \field{title}{Adverse {Selection} and {Inertia} in {Health} {Insurance} {Markets}: {When} {Nudging} {Hurts}}
+      \field{urlday}{25}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{103}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \field{pages}{2643\bibrangedash 2682}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1257/aer.103.7.2643
+      \endverb
+      \verb{urlraw}
+      \verb https://pubs.aeaweb.org/doi/10.1257/aer.103.7.2643
+      \endverb
+      \verb{url}
+      \verb https://pubs.aeaweb.org/doi/10.1257/aer.103.7.2643
+      \endverb
+    \endentry
+    \entry{odea_survival_2023}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=197024bad8d0a4f5fe640378cdbcb56f}{%
+           family={O'Dea},
+           familyi={O\bibinitperiod},
+           given={Cormac},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3bc62fcdfd0767c9da20a9ce2a9c9629}{%
+           family={Sturrock},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1f969a6be1947982bb081754acceb933}
+      \strng{fullhash}{1f969a6be1947982bb081754acceb933}
+      \strng{bibnamehash}{1f969a6be1947982bb081754acceb933}
+      \strng{authorbibnamehash}{1f969a6be1947982bb081754acceb933}
+      \strng{authornamehash}{1f969a6be1947982bb081754acceb933}
+      \strng{authorfullhash}{1f969a6be1947982bb081754acceb933}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The “annuity puzzle” refers to the fact that annuities are rarely purchased despite the longevity insurance they provide. Most explanations for this puzzle assume that individuals have accurate expectations about their future survival. We provide evidence that individuals misperceive their mortality risk and study the demand for annuities in a setting where annuities are priced by insurers on the basis of objectively-measured survival probabilities but in which individuals make purchasing decisions based on their own subjective survival probabilities. Subjective expectations have the capacity to explain significant rates of nonannuitization, yielding a quantitatively important explanation for the annuity puzzle.}
+      \field{issn}{0034-6535}
+      \field{journaltitle}{The Review of Economics and Statistics}
+      \field{month}{3}
+      \field{number}{2}
+      \field{title}{Survival {Pessimism} and the {Demand} for {Annuities}}
+      \field{urlday}{29}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{105}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{442\bibrangedash 457}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1162/rest_a_01048
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1162/rest_a_01048
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1162/rest_a_01048
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global}
+    \entry{crawford_asymmetric_2018}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d7deb170de48da4aacdd5bde828e25ab}{%
+           family={Crawford},
+           familyi={C\bibinitperiod},
+           given={Gregory\bibnamedelima S.},
+           giveni={G\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=57f5b1d48dafa9b94c464888fec2f489}{%
+           family={Pavanini},
+           familyi={P\bibinitperiod},
+           given={Nicola},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3eeac8fd61d31f533f9ab9525347b991}{%
+           family={Schivardi},
+           familyi={S\bibinitperiod},
+           given={Fabiano},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{3828d4b8cd2f1190e6643827ac9669d4}
+      \strng{fullhash}{b39d3c67d431d1c404109627a5bdfe11}
+      \strng{bibnamehash}{b39d3c67d431d1c404109627a5bdfe11}
+      \strng{authorbibnamehash}{b39d3c67d431d1c404109627a5bdfe11}
+      \strng{authornamehash}{3828d4b8cd2f1190e6643827ac9669d4}
+      \strng{authorfullhash}{b39d3c67d431d1c404109627a5bdfe11}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We study the effects of asymmetric information and imperfect competition in the market for small business lines of credit. We estimate a structural model of credit demand, loan use, pricing, and firm default using matched firm-bank data from Italy. We find evidence of adverse selection in the form of a positive correlation between the unobserved determinants of demand for credit and default. Our counterfactual experiments show that while increases in adverse selection increase prices and defaults on average, reducing credit supply, banks’ market power can mitigate these negative effects. (JEL D22, D82, G21, G32, L13, L25)}
+      \field{issn}{0002-8282}
+      \field{journaltitle}{American Economic Review}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{Asymmetric {Information} and {Imperfect} {Competition} in {Lending} {Markets}}
+      \field{urlday}{6}
+      \field{urlmonth}{8}
+      \field{urlyear}{2025}
+      \field{volume}{108}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{1659\bibrangedash 1701}
+      \range{pages}{43}
+      \verb{doi}
+      \verb 10.1257/aer.20150487
+      \endverb
+      \verb{urlraw}
+      \verb https://pubs.aeaweb.org/doi/10.1257/aer.20150487
+      \endverb
+      \verb{url}
+      \verb https://pubs.aeaweb.org/doi/10.1257/aer.20150487
+      \endverb
+    \endentry
+    \entry{handel_adverse_2013}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c9ba2c1df7abf5014981a8354a23b3d4}{%
+           family={Handel},
+           familyi={H\bibinitperiod},
+           given={Benjamin\bibnamedelima R},
+           giveni={B\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \strng{fullhash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \strng{bibnamehash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \strng{authorbibnamehash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \strng{authornamehash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \strng{authorfullhash}{c9ba2c1df7abf5014981a8354a23b3d4}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{This paper investigates consumer inertia in health insurance markets, where adverse selection is a potential concern. We leverage a major change to insurance provision that occurred at a large firm to identify substantial inertia, and develop and estimate a choice model that also quantifies risk preferences and ex ante health risk. We use these estimates to study the impact of policies that nudge consumers toward better decisions by reducing inertia. When aggregated, these improved individual-level choices substantially exacerbate adverse selection in our setting, leading to an overall reduction in welfare that doubles the existing welfare loss from adverse selection. (JEL D82, G22, I13)}
+      \field{issn}{0002-8282}
+      \field{journaltitle}{American Economic Review}
+      \field{month}{12}
+      \field{note}{Publisher: American Economic Association}
+      \field{number}{7}
+      \field{shorttitle}{Adverse {Selection} and {Inertia} in {Health} {Insurance} {Markets}}
+      \field{title}{Adverse {Selection} and {Inertia} in {Health} {Insurance} {Markets}: {When} {Nudging} {Hurts}}
+      \field{urlday}{25}
+      \field{urlmonth}{7}
+      \field{urlyear}{2025}
+      \field{volume}{103}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \field{pages}{2643\bibrangedash 2682}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1257/aer.103.7.2643
+      \endverb
+      \verb{urlraw}
+      \verb https://pubs.aeaweb.org/doi/10.1257/aer.103.7.2643
+      \endverb
+      \verb{url}
+      \verb https://pubs.aeaweb.org/doi/10.1257/aer.103.7.2643
+      \endverb
+    \endentry
+    \entry{odea_survival_2023}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=197024bad8d0a4f5fe640378cdbcb56f}{%
+           family={O'Dea},
+           familyi={O\bibinitperiod},
+           given={Cormac},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3bc62fcdfd0767c9da20a9ce2a9c9629}{%
+           family={Sturrock},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{1f969a6be1947982bb081754acceb933}
+      \strng{fullhash}{1f969a6be1947982bb081754acceb933}
+      \strng{bibnamehash}{1f969a6be1947982bb081754acceb933}
+      \strng{authorbibnamehash}{1f969a6be1947982bb081754acceb933}
+      \strng{authornamehash}{1f969a6be1947982bb081754acceb933}
+      \strng{authorfullhash}{1f969a6be1947982bb081754acceb933}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The “annuity puzzle” refers to the fact that annuities are rarely purchased despite the longevity insurance they provide. Most explanations for this puzzle assume that individuals have accurate expectations about their future survival. We provide evidence that individuals misperceive their mortality risk and study the demand for annuities in a setting where annuities are priced by insurers on the basis of objectively-measured survival probabilities but in which individuals make purchasing decisions based on their own subjective survival probabilities. Subjective expectations have the capacity to explain significant rates of nonannuitization, yielding a quantitatively important explanation for the annuity puzzle.}
+      \field{issn}{0034-6535}
+      \field{journaltitle}{The Review of Economics and Statistics}
+      \field{month}{3}
+      \field{number}{2}
+      \field{title}{Survival {Pessimism} and the {Demand} for {Annuities}}
+      \field{urlday}{29}
+      \field{urlmonth}{11}
+      \field{urlyear}{2025}
+      \field{volume}{105}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{442\bibrangedash 457}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1162/rest_a_01048
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1162/rest_a_01048
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1162/rest_a_01048
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

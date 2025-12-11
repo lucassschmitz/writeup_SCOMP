@@ -314,6 +314,7 @@ which is not generally true.  Therefore, equation (\ref{eq:MRS_equality}) holds 
 \newpage 
 
 
+
 The core identification problem is distinguishing whether individuals are buying annuities because they have low bequest motives (low $\beta$) or because they are optimistic about their survival (high belief $\hat{x} = \theta x$). In a static setting with fixed prices, these two forces are indistinguishable: a high-bequest pessimist might make the same choice as a low-bequest optimist. We break this observational equivalence by exploiting exogenous variation in annuity prices (driven by interest rates, $r$). The key insight is that beliefs ($\theta x$) and bequest motives ($\beta$) interact differently with price changes.Specifically, the "exchange rate" between annuity income and bequest value depends non-linearly on beliefs. When interest rates rise, annuity payouts increase. A rational agent ($\theta=1$) and a biased agent ($\theta \neq 1$) will re-evaluate the trade-off between the immediate annuity and the guaranteed annuity differently because their perceived "effective price" of the guarantee depends on their survival scaling $\theta$. By observing how the demand for each product shifts across different price levels for the same underlying survival type $x$, we can trace out a "marginal rate of substitution" curve. The shape of this curve is unique to the specific belief parameter $\theta$. 
 
  
@@ -329,20 +330,186 @@ The core identification problem is distinguishing whether individuals are buying
     \item \textcite{odea_survival_2023} studies the same but is not really the interaction between private info and beliefs, rather that people are pessimistic, but do not study the interaction of beliefs with private information.
 \end{itemize}
 
-\section{Estimation}
 
-For estimation we can use maximum likelihood. 
+\section{Parametric estimation}
 
-The likelihood contribution of individual $i$ is: 
+
+We estimate the model parameters $\psi = (\theta, \mu_\beta, \sigma_\beta)$ using the method of Maximum Simulated Likelihood (MSL). The estimation procedure recovers the belief distortion parameter $\theta$ and the distribution of bequest motives $F_\beta$ (parameterized by mean $\mu_\beta$ and standard deviation $\sigma_\beta$) by matching the model-predicted choice probabilities to the observed decisions of individuals.
+
+\subsection{Likelihood Function}
+
+Let $D_i \in \{N, A, G\}$ denote the observed choice of individual $i$, where $N$ represents No Annuity, $A$ represents Immediate Annuity, and $G$ represents Guaranteed Annuity. The observables for each individual are the survival probability $x_i$, the price shifter $r_i$, initial wealth $W$, and the annuity payouts $(F(r_i), F_g(r_i))$.
+
+The individual's choice depends on their unobserved bequest motive $\beta_i$. We assume $\beta_i$ is drawn from a normal distribution with mean $\mu_\beta$ and standard deviation $\sigma_\beta$:
+\begin{equation}
+    \beta_i \sim \mathcal{N}(\mu_\beta, \sigma_\beta^2).
+\end{equation}
+Conditional on a specific value of $\beta_i$ and the parameters $\theta$, the choice probability is deterministic in this structural model. Let $d_i(\beta_i, \theta)$ be the optimal choice function derived from comparing the value functions:
+\begin{equation}
+    d_i(\beta_i, \theta) = \arg\max_{k \in \{N, A, G\}} \left\{ V^N(x_i, \theta, \beta_i, W), V^A(x_i, \theta; F_i), V^G(x_i, \theta, \beta_i; F_{g,i}) \right\}.
+\end{equation}
+The unconditional probability of observing choice $k$ for individual $i$ is the integral of the conditional choice indicator over the distribution of unobserved heterogeneity $\beta_i$:
+\begin{equation}
+    P(D_i = k | x_i, r_i; \psi) = \int \mathbb{I}(d_i(\beta, \theta) = k) \, f(\beta; \mu_\beta, \sigma_\beta) \, d\beta,
+\end{equation}
+where $\mathbb{I}(\cdot)$ is the indicator function and $f(\cdot)$ is the PDF of the normal distribution.
+
+The log-likelihood function for the sample of $N$ individuals is:
+\begin{equation}
+    \mathcal{L}(\psi) = \sum_{i=1}^N \ln P(D_i | x_i, r_i; \psi).
+\end{equation}
+
+\subsection{Maximum Simulated Likelihood (MSL)}
+
+Since the integral in equation (3) does not have a closed-form solution, we approximate it using Monte Carlo simulation. For each individual $i$, we draw $S$ independent values from a standard normal distribution, denoted as $z_{i,s} \sim \mathcal{N}(0,1)$ for $s = 1, \dots, S$. These draws are fixed throughout the optimization to ensure the objective function is smooth (chattering control).
+
+For a given guess of parameters $(\mu_\beta, \sigma_\beta)$, the simulated bequest motives are:
+\begin{equation}
+    \beta_{i,s} = \max(0, \mu_\beta + \sigma_\beta z_{i,s}).
+\end{equation}
+Note that the code enforces $\beta \ge 0$ for the economic logic of the model.
+
+The simulated probability of the observed choice $D_i$ is the frequency of that choice across the $S$ simulations:
+\begin{equation}
+    \hat{P}_{i}(\psi) = \frac{1}{S} \sum_{s=1}^S \mathbb{I}(d_i(\beta_{i,s}, \theta) = D_i).
+\end{equation}
+To avoid numerical issues with $\ln(0)$, a small smoothing constant $\epsilon = 10^{-6}$ is added to the probability. The simulated log-likelihood is:
+\begin{equation}
+    \hat{\mathcal{L}}_{MSL}(\psi) = \sum_{i=1}^N \ln \left( \hat{P}_{i}(\psi) + \epsilon \right).
+\end{equation}
+The estimator $\hat{\psi}$ is the vector that maximizes $\hat{\mathcal{L}}_{MSL}(\psi)$:
+\begin{equation}
+    \hat{\psi} = \arg\max_{\psi} \sum_{i=1}^N \ln \left( \frac{1}{S} \sum_{s=1}^S \mathbb{I}(d_i(\beta_{i,s}, \theta) = D_i) \right).
+\end{equation}
+
+\subsection{Optimization}
+
+The maximization is performed using a constrained optimization algorithm (Sequential Quadratic Programming, SQP). The algorithm searches for $\theta, \mu_\beta,$ and $\ln(\sigma_\beta)$ to satisfy the constraints $\theta > 0$ and $\sigma_\beta > 0$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage 
+\section{Estimation version}
+
+We employ a Maximum Likelihood Estimation (MLE) approach to recover the belief parameter $\theta$ and the distribution of bequest motives $F_\beta$ non-parametrically from the dataset $(x_i, D_i, F_i, F_{gi})_{i=1}^N$.
+
+\subsection{Parameterization}
+
+To estimate $F_\beta$ non-parametrically, we approximate the continuous cumulative distribution function (CDF) using a discrete grid. We discretize the support of $\beta$ into $M$ ordered points (or bins). Let $\mathcal{P}_n$ denote the set of parameters at iteration $n$:
+\[
+    \mathcal{P}_n = (\theta_n, \mathbf{c}_n)
+\]
+
+
+
+
+
+where $\theta_n$ is the belief distortion parameter and $\mathbf{c}_n = \{c_{1,n}, \dots, c_{M,n}\}$ represents the discretized CDF of $\beta$. Specifically, we define a fixed grid of probabilities (quantiles) $q_m = m/M$ for $m=1, \dots, M$, and we estimate the corresponding quantile values $c_{m,n} = F_\beta^{-1}(q_m)$. Thus, $c_{m,n}$ represents the value of the bequest motive such that $Pr(\beta \le c_{m,n}) = m/M$. To ensure a valid CDF, we enforce the monotonicity constraint $c_{1,n} \le c_{2,n} \le \dots \le c_{M,n}$.
+
+\subsection{Choice Probabilities}
+
+Given the parameter guess $\mathcal{P}_n$, we first compute the model-implied thresholds for each individual $i$. These thresholds, denoted by $\beta_j(x_i, \theta_n, F_i, F_{gi})$, determine the indifference points between options:
+\begin{itemize}
+    \item $\beta_1(x_i, \theta_n, \dots)$: Indifference between Immediate Annuity (A) and Guaranteed Annuity (G).
+    \item $\beta_2(x_i, \theta_n, \dots)$: Indifference between Guaranteed Annuity (G) and No Annuity (N).
+\end{itemize}
+
+Given the thresholds, we can compute the choice probabilities by summing the probability mass that falls into the relevant regions defined by the cutoffs. Under our grid approximation, the probability mass assigned to the interval $(c_{m-1,n}, c_{m,n}]$ is simply $1/M$ (assuming uniform spacing of quantiles). The choice probabilities are:
+
 \begin{align}
-    \mathcal{L}_i(\theta,F_\beta)
-    &= p_A(x_i;\theta,F_\beta)^{\mathds{1}(D_i = A)} \cdot  p_G(x_i;\theta,F_\beta)^{\mathds{1}(D_i = G)} \cdot p_N(x_i;\theta,F_\beta)^{\mathds{1}(D_i = N)}. \notag
+    p_A(x_i, F_i, F_{gi}; \mathcal{P}_n) &= \sum_{m=1}^M \left( \frac{1}{M} \right) \cdot \mathds{1}\Big( c_{m,n} \le \beta_1(x_i, \theta_n, F_i, F_{gi}) \Big) \\
+    p_G(x_i, F_i, F_{gi}; \mathcal{P}_n) &= \sum_{m=1}^M \left( \frac{1}{M} \right) \cdot \mathds{1}\Big( \beta_1(x_i, \theta_n, F_i, F_{gi}) < c_{m,n} \le \beta_2(x_i, \theta_n, F_i, F_{gi}) \Big) \\
+    p_N(x_i, F_i, F_{gi}; \mathcal{P}_n) &= 1 - p_A(\cdot) - p_G(\cdot)
 \end{align}
-Then, the likelihood function is: 
-\begin{align}
-    \mathcal{L}(\theta,F_\beta)
-    &= \prod_{i=1}^N \mathcal{L}_i(\theta,F_\beta).
-\end{align}
+
+\subsection{Likelihood Function}
+
+Once we have the individual choice probabilities, we can construct the individual likelihood contributions. The likelihood contribution of individual $i$ is the probability that the model assigns to the choice actually observed in the data ($D_i$):
+\begin{equation}
+    \mathcal{L}_i(\theta, \mathbf{c}) = 
+    p_A(x_i, F_i, F_{gi}; \mathcal{P}_n)^{\mathds{1}(D_i = A)} \cdot 
+    p_G(x_i, F_i, F_{gi}; \mathcal{P}_n)^{\mathds{1}(D_i = G)} \cdot 
+    p_N(x_i, F_i, F_{gi}; \mathcal{P}_n)^{\mathds{1}(D_i = N)}.
+\end{equation}
+
+The aggregate log-likelihood function to be maximized is the sum of the individual log-likelihoods:
+\begin{equation}
+    \ln \mathcal{L}(\theta, \mathbf{c}) = \sum_{i=1}^N \ln \mathcal{L}_i(\theta, \mathbf{c}).
+\end{equation}
+
+The estimation problem is to find:
+\[
+    (\hat{\theta}, \hat{\mathbf{c}}) = \arg \max_{\theta, \mathbf{c}} \sum_{i=1}^N \ln \mathcal{L}_i(\theta, \mathbf{c})
+\]
+subject to the constraints $\theta > 0$ and $0 \le c_1 \le c_2 \le \dots \le c_M$.
+
+\newpage 
+
+\section{Parametric Estimation Algorithm}
+
+In this section, we detail the parametric estimation procedure. Unlike the non-parametric approach where we estimate the CDF $F_\beta$ at discrete grid points, here we assume $F_\beta$ follows a known parametric distribution (e.g., a truncated normal distribution) governed by a parameter vector $\gamma$. Our goal is to estimate the structural parameters $\psi = (\theta, \gamma)$ from the dataset $(x_i, D_i, F_i, F_{gi})_{i=1}^N$.
+
+For concreteness, let us assume $\beta_i \sim \mathcal{N}(\mu_\beta, \sigma_\beta^2)$ censored at zero (since $\beta_i \ge 0$). Thus, $\gamma = (\mu_\beta, \sigma_\beta)$.
+
+\subsection{Algorithm}
+
+The estimation proceeds via Maximum Simulated Likelihood (MSL).
+
+\paragraph{Step 1: Initialization}
+Choose initial values for the parameters $\psi_0 = (\theta_0, \mu_{\beta,0}, \sigma_{\beta,0})$.
+
+\paragraph{Step 2: Simulation Draws (Fixed)}
+To approximate the integral over the unobserved bequest motives, we draw a set of fixed random shocks for each individual.
+\begin{itemize}
+    \item For each individual $i = 1, \dots, N$, draw $S$ independent values $z_{i,s}$ from a standard normal distribution $\mathcal{N}(0, 1)$.
+    \item These draws $\{z_{i,s}\}_{i,s}$ are held constant throughout the optimization process to ensuring the objective function is smooth with respect to the parameters.
+\end{itemize}
+
+\paragraph{Step 3: Likelihood Evaluation}
+For any candidate parameter vector $\psi = (\theta, \mu_\beta, \sigma_\beta)$ during the optimization, we compute the simulated log-likelihood as follows:
+
+\begin{enumerate}
+    \item \textbf{Construct Simulated Heterogeneity:} For each individual $i$ and simulation $s$, construct the bequest motive:
+    \[
+        \beta_{i,s}(\psi) = \max(0, \mu_\beta + \sigma_\beta z_{i,s})
+    \]
+    
+    \item \textbf{Solve for Optimal Decisions:} For each $(i, s)$, compute the value functions given the current belief parameter $\theta$:
+    \begin{align*}
+        v_{i,s}^N &= V^N(x_i, \theta, \beta_{i,s}(\psi), W) \\
+        v_{i,s}^A &= V^A(x_i, \theta; F_i) \\
+        v_{i,s}^G &= V^G(x_i, \theta, \beta_{i,s}(\psi); F_{gi})
+    \end{align*}
+    Determine the optimal choice $d_{i,s}^* = \arg \max_{k \in \{N, A, G\}} \{v_{i,s}^k\}$.
+    
+    \item \textbf{Compute Choice Probabilities:} Calculate the simulated probability of the observed choice $D_i$ for individual $i$:
+    \[
+        \hat{P}_i(D_i | x_i, \dots; \psi) = \frac{1}{S} \sum_{s=1}^S \mathds{1}(d_{i,s}^* = D_i)
+    \]
+    \textit{Note: In practice, we smooth this indicator function (e.g., using a logistic kernel) or simply add a small $\epsilon > 0$ to avoid taking the log of zero.}
+
+    \item \textbf{Aggregate Log-Likelihood:} Sum the individual contributions:
+    \[
+        \ln \hat{\mathcal{L}}(\psi) = \sum_{i=1}^N \ln \hat{P}_i(D_i | x_i, \dots; \psi)
+    \]
+\end{enumerate}
+
+\paragraph{Step 4: Maximization}
+Find the estimator $\hat{\psi}$ by maximizing the simulated log-likelihood:
+\[
+    \hat{\psi} = \arg \max_{\psi} \ln \hat{\mathcal{L}}(\psi)
+\]
+subject to the constraints $\theta > 0$ and $\sigma_\beta > 0$. Standard errors are computed using the inverse Hessian of the likelihood function at the optimum.
 
 
 

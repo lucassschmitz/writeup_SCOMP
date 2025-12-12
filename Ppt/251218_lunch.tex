@@ -4,7 +4,6 @@
 \documentclass[10pt,aspectratio=169]{beamer}
 
 
-% Add this line to your preamble
 %\setbeameroption{show notes on second screen=right}
 
 %\usetheme{Singapore} %Boadilla, Madrid, default, etc. 
@@ -96,9 +95,10 @@ Diego Cussen
 
 \begin{frame}{Motivation}\label{slide:motivation}
 \begin{itemize}
-    \item  In several markets consumers receive initial offers, then they can request revised offers. Examples: 
+    \item  In several markets consumers receive initial offers, then they can request revised offers. Example: 
     \begin{itemize}
-        \item Loans: consumers get a loan estimate (LE) and showing a LE to another lender could lead to a revised offer. \hyperlink{slide:fig_LE}{\beamerbutton{Loan Estimate}} %[\href{https://chatgpt.com/share/68eaf593-1518-800d-b874-1fba1adbe177}{1}]
+        \item Loans: consumers get a loan estimate (LE) and showing a LE to another lender could lead to a revised offer 
+        \item Website advice: "you can often use competing offers as leverage to negotiate"
     \end{itemize}
 
     \item Features: 
@@ -112,10 +112,7 @@ Diego Cussen
     \begin{itemize}
         \item Allows for screening of consumers by firms 
         \item Decreases information rents 
-    \end{itemize}
-
-    \note{Mention that only firms who made an initial offer can revise their offers. }
-    
+    \end{itemize}    
 \end{itemize}
 \end{frame}
 
@@ -125,7 +122,10 @@ Diego Cussen
 \begin{itemize}
     \item Studies the equilibrium impacts of revised offers 
     
-    \item We use data from a centralized marketplace for annuities in Chile (SCOMP)
+    \item Data from a centralized marketplace for annuities in Chile (SCOMP)
+    \begin{itemize} 
+        \item Contains initial and revised offers
+    \end{itemize}
     \item Policy shock: elimination of the possibility of requesting revised offers.
     \begin{itemize}
         \item Before: consumers receive initial offers, then can request revised offers from one firm.
@@ -141,18 +141,29 @@ Diego Cussen
 \begin{frame}{Literature}
 \begin{itemize}
     \item Search in selection markets: \textcite{allen_search_2019} %larsen_efficiency_2021
+    
+    \begin{itemize}
+        \item Incorporate asymmetric information across firms about consumer risk 
+    \end{itemize}
 
-    \item Competition in selection markets: \textcite{mahoney_imperfect_2017, crawford_asymmetric_2018,
-    cuesta_price_2018, cosconati_competing_2025} 
+    \item Competition in selection markets:
+    \textbf{\textcite{cosconati_competing_2025}}, 
+    \textcite{mahoney_imperfect_2017, crawford_asymmetric_2018, cuesta_price_2018} 
 
-    \item Centralized marketplaces in selection markets : \textcite{abaluck_when_2023,tebaldi_estimating_2025} 
+    \begin{itemize} 
+        \item Incorporate a second stage where firms observe intiial offfers of competitors and update their own offers
+    \end{itemize}
+        
+    \item Market design in  selection markets : \textbf{\textcite{aryal_auctioning_2021}}, \textcite{abaluck_when_2023,tebaldi_estimating_2025} 
    
-    \item SCOMP specific: \textcite{boehm_intermediation_2024, illanes_retirement_2019, alcalde_intermediary_2021,aryal_auctioning_2021}
-    
-    
-    \item Selection in multiple dimensions: \textcite{finkelstein_adverse_2004} and Finkelstein and McGarry (2006).  
+    \begin{itemize}
+        \item Study the effect of a particular feature of a market
+    \end{itemize}
 
-    \item Aftermarkets: \textcite{allen_search_2019} %larsen_efficiency_2021   
+%    \item SCOMP specific: \textcite{boehm_intermediation_2024, illanes_retirement_2019, alcalde_intermediary_2021,aryal_auctioning_2021}    
+    
+%    \item Selection in multiple dimensions: \textcite{finkelstein_adverse_2004} and Finkelstein and McGarry (2006).  
+
 \end{itemize}
 \textcolor{red}{add the contributions to the literatures here.}
 
@@ -366,15 +377,15 @@ Explain that:
 
 \begin{frame}{Asymmetric-Information Search Model}
 \begin{itemize}
-    \item Buyer wants to annuitize $W$ unit of savings. 
-    \item $J$ firms compete in a centralized marketplace.
+    \item Buyer wants to annuitize $W$ unit of savings
+    \item $J$ firms compete in a centralized marketplace
     \item Buyer has private type (mortality risk) $\theta$; prior density $f_0(\theta)$.
     \item Each firm $j$ observes a noisy signal $\hat \theta_j \sim \mathcal{N}(\theta, \sigma_j^2)$ with pdf $\phi(\hat \theta_j; \theta, \sigma_j)$ before posting its initial offer $F_j^{1}$.
-    \item Buyers draw search cost $s$ from a joint distribution $F(s,\theta)$    \item Timeline:
+    \item Buyers draw search cost $s$ from a joint distribution $H(s,\theta)$    \item Timeline:
     \begin{enumerate}
-        \item Firms post initial offers using private signals.
-        \item Buyer either accepts (no search) or pays $s_i$ to request revised offers (search).
-        \item Upon search, all firms observe the full vector $\hat \theta$ through posted prices and can revise their offers.
+        \item Firms post initial offers using private signals
+        \item Buyer either accepts (no search) or pays $s_i$ to request revised offers (search)
+        \item Upon search, all firms observe the full vector $\hat \theta$ through posted prices and can revise their offers
     \end{enumerate}
 \end{itemize}
 \end{frame}
@@ -399,7 +410,7 @@ Explain that:
     \end{align*}
      \item Search probability:
     \begin{align*}
-        \pi_1(\theta, \hat \theta) &= F_{s\mid \theta}\big(G(\theta, \hat \theta)\big).
+        \lambda(\theta, \hat \theta) &= H_{s\mid \theta}\big(G(\theta, \hat \theta)\big).
     \end{align*}
 \end{itemize}
 \hyperlink{slide:fig2}{\beamerbutton{Differentiated product}}
@@ -443,14 +454,14 @@ E(\theta \mid \hat \theta, D=j, t=2) &= \frac{\int \theta \,
 \begin{frame}{Signals, Beliefs, and Pricing}
 \begin{itemize}
     \item Following \textcite{cosconati_competing_2025}, equilibrium pricing is linear in posterior mean risk.
-    \item Firms allow for different markups in the posted and revised-offer stages to capture learning.
+    \item Firms allow for different markups in the posted and revised-offer stages to capture learning
 \end{itemize}
 \begin{align*}
     F_j^{1}(\hat \theta_j) &= \alpha_j^{1} + \beta_j^{1} \, E[\theta \mid \hat \theta_j, D=j, t=1], \\
-    F_j^{2}(\hat \theta) &= \alpha_j^{2} + \beta_j^{2} \, E[\theta \mid (\hat \theta_j, \hat \theta_{-j}), D=j,t=2].
+    F_j^{2}(\hat \theta) &= \max \{\alpha_j^{2} + \beta_j^{2} \, E[\theta \mid (\hat \theta_j, \hat \theta_{-j}), D=j,t=2], F_j^{1}(\hat \theta_j)\}
 \end{align*}
 \begin{itemize}
-    \item Stage-2 pricing uses the pooled signal vector revealed through initial offers, removing informational asymmetries among firms for searchers.
+    \item Stage-2 pricing uses the pooled signal vector revealed through initial offers, removing informational asymmetries among firms for searchers
 \end{itemize}
 \end{frame}
 
@@ -459,13 +470,13 @@ E(\theta \mid \hat \theta, D=j, t=2) &= \frac{\int \theta \,
 \begin{frame}{Profits and Equilibrium}
 \small
 \begin{align*}
-    \pi_j &= \int_{\theta} \int_{\hat \theta} (W - F_j^{1}(\hat \theta_j)  k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, t=1) (1-\pi_1(\theta, \hat \theta)) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta \\
-    &\quad + \int_{\theta} \int_{\hat \theta} (W - F_j^{2}(\hat \theta) k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, t=2) \pi_1(\theta, \hat \theta) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta.
+    \pi_j &= \int_{\theta} \int_{\hat \theta} (W - F_j^{1}(\hat \theta_j)  k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, t=1) (1-\lambda(\theta, \hat \theta)) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta \\
+    &\quad + \int_{\theta} \int_{\hat \theta} (W - F_j^{2}(\hat \theta) k_j \theta) \, \Pr(D=j \mid \theta, \hat \theta, t=2) \lambda(\theta, \hat \theta) \, \phi(\hat \theta; \theta) f_0(\theta) d\hat \theta d\theta.
 \end{align*}
 \normalsize
 \begin{itemize}
     \item Firms choose $(\alpha_j^{1}, \beta_j^{1}, \alpha_j^{2}, \beta_j^{2})$ anticipating both selection (risk composition) and search (information revelation).
-    \item Equilibrium trades off the profit erosion from better information in the second stage with the option value of serving non-searchers at higher markups.
+    \item Equilibrium trades off the profit erosion from better information in the second stage with the option value of serving non-searchers at higher markups
 \end{itemize}
 \end{frame}
 
@@ -484,7 +495,7 @@ E(\theta \mid \hat \theta, D=j, t=2) &= \frac{\int \theta \,
 \begin{frame}{Equilibrium and Mechanisms}
 
 \begin{itemize}
-    \item A pricing equilibrium consists on $(\alpha_j^t, \beta_j^t)_{t,j}$ such that $(\alpha_j^t, \beta_j^t)_{t}$ maximizes $\pi_j\left[(\alpha_j^t, \beta_j^t)_{t}; (\alpha_j^t, \beta_j^t)_{t,-j}\right] $ 
+    \item A pricing equilibrium consists on $(\alpha_j^t, \beta_j^t)_{t,j}$ such that for all $j$,  $(\alpha_j^t, \beta_j^t)_{t}$ maximizes $\pi_j\left[(\alpha_j^t, \beta_j^t)_{t}; (\alpha_j^t, \beta_j^t)_{t,-j}\right] $ 
 \end{itemize}
 
 \begin{itemize}
